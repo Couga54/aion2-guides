@@ -61,9 +61,9 @@
         <a href="../../en/templar/" class="cm-item accent-sapphire" aria-current="page">
           <img src="../../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Templar</span><span class="cm-role">Tank · party buffer</span>
         </a>
-        <span class="cm-item is-soon" aria-disabled="true">
-          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Assassin</span><span class="cm-role">Coming soon</span>
-        </span>
+        <a href="../../en/assassin/" class="cm-item accent-violet">
+          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Assassin</span><span class="cm-role">Melee DPS · burst</span>
+        </a>
         <span class="cm-item is-soon" aria-disabled="true">
           <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Sorcerer</span><span class="cm-role">Coming soon</span>
         </span>
@@ -73,9 +73,9 @@
         <span class="cm-item is-soon" aria-disabled="true">
           <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Cleric</span><span class="cm-role">Coming soon</span>
         </span>
-        <span class="cm-item is-soon" aria-disabled="true">
-          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Chanter</span><span class="cm-role">Coming soon</span>
-        </span>
+        <a href="../../en/chanter/" class="cm-item accent-amber">
+          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Chanter</span><span class="cm-role">Melee support · buffer</span>
+        </a>
       </nav>
     </details>
     <div class="topbar-tools">
@@ -94,7 +94,7 @@
       <a class="lang-switch" href="../../ru/templar/" hreflang="ru" lang="ru" data-keep-query>
         <span aria-hidden="true">RU</span><span class="sr-only">Русский</span>
       </a>
-<button class="icon-btn wn-open wn-top" type="button" aria-label="What&#39;s new" title="What&#39;s new">
+<button class="icon-btn wn-open wn-top" type="button" aria-label="Changelog" title="Changelog">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
       </button>      <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -916,8 +916,8 @@
   <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro">Macro &amp; rotation</h2></div>
     <p>AION 2 has two separate tools, and the build uses both:</p>
   <ul>
-    <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the first skill in the list that's usable, so the order is the priority.</li>
-    <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar buttons in order, weaves basic attacks and cancels animation tails. Skills on cooldown are skipped.</li>
+    <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the highest-priority skill that's ready, and in AION 2 the <strong>bottom slot has the highest priority</strong>. The cards below show each line top to bottom as in the game, with the priority number on every skill.</li>
+    <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar lines in order and cancels animation tails. Skills on cooldown are skipped. Hold your basic attack (LMB) <em>together</em> with the macro key instead of putting it into the macro — the game weaves and cancels it better that way.</li>
   </ul>
   <p>Templar's damage is a loop: <strong>shield skill → Judgment → procs → filler</strong>. The lines below are built so that Judgment and the procs always win when they light up.</p>
 
@@ -925,21 +925,11 @@
   <div class="hotlines">
 <div class="hotline">
   <div class="hotline-head"><span class="key">RMB</span><span class="hotline-name">Proc line</span></div>
-  <ol class="hotline-skills">
+  <ol class="hotline-skills" reversed>
     <li class="">
-      <span class="hl-n">1</span>
-      <img src="../../assets/icons/templar/judgment.webp" width="40" height="40" alt="" loading="lazy">
-      <span class="hl-name">Judgment</span>
-    </li>
-    <li class="">
-      <span class="hl-n">2</span>
-      <img src="../../assets/icons/templar/annihilate.webp" width="40" height="40" alt="" loading="lazy">
-      <span class="hl-name">Annihilate</span>
-    </li>
-    <li class="">
-      <span class="hl-n">3</span>
-      <img src="../../assets/icons/templar/debilitating-smash.webp" width="40" height="40" alt="" loading="lazy">
-      <span class="hl-name">Debilitating Smash</span>
+      <span class="hl-n">5</span>
+      <img src="../../assets/icons/templar/pummel.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Pummel</span>
     </li>
     <li class="">
       <span class="hl-n">4</span>
@@ -947,39 +937,52 @@
       <span class="hl-name">Doom Shield</span>
     </li>
     <li class="">
-      <span class="hl-n">5</span>
-      <img src="../../assets/icons/templar/pummel.webp" width="40" height="40" alt="" loading="lazy">
-      <span class="hl-name">Pummel</span>
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/templar/debilitating-smash.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Debilitating Smash</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/templar/annihilate.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Annihilate</span>
+    </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/templar/judgment.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Judgment</span>
     </li>
   </ol>
+  <p class="hotline-order">In-game order, top to bottom. 1 = highest priority — the bottom slot.</p>
 <p class="hotline-note">Judgment, Annihilate and Debilitating Smash can only be used after their trigger, so the line falls through to Pummel the rest of the time.</p></div><div class="hotline">
   <div class="hotline-head"><span class="key">E</span><span class="hotline-name">Trigger line</span></div>
-  <ol class="hotline-skills">
-    <li class="">
-      <span class="hl-n">1</span>
-      <img src="../../assets/icons/templar/shield-smite.webp" width="40" height="40" alt="" loading="lazy">
-      <span class="hl-name">Shield Smite</span>
-    </li>
+  <ol class="hotline-skills" reversed>
     <li class="">
       <span class="hl-n">2</span>
       <img src="../../assets/icons/templar/warding-strike.webp" width="40" height="40" alt="" loading="lazy">
       <span class="hl-name">Warding Strike</span>
     </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/templar/shield-smite.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Shield Smite</span>
+    </li>
   </ol>
+  <p class="hotline-order">In-game order, top to bottom. 1 = highest priority — the bottom slot.</p>
 <p class="hotline-note">Both trigger Judgment — together with Doom Shield they keep it firing.</p></div><div class="hotline">
   <div class="hotline-head"><span class="key">R</span><span class="hotline-name">Buff line</span></div>
-  <ol class="hotline-skills">
-    <li class="">
-      <span class="hl-n">1</span>
-      <img src="../../assets/icons/templar/battlefield-banner.webp" width="40" height="40" alt="" loading="lazy">
-      <span class="hl-name">Battlefield Banner</span>
-    </li>
+  <ol class="hotline-skills" reversed>
     <li class="is-opt">
       <span class="hl-n">2</span>
       <img src="../../assets/icons/templar/noble-armor.webp" width="40" height="40" alt="" loading="lazy">
       <span class="hl-name">Noble Armor</span>
     </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/templar/battlefield-banner.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Battlefield Banner</span>
+    </li>
   </ol>
+  <p class="hotline-order">In-game order, top to bottom. 1 = highest priority — the bottom slot.</p>
 <p class="hotline-note">Banner on cooldown; add Noble Armor if you slot it.</p></div>  </div>
 
   <h3>2. In-game macro</h3>
@@ -989,6 +992,8 @@
   <li><span class="ms-n">2</span><span class="ms-label">Trigger line</span><span class="ms-detail">E · 10 ms</span></li>
   <li><span class="ms-n">3</span><span class="ms-label">Buff line</span><span class="ms-detail">R · 10 ms</span></li>
 </ol>
+
+  <p class="note">Season 1 tip (Grobs): cooldowns are slow at launch, so buffs are worth more when timed — you can take the buff line out of the macro and press it yourself right before a boss or a big pack.</p>
 
   <h3>3. What you actually press</h3>
   <ul class="presslist">
@@ -1419,6 +1424,57 @@
   </ul></div>
 
 </section>
+<section id="macro-lvl" class="g-section" data-only="lvl" aria-labelledby="h-macro-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro-lvl">Leveling macro</h2></div>
+    <p>A simpler setup for leveling and the first days at the cap, from Grobs' early-game macros. Only the skills you spam go in; buffs, stigma bursts and gap-closers stay on their own keys.</p>
+  <div class="hotlines">
+    <div class="hotline">
+  <div class="hotline-head"><span class="key">1</span><span class="hotline-name">Line 1</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="">
+      <span class="hl-n">4</span>
+      <img src="../../assets/icons/templar/shield-smite.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Shield Smite</span>
+    </li>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/templar/judgment.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Judgment</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/templar/debilitating-smash.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Debilitating Smash</span>
+    </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/templar/doom-shield.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Doom Shield</span>
+    </li>
+  </ol>
+  <p class="hotline-order">In-game order, top to bottom. 1 = highest priority — the bottom slot.</p>
+</div>
+    <div class="hotline">
+  <div class="hotline-head"><span class="key">2</span><span class="hotline-name">Line 2</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/templar/pummel.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Pummel</span>
+    </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/templar/warding-strike.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Warding Strike</span>
+    </li>
+  </ol>
+  <p class="hotline-order">In-game order, top to bottom. 1 = highest priority — the bottom slot.</p>
+</div>
+  </div>
+  <p>In-game macro: Line 1 → Line 2, each with a 10 ms delay. Hold your basic attack <span class="sk"><img src="../../assets/icons/templar/vicious-strike.webp" width="18" height="18" alt="" loading="lazy">Vicious Strike</span> on LMB <strong>and</strong> the macro key together.</p>
+  <p class="note">Once your skills reach 12–16 and specializations change their cooldowns, switch to the full setup in the PvE tab.</p>
+
+</section>
 <section class="sources" aria-labelledby="h-sources">
   <h2 id="h-sources">Sources</h2>
   <ul>
@@ -1429,6 +1485,7 @@
     <li><a href="https://www.inven.co.kr/board/aion2/6438/7621" target="_blank" rel="noopener">Inven</a> and <a href="https://www.fmkorea.com/9447817669" target="_blank" rel="noopener">FM Korea</a> — PvP stigma choices</li>
     <li><a href="https://mmo-codex.com/articles/aion-2-templar-guide/" target="_blank" rel="noopener">MMO Codex</a> — skill order while leveling, passive priority</li>
     <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (TitanTheF's table) — leveling route</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — how hotbar lines and the in-game macro work</li>
   </ul>
   <p class="sources-all"><a href="../../en/sources/">All sources and creators →</a></p>
 </section>  </main>
@@ -1440,19 +1497,28 @@
       <a class="brand brand-sm" href="../../en/">AION 2 Guides</a>
       <p>Unofficial fan site, not affiliated with NCSOFT. AION 2 and its skill icons are © NCSOFT.</p>
       <p>Last checked: 2026-09-27 (before the global launch).</p>
-      <p><a href="../../en/sources/">All sources and creators</a> · <button type="button" class="link-btn wn-open">What&#39;s new</button></p>
+      <p><a href="../../en/sources/">All sources and creators</a> · <button type="button" class="link-btn wn-open">Changelog</button></p>
     </div>
   </div>
 </footer>
-<dialog class="whatsnew" data-id="2026-09-27-templar-week1" aria-labelledby="wn-title">
+<dialog class="whatsnew" data-id="2026-09-27-chanter-assassin" aria-labelledby="wn-title">
   <form method="dialog" class="wn-in">
     <div class="wn-head">
-      <h2 id="wn-title">What&#39;s new</h2>
+      <h2 id="wn-title" data-latest="What&#39;s new" data-history="Changelog">What&#39;s new</h2>
       <button class="icon-btn wn-x" value="close" aria-label="Got it">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
     </div>
     <section class="wn-entry">
+      <time class="wn-date" datetime="2026-09-27">Sep 27, 2026</time>
+      <ul>
+        <li><a href="../../en/chanter/"><strong>Chanter guide</strong> — TitanTheF's global build: skills, stigmas, mantras and the simple starting macro.</a></li>
+        <li><a href="../../en/assassin/"><strong>Assassin guide</strong> — Insignias, Heart Gore and the Illusive Clone burst window, with TitanTheF's global build.</a></li>
+        <li><a href="../../en/ranger/"><strong>Ranger reworked for global</strong> — realistic skill levels (16), the global stigma set and arcana targets instead of the Korean endgame.</a></li>
+        <li><a href="../../en/gladiator/"><strong>Macros fixed</strong> — the bottom slot of a hotbar line has the highest priority; leveling macros for every class (Grobs).</a></li>
+      </ul>
+    </section>
+    <section class="wn-entry wn-older">
       <time class="wn-date" datetime="2026-09-27">Sep 27, 2026</time>
       <ul>
         <li><a href="../../en/templar/"><strong>Templar guide</strong> — PvE, PvP and leveling: skills, stigmas for global's 4 slots and a macro setup.</a></li>

@@ -50,13 +50,19 @@
 /* Class accents (dark / light) */
 .accent-crimson{--accent:#ef6a6f; --accent-soft:rgba(239,106,111,.14); --accent-glow:rgba(200,40,50,.35);}
 .accent-emerald{--accent:#4fd09a; --accent-soft:rgba(79,208,154,.14); --accent-glow:rgba(30,160,110,.32);}
+.accent-amber{--accent:#f2a94b; --accent-soft:rgba(242,169,75,.14); --accent-glow:rgba(220,140,40,.34);}
+.accent-violet{--accent:#b98cff; --accent-soft:rgba(185,140,255,.14); --accent-glow:rgba(140,80,230,.34);}
 .accent-sapphire{--accent:#72a8ff; --accent-soft:rgba(114,168,255,.14); --accent-glow:rgba(60,110,230,.34);}
 :root[data-theme="light"] .accent-crimson{--accent:#a3212c; --accent-soft:rgba(163,33,44,.09); --accent-glow:rgba(200,40,50,.18);}
 :root[data-theme="light"] .accent-emerald{--accent:#1a7a50; --accent-soft:rgba(26,122,80,.09); --accent-glow:rgba(30,160,110,.18);}
+:root[data-theme="light"] .accent-amber{--accent:#9a5a0c; --accent-soft:rgba(154,90,12,.09); --accent-glow:rgba(220,140,40,.18);}
+:root[data-theme="light"] .accent-violet{--accent:#6a3cc0; --accent-soft:rgba(106,60,192,.09); --accent-glow:rgba(140,80,230,.18);}
 :root[data-theme="light"] .accent-sapphire{--accent:#1f4fa8; --accent-soft:rgba(31,79,168,.09); --accent-glow:rgba(60,110,230,.18);}
 @media (prefers-color-scheme: light){
   :root:not([data-theme="dark"]) .accent-crimson{--accent:#a3212c; --accent-soft:rgba(163,33,44,.09); --accent-glow:rgba(200,40,50,.18);}
   :root:not([data-theme="dark"]) .accent-emerald{--accent:#1a7a50; --accent-soft:rgba(26,122,80,.09); --accent-glow:rgba(30,160,110,.18);}
+  :root:not([data-theme="dark"]) .accent-amber{--accent:#9a5a0c; --accent-soft:rgba(154,90,12,.09); --accent-glow:rgba(220,140,40,.18);}
+  :root:not([data-theme="dark"]) .accent-violet{--accent:#6a3cc0; --accent-soft:rgba(106,60,192,.09); --accent-glow:rgba(140,80,230,.18);}
   :root:not([data-theme="dark"]) .accent-sapphire{--accent:#1f4fa8; --accent-soft:rgba(31,79,168,.09); --accent-glow:rgba(60,110,230,.18);}
 }
 
@@ -219,17 +225,22 @@ p{margin:0 0 12px;}
 
 /* ---- class page ---- */
 .class-hero{position:relative;overflow:hidden;border-bottom:1px solid var(--border);
+  --hero-glow:var(--accent-glow,rgba(217,179,108,.2));
   background:
-    radial-gradient(800px 380px at 90% -20%,var(--accent-glow,transparent),transparent 65%),
-    radial-gradient(600px 300px at -10% 120%,rgba(217,179,108,.08),transparent 60%),
+    radial-gradient(ellipse 55% 130% at 88% 0%,var(--hero-glow),transparent 72%),
+    radial-gradient(ellipse 40% 80% at 0% 100%,rgba(217,179,108,.07),transparent 70%),
     var(--bg-2);}
-[data-mode="pvp"] .class-hero{background:radial-gradient(800px 380px at 90% -20%,rgba(110,120,255,.28),transparent 65%),var(--bg-2);}
-[data-mode="lvl"] .class-hero{background:radial-gradient(800px 380px at 90% -20%,rgba(224,163,58,.24),transparent 65%),var(--bg-2);}
+/* Guide modes use shades of the class colour: PvE = the colour, PvP = deeper, Leveling = lighter. */
+.page-class{--pvp:color-mix(in oklab,var(--accent) 68%,#000);--lvl:color-mix(in oklab,var(--accent) 62%,#fff);}
+:root[data-theme="light"] .page-class{--pvp:color-mix(in oklab,var(--accent) 75%,#000);--lvl:color-mix(in oklab,var(--accent) 78%,#fff);}
+@media (prefers-color-scheme: light){ :root:not([data-theme="dark"]) .page-class{--pvp:color-mix(in oklab,var(--accent) 75%,#000);--lvl:color-mix(in oklab,var(--accent) 78%,#fff);} }
+[data-mode="pvp"] .class-hero{--hero-glow:color-mix(in srgb,var(--pvp) 45%,transparent);}
+[data-mode="lvl"] .class-hero{--hero-glow:color-mix(in srgb,var(--lvl) 32%,transparent);}
 .class-hero-in{position:relative;z-index:1;padding-block:22px 26px;}
+/* One soft elliptical mask: no hard edges where two linear masks would meet. */
 .class-hero-art{max-width:none;position:absolute;top:-8px;right:max(0px,calc((100vw - 1180px) / 2 - 40px));height:440px;width:auto;pointer-events:none;
-  filter:drop-shadow(0 0 40px var(--accent-glow,transparent));
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 40%),linear-gradient(180deg,#000 45%,transparent 92%);-webkit-mask-composite:source-in;
-  mask-image:linear-gradient(90deg,transparent,#000 40%),linear-gradient(180deg,#000 45%,transparent 92%);mask-composite:intersect;}
+  -webkit-mask-image:radial-gradient(ellipse 62% 58% at 58% 36%,#000 58%,transparent 100%);
+  mask-image:radial-gradient(ellipse 62% 58% at 58% 36%,#000 58%,transparent 100%);}
 [data-mode="lvl"] .class-hero-art{height:300px;opacity:.7;}
 @media (max-width: 900px){ .class-hero-art{right:-60px;opacity:.35;} }
 .class-backdrop{position:fixed;z-index:-1;right:0;bottom:0;width:min(46vw,760px);height:calc(100vh - var(--topbar-h));pointer-events:none;opacity:.07;
@@ -268,7 +279,8 @@ p{margin:0 0 12px;}
 [data-mode="lvl"] .mode-switch::before{transform:translateX(200%);background:var(--lvl);}
 .mode-switch button{position:relative;z-index:1;border:0;background:none;padding:8px 16px;min-width:88px;border-radius:999px;font:700 .8rem var(--font);color:var(--text-dim);cursor:pointer;transition:color .28s;}
 .mode-switch button[aria-checked="true"]{color:var(--on-accent);}
-[data-mode="pvp"] .mode-switch button[aria-checked="true"],[data-mode="lvl"] .mode-switch button[aria-checked="true"]{color:#0b0e14;}
+[data-mode="pvp"] .mode-switch button[aria-checked="true"]{color:#fff;}
+[data-mode="lvl"] .mode-switch button[aria-checked="true"]{color:#0b0e14;}
 :root[data-theme="light"] [data-mode] .mode-switch button[aria-checked="true"]{color:#fff;}
 .toc-mobile{display:none;min-width:0;overflow-x:auto;scrollbar-width:none;gap:4px;}
 .toc-mobile::-webkit-scrollbar{display:none;}
@@ -380,7 +392,7 @@ td:first-child{font-weight:600;color:var(--text);white-space:nowrap;}
 /* leveling tracker */
 .tracker-bar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:12px;}
 .progress{flex:1 1 220px;height:10px;border-radius:999px;background:var(--surface-3);overflow:hidden;}
-.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--lvl),var(--gold-2));border-radius:999px;transition:width .3s ease;}
+.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--lvl),color-mix(in oklab,var(--lvl) 70%,#fff));border-radius:999px;transition:width .3s ease;}
 .progress-text{font:700 .8rem var(--font-mono);color:var(--text-dim);}
 .progress-text b{color:var(--text);}
 .steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;}
@@ -622,3 +634,8 @@ a.cm-item[aria-current="page"]{background:var(--accent-soft);border-color:color-
   .cm-item img{width:44px;height:44px;}
 }
 @media (max-width: 420px){ .class-menu-btn span{display:none;} .class-menu-btn{padding:0 8px 0 4px;} }
+.energy-chest:disabled{opacity:.4;cursor:not-allowed;}
+.hotline-skills li.is-first{border-color:color-mix(in srgb,var(--accent) 55%,var(--border));background:linear-gradient(90deg,var(--accent-soft),transparent 70%),var(--bg-2);}
+.hotline-order{margin:8px 0 0;font:500 .68rem var(--font-mono);color:var(--text-faint);}
+.whatsnew:not(.is-history) .wn-older{display:none;}
+.whatsnew.is-history .wn-in{max-height:calc(100vh - 48px);overflow-y:auto;}

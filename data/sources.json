@@ -45,15 +45,25 @@
         {
           "name": "TitanTheF",
           "what": {
-            "en": "Author of the leveling route table — the shared leveling checklist follows its order.",
-            "ru": "Автор таблицы маршрута прокачки — общий чек-лист прокачки идёт по её порядку."
+            "en": "Author of the leveling route table and the AION 2 progression sheet: global builds (start 1–45 and 45+) for Ranger, Assassin and Chanter, hotbar and macro setups, farming and progression notes.",
+            "ru": "Автор таблицы маршрута прокачки и таблицы прогрессии AION 2: глобальные билды (старт 1–45 и 45+) для Лучника, Убийцы и Чародея, раскладка панели и макросы, фарм и прогрессия."
           },
           "used": [
             "gladiator",
             "ranger",
-            "templar"
+            "templar",
+            "assassin",
+            "chanter"
           ],
           "links": [
+            {
+              "type": "site",
+              "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml",
+              "label": {
+                "en": "Progression sheet",
+                "ru": "Таблица прогрессии"
+              }
+            },
             {
               "type": "youtube",
               "url": "https://www.youtube.com/@TitanTheF",
@@ -97,6 +107,35 @@
             {
               "type": "youtube",
               "url": "https://www.youtube.com/@NoBSGameGuides",
+              "label": "YouTube"
+            }
+          ]
+        },
+        {
+          "name": "Grobs",
+          "what": {
+            "en": "“AION 2 Macro Guide: Best Early-Game Setups & Mouse Macro Tutorial” — how lines and the in-game macro work (bottom slot = highest priority, hold LMB next to the macro, buffs by hand in Season 1) and the early-game macro setups in the Leveling tabs.",
+            "ru": "«AION 2 Macro Guide: Best Early-Game Setups & Mouse Macro Tutorial» — как работают линии и встроенный макрос (нижний слот = высший приоритет, ЛКМ держать рядом с макросом, баффы в 1 сезоне вручную) и ранние макросы во вкладках «Прокачка»."
+          },
+          "used": [
+            "gladiator",
+            "ranger",
+            "templar",
+            "assassin",
+            "chanter"
+          ],
+          "links": [
+            {
+              "type": "video",
+              "url": "https://www.youtube.com/watch?v=HMod6Z4GrE0",
+              "label": {
+                "en": "Macro guide",
+                "ru": "Гайд по макросам"
+              }
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/@grobsXO",
               "label": "YouTube"
             }
           ]
@@ -193,7 +232,9 @@
           "used": [
             "gladiator",
             "ranger",
-            "templar"
+            "templar",
+            "assassin",
+            "chanter"
           ],
           "links": [
             {
@@ -219,6 +260,41 @@
                 "en": "Templar skills",
                 "ru": "Скиллы Стража"
               }
+            },
+            {
+              "type": "site",
+              "url": "https://questlog.gg/aion-2/en/db/skills/assassin",
+              "label": {
+                "en": "Assassin skills",
+                "ru": "Скиллы Убийцы"
+              }
+            },
+            {
+              "type": "site",
+              "url": "https://questlog.gg/aion-2/en/db/skills/chanter",
+              "label": {
+                "en": "Chanter skills",
+                "ru": "Скиллы Чародея"
+              }
+            }
+          ]
+        },
+        {
+          "name": "aion2t.com",
+          "what": {
+            "en": "Build planner hosting TitanTheF's builds — skill levels, specializations, stigmas and passives are read from it.",
+            "ru": "Планировщик билдов, где лежат билды TitanTheF — уровни скиллов, специализации, стигмы и пассивки взяты оттуда."
+          },
+          "used": [
+            "ranger",
+            "assassin",
+            "chanter"
+          ],
+          "links": [
+            {
+              "type": "site",
+              "url": "https://aion2t.com/ru/simulator",
+              "label": "aion2t.com"
             }
           ]
         },

@@ -1,0 +1,194 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq with context %}
+
+{# ============================== PvE ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('onslaught', '20'), ('dark-crush', '20'), ('spinning-strike', '20'), ('incandescent-blow', '16'), ('impactful-crush', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('undefeated-mantra', 20), ('power-of-the-storm', 10), ('sprint-mantra', 10), ('marchutans-wrath', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['attack-preparation', 'impact-hit', 'winds-promise', 'earths-promise']) }}
+{% endcall %}
+
+{% call section('intro', 'Overview', 'pve') %}
+  <p>The Chanter fights in melee with a staff and makes the whole party stronger at the same time. Its mantras stay on permanently, {{ s('power-of-the-storm') }} speeds up everyone's skills, and its own damage comes from a stun → {{ s('dark-crush') }} combo that keeps looping.</p>
+  <div class="callout accent">
+    <h3>The build in one sentence</h3>
+    <p>Keep {{ s('undefeated-mantra') }} and {{ s('sprint-mantra') }} on, open with {{ s('power-of-the-storm') }}, and spam the line where {{ s('impactful-crush') }} and {{ s('spinning-strike') }} unlock {{ s('dark-crush') }} while {{ s('onslaught') }} refills your MP.</p>
+  </div>
+  <p class="note">This guide follows TitanTheF's global build (start 1–45 and the 45+ goal) from his AION 2 progression sheet.</p>
+{% endcall %}
+
+{% call section('global', 'Global Season 1: what changes', 'pve pvp') %}
+  <p>Global servers open on <strong>October 5, 2026</strong> (Founder's early access from September 30). What that means for the Chanter:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 stigma slots, capped at 20.</strong> Two of them are mantras, so there are only two free picks.</li>
+      <li><strong>No combat speed at the start.</strong> Season 1 gear gives little attack speed, so the simple macro below is the best one for now — Power of the Storm matters even more.</li>
+      <li><strong>Bigger groups</strong> (5-player expeditions, 10-player sanctuaries): every party buff reaches more people.</li>
+      <li data-only="pvp"><strong>PvP:</strong> everyone starts on the same limited gear and no meta has formed yet.</li>
+    </ul>
+  </div>
+  <p class="note">Active skills and passives are identical in the global and KR/TW data; stigmas lose their level-25 tier.</p>
+{% endcall %}
+
+{% call section('skills', 'Skills', 'pve') %}
+  <p>Three skills go to <strong>20</strong>, three to <strong>16</strong>, the rest stay at <strong>12</strong>. Levels come from skill points (10), Daevanion (14), rings (16) and arcana (20).</p>
+  <ul class="skill-grid">
+    {% call skill('onslaught', 'must', '20', [0, 3, 4]) %}Basic attack that restores MP; every hit shortens Spinning Strike's cooldown, and at 16 it adds the Storm Chain.{% endcall %}
+    {% call skill('dark-crush', 'must', '20', [2, 3, 4]) %}Main damage. It unlocks for a few seconds after Impactful Crush, Spinning Strike and Marchutan's Wrath; at 16 its own cooldown disappears.{% endcall %}
+    {% call skill('spinning-strike', 'must', '20', [0, 1, 2]) %}Stacking +15% Critical Damage for 30s and unlocks Dark Crush.{% endcall %}
+    {% call skill('incandescent-blow', 'must', '16', [1, 2]) %}Filler with no cooldown; the Block pick keeps you safe in melee.{% endcall %}
+    {% call skill('impactful-crush', 'must', '16', [2, 3]) %}Ranged stun that unlocks Dark Crush; mobile and faster at 12.{% endcall %}
+    {% call skill('defiance', 'must', '16', [2, 4]) %}CC break with a heal and, at 16, big damage tolerance.{% endcall %}
+    {% call skill('wave-blow', 'opt', '12', [1, 3]) %}Knockdown on a stunned target; the level-12 pick cuts the boss's damage.{% endcall %}
+    {% call skill('heat-wave-blow', 'opt', '12', [2, 3]) %}AoE with Seal; good on packs.{% endcall %}
+    {% call skill('rushing-smash', 'opt', '12', [1, 3]) %}Gap-closer that restores MP; resets on a kill.{% endcall %}
+    {% call skill('recuperation', 'opt', '12', [1, 3]) %}Party heal and debuff removal.{% endcall %}
+    {% call skill('tremor-crush', 'opt', '12', [0, 1]) %}Dodge → dash with a stun.{% endcall %}
+    {% call skill('gust-rampage', 'opt', '12', [2, 3]) %}Only on Staggered targets.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Passives', 'pve') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Passive</th><th>Level</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>{{ s('attack-preparation') }}</td><td>20</td><td>PvE Damage Boost, Defense and Accuracy.</td></tr>
+      <tr><td>{{ s('impact-hit') }}</td><td>20</td><td>More stun chance — every stun unlocks Dark Crush.</td></tr>
+      <tr><td>{{ s('winds-promise') }}</td><td>16</td><td>Critical Damage Boost and extra damage on crits.</td></tr>
+      <tr><td>{{ s('blessing-of-life') }} / {{ s('earths-promise') }}</td><td>14</td><td>HP and heal boost / −PvE Damage Tolerance on the target for the whole party.</td></tr>
+      <tr><td>The rest</td><td>10</td><td>Crossguard, Protection Circle, Inspiring Spell, Raging Spell, Survival Willpower.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Gear & stats', 'pve') %}
+  <div class="callout"><ul>
+    <li><strong>Manastones:</strong> Attack, Critical Hit, Accuracy.</li>
+    <li><strong>Guard</strong> (off-hand) to +10.</li>
+    <li>Which gear tier to chase is still open until the global launch.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('daevanion', 'Daevanion boards', 'pve pvp') %}
+  <p>Daevanion takes your skills from 10 to 14 and adds stats. Each blue node gives <strong>+1 level</strong> to its skill. TitanTheF's sheet links a starting route for levels 1–45 — open it and take those nodes while leveling.</p>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>Priority:</strong> blue nodes for {{ s('onslaught') }}, {{ s('dark-crush') }}, {{ s('spinning-strike') }}, then orange nodes.</li>
+    <li data-only="pvp"><strong>Priority:</strong> blue nodes for {{ s('impactful-crush') }}, {{ s('wave-blow') }}, {{ s('defiance') }}.</li>
+    <li data-only="pve"><strong>Ariel</strong> (PvE) at 45, not Azphel.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (PvP) at 45, and Triniel earlier.</li>
+  </ul></div>
+  <p><a href="https://aion2.app/daevanion?job=9&amp;b=bZyJJq" target="_blank" rel="noopener">Starting Daevanion route (aion2.app) →</a></p>
+{% endcall %}
+
+{% call section('stigmas', 'Stigmas', 'pve') %}
+  <ul class="skill-grid">
+    {% call skill('undefeated-mantra', 'must', 'Lv 20', upto=20) %}+PvE damage and tolerance for you and the party — the mantra that defines the class. Max it first.{% endcall %}
+    {% call skill('power-of-the-storm', 'must', 'Lv 10', upto=10) %}+20% Combat Speed and −20% cooldowns for 10s (party gets half the cooldown cut). Level 5 shortens its own cooldown by 30s.{% endcall %}
+    {% call skill('sprint-mantra', 'must', 'Lv 10', upto=10) %}Move speed and on-hit healing for the party.{% endcall %}
+    {% call skill('marchutans-wrath', 'must', 'Lv 10', upto=10) %}Ranged AoE that also unlocks Dark Crush.{% endcall %}
+    {% call skill('obliterate', 'opt', 'leveling', upto=5) %}AoE knockdown for packs while leveling; replace it with Marchutan's Wrath at the cap.{% endcall %}
+  </ul>
+  <p class="note">Mantras are toggles: switch them on once and keep them out of any macro — a second press turns them off.</p>
+{% endcall %}
+
+{% call section('macro', 'Macro & rotation', 'pve') %}
+  <p>AION 2 has two separate tools:</p>
+  <ul>
+    <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the highest-priority skill that's ready, and in AION 2 the <strong>bottom slot has the highest priority</strong>. The cards show each line top to bottom as in the game.</li>
+    <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar buttons in order and cancels animation tails. Skills on cooldown are skipped.</li>
+  </ul>
+
+  <h3>1. Hotbar lines</h3>
+  <div class="hotlines">
+    {% call hotline('RMB', 'Crush line', ['impactful-crush', 'dark-crush', 'spinning-strike', 'incandescent-blow']) %}Impactful Crush and Spinning Strike unlock Dark Crush, which then fires as the next-highest priority; Incandescent Blow fills the gaps.{% endcall %}
+    {% call hotline('2', 'Wave line', ['wave-blow', 'heat-wave-blow']) %}Wave Blow knocks down a stunned target.{% endcall %}
+    {% call hotline('3', 'Dash line', ['rushing-smash', 'tremor-crush']) %}Gap-closers — press by hand.{% endcall %}
+  </div>
+
+  <h3>2. In-game macro</h3>
+  <p>Bind it to the middle mouse button. Delay <strong>10 ms</strong> on every slot:</p>
+  {{ macroseq([(skill_data('power-of-the-storm')[lang].name, '10 ms'), (skill_data('onslaught')[lang].name, '10 ms'), ('Wave line', '10 ms'), (skill_data('onslaught')[lang].name, '10 ms')]) }}
+  <p class="note">TitanTheF weaves Onslaught into the macro itself — it restores MP, and with no combat speed yet it's the simplest setup that works.</p>
+
+  <h3>3. What you actually press</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Hold</span><span class="press-what">{{ s('onslaught') }} on <span class="key">LMB</span>, the Crush line on <span class="key">RMB</span> and the macro on <span class="key">MMB</span>.</span></li>
+    <li><span class="press-how">Mouse macro</span><span class="press-what">Or let your mouse software loop LMB → RMB → MMB (10 ms each) on one toggle button — TitanTheF uses Witchmana, but any mouse software works.</span></li>
+    <li><span class="press-how">By hand</span><span class="press-what">Mantras (once), {{ s('recuperation') }} when the party takes damage, the Dash line to close gaps, {{ s('defiance') }}.</span></li>
+  </ul>
+{% endcall %}
+
+{% call section('recap', 'Recap', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Skills:</strong> Onslaught, Dark Crush, Spinning Strike 20; Incandescent Blow, Impactful Crush, Defiance 16; the rest 12.</li>
+    <li><strong>Stigmas:</strong> Undefeated Mantra 20, Power of the Storm 10, Sprint Mantra 10, Marchutan's Wrath 10.</li>
+    <li><strong>Passives:</strong> Attack Preparation and Impact Hit 20, Wind's Promise 16, Blessing of Life and Earth's Promise 14.</li>
+    <li><strong>Manastones:</strong> Attack, Critical Hit, Accuracy; guard to +10.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================== PvP ============================== #}
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('impactful-crush', '16'), ('wave-blow', '16'), ('dark-crush', '20'), ('defiance', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('undefeated-mantra', 20), ('marchutans-wrath', 15), ('power-of-the-storm', 10), ('barrier-spell', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['attack-preparation', 'impact-hit', 'survival-willpower', 'earths-promise']) }}
+{% endcall %}
+
+{% call section('intro-pvp', 'Overview', 'pvp') %}
+  <p>In PvP the Chanter is a front-line buffer that locks targets down: stun with {{ s('impactful-crush') }}, knock down with {{ s('wave-blow') }}, then burst with {{ s('dark-crush') }} — while the party fights inside your mantras.</p>
+  <p class="note">TitanTheF's sheet covers PvE; the PvP picks below come from the global skill data and are a starting point until a global PvP meta forms.</p>
+{% endcall %}
+
+{% call section('skills-pvp', 'Skills & stigmas', 'pvp') %}
+  <ul class="skill-grid">
+    {% call skill('impactful-crush', 'must', '16', [1, 2, 4]) %}20m stun (+1s duration, +20% chance at 16) — your opener.{% endcall %}
+    {% call skill('wave-blow', 'must', '16', [1, 2, 3]) %}Knockdown on the stunned target; the level-12 pick cuts their PvP damage.{% endcall %}
+    {% call skill('defiance', 'must', '16', [2, 3, 4]) %}Break the first hard CC.{% endcall %}
+    {% call skill('marchutans-wrath', 'must', 'Lv 15', upto=15) %}Level 15 adds −70% healing and potion recovery — your anti-heal.{% endcall %}
+    {% call skill('barrier-spell', 'opt', 'Lv 10', upto=10) %}Keeps the party above 10% HP for 3s — saves a lost fight.{% endcall %}
+    {% call skill('impeding-authority', 'opt', 'alt.', upto=10) %}Party shield worth 16% of Max HP.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('recap-pvp', 'Recap', 'pvp') %}
+  <div class="callout accent"><ul>
+    <li><strong>Combo:</strong> Impactful Crush (stun) → Wave Blow (knockdown) → Dark Crush.</li>
+    <li><strong>Stigmas:</strong> Undefeated Mantra, Marchutan's Wrath 15 (anti-heal), Power of the Storm, Barrier Spell.</li>
+    <li><strong>Daevanion:</strong> Azphel over Ariel.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Packs:</strong> {{ s('rushing-smash') }} in (resets on a kill) → {{ s('obliterate') }} → Crush line + {{ s('onslaught') }}.</li>
+    <li><strong>Elites:</strong> {{ s('impactful-crush') }} (stun) → {{ s('dark-crush') }} → {{ s('wave-blow') }} → {{ s('spinning-strike') }} → Dark Crush again.</li>
+    <li><strong>Mana:</strong> Onslaught restores MP on every hit — never stop weaving it.</li>
+    <li><strong>Low HP:</strong> {{ s('recuperation') }}, and Sprint Mantra heals on hits.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Leveling macro', 'lvl') %}
+  <p>TitanTheF's starting setup works from level 1: the Crush line on RMB, Onslaught on LMB and the in-game macro (Power of the Storm → Onslaught → Wave line → Onslaught) on the middle mouse button. Early build at 1–45: Onslaught, Incandescent Blow, Spinning Strike and Rushing Smash to 12, everything else to 8.</p>
+  <div class="hotlines">
+    {{ hotline('RMB', 'Crush line', ['impactful-crush', 'dark-crush', 'spinning-strike', 'incandescent-blow']) }}
+  </div>
+  <p><a href="https://aion2t.com/ru/simulator?job=9&amp;b=S5RCtE" target="_blank" rel="noopener">Starting build 1–45 (aion2t) →</a> · <a href="https://aion2t.com/ru/simulator?job=9&amp;b=yDzsiQ" target="_blank" rel="noopener">45+ goal build →</a></p>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener">TitanTheF — AION 2 progression sheet</a> (Chanter tab) — builds, hotbar, macro, stats</li>
+    <li><a href="https://aion2t.com/ru/simulator?job=9&amp;b=yDzsiQ" target="_blank" rel="noopener">aion2t.com</a> — TitanTheF's start and 45+ builds (skill levels, specializations, stigmas, passives)</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/chanter" target="_blank" rel="noopener">questlog.gg</a> — skill data from the global client</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — how hotbar lines and the in-game macro work</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

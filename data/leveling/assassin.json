@@ -1,0 +1,25 @@
+{
+  "_note": "Assassin leveling steps from TitanTheF's starting build (aion2t iUjpcy). [[slug]] = localized skill name, [[slug#N]] = its N-th specialization.",
+  "steps": [
+    {"id": "assassin-core", "order": 2, "skills": ["quick-slice", "savage-roar"],
+     "when": {"en": "Lv 1", "ru": "Ур. 1"},
+     "text": {"en": "First points into [[quick-slice]] (restores MP) and [[savage-roar]] (engraves Insignias). At 8: [[quick-slice#0]] and [[savage-roar#1]].",
+              "ru": "Первые очки в [[quick-slice]] (восполняет ману) и [[savage-roar]] (накладывает эмблемы). На 8: [[quick-slice#0]] и [[savage-roar#1]]."}},
+    {"id": "assassin-insignia", "order": 4, "skills": ["insignia-explosion"],
+     "when": {"en": "Lv 1–8", "ru": "Ур. 1–8"},
+     "text": {"en": "[[insignia-explosion]] → 12: [[insignia-explosion#1]] and [[insignia-explosion#2]]. Put it at the bottom of your main line.",
+              "ru": "[[insignia-explosion]] → 12: [[insignia-explosion#1]] и [[insignia-explosion#2]]. Ставь его внизу основной линии."}},
+    {"id": "assassin-heart", "order": 100, "skills": ["heart-gore"],
+     "when": {"en": "Heart Gore unlocked", "ru": "Открыто Пронзание сердца"},
+     "text": {"en": "[[heart-gore]] fires on crits — put it on Q and spam it. To 12 with [[heart-gore#2]].",
+              "ru": "[[heart-gore]] срабатывает на крите — повесь на Q и спамь. До 12 с [[heart-gore#2]]."}},
+    {"id": "assassin-stigmas", "order": 221, "skills": ["throw-shadowblade", "savage-fang", "swift-contract"],
+     "when": {"en": "Lv ~22", "ru": "~Ур. 22"},
+     "text": {"en": "Stigmas: [[throw-shadowblade]] first (to 10 — it resets on a kill), then [[savage-fang]] for packs, [[illusive-clone]] and [[swift-contract]].",
+              "ru": "Стигмы: сначала [[throw-shadowblade]] (до 10 — сбрасывается при убийстве), затем [[savage-fang]] для пачек, [[illusive-clone]] и [[swift-contract]]."}},
+    {"id": "assassin-cap", "order": 455, "skills": ["savage-roar", "heart-gore", "insignia-explosion"],
+     "when": {"en": "Cap", "ru": "Кап"},
+     "text": {"en": "Start build done: Quick Slice, Savage Roar, Insignia Explosion, Heart Gore at 12. Next: those three toward 20 — see the PvE tab.",
+              "ru": "Стартовый билд готов: Быстрый разрез, Рев зверя, Взрыв эмблемы, Пронзание сердца на 12. Дальше эти три к 20 — вкладка PvE."}}
+  ]
+}

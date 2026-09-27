@@ -1,0 +1,1194 @@
+<!doctype html>
+<html lang="ru" data-mode="pve" data-class="assassin">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Убийца — AION 2 Гайды (PvE, PvP, Прокачка)</title>
+<meta name="description" content="Стаки эмблем, криты, запускающие Пронзание сердца, и двойник, который снимает с него перезарядку — самый сильный бурст в ближнем бою, если держишься за спиной цели.">
+<link rel="canonical" href="https://couga54.github.io/aion2-guides/ru/assassin/">
+<link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/assassin/">
+<link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/assassin/">
+<link rel="alternate" hreflang="x-default" href="https://couga54.github.io/aion2-guides/en/assassin/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Гайды">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Убийца — AION 2 Гайды (PvE, PvP, Прокачка)">
+<meta property="og:description" content="Стаки эмблем, криты, запускающие Пронзание сердца, и двойник, который снимает с него перезарядку — самый сильный бурст в ближнем бою, если держишься за спиной цели.">
+<meta property="og:url" content="https://couga54.github.io/aion2-guides/ru/assassin/">
+<meta property="og:image" content="https://couga54.github.io/aion2-guides/assets/og/assassin-ru.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var modes = ['pve', 'pvp', 'lvl'];
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+  })(document.documentElement);
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css">
+</head>
+<body class="page-class accent-violet">
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../ru/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
+      <span>AION 2 Гайды</span>
+    </a>
+    <details class="class-menu">
+      <summary class="class-menu-btn accent-violet">
+<img src="../../assets/classes/assassin.webp" width="24" height="24" alt=""><span>Убийца</span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="Классы">
+        <a href="../../ru/gladiator/" class="cm-item accent-crimson">
+          <img src="../../assets/classes/gladiator.webp" width="44" height="44" alt=""><span class="cm-name">Гладиатор</span><span class="cm-role">Ближний бой · брузер</span>
+        </a>
+        <a href="../../ru/ranger/" class="cm-item accent-emerald">
+          <img src="../../assets/classes/ranger.webp" width="44" height="44" alt=""><span class="cm-name">Лучник</span><span class="cm-role">Дальний бой · кайт</span>
+        </a>
+        <a href="../../ru/templar/" class="cm-item accent-sapphire">
+          <img src="../../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Страж</span><span class="cm-role">Танк · баффер группы</span>
+        </a>
+        <a href="../../ru/assassin/" class="cm-item accent-violet" aria-current="page">
+          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Убийца</span><span class="cm-role">Ближний бой · бурст</span>
+        </a>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Волшебник</span><span class="cm-role">Скоро</span>
+        </span>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Заклинатель</span><span class="cm-role">Скоро</span>
+        </span>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Целитель</span><span class="cm-role">Скоро</span>
+        </span>
+        <a href="../../ru/chanter/" class="cm-item accent-amber">
+          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Чародей</span><span class="cm-role">Поддержка ближнего боя · баффер</span>
+        </a>
+      </nav>
+    </details>
+    <div class="topbar-tools">
+      <a class="src-nav" href="../../ru/week-1/" title="Первая неделя: что успеть до сброса">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+        <span>Первая неделя</span>
+      </a>
+      <a class="src-nav" href="../../ru/weekly/" title="Недельный трекер">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+        <span>Неделя</span>
+      </a>
+      <a class="src-nav src-nav-sources" href="../../ru/sources/" title="Источники и авторы">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+        <span>Источники</span>
+      </a>
+      <a class="lang-switch" href="../../en/assassin/" hreflang="en" lang="en" data-keep-query>
+        <span aria-hidden="true">EN</span><span class="sr-only">English</span>
+      </a>
+<button class="icon-btn wn-open wn-top" type="button" aria-label="История изменений" title="История изменений">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </button>      <button class="icon-btn theme-toggle" type="button" aria-label="Переключить тёмную тему" title="Переключить тёмную тему">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="class-backdrop" aria-hidden="true" style="--art:url('../../assets/art/assassin.webp')"></div>
+<section class="class-hero">
+  <img class="class-hero-art" src="../../assets/art/assassin.webp" alt="" aria-hidden="true" fetchpriority="high">
+  <div class="wrap class-hero-in">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../ru/">Все классы</a><span aria-hidden="true">/</span><span>Убийца</span></nav>
+    <div class="class-hero-main">
+      <img class="class-hero-emblem" src="../../assets/classes/assassin.webp" width="96" height="96" alt="">
+      <div>
+        <p class="kicker"><span data-only="pve">PvE</span><span data-only="pvp">PvP</span><span data-only="lvl">Прокачка</span> · Глобальный 1 сезон</p>
+        <h1>Убийца</h1>
+        <p class="class-hero-pitch">Стаки эмблем, криты, запускающие Пронзание сердца, и двойник, который снимает с него перезарядку — самый сильный бурст в ближнем бою, если держишься за спиной цели.</p>
+        <p class="guide-ver"><span>Обновлено: <time datetime="2026-09-27">27 сентября 2026</time></span><span>Патч: <b>уточняется</b></span></p>
+      </div>
+    </div>
+    <dl class="class-facts">
+      <div><dt>Роль</dt><dd>Ближний бой · бурст</dd></div>
+      <div><dt>Оружие</dt><dd>Кинжалы</dd></div>
+      <div><dt>Сложность</dt><dd class="diff"><i class="on"></i><i class="on"></i><i class="on"></i><span>Сложный</span></dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="guidebar">
+  <div class="wrap guidebar-in">
+    <div class="mode-switch" role="radiogroup" aria-label="Режим гайда">
+      <button type="button" role="radio" data-set-mode="pve" aria-checked="true">PvE</button>
+      <button type="button" role="radio" data-set-mode="pvp" aria-checked="false">PvP</button>
+      <button type="button" role="radio" data-set-mode="lvl" aria-checked="false">Прокачка</button>
+    </div>
+    <nav class="toc-mobile" aria-label="На странице"></nav>
+  </div>
+</div>
+
+<div class="wrap guide-layout">
+  <aside class="toc-side" aria-label="На странице">
+    <p class="toc-title">На странице</p>
+    <nav class="toc-list"></nav>
+  </aside>
+
+  <main id="main" class="guide">
+    <section id="progress" class="g-section tracker" data-only="lvl" data-class="assassin" aria-labelledby="h-progress">
+      <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-progress">Прогресс прокачки</h2></div>
+      <div class="tracker-bar">
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="21" aria-valuenow="0" aria-label="Прогресс прокачки"><span></span></div>
+        <span class="progress-text"><b class="progress-count">0</b>/21 готово</span>
+        <button type="button" class="btn btn-ghost btn-sm tracker-reset" data-confirm="Снять все отметки для этого класса?">Сбросить прогресс</button>
+      </div>
+      <p class="note">Отмечай шаги по ходу игры. Прогресс хранится в этом браузере, отдельно для каждого класса.</p>
+      <ol class="steps">
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-story">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Старт</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Иди <strong>только по жёлтым (сюжетным) квестам</strong>. Побочный контент подстраивается под уровень, поэтому ничего не теряешь, если сделаешь его позже.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="assassin-core">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 1</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+<img src="../../assets/icons/assassin/quick-slice.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/assassin/savage-roar.webp" width="22" height="22" alt="" loading="lazy">              Первые очки в <strong>Быстрый разрез</strong> (восполняет ману) и <strong>Рев зверя</strong> (накладывает эмблемы). На 8: <em>Восстановление ОМ +20%</em> и <em>СКР умений +20%</em>.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="assassin-insignia">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 1–8</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+<img src="../../assets/icons/assassin/insignia-explosion.webp" width="22" height="22" alt="" loading="lazy">              <strong>Взрыв эмблемы</strong> → 12: <em>Шанс мультиудара +50% при попадании</em> и <em>Сохранение привязки 2 эмблем после [Взрыва эмблемы]</em>. Ставь его внизу основной линии.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-feathers">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">После пролога</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Собери <strong>40 перьев</strong> (120 осколков) для раннего усиления амулета.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="assassin-heart">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Открыто Пронзание сердца</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+<img src="../../assets/icons/assassin/heart-gore.webp" width="22" height="22" alt="" loading="lazy">              <strong>Пронзание сердца</strong> срабатывает на крите — повесь на Q и спамь. До 12 с <em>Чем меньше целей попадания, тем больше увеличение шанса крит. удара (макс. до 20%)</em>.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-daevanion">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 12</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Открывается <strong>Daevanion</strong> (доска Nezekan). Синие узлы дают +1 к уровню скилла — какие брать, смотри в шаге класса ниже.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-hideouts">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 15 / 20 / 25</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Проходи убежища, которые попадаются по пути: первое прохождение даёт камни усиления и кристаллы Daevanion.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-amulet">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">~Ур. 17</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              <strong>Амулет +10</strong>, затем через морф сделай его синим.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-weapon">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">По ходу</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Оружие до <strong>~+10</strong> — самый большой прирост урона на прокачке. Выше до капа не точи.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-zikel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 20</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Открывается доска Zikel — приоритет узлов тот же.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-stigma">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">~Ур. 22</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Вознесение → <strong>открываются стигмы</strong> (4 слота в 1 сезоне глобала). Какие брать — в шаге класса.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="assassin-stigmas">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">~Ур. 22</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+<img src="../../assets/icons/assassin/throw-shadowblade.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/assassin/savage-fang.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/assassin/swift-contract.webp" width="22" height="22" alt="" loading="lazy">              Стигмы: сначала <strong>Кинжал тьмы</strong> (до 10 — сбрасывается при убийстве), затем <strong>Клык хищника</strong> для пачек, <strong>Иллюзорный двойник</strong> и <strong>Обет ускорения</strong>.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-acts23">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Акты 2–3</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Только сюжет — не отвлекайся на карту.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-vaizel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 30</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Открывается доска Vaizel (критический урон).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-act4">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Акт 4</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Здесь снова стоит делать побочные задания и соло-подземелья.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-triniel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 40</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Открывается доска Triniel (мульти-удар; в основном для PvP — может подождать). Пещера Крао требует около 1000 GS.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-ariel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 45</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              <strong>Ariel (PvE) или Azphel (PvP)</strong> — стоят одинаково, ошибка здесь самая дорогая во всей системе.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="assassin-cap">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Кап</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+<img src="../../assets/icons/assassin/savage-roar.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/assassin/heart-gore.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/assassin/insignia-explosion.webp" width="22" height="22" alt="" loading="lazy">              Стартовый билд готов: Быстрый разрез, Рев зверя, Взрыв эмблемы, Пронзание сердца на 12. Дальше эти три к 20 — вкладка PvE.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-shugo">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Кап</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Активности Шуго — полный набор наград за кап (золотое снаряжение, материалы).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-map">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Кап</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Зачисти карту: знаки вопроса, костры, зелёные задания, скрытые кубы, перья. Сдай перья — алтарь 30 уровня даёт титул.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-daily">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ежедневно</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Вход в Nightmare, этажи Трансформации по мере роста GS, подземелья: сначала T2, потом T3 (следи за энергией).
+            </span>
+          </label>
+        </li>
+      </ol>
+    </section>
+
+
+<aside class="glance" data-only="pve" aria-label="Билд коротко">
+  <p class="glance-title">Билд коротко</p>
+    <h3>Основные скиллы</h3>
+  <ul class="core-row">
+  <li title="Рев зверя">
+    <img src="../../assets/icons/assassin/savage-roar.webp" width="52" height="52" alt="Рев зверя" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Рев зверя</span>
+  </li>
+  <li title="Пронзание сердца">
+    <img src="../../assets/icons/assassin/heart-gore.webp" width="52" height="52" alt="Пронзание сердца" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Пронзание сердца</span>
+  </li>
+  <li title="Взрыв эмблемы">
+    <img src="../../assets/icons/assassin/insignia-explosion.webp" width="52" height="52" alt="Взрыв эмблемы" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Взрыв эмблемы</span>
+  </li>
+  <li title="Быстрый разрез">
+    <img src="../../assets/icons/assassin/quick-slice.webp" width="52" height="52" alt="Быстрый разрез" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Быстрый разрез</span>
+  </li>
+  <li title="Внезапное нападение">
+    <img src="../../assets/icons/assassin/ambush.webp" width="52" height="52" alt="Внезапное нападение" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Внезапное нападение</span>
+  </li>
+</ul>
+  <h3>Стигмы</h3>
+  <ol class="loadout">
+  <li class="slot" title="Обет ускорения">
+    <img src="../../assets/icons/assassin/swift-contract.webp" width="56" height="56" alt="Обет ускорения" loading="lazy">
+    <span class="slot-lv">ур. 20</span>
+    <span class="slot-name">Обет ускорения</span>
+  </li>
+  <li class="slot" title="Иллюзорный двойник">
+    <img src="../../assets/icons/assassin/illusive-clone.webp" width="56" height="56" alt="Иллюзорный двойник" loading="lazy">
+    <span class="slot-lv">ур. 20</span>
+    <span class="slot-name">Иллюзорный двойник</span>
+  </li>
+  <li class="slot" title="Стойка уклонения">
+    <img src="../../assets/icons/assassin/evasion-stance.webp" width="56" height="56" alt="Стойка уклонения" loading="lazy">
+    <span class="slot-lv">ур. 10</span>
+    <span class="slot-name">Стойка уклонения</span>
+  </li>
+  <li class="slot" title="Кинжал тьмы">
+    <img src="../../assets/icons/assassin/throw-shadowblade.webp" width="56" height="56" alt="Кинжал тьмы" loading="lazy">
+    <span class="slot-lv">ур. 10</span>
+    <span class="slot-name">Кинжал тьмы</span>
+  </li>
+</ol>
+  <h3>Ключевые пассивки</h3>
+  <ul class="passive-row">
+<li><img src="../../assets/icons/assassin/rear-smite.webp" width="24" height="24" alt="" loading="lazy">Удар с тыла</li><li><img src="../../assets/icons/assassin/assault-stance.webp" width="24" height="24" alt="" loading="lazy">Стойка нападения</li><li><img src="../../assets/icons/assassin/defense-break.webp" width="24" height="24" alt="" loading="lazy">Брешь в защите</li><li><img src="../../assets/icons/assassin/determination.webp" width="24" height="24" alt="" loading="lazy">Готовность</li></ul>
+
+</aside>
+<section id="intro" class="g-section" data-only="pve" aria-labelledby="h-intro">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro">Обзор</h2></div>
+    <p>Убийца — класс бурста с кинжалами. <span class="sk"><img src="../../assets/icons/assassin/savage-roar.webp" width="18" height="18" alt="" loading="lazy">Рев зверя</span> и другие удары накладывают на цель <strong>эмблемы</strong>, <span class="sk"><img src="../../assets/icons/assassin/insignia-explosion.webp" width="18" height="18" alt="" loading="lazy">Взрыв эмблемы</span> превращает их в урон и оглушение, а каждый крит может запустить <span class="sk"><img src="../../assets/icons/assassin/heart-gore.webp" width="18" height="18" alt="" loading="lazy">Пронзание сердца</span>. Основной урон идёт со спины, поэтому позиция решает.</p>
+  <div class="callout accent">
+    <h3>Билд в одном предложении</h3>
+    <p>Набирай эмблемы <span class="sk"><img src="../../assets/icons/assassin/savage-roar.webp" width="18" height="18" alt="" loading="lazy">Рев зверя</span>, взрывай их <span class="sk"><img src="../../assets/icons/assassin/insignia-explosion.webp" width="18" height="18" alt="" loading="lazy">Взрыв эмблемы</span> по откату, спамь <span class="sk"><img src="../../assets/icons/assassin/heart-gore.webp" width="18" height="18" alt="" loading="lazy">Пронзание сердца</span> на каждом крите — а в окно бурста <span class="sk"><img src="../../assets/icons/assassin/illusive-clone.webp" width="18" height="18" alt="" loading="lazy">Иллюзорный двойник</span> снимает с Пронзания сердца перезарядку на 10 сек.</p>
+  </div>
+  <p class="note">Гайд построен на глобальном билде TitanTheF (старт 1–45 и цель на 45+) из его таблицы прогрессии AION 2.</p>
+
+</section>
+<section id="global" class="g-section" data-only="pve pvp" aria-labelledby="h-global">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-global">Глобальный 1 сезон: что меняется</h2></div>
+    <p>Глобальные серверы открываются <strong>5 октября 2026</strong> (ранний доступ для Founder's Pack — с 30 сентября). Что это значит для Убийцы:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 слота стигм, максимум 20.</strong> Глобальный набор держит две стигмы бурста на 20 и две утилитарные на 10.</li>
+      <li><strong>На старте нет скорости боя.</strong> Экипировка 1 сезона почти не даёт скорости атаки, поэтому простой макрос сейчас лучший; твоя скорость — <span class="sk"><img src="../../assets/icons/assassin/swift-contract.webp" width="18" height="18" alt="" loading="lazy">Обет ускорения</span>.</li>
+      <li><strong>Стигмы бурста — вручную.</strong> В начале перезарядки долгие: Иллюзорный двойник, потраченный на мобов, — это много потерянного урона по боссу.</li>
+      <li data-only="pvp"><strong>PvP:</strong> все стартуют в одинаковой слабой экипировке, меты ещё нет.</li>
+    </ul>
+  </div>
+  <p class="note">Активные скиллы и пассивки в глобальной и корейско-тайваньской версиях совпадают; у стигм нет ступени 25.</p>
+
+</section>
+<section id="skills" class="g-section" data-only="pve" aria-labelledby="h-skills">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-skills">Скиллы</h2></div>
+    <p>Три скилла качаются до <strong>20</strong>, три до <strong>16</strong>, остальные остаются на <strong>12</strong>. Уровни дают очки навыков (10), Daevanion (14), кольца (16) и арканы (20).</p>
+  <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/savage-roar.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Рев зверя <span class="badge must">20</span></div>
+    <div class="skill-desc">Филлер без перезарядки: каждый удар накладывает эмблему и сокращает перезарядку Убийцы из сумрака.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>СКР умений +20%</li><li><span class="spec-lv">8</span>Чем меньше целей попадания, тем больше увеличение урона (макс. до 12%)</li><li><span class="spec-lv">12</span>Перезарядка [Убийцы из сумрака] -1s при попадании</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Затрата ОМ -20%</li>
+        <li class="on"><span class="spec-lv">8</span>СКР умений +20%</li>
+        <li class="on"><span class="spec-lv">8</span>Чем меньше целей попадания, тем больше увеличение урона (макс. до 12%)</li>
+        <li class="on"><span class="spec-lv">12</span>Перезарядка [Убийцы из сумрака] -1s при попадании</li>
+        <li class=""><span class="spec-lv">16</span>Притягивание целей поблизости при использовании [Хлестания хищника]</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/heart-gore.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Пронзание сердца <span class="badge must">20</span></div>
+    <div class="skill-desc">Срабатывает на крите; на 16 каждый крит сбрасывает ему перезарядку — основа урона.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Чем меньше целей попадания, тем больше увеличение шанса крит. удара (макс. до 20%)</li><li><span class="spec-lv">12</span>Гарантир. мультиудар при попадании</li><li><span class="spec-lv">16</span>Завершение перезарядки [Пронзания сердца] при попадании крит. ударом</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Поглощение 0.7% ОЗ</li>
+        <li class=""><span class="spec-lv">8</span>Привязка 1 эмблемы на 10s при попадании</li>
+        <li class="on"><span class="spec-lv">8</span>Чем меньше целей попадания, тем больше увеличение шанса крит. удара (макс. до 20%)</li>
+        <li class="on"><span class="spec-lv">12</span>Гарантир. мультиудар при попадании</li>
+        <li class="on"><span class="spec-lv">16</span>Завершение перезарядки [Пронзания сердца] при попадании крит. ударом</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/insignia-explosion.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Взрыв эмблемы <span class="badge must">20</span></div>
+    <div class="skill-desc">Урон и шанс оглушения растут от числа эмблем; после взрыва остаются 2 стака, а на 16 перезарядка короче на 3 сек.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Шанс мультиудара +50% при попадании</li><li><span class="spec-lv">8</span>Сохранение привязки 2 эмблем после [Взрыва эмблемы]</li><li><span class="spec-lv">16</span>Перезарядка -3 сек.</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Добавление эффекта вращения</li>
+        <li class="on"><span class="spec-lv">8</span>Шанс мультиудара +50% при попадании</li>
+        <li class="on"><span class="spec-lv">8</span>Сохранение привязки 2 эмблем после [Взрыва эмблемы]</li>
+        <li class=""><span class="spec-lv">12</span>Длительность Оглушения +1 сек.</li>
+        <li class="on"><span class="spec-lv">16</span>Перезарядка -3 сек.</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/quick-slice.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Быстрый разрез <span class="badge must">16</span></div>
+    <div class="skill-desc">Базовая атака: восполняет ману и сокращает перезарядку Взрыва эмблемы.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Восстановление ОМ +20%</li><li><span class="spec-lv">12</span>Перезарядка [Взрыва эмблемы] -1s при попадании</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>Восстановление ОМ +20%</li>
+        <li class=""><span class="spec-lv">8</span>Поглощение 0.7% ОЗ</li>
+        <li class=""><span class="spec-lv">8</span>Шанс мультиудара +50% при попадании</li>
+        <li class="on"><span class="spec-lv">12</span>Перезарядка [Взрыва эмблемы] -1s при попадании</li>
+        <li class=""><span class="spec-lv">16</span>Крит. удар, несмотря на блок и уклонение</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/ambush.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Внезапное нападение <span class="badge must">16</span></div>
+    <div class="skill-desc">+30% со спины; на 16 — ещё два применения подряд.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Поглощение 3% ОЗ</li><li><span class="spec-lv">16</span>Непрерывное использование +2 р.</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Привязка 2 эмблем на 10s при попадании с тыла</li>
+        <li class="on"><span class="spec-lv">8</span>Поглощение 3% ОЗ</li>
+        <li class=""><span class="spec-lv">8</span>Разрушение защитной оболочки при попадании</li>
+        <li class=""><span class="spec-lv">12</span>Шанс 50% активировать [Удар торнадо] при попадании</li>
+        <li class="on"><span class="spec-lv">16</span>Непрерывное использование +2 р.</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/defiance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Снятие шока <span class="badge must">16</span></div>
+    <div class="skill-desc">Снятие контроля с лечением и большой стойкостью на 16.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>При использовании [Снятия шока] восстанавливает 20% ОЗ</li><li><span class="spec-lv">16</span>Стойкость к урону в PvE +50% и стойкость к урону в PvP +25% во время действия Непреклонности</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Добавляет 2-ное комбо [Ураганный взмах]</li>
+        <li class=""><span class="spec-lv">8</span>При использовании [Снятия шока] восстанавливает 1000 ОД</li>
+        <li class="on"><span class="spec-lv">8</span>При использовании [Снятия шока] восстанавливает 20% ОЗ</li>
+        <li class=""><span class="spec-lv">12</span>Длительность Непреклонности +2 сек.</li>
+        <li class="on"><span class="spec-lv">16</span>Стойкость к урону в PvE +50% и стойкость к урону в PvP +25% во время действия Непреклонности</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/shadowstrike.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Убийца из сумрака <span class="badge opt">12</span></div>
+    <div class="skill-desc">Телепорт за спину цели и оглушение; +20% крит. урона на 5 сек.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Увеличение крит. урона +20% на 5s при попадании</li><li><span class="spec-lv">8</span>Шанс 50% наложить Запечатывание на 5s при попадании</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Длительность Оглушения +1 сек.</li>
+        <li class="on"><span class="spec-lv">8</span>Увеличение крит. урона +20% на 5s при попадании</li>
+        <li class="on"><span class="spec-lv">8</span>Шанс 50% наложить Запечатывание на 5s при попадании</li>
+        <li class=""><span class="spec-lv">12</span>Шанс 50% взять врага в плен на 5s при попадании</li>
+        <li class=""><span class="spec-lv">16</span>Смена на массовое умение</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/shadow-fall.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Бросок тени <span class="badge opt">12</span></div>
+    <div class="skill-desc">Сбивает с ног оглушённую цель и лечит на 10%.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Поглощение 10% ОЗ</li><li><span class="spec-lv">8</span>Перезарядка -5 сек.</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>Поглощение 10% ОЗ</li>
+        <li class=""><span class="spec-lv">8</span>Привязка 3 эмблем на 10s при попадании</li>
+        <li class="on"><span class="spec-lv">8</span>Перезарядка -5 сек.</li>
+        <li class=""><span class="spec-lv">12</span>Длительность Сбивания с ног +1 сек.</li>
+        <li class=""><span class="spec-lv">16</span>Можно использовать на ослепленной цели</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/whirlwind-slice.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Удар торнадо <span class="badge opt">12</span></div>
+    <div class="skill-desc">АоЕ с большой дальностью.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Смена на урон по области</li><li><span class="spec-lv">8</span>Дальность атаки +16 м</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Шанс мультиудара +50% при попадании</li>
+        <li class="on"><span class="spec-lv">8</span>Смена на урон по области</li>
+        <li class="on"><span class="spec-lv">8</span>Дальность атаки +16 м</li>
+        <li class=""><span class="spec-lv">12</span>Шанс Оглушения +20%</li>
+        <li class=""><span class="spec-lv">16</span>Шанс 25% сбросить время перезарядки [Удара торнадо] при успешном уклонении</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/flash-slice.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Ослепляющий разрез <span class="badge opt">12</span></div>
+    <div class="skill-desc">Рывок сквозь цель с ослеплением; на 12 — два применения.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Дальность атаки +6 м</li><li><span class="spec-lv">12</span>Непрерывное использование +1 раз</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Длительность Слепоты +2 сек.</li>
+        <li class="on"><span class="spec-lv">8</span>Дальность атаки +6 м</li>
+        <li class=""><span class="spec-lv">8</span>Чем больше целей попадания, тем больше увеличение урона (макс. до 20%)</li>
+        <li class="on"><span class="spec-lv">12</span>Непрерывное использование +1 раз</li>
+        <li class=""><span class="spec-lv">16</span>Шанс 50% развернуть и оглушить на 3s при попадании по ослепленной цели</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/infiltrate.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Вторжение <span class="badge opt">12</span></div>
+    <div class="skill-desc">Уклонение → за спину цели; на 12 добавляет цепочку Dark Strike.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Дальность атаки [Вторжения] +10 м</li><li><span class="spec-lv">12</span>Добавление 2-ой комбинации [Скрытная атака]</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Восстановление 300 ОД при попадании [Вторжением]</li>
+        <li class="on"><span class="spec-lv">8</span>Дальность атаки [Вторжения] +10 м</li>
+        <li class=""><span class="spec-lv">8</span>Разрушение защитной оболочки при попадании [Вторжением]</li>
+        <li class="on"><span class="spec-lv">12</span>Добавление 2-ой комбинации [Скрытная атака]</li>
+        <li class=""><span class="spec-lv">16</span>Шанс Ослепления от [Вторжения] +20%</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/storm-rampage.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Неистовый шквал <span class="badge opt">12</span></div>
+    <div class="skill-desc">Только по целям под Оглушающей шкалой.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li><li><span class="spec-lv">12</span>Гарантир. мультиудар при попадании</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Поглощение 5% ОЗ</li>
+        <li class=""><span class="spec-lv">8</span>Восстановление 120 ОМ при попадании</li>
+        <li class="on"><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>
+        <li class="on"><span class="spec-lv">12</span>Гарантир. мультиудар при попадании</li>
+        <li class=""><span class="spec-lv">16</span>Перезарядка всех умений -1s при попадании</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="passives" class="g-section" data-only="pve" aria-labelledby="h-passives">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-passives">Пассивки</h2></div>
+    <div class="table-wrap"><table>
+    <thead><tr><th>Пассивка</th><th>Уровень</th><th>Зачем</th></tr></thead>
+    <tbody>
+      <tr><td><span class="sk"><img src="../../assets/icons/assassin/rear-smite.webp" width="18" height="18" alt="" loading="lazy">Удар с тыла</span></td><td>20</td><td>Урон со спины и усиление урона в PvE.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/assassin/assault-stance.webp" width="18" height="18" alt="" loading="lazy">Стойка нападения</span></td><td>18</td><td>Усиление крит. урона; Обет ускорения умножает его.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/assassin/defense-break.webp" width="18" height="18" alt="" loading="lazy">Брешь в защите</span></td><td>15</td><td>−Защита цели после оглушения или Оглушающей шкалы.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/assassin/determination.webp" width="18" height="18" alt="" loading="lazy">Готовность</span></td><td>14</td><td>Доп. урон по целям ниже 30% ОЗ — фаза добивания.</td></tr>
+      <tr><td>Остальные</td><td>10–12</td><td>Шестое чувство, Нанесение яда, Внезапная атака 12; Выжидание момента, Контракт оживления 10. Попадание шоком — 1.</td></tr>
+    </tbody>
+  </table></div>
+
+</section>
+<section id="gear" class="g-section" data-only="pve" aria-labelledby="h-gear">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-gear">Экипировка и статы</h2></div>
+    <div class="callout"><ul>
+    <li><strong>Манастоуны:</strong> Атака, шанс крита, Точность — криты запускают Пронзание сердца.</li>
+    <li>Какой тир экипировки добывать — станет ясно после глобального запуска.</li>
+  </ul></div>
+
+</section>
+<section id="daevanion" class="g-section" data-only="pve pvp" aria-labelledby="h-daevanion">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-daevanion">Доски Daevanion</h2></div>
+    <p>Daevanion поднимает скиллы с 10 до 14 и даёт статы. Каждый синий узел — <strong>+1 уровень</strong> своему скиллу. В таблице TitanTheF есть стартовый маршрут на 1–45 — бери эти узлы по ходу прокачки.</p>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>Приоритет:</strong> синие узлы <span class="sk"><img src="../../assets/icons/assassin/savage-roar.webp" width="18" height="18" alt="" loading="lazy">Рев зверя</span>, <span class="sk"><img src="../../assets/icons/assassin/heart-gore.webp" width="18" height="18" alt="" loading="lazy">Пронзание сердца</span>, <span class="sk"><img src="../../assets/icons/assassin/insignia-explosion.webp" width="18" height="18" alt="" loading="lazy">Взрыв эмблемы</span>, затем оранжевые.</li>
+    <li data-only="pvp"><strong>Приоритет:</strong> синие узлы <span class="sk"><img src="../../assets/icons/assassin/shadowstrike.webp" width="18" height="18" alt="" loading="lazy">Убийца из сумрака</span>, <span class="sk"><img src="../../assets/icons/assassin/flash-slice.webp" width="18" height="18" alt="" loading="lazy">Ослепляющий разрез</span>, <span class="sk"><img src="../../assets/icons/assassin/defiance.webp" width="18" height="18" alt="" loading="lazy">Снятие шока</span>.</li>
+    <li data-only="pve"><strong>Ariel</strong> (PvE) на 45, а не Azphel.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (PvP) на 45, и Triniel раньше.</li>
+  </ul></div>
+  <p><a href="https://clck.su/OhiNF" target="_blank" rel="noopener">Стартовый маршрут Daevanion →</a></p>
+
+</section>
+<section id="stigmas" class="g-section" data-only="pve" aria-labelledby="h-stigmas">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-stigmas">Стигмы</h2></div>
+    <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/swift-contract.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Обет ускорения <span class="badge must">Ур. 20</span></div>
+    <div class="skill-desc">+20% скорости боя на 10 сек. (на 20 ещё +10%) и усиливает Удар с тыла и Стойку нападения.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Затрата ОМ -20% во время действия умения</li><li><span class="spec-lv">10</span>Эффект [Удара с тыла] во время действия умения x1,5</li><li><span class="spec-lv">15</span>Эффект [Стойки нападения] во время действия умения x1,5</li><li><span class="spec-lv">20</span>+10% к СКР боя</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Затрата ОМ -20% во время действия умения</li>
+        <li class="on"><span class="spec-lv">10</span>Эффект [Удара с тыла] во время действия умения x1,5</li>
+        <li class="on"><span class="spec-lv">15</span>Эффект [Стойки нападения] во время действия умения x1,5</li>
+        <li class="on"><span class="spec-lv">20</span>+10% к СКР боя</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/illusive-clone.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Иллюзорный двойник <span class="badge must">Ур. 20</span></div>
+    <div class="skill-desc">Снимает перезарядку с Пронзания сердца и добавляет 20% твоего урона на 10 сек. — окно бурста. Тратить на босса, а не на мобов.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Успешная активация негат. эффектов +10% во время действия умения</li><li><span class="spec-lv">10</span>На время действия эффекта: Увеличение крит. урона +20%</li><li><span class="spec-lv">15</span>Эффект [Выжидания момента] во время действия умения x1,5</li><li><span class="spec-lv">20</span>Шанс 50% нанести доп. урон при крит. ударе во время действия</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Успешная активация негат. эффектов +10% во время действия умения</li>
+        <li class="on"><span class="spec-lv">10</span>На время действия эффекта: Увеличение крит. урона +20%</li>
+        <li class="on"><span class="spec-lv">15</span>Эффект [Выжидания момента] во время действия умения x1,5</li>
+        <li class="on"><span class="spec-lv">20</span>Шанс 50% нанести доп. урон при крит. ударе во время действия</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/evasion-stance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Стойка уклонения <span class="badge must">Ур. 10</span></div>
+    <div class="skill-desc">Гарантированное уклонение от сильного удара; на 10 — в движении.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Непрерывное использование +1 раз</li><li><span class="spec-lv">10</span>Замена на умение с возможностью перемещения</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Непрерывное использование +1 раз</li>
+        <li class="on"><span class="spec-lv">10</span>Замена на умение с возможностью перемещения</li>
+        <li class=""><span class="spec-lv">15</span>СКР движ. +20% на 3s при успешном уклонении</li>
+        <li class=""><span class="spec-lv">20</span>Восстановление 10% ОЗ 1 раз при успешном уклонении</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/throw-shadowblade.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Кинжал тьмы <span class="badge must">Ур. 10</span></div>
+    <div class="skill-desc">Бросок на 20 м с замедлением; на 10 сбрасывается при убийстве — отлично для фарма.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Добавление 2-ой комбинации [Преследование темного кинжала]</li><li><span class="spec-lv">10</span>Завершение перезарядки при уничтожении врага</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Добавление 2-ой комбинации [Преследование темного кинжала]</li>
+        <li class="on"><span class="spec-lv">10</span>Завершение перезарядки при уничтожении врага</li>
+        <li class=""><span class="spec-lv">15</span>Гарантир. крит. удар при попадании</li>
+        <li class=""><span class="spec-lv">20</span>Смена на массовое умение</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/savage-fang.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Клык хищника <span class="badge opt">прокачка</span></div>
+    <div class="skill-desc">АоЕ, накладывающее сразу 5 эмблем — сильно на пачках при прокачке.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Чем больше целей попадания, тем больше увеличение урона (макс. до 20%)</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Чем больше целей попадания, тем больше увеличение урона (макс. до 20%)</li>
+        <li class=""><span class="spec-lv">10</span>Урон по шкале Ошеломления +50</li>
+        <li class=""><span class="spec-lv">15</span>Увеличение урона в PvE +10%, Увеличение урона в PvP +5% на 10s при попадании</li>
+        <li class=""><span class="spec-lv">20</span>Гарантир. крит. удар при попадании</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="macro" class="g-section" data-only="pve" aria-labelledby="h-macro">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro">Макрос и ротация</h2></div>
+    <p>В AION 2 два разных инструмента:</p>
+  <ul>
+    <li><strong>Линия на кнопке</strong> — несколько скиллов на <em>одной</em> кнопке панели. Нажатие применяет готовый скилл с наивысшим приоритетом, а в AION 2 <strong>наивысший приоритет у нижнего слота</strong>. Карточки показывают линии сверху вниз, как в игре.</li>
+    <li><strong>Встроенный макрос</strong> — пока ты держишь его клавишу, он по очереди нажимает кнопки панели и отменяет хвосты анимаций. Скиллы на перезарядке пропускаются.</li>
+  </ul>
+
+  <h3>1. Линии на кнопках</h3>
+  <div class="hotlines">
+<div class="hotline">
+  <div class="hotline-head"><span class="key">СКМ</span><span class="hotline-name">Линия эмблем</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="">
+      <span class="hl-n">4</span>
+      <img src="../../assets/icons/assassin/savage-roar.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Рев зверя</span>
+    </li>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/assassin/ambush.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Внезапное нападение</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/assassin/whirlwind-slice.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Удар торнадо</span>
+    </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/assassin/insignia-explosion.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Взрыв эмблемы</span>
+    </li>
+  </ol>
+  <p class="hotline-order">Порядок как в игре, сверху вниз. 1 = высший приоритет — нижний слот.</p>
+<p class="hotline-note">Рев зверя набирает эмблемы; Взрыв эмблемы получает высший приоритет, как только готов. Эта же линия — встроенный макрос.</p></div><div class="hotline">
+  <div class="hotline-head"><span class="key">1</span><span class="hotline-name">Линия оглушения</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/assassin/shadow-fall.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Бросок тени</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/assassin/infiltrate.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Вторжение</span>
+    </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/assassin/shadowstrike.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Убийца из сумрака</span>
+    </li>
+  </ol>
+  <p class="hotline-order">Порядок как в игре, сверху вниз. 1 = высший приоритет — нижний слот.</p>
+<p class="hotline-note">Убийца из сумрака оглушает, затем Бросок тени сбивает оглушённую цель с ног.</p></div>  </div>
+
+  <h3>2. Встроенный макрос</h3>
+  <p>Поставь линию эмблем в макрос (10 мс) и повесь его на среднюю кнопку мыши. Это всё — TitanTheF держит его таким простым, потому что на старте нет скорости боя.</p>
+  <ol class="macroseq">
+  <li><span class="ms-n">1</span><span class="ms-label">Линия эмблем</span><span class="ms-detail">СКМ · 10 мс</span></li>
+</ol>
+
+  <h3>3. Что нажимать на самом деле</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Держать</span><span class="press-what"><span class="sk"><img src="../../assets/icons/assassin/quick-slice.webp" width="18" height="18" alt="" loading="lazy">Быстрый разрез</span> на <span class="key">ЛКМ</span> и макрос на <span class="key">СКМ</span>.</span></li>
+    <li><span class="press-how">Спамить</span><span class="press-what"><span class="sk"><img src="../../assets/icons/assassin/heart-gore.webp" width="18" height="18" alt="" loading="lazy">Пронзание сердца</span> на <span class="key">Q</span> — он срабатывает только на крите, поэтому жми постоянно.</span></li>
+    <li><span class="press-how">Макрос мыши</span><span class="press-what">Или пусть софт мыши крутит ЛКМ → СКМ → Q (10–30 мс) на одной кнопке-переключателе — TitanTheF использует Witchmana, но подойдёт любой софт мыши.</span></li>
+    <li><span class="press-how">Вручную</span><span class="press-what"><span class="sk"><img src="../../assets/icons/assassin/illusive-clone.webp" width="18" height="18" alt="" loading="lazy">Иллюзорный двойник</span> + <span class="sk"><img src="../../assets/icons/assassin/swift-contract.webp" width="18" height="18" alt="" loading="lazy">Обет ускорения</span> на боссе, <span class="sk"><img src="../../assets/icons/assassin/evasion-stance.webp" width="18" height="18" alt="" loading="lazy">Стойка уклонения</span> от сильных ударов, линия оглушения, <span class="sk"><img src="../../assets/icons/assassin/throw-shadowblade.webp" width="18" height="18" alt="" loading="lazy">Кинжал тьмы</span> на <span class="key">2</span> при фарме.</span></li>
+  </ul>
+
+</section>
+<section id="recap" class="g-section" data-only="pve" aria-labelledby="h-recap">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-recap">Итог</h2></div>
+    <div class="callout accent"><ul>
+    <li><strong>Скиллы:</strong> Рев зверя, Пронзание сердца, Взрыв эмблемы 20; Быстрый разрез, Внезапное нападение, Снятие шока 16; остальное 12.</li>
+    <li><strong>Стигмы:</strong> Обет ускорения 20, Иллюзорный двойник 20, Стойка уклонения 10, Кинжал тьмы 10.</li>
+    <li><strong>Пассивки:</strong> Удар с тыла 20, Стойка нападения 18, Брешь в защите 15, Готовность 14.</li>
+    <li><strong>Манастоуны:</strong> Атака, шанс крита, Точность.</li>
+  </ul></div>
+
+</section>
+<aside class="glance" data-only="pvp" aria-label="Билд коротко">
+  <p class="glance-title">Билд коротко</p>
+    <h3>Основные скиллы</h3>
+  <ul class="core-row">
+  <li title="Убийца из сумрака">
+    <img src="../../assets/icons/assassin/shadowstrike.webp" width="52" height="52" alt="Убийца из сумрака" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Убийца из сумрака</span>
+  </li>
+  <li title="Ослепляющий разрез">
+    <img src="../../assets/icons/assassin/flash-slice.webp" width="52" height="52" alt="Ослепляющий разрез" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Ослепляющий разрез</span>
+  </li>
+  <li title="Пронзание сердца">
+    <img src="../../assets/icons/assassin/heart-gore.webp" width="52" height="52" alt="Пронзание сердца" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Пронзание сердца</span>
+  </li>
+  <li title="Снятие шока">
+    <img src="../../assets/icons/assassin/defiance.webp" width="52" height="52" alt="Снятие шока" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Снятие шока</span>
+  </li>
+</ul>
+  <h3>Стигмы</h3>
+  <ol class="loadout">
+  <li class="slot" title="Иллюзорный двойник">
+    <img src="../../assets/icons/assassin/illusive-clone.webp" width="56" height="56" alt="Иллюзорный двойник" loading="lazy">
+    <span class="slot-lv">ур. 20</span>
+    <span class="slot-name">Иллюзорный двойник</span>
+  </li>
+  <li class="slot" title="Стойка уклонения">
+    <img src="../../assets/icons/assassin/evasion-stance.webp" width="56" height="56" alt="Стойка уклонения" loading="lazy">
+    <span class="slot-lv">ур. 20</span>
+    <span class="slot-name">Стойка уклонения</span>
+  </li>
+  <li class="slot" title="Поступь тени">
+    <img src="../../assets/icons/assassin/shadow-walk.webp" width="56" height="56" alt="Поступь тени" loading="lazy">
+    <span class="slot-lv">ур. 15</span>
+    <span class="slot-name">Поступь тени</span>
+  </li>
+  <li class="slot" title="Обет уклонения">
+    <img src="../../assets/icons/assassin/evasion-contract.webp" width="56" height="56" alt="Обет уклонения" loading="lazy">
+    <span class="slot-lv">ур. 10</span>
+    <span class="slot-name">Обет уклонения</span>
+  </li>
+</ol>
+  <h3>Ключевые пассивки</h3>
+  <ul class="passive-row">
+<li><img src="../../assets/icons/assassin/rear-smite.webp" width="24" height="24" alt="" loading="lazy">Удар с тыла</li><li><img src="../../assets/icons/assassin/assault-stance.webp" width="24" height="24" alt="" loading="lazy">Стойка нападения</li><li><img src="../../assets/icons/assassin/revitalization-contract.webp" width="24" height="24" alt="" loading="lazy">Контракт оживления</li><li><img src="../../assets/icons/assassin/heightened-sixth-sense.webp" width="24" height="24" alt="" loading="lazy">Шестое чувство</li></ul>
+
+</aside>
+<section id="intro-pvp" class="g-section" data-only="pvp" aria-labelledby="h-intro-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro-pvp">Обзор</h2></div>
+    <p>В PvP Убийца выбирает цель, открывает бой из невидимости или со спины, держит её оглушением и ослеплением и убивает раньше, чем она успевает ответить.</p>
+  <p class="note">Таблица TitanTheF посвящена PvE; PvP-выбор ниже построен на данных скиллов глобального клиента и служит отправной точкой, пока не сложится глобальная PvP-мета.</p>
+
+</section>
+<section id="skills-pvp" class="g-section" data-only="pvp" aria-labelledby="h-skills-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-skills-pvp">Скиллы и стигмы</h2></div>
+    <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/shadowstrike.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Убийца из сумрака <span class="badge must">16</span></div>
+    <div class="skill-desc">Телепорт за спину и оглушение; шанс Печати блокирует скиллы цели.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Длительность Оглушения +1 сек.</li><li><span class="spec-lv">8</span>Шанс 50% наложить Запечатывание на 5s при попадании</li><li><span class="spec-lv">16</span>Смена на массовое умение</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>Длительность Оглушения +1 сек.</li>
+        <li class=""><span class="spec-lv">8</span>Увеличение крит. урона +20% на 5s при попадании</li>
+        <li class="on"><span class="spec-lv">8</span>Шанс 50% наложить Запечатывание на 5s при попадании</li>
+        <li class=""><span class="spec-lv">12</span>Шанс 50% взять врага в плен на 5s при попадании</li>
+        <li class="on"><span class="spec-lv">16</span>Смена на массовое умение</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/flash-slice.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Ослепляющий разрез <span class="badge must">16</span></div>
+    <div class="skill-desc">Ослепление, два применения, а на 16 — оглушение по ослеплённым.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Длительность Слепоты +2 сек.</li><li><span class="spec-lv">12</span>Непрерывное использование +1 раз</li><li><span class="spec-lv">16</span>Шанс 50% развернуть и оглушить на 3s при попадании по ослепленной цели</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>Длительность Слепоты +2 сек.</li>
+        <li class=""><span class="spec-lv">8</span>Дальность атаки +6 м</li>
+        <li class=""><span class="spec-lv">8</span>Чем больше целей попадания, тем больше увеличение урона (макс. до 20%)</li>
+        <li class="on"><span class="spec-lv">12</span>Непрерывное использование +1 раз</li>
+        <li class="on"><span class="spec-lv">16</span>Шанс 50% развернуть и оглушить на 3s при попадании по ослепленной цели</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/defiance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Снятие шока <span class="badge must">16</span></div>
+    <div class="skill-desc">Снимает первый жёсткий контроль.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>При использовании [Снятия шока] восстанавливает 20% ОЗ</li><li><span class="spec-lv">12</span>Длительность Непреклонности +2 сек.</li><li><span class="spec-lv">16</span>Стойкость к урону в PvE +50% и стойкость к урону в PvP +25% во время действия Непреклонности</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Добавляет 2-ное комбо [Ураганный взмах]</li>
+        <li class=""><span class="spec-lv">8</span>При использовании [Снятия шока] восстанавливает 1000 ОД</li>
+        <li class="on"><span class="spec-lv">8</span>При использовании [Снятия шока] восстанавливает 20% ОЗ</li>
+        <li class="on"><span class="spec-lv">12</span>Длительность Непреклонности +2 сек.</li>
+        <li class="on"><span class="spec-lv">16</span>Стойкость к урону в PvE +50% и стойкость к урону в PvP +25% во время действия Непреклонности</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/shadow-walk.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Поступь тени <span class="badge must">Ур. 15</span></div>
+    <div class="skill-desc">Невидимость для открытия; на 15 доступна в бою, чтобы сбросить бой.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Гарантированный крит. удар при атаке в состоянии невидимости</li><li><span class="spec-lv">10</span>СКР движ. +20% во время действия умения</li><li><span class="spec-lv">15</span>Можно использовать во время боя</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Гарантированный крит. удар при атаке в состоянии невидимости</li>
+        <li class="on"><span class="spec-lv">10</span>СКР движ. +20% во время действия умения</li>
+        <li class="on"><span class="spec-lv">15</span>Можно использовать во время боя</li>
+        <li class=""><span class="spec-lv">20</span>Сбрасывает время перезарядки при содействии в убийстве игрока</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/evasion-stance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Стойка уклонения <span class="badge must">Ур. 20</span></div>
+    <div class="skill-desc">Уклонись от их бурста; на 20 ещё и лечит.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Непрерывное использование +1 раз</li><li><span class="spec-lv">10</span>Замена на умение с возможностью перемещения</li><li><span class="spec-lv">15</span>СКР движ. +20% на 3s при успешном уклонении</li><li><span class="spec-lv">20</span>Восстановление 10% ОЗ 1 раз при успешном уклонении</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Непрерывное использование +1 раз</li>
+        <li class="on"><span class="spec-lv">10</span>Замена на умение с возможностью перемещения</li>
+        <li class="on"><span class="spec-lv">15</span>СКР движ. +20% на 3s при успешном уклонении</li>
+        <li class="on"><span class="spec-lv">20</span>Восстановление 10% ОЗ 1 раз при успешном уклонении</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/evasion-contract.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Обет уклонения <span class="badge opt">Ур. 10</span></div>
+    <div class="skill-desc">Снимает замедления и обездвиживания и даёт к ним иммунитет.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Шанс 25% получить иммунитет к снарядам во время действия умения</li><li><span class="spec-lv">10</span>СКР движ. +30% во время действия умения</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Шанс 25% получить иммунитет к снарядам во время действия умения</li>
+        <li class="on"><span class="spec-lv">10</span>СКР движ. +30% во время действия умения</li>
+        <li class=""><span class="spec-lv">15</span>Шанс 50% сократить время перезарядки всех умений на 1s при уклонении во время действия умения</li>
+        <li class=""><span class="spec-lv">20</span>УКЛ доп. +100</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/spiral-slice.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Спиральный разрез <span class="badge opt">альт.</span></div>
+    <div class="skill-desc">Снимает баффы и оглушает, если снял два и больше.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Отмена до 2 маг. усилений[</li><li><span class="spec-lv">10</span>Вращение и Оглушение цели на 3s при снятии 2 и более полож. эффектов</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Отмена до 2 маг. усилений[</li>
+        <li class="on"><span class="spec-lv">10</span>Вращение и Оглушение цели на 3s при снятии 2 и более полож. эффектов</li>
+        <li class=""><span class="spec-lv">15</span>Отмена до 3 полож. эффектов</li>
+        <li class=""><span class="spec-lv">20</span>Перезарядка -30 сек.</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="recap-pvp" class="g-section" data-only="pvp" aria-labelledby="h-recap-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-recap-pvp">Итог</h2></div>
+    <div class="callout accent"><ul>
+    <li><strong>Комбо:</strong> Поступь тени → Убийца из сумрака (оглушение) → Ослепляющий разрез → Взрыв эмблемы → Пронзание сердца под Иллюзорным двойником.</li>
+    <li><strong>Стигмы:</strong> Иллюзорный двойник, Стойка уклонения, Поступь тени, Обет уклонения.</li>
+    <li><strong>Daevanion:</strong> Azphel вместо Ariel.</li>
+  </ul></div>
+
+</section>
+<section id="fight-lvl" class="g-section" data-only="lvl" aria-labelledby="h-fight-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-fight-lvl">Как сражаться во время прокачки</h2></div>
+    <div class="callout"><ul>
+    <li><strong>Пачки:</strong> <span class="sk"><img src="../../assets/icons/assassin/savage-fang.webp" width="18" height="18" alt="" loading="lazy">Клык хищника</span> (5 эмблем) → <span class="sk"><img src="../../assets/icons/assassin/insignia-explosion.webp" width="18" height="18" alt="" loading="lazy">Взрыв эмблемы</span> → <span class="sk"><img src="../../assets/icons/assassin/whirlwind-slice.webp" width="18" height="18" alt="" loading="lazy">Удар торнадо</span>; <span class="sk"><img src="../../assets/icons/assassin/throw-shadowblade.webp" width="18" height="18" alt="" loading="lazy">Кинжал тьмы</span> сбрасывается при убийстве — тяни следующих.</li>
+    <li><strong>Элитки:</strong> зайди за спину → <span class="sk"><img src="../../assets/icons/assassin/ambush.webp" width="18" height="18" alt="" loading="lazy">Внезапное нападение</span> → <span class="sk"><img src="../../assets/icons/assassin/savage-roar.webp" width="18" height="18" alt="" loading="lazy">Рев зверя</span> набирает эмблемы → Взрыв эмблемы → <span class="sk"><img src="../../assets/icons/assassin/heart-gore.webp" width="18" height="18" alt="" loading="lazy">Пронзание сердца</span> на критах.</li>
+    <li><strong>Мана:</strong> <span class="sk"><img src="../../assets/icons/assassin/quick-slice.webp" width="18" height="18" alt="" loading="lazy">Быстрый разрез</span> восполняет ману — держи его на ЛКМ.</li>
+    <li><strong>Мало ОЗ:</strong> <span class="sk"><img src="../../assets/icons/assassin/shadow-fall.webp" width="18" height="18" alt="" loading="lazy">Бросок тени</span> лечит; <span class="sk"><img src="../../assets/icons/assassin/defiance.webp" width="18" height="18" alt="" loading="lazy">Снятие шока</span> лечит, когда тебя законтролили.</li>
+  </ul></div>
+
+</section>
+<section id="macro-lvl" class="g-section" data-only="lvl" aria-labelledby="h-macro-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro-lvl">Макрос на прокачке</h2></div>
+    <p>Стартовая настройка TitanTheF работает с 1 уровня: линия эмблем во встроенном макросе на средней кнопке мыши, Быстрый разрез на ЛКМ и Пронзание сердца на Q. Для фарма мобов он использует Кинжал тьмы (2) и ПКМ. Ранний билд на 1–45: Быстрый разрез, Рев зверя, Взрыв эмблемы и Пронзание сердца до 12, всё остальное до 8.</p>
+  <div class="hotlines">
+    <div class="hotline">
+  <div class="hotline-head"><span class="key">СКМ</span><span class="hotline-name">Линия эмблем</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="">
+      <span class="hl-n">4</span>
+      <img src="../../assets/icons/assassin/savage-roar.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Рев зверя</span>
+    </li>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/assassin/ambush.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Внезапное нападение</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/assassin/whirlwind-slice.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Удар торнадо</span>
+    </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/assassin/insignia-explosion.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Взрыв эмблемы</span>
+    </li>
+  </ol>
+  <p class="hotline-order">Порядок как в игре, сверху вниз. 1 = высший приоритет — нижний слот.</p>
+</div>
+  </div>
+  <p><a href="https://aion2t.com/ru/simulator?job=5&amp;b=iUjpcy" target="_blank" rel="noopener">Стартовый билд 1–45 (aion2t) →</a> · <a href="https://aion2t.com/ru/simulator?job=5&amp;b=MeyRht" target="_blank" rel="noopener">Цель на 45+ →</a></p>
+
+</section>
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">Источники</h2>
+  <ul>
+    <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener">TitanTheF — таблица прогрессии AION 2</a> (вкладка «Ассасин») — билды, панель, макрос, статы</li>
+    <li><a href="https://aion2t.com/ru/simulator?job=5&amp;b=MeyRht" target="_blank" rel="noopener">aion2t.com</a> — стартовый и 45+ билды TitanTheF (уровни, специализации, стигмы, пассивки)</li>
+    <li><a href="https://questlog.gg/aion-2/ru/db/skills/assassin" target="_blank" rel="noopener">questlog.gg</a> — данные скиллов из глобального клиента</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — как работают линии и встроенный макрос</li>
+  </ul>
+  <p class="sources-all"><a href="../../ru/sources/">Все источники и авторы →</a></p>
+</section>  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../ru/">AION 2 Гайды</a>
+      <p>Неофициальный фанатский сайт, не связан с NCSOFT. AION 2 и иконки скиллов © NCSOFT.</p>
+      <p>Проверено: 2026-09-27 (до глобального запуска).</p>
+      <p><a href="../../ru/sources/">Все источники и авторы</a> · <button type="button" class="link-btn wn-open">История изменений</button></p>
+    </div>
+  </div>
+</footer>
+<dialog class="whatsnew" data-id="2026-09-27-chanter-assassin" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title" data-latest="Что нового" data-history="История изменений">Что нового</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="Понятно">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <section class="wn-entry">
+      <time class="wn-date" datetime="2026-09-27">27 сентября 2026</time>
+      <ul>
+        <li><a href="../../ru/chanter/"><strong>Гайд на Чародея</strong> — глобальный билд TitanTheF: скиллы, стигмы, мантры и простой стартовый макрос.</a></li>
+        <li><a href="../../ru/assassin/"><strong>Гайд на Убийцу</strong> — эмблемы, Пронзание сердца и окно бурста с Иллюзорным двойником, по глобальному билду TitanTheF.</a></li>
+        <li><a href="../../ru/ranger/"><strong>Лучник переделан под глобалку</strong> — реальные уровни скиллов (16), глобальный набор стигм и цели для аркан вместо корейского эндгейма.</a></li>
+        <li><a href="../../ru/gladiator/"><strong>Макросы исправлены</strong> — у нижнего слота линии наивысший приоритет; макросы на прокачке для каждого класса (Grobs).</a></li>
+      </ul>
+    </section>
+    <section class="wn-entry wn-older">
+      <time class="wn-date" datetime="2026-09-27">27 сентября 2026</time>
+      <ul>
+        <li><a href="../../ru/templar/"><strong>Гайд на Стража</strong> — PvE, PvP и прокачка: скиллы, стигмы под 4 слота глобальной версии и настройка макроса.</a></li>
+        <li><a href="../../ru/week-1/"><strong>Первая неделя</strong> — что успеть до первого недельного сброса и разовые цели, которые легко упустить.</a></li>
+        <li><a href="../../ru/weekly/"><strong>Недельный трекер</strong> — недельные входы и энергия Odyle для всех твоих персонажей, с таймером сброса. Чек-лист очищается сам каждую неделю.</a></li>
+      </ul>
+    </section>
+    <button class="btn btn-primary wn-ok" value="close">Понятно</button>
+  </form>
+</dialog>
+<script src="../../assets/js/site.js" defer></script>
+</body>
+</html>

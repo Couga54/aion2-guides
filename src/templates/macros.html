@@ -94,22 +94,25 @@
 {%- endmacro %}
 
 {#
-  Hotbar line: one hotbar button holding several skills; the game fires the first one that's ready.
-  key: key label, name: short line name, slugs: skills top → bottom (priority order),
-  opt: slugs shown as optional (dashed) at the end.
+  Hotbar line: one hotbar button holding several skills.
+  slugs: skills in PRIORITY order (first = fires first). AION 2 gives the BOTTOM slot of a line the
+  highest priority, so the list is drawn in in-game order (top -> bottom) with the priority number
+  on each row. opt: optional skills, lowest priority (drawn at the top, dashed).
 #}
 {% macro hotline(key, name, slugs, opt=[]) -%}
+{% set rows = slugs + opt %}
 <div class="hotline">
   <div class="hotline-head"><span class="key">{{ key }}</span><span class="hotline-name">{{ name }}</span></div>
-  <ol class="hotline-skills">
-    {% for slug in slugs + opt %}
-    <li class="{{ 'is-opt' if slug in opt }}">
-      <span class="hl-n">{{ loop.index }}</span>
+  <ol class="hotline-skills" reversed>
+    {% for slug in rows|reverse %}
+    <li class="{{ 'is-opt' if slug in opt }}{{ ' is-first' if loop.last }}">
+      <span class="hl-n">{{ rows|length - loop.index0 }}</span>
       <img src="{{ icon_url(slug) }}" width="40" height="40" alt="" loading="lazy">
       <span class="hl-name">{{ skill_data(slug)[lang].name }}</span>
     </li>
     {% endfor %}
   </ol>
+  <p class="hotline-order">{{ t.hl_order }}</p>
   {% set note = caller() if caller is defined else '' %}
   {% if note|trim %}<p class="hotline-note">{{ note }}</p>{% endif %}
 </div>

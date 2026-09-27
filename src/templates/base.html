@@ -83,7 +83,7 @@
       <a class="lang-switch" href="{{ root }}{{ other_lang }}/{{ path }}" hreflang="{{ other_lang }}" lang="{{ other_lang }}" data-keep-query>
         <span aria-hidden="true">{{ other_lang|upper }}</span><span class="sr-only">{{ t.switch_lang }}</span>
       </a>
-      {% if CHANGELOG %}<button class="icon-btn wn-open wn-top" type="button" aria-label="{{ t.wn_open }}" title="{{ t.wn_open }}">
+      {% if CHANGELOG %}<button class="icon-btn wn-open wn-top" type="button" aria-label="{{ t.wn_history }}" title="{{ t.wn_history }}">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
       </button>{% endif %}
       <button class="icon-btn theme-toggle" type="button" aria-label="{{ t.theme }}" title="{{ t.theme }}">
@@ -101,7 +101,7 @@
       <a class="brand brand-sm" href="{{ root }}{{ lang }}/">{{ t.site_name }}</a>
       <p>{{ t.footer_disclaimer }}</p>
       <p>{{ t.footer_updated }}: {{ updated }} ({{ t.footer_before_launch }}).</p>
-      <p><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }}</a> · <button type="button" class="link-btn wn-open">{{ t.wn_open }}</button></p>
+      <p><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }}</a> · <button type="button" class="link-btn wn-open">{{ t.wn_history }}</button></p>
     </div>
     {% block footer_extra %}{% endblock %}
   </div>
@@ -110,13 +110,13 @@
 <dialog class="whatsnew" data-id="{{ CHANGELOG[0].id }}" aria-labelledby="wn-title">
   <form method="dialog" class="wn-in">
     <div class="wn-head">
-      <h2 id="wn-title">{{ t.wn_title }}</h2>
+      <h2 id="wn-title" data-latest="{{ t.wn_title }}" data-history="{{ t.wn_history }}">{{ t.wn_title }}</h2>
       <button class="icon-btn wn-x" value="close" aria-label="{{ t.wn_close }}">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
     </div>
-    {% for e in CHANGELOG[:3] %}
-    <section class="wn-entry">
+    {% for e in CHANGELOG %}
+    <section class="wn-entry{{ ' wn-older' if not loop.first }}">
       <time class="wn-date" datetime="{{ e.date }}">{{ fmt_day(e.date, lang) }}</time>
       <ul>
         {% for it in e['items'] %}

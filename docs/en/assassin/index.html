@@ -1,0 +1,1194 @@
+<!doctype html>
+<html lang="en" data-mode="pve" data-class="assassin">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Assassin — AION 2 Guides (PvE, PvP, Leveling)</title>
+<meta name="description" content="Insignia stacks, crits that fire Heart Gore and a clone that removes its cooldown — the highest burst in melee, if you stay behind the target.">
+<link rel="canonical" href="https://couga54.github.io/aion2-guides/en/assassin/">
+<link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/assassin/">
+<link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/assassin/">
+<link rel="alternate" hreflang="x-default" href="https://couga54.github.io/aion2-guides/en/assassin/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Guides">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Assassin — AION 2 Guides (PvE, PvP, Leveling)">
+<meta property="og:description" content="Insignia stacks, crits that fire Heart Gore and a clone that removes its cooldown — the highest burst in melee, if you stay behind the target.">
+<meta property="og:url" content="https://couga54.github.io/aion2-guides/en/assassin/">
+<meta property="og:image" content="https://couga54.github.io/aion2-guides/assets/og/assassin-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var modes = ['pve', 'pvp', 'lvl'];
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+  })(document.documentElement);
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css">
+</head>
+<body class="page-class accent-violet">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../en/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
+      <span>AION 2 Guides</span>
+    </a>
+    <details class="class-menu">
+      <summary class="class-menu-btn accent-violet">
+<img src="../../assets/classes/assassin.webp" width="24" height="24" alt=""><span>Assassin</span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="Classes">
+        <a href="../../en/gladiator/" class="cm-item accent-crimson">
+          <img src="../../assets/classes/gladiator.webp" width="44" height="44" alt=""><span class="cm-name">Gladiator</span><span class="cm-role">Melee DPS · bruiser</span>
+        </a>
+        <a href="../../en/ranger/" class="cm-item accent-emerald">
+          <img src="../../assets/classes/ranger.webp" width="44" height="44" alt=""><span class="cm-name">Ranger</span><span class="cm-role">Ranged DPS · kiter</span>
+        </a>
+        <a href="../../en/templar/" class="cm-item accent-sapphire">
+          <img src="../../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Templar</span><span class="cm-role">Tank · party buffer</span>
+        </a>
+        <a href="../../en/assassin/" class="cm-item accent-violet" aria-current="page">
+          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Assassin</span><span class="cm-role">Melee DPS · burst</span>
+        </a>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Sorcerer</span><span class="cm-role">Coming soon</span>
+        </span>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Elementalist</span><span class="cm-role">Coming soon</span>
+        </span>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Cleric</span><span class="cm-role">Coming soon</span>
+        </span>
+        <a href="../../en/chanter/" class="cm-item accent-amber">
+          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Chanter</span><span class="cm-role">Melee support · buffer</span>
+        </a>
+      </nav>
+    </details>
+    <div class="topbar-tools">
+      <a class="src-nav" href="../../en/week-1/" title="First week: what to finish before the reset">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+        <span>Week 1</span>
+      </a>
+      <a class="src-nav" href="../../en/weekly/" title="Weekly tracker">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+        <span>Weekly</span>
+      </a>
+      <a class="src-nav src-nav-sources" href="../../en/sources/" title="Sources &amp; credits">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+        <span>Sources</span>
+      </a>
+      <a class="lang-switch" href="../../ru/assassin/" hreflang="ru" lang="ru" data-keep-query>
+        <span aria-hidden="true">RU</span><span class="sr-only">Русский</span>
+      </a>
+<button class="icon-btn wn-open wn-top" type="button" aria-label="Changelog" title="Changelog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </button>      <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="class-backdrop" aria-hidden="true" style="--art:url('../../assets/art/assassin.webp')"></div>
+<section class="class-hero">
+  <img class="class-hero-art" src="../../assets/art/assassin.webp" alt="" aria-hidden="true" fetchpriority="high">
+  <div class="wrap class-hero-in">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../en/">All classes</a><span aria-hidden="true">/</span><span>Assassin</span></nav>
+    <div class="class-hero-main">
+      <img class="class-hero-emblem" src="../../assets/classes/assassin.webp" width="96" height="96" alt="">
+      <div>
+        <p class="kicker"><span data-only="pve">PvE</span><span data-only="pvp">PvP</span><span data-only="lvl">Leveling</span> · Global Season 1</p>
+        <h1>Assassin</h1>
+        <p class="class-hero-pitch">Insignia stacks, crits that fire Heart Gore and a clone that removes its cooldown — the highest burst in melee, if you stay behind the target.</p>
+        <p class="guide-ver"><span>Updated: <time datetime="2026-09-27">Sep 27, 2026</time></span><span>Patch: <b>TBD</b></span></p>
+      </div>
+    </div>
+    <dl class="class-facts">
+      <div><dt>Role</dt><dd>Melee DPS · burst</dd></div>
+      <div><dt>Weapon</dt><dd>Daggers</dd></div>
+      <div><dt>Difficulty</dt><dd class="diff"><i class="on"></i><i class="on"></i><i class="on"></i><span>Hard</span></dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="guidebar">
+  <div class="wrap guidebar-in">
+    <div class="mode-switch" role="radiogroup" aria-label="Guide mode">
+      <button type="button" role="radio" data-set-mode="pve" aria-checked="true">PvE</button>
+      <button type="button" role="radio" data-set-mode="pvp" aria-checked="false">PvP</button>
+      <button type="button" role="radio" data-set-mode="lvl" aria-checked="false">Leveling</button>
+    </div>
+    <nav class="toc-mobile" aria-label="On this page"></nav>
+  </div>
+</div>
+
+<div class="wrap guide-layout">
+  <aside class="toc-side" aria-label="On this page">
+    <p class="toc-title">On this page</p>
+    <nav class="toc-list"></nav>
+  </aside>
+
+  <main id="main" class="guide">
+    <section id="progress" class="g-section tracker" data-only="lvl" data-class="assassin" aria-labelledby="h-progress">
+      <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-progress">Leveling progress</h2></div>
+      <div class="tracker-bar">
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="21" aria-valuenow="0" aria-label="Leveling progress"><span></span></div>
+        <span class="progress-text"><b class="progress-count">0</b>/21 done</span>
+        <button type="button" class="btn btn-ghost btn-sm tracker-reset" data-confirm="Clear all ticked steps for this class?">Reset progress</button>
+      </div>
+      <p class="note">Tick steps as you go. Progress is saved in this browser, separately for each class.</p>
+      <ol class="steps">
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-story">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Start</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Follow <strong>yellow (main story) quests only</strong>. Side content scales with your level, so nothing is lost by doing it later.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="assassin-core">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 1</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/assassin/quick-slice.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/assassin/savage-roar.webp" width="22" height="22" alt="" loading="lazy">              First points into <strong>Quick Slice</strong> (restores MP) and <strong>Savage Roar</strong> (engraves Insignias). At 8: <em>+20% MP restored</em> and <em>+20% Skill Speed</em>.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="assassin-insignia">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 1–8</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/assassin/insignia-explosion.webp" width="22" height="22" alt="" loading="lazy">              <strong>Insignia Explosion</strong> → 12: <em>+50% Multi-Hit on hit</em> and <em>Keep 2 stacks of Insignias after [Insignia Explosion]</em>. Put it at the bottom of your main line.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-feathers">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">After prologue</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Collect <strong>40 feathers</strong> (120 shards) for an early amulet upgrade.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="assassin-heart">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Heart Gore unlocked</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/assassin/heart-gore.webp" width="22" height="22" alt="" loading="lazy">              <strong>Heart Gore</strong> fires on crits — put it on Q and spam it. To 12 with <em>Up to +20% Critical Hit when less targets hit</em>.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-daevanion">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 12</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              <strong>Daevanion</strong> unlocks (Nezekan board). Blue nodes = +1 skill level — see your class step below.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-hideouts">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 15 / 20 / 25</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Clear hideouts that are on your route — first clears give Enhance Stones and Daevanion Crystals.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-amulet">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">~Lv 17</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              <strong>Amulet +10</strong>, then Morph it into the blue version.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-weapon">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Any time</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Weapon to <strong>~+10</strong> — the biggest damage jump while leveling. Don't push further before the cap.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-zikel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 20</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Zikel board opens — same node priority as before.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-stigma">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv ~22</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Ascension → <strong>stigmas unlock</strong> (4 slots in global Season 1). Which ones — see your class step.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="assassin-stigmas">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv ~22</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/assassin/throw-shadowblade.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/assassin/savage-fang.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/assassin/swift-contract.webp" width="22" height="22" alt="" loading="lazy">              Stigmas: <strong>Throw Shadowblade</strong> first (to 10 — it resets on a kill), then <strong>Savage Fang</strong> for packs, <strong>Illusive Clone</strong> and <strong>Swift Contract</strong>.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-acts23">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Acts 2–3</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Story only — don't get distracted by the map.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-vaizel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 30</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Vaizel board opens (critical damage).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-act4">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Act 4</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Side quests and solo dungeons are worth doing again here.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-triniel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 40</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Triniel board opens (multi-hit; mostly PvP — can wait). Krao Cave expects about 1000 Gear Score.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-ariel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 45</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              <strong>Ariel (PvE) or Azphel (PvP)</strong> — same cost, choosing wrong is the most expensive mistake in the system.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="assassin-cap">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Cap</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/assassin/savage-roar.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/assassin/heart-gore.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/assassin/insignia-explosion.webp" width="22" height="22" alt="" loading="lazy">              Start build done: Quick Slice, Savage Roar, Insignia Explosion, Heart Gore at 12. Next: those three toward 20 — see the PvE tab.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-shugo">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Cap</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Shugo activities for the full level-cap reward set (gold gear, materials).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-map">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Cap</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Sweep the map: question marks, bonfires, green quests, hidden cubes, feathers. Turn in feathers — altar Lv 30 gives a title.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-daily">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Daily</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Nightmare entry, Transformation floors as your GS allows, dungeons T2 before T3 (watch your energy).
+            </span>
+          </label>
+        </li>
+      </ol>
+    </section>
+
+
+<aside class="glance" data-only="pve" aria-label="Build at a glance">
+  <p class="glance-title">Build at a glance</p>
+    <h3>Core skills</h3>
+  <ul class="core-row">
+  <li title="Savage Roar">
+    <img src="../../assets/icons/assassin/savage-roar.webp" width="52" height="52" alt="Savage Roar" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Savage Roar</span>
+  </li>
+  <li title="Heart Gore">
+    <img src="../../assets/icons/assassin/heart-gore.webp" width="52" height="52" alt="Heart Gore" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Heart Gore</span>
+  </li>
+  <li title="Insignia Explosion">
+    <img src="../../assets/icons/assassin/insignia-explosion.webp" width="52" height="52" alt="Insignia Explosion" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Insignia Explosion</span>
+  </li>
+  <li title="Quick Slice">
+    <img src="../../assets/icons/assassin/quick-slice.webp" width="52" height="52" alt="Quick Slice" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Quick Slice</span>
+  </li>
+  <li title="Ambush">
+    <img src="../../assets/icons/assassin/ambush.webp" width="52" height="52" alt="Ambush" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Ambush</span>
+  </li>
+</ul>
+  <h3>Stigma loadout</h3>
+  <ol class="loadout">
+  <li class="slot" title="Swift Contract">
+    <img src="../../assets/icons/assassin/swift-contract.webp" width="56" height="56" alt="Swift Contract" loading="lazy">
+    <span class="slot-lv">Lv 20</span>
+    <span class="slot-name">Swift Contract</span>
+  </li>
+  <li class="slot" title="Illusive Clone">
+    <img src="../../assets/icons/assassin/illusive-clone.webp" width="56" height="56" alt="Illusive Clone" loading="lazy">
+    <span class="slot-lv">Lv 20</span>
+    <span class="slot-name">Illusive Clone</span>
+  </li>
+  <li class="slot" title="Evasion Stance">
+    <img src="../../assets/icons/assassin/evasion-stance.webp" width="56" height="56" alt="Evasion Stance" loading="lazy">
+    <span class="slot-lv">Lv 10</span>
+    <span class="slot-name">Evasion Stance</span>
+  </li>
+  <li class="slot" title="Throw Shadowblade">
+    <img src="../../assets/icons/assassin/throw-shadowblade.webp" width="56" height="56" alt="Throw Shadowblade" loading="lazy">
+    <span class="slot-lv">Lv 10</span>
+    <span class="slot-name">Throw Shadowblade</span>
+  </li>
+</ol>
+  <h3>Key passives</h3>
+  <ul class="passive-row">
+<li><img src="../../assets/icons/assassin/rear-smite.webp" width="24" height="24" alt="" loading="lazy">Rear Smite</li><li><img src="../../assets/icons/assassin/assault-stance.webp" width="24" height="24" alt="" loading="lazy">Assault Stance</li><li><img src="../../assets/icons/assassin/defense-break.webp" width="24" height="24" alt="" loading="lazy">Defense Break</li><li><img src="../../assets/icons/assassin/determination.webp" width="24" height="24" alt="" loading="lazy">Determination</li></ul>
+
+</aside>
+<section id="intro" class="g-section" data-only="pve" aria-labelledby="h-intro">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro">Overview</h2></div>
+    <p>The Assassin is a dagger burst class. <span class="sk"><img src="../../assets/icons/assassin/savage-roar.webp" width="18" height="18" alt="" loading="lazy">Savage Roar</span> and other hits engrave <strong>Insignias</strong> on the target, <span class="sk"><img src="../../assets/icons/assassin/insignia-explosion.webp" width="18" height="18" alt="" loading="lazy">Insignia Explosion</span> cashes them in for damage and a stun, and every crit can fire <span class="sk"><img src="../../assets/icons/assassin/heart-gore.webp" width="18" height="18" alt="" loading="lazy">Heart Gore</span>. Most of the damage comes from the back, so positioning matters.</p>
+  <div class="callout accent">
+    <h3>The build in one sentence</h3>
+    <p>Stack Insignias with <span class="sk"><img src="../../assets/icons/assassin/savage-roar.webp" width="18" height="18" alt="" loading="lazy">Savage Roar</span>, pop <span class="sk"><img src="../../assets/icons/assassin/insignia-explosion.webp" width="18" height="18" alt="" loading="lazy">Insignia Explosion</span> on cooldown, spam <span class="sk"><img src="../../assets/icons/assassin/heart-gore.webp" width="18" height="18" alt="" loading="lazy">Heart Gore</span> on every crit — and in a burst window <span class="sk"><img src="../../assets/icons/assassin/illusive-clone.webp" width="18" height="18" alt="" loading="lazy">Illusive Clone</span> removes Heart Gore's cooldown for 10s.</p>
+  </div>
+  <p class="note">This guide follows TitanTheF's global build (start 1–45 and the 45+ goal) from his AION 2 progression sheet.</p>
+
+</section>
+<section id="global" class="g-section" data-only="pve pvp" aria-labelledby="h-global">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-global">Global Season 1: what changes</h2></div>
+    <p>Global servers open on <strong>October 5, 2026</strong> (Founder's early access from September 30). What that means for the Assassin:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 stigma slots, capped at 20.</strong> The global set keeps the two burst stigmas at 20 and two utility picks at 10.</li>
+      <li><strong>No combat speed at the start.</strong> Season 1 gear gives little attack speed, so a simple macro is the best one for now; <span class="sk"><img src="../../assets/icons/assassin/swift-contract.webp" width="18" height="18" alt="" loading="lazy">Swift Contract</span> is your speed.</li>
+      <li><strong>Burst stigmas by hand.</strong> Cooldowns are long early on — Illusive Clone wasted on trash is a lot of lost boss damage.</li>
+      <li data-only="pvp"><strong>PvP:</strong> everyone starts on the same limited gear and no meta has formed yet.</li>
+    </ul>
+  </div>
+  <p class="note">Active skills and passives are identical in the global and KR/TW data; stigmas lose their level-25 tier.</p>
+
+</section>
+<section id="skills" class="g-section" data-only="pve" aria-labelledby="h-skills">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-skills">Skills</h2></div>
+    <p>Three skills go to <strong>20</strong>, three to <strong>16</strong>, the rest stay at <strong>12</strong>. Levels come from skill points (10), Daevanion (14), rings (16) and arcana (20).</p>
+  <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/savage-roar.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Savage Roar <span class="badge must">20</span></div>
+    <div class="skill-desc">No-cooldown filler that engraves an Insignia on every hit and shortens Shadowstrike's cooldown.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+20% Skill Speed</li><li><span class="spec-lv">8</span>Deals up to 12% more damage when less targets are hit</li><li><span class="spec-lv">12</span>-1s [Shadowstrike] cooldown on hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>-20% MP consumed</li>
+        <li class="on"><span class="spec-lv">8</span>+20% Skill Speed</li>
+        <li class="on"><span class="spec-lv">8</span>Deals up to 12% more damage when less targets are hit</li>
+        <li class="on"><span class="spec-lv">12</span>-1s [Shadowstrike] cooldown on hit</li>
+        <li class=""><span class="spec-lv">16</span>Pulls nearby targets on using [Savage Smash]</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/heart-gore.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Heart Gore <span class="badge must">20</span></div>
+    <div class="skill-desc">Fires on a crit; at 16 every crit resets its cooldown — the core of the damage.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Up to +20% Critical Hit when less targets hit</li><li><span class="spec-lv">12</span>Multi-Hit on hit</li><li><span class="spec-lv">16</span>Resets [Heart Gore] cooldown on landing a Critical Hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Absorbs 0.7% HP</li>
+        <li class=""><span class="spec-lv">8</span>Engraves 1 Insignia for 10s on hit</li>
+        <li class="on"><span class="spec-lv">8</span>Up to +20% Critical Hit when less targets hit</li>
+        <li class="on"><span class="spec-lv">12</span>Multi-Hit on hit</li>
+        <li class="on"><span class="spec-lv">16</span>Resets [Heart Gore] cooldown on landing a Critical Hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/insignia-explosion.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Insignia Explosion <span class="badge must">20</span></div>
+    <div class="skill-desc">Damage and stun scale with Insignia stacks; keep 2 stacks after the explosion and −3s cooldown at 16.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+50% Multi-Hit on hit</li><li><span class="spec-lv">8</span>Keep 2 stacks of Insignias after [Insignia Explosion]</li><li><span class="spec-lv">16</span>-3s cooldown</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Adds rotate effect</li>
+        <li class="on"><span class="spec-lv">8</span>+50% Multi-Hit on hit</li>
+        <li class="on"><span class="spec-lv">8</span>Keep 2 stacks of Insignias after [Insignia Explosion]</li>
+        <li class=""><span class="spec-lv">12</span>+1s Stun duration</li>
+        <li class="on"><span class="spec-lv">16</span>-3s cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/quick-slice.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Quick Slice <span class="badge must">16</span></div>
+    <div class="skill-desc">Basic attack: restores MP and shortens Insignia Explosion's cooldown.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+20% MP restored</li><li><span class="spec-lv">12</span>-1s [Insignia Explosion] cooldown on hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>+20% MP restored</li>
+        <li class=""><span class="spec-lv">8</span>Absorbs 0.7% HP</li>
+        <li class=""><span class="spec-lv">8</span>+50% Multi-Hit on hit</li>
+        <li class="on"><span class="spec-lv">12</span>-1s [Insignia Explosion] cooldown on hit</li>
+        <li class=""><span class="spec-lv">16</span>Ignores Block and Evasion and lands as a Critical Hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/ambush.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Ambush <span class="badge must">16</span></div>
+    <div class="skill-desc">+30% from the back; at 16 two extra uses.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Absorbs 3% HP</li><li><span class="spec-lv">16</span>+2 consecutive uses</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Engraves 2 Insignias for 10s on landing as a Back attack</li>
+        <li class="on"><span class="spec-lv">8</span>Absorbs 3% HP</li>
+        <li class=""><span class="spec-lv">8</span>Breaks Protective Shields on hit</li>
+        <li class=""><span class="spec-lv">12</span>50% chance to trigger [Whirlwind Slice] on hit</li>
+        <li class="on"><span class="spec-lv">16</span>+2 consecutive uses</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/defiance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Defiance <span class="badge must">16</span></div>
+    <div class="skill-desc">CC break with a heal and big tolerance at 16.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Restores 20% HP on using [Defiance]</li><li><span class="spec-lv">16</span>+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Adds [Storm Slice] Chain Skill</li>
+        <li class=""><span class="spec-lv">8</span>Restores 1000 Stamina on using [Defiance]</li>
+        <li class="on"><span class="spec-lv">8</span>Restores 20% HP on using [Defiance]</li>
+        <li class=""><span class="spec-lv">12</span>+2s Tenacity duration</li>
+        <li class="on"><span class="spec-lv">16</span>+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/shadowstrike.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Shadowstrike <span class="badge opt">12</span></div>
+    <div class="skill-desc">Teleport behind the target and stun; +20% Critical Damage for 5s.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+20% caster Critical Damage Boost for 5s on hit</li><li><span class="spec-lv">8</span>50% chance to inflict Seal for 5s on hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>+1s Stun duration</li>
+        <li class="on"><span class="spec-lv">8</span>+20% caster Critical Damage Boost for 5s on hit</li>
+        <li class="on"><span class="spec-lv">8</span>50% chance to inflict Seal for 5s on hit</li>
+        <li class=""><span class="spec-lv">12</span>50% chance to inflict Root for 5s on hit</li>
+        <li class=""><span class="spec-lv">16</span>Changes to AoE Skill</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/shadow-fall.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Shadow Fall <span class="badge opt">12</span></div>
+    <div class="skill-desc">Knockdown on a stunned target, with a 10% heal.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Absorbs 10% HP</li><li><span class="spec-lv">8</span>-5s cooldown</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>Absorbs 10% HP</li>
+        <li class=""><span class="spec-lv">8</span>Engraves 3 Insignias for 10s on hit</li>
+        <li class="on"><span class="spec-lv">8</span>-5s cooldown</li>
+        <li class=""><span class="spec-lv">12</span>+1s Knockdown duration</li>
+        <li class=""><span class="spec-lv">16</span>Can be used on targets afflicted with Blind</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/whirlwind-slice.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Whirlwind Slice <span class="badge opt">12</span></div>
+    <div class="skill-desc">AoE with long range.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Changes to AoE damage</li><li><span class="spec-lv">8</span>+16m range</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>+50% Multi-Hit on hit</li>
+        <li class="on"><span class="spec-lv">8</span>Changes to AoE damage</li>
+        <li class="on"><span class="spec-lv">8</span>+16m range</li>
+        <li class=""><span class="spec-lv">12</span>+20% Stun Chance</li>
+        <li class=""><span class="spec-lv">16</span>25% chance to reset [Whirlwind Slice] cooldown on Evasion</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/flash-slice.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Flash Slice <span class="badge opt">12</span></div>
+    <div class="skill-desc">Blink through the target with a Blind; two uses at 12.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+6m Range</li><li><span class="spec-lv">12</span>+1 consecutive use</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>+2s Blind duration</li>
+        <li class="on"><span class="spec-lv">8</span>+6m Range</li>
+        <li class=""><span class="spec-lv">8</span>Up to +20% damage when more targets hit</li>
+        <li class="on"><span class="spec-lv">12</span>+1 consecutive use</li>
+        <li class=""><span class="spec-lv">16</span>50% chance to rotate and inflict Stun for 3s on hitting a target afflicted with Blind</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/infiltrate.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Infiltrate <span class="badge opt">12</span></div>
+    <div class="skill-desc">Dodge → behind the target; adds the Dark Strike chain at 12.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+10m [Infiltrate] range</li><li><span class="spec-lv">12</span>Adds [Dark Strike] Chain Skill</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Restores 300 Stamina on landing [Infiltrate]</li>
+        <li class="on"><span class="spec-lv">8</span>+10m [Infiltrate] range</li>
+        <li class=""><span class="spec-lv">8</span>Breaks Protective Shields on landing [Infiltrate]</li>
+        <li class="on"><span class="spec-lv">12</span>Adds [Dark Strike] Chain Skill</li>
+        <li class=""><span class="spec-lv">16</span>+20% [Infiltrate] Blind Chance</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/storm-rampage.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Storm Rampage <span class="badge opt">12</span></div>
+    <div class="skill-desc">Only on Staggered targets.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Changes to mobile skill</li><li><span class="spec-lv">12</span>Multi-Hit on hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Absorbs 5% HP</li>
+        <li class=""><span class="spec-lv">8</span>Restores 120 MP on hit</li>
+        <li class="on"><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class="on"><span class="spec-lv">12</span>Multi-Hit on hit</li>
+        <li class=""><span class="spec-lv">16</span>-1s all skill cooldowns on hit</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="passives" class="g-section" data-only="pve" aria-labelledby="h-passives">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-passives">Passives</h2></div>
+    <div class="table-wrap"><table>
+    <thead><tr><th>Passive</th><th>Level</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td><span class="sk"><img src="../../assets/icons/assassin/rear-smite.webp" width="18" height="18" alt="" loading="lazy">Rear Smite</span></td><td>20</td><td>Back attack and PvE damage boost.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/assassin/assault-stance.webp" width="18" height="18" alt="" loading="lazy">Assault Stance</span></td><td>18</td><td>Critical Damage Boost; Swift Contract multiplies it.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/assassin/defense-break.webp" width="18" height="18" alt="" loading="lazy">Defense Break</span></td><td>15</td><td>−Defense on the target after a stun or Stagger.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/assassin/determination.webp" width="18" height="18" alt="" loading="lazy">Determination</span></td><td>14</td><td>Extra damage below 30% HP — the execute phase.</td></tr>
+      <tr><td>The rest</td><td>10–12</td><td>Heightened Sixth Sense, Apply Poison, Ambush Stance 12; Exploit Weakness, Revitalization Contract 10. Impact Hit stays at 1.</td></tr>
+    </tbody>
+  </table></div>
+
+</section>
+<section id="gear" class="g-section" data-only="pve" aria-labelledby="h-gear">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-gear">Gear &amp; stats</h2></div>
+    <div class="callout"><ul>
+    <li><strong>Manastones:</strong> Attack, Critical Hit, Accuracy — crits drive Heart Gore.</li>
+    <li>Which gear tier to chase is still open until the global launch.</li>
+  </ul></div>
+
+</section>
+<section id="daevanion" class="g-section" data-only="pve pvp" aria-labelledby="h-daevanion">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-daevanion">Daevanion boards</h2></div>
+    <p>Daevanion takes your skills from 10 to 14 and adds stats. Each blue node gives <strong>+1 level</strong> to its skill. TitanTheF's sheet links a starting route for levels 1–45 — take those nodes while leveling.</p>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>Priority:</strong> blue nodes for <span class="sk"><img src="../../assets/icons/assassin/savage-roar.webp" width="18" height="18" alt="" loading="lazy">Savage Roar</span>, <span class="sk"><img src="../../assets/icons/assassin/heart-gore.webp" width="18" height="18" alt="" loading="lazy">Heart Gore</span>, <span class="sk"><img src="../../assets/icons/assassin/insignia-explosion.webp" width="18" height="18" alt="" loading="lazy">Insignia Explosion</span>, then orange nodes.</li>
+    <li data-only="pvp"><strong>Priority:</strong> blue nodes for <span class="sk"><img src="../../assets/icons/assassin/shadowstrike.webp" width="18" height="18" alt="" loading="lazy">Shadowstrike</span>, <span class="sk"><img src="../../assets/icons/assassin/flash-slice.webp" width="18" height="18" alt="" loading="lazy">Flash Slice</span>, <span class="sk"><img src="../../assets/icons/assassin/defiance.webp" width="18" height="18" alt="" loading="lazy">Defiance</span>.</li>
+    <li data-only="pve"><strong>Ariel</strong> (PvE) at 45, not Azphel.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (PvP) at 45, and Triniel earlier.</li>
+  </ul></div>
+  <p><a href="https://clck.su/OhiNF" target="_blank" rel="noopener">Starting Daevanion route →</a></p>
+
+</section>
+<section id="stigmas" class="g-section" data-only="pve" aria-labelledby="h-stigmas">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-stigmas">Stigmas</h2></div>
+    <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/swift-contract.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Swift Contract <span class="badge must">Lv 20</span></div>
+    <div class="skill-desc">+20% Combat Speed for 10s (+10% more at 20), and it boosts Rear Smite and Assault Stance.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>-20% MP Cost for the duration</li><li><span class="spec-lv">10</span>x1.5 [Rear Smite] effect for the duration</li><li><span class="spec-lv">15</span>x1.5 [Assault Stance] effect for the duration</li><li><span class="spec-lv">20</span>+10% additional Combat Speed</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>-20% MP Cost for the duration</li>
+        <li class="on"><span class="spec-lv">10</span>x1.5 [Rear Smite] effect for the duration</li>
+        <li class="on"><span class="spec-lv">15</span>x1.5 [Assault Stance] effect for the duration</li>
+        <li class="on"><span class="spec-lv">20</span>+10% additional Combat Speed</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/illusive-clone.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Illusive Clone <span class="badge must">Lv 20</span></div>
+    <div class="skill-desc">Removes Heart Gore's cooldown and adds 20% of your damage for 10s — your burst window. Use it on the boss, not on trash.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+10% Status Effect Chance for the duration</li><li><span class="spec-lv">10</span>+20% Critical Damage Boost for the duration</li><li><span class="spec-lv">15</span>x1.5 [Exploit Weakness] effect for the duration</li><li><span class="spec-lv">20</span>50% chance to deal extra damage on Critical Hit for the duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+10% Status Effect Chance for the duration</li>
+        <li class="on"><span class="spec-lv">10</span>+20% Critical Damage Boost for the duration</li>
+        <li class="on"><span class="spec-lv">15</span>x1.5 [Exploit Weakness] effect for the duration</li>
+        <li class="on"><span class="spec-lv">20</span>50% chance to deal extra damage on Critical Hit for the duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/evasion-stance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Evasion Stance <span class="badge must">Lv 10</span></div>
+    <div class="skill-desc">Guaranteed evasion of a big hit; mobile at 10.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+1 consecutive use</li><li><span class="spec-lv">10</span>Changes to mobile skill</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+1 consecutive use</li>
+        <li class="on"><span class="spec-lv">10</span>Changes to mobile skill</li>
+        <li class=""><span class="spec-lv">15</span>+20% Move Speed for 3s on Evasion</li>
+        <li class=""><span class="spec-lv">20</span>Restore 10% HP once after successfully evading</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/throw-shadowblade.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Throw Shadowblade <span class="badge must">Lv 10</span></div>
+    <div class="skill-desc">20m throw with a slow; at 10 it resets on a kill — great for farming.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Adds [Shadowblade Pursuit] Chain Skill</li><li><span class="spec-lv">10</span>Resets cooldown on defeating an enemy</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Adds [Shadowblade Pursuit] Chain Skill</li>
+        <li class="on"><span class="spec-lv">10</span>Resets cooldown on defeating an enemy</li>
+        <li class=""><span class="spec-lv">15</span>Critical Hit on hit</li>
+        <li class=""><span class="spec-lv">20</span>Changes to AoE Skill</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/savage-fang.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Savage Fang <span class="badge opt">leveling</span></div>
+    <div class="skill-desc">AoE that engraves 5 Insignias at once — strong on packs while leveling.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Up to +20% damage when more targets hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Up to +20% damage when more targets hit</li>
+        <li class=""><span class="spec-lv">10</span>+50 Stagger Gauge Damage</li>
+        <li class=""><span class="spec-lv">15</span>+10% PvE Damage Boost and +5% PvP Damage Boost for 10s on hit</li>
+        <li class=""><span class="spec-lv">20</span>Critical Hit on hit</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="macro" class="g-section" data-only="pve" aria-labelledby="h-macro">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro">Macro &amp; rotation</h2></div>
+    <p>AION 2 has two separate tools:</p>
+  <ul>
+    <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the highest-priority skill that's ready, and in AION 2 the <strong>bottom slot has the highest priority</strong>. The cards show each line top to bottom as in the game.</li>
+    <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar buttons in order and cancels animation tails. Skills on cooldown are skipped.</li>
+  </ul>
+
+  <h3>1. Hotbar lines</h3>
+  <div class="hotlines">
+<div class="hotline">
+  <div class="hotline-head"><span class="key">MMB</span><span class="hotline-name">Insignia line</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="">
+      <span class="hl-n">4</span>
+      <img src="../../assets/icons/assassin/savage-roar.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Savage Roar</span>
+    </li>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/assassin/ambush.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Ambush</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/assassin/whirlwind-slice.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Whirlwind Slice</span>
+    </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/assassin/insignia-explosion.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Insignia Explosion</span>
+    </li>
+  </ol>
+  <p class="hotline-order">In-game order, top to bottom. 1 = highest priority — the bottom slot.</p>
+<p class="hotline-note">Savage Roar builds Insignias; Insignia Explosion takes the top priority as soon as it's ready. This line is also the in-game macro.</p></div><div class="hotline">
+  <div class="hotline-head"><span class="key">1</span><span class="hotline-name">Stun line</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/assassin/shadow-fall.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Shadow Fall</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/assassin/infiltrate.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Infiltrate</span>
+    </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/assassin/shadowstrike.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Shadowstrike</span>
+    </li>
+  </ol>
+  <p class="hotline-order">In-game order, top to bottom. 1 = highest priority — the bottom slot.</p>
+<p class="hotline-note">Shadowstrike stuns, then Shadow Fall knocks the stunned target down.</p></div>  </div>
+
+  <h3>2. In-game macro</h3>
+  <p>Put the Insignia line into the macro (10 ms) and bind it to the middle mouse button. That's all — TitanTheF keeps it this simple because there's no combat speed at the start.</p>
+  <ol class="macroseq">
+  <li><span class="ms-n">1</span><span class="ms-label">Insignia line</span><span class="ms-detail">MMB · 10 ms</span></li>
+</ol>
+
+  <h3>3. What you actually press</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Hold</span><span class="press-what"><span class="sk"><img src="../../assets/icons/assassin/quick-slice.webp" width="18" height="18" alt="" loading="lazy">Quick Slice</span> on <span class="key">LMB</span> and the macro on <span class="key">MMB</span>.</span></li>
+    <li><span class="press-how">Spam</span><span class="press-what"><span class="sk"><img src="../../assets/icons/assassin/heart-gore.webp" width="18" height="18" alt="" loading="lazy">Heart Gore</span> on <span class="key">Q</span> — it only fires on crits, so press it constantly.</span></li>
+    <li><span class="press-how">Mouse macro</span><span class="press-what">Or let your mouse software loop LMB → MMB → Q (10–30 ms) on one toggle button — TitanTheF uses Witchmana, but any mouse software works.</span></li>
+    <li><span class="press-how">By hand</span><span class="press-what"><span class="sk"><img src="../../assets/icons/assassin/illusive-clone.webp" width="18" height="18" alt="" loading="lazy">Illusive Clone</span> + <span class="sk"><img src="../../assets/icons/assassin/swift-contract.webp" width="18" height="18" alt="" loading="lazy">Swift Contract</span> on the boss, <span class="sk"><img src="../../assets/icons/assassin/evasion-stance.webp" width="18" height="18" alt="" loading="lazy">Evasion Stance</span> for big hits, the Stun line, <span class="sk"><img src="../../assets/icons/assassin/throw-shadowblade.webp" width="18" height="18" alt="" loading="lazy">Throw Shadowblade</span> on <span class="key">2</span> while farming.</span></li>
+  </ul>
+
+</section>
+<section id="recap" class="g-section" data-only="pve" aria-labelledby="h-recap">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-recap">Recap</h2></div>
+    <div class="callout accent"><ul>
+    <li><strong>Skills:</strong> Savage Roar, Heart Gore, Insignia Explosion 20; Quick Slice, Ambush, Defiance 16; the rest 12.</li>
+    <li><strong>Stigmas:</strong> Swift Contract 20, Illusive Clone 20, Evasion Stance 10, Throw Shadowblade 10.</li>
+    <li><strong>Passives:</strong> Rear Smite 20, Assault Stance 18, Defense Break 15, Determination 14.</li>
+    <li><strong>Manastones:</strong> Attack, Critical Hit, Accuracy.</li>
+  </ul></div>
+
+</section>
+<aside class="glance" data-only="pvp" aria-label="Build at a glance">
+  <p class="glance-title">Build at a glance</p>
+    <h3>Core skills</h3>
+  <ul class="core-row">
+  <li title="Shadowstrike">
+    <img src="../../assets/icons/assassin/shadowstrike.webp" width="52" height="52" alt="Shadowstrike" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Shadowstrike</span>
+  </li>
+  <li title="Flash Slice">
+    <img src="../../assets/icons/assassin/flash-slice.webp" width="52" height="52" alt="Flash Slice" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Flash Slice</span>
+  </li>
+  <li title="Heart Gore">
+    <img src="../../assets/icons/assassin/heart-gore.webp" width="52" height="52" alt="Heart Gore" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Heart Gore</span>
+  </li>
+  <li title="Defiance">
+    <img src="../../assets/icons/assassin/defiance.webp" width="52" height="52" alt="Defiance" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Defiance</span>
+  </li>
+</ul>
+  <h3>Stigma loadout</h3>
+  <ol class="loadout">
+  <li class="slot" title="Illusive Clone">
+    <img src="../../assets/icons/assassin/illusive-clone.webp" width="56" height="56" alt="Illusive Clone" loading="lazy">
+    <span class="slot-lv">Lv 20</span>
+    <span class="slot-name">Illusive Clone</span>
+  </li>
+  <li class="slot" title="Evasion Stance">
+    <img src="../../assets/icons/assassin/evasion-stance.webp" width="56" height="56" alt="Evasion Stance" loading="lazy">
+    <span class="slot-lv">Lv 20</span>
+    <span class="slot-name">Evasion Stance</span>
+  </li>
+  <li class="slot" title="Shadow Walk">
+    <img src="../../assets/icons/assassin/shadow-walk.webp" width="56" height="56" alt="Shadow Walk" loading="lazy">
+    <span class="slot-lv">Lv 15</span>
+    <span class="slot-name">Shadow Walk</span>
+  </li>
+  <li class="slot" title="Evasion Contract">
+    <img src="../../assets/icons/assassin/evasion-contract.webp" width="56" height="56" alt="Evasion Contract" loading="lazy">
+    <span class="slot-lv">Lv 10</span>
+    <span class="slot-name">Evasion Contract</span>
+  </li>
+</ol>
+  <h3>Key passives</h3>
+  <ul class="passive-row">
+<li><img src="../../assets/icons/assassin/rear-smite.webp" width="24" height="24" alt="" loading="lazy">Rear Smite</li><li><img src="../../assets/icons/assassin/assault-stance.webp" width="24" height="24" alt="" loading="lazy">Assault Stance</li><li><img src="../../assets/icons/assassin/revitalization-contract.webp" width="24" height="24" alt="" loading="lazy">Revitalization Contract</li><li><img src="../../assets/icons/assassin/heightened-sixth-sense.webp" width="24" height="24" alt="" loading="lazy">Heightened Sixth Sense</li></ul>
+
+</aside>
+<section id="intro-pvp" class="g-section" data-only="pvp" aria-labelledby="h-intro-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro-pvp">Overview</h2></div>
+    <p>In PvP the Assassin picks a target, opens from stealth or behind, locks it down with stun and blind, and bursts it before it can react.</p>
+  <p class="note">TitanTheF's sheet covers PvE; the PvP picks below come from the global skill data and are a starting point until a global PvP meta forms.</p>
+
+</section>
+<section id="skills-pvp" class="g-section" data-only="pvp" aria-labelledby="h-skills-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-skills-pvp">Skills &amp; stigmas</h2></div>
+    <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/shadowstrike.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Shadowstrike <span class="badge must">16</span></div>
+    <div class="skill-desc">Teleport behind and stun; Seal chance stops their skills.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+1s Stun duration</li><li><span class="spec-lv">8</span>50% chance to inflict Seal for 5s on hit</li><li><span class="spec-lv">16</span>Changes to AoE Skill</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>+1s Stun duration</li>
+        <li class=""><span class="spec-lv">8</span>+20% caster Critical Damage Boost for 5s on hit</li>
+        <li class="on"><span class="spec-lv">8</span>50% chance to inflict Seal for 5s on hit</li>
+        <li class=""><span class="spec-lv">12</span>50% chance to inflict Root for 5s on hit</li>
+        <li class="on"><span class="spec-lv">16</span>Changes to AoE Skill</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/flash-slice.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Flash Slice <span class="badge must">16</span></div>
+    <div class="skill-desc">Blind, two uses, and at 16 a stun on blinded targets.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+2s Blind duration</li><li><span class="spec-lv">12</span>+1 consecutive use</li><li><span class="spec-lv">16</span>50% chance to rotate and inflict Stun for 3s on hitting a target afflicted with Blind</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>+2s Blind duration</li>
+        <li class=""><span class="spec-lv">8</span>+6m Range</li>
+        <li class=""><span class="spec-lv">8</span>Up to +20% damage when more targets hit</li>
+        <li class="on"><span class="spec-lv">12</span>+1 consecutive use</li>
+        <li class="on"><span class="spec-lv">16</span>50% chance to rotate and inflict Stun for 3s on hitting a target afflicted with Blind</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/defiance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Defiance <span class="badge must">16</span></div>
+    <div class="skill-desc">Break the first hard CC.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Restores 20% HP on using [Defiance]</li><li><span class="spec-lv">12</span>+2s Tenacity duration</li><li><span class="spec-lv">16</span>+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Adds [Storm Slice] Chain Skill</li>
+        <li class=""><span class="spec-lv">8</span>Restores 1000 Stamina on using [Defiance]</li>
+        <li class="on"><span class="spec-lv">8</span>Restores 20% HP on using [Defiance]</li>
+        <li class="on"><span class="spec-lv">12</span>+2s Tenacity duration</li>
+        <li class="on"><span class="spec-lv">16</span>+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/shadow-walk.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Shadow Walk <span class="badge must">Lv 15</span></div>
+    <div class="skill-desc">Stealth for the opener; at 15 usable in combat to reset a fight.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Critical Hit on attack during Stealth</li><li><span class="spec-lv">10</span>+20% Move Speed for the duration</li><li><span class="spec-lv">15</span>Available in combat</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Critical Hit on attack during Stealth</li>
+        <li class="on"><span class="spec-lv">10</span>+20% Move Speed for the duration</li>
+        <li class="on"><span class="spec-lv">15</span>Available in combat</li>
+        <li class=""><span class="spec-lv">20</span>Resets cooldown on player kill assists</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/evasion-stance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Evasion Stance <span class="badge must">Lv 20</span></div>
+    <div class="skill-desc">Dodge their burst; heals at 20.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+1 consecutive use</li><li><span class="spec-lv">10</span>Changes to mobile skill</li><li><span class="spec-lv">15</span>+20% Move Speed for 3s on Evasion</li><li><span class="spec-lv">20</span>Restore 10% HP once after successfully evading</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+1 consecutive use</li>
+        <li class="on"><span class="spec-lv">10</span>Changes to mobile skill</li>
+        <li class="on"><span class="spec-lv">15</span>+20% Move Speed for 3s on Evasion</li>
+        <li class="on"><span class="spec-lv">20</span>Restore 10% HP once after successfully evading</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/evasion-contract.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Evasion Contract <span class="badge opt">Lv 10</span></div>
+    <div class="skill-desc">Removes slows and roots and grants immunity to them.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>25% chance of Projectile Immunity for the duration</li><li><span class="spec-lv">10</span>+30% Move Speed for the duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>25% chance of Projectile Immunity for the duration</li>
+        <li class="on"><span class="spec-lv">10</span>+30% Move Speed for the duration</li>
+        <li class=""><span class="spec-lv">15</span>50% chance to reduce all skill cooldowns by 1s on Evasion for the duration</li>
+        <li class=""><span class="spec-lv">20</span>+100 Evasion increase</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/assassin/spiral-slice.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Spiral Slice <span class="badge opt">alt.</span></div>
+    <div class="skill-desc">Strips buffs and stuns when it removes two or more.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Removes up to 2 buffs</li><li><span class="spec-lv">10</span>Rotates and inflicts Stun for 3s when removing 2 or more buffs</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Removes up to 2 buffs</li>
+        <li class="on"><span class="spec-lv">10</span>Rotates and inflicts Stun for 3s when removing 2 or more buffs</li>
+        <li class=""><span class="spec-lv">15</span>Removes up to 3 buffs</li>
+        <li class=""><span class="spec-lv">20</span>-30s cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="recap-pvp" class="g-section" data-only="pvp" aria-labelledby="h-recap-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-recap-pvp">Recap</h2></div>
+    <div class="callout accent"><ul>
+    <li><strong>Combo:</strong> Shadow Walk → Shadowstrike (stun) → Flash Slice (blind) → Insignia Explosion → Heart Gore under Illusive Clone.</li>
+    <li><strong>Stigmas:</strong> Illusive Clone, Evasion Stance, Shadow Walk, Evasion Contract.</li>
+    <li><strong>Daevanion:</strong> Azphel over Ariel.</li>
+  </ul></div>
+
+</section>
+<section id="fight-lvl" class="g-section" data-only="lvl" aria-labelledby="h-fight-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-fight-lvl">How to fight while leveling</h2></div>
+    <div class="callout"><ul>
+    <li><strong>Packs:</strong> <span class="sk"><img src="../../assets/icons/assassin/savage-fang.webp" width="18" height="18" alt="" loading="lazy">Savage Fang</span> (5 Insignias) → <span class="sk"><img src="../../assets/icons/assassin/insignia-explosion.webp" width="18" height="18" alt="" loading="lazy">Insignia Explosion</span> → <span class="sk"><img src="../../assets/icons/assassin/whirlwind-slice.webp" width="18" height="18" alt="" loading="lazy">Whirlwind Slice</span>; <span class="sk"><img src="../../assets/icons/assassin/throw-shadowblade.webp" width="18" height="18" alt="" loading="lazy">Throw Shadowblade</span> resets on a kill for the next pull.</li>
+    <li><strong>Elites:</strong> get behind → <span class="sk"><img src="../../assets/icons/assassin/ambush.webp" width="18" height="18" alt="" loading="lazy">Ambush</span> → <span class="sk"><img src="../../assets/icons/assassin/savage-roar.webp" width="18" height="18" alt="" loading="lazy">Savage Roar</span> to stack Insignias → Insignia Explosion → <span class="sk"><img src="../../assets/icons/assassin/heart-gore.webp" width="18" height="18" alt="" loading="lazy">Heart Gore</span> on crits.</li>
+    <li><strong>Mana:</strong> <span class="sk"><img src="../../assets/icons/assassin/quick-slice.webp" width="18" height="18" alt="" loading="lazy">Quick Slice</span> restores MP — keep it on LMB.</li>
+    <li><strong>Low HP:</strong> <span class="sk"><img src="../../assets/icons/assassin/shadow-fall.webp" width="18" height="18" alt="" loading="lazy">Shadow Fall</span> absorbs HP; <span class="sk"><img src="../../assets/icons/assassin/defiance.webp" width="18" height="18" alt="" loading="lazy">Defiance</span> heals when you're stuck.</li>
+  </ul></div>
+
+</section>
+<section id="macro-lvl" class="g-section" data-only="lvl" aria-labelledby="h-macro-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro-lvl">Leveling macro</h2></div>
+    <p>TitanTheF's starting setup works from level 1: the Insignia line in the in-game macro on the middle mouse button, Quick Slice on LMB and Heart Gore on Q. For farming mobs he uses Throw Shadowblade (2) and RMB. Early build at 1–45: Quick Slice, Savage Roar, Insignia Explosion and Heart Gore to 12, everything else to 8.</p>
+  <div class="hotlines">
+    <div class="hotline">
+  <div class="hotline-head"><span class="key">MMB</span><span class="hotline-name">Insignia line</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="">
+      <span class="hl-n">4</span>
+      <img src="../../assets/icons/assassin/savage-roar.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Savage Roar</span>
+    </li>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/assassin/ambush.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Ambush</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/assassin/whirlwind-slice.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Whirlwind Slice</span>
+    </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/assassin/insignia-explosion.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Insignia Explosion</span>
+    </li>
+  </ol>
+  <p class="hotline-order">In-game order, top to bottom. 1 = highest priority — the bottom slot.</p>
+</div>
+  </div>
+  <p><a href="https://aion2t.com/ru/simulator?job=5&amp;b=iUjpcy" target="_blank" rel="noopener">Starting build 1–45 (aion2t) →</a> · <a href="https://aion2t.com/ru/simulator?job=5&amp;b=MeyRht" target="_blank" rel="noopener">45+ goal build →</a></p>
+
+</section>
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">Sources</h2>
+  <ul>
+    <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener">TitanTheF — AION 2 progression sheet</a> (Assassin tab) — builds, hotbar, macro, stats</li>
+    <li><a href="https://aion2t.com/ru/simulator?job=5&amp;b=MeyRht" target="_blank" rel="noopener">aion2t.com</a> — TitanTheF's start and 45+ builds (skill levels, specializations, stigmas, passives)</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/assassin" target="_blank" rel="noopener">questlog.gg</a> — skill data from the global client</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — how hotbar lines and the in-game macro work</li>
+  </ul>
+  <p class="sources-all"><a href="../../en/sources/">All sources and creators →</a></p>
+</section>  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../en/">AION 2 Guides</a>
+      <p>Unofficial fan site, not affiliated with NCSOFT. AION 2 and its skill icons are © NCSOFT.</p>
+      <p>Last checked: 2026-09-27 (before the global launch).</p>
+      <p><a href="../../en/sources/">All sources and creators</a> · <button type="button" class="link-btn wn-open">Changelog</button></p>
+    </div>
+  </div>
+</footer>
+<dialog class="whatsnew" data-id="2026-09-27-chanter-assassin" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title" data-latest="What&#39;s new" data-history="Changelog">What&#39;s new</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="Got it">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <section class="wn-entry">
+      <time class="wn-date" datetime="2026-09-27">Sep 27, 2026</time>
+      <ul>
+        <li><a href="../../en/chanter/"><strong>Chanter guide</strong> — TitanTheF's global build: skills, stigmas, mantras and the simple starting macro.</a></li>
+        <li><a href="../../en/assassin/"><strong>Assassin guide</strong> — Insignias, Heart Gore and the Illusive Clone burst window, with TitanTheF's global build.</a></li>
+        <li><a href="../../en/ranger/"><strong>Ranger reworked for global</strong> — realistic skill levels (16), the global stigma set and arcana targets instead of the Korean endgame.</a></li>
+        <li><a href="../../en/gladiator/"><strong>Macros fixed</strong> — the bottom slot of a hotbar line has the highest priority; leveling macros for every class (Grobs).</a></li>
+      </ul>
+    </section>
+    <section class="wn-entry wn-older">
+      <time class="wn-date" datetime="2026-09-27">Sep 27, 2026</time>
+      <ul>
+        <li><a href="../../en/templar/"><strong>Templar guide</strong> — PvE, PvP and leveling: skills, stigmas for global's 4 slots and a macro setup.</a></li>
+        <li><a href="../../en/week-1/"><strong>First week</strong> — what to finish before the first weekly reset and the one-time goals that are easy to miss.</a></li>
+        <li><a href="../../en/weekly/"><strong>Weekly tracker</strong> — weekly entries and Odyle energy for all your characters, with a reset timer. The checklist clears itself every week.</a></li>
+      </ul>
+    </section>
+    <button class="btn btn-primary wn-ok" value="close">Got it</button>
+  </form>
+</dialog>
+<script src="../../assets/js/site.js" defer></script>
+</body>
+</html>

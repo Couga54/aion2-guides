@@ -1,0 +1,194 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq with context %}
+
+{# ============================== PvE ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('onslaught', '20'), ('dark-crush', '20'), ('spinning-strike', '20'), ('incandescent-blow', '16'), ('impactful-crush', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('undefeated-mantra', 20), ('power-of-the-storm', 10), ('sprint-mantra', 10), ('marchutans-wrath', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['attack-preparation', 'impact-hit', 'winds-promise', 'earths-promise']) }}
+{% endcall %}
+
+{% call section('intro', 'Обзор', 'pve') %}
+  <p>Чародей дерётся посохом в ближнем бою и при этом усиливает всю группу. Мантры висят постоянно, {{ s('power-of-the-storm') }} ускоряет скиллы всем, а собственный урон идёт от связки «оглушение → {{ s('dark-crush') }}», которая крутится по кругу.</p>
+  <div class="callout accent">
+    <h3>Билд в одном предложении</h3>
+    <p>Держи включёнными {{ s('undefeated-mantra') }} и {{ s('sprint-mantra') }}, открывай бой {{ s('power-of-the-storm') }} и спамь линию, где {{ s('impactful-crush') }} и {{ s('spinning-strike') }} открывают {{ s('dark-crush') }}, пока {{ s('onslaught') }} восполняет ману.</p>
+  </div>
+  <p class="note">Гайд построен на глобальном билде TitanTheF (старт 1–45 и цель на 45+) из его таблицы прогрессии AION 2.</p>
+{% endcall %}
+
+{% call section('global', 'Глобальный 1 сезон: что меняется', 'pve pvp') %}
+  <p>Глобальные серверы открываются <strong>5 октября 2026</strong> (ранний доступ для Founder's Pack — с 30 сентября). Что это значит для Чародея:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 слота стигм, максимум 20.</strong> Два из них занимают мантры, свободных выбора остаётся два.</li>
+      <li><strong>На старте нет скорости боя.</strong> Экипировка 1 сезона почти не даёт скорости атаки, поэтому простой макрос ниже сейчас лучший — и Повелитель бурь ещё ценнее.</li>
+      <li><strong>Группы больше</strong> (экспедиции на 5, святилища на 10): каждый бафф группе цепляет больше людей.</li>
+      <li data-only="pvp"><strong>PvP:</strong> все стартуют в одинаковой слабой экипировке, меты ещё нет.</li>
+    </ul>
+  </div>
+  <p class="note">Активные скиллы и пассивки в глобальной и корейско-тайваньской версиях совпадают; у стигм нет ступени 25.</p>
+{% endcall %}
+
+{% call section('skills', 'Скиллы', 'pve') %}
+  <p>Три скилла качаются до <strong>20</strong>, три до <strong>16</strong>, остальные остаются на <strong>12</strong>. Уровни дают очки навыков (10), Daevanion (14), кольца (16) и арканы (20).</p>
+  <ul class="skill-grid">
+    {% call skill('onslaught', 'must', '20', [0, 3, 4]) %}Базовая атака, восстанавливает ману; каждое попадание сокращает перезарядку Удара с вращением, а на 16 добавляет цепочку Storm Chain.{% endcall %}
+    {% call skill('dark-crush', 'must', '20', [2, 3, 4]) %}Основной урон. Открывается на несколько секунд после Дробящего удара, Удара с вращением и Ярости Маркутана; на 16 у него пропадает собственная перезарядка.{% endcall %}
+    {% call skill('spinning-strike', 'must', '20', [0, 1, 2]) %}Складывающиеся +15% крит. урона на 30 сек. и открывает Удар скалы.{% endcall %}
+    {% call skill('incandescent-blow', 'must', '16', [1, 2]) %}Филлер без перезарядки; специализация на Блок бережёт тебя в ближнем бою.{% endcall %}
+    {% call skill('impactful-crush', 'must', '16', [2, 3]) %}Оглушение с дистанции, открывает Удар скалы; на 12 — в движении и быстрее.{% endcall %}
+    {% call skill('defiance', 'must', '16', [2, 4]) %}Снятие контроля с лечением, а на 16 — большая стойкость к урону.{% endcall %}
+    {% call skill('wave-blow', 'opt', '12', [1, 3]) %}Сбивает с ног оглушённую цель; специализация на 12 режет урон босса.{% endcall %}
+    {% call skill('heat-wave-blow', 'opt', '12', [2, 3]) %}АоЕ с Печатью; хорош на пачках.{% endcall %}
+    {% call skill('rushing-smash', 'opt', '12', [1, 3]) %}Сближение, восполняет ману; сбрасывается при убийстве.{% endcall %}
+    {% call skill('recuperation', 'opt', '12', [1, 3]) %}Лечение группы и снятие дебаффов.{% endcall %}
+    {% call skill('tremor-crush', 'opt', '12', [0, 1]) %}Уклонение → рывок с оглушением.{% endcall %}
+    {% call skill('gust-rampage', 'opt', '12', [2, 3]) %}Только по целям под Оглушающей шкалой.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Пассивки', 'pve') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Пассивка</th><th>Уровень</th><th>Зачем</th></tr></thead>
+    <tbody>
+      <tr><td>{{ s('attack-preparation') }}</td><td>20</td><td>Усиление урона в PvE, Защита и Точность.</td></tr>
+      <tr><td>{{ s('impact-hit') }}</td><td>20</td><td>Выше шанс оглушения — каждое оглушение открывает Удар скалы.</td></tr>
+      <tr><td>{{ s('winds-promise') }}</td><td>16</td><td>Усиление крит. урона и доп. урон при крите.</td></tr>
+      <tr><td>{{ s('blessing-of-life') }} / {{ s('earths-promise') }}</td><td>14</td><td>ОЗ и усиление лечения / −стойкость цели в PvE для всей группы.</td></tr>
+      <tr><td>Остальные</td><td>10</td><td>Перекрестная оборона, Защитный круг, Заклинание воодушевления, Заклинание гнева, Инстинкт выживания.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Экипировка и статы', 'pve') %}
+  <div class="callout"><ul>
+    <li><strong>Манастоуны:</strong> Атака, шанс крита, Точность.</li>
+    <li><strong>Гард</strong> (вторая рука) — до +10.</li>
+    <li>Какой тир экипировки добывать — станет ясно после глобального запуска.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('daevanion', 'Доски Daevanion', 'pve pvp') %}
+  <p>Daevanion поднимает скиллы с 10 до 14 и даёт статы. Каждый синий узел — <strong>+1 уровень</strong> своему скиллу. В таблице TitanTheF есть стартовый маршрут на 1–45 — открой его и бери эти узлы по ходу прокачки.</p>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>Приоритет:</strong> синие узлы {{ s('onslaught') }}, {{ s('dark-crush') }}, {{ s('spinning-strike') }}, затем оранжевые.</li>
+    <li data-only="pvp"><strong>Приоритет:</strong> синие узлы {{ s('impactful-crush') }}, {{ s('wave-blow') }}, {{ s('defiance') }}.</li>
+    <li data-only="pve"><strong>Ariel</strong> (PvE) на 45, а не Azphel.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (PvP) на 45, и Triniel раньше.</li>
+  </ul></div>
+  <p><a href="https://aion2.app/daevanion?job=9&amp;b=bZyJJq" target="_blank" rel="noopener">Стартовый маршрут Daevanion (aion2.app) →</a></p>
+{% endcall %}
+
+{% call section('stigmas', 'Стигмы', 'pve') %}
+  <ul class="skill-grid">
+    {% call skill('undefeated-mantra', 'must', 'Ур. 20', upto=20) %}+урон и стойкость в PvE тебе и группе — мантра, ради которой Чародея берут в группу. Качай первой.{% endcall %}
+    {% call skill('power-of-the-storm', 'must', 'Ур. 10', upto=10) %}+20% скорости боя и −20% перезарядок на 10 сек. (группе — половина сокращения). На 5 её собственная перезарядка короче на 30 сек.{% endcall %}
+    {% call skill('sprint-mantra', 'must', 'Ур. 10', upto=10) %}Скорость бега и лечение при ударах для группы.{% endcall %}
+    {% call skill('marchutans-wrath', 'must', 'Ур. 10', upto=10) %}Дальнобойное АоЕ, которое тоже открывает Удар скалы.{% endcall %}
+    {% call skill('obliterate', 'opt', 'прокачка', upto=5) %}АоЕ-сбивание для пачек на прокачке; на капе меняй на Ярость Маркутана.{% endcall %}
+  </ul>
+  <p class="note">Мантры — переключатели: включи один раз и не ставь их ни в какой макрос — повторное нажатие их выключает.</p>
+{% endcall %}
+
+{% call section('macro', 'Макрос и ротация', 'pve') %}
+  <p>В AION 2 два разных инструмента:</p>
+  <ul>
+    <li><strong>Линия на кнопке</strong> — несколько скиллов на <em>одной</em> кнопке панели. Нажатие применяет готовый скилл с наивысшим приоритетом, а в AION 2 <strong>наивысший приоритет у нижнего слота</strong>. Карточки показывают линии сверху вниз, как в игре.</li>
+    <li><strong>Встроенный макрос</strong> — пока ты держишь его клавишу, он по очереди нажимает кнопки панели и отменяет хвосты анимаций. Скиллы на перезарядке пропускаются.</li>
+  </ul>
+
+  <h3>1. Линии на кнопках</h3>
+  <div class="hotlines">
+    {% call hotline('ПКМ', 'Линия Удара скалы', ['impactful-crush', 'dark-crush', 'spinning-strike', 'incandescent-blow']) %}Дробящий удар и Удар с вращением открывают Удар скалы, и он срабатывает следующим по приоритету; Раскалённый удар заполняет паузы.{% endcall %}
+    {% call hotline('2', 'Линия волны', ['wave-blow', 'heat-wave-blow']) %}Волновой удар сбивает с ног оглушённую цель.{% endcall %}
+    {% call hotline('3', 'Линия рывков', ['rushing-smash', 'tremor-crush']) %}Сближения — жми вручную.{% endcall %}
+  </div>
+
+  <h3>2. Встроенный макрос</h3>
+  <p>Повесь его на среднюю кнопку мыши. Задержка <strong>10 мс</strong> в каждом слоте:</p>
+  {{ macroseq([(skill_data('power-of-the-storm')[lang].name, '10 мс'), (skill_data('onslaught')[lang].name, '10 мс'), ('Линия волны', '10 мс'), (skill_data('onslaught')[lang].name, '10 мс')]) }}
+  <p class="note">TitanTheF вплетает Разгром прямо в макрос — он восполняет ману, и пока нет скорости боя, это самая простая рабочая настройка.</p>
+
+  <h3>3. Что нажимать на самом деле</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Держать</span><span class="press-what">{{ s('onslaught') }} на <span class="key">ЛКМ</span>, линию Удара скалы на <span class="key">ПКМ</span> и макрос на <span class="key">СКМ</span>.</span></li>
+    <li><span class="press-how">Макрос мыши</span><span class="press-what">Или пусть софт мыши крутит ЛКМ → ПКМ → СКМ (по 10 мс) на одной кнопке-переключателе — TitanTheF использует Witchmana, но подойдёт любой софт мыши.</span></li>
+    <li><span class="press-how">Вручную</span><span class="press-what">Мантры (один раз), {{ s('recuperation') }}, когда группа получает урон, линия рывков для сближения, {{ s('defiance') }}.</span></li>
+  </ul>
+{% endcall %}
+
+{% call section('recap', 'Итог', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Скиллы:</strong> Разгром, Удар скалы, Удар с вращением 20; Раскалённый удар, Дробящий удар, Снятие шока 16; остальное 12.</li>
+    <li><strong>Стигмы:</strong> Песнь непобедимости 20, Повелитель бурь 10, Заклятие ускорения 10, Ярость Маркутана 10.</li>
+    <li><strong>Пассивки:</strong> Подготовка к атаке и Попадание шоком 20, Обет ветра 16, Благословение жизни и Призыв земли 14.</li>
+    <li><strong>Манастоуны:</strong> Атака, шанс крита, Точность; гард до +10.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================== PvP ============================== #}
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('impactful-crush', '16'), ('wave-blow', '16'), ('dark-crush', '20'), ('defiance', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('undefeated-mantra', 20), ('marchutans-wrath', 15), ('power-of-the-storm', 10), ('barrier-spell', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['attack-preparation', 'impact-hit', 'survival-willpower', 'earths-promise']) }}
+{% endcall %}
+
+{% call section('intro-pvp', 'Обзор', 'pvp') %}
+  <p>В PvP Чародей — баффер на передовой, который держит цели под контролем: оглушение {{ s('impactful-crush') }}, сбивание {{ s('wave-blow') }}, затем бурст {{ s('dark-crush') }} — пока группа дерётся под твоими мантрами.</p>
+  <p class="note">Таблица TitanTheF посвящена PvE; PvP-выбор ниже построен на данных скиллов глобального клиента и служит отправной точкой, пока не сложится глобальная PvP-мета.</p>
+{% endcall %}
+
+{% call section('skills-pvp', 'Скиллы и стигмы', 'pvp') %}
+  <ul class="skill-grid">
+    {% call skill('impactful-crush', 'must', '16', [1, 2, 4]) %}Оглушение на 20 м (+1 сек. длительности, +20% шанса на 16) — твоё открытие.{% endcall %}
+    {% call skill('wave-blow', 'must', '16', [1, 2, 3]) %}Сбивает с ног оглушённую цель; специализация на 12 режет её урон в PvP.{% endcall %}
+    {% call skill('defiance', 'must', '16', [2, 3, 4]) %}Снимает первый жёсткий контроль.{% endcall %}
+    {% call skill('marchutans-wrath', 'must', 'Ур. 15', upto=15) %}На 15 добавляет −70% к лечению и зельям — твой антихил.{% endcall %}
+    {% call skill('barrier-spell', 'opt', 'Ур. 10', upto=10) %}Не даёт ОЗ группы упасть ниже 10% на 3 сек. — спасает проигранный бой.{% endcall %}
+    {% call skill('impeding-authority', 'opt', 'альт.', upto=10) %}Щит группе на 16% макс. ОЗ.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('recap-pvp', 'Итог', 'pvp') %}
+  <div class="callout accent"><ul>
+    <li><strong>Комбо:</strong> Дробящий удар (оглушение) → Волновой удар (сбивание) → Удар скалы.</li>
+    <li><strong>Стигмы:</strong> Песнь непобедимости, Ярость Маркутана 15 (антихил), Повелитель бурь, Защитный барьер.</li>
+    <li><strong>Daevanion:</strong> Azphel вместо Ariel.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Пачки:</strong> {{ s('rushing-smash') }} (сбрасывается при убийстве) → {{ s('obliterate') }} → линия Удара скалы + {{ s('onslaught') }}.</li>
+    <li><strong>Элитки:</strong> {{ s('impactful-crush') }} (оглушение) → {{ s('dark-crush') }} → {{ s('wave-blow') }} → {{ s('spinning-strike') }} → снова Удар скалы.</li>
+    <li><strong>Мана:</strong> Разгром восполняет ману с каждого удара — не переставай его вплетать.</li>
+    <li><strong>Мало ОЗ:</strong> {{ s('recuperation') }}, а Заклятие ускорения лечит при ударах.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Макрос на прокачке', 'lvl') %}
+  <p>Стартовая настройка TitanTheF работает с 1 уровня: линия Удара скалы на ПКМ, Разгром на ЛКМ и встроенный макрос (Повелитель бурь → Разгром → линия волны → Разгром) на средней кнопке мыши. Ранний билд на 1–45: Разгром, Раскалённый удар, Удар с вращением и Скачок до 12, всё остальное до 8.</p>
+  <div class="hotlines">
+    {{ hotline('ПКМ', 'Линия Удара скалы', ['impactful-crush', 'dark-crush', 'spinning-strike', 'incandescent-blow']) }}
+  </div>
+  <p><a href="https://aion2t.com/ru/simulator?job=9&amp;b=S5RCtE" target="_blank" rel="noopener">Стартовый билд 1–45 (aion2t) →</a> · <a href="https://aion2t.com/ru/simulator?job=9&amp;b=yDzsiQ" target="_blank" rel="noopener">Цель на 45+ →</a></p>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener">TitanTheF — таблица прогрессии AION 2</a> (вкладка «Чантер») — билды, панель, макрос, статы</li>
+    <li><a href="https://aion2t.com/ru/simulator?job=9&amp;b=yDzsiQ" target="_blank" rel="noopener">aion2t.com</a> — стартовый и 45+ билды TitanTheF (уровни, специализации, стигмы, пассивки)</li>
+    <li><a href="https://questlog.gg/aion-2/ru/db/skills/chanter" target="_blank" rel="noopener">questlog.gg</a> — данные скиллов из глобального клиента</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — как работают линии и встроенный макрос</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

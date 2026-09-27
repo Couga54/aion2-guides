@@ -17,7 +17,7 @@ I18N = json.loads((ROOT / "data" / "i18n.json").read_text(encoding="utf-8"))
 W, H = 1200, 630
 BG = (11, 14, 20)
 GOLD = (217, 179, 108)
-ACCENTS = {"crimson": (200, 50, 60), "emerald": (40, 170, 115), "sapphire": (60, 110, 230)}
+ACCENTS = {"crimson": (200, 50, 60), "emerald": (40, 170, 115), "sapphire": (60, 110, 230), "amber": (220, 140, 40), "violet": (140, 80, 230)}
 
 
 def font(names, size):

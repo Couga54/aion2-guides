@@ -36,10 +36,22 @@
      "difficulty": 2,
      "pitch": {"en": "The main tank: blocks buff the whole party, Judgment turns every shield skill into damage, and more crowd control than anyone in PvP.",
                "ru": "Главный танк: блоки баффают всю группу, Суд превращает каждый удар щитом в урон, а контроля в PvP больше, чем у всех."}},
-    {"slug": "assassin", "status": "soon", "name": {"en": "Assassin", "ru": "Убийца"}, "role": {"en": "Melee DPS", "ru": "Ближний бой"}},
+    {"slug": "assassin", "status": "ready", "updated": "2026-09-27", "patch": null, "accent": "violet",
+     "name": {"en": "Assassin", "ru": "Убийца"},
+     "role": {"en": "Melee DPS · burst", "ru": "Ближний бой · бурст"},
+     "weapon": {"en": "Daggers", "ru": "Кинжалы"},
+     "difficulty": 3,
+     "pitch": {"en": "Insignia stacks, crits that fire Heart Gore and a clone that removes its cooldown — the highest burst in melee, if you stay behind the target.",
+               "ru": "Стаки эмблем, криты, запускающие Пронзание сердца, и двойник, который снимает с него перезарядку — самый сильный бурст в ближнем бою, если держишься за спиной цели."}},
     {"slug": "sorcerer", "status": "soon", "name": {"en": "Sorcerer", "ru": "Волшебник"}, "role": {"en": "Magic DPS", "ru": "Магический урон"}},
     {"slug": "elementalist", "status": "soon", "name": {"en": "Elementalist", "ru": "Заклинатель"}, "role": {"en": "Summoner", "ru": "Призыватель"}},
     {"slug": "cleric", "status": "soon", "name": {"en": "Cleric", "ru": "Целитель"}, "role": {"en": "Healer", "ru": "Лекарь"}},
-    {"slug": "chanter", "status": "soon", "name": {"en": "Chanter", "ru": "Чародей"}, "role": {"en": "Support", "ru": "Поддержка"}}
+    {"slug": "chanter", "status": "ready", "updated": "2026-09-27", "patch": null, "accent": "amber",
+     "name": {"en": "Chanter", "ru": "Чародей"},
+     "role": {"en": "Melee support · buffer", "ru": "Поддержка ближнего боя · баффер"},
+     "weapon": {"en": "Staff", "ru": "Посох"},
+     "difficulty": 2,
+     "pitch": {"en": "A staff fighter who buffs the whole party: mantras for damage and speed, Power of the Storm for cooldowns, and a Dark Crush combo that still hits hard.",
+               "ru": "Боец с посохом, который баффает всю группу: мантры на урон и скорость, Повелитель бурь на перезарядки и комбо Удара скалы, которое всё равно бьёт больно."}}
   ]
 }

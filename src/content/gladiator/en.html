@@ -133,14 +133,14 @@
 {% call section('macro', 'Macro & rotation', 'pve') %}
   <p>AION 2 has two separate tools, and the build uses both:</p>
   <ul>
-    <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the first skill in the list that's off cooldown, so the order is the priority.</li>
-    <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar buttons in order, weaves basic attacks and cancels animation tails. Skills on cooldown are skipped.</li>
+    <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the highest-priority skill that's ready, and in AION 2 the <strong>bottom slot has the highest priority</strong>. The cards below show each line top to bottom as in the game, with the priority number on every skill.</li>
+    <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar lines in order and cancels animation tails. Skills on cooldown are skipped. Hold your basic attack (LMB) <em>together</em> with the macro key instead of putting it into the macro — the game weaves and cancels it better that way.</li>
   </ul>
   <p>Gladiator needs <strong>6 skills on 3 buttons</strong>: 4 damage skills and 2 buffs.</p>
 
   <h3>1. Hotbar lines</h3>
   <div class="hotlines">
-    {% call hotline('RMB', 'Main line', ['overhead-slam', 'rending-blow', 'rage-burst']) %}Rage Burst goes <strong>last</strong> — see below.{% endcall %}
+    {% call hotline('RMB', 'Main line', ['rage-burst', 'overhead-slam', 'rending-blow']) %}Rage Burst sits in the <strong>bottom</strong> slot — see below.{% endcall %}
     {% call hotline('E', 'Ruinous line', ['ruinous-blow'], ['lifestealing-blade']) %}Grants Combat Ready. Add Lifestealing Blade only if it's in your stigmas.{% endcall %}
     {% call hotline('R', 'Buff line', ['lunge-stance', 'zikels-blessing']) %}Both keep themselves up thanks to Lunge Stance's cooldown cuts.{% endcall %}
   </div>
@@ -148,6 +148,8 @@
   <h3>2. In-game macro</h3>
   <p>Skill window → <strong>Macro</strong>. Put the three lines in this order and set every <strong>Delay to 10 ms</strong> (it's the pause between buttons, not your ping). Bind the macro in Settings → Key Settings → General → Gameplay → <strong>Macro</strong> — a side mouse button is ideal, because you hold it.</p>
   {{ macroseq([('Main line', 'RMB · 10 ms'), ('Ruinous line', 'E · 10 ms'), ('Buff line', 'R · 10 ms')]) }}
+
+  <p class="note">Season 1 tip (Grobs): cooldowns are slow at launch, so buffs are worth more when timed — you can take the buff line out of the macro and press it yourself right before a boss or a big pack.</p>
 
   <h3>3. What you actually press</h3>
   <ul class="presslist">
@@ -158,7 +160,7 @@
 
   <div class="callout">
     <h3>Why Rage Burst sits at the bottom</h3>
-    <p>Lunge Stance keeps Overhead Slam permanently available, and Rage Burst is also a buff that must stay up. At the bottom of the main line it fires every time it comes off cooldown without ever delaying Overhead Slam. Don't stuff more skills into the main line: macro timing depends on frame rate, and any delay to Overhead Slam costs more than the extra skill adds.</p>
+    <p>Rage Burst is a buff that must always be up, so it takes the bottom slot — the highest priority — and fires every time it comes off cooldown. Put it above Overhead Slam and it never fires: Lunge Stance keeps Overhead Slam permanently available, and the lower slot always wins. Don't stuff more skills into the main line: macro timing depends on frame rate, and any delay to Overhead Slam costs more than the extra skill adds.</p>
   </div>
   <div class="callout">
     <h3>Where the damage comes from</h3>
@@ -293,6 +295,15 @@
   </ul></div>
 {% endcall %}
 
+{% call section('macro-lvl', 'Leveling macro', 'lvl') %}
+  <p>A simpler setup for leveling and the first days at the cap, from Grobs' early-game macros. Only the skills you spam go in; buffs, stigma bursts and gap-closers stay on their own keys.</p>
+  <div class="hotlines">
+    {{ hotline('1', 'Line 1', ['rage-burst', 'overhead-slam', 'rending-blow'], []) }}
+  </div>
+  <p>In-game macro: Line 1, each with a 10 ms delay. Hold your basic attack {{ s('keen-strike') }} on LMB <strong>and</strong> the macro key together.</p>
+  <p class="note">Once your skills reach 12–16 and specializations change their cooldowns, switch to the full setup in the PvE tab.</p>
+{% endcall %}
+
 {# ============================ Sources ============================ #}
 <section class="sources" aria-labelledby="h-sources">
   <h2 id="h-sources">{{ t.sources }}</h2>
@@ -302,6 +313,7 @@
     <li><a href="https://vortexgaming.io/en/postdetail/611533" target="_blank" rel="noopener">Vortex Gaming</a> — Korean PvP builds (Abyss / Arena)</li>
     <li><a href="https://www.iggm.com/news/aion-2-global-servers-dungeon-gameplay-changes-expeditions-gear-progression-stigma-slots" target="_blank" rel="noopener">IGGM</a> — global Season 1 changes</li>
     <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (TitanTheF's table) — leveling route</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — how hotbar lines and the in-game macro work</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>

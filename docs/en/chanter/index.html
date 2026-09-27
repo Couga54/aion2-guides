@@ -1,0 +1,1203 @@
+<!doctype html>
+<html lang="en" data-mode="pve" data-class="chanter">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chanter — AION 2 Guides (PvE, PvP, Leveling)</title>
+<meta name="description" content="A staff fighter who buffs the whole party: mantras for damage and speed, Power of the Storm for cooldowns, and a Dark Crush combo that still hits hard.">
+<link rel="canonical" href="https://couga54.github.io/aion2-guides/en/chanter/">
+<link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/chanter/">
+<link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/chanter/">
+<link rel="alternate" hreflang="x-default" href="https://couga54.github.io/aion2-guides/en/chanter/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Guides">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Chanter — AION 2 Guides (PvE, PvP, Leveling)">
+<meta property="og:description" content="A staff fighter who buffs the whole party: mantras for damage and speed, Power of the Storm for cooldowns, and a Dark Crush combo that still hits hard.">
+<meta property="og:url" content="https://couga54.github.io/aion2-guides/en/chanter/">
+<meta property="og:image" content="https://couga54.github.io/aion2-guides/assets/og/chanter-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var modes = ['pve', 'pvp', 'lvl'];
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+  })(document.documentElement);
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css">
+</head>
+<body class="page-class accent-amber">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../en/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
+      <span>AION 2 Guides</span>
+    </a>
+    <details class="class-menu">
+      <summary class="class-menu-btn accent-amber">
+<img src="../../assets/classes/chanter.webp" width="24" height="24" alt=""><span>Chanter</span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="Classes">
+        <a href="../../en/gladiator/" class="cm-item accent-crimson">
+          <img src="../../assets/classes/gladiator.webp" width="44" height="44" alt=""><span class="cm-name">Gladiator</span><span class="cm-role">Melee DPS · bruiser</span>
+        </a>
+        <a href="../../en/ranger/" class="cm-item accent-emerald">
+          <img src="../../assets/classes/ranger.webp" width="44" height="44" alt=""><span class="cm-name">Ranger</span><span class="cm-role">Ranged DPS · kiter</span>
+        </a>
+        <a href="../../en/templar/" class="cm-item accent-sapphire">
+          <img src="../../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Templar</span><span class="cm-role">Tank · party buffer</span>
+        </a>
+        <a href="../../en/assassin/" class="cm-item accent-violet">
+          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Assassin</span><span class="cm-role">Melee DPS · burst</span>
+        </a>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Sorcerer</span><span class="cm-role">Coming soon</span>
+        </span>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Elementalist</span><span class="cm-role">Coming soon</span>
+        </span>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Cleric</span><span class="cm-role">Coming soon</span>
+        </span>
+        <a href="../../en/chanter/" class="cm-item accent-amber" aria-current="page">
+          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Chanter</span><span class="cm-role">Melee support · buffer</span>
+        </a>
+      </nav>
+    </details>
+    <div class="topbar-tools">
+      <a class="src-nav" href="../../en/week-1/" title="First week: what to finish before the reset">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+        <span>Week 1</span>
+      </a>
+      <a class="src-nav" href="../../en/weekly/" title="Weekly tracker">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+        <span>Weekly</span>
+      </a>
+      <a class="src-nav src-nav-sources" href="../../en/sources/" title="Sources &amp; credits">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+        <span>Sources</span>
+      </a>
+      <a class="lang-switch" href="../../ru/chanter/" hreflang="ru" lang="ru" data-keep-query>
+        <span aria-hidden="true">RU</span><span class="sr-only">Русский</span>
+      </a>
+<button class="icon-btn wn-open wn-top" type="button" aria-label="Changelog" title="Changelog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </button>      <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="class-backdrop" aria-hidden="true" style="--art:url('../../assets/art/chanter.webp')"></div>
+<section class="class-hero">
+  <img class="class-hero-art" src="../../assets/art/chanter.webp" alt="" aria-hidden="true" fetchpriority="high">
+  <div class="wrap class-hero-in">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../en/">All classes</a><span aria-hidden="true">/</span><span>Chanter</span></nav>
+    <div class="class-hero-main">
+      <img class="class-hero-emblem" src="../../assets/classes/chanter.webp" width="96" height="96" alt="">
+      <div>
+        <p class="kicker"><span data-only="pve">PvE</span><span data-only="pvp">PvP</span><span data-only="lvl">Leveling</span> · Global Season 1</p>
+        <h1>Chanter</h1>
+        <p class="class-hero-pitch">A staff fighter who buffs the whole party: mantras for damage and speed, Power of the Storm for cooldowns, and a Dark Crush combo that still hits hard.</p>
+        <p class="guide-ver"><span>Updated: <time datetime="2026-09-27">Sep 27, 2026</time></span><span>Patch: <b>TBD</b></span></p>
+      </div>
+    </div>
+    <dl class="class-facts">
+      <div><dt>Role</dt><dd>Melee support · buffer</dd></div>
+      <div><dt>Weapon</dt><dd>Staff</dd></div>
+      <div><dt>Difficulty</dt><dd class="diff"><i class="on"></i><i class="on"></i><i class=""></i><span>Medium</span></dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="guidebar">
+  <div class="wrap guidebar-in">
+    <div class="mode-switch" role="radiogroup" aria-label="Guide mode">
+      <button type="button" role="radio" data-set-mode="pve" aria-checked="true">PvE</button>
+      <button type="button" role="radio" data-set-mode="pvp" aria-checked="false">PvP</button>
+      <button type="button" role="radio" data-set-mode="lvl" aria-checked="false">Leveling</button>
+    </div>
+    <nav class="toc-mobile" aria-label="On this page"></nav>
+  </div>
+</div>
+
+<div class="wrap guide-layout">
+  <aside class="toc-side" aria-label="On this page">
+    <p class="toc-title">On this page</p>
+    <nav class="toc-list"></nav>
+  </aside>
+
+  <main id="main" class="guide">
+    <section id="progress" class="g-section tracker" data-only="lvl" data-class="chanter" aria-labelledby="h-progress">
+      <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-progress">Leveling progress</h2></div>
+      <div class="tracker-bar">
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="22" aria-valuenow="0" aria-label="Leveling progress"><span></span></div>
+        <span class="progress-text"><b class="progress-count">0</b>/22 done</span>
+        <button type="button" class="btn btn-ghost btn-sm tracker-reset" data-confirm="Clear all ticked steps for this class?">Reset progress</button>
+      </div>
+      <p class="note">Tick steps as you go. Progress is saved in this browser, separately for each class.</p>
+      <ol class="steps">
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-story">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Start</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Follow <strong>yellow (main story) quests only</strong>. Side content scales with your level, so nothing is lost by doing it later.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="chanter-core">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 1</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/chanter/onslaught.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/chanter/incandescent-blow.webp" width="22" height="22" alt="" loading="lazy">              First points into <strong>Onslaught</strong> (restores MP) and <strong>Incandescent Blow</strong>. At 8: <em>+20% MP restored</em> and <em>+200 Block while using skill</em>.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="chanter-crush">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 1–8</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/chanter/impactful-crush.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/chanter/dark-crush.webp" width="22" height="22" alt="" loading="lazy">              <strong>Impactful Crush</strong> stuns and unlocks <strong>Dark Crush</strong> for 2s — put both in one line with Impactful Crush at the bottom.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-feathers">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">After prologue</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Collect <strong>40 feathers</strong> (120 shards) for an early amulet upgrade.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="chanter-rush">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 8</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/chanter/rushing-smash.webp" width="22" height="22" alt="" loading="lazy">              <strong>Rushing Smash</strong> → 12: <em>Resets cooldown on defeating an enemy</em> — dash to the next mob after every kill.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-daevanion">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 12</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              <strong>Daevanion</strong> unlocks (Nezekan board). Blue nodes = +1 skill level — see your class step below.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="chanter-spin">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 13</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/chanter/spinning-strike.webp" width="22" height="22" alt="" loading="lazy">              <strong>Spinning Strike</strong> → 12 with <em>-5s cooldown</em>: stacking Critical Damage and another Dark Crush trigger.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-hideouts">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 15 / 20 / 25</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Clear hideouts that are on your route — first clears give Enhance Stones and Daevanion Crystals.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-amulet">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">~Lv 17</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              <strong>Amulet +10</strong>, then Morph it into the blue version.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-weapon">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Any time</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Weapon to <strong>~+10</strong> — the biggest damage jump while leveling. Don't push further before the cap.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-zikel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 20</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Zikel board opens — same node priority as before.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-stigma">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv ~22</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Ascension → <strong>stigmas unlock</strong> (4 slots in global Season 1). Which ones — see your class step.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="chanter-stigmas">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv ~22</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/chanter/undefeated-mantra.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/chanter/power-of-the-storm.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/chanter/obliterate.webp" width="22" height="22" alt="" loading="lazy">              Stigmas: <strong>Undefeated Mantra</strong> first (to 10), then <strong>Power of the Storm</strong>, <strong>Sprint Mantra</strong> and <strong>Obliterate</strong> for packs. Switch the mantras on once — never put them in a macro.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-acts23">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Acts 2–3</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Story only — don't get distracted by the map.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-vaizel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 30</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Vaizel board opens (critical damage).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-act4">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Act 4</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Side quests and solo dungeons are worth doing again here.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-triniel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 40</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Triniel board opens (multi-hit; mostly PvP — can wait). Krao Cave expects about 1000 Gear Score.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-ariel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 45</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              <strong>Ariel (PvE) or Azphel (PvP)</strong> — same cost, choosing wrong is the most expensive mistake in the system.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="chanter-cap">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Cap</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/chanter/onslaught.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/chanter/dark-crush.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/chanter/spinning-strike.webp" width="22" height="22" alt="" loading="lazy">              Start build done: Onslaught, Incandescent Blow, Spinning Strike, Rushing Smash at 12. Next: <strong>Onslaught</strong>, <strong>Dark Crush</strong>, <strong>Spinning Strike</strong> toward 20 — see the PvE tab.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-shugo">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Cap</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Shugo activities for the full level-cap reward set (gold gear, materials).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-map">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Cap</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Sweep the map: question marks, bonfires, green quests, hidden cubes, feathers. Turn in feathers — altar Lv 30 gives a title.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-daily">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Daily</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Nightmare entry, Transformation floors as your GS allows, dungeons T2 before T3 (watch your energy).
+            </span>
+          </label>
+        </li>
+      </ol>
+    </section>
+
+
+<aside class="glance" data-only="pve" aria-label="Build at a glance">
+  <p class="glance-title">Build at a glance</p>
+    <h3>Core skills</h3>
+  <ul class="core-row">
+  <li title="Onslaught">
+    <img src="../../assets/icons/chanter/onslaught.webp" width="52" height="52" alt="Onslaught" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Onslaught</span>
+  </li>
+  <li title="Dark Crush">
+    <img src="../../assets/icons/chanter/dark-crush.webp" width="52" height="52" alt="Dark Crush" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Dark Crush</span>
+  </li>
+  <li title="Spinning Strike">
+    <img src="../../assets/icons/chanter/spinning-strike.webp" width="52" height="52" alt="Spinning Strike" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Spinning Strike</span>
+  </li>
+  <li title="Incandescent Blow">
+    <img src="../../assets/icons/chanter/incandescent-blow.webp" width="52" height="52" alt="Incandescent Blow" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Incandescent Blow</span>
+  </li>
+  <li title="Impactful Crush">
+    <img src="../../assets/icons/chanter/impactful-crush.webp" width="52" height="52" alt="Impactful Crush" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Impactful Crush</span>
+  </li>
+</ul>
+  <h3>Stigma loadout</h3>
+  <ol class="loadout">
+  <li class="slot" title="Undefeated Mantra">
+    <img src="../../assets/icons/chanter/undefeated-mantra.webp" width="56" height="56" alt="Undefeated Mantra" loading="lazy">
+    <span class="slot-lv">Lv 20</span>
+    <span class="slot-name">Undefeated Mantra</span>
+  </li>
+  <li class="slot" title="Power of the Storm">
+    <img src="../../assets/icons/chanter/power-of-the-storm.webp" width="56" height="56" alt="Power of the Storm" loading="lazy">
+    <span class="slot-lv">Lv 10</span>
+    <span class="slot-name">Power of the Storm</span>
+  </li>
+  <li class="slot" title="Sprint Mantra">
+    <img src="../../assets/icons/chanter/sprint-mantra.webp" width="56" height="56" alt="Sprint Mantra" loading="lazy">
+    <span class="slot-lv">Lv 10</span>
+    <span class="slot-name">Sprint Mantra</span>
+  </li>
+  <li class="slot" title="Marchutan&#39;s Wrath">
+    <img src="../../assets/icons/chanter/marchutans-wrath.webp" width="56" height="56" alt="Marchutan&#39;s Wrath" loading="lazy">
+    <span class="slot-lv">Lv 10</span>
+    <span class="slot-name">Marchutan&#39;s Wrath</span>
+  </li>
+</ol>
+  <h3>Key passives</h3>
+  <ul class="passive-row">
+<li><img src="../../assets/icons/chanter/attack-preparation.webp" width="24" height="24" alt="" loading="lazy">Attack Preparation</li><li><img src="../../assets/icons/chanter/impact-hit.webp" width="24" height="24" alt="" loading="lazy">Impact Hit</li><li><img src="../../assets/icons/chanter/winds-promise.webp" width="24" height="24" alt="" loading="lazy">Wind&#39;s Promise</li><li><img src="../../assets/icons/chanter/earths-promise.webp" width="24" height="24" alt="" loading="lazy">Earth&#39;s Promise</li></ul>
+
+</aside>
+<section id="intro" class="g-section" data-only="pve" aria-labelledby="h-intro">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro">Overview</h2></div>
+    <p>The Chanter fights in melee with a staff and makes the whole party stronger at the same time. Its mantras stay on permanently, <span class="sk"><img src="../../assets/icons/chanter/power-of-the-storm.webp" width="18" height="18" alt="" loading="lazy">Power of the Storm</span> speeds up everyone's skills, and its own damage comes from a stun → <span class="sk"><img src="../../assets/icons/chanter/dark-crush.webp" width="18" height="18" alt="" loading="lazy">Dark Crush</span> combo that keeps looping.</p>
+  <div class="callout accent">
+    <h3>The build in one sentence</h3>
+    <p>Keep <span class="sk"><img src="../../assets/icons/chanter/undefeated-mantra.webp" width="18" height="18" alt="" loading="lazy">Undefeated Mantra</span> and <span class="sk"><img src="../../assets/icons/chanter/sprint-mantra.webp" width="18" height="18" alt="" loading="lazy">Sprint Mantra</span> on, open with <span class="sk"><img src="../../assets/icons/chanter/power-of-the-storm.webp" width="18" height="18" alt="" loading="lazy">Power of the Storm</span>, and spam the line where <span class="sk"><img src="../../assets/icons/chanter/impactful-crush.webp" width="18" height="18" alt="" loading="lazy">Impactful Crush</span> and <span class="sk"><img src="../../assets/icons/chanter/spinning-strike.webp" width="18" height="18" alt="" loading="lazy">Spinning Strike</span> unlock <span class="sk"><img src="../../assets/icons/chanter/dark-crush.webp" width="18" height="18" alt="" loading="lazy">Dark Crush</span> while <span class="sk"><img src="../../assets/icons/chanter/onslaught.webp" width="18" height="18" alt="" loading="lazy">Onslaught</span> refills your MP.</p>
+  </div>
+  <p class="note">This guide follows TitanTheF's global build (start 1–45 and the 45+ goal) from his AION 2 progression sheet.</p>
+
+</section>
+<section id="global" class="g-section" data-only="pve pvp" aria-labelledby="h-global">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-global">Global Season 1: what changes</h2></div>
+    <p>Global servers open on <strong>October 5, 2026</strong> (Founder's early access from September 30). What that means for the Chanter:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 stigma slots, capped at 20.</strong> Two of them are mantras, so there are only two free picks.</li>
+      <li><strong>No combat speed at the start.</strong> Season 1 gear gives little attack speed, so the simple macro below is the best one for now — Power of the Storm matters even more.</li>
+      <li><strong>Bigger groups</strong> (5-player expeditions, 10-player sanctuaries): every party buff reaches more people.</li>
+      <li data-only="pvp"><strong>PvP:</strong> everyone starts on the same limited gear and no meta has formed yet.</li>
+    </ul>
+  </div>
+  <p class="note">Active skills and passives are identical in the global and KR/TW data; stigmas lose their level-25 tier.</p>
+
+</section>
+<section id="skills" class="g-section" data-only="pve" aria-labelledby="h-skills">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-skills">Skills</h2></div>
+    <p>Three skills go to <strong>20</strong>, three to <strong>16</strong>, the rest stay at <strong>12</strong>. Levels come from skill points (10), Daevanion (14), rings (16) and arcana (20).</p>
+  <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/onslaught.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Onslaught <span class="badge must">20</span></div>
+    <div class="skill-desc">Basic attack that restores MP; every hit shortens Spinning Strike's cooldown, and at 16 it adds the Storm Chain.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+20% MP restored</li><li><span class="spec-lv">12</span>-1s [Spinning Strike] cooldown on hit</li><li><span class="spec-lv">16</span>Adds [Storm Chain] Chain Skill</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>+20% MP restored</li>
+        <li class=""><span class="spec-lv">8</span>Absorbs 0.7% HP</li>
+        <li class=""><span class="spec-lv">8</span>+50% Multi-Hit on hit</li>
+        <li class="on"><span class="spec-lv">12</span>-1s [Spinning Strike] cooldown on hit</li>
+        <li class="on"><span class="spec-lv">16</span>Adds [Storm Chain] Chain Skill</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/dark-crush.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Dark Crush <span class="badge must">20</span></div>
+    <div class="skill-desc">Main damage. It unlocks for a few seconds after Impactful Crush, Spinning Strike and Marchutan's Wrath; at 16 its own cooldown disappears.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Critical Hit on hit</li><li><span class="spec-lv">12</span>Adds [Piercing Strike] Chain Skill</li><li><span class="spec-lv">16</span>Removes [Dark Crush] cooldown</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Absorbs 0.7% HP</li>
+        <li class=""><span class="spec-lv">8</span>Deals extra damage on attacking a target afflicted with Impact-type status</li>
+        <li class="on"><span class="spec-lv">8</span>Critical Hit on hit</li>
+        <li class="on"><span class="spec-lv">12</span>Adds [Piercing Strike] Chain Skill</li>
+        <li class="on"><span class="spec-lv">16</span>Removes [Dark Crush] cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/spinning-strike.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Spinning Strike <span class="badge must">20</span></div>
+    <div class="skill-desc">Stacking +15% Critical Damage for 30s and unlocks Dark Crush.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>-5s cooldown</li><li><span class="spec-lv">8</span>+10% Heal Boost (up to 20%)</li><li><span class="spec-lv">8</span>Up to +20% damage when less targets hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>-5s cooldown</li>
+        <li class="on"><span class="spec-lv">8</span>+10% Heal Boost (up to 20%)</li>
+        <li class="on"><span class="spec-lv">8</span>Up to +20% damage when less targets hit</li>
+        <li class=""><span class="spec-lv">12</span>40% chance to inflict Seal for 3s</li>
+        <li class=""><span class="spec-lv">16</span>Ignores Block and Evasion and lands as a Critical Hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/incandescent-blow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Incandescent Blow <span class="badge must">16</span></div>
+    <div class="skill-desc">Filler with no cooldown; the Block pick keeps you safe in melee.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+200 Block while using skill</li><li><span class="spec-lv">8</span>Deals up to 12% more damage when less targets are hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>-20% MP consumed</li>
+        <li class="on"><span class="spec-lv">8</span>+200 Block while using skill</li>
+        <li class="on"><span class="spec-lv">8</span>Deals up to 12% more damage when less targets are hit</li>
+        <li class=""><span class="spec-lv">12</span>-200 enemy Accuracy for 3s on landing Bursting Blow</li>
+        <li class=""><span class="spec-lv">16</span>Ignores Block and Evasion and lands as Multi-Hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/impactful-crush.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Impactful Crush <span class="badge must">16</span></div>
+    <div class="skill-desc">Ranged stun that unlocks Dark Crush; mobile and faster at 12.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Changes to mobile skill</li><li><span class="spec-lv">12</span>+30% Skill Speed</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Changes to AoE damage</li>
+        <li class=""><span class="spec-lv">8</span>+1s [Impactful Crush] Stun duration</li>
+        <li class="on"><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class="on"><span class="spec-lv">12</span>+30% Skill Speed</li>
+        <li class=""><span class="spec-lv">16</span>+20% [Impactful Crush] Stun Chance</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/defiance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Defiance <span class="badge must">16</span></div>
+    <div class="skill-desc">CC break with a heal and, at 16, big damage tolerance.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Restores 10% HP on using [Defiance]</li><li><span class="spec-lv">16</span>+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Adds [Crushing Strike] Chain Skill</li>
+        <li class=""><span class="spec-lv">8</span>Restores 1000 Stamina on using [Defiance]</li>
+        <li class="on"><span class="spec-lv">8</span>Restores 10% HP on using [Defiance]</li>
+        <li class=""><span class="spec-lv">12</span>+2s Tenacity duration</li>
+        <li class="on"><span class="spec-lv">16</span>+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/wave-blow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Wave Blow <span class="badge opt">12</span></div>
+    <div class="skill-desc">Knockdown on a stunned target; the level-12 pick cuts the boss's damage.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+6m Range</li><li><span class="spec-lv">12</span>-15% target&#39;s PvE Damage Boost and -7.5% PvP Damage Boost for 10s</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Multi-Hit on hit</li>
+        <li class="on"><span class="spec-lv">8</span>+6m Range</li>
+        <li class=""><span class="spec-lv">8</span>+1s Knockdown duration</li>
+        <li class="on"><span class="spec-lv">12</span>-15% target&#39;s PvE Damage Boost and -7.5% PvP Damage Boost for 10s</li>
+        <li class=""><span class="spec-lv">16</span>-5s cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/heat-wave-blow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Heat Wave Blow <span class="badge opt">12</span></div>
+    <div class="skill-desc">AoE with Seal; good on packs.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Up to +20% damage when more targets hit</li><li><span class="spec-lv">12</span>Ignores Block and Evasion and lands as Multi-Hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>40% chance to inflict Stun for 3s</li>
+        <li class=""><span class="spec-lv">8</span>+20% Seal Chance</li>
+        <li class="on"><span class="spec-lv">8</span>Up to +20% damage when more targets hit</li>
+        <li class="on"><span class="spec-lv">12</span>Ignores Block and Evasion and lands as Multi-Hit</li>
+        <li class=""><span class="spec-lv">16</span>25% chance to reset [Heat Wave Blow] cooldown on Block</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/rushing-smash.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Rushing Smash <span class="badge opt">12</span></div>
+    <div class="skill-desc">Gap-closer that restores MP; resets on a kill.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Changes to Charge Skill, dealing up to 200% more damage</li><li><span class="spec-lv">12</span>Resets cooldown on defeating an enemy</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>-20% target&#39;s Impact-type Resist for 5s</li>
+        <li class="on"><span class="spec-lv">8</span>Changes to Charge Skill, dealing up to 200% more damage</li>
+        <li class=""><span class="spec-lv">8</span>50% chance to trigger [Heat Wave Blow] on hit</li>
+        <li class="on"><span class="spec-lv">12</span>Resets cooldown on defeating an enemy</li>
+        <li class=""><span class="spec-lv">16</span>Ignores Block and Evasion and lands as Multi-Hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/recuperation.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Recuperation <span class="badge opt">12</span></div>
+    <div class="skill-desc">Party heal and debuff removal.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Removes up to 2 debuffs</li><li><span class="spec-lv">12</span>+5% HP restored</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>+1 consecutive use and Heal over Time can stack up to 2 times</li>
+        <li class="on"><span class="spec-lv">8</span>Removes up to 2 debuffs</li>
+        <li class=""><span class="spec-lv">8</span>+4s healing duration</li>
+        <li class="on"><span class="spec-lv">12</span>+5% HP restored</li>
+        <li class=""><span class="spec-lv">16</span>-3s cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/tremor-crush.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Tremor Crush <span class="badge opt">12</span></div>
+    <div class="skill-desc">Dodge → dash with a stun.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Restores 300 Stamina on hit</li><li><span class="spec-lv">8</span>+10m [Tremor Crush] range</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>Restores 300 Stamina on hit</li>
+        <li class="on"><span class="spec-lv">8</span>+10m [Tremor Crush] range</li>
+        <li class=""><span class="spec-lv">8</span>+50% Multi-Hit on hit</li>
+        <li class=""><span class="spec-lv">12</span>Adds [Surging Strike] Chain Skill</li>
+        <li class=""><span class="spec-lv">16</span>+25% [Tremor Crush] Stun Chance</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/gust-rampage.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Gust Rampage <span class="badge opt">12</span></div>
+    <div class="skill-desc">Only on Staggered targets.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Changes to mobile skill</li><li><span class="spec-lv">12</span>Multi-Hit on hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Absorbs 5% HP</li>
+        <li class=""><span class="spec-lv">8</span>Restores 120 MP</li>
+        <li class="on"><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class="on"><span class="spec-lv">12</span>Multi-Hit on hit</li>
+        <li class=""><span class="spec-lv">16</span>-1s all skill cooldowns on hit</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="passives" class="g-section" data-only="pve" aria-labelledby="h-passives">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-passives">Passives</h2></div>
+    <div class="table-wrap"><table>
+    <thead><tr><th>Passive</th><th>Level</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td><span class="sk"><img src="../../assets/icons/chanter/attack-preparation.webp" width="18" height="18" alt="" loading="lazy">Attack Preparation</span></td><td>20</td><td>PvE Damage Boost, Defense and Accuracy.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/chanter/impact-hit.webp" width="18" height="18" alt="" loading="lazy">Impact Hit</span></td><td>20</td><td>More stun chance — every stun unlocks Dark Crush.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/chanter/winds-promise.webp" width="18" height="18" alt="" loading="lazy">Wind&#39;s Promise</span></td><td>16</td><td>Critical Damage Boost and extra damage on crits.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/chanter/blessing-of-life.webp" width="18" height="18" alt="" loading="lazy">Blessing of Life</span> / <span class="sk"><img src="../../assets/icons/chanter/earths-promise.webp" width="18" height="18" alt="" loading="lazy">Earth&#39;s Promise</span></td><td>14</td><td>HP and heal boost / −PvE Damage Tolerance on the target for the whole party.</td></tr>
+      <tr><td>The rest</td><td>10</td><td>Crossguard, Protection Circle, Inspiring Spell, Raging Spell, Survival Willpower.</td></tr>
+    </tbody>
+  </table></div>
+
+</section>
+<section id="gear" class="g-section" data-only="pve" aria-labelledby="h-gear">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-gear">Gear &amp; stats</h2></div>
+    <div class="callout"><ul>
+    <li><strong>Manastones:</strong> Attack, Critical Hit, Accuracy.</li>
+    <li><strong>Guard</strong> (off-hand) to +10.</li>
+    <li>Which gear tier to chase is still open until the global launch.</li>
+  </ul></div>
+
+</section>
+<section id="daevanion" class="g-section" data-only="pve pvp" aria-labelledby="h-daevanion">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-daevanion">Daevanion boards</h2></div>
+    <p>Daevanion takes your skills from 10 to 14 and adds stats. Each blue node gives <strong>+1 level</strong> to its skill. TitanTheF's sheet links a starting route for levels 1–45 — open it and take those nodes while leveling.</p>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>Priority:</strong> blue nodes for <span class="sk"><img src="../../assets/icons/chanter/onslaught.webp" width="18" height="18" alt="" loading="lazy">Onslaught</span>, <span class="sk"><img src="../../assets/icons/chanter/dark-crush.webp" width="18" height="18" alt="" loading="lazy">Dark Crush</span>, <span class="sk"><img src="../../assets/icons/chanter/spinning-strike.webp" width="18" height="18" alt="" loading="lazy">Spinning Strike</span>, then orange nodes.</li>
+    <li data-only="pvp"><strong>Priority:</strong> blue nodes for <span class="sk"><img src="../../assets/icons/chanter/impactful-crush.webp" width="18" height="18" alt="" loading="lazy">Impactful Crush</span>, <span class="sk"><img src="../../assets/icons/chanter/wave-blow.webp" width="18" height="18" alt="" loading="lazy">Wave Blow</span>, <span class="sk"><img src="../../assets/icons/chanter/defiance.webp" width="18" height="18" alt="" loading="lazy">Defiance</span>.</li>
+    <li data-only="pve"><strong>Ariel</strong> (PvE) at 45, not Azphel.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (PvP) at 45, and Triniel earlier.</li>
+  </ul></div>
+  <p><a href="https://aion2.app/daevanion?job=9&amp;b=bZyJJq" target="_blank" rel="noopener">Starting Daevanion route (aion2.app) →</a></p>
+
+</section>
+<section id="stigmas" class="g-section" data-only="pve" aria-labelledby="h-stigmas">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-stigmas">Stigmas</h2></div>
+    <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/undefeated-mantra.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Undefeated Mantra <span class="badge must">Lv 20</span></div>
+    <div class="skill-desc">+PvE damage and tolerance for you and the party — the mantra that defines the class. Max it first.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+100 Critical Hit</li><li><span class="spec-lv">10</span>+100 Accuracy</li><li><span class="spec-lv">15</span>+5% Critical Damage Boost</li><li><span class="spec-lv">20</span>+5% Double Chance</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+100 Critical Hit</li>
+        <li class="on"><span class="spec-lv">10</span>+100 Accuracy</li>
+        <li class="on"><span class="spec-lv">15</span>+5% Critical Damage Boost</li>
+        <li class="on"><span class="spec-lv">20</span>+5% Double Chance</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/power-of-the-storm.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Power of the Storm <span class="badge must">Lv 10</span></div>
+    <div class="skill-desc">+20% Combat Speed and −20% cooldowns for 10s (party gets half the cooldown cut). Level 5 shortens its own cooldown by 30s.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>-30s cooldown</li><li><span class="spec-lv">10</span>+200 Accuracy</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>-30s cooldown</li>
+        <li class="on"><span class="spec-lv">10</span>+200 Accuracy</li>
+        <li class=""><span class="spec-lv">15</span>+200 Critical Hit</li>
+        <li class=""><span class="spec-lv">20</span>+20% Caster Attack and +10% party member Attack</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/sprint-mantra.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Sprint Mantra <span class="badge must">Lv 10</span></div>
+    <div class="skill-desc">Move speed and on-hit healing for the party.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+10% Incoming Heal</li><li><span class="spec-lv">10</span>+30% Natural Stamina Regen</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+10% Incoming Heal</li>
+        <li class="on"><span class="spec-lv">10</span>+30% Natural Stamina Regen</li>
+        <li class=""><span class="spec-lv">15</span>+50% amount restored when HP is 50% or less</li>
+        <li class=""><span class="spec-lv">20</span>+10% Restoration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/marchutans-wrath.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Marchutan&#39;s Wrath <span class="badge must">Lv 10</span></div>
+    <div class="skill-desc">Ranged AoE that also unlocks Dark Crush.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Up to +20% damage when less targets hit</li><li><span class="spec-lv">10</span>50% chance to inflict Stun for 3s</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Up to +20% damage when less targets hit</li>
+        <li class="on"><span class="spec-lv">10</span>50% chance to inflict Stun for 3s</li>
+        <li class=""><span class="spec-lv">15</span>-70% Incoming Heal and Potion Recovery</li>
+        <li class=""><span class="spec-lv">20</span>+25% additional Stun Chance</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/obliterate.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Obliterate <span class="badge opt">leveling</span></div>
+    <div class="skill-desc">AoE knockdown for packs while leveling; replace it with Marchutan's Wrath at the cap.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Up to +20% damage when more targets hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Up to +20% damage when more targets hit</li>
+        <li class=""><span class="spec-lv">10</span>+20% Skill Speed</li>
+        <li class=""><span class="spec-lv">15</span>Critical Hit on hit</li>
+        <li class=""><span class="spec-lv">20</span>+25% Knockdown Chance</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+  <p class="note">Mantras are toggles: switch them on once and keep them out of any macro — a second press turns them off.</p>
+
+</section>
+<section id="macro" class="g-section" data-only="pve" aria-labelledby="h-macro">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro">Macro &amp; rotation</h2></div>
+    <p>AION 2 has two separate tools:</p>
+  <ul>
+    <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the highest-priority skill that's ready, and in AION 2 the <strong>bottom slot has the highest priority</strong>. The cards show each line top to bottom as in the game.</li>
+    <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar buttons in order and cancels animation tails. Skills on cooldown are skipped.</li>
+  </ul>
+
+  <h3>1. Hotbar lines</h3>
+  <div class="hotlines">
+<div class="hotline">
+  <div class="hotline-head"><span class="key">RMB</span><span class="hotline-name">Crush line</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="">
+      <span class="hl-n">4</span>
+      <img src="../../assets/icons/chanter/incandescent-blow.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Incandescent Blow</span>
+    </li>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/chanter/spinning-strike.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Spinning Strike</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/chanter/dark-crush.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Dark Crush</span>
+    </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/chanter/impactful-crush.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Impactful Crush</span>
+    </li>
+  </ol>
+  <p class="hotline-order">In-game order, top to bottom. 1 = highest priority — the bottom slot.</p>
+<p class="hotline-note">Impactful Crush and Spinning Strike unlock Dark Crush, which then fires as the next-highest priority; Incandescent Blow fills the gaps.</p></div><div class="hotline">
+  <div class="hotline-head"><span class="key">2</span><span class="hotline-name">Wave line</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/chanter/heat-wave-blow.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Heat Wave Blow</span>
+    </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/chanter/wave-blow.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Wave Blow</span>
+    </li>
+  </ol>
+  <p class="hotline-order">In-game order, top to bottom. 1 = highest priority — the bottom slot.</p>
+<p class="hotline-note">Wave Blow knocks down a stunned target.</p></div><div class="hotline">
+  <div class="hotline-head"><span class="key">3</span><span class="hotline-name">Dash line</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/chanter/tremor-crush.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Tremor Crush</span>
+    </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/chanter/rushing-smash.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Rushing Smash</span>
+    </li>
+  </ol>
+  <p class="hotline-order">In-game order, top to bottom. 1 = highest priority — the bottom slot.</p>
+<p class="hotline-note">Gap-closers — press by hand.</p></div>  </div>
+
+  <h3>2. In-game macro</h3>
+  <p>Bind it to the middle mouse button. Delay <strong>10 ms</strong> on every slot:</p>
+  <ol class="macroseq">
+  <li><span class="ms-n">1</span><span class="ms-label">Power of the Storm</span><span class="ms-detail">10 ms</span></li>
+  <li><span class="ms-n">2</span><span class="ms-label">Onslaught</span><span class="ms-detail">10 ms</span></li>
+  <li><span class="ms-n">3</span><span class="ms-label">Wave line</span><span class="ms-detail">10 ms</span></li>
+  <li><span class="ms-n">4</span><span class="ms-label">Onslaught</span><span class="ms-detail">10 ms</span></li>
+</ol>
+  <p class="note">TitanTheF weaves Onslaught into the macro itself — it restores MP, and with no combat speed yet it's the simplest setup that works.</p>
+
+  <h3>3. What you actually press</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Hold</span><span class="press-what"><span class="sk"><img src="../../assets/icons/chanter/onslaught.webp" width="18" height="18" alt="" loading="lazy">Onslaught</span> on <span class="key">LMB</span>, the Crush line on <span class="key">RMB</span> and the macro on <span class="key">MMB</span>.</span></li>
+    <li><span class="press-how">Mouse macro</span><span class="press-what">Or let your mouse software loop LMB → RMB → MMB (10 ms each) on one toggle button — TitanTheF uses Witchmana, but any mouse software works.</span></li>
+    <li><span class="press-how">By hand</span><span class="press-what">Mantras (once), <span class="sk"><img src="../../assets/icons/chanter/recuperation.webp" width="18" height="18" alt="" loading="lazy">Recuperation</span> when the party takes damage, the Dash line to close gaps, <span class="sk"><img src="../../assets/icons/chanter/defiance.webp" width="18" height="18" alt="" loading="lazy">Defiance</span>.</span></li>
+  </ul>
+
+</section>
+<section id="recap" class="g-section" data-only="pve" aria-labelledby="h-recap">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-recap">Recap</h2></div>
+    <div class="callout accent"><ul>
+    <li><strong>Skills:</strong> Onslaught, Dark Crush, Spinning Strike 20; Incandescent Blow, Impactful Crush, Defiance 16; the rest 12.</li>
+    <li><strong>Stigmas:</strong> Undefeated Mantra 20, Power of the Storm 10, Sprint Mantra 10, Marchutan's Wrath 10.</li>
+    <li><strong>Passives:</strong> Attack Preparation and Impact Hit 20, Wind's Promise 16, Blessing of Life and Earth's Promise 14.</li>
+    <li><strong>Manastones:</strong> Attack, Critical Hit, Accuracy; guard to +10.</li>
+  </ul></div>
+
+</section>
+<aside class="glance" data-only="pvp" aria-label="Build at a glance">
+  <p class="glance-title">Build at a glance</p>
+    <h3>Core skills</h3>
+  <ul class="core-row">
+  <li title="Impactful Crush">
+    <img src="../../assets/icons/chanter/impactful-crush.webp" width="52" height="52" alt="Impactful Crush" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Impactful Crush</span>
+  </li>
+  <li title="Wave Blow">
+    <img src="../../assets/icons/chanter/wave-blow.webp" width="52" height="52" alt="Wave Blow" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Wave Blow</span>
+  </li>
+  <li title="Dark Crush">
+    <img src="../../assets/icons/chanter/dark-crush.webp" width="52" height="52" alt="Dark Crush" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Dark Crush</span>
+  </li>
+  <li title="Defiance">
+    <img src="../../assets/icons/chanter/defiance.webp" width="52" height="52" alt="Defiance" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Defiance</span>
+  </li>
+</ul>
+  <h3>Stigma loadout</h3>
+  <ol class="loadout">
+  <li class="slot" title="Undefeated Mantra">
+    <img src="../../assets/icons/chanter/undefeated-mantra.webp" width="56" height="56" alt="Undefeated Mantra" loading="lazy">
+    <span class="slot-lv">Lv 20</span>
+    <span class="slot-name">Undefeated Mantra</span>
+  </li>
+  <li class="slot" title="Marchutan&#39;s Wrath">
+    <img src="../../assets/icons/chanter/marchutans-wrath.webp" width="56" height="56" alt="Marchutan&#39;s Wrath" loading="lazy">
+    <span class="slot-lv">Lv 15</span>
+    <span class="slot-name">Marchutan&#39;s Wrath</span>
+  </li>
+  <li class="slot" title="Power of the Storm">
+    <img src="../../assets/icons/chanter/power-of-the-storm.webp" width="56" height="56" alt="Power of the Storm" loading="lazy">
+    <span class="slot-lv">Lv 10</span>
+    <span class="slot-name">Power of the Storm</span>
+  </li>
+  <li class="slot" title="Barrier Spell">
+    <img src="../../assets/icons/chanter/barrier-spell.webp" width="56" height="56" alt="Barrier Spell" loading="lazy">
+    <span class="slot-lv">Lv 10</span>
+    <span class="slot-name">Barrier Spell</span>
+  </li>
+</ol>
+  <h3>Key passives</h3>
+  <ul class="passive-row">
+<li><img src="../../assets/icons/chanter/attack-preparation.webp" width="24" height="24" alt="" loading="lazy">Attack Preparation</li><li><img src="../../assets/icons/chanter/impact-hit.webp" width="24" height="24" alt="" loading="lazy">Impact Hit</li><li><img src="../../assets/icons/chanter/survival-willpower.webp" width="24" height="24" alt="" loading="lazy">Survival Willpower</li><li><img src="../../assets/icons/chanter/earths-promise.webp" width="24" height="24" alt="" loading="lazy">Earth&#39;s Promise</li></ul>
+
+</aside>
+<section id="intro-pvp" class="g-section" data-only="pvp" aria-labelledby="h-intro-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro-pvp">Overview</h2></div>
+    <p>In PvP the Chanter is a front-line buffer that locks targets down: stun with <span class="sk"><img src="../../assets/icons/chanter/impactful-crush.webp" width="18" height="18" alt="" loading="lazy">Impactful Crush</span>, knock down with <span class="sk"><img src="../../assets/icons/chanter/wave-blow.webp" width="18" height="18" alt="" loading="lazy">Wave Blow</span>, then burst with <span class="sk"><img src="../../assets/icons/chanter/dark-crush.webp" width="18" height="18" alt="" loading="lazy">Dark Crush</span> — while the party fights inside your mantras.</p>
+  <p class="note">TitanTheF's sheet covers PvE; the PvP picks below come from the global skill data and are a starting point until a global PvP meta forms.</p>
+
+</section>
+<section id="skills-pvp" class="g-section" data-only="pvp" aria-labelledby="h-skills-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-skills-pvp">Skills &amp; stigmas</h2></div>
+    <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/impactful-crush.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Impactful Crush <span class="badge must">16</span></div>
+    <div class="skill-desc">20m stun (+1s duration, +20% chance at 16) — your opener.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+1s [Impactful Crush] Stun duration</li><li><span class="spec-lv">8</span>Changes to mobile skill</li><li><span class="spec-lv">16</span>+20% [Impactful Crush] Stun Chance</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Changes to AoE damage</li>
+        <li class="on"><span class="spec-lv">8</span>+1s [Impactful Crush] Stun duration</li>
+        <li class="on"><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class=""><span class="spec-lv">12</span>+30% Skill Speed</li>
+        <li class="on"><span class="spec-lv">16</span>+20% [Impactful Crush] Stun Chance</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/wave-blow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Wave Blow <span class="badge must">16</span></div>
+    <div class="skill-desc">Knockdown on the stunned target; the level-12 pick cuts their PvP damage.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+6m Range</li><li><span class="spec-lv">8</span>+1s Knockdown duration</li><li><span class="spec-lv">12</span>-15% target&#39;s PvE Damage Boost and -7.5% PvP Damage Boost for 10s</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Multi-Hit on hit</li>
+        <li class="on"><span class="spec-lv">8</span>+6m Range</li>
+        <li class="on"><span class="spec-lv">8</span>+1s Knockdown duration</li>
+        <li class="on"><span class="spec-lv">12</span>-15% target&#39;s PvE Damage Boost and -7.5% PvP Damage Boost for 10s</li>
+        <li class=""><span class="spec-lv">16</span>-5s cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/defiance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Defiance <span class="badge must">16</span></div>
+    <div class="skill-desc">Break the first hard CC.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Restores 10% HP on using [Defiance]</li><li><span class="spec-lv">12</span>+2s Tenacity duration</li><li><span class="spec-lv">16</span>+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Adds [Crushing Strike] Chain Skill</li>
+        <li class=""><span class="spec-lv">8</span>Restores 1000 Stamina on using [Defiance]</li>
+        <li class="on"><span class="spec-lv">8</span>Restores 10% HP on using [Defiance]</li>
+        <li class="on"><span class="spec-lv">12</span>+2s Tenacity duration</li>
+        <li class="on"><span class="spec-lv">16</span>+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/marchutans-wrath.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Marchutan&#39;s Wrath <span class="badge must">Lv 15</span></div>
+    <div class="skill-desc">Level 15 adds −70% healing and potion recovery — your anti-heal.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Up to +20% damage when less targets hit</li><li><span class="spec-lv">10</span>50% chance to inflict Stun for 3s</li><li><span class="spec-lv">15</span>-70% Incoming Heal and Potion Recovery</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Up to +20% damage when less targets hit</li>
+        <li class="on"><span class="spec-lv">10</span>50% chance to inflict Stun for 3s</li>
+        <li class="on"><span class="spec-lv">15</span>-70% Incoming Heal and Potion Recovery</li>
+        <li class=""><span class="spec-lv">20</span>+25% additional Stun Chance</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/barrier-spell.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Barrier Spell <span class="badge opt">Lv 10</span></div>
+    <div class="skill-desc">Keeps the party above 10% HP for 3s — saves a lost fight.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Restores 10% HP when effect expires naturally</li><li><span class="spec-lv">10</span>+10% PvE Damage Tolerance and +5% PvP Damage Tolerance for 10s when effect expires naturally</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Restores 10% HP when effect expires naturally</li>
+        <li class="on"><span class="spec-lv">10</span>+10% PvE Damage Tolerance and +5% PvP Damage Tolerance for 10s when effect expires naturally</li>
+        <li class=""><span class="spec-lv">15</span>+10% HP limit</li>
+        <li class=""><span class="spec-lv">20</span>+1s effect duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/chanter/impeding-authority.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Impeding Authority <span class="badge opt">alt.</span></div>
+    <div class="skill-desc">Party shield worth 16% of Max HP.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+15% Defense</li><li><span class="spec-lv">10</span>+10% Incoming Heal</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+15% Defense</li>
+        <li class="on"><span class="spec-lv">10</span>+10% Incoming Heal</li>
+        <li class=""><span class="spec-lv">15</span>+10% PvE Damage Tolerance, +5% PvP Damage Tolerance</li>
+        <li class=""><span class="spec-lv">20</span>Restores 7% of Max HP when Protective Shield ends or is broken</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="recap-pvp" class="g-section" data-only="pvp" aria-labelledby="h-recap-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-recap-pvp">Recap</h2></div>
+    <div class="callout accent"><ul>
+    <li><strong>Combo:</strong> Impactful Crush (stun) → Wave Blow (knockdown) → Dark Crush.</li>
+    <li><strong>Stigmas:</strong> Undefeated Mantra, Marchutan's Wrath 15 (anti-heal), Power of the Storm, Barrier Spell.</li>
+    <li><strong>Daevanion:</strong> Azphel over Ariel.</li>
+  </ul></div>
+
+</section>
+<section id="fight-lvl" class="g-section" data-only="lvl" aria-labelledby="h-fight-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-fight-lvl">How to fight while leveling</h2></div>
+    <div class="callout"><ul>
+    <li><strong>Packs:</strong> <span class="sk"><img src="../../assets/icons/chanter/rushing-smash.webp" width="18" height="18" alt="" loading="lazy">Rushing Smash</span> in (resets on a kill) → <span class="sk"><img src="../../assets/icons/chanter/obliterate.webp" width="18" height="18" alt="" loading="lazy">Obliterate</span> → Crush line + <span class="sk"><img src="../../assets/icons/chanter/onslaught.webp" width="18" height="18" alt="" loading="lazy">Onslaught</span>.</li>
+    <li><strong>Elites:</strong> <span class="sk"><img src="../../assets/icons/chanter/impactful-crush.webp" width="18" height="18" alt="" loading="lazy">Impactful Crush</span> (stun) → <span class="sk"><img src="../../assets/icons/chanter/dark-crush.webp" width="18" height="18" alt="" loading="lazy">Dark Crush</span> → <span class="sk"><img src="../../assets/icons/chanter/wave-blow.webp" width="18" height="18" alt="" loading="lazy">Wave Blow</span> → <span class="sk"><img src="../../assets/icons/chanter/spinning-strike.webp" width="18" height="18" alt="" loading="lazy">Spinning Strike</span> → Dark Crush again.</li>
+    <li><strong>Mana:</strong> Onslaught restores MP on every hit — never stop weaving it.</li>
+    <li><strong>Low HP:</strong> <span class="sk"><img src="../../assets/icons/chanter/recuperation.webp" width="18" height="18" alt="" loading="lazy">Recuperation</span>, and Sprint Mantra heals on hits.</li>
+  </ul></div>
+
+</section>
+<section id="macro-lvl" class="g-section" data-only="lvl" aria-labelledby="h-macro-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro-lvl">Leveling macro</h2></div>
+    <p>TitanTheF's starting setup works from level 1: the Crush line on RMB, Onslaught on LMB and the in-game macro (Power of the Storm → Onslaught → Wave line → Onslaught) on the middle mouse button. Early build at 1–45: Onslaught, Incandescent Blow, Spinning Strike and Rushing Smash to 12, everything else to 8.</p>
+  <div class="hotlines">
+    <div class="hotline">
+  <div class="hotline-head"><span class="key">RMB</span><span class="hotline-name">Crush line</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="">
+      <span class="hl-n">4</span>
+      <img src="../../assets/icons/chanter/incandescent-blow.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Incandescent Blow</span>
+    </li>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/chanter/spinning-strike.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Spinning Strike</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/chanter/dark-crush.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Dark Crush</span>
+    </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/chanter/impactful-crush.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Impactful Crush</span>
+    </li>
+  </ol>
+  <p class="hotline-order">In-game order, top to bottom. 1 = highest priority — the bottom slot.</p>
+</div>
+  </div>
+  <p><a href="https://aion2t.com/ru/simulator?job=9&amp;b=S5RCtE" target="_blank" rel="noopener">Starting build 1–45 (aion2t) →</a> · <a href="https://aion2t.com/ru/simulator?job=9&amp;b=yDzsiQ" target="_blank" rel="noopener">45+ goal build →</a></p>
+
+</section>
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">Sources</h2>
+  <ul>
+    <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener">TitanTheF — AION 2 progression sheet</a> (Chanter tab) — builds, hotbar, macro, stats</li>
+    <li><a href="https://aion2t.com/ru/simulator?job=9&amp;b=yDzsiQ" target="_blank" rel="noopener">aion2t.com</a> — TitanTheF's start and 45+ builds (skill levels, specializations, stigmas, passives)</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/chanter" target="_blank" rel="noopener">questlog.gg</a> — skill data from the global client</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — how hotbar lines and the in-game macro work</li>
+  </ul>
+  <p class="sources-all"><a href="../../en/sources/">All sources and creators →</a></p>
+</section>  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../en/">AION 2 Guides</a>
+      <p>Unofficial fan site, not affiliated with NCSOFT. AION 2 and its skill icons are © NCSOFT.</p>
+      <p>Last checked: 2026-09-27 (before the global launch).</p>
+      <p><a href="../../en/sources/">All sources and creators</a> · <button type="button" class="link-btn wn-open">Changelog</button></p>
+    </div>
+  </div>
+</footer>
+<dialog class="whatsnew" data-id="2026-09-27-chanter-assassin" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title" data-latest="What&#39;s new" data-history="Changelog">What&#39;s new</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="Got it">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <section class="wn-entry">
+      <time class="wn-date" datetime="2026-09-27">Sep 27, 2026</time>
+      <ul>
+        <li><a href="../../en/chanter/"><strong>Chanter guide</strong> — TitanTheF's global build: skills, stigmas, mantras and the simple starting macro.</a></li>
+        <li><a href="../../en/assassin/"><strong>Assassin guide</strong> — Insignias, Heart Gore and the Illusive Clone burst window, with TitanTheF's global build.</a></li>
+        <li><a href="../../en/ranger/"><strong>Ranger reworked for global</strong> — realistic skill levels (16), the global stigma set and arcana targets instead of the Korean endgame.</a></li>
+        <li><a href="../../en/gladiator/"><strong>Macros fixed</strong> — the bottom slot of a hotbar line has the highest priority; leveling macros for every class (Grobs).</a></li>
+      </ul>
+    </section>
+    <section class="wn-entry wn-older">
+      <time class="wn-date" datetime="2026-09-27">Sep 27, 2026</time>
+      <ul>
+        <li><a href="../../en/templar/"><strong>Templar guide</strong> — PvE, PvP and leveling: skills, stigmas for global's 4 slots and a macro setup.</a></li>
+        <li><a href="../../en/week-1/"><strong>First week</strong> — what to finish before the first weekly reset and the one-time goals that are easy to miss.</a></li>
+        <li><a href="../../en/weekly/"><strong>Weekly tracker</strong> — weekly entries and Odyle energy for all your characters, with a reset timer. The checklist clears itself every week.</a></li>
+      </ul>
+    </section>
+    <button class="btn btn-primary wn-ok" value="close">Got it</button>
+  </form>
+</dialog>
+<script src="../../assets/js/site.js" defer></script>
+</body>
+</html>

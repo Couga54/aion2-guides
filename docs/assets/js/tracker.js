@@ -167,6 +167,7 @@
     }
     var f = $('.energy-form', card);
     if (f && document.activeElement !== f.v && document.activeElement !== f.cap) { f.v.value = e.v; f.cap.value = e.cap; }
+    $('.energy-chest', card).disabled = e.v < EN.chest;
     var ch = $('.energy-charged-in', card);
     if (ch && document.activeElement !== ch) ch.value = c.charged || 0;
   }
@@ -241,7 +242,8 @@
       $('.energy-chest', card).addEventListener('click', function () {
         var c = active(), now = Date.now();
         settleEnergy(c, now);
-        setEnergy(c, Math.max(0, c.energy.v - EN.chest), now);
+        if (c.energy.v < EN.chest) { renderEnergy(now); return; } // not enough for a chest
+        setEnergy(c, c.energy.v - EN.chest, now);
         save(); renderEnergy(now);
       });
       $('.energy-form', card).addEventListener('submit', function (ev) {

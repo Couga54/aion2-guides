@@ -55,10 +55,12 @@ Requirements from the user (in their words, translated):
   (4×2 grid of all 8 classes, "soon" greyed out) instead of a row of links.
 - Class art: official renders from the global teaser page's class carousel
   (`tools/fetch_art.py` → `src/assets/art/<slug>.webp`; NC's "spiritmaster" = our Elementalist).
-- Macros (Sep 27): two tools. A **hotbar line** = several skills on one hotbar button, fires the first
-  one off cooldown (order = priority). The **in-game macro** (Skill window → Macro; one per preset, up to
+- Macros (Sep 27): two tools. A **hotbar line** = several skills on one hotbar button; pressing it casts the
+  highest-priority ready skill, and the BOTTOM slot has the highest priority (Grobs, Arthars' Rage Burst).
+  `hotline()` takes skills in priority order and draws them in in-game order. The **in-game macro** (Skill window → Macro; one per preset, up to
   20 slots; key in Settings → Key Settings → General → Gameplay → Macro) is held and presses hotbar
-  buttons top→bottom in a loop, weaving basic attacks; 10 ms delay; cooldowns skipped. Keep charged
+  lines in a loop; 10 ms delay; cooldowns skipped. Hold the basic attack (LMB) next to the macro key,
+  don't put it in the macro (Grobs). Season 1: buffs are worth pressing by hand. Keep charged
   skills, toggles/auras and gap closers out. Guides render lines with `hotline()` and slots with `macroseq()`.
   Gladiator lines come from Arthars' video (RMB: Overhead Slam → Rending Blow → Rage Burst; E: Ruinous Blow;
   buffs: Lunge Stance + Zikel's); the macro slot order is our inference. Ranger lines from 7MMO.
@@ -71,6 +73,14 @@ Requirements from the user (in their words, translated):
   repeating every 7 days; the user will give the real time at launch. Odyle energy (EU test client):
   +15 every 3 h, base cap 840, chest 40, 7 weekly crafts × 40 — in `site.json → energy`.
   Weekly entry limits in data/weekly.json come from KR/TW/EU-test sites and need checking at launch.
+- TitanTheF's AION 2 progression sheet (Google Sheets, RU; tabs Ranger / Assassin / Chanter + progression,
+  farming, crafting) is the main source for Ranger (global rework), Assassin and Chanter. His builds live on
+  aion2t.com: `https://aion2t.com/api/builds/<id>` returns JSON with skill codes (= questlog ids), levels,
+  specialization indices (same order as our data), stigmas, passives. Ranger goal 8QbCF0 / start fV6T2F,
+  Assassin MeyRht / iUjpcy, Chanter yDzsiQ / S5RCtE. Hotbar/macro layouts are images in the sheet.
+  Global Ranger: six skills at 16 (not four at 20), stigmas Supporting Fire 20, Vaizel's Authority 20,
+  Bow of Blessing 10, Explosive Arrow 10 (no Griffon Arrow). PvP for Assassin/Chanter is our own starting
+  point from skill data — the sheet covers PvE only.
 - The old single-page guide had **Zikel's Blessing and Lunge Stance icons swapped** —
   icons here come fresh from questlog, keyed by skill name.
 - Gladiator: Overhead Slam & Aerial Snare only hit Knocked-down targets (bosses are an
@@ -86,7 +96,8 @@ Requirements from the user (in their words, translated):
 - `data/i18n.json` — UI strings EN/RU.
 - `data/weekly.json`, `data/week1.json` — tracker items and first-week goals (EN+RU).
 - `data/changelog.json` — "What's new" modal (base.html). Shown once per new top entry id
-  (localStorage `whatsnew-seen`); reopened from the footer. Add an entry with a new id for every release.
+  (localStorage `whatsnew-seen`) and only that entry; the "?" button and the footer open the full changelog.
+  Add an entry with a new id for every release.
 - `data/transcripts/` — YouTube transcripts guides are based on (`tools/fetch_transcript.py`).
 - `data/sources.json` — Sources & credits page (`/<lang>/sources/`): creators with YouTube/Twitch links,
   guides/databases, launch info. Add a source here whenever a guide starts relying on it —
@@ -117,5 +128,7 @@ Requirements from the user (in their words, translated):
   from Spid's and LittleFattyGG's videos) and Weekly tracker (/<lang>/weekly/, data/weekly.json,
   assets/js/tracker.js): characters, weekly counters that clear themselves at each reset, Odyle energy that
   regenerates per character, all in localStorage key `aion2-tracker-v1`.
+- Session 4 (Sep 27): Chanter and Assassin guides, Ranger reworked for global, macros corrected (bottom
+  slot = highest priority) with leveling macros (Grobs), class cards show "Updated <date>" instead of "Guide ready".
 - Open ideas: more classes, Daevanion board visual per class, checklist export/import,
   verify global level cap and Daevanion values after launch (Oct 5).

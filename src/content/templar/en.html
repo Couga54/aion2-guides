@@ -115,8 +115,8 @@
 {% call section('macro', 'Macro & rotation', 'pve') %}
   <p>AION 2 has two separate tools, and the build uses both:</p>
   <ul>
-    <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the first skill in the list that's usable, so the order is the priority.</li>
-    <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar buttons in order, weaves basic attacks and cancels animation tails. Skills on cooldown are skipped.</li>
+    <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the highest-priority skill that's ready, and in AION 2 the <strong>bottom slot has the highest priority</strong>. The cards below show each line top to bottom as in the game, with the priority number on every skill.</li>
+    <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar lines in order and cancels animation tails. Skills on cooldown are skipped. Hold your basic attack (LMB) <em>together</em> with the macro key instead of putting it into the macro — the game weaves and cancels it better that way.</li>
   </ul>
   <p>Templar's damage is a loop: <strong>shield skill → Judgment → procs → filler</strong>. The lines below are built so that Judgment and the procs always win when they light up.</p>
 
@@ -130,6 +130,8 @@
   <h3>2. In-game macro</h3>
   <p>Skill window → <strong>Macro</strong>. Put the three lines in this order and set every <strong>Delay to 10 ms</strong>. Bind the macro in Settings → Key Settings → General → Gameplay → <strong>Macro</strong> — a side mouse button works best.</p>
   {{ macroseq([('Proc line', 'RMB · 10 ms'), ('Trigger line', 'E · 10 ms'), ('Buff line', 'R · 10 ms')]) }}
+
+  <p class="note">Season 1 tip (Grobs): cooldowns are slow at launch, so buffs are worth more when timed — you can take the buff line out of the macro and press it yourself right before a boss or a big pack.</p>
 
   <h3>3. What you actually press</h3>
   <ul class="presslist">
@@ -256,6 +258,16 @@
   </ul></div>
 {% endcall %}
 
+{% call section('macro-lvl', 'Leveling macro', 'lvl') %}
+  <p>A simpler setup for leveling and the first days at the cap, from Grobs' early-game macros. Only the skills you spam go in; buffs, stigma bursts and gap-closers stay on their own keys.</p>
+  <div class="hotlines">
+    {{ hotline('1', 'Line 1', ['doom-shield', 'debilitating-smash', 'judgment', 'shield-smite'], []) }}
+    {{ hotline('2', 'Line 2', ['warding-strike', 'pummel'], []) }}
+  </div>
+  <p>In-game macro: Line 1 → Line 2, each with a 10 ms delay. Hold your basic attack {{ s('vicious-strike') }} on LMB <strong>and</strong> the macro key together.</p>
+  <p class="note">Once your skills reach 12–16 and specializations change their cooldowns, switch to the full setup in the PvE tab.</p>
+{% endcall %}
+
 {# ============================ Sources ============================ #}
 <section class="sources" aria-labelledby="h-sources">
   <h2 id="h-sources">{{ t.sources }}</h2>
@@ -267,6 +279,7 @@
     <li><a href="https://www.inven.co.kr/board/aion2/6438/7621" target="_blank" rel="noopener">Inven</a> and <a href="https://www.fmkorea.com/9447817669" target="_blank" rel="noopener">FM Korea</a> — PvP stigma choices</li>
     <li><a href="https://mmo-codex.com/articles/aion-2-templar-guide/" target="_blank" rel="noopener">MMO Codex</a> — skill order while leveling, passive priority</li>
     <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (TitanTheF's table) — leveling route</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — how hotbar lines and the in-game macro work</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>

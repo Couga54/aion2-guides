@@ -1,0 +1,192 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq with context %}
+
+{# ============================== PvE ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('savage-roar', '20'), ('heart-gore', '20'), ('insignia-explosion', '20'), ('quick-slice', '16'), ('ambush', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('swift-contract', 20), ('illusive-clone', 20), ('evasion-stance', 10), ('throw-shadowblade', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['rear-smite', 'assault-stance', 'defense-break', 'determination']) }}
+{% endcall %}
+
+{% call section('intro', 'Overview', 'pve') %}
+  <p>The Assassin is a dagger burst class. {{ s('savage-roar') }} and other hits engrave <strong>Insignias</strong> on the target, {{ s('insignia-explosion') }} cashes them in for damage and a stun, and every crit can fire {{ s('heart-gore') }}. Most of the damage comes from the back, so positioning matters.</p>
+  <div class="callout accent">
+    <h3>The build in one sentence</h3>
+    <p>Stack Insignias with {{ s('savage-roar') }}, pop {{ s('insignia-explosion') }} on cooldown, spam {{ s('heart-gore') }} on every crit — and in a burst window {{ s('illusive-clone') }} removes Heart Gore's cooldown for 10s.</p>
+  </div>
+  <p class="note">This guide follows TitanTheF's global build (start 1–45 and the 45+ goal) from his AION 2 progression sheet.</p>
+{% endcall %}
+
+{% call section('global', 'Global Season 1: what changes', 'pve pvp') %}
+  <p>Global servers open on <strong>October 5, 2026</strong> (Founder's early access from September 30). What that means for the Assassin:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 stigma slots, capped at 20.</strong> The global set keeps the two burst stigmas at 20 and two utility picks at 10.</li>
+      <li><strong>No combat speed at the start.</strong> Season 1 gear gives little attack speed, so a simple macro is the best one for now; {{ s('swift-contract') }} is your speed.</li>
+      <li><strong>Burst stigmas by hand.</strong> Cooldowns are long early on — Illusive Clone wasted on trash is a lot of lost boss damage.</li>
+      <li data-only="pvp"><strong>PvP:</strong> everyone starts on the same limited gear and no meta has formed yet.</li>
+    </ul>
+  </div>
+  <p class="note">Active skills and passives are identical in the global and KR/TW data; stigmas lose their level-25 tier.</p>
+{% endcall %}
+
+{% call section('skills', 'Skills', 'pve') %}
+  <p>Three skills go to <strong>20</strong>, three to <strong>16</strong>, the rest stay at <strong>12</strong>. Levels come from skill points (10), Daevanion (14), rings (16) and arcana (20).</p>
+  <ul class="skill-grid">
+    {% call skill('savage-roar', 'must', '20', [1, 2, 3]) %}No-cooldown filler that engraves an Insignia on every hit and shortens Shadowstrike's cooldown.{% endcall %}
+    {% call skill('heart-gore', 'must', '20', [2, 3, 4]) %}Fires on a crit; at 16 every crit resets its cooldown — the core of the damage.{% endcall %}
+    {% call skill('insignia-explosion', 'must', '20', [1, 2, 4]) %}Damage and stun scale with Insignia stacks; keep 2 stacks after the explosion and −3s cooldown at 16.{% endcall %}
+    {% call skill('quick-slice', 'must', '16', [0, 3]) %}Basic attack: restores MP and shortens Insignia Explosion's cooldown.{% endcall %}
+    {% call skill('ambush', 'must', '16', [1, 4]) %}+30% from the back; at 16 two extra uses.{% endcall %}
+    {% call skill('defiance', 'must', '16', [2, 4]) %}CC break with a heal and big tolerance at 16.{% endcall %}
+    {% call skill('shadowstrike', 'opt', '12', [1, 2]) %}Teleport behind the target and stun; +20% Critical Damage for 5s.{% endcall %}
+    {% call skill('shadow-fall', 'opt', '12', [0, 2]) %}Knockdown on a stunned target, with a 10% heal.{% endcall %}
+    {% call skill('whirlwind-slice', 'opt', '12', [1, 2]) %}AoE with long range.{% endcall %}
+    {% call skill('flash-slice', 'opt', '12', [1, 3]) %}Blink through the target with a Blind; two uses at 12.{% endcall %}
+    {% call skill('infiltrate', 'opt', '12', [1, 3]) %}Dodge → behind the target; adds the Dark Strike chain at 12.{% endcall %}
+    {% call skill('storm-rampage', 'opt', '12', [2, 3]) %}Only on Staggered targets.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Passives', 'pve') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Passive</th><th>Level</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>{{ s('rear-smite') }}</td><td>20</td><td>Back attack and PvE damage boost.</td></tr>
+      <tr><td>{{ s('assault-stance') }}</td><td>18</td><td>Critical Damage Boost; Swift Contract multiplies it.</td></tr>
+      <tr><td>{{ s('defense-break') }}</td><td>15</td><td>−Defense on the target after a stun or Stagger.</td></tr>
+      <tr><td>{{ s('determination') }}</td><td>14</td><td>Extra damage below 30% HP — the execute phase.</td></tr>
+      <tr><td>The rest</td><td>10–12</td><td>Heightened Sixth Sense, Apply Poison, Ambush Stance 12; Exploit Weakness, Revitalization Contract 10. Impact Hit stays at 1.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Gear & stats', 'pve') %}
+  <div class="callout"><ul>
+    <li><strong>Manastones:</strong> Attack, Critical Hit, Accuracy — crits drive Heart Gore.</li>
+    <li>Which gear tier to chase is still open until the global launch.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('daevanion', 'Daevanion boards', 'pve pvp') %}
+  <p>Daevanion takes your skills from 10 to 14 and adds stats. Each blue node gives <strong>+1 level</strong> to its skill. TitanTheF's sheet links a starting route for levels 1–45 — take those nodes while leveling.</p>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>Priority:</strong> blue nodes for {{ s('savage-roar') }}, {{ s('heart-gore') }}, {{ s('insignia-explosion') }}, then orange nodes.</li>
+    <li data-only="pvp"><strong>Priority:</strong> blue nodes for {{ s('shadowstrike') }}, {{ s('flash-slice') }}, {{ s('defiance') }}.</li>
+    <li data-only="pve"><strong>Ariel</strong> (PvE) at 45, not Azphel.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (PvP) at 45, and Triniel earlier.</li>
+  </ul></div>
+  <p><a href="https://clck.su/OhiNF" target="_blank" rel="noopener">Starting Daevanion route →</a></p>
+{% endcall %}
+
+{% call section('stigmas', 'Stigmas', 'pve') %}
+  <ul class="skill-grid">
+    {% call skill('swift-contract', 'must', 'Lv 20', upto=20) %}+20% Combat Speed for 10s (+10% more at 20), and it boosts Rear Smite and Assault Stance.{% endcall %}
+    {% call skill('illusive-clone', 'must', 'Lv 20', upto=20) %}Removes Heart Gore's cooldown and adds 20% of your damage for 10s — your burst window. Use it on the boss, not on trash.{% endcall %}
+    {% call skill('evasion-stance', 'must', 'Lv 10', upto=10) %}Guaranteed evasion of a big hit; mobile at 10.{% endcall %}
+    {% call skill('throw-shadowblade', 'must', 'Lv 10', upto=10) %}20m throw with a slow; at 10 it resets on a kill — great for farming.{% endcall %}
+    {% call skill('savage-fang', 'opt', 'leveling', upto=5) %}AoE that engraves 5 Insignias at once — strong on packs while leveling.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Macro & rotation', 'pve') %}
+  <p>AION 2 has two separate tools:</p>
+  <ul>
+    <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the highest-priority skill that's ready, and in AION 2 the <strong>bottom slot has the highest priority</strong>. The cards show each line top to bottom as in the game.</li>
+    <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar buttons in order and cancels animation tails. Skills on cooldown are skipped.</li>
+  </ul>
+
+  <h3>1. Hotbar lines</h3>
+  <div class="hotlines">
+    {% call hotline('MMB', 'Insignia line', ['insignia-explosion', 'whirlwind-slice', 'ambush', 'savage-roar']) %}Savage Roar builds Insignias; Insignia Explosion takes the top priority as soon as it's ready. This line is also the in-game macro.{% endcall %}
+    {% call hotline('1', 'Stun line', ['shadowstrike', 'infiltrate', 'shadow-fall']) %}Shadowstrike stuns, then Shadow Fall knocks the stunned target down.{% endcall %}
+  </div>
+
+  <h3>2. In-game macro</h3>
+  <p>Put the Insignia line into the macro (10 ms) and bind it to the middle mouse button. That's all — TitanTheF keeps it this simple because there's no combat speed at the start.</p>
+  {{ macroseq([('Insignia line', 'MMB · 10 ms')]) }}
+
+  <h3>3. What you actually press</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Hold</span><span class="press-what">{{ s('quick-slice') }} on <span class="key">LMB</span> and the macro on <span class="key">MMB</span>.</span></li>
+    <li><span class="press-how">Spam</span><span class="press-what">{{ s('heart-gore') }} on <span class="key">Q</span> — it only fires on crits, so press it constantly.</span></li>
+    <li><span class="press-how">Mouse macro</span><span class="press-what">Or let your mouse software loop LMB → MMB → Q (10–30 ms) on one toggle button — TitanTheF uses Witchmana, but any mouse software works.</span></li>
+    <li><span class="press-how">By hand</span><span class="press-what">{{ s('illusive-clone') }} + {{ s('swift-contract') }} on the boss, {{ s('evasion-stance') }} for big hits, the Stun line, {{ s('throw-shadowblade') }} on <span class="key">2</span> while farming.</span></li>
+  </ul>
+{% endcall %}
+
+{% call section('recap', 'Recap', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Skills:</strong> Savage Roar, Heart Gore, Insignia Explosion 20; Quick Slice, Ambush, Defiance 16; the rest 12.</li>
+    <li><strong>Stigmas:</strong> Swift Contract 20, Illusive Clone 20, Evasion Stance 10, Throw Shadowblade 10.</li>
+    <li><strong>Passives:</strong> Rear Smite 20, Assault Stance 18, Defense Break 15, Determination 14.</li>
+    <li><strong>Manastones:</strong> Attack, Critical Hit, Accuracy.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================== PvP ============================== #}
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('shadowstrike', '16'), ('flash-slice', '16'), ('heart-gore', '20'), ('defiance', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('illusive-clone', 20), ('evasion-stance', 20), ('shadow-walk', 15), ('evasion-contract', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['rear-smite', 'assault-stance', 'revitalization-contract', 'heightened-sixth-sense']) }}
+{% endcall %}
+
+{% call section('intro-pvp', 'Overview', 'pvp') %}
+  <p>In PvP the Assassin picks a target, opens from stealth or behind, locks it down with stun and blind, and bursts it before it can react.</p>
+  <p class="note">TitanTheF's sheet covers PvE; the PvP picks below come from the global skill data and are a starting point until a global PvP meta forms.</p>
+{% endcall %}
+
+{% call section('skills-pvp', 'Skills & stigmas', 'pvp') %}
+  <ul class="skill-grid">
+    {% call skill('shadowstrike', 'must', '16', [0, 2, 4]) %}Teleport behind and stun; Seal chance stops their skills.{% endcall %}
+    {% call skill('flash-slice', 'must', '16', [0, 3, 4]) %}Blind, two uses, and at 16 a stun on blinded targets.{% endcall %}
+    {% call skill('defiance', 'must', '16', [2, 3, 4]) %}Break the first hard CC.{% endcall %}
+    {% call skill('shadow-walk', 'must', 'Lv 15', upto=15) %}Stealth for the opener; at 15 usable in combat to reset a fight.{% endcall %}
+    {% call skill('evasion-stance', 'must', 'Lv 20', upto=20) %}Dodge their burst; heals at 20.{% endcall %}
+    {% call skill('evasion-contract', 'opt', 'Lv 10', upto=10) %}Removes slows and roots and grants immunity to them.{% endcall %}
+    {% call skill('spiral-slice', 'opt', 'alt.', upto=10) %}Strips buffs and stuns when it removes two or more.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('recap-pvp', 'Recap', 'pvp') %}
+  <div class="callout accent"><ul>
+    <li><strong>Combo:</strong> Shadow Walk → Shadowstrike (stun) → Flash Slice (blind) → Insignia Explosion → Heart Gore under Illusive Clone.</li>
+    <li><strong>Stigmas:</strong> Illusive Clone, Evasion Stance, Shadow Walk, Evasion Contract.</li>
+    <li><strong>Daevanion:</strong> Azphel over Ariel.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Packs:</strong> {{ s('savage-fang') }} (5 Insignias) → {{ s('insignia-explosion') }} → {{ s('whirlwind-slice') }}; {{ s('throw-shadowblade') }} resets on a kill for the next pull.</li>
+    <li><strong>Elites:</strong> get behind → {{ s('ambush') }} → {{ s('savage-roar') }} to stack Insignias → Insignia Explosion → {{ s('heart-gore') }} on crits.</li>
+    <li><strong>Mana:</strong> {{ s('quick-slice') }} restores MP — keep it on LMB.</li>
+    <li><strong>Low HP:</strong> {{ s('shadow-fall') }} absorbs HP; {{ s('defiance') }} heals when you're stuck.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Leveling macro', 'lvl') %}
+  <p>TitanTheF's starting setup works from level 1: the Insignia line in the in-game macro on the middle mouse button, Quick Slice on LMB and Heart Gore on Q. For farming mobs he uses Throw Shadowblade (2) and RMB. Early build at 1–45: Quick Slice, Savage Roar, Insignia Explosion and Heart Gore to 12, everything else to 8.</p>
+  <div class="hotlines">
+    {{ hotline('MMB', 'Insignia line', ['insignia-explosion', 'whirlwind-slice', 'ambush', 'savage-roar']) }}
+  </div>
+  <p><a href="https://aion2t.com/ru/simulator?job=5&amp;b=iUjpcy" target="_blank" rel="noopener">Starting build 1–45 (aion2t) →</a> · <a href="https://aion2t.com/ru/simulator?job=5&amp;b=MeyRht" target="_blank" rel="noopener">45+ goal build →</a></p>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener">TitanTheF — AION 2 progression sheet</a> (Assassin tab) — builds, hotbar, macro, stats</li>
+    <li><a href="https://aion2t.com/ru/simulator?job=5&amp;b=MeyRht" target="_blank" rel="noopener">aion2t.com</a> — TitanTheF's start and 45+ builds (skill levels, specializations, stigmas, passives)</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/assassin" target="_blank" rel="noopener">questlog.gg</a> — skill data from the global client</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — how hotbar lines and the in-game macro work</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>
