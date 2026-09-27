@@ -1,0 +1,1268 @@
+<!doctype html>
+<html lang="en" data-mode="pve" data-class="sorcerer">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sorcerer — AION 2 Guides (PvE, PvP, Leveling)</title>
+<meta name="description" content="A glass-cannon caster that mixes fire and ice: Fire Mark and Blaze for damage, Frost and roots for control, and huge burst behind Element Enhancement.">
+<link rel="canonical" href="https://couga54.github.io/aion2-guides/en/sorcerer/">
+<link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/sorcerer/">
+<link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/sorcerer/">
+<link rel="alternate" hreflang="x-default" href="https://couga54.github.io/aion2-guides/en/sorcerer/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Guides">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Sorcerer — AION 2 Guides (PvE, PvP, Leveling)">
+<meta property="og:description" content="A glass-cannon caster that mixes fire and ice: Fire Mark and Blaze for damage, Frost and roots for control, and huge burst behind Element Enhancement.">
+<meta property="og:url" content="https://couga54.github.io/aion2-guides/en/sorcerer/">
+<meta property="og:image" content="https://couga54.github.io/aion2-guides/assets/og/sorcerer-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var modes = ['pve', 'pvp', 'lvl'];
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+  })(document.documentElement);
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css">
+</head>
+<body class="page-class accent-frost">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../en/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
+      <span>AION 2 Guides</span>
+    </a>
+    <details class="class-menu">
+      <summary class="class-menu-btn accent-frost">
+<img src="../../assets/classes/sorcerer.webp" width="24" height="24" alt=""><span>Sorcerer</span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="Classes">
+        <a href="../../en/gladiator/" class="cm-item accent-crimson">
+          <img src="../../assets/classes/gladiator.webp" width="44" height="44" alt=""><span class="cm-name">Gladiator</span><span class="cm-role">Melee DPS · bruiser</span>
+        </a>
+        <a href="../../en/ranger/" class="cm-item accent-emerald">
+          <img src="../../assets/classes/ranger.webp" width="44" height="44" alt=""><span class="cm-name">Ranger</span><span class="cm-role">Ranged DPS · kiter</span>
+        </a>
+        <a href="../../en/templar/" class="cm-item accent-sapphire">
+          <img src="../../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Templar</span><span class="cm-role">Tank · party buffer</span>
+        </a>
+        <a href="../../en/assassin/" class="cm-item accent-violet">
+          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Assassin</span><span class="cm-role">Melee DPS · burst</span>
+        </a>
+        <a href="../../en/sorcerer/" class="cm-item accent-frost" aria-current="page">
+          <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Sorcerer <span class="wip-tag">WIP</span></span><span class="cm-role">Ranged magic DPS</span>
+        </a>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Elementalist</span><span class="cm-role">Coming soon</span>
+        </span>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Cleric</span><span class="cm-role">Coming soon</span>
+        </span>
+        <a href="../../en/chanter/" class="cm-item accent-amber">
+          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Chanter</span><span class="cm-role">Melee support · buffer</span>
+        </a>
+      </nav>
+    </details>
+    <div class="topbar-tools">
+      <a class="src-nav" href="../../en/week-1/" title="First week: what to finish before the reset">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+        <span>Week 1</span>
+      </a>
+      <a class="src-nav" href="../../en/weekly/" title="Weekly tracker">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+        <span>Weekly</span>
+      </a>
+      <a class="src-nav src-nav-sources" href="../../en/sources/" title="Sources &amp; credits">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+        <span>Sources</span>
+      </a>
+      <a class="lang-switch" href="../../ru/sorcerer/" hreflang="ru" lang="ru" data-keep-query>
+        <span aria-hidden="true">RU</span><span class="sr-only">Русский</span>
+      </a>
+<button class="icon-btn wn-open wn-top" type="button" aria-label="Changelog" title="Changelog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </button>      <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="class-backdrop" aria-hidden="true" style="--art:url('../../assets/art/sorcerer.webp')"></div>
+<section class="class-hero">
+  <img class="class-hero-art" src="../../assets/art/sorcerer.webp" alt="" aria-hidden="true" fetchpriority="high">
+  <div class="wrap class-hero-in">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../en/">All classes</a><span aria-hidden="true">/</span><span>Sorcerer</span></nav>
+    <div class="class-hero-main">
+      <img class="class-hero-emblem" src="../../assets/classes/sorcerer.webp" width="96" height="96" alt="">
+      <div>
+        <p class="kicker"><span data-only="pve">PvE</span><span data-only="pvp">PvP</span><span data-only="lvl">Leveling</span> · Global Season 1</p>
+        <h1>Sorcerer</h1>
+        <p class="class-hero-pitch">A glass-cannon caster that mixes fire and ice: Fire Mark and Blaze for damage, Frost and roots for control, and huge burst behind Element Enhancement.</p>
+        <p class="guide-ver"><span>Updated: <time datetime="2026-09-28">Sep 28, 2026</time></span><span>Patch: <b>TBD</b></span><span class="wip-tag">WIP</span></p>
+      </div>
+    </div>
+    <dl class="class-facts">
+      <div><dt>Role</dt><dd>Ranged magic DPS</dd></div>
+      <div><dt>Weapon</dt><dd>Spellbook</dd></div>
+      <div><dt>Difficulty</dt><dd class="diff"><i class="on"></i><i class="on"></i><i class="on"></i><span>Hard</span></dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="guidebar">
+  <div class="wrap guidebar-in">
+    <div class="mode-switch" role="radiogroup" aria-label="Guide mode">
+      <button type="button" role="radio" data-set-mode="pve" aria-checked="true">PvE</button>
+      <button type="button" role="radio" data-set-mode="pvp" aria-checked="false">PvP</button>
+      <button type="button" role="radio" data-set-mode="lvl" aria-checked="false">Leveling</button>
+    </div>
+    <nav class="toc-mobile" aria-label="On this page"></nav>
+  </div>
+</div>
+
+<div class="wrap guide-layout">
+  <aside class="toc-side" aria-label="On this page">
+    <p class="toc-title">On this page</p>
+    <nav class="toc-list"></nav>
+  </aside>
+
+  <main id="main" class="guide">
+    <section id="progress" class="g-section tracker" data-only="lvl" data-class="sorcerer" aria-labelledby="h-progress">
+      <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-progress">Leveling progress</h2></div>
+      <div class="tracker-bar">
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="22" aria-valuenow="0" aria-label="Leveling progress"><span></span></div>
+        <span class="progress-text"><b class="progress-count">0</b>/22 done</span>
+        <button type="button" class="btn btn-ghost btn-sm tracker-reset" data-confirm="Clear all ticked steps for this class?">Reset progress</button>
+      </div>
+      <p class="note">Tick steps as you go. Progress is saved in this browser, separately for each class.</p>
+      <ol class="steps">
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-story">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Start</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Follow <strong>yellow (main story) quests only</strong>. Side content scales with your level, so nothing is lost by doing it later.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="sorcerer-core">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 1</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/sorcerer/flame-arrow.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/sorcerer/ice-chain.webp" width="22" height="22" alt="" loading="lazy">              First points into <strong>Flame Arrow</strong> (restores MP on every cast) and <strong>Ice Chain</strong> for packs. At 8 take <em>+20% MP restored</em> — mana is your limit while leveling.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="sorcerer-target">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Settings</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+              Use <strong>target mode</strong>, not action combat: in action mode the basic attack stops whenever you cast, and the basic attack is what keeps your MP up.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-feathers">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">After prologue</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Collect <strong>40 feathers</strong> (120 shards) for an early amulet upgrade.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="sorcerer-fire">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 6–10</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/sorcerer/firestorm.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/sorcerer/blaze.webp" width="22" height="22" alt="" loading="lazy">              <strong>Firestorm</strong> and <strong>Blaze</strong> become your single-target damage. Blaze needs Fire Mark on the target — <strong>Fire Mark</strong> applies it from any fire hit.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-daevanion">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 12</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              <strong>Daevanion</strong> unlocks (Nezekan board). Blue nodes = +1 skill level — see your class step below.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="sorcerer-hellfire">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 12</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/sorcerer/hellfire.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/sorcerer/bittercold-wind.webp" width="22" height="22" alt="" loading="lazy">              <strong>Hellfire</strong> (charge to 3) for big pulls and <strong>Bittercold Wind</strong> to root the pack in place — <em>Pull effect</em> pulls them together.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-hideouts">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 15 / 20 / 25</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Clear hideouts that are on your route — first clears give Enhance Stones and Daevanion Crystals.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-amulet">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">~Lv 17</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              <strong>Amulet +10</strong>, then Morph it into the blue version.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-weapon">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Any time</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Weapon to <strong>~+10</strong> — the biggest damage jump while leveling. Don't push further before the cap.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-zikel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 20</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Zikel board opens — same node priority as before.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-stigma">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv ~22</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Ascension → <strong>stigmas unlock</strong> (4 slots in global Season 1). Which ones — see your class step.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="sorcerer-stigmas">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv ~22</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/sorcerer/element-enhancement.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/sorcerer/fire-wall.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/sorcerer/cold-storm.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/sorcerer/steel-barrier.webp" width="22" height="22" alt="" loading="lazy">              Stigmas: <strong>Element Enhancement</strong> first, then <strong>Fire Wall</strong> and <strong>Cold Storm</strong> for packs. Keep <strong>Steel Barrier</strong> while leveling solo — the Sorcerer is fragile.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-acts23">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Acts 2–3</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Story only — don't get distracted by the map.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-vaizel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 30</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Vaizel board opens (critical damage).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-act4">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Act 4</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Side quests and solo dungeons are worth doing again here.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-triniel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 40</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Triniel board opens (multi-hit; mostly PvP — can wait). Krao Cave expects about 1000 Gear Score.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-ariel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 45</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              <strong>Ariel (PvE) or Azphel (PvP)</strong> — same cost, choosing wrong is the most expensive mistake in the system.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="sorcerer-cap">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Cap</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/sorcerer/blaze.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/sorcerer/firestorm.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/sorcerer/hellfire.webp" width="22" height="22" alt="" loading="lazy">              At the cap swap Steel Barrier for <strong>Delayed Explosion</strong> in groups and push <strong>Blaze</strong>, <strong>Firestorm</strong>, <strong>Hellfire</strong> toward 16+ — see the PvE tab.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-shugo">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Cap</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Shugo activities for the full level-cap reward set (gold gear, materials).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-map">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Cap</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Sweep the map: question marks, bonfires, green quests, hidden cubes, feathers. Turn in feathers — altar Lv 30 gives a title.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-daily">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Daily</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Nightmare entry, Transformation floors as your GS allows, dungeons T2 before T3 (watch your energy).
+            </span>
+          </label>
+        </li>
+      </ol>
+    </section>
+
+    <div class="callout wip-note" role="note"><h3><span class="wip-tag">WIP</span> Work in progress</h3><p>There is no solid global source for this class yet. The guide is put together from Korean guides and the global skill data — treat it as a starting point; it will be reworked once proper global builds appear.</p></div>
+
+<aside class="glance" data-only="pve" aria-label="Build at a glance">
+  <p class="glance-title">Build at a glance</p>
+    <h3>Core skills</h3>
+  <ul class="core-row">
+  <li title="Blaze">
+    <img src="../../assets/icons/sorcerer/blaze.webp" width="52" height="52" alt="Blaze" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Blaze</span>
+  </li>
+  <li title="Bittercold Wind">
+    <img src="../../assets/icons/sorcerer/bittercold-wind.webp" width="52" height="52" alt="Bittercold Wind" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Bittercold Wind</span>
+  </li>
+  <li title="Ice Chain">
+    <img src="../../assets/icons/sorcerer/ice-chain.webp" width="52" height="52" alt="Ice Chain" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Ice Chain</span>
+  </li>
+  <li title="Flame Arrow">
+    <img src="../../assets/icons/sorcerer/flame-arrow.webp" width="52" height="52" alt="Flame Arrow" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Flame Arrow</span>
+  </li>
+  <li title="Wish of Concentration">
+    <img src="../../assets/icons/sorcerer/wish-of-concentration.webp" width="52" height="52" alt="Wish of Concentration" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Wish of Concentration</span>
+  </li>
+</ul>
+  <h3>Stigma loadout</h3>
+  <ol class="loadout">
+  <li class="slot" title="Element Enhancement">
+    <img src="../../assets/icons/sorcerer/element-enhancement.webp" width="56" height="56" alt="Element Enhancement" loading="lazy">
+    <span class="slot-lv">Lv 20</span>
+    <span class="slot-name">Element Enhancement</span>
+  </li>
+  <li class="slot" title="Fire Wall">
+    <img src="../../assets/icons/sorcerer/fire-wall.webp" width="56" height="56" alt="Fire Wall" loading="lazy">
+    <span class="slot-lv">Lv 10</span>
+    <span class="slot-name">Fire Wall</span>
+  </li>
+  <li class="slot" title="Cold Storm">
+    <img src="../../assets/icons/sorcerer/cold-storm.webp" width="56" height="56" alt="Cold Storm" loading="lazy">
+    <span class="slot-lv">Lv 10</span>
+    <span class="slot-name">Cold Storm</span>
+  </li>
+  <li class="slot" title="Delayed Explosion">
+    <img src="../../assets/icons/sorcerer/delayed-explosion.webp" width="56" height="56" alt="Delayed Explosion" loading="lazy">
+    <span class="slot-lv">Lv 10</span>
+    <span class="slot-name">Delayed Explosion</span>
+  </li>
+</ol>
+  <h3>Key passives</h3>
+  <ul class="passive-row">
+<li><img src="../../assets/icons/sorcerer/robe-of-flame.webp" width="24" height="24" alt="" loading="lazy">Robe of Flame</li><li><img src="../../assets/icons/sorcerer/grace-of-enhancement.webp" width="24" height="24" alt="" loading="lazy">Grace of Enhancement</li><li><img src="../../assets/icons/sorcerer/fire-mark.webp" width="24" height="24" alt="" loading="lazy">Fire Mark</li><li><img src="../../assets/icons/sorcerer/robe-of-earth.webp" width="24" height="24" alt="" loading="lazy">Robe of Earth</li></ul>
+
+</aside>
+<section id="intro" class="g-section" data-only="pve" aria-labelledby="h-intro">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro">Overview</h2></div>
+    <p>The Sorcerer is a ranged glass cannon that casts both fire and ice. Fire does the damage — <span class="sk"><img src="../../assets/icons/sorcerer/fire-mark.webp" width="18" height="18" alt="" loading="lazy">Fire Mark</span> marks the target and <span class="sk"><img src="../../assets/icons/sorcerer/blaze.webp" width="18" height="18" alt="" loading="lazy">Blaze</span> cashes it in — while ice slows, roots and freezes so nothing reaches you. Most of the burst sits in a 10-second window behind <span class="sk"><img src="../../assets/icons/sorcerer/element-enhancement.webp" width="18" height="18" alt="" loading="lazy">Element Enhancement</span>.</p>
+  <div class="callout accent">
+    <h3>The build in one sentence</h3>
+    <p>Open with <span class="sk"><img src="../../assets/icons/sorcerer/delayed-explosion.webp" width="18" height="18" alt="" loading="lazy">Delayed Explosion</span> and <span class="sk"><img src="../../assets/icons/sorcerer/element-enhancement.webp" width="18" height="18" alt="" loading="lazy">Element Enhancement</span>, drop <span class="sk"><img src="../../assets/icons/sorcerer/fire-wall.webp" width="18" height="18" alt="" loading="lazy">Fire Wall</span> and <span class="sk"><img src="../../assets/icons/sorcerer/cold-storm.webp" width="18" height="18" alt="" loading="lazy">Cold Storm</span>, then loop the Fire line and the Ice line with <span class="sk"><img src="../../assets/icons/sorcerer/flame-arrow.webp" width="18" height="18" alt="" loading="lazy">Flame Arrow</span> keeping your MP above 50%.</p>
+  </div>
+  <p class="note">Built from Korean guides (Vortex Gaming's post-balance PvE guide, MMO Codex) and translated to global skill names from questlog. There is no global Sorcerer build from a trusted player yet.</p>
+
+</section>
+<section id="global" class="g-section" data-only="pve pvp" aria-labelledby="h-global">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-global">Global Season 1: what changes</h2></div>
+    <p>Global servers open on <strong>October 5, 2026</strong> (Founder's early access from September 30). What that means for the Sorcerer:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 stigma slots, capped at 20.</strong> Korean builds run Element Enhancement, Fire Wall, Delayed Explosion and Cold Storm all at 20 — on global only one of them reaches 20 at first.</li>
+      <li><strong>Skills at 16, not 20.</strong> Arcana and rings are what push skills past 16, and they come slowly — the picks below are chosen for 16.</li>
+      <li><strong>No combat speed at the start.</strong> Long casts hurt; take the Skill Speed specializations where offered.</li>
+      <li data-only="pvp"><strong>PvP:</strong> everyone starts on the same limited gear and no meta has formed yet.</li>
+    </ul>
+  </div>
+
+</section>
+<section id="skills" class="g-section" data-only="pve" aria-labelledby="h-skills">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-skills">Skills</h2></div>
+    <p>Six skills go to <strong>16</strong>, the rest stay at <strong>12</strong>. Korean players later push Blaze, Ice Chain and Bittercold Wind to 20.</p>
+  <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/blaze.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Blaze <span class="badge must">16</span></div>
+    <div class="skill-desc">Main damage on a Fire-Marked target; restores MP. At 16 every hit shortens Wish of Concentration.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Delayed Damage after 3s</li><li><span class="spec-lv">12</span>Multi-Hit on hit</li><li><span class="spec-lv">16</span>-3s [Wish of Concentration] cooldown on hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Absorbs 3% HP</li>
+        <li class=""><span class="spec-lv">8</span>+50% MP restored</li>
+        <li class="on"><span class="spec-lv">8</span>Delayed Damage after 3s</li>
+        <li class="on"><span class="spec-lv">12</span>Multi-Hit on hit</li>
+        <li class="on"><span class="spec-lv">16</span>-3s [Wish of Concentration] cooldown on hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/flame-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Flame Arrow <span class="badge must">16</span></div>
+    <div class="skill-desc">Filler that restores MP. At 12 it applies Fire Mark itself, at 16 it resets Blaze.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+20% MP restored</li><li><span class="spec-lv">12</span>Inflicts Fire Mark for 5s on landing [Pyroclasm]</li><li><span class="spec-lv">16</span>Reset [Blaze] cooldown on landing [Pyroclasm]</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>+20% MP restored</li>
+        <li class=""><span class="spec-lv">8</span>Absorbs 1% HP</li>
+        <li class=""><span class="spec-lv">8</span>+50% Multi-Hit on hit</li>
+        <li class="on"><span class="spec-lv">12</span>Inflicts Fire Mark for 5s on landing [Pyroclasm]</li>
+        <li class="on"><span class="spec-lv">16</span>Reset [Blaze] cooldown on landing [Pyroclasm]</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/bittercold-wind.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Bittercold Wind <span class="badge must">16</span></div>
+    <div class="skill-desc">Root field that lands as a guaranteed crit at 12; at 16 it shortens Frost.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Changes to mobile skill</li><li><span class="spec-lv">12</span>Ignores Block and Evasion and lands as a Critical Hit</li><li><span class="spec-lv">16</span>-1s [Frost] cooldown on hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>+1s [Bittercold Wind] summon duration</li>
+        <li class="on"><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class=""><span class="spec-lv">8</span>Pull effect</li>
+        <li class="on"><span class="spec-lv">12</span>Ignores Block and Evasion and lands as a Critical Hit</li>
+        <li class="on"><span class="spec-lv">16</span>-1s [Frost] cooldown on hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/ice-chain.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Ice Chain <span class="badge must">16</span></div>
+    <div class="skill-desc">No-cooldown water filler that slows (Cold Snap procs on slowed targets).</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+20% Skill Speed</li><li><span class="spec-lv">12</span>-1s [Winter&#39;s Shackles] cooldown on hit</li><li><span class="spec-lv">16</span>5% chance to inflict Frost for 2s on landing [Cold Wave]</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>-20% MP Cost</li>
+        <li class="on"><span class="spec-lv">8</span>+20% Skill Speed</li>
+        <li class=""><span class="spec-lv">8</span>Deals up to 12% more damage when less targets are hit</li>
+        <li class="on"><span class="spec-lv">12</span>-1s [Winter&#39;s Shackles] cooldown on hit</li>
+        <li class="on"><span class="spec-lv">16</span>5% chance to inflict Frost for 2s on landing [Cold Wave]</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/winters-shackles.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Winter&#39;s Shackles <span class="badge must">16</span></div>
+    <div class="skill-desc">+20% PvE Damage Boost for 5s on landing — cast it inside your burst.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+20% PvE Damage Boost and +10% PvP Damage Boost for 5s on landing [Winter&#39;s Shackles]</li><li><span class="spec-lv">12</span>Adds [Winter&#39;s Illusion] Chain Skill</li><li><span class="spec-lv">16</span>-15s [Winter&#39;s Shackles] cooldown</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class=""><span class="spec-lv">8</span>30% chance to inflict Frost for 3s on landing [Winter&#39;s Shackles]</li>
+        <li class="on"><span class="spec-lv">8</span>+20% PvE Damage Boost and +10% PvP Damage Boost for 5s on landing [Winter&#39;s Shackles]</li>
+        <li class="on"><span class="spec-lv">12</span>Adds [Winter&#39;s Illusion] Chain Skill</li>
+        <li class="on"><span class="spec-lv">16</span>-15s [Winter&#39;s Shackles] cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/wish-of-concentration.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Wish of Concentration <span class="badge must">16</span></div>
+    <div class="skill-desc">+Attack and Accuracy for 10s; at 16 it cuts all cooldowns by 10s.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+10% additional Attack</li><li><span class="spec-lv">12</span>+10% Combat Speed</li><li><span class="spec-lv">16</span>-10s all skill cooldowns</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Reduces MP Cost by 10%</li>
+        <li class="on"><span class="spec-lv">8</span>+10% additional Attack</li>
+        <li class=""><span class="spec-lv">8</span>+500 Max MP</li>
+        <li class="on"><span class="spec-lv">12</span>+10% Combat Speed</li>
+        <li class="on"><span class="spec-lv">16</span>-10s all skill cooldowns</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/hellfire.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Hellfire <span class="badge opt">12</span></div>
+    <div class="skill-desc">AoE charged up to 3 levels — the pack clear. Korean veterans take it to 20.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Fire Damage over Time for 10s on hit</li><li><span class="spec-lv">12</span>Ignores Block and Evasion and lands as Multi-Hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>+30% Skill Speed</li>
+        <li class="on"><span class="spec-lv">8</span>Fire Damage over Time for 10s on hit</li>
+        <li class=""><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class="on"><span class="spec-lv">12</span>Ignores Block and Evasion and lands as Multi-Hit</li>
+        <li class=""><span class="spec-lv">16</span>-15s cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/firestorm.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Firestorm <span class="badge opt">12</span></div>
+    <div class="skill-desc">Every fireball shortens Hellfire's cooldown.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+20% Skill Speed</li><li><span class="spec-lv">12</span>-2s [Hellfire] cooldown per fireball</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>-50% MP Cost</li>
+        <li class="on"><span class="spec-lv">8</span>+20% Skill Speed</li>
+        <li class=""><span class="spec-lv">8</span>-60% Incoming Heal for 5s on hit</li>
+        <li class="on"><span class="spec-lv">12</span>-2s [Hellfire] cooldown per fireball</li>
+        <li class=""><span class="spec-lv">16</span>+15% damage per fireball, up to +75%</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/frost.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Frost <span class="badge opt">12</span></div>
+    <div class="skill-desc">AoE Frost; landing it resets Frost Burst.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>-5s cooldown</li><li><span class="spec-lv">8</span>Reset [Frost Burst] cooldown on landing Frost</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Restores 200 MP</li>
+        <li class="on"><span class="spec-lv">8</span>-5s cooldown</li>
+        <li class="on"><span class="spec-lv">8</span>Reset [Frost Burst] cooldown on landing Frost</li>
+        <li class=""><span class="spec-lv">12</span>+25% PC target Frost Chance</li>
+        <li class=""><span class="spec-lv">16</span>+1s Frost duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/frost-burst.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Frost Burst <span class="badge opt">12</span></div>
+    <div class="skill-desc">Only on Frozen targets; crits at 12.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Changes to mobile skill</li><li><span class="spec-lv">12</span>Ignores Block and Evasion and lands as a Critical Hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Absorbs 7% HP</li>
+        <li class="on"><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class=""><span class="spec-lv">8</span>75% chance to Knock Back 2m</li>
+        <li class="on"><span class="spec-lv">12</span>Ignores Block and Evasion and lands as a Critical Hit</li>
+        <li class=""><span class="spec-lv">16</span>50% chance to reset cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/flame-scattershot.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Flame Scattershot <span class="badge opt">12</span></div>
+    <div class="skill-desc">Only on Staggered targets.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Restores 120 MP</li><li><span class="spec-lv">12</span>Multi-Hit on hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Absorbs 5% HP</li>
+        <li class="on"><span class="spec-lv">8</span>Restores 120 MP</li>
+        <li class=""><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class="on"><span class="spec-lv">12</span>Multi-Hit on hit</li>
+        <li class=""><span class="spec-lv">16</span>-1s all skill cooldowns on hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/defiance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Defiance <span class="badge opt">12</span></div>
+    <div class="skill-desc">CC break with a heal.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Restores 20% HP on using [Defiance]</li><li><span class="spec-lv">12</span>+2s Tenacity duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Adds [Curse: Old Tree] Chain Skill</li>
+        <li class=""><span class="spec-lv">8</span>Restores 1000 Stamina on using [Defiance]</li>
+        <li class="on"><span class="spec-lv">8</span>Restores 20% HP on using [Defiance]</li>
+        <li class="on"><span class="spec-lv">12</span>+2s Tenacity duration</li>
+        <li class=""><span class="spec-lv">16</span>+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="passives" class="g-section" data-only="pve" aria-labelledby="h-passives">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-passives">Passives</h2></div>
+    <div class="table-wrap"><table>
+    <thead><tr><th>Passive</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td><span class="sk"><img src="../../assets/icons/sorcerer/robe-of-flame.webp" width="18" height="18" alt="" loading="lazy">Robe of Flame</span></td><td>Accuracy and PvE Damage Boost — the first passive to level.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/sorcerer/grace-of-enhancement.webp" width="18" height="18" alt="" loading="lazy">Grace of Enhancement</span></td><td>+20% PvE Damage Boost while MP is 25%+ and extra hits.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/sorcerer/fire-mark.webp" width="18" height="18" alt="" loading="lazy">Fire Mark</span></td><td>Applies Fire Mark, which Blaze needs.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/sorcerer/robe-of-earth.webp" width="18" height="18" alt="" loading="lazy">Robe of Earth</span></td><td>Max MP and Critical Hit while MP is 50%+.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/sorcerer/robe-of-cold.webp" width="18" height="18" alt="" loading="lazy">Robe of Cold</span></td><td>Defense and a slow on attackers — raids.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Four passives key off your MP (Grace of Enhancement, Robe of Earth, Arctic Armor, Absorb Essence) — never let mana drop.</p>
+
+</section>
+<section id="gear" class="g-section" data-only="pve" aria-labelledby="h-gear">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-gear">Gear &amp; stats</h2></div>
+    <div class="callout"><ul>
+    <li><strong>Manastones:</strong> Attack, Critical Hit, Accuracy.</li>
+    <li>Watch <strong>Max MP</strong> and MP regen until your rotation stops running dry.</li>
+    <li>Which gear tier to chase is still open until the global launch.</li>
+  </ul></div>
+
+</section>
+<section id="daevanion" class="g-section" data-only="pve pvp" aria-labelledby="h-daevanion">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-daevanion">Daevanion boards</h2></div>
+    <p>Daevanion takes your skills from 10 to 14 and adds stats. Each blue node gives <strong>+1 level</strong> to its skill.</p>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>Priority:</strong> blue nodes for <span class="sk"><img src="../../assets/icons/sorcerer/blaze.webp" width="18" height="18" alt="" loading="lazy">Blaze</span>, <span class="sk"><img src="../../assets/icons/sorcerer/bittercold-wind.webp" width="18" height="18" alt="" loading="lazy">Bittercold Wind</span>, <span class="sk"><img src="../../assets/icons/sorcerer/ice-chain.webp" width="18" height="18" alt="" loading="lazy">Ice Chain</span>, then orange nodes.</li>
+    <li data-only="pvp"><strong>Priority:</strong> blue nodes for <span class="sk"><img src="../../assets/icons/sorcerer/frost.webp" width="18" height="18" alt="" loading="lazy">Frost</span>, <span class="sk"><img src="../../assets/icons/sorcerer/winters-shackles.webp" width="18" height="18" alt="" loading="lazy">Winter&#39;s Shackles</span>, <span class="sk"><img src="../../assets/icons/sorcerer/firestorm.webp" width="18" height="18" alt="" loading="lazy">Firestorm</span>.</li>
+    <li data-only="pve"><strong>Ariel</strong> (PvE) at 45, not Azphel.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (PvP) at 45.</li>
+  </ul></div>
+
+</section>
+<section id="stigmas" class="g-section" data-only="pve" aria-labelledby="h-stigmas">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-stigmas">Stigmas</h2></div>
+    <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/element-enhancement.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Element Enhancement <span class="badge must">Lv 20</span></div>
+    <div class="skill-desc">+20% Fire and Water Attack for 10s (+10% more at 20) — the burst window. Max it first.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+200 Accuracy</li><li><span class="spec-lv">10</span>x1.5 [Robe of Flame] effect</li><li><span class="spec-lv">15</span>x1.5 [Grace of Enhancement] effect</li><li><span class="spec-lv">20</span>+10% additional Fire and Water Attack</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+200 Accuracy</li>
+        <li class="on"><span class="spec-lv">10</span>x1.5 [Robe of Flame] effect</li>
+        <li class="on"><span class="spec-lv">15</span>x1.5 [Grace of Enhancement] effect</li>
+        <li class="on"><span class="spec-lv">20</span>+10% additional Fire and Water Attack</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/fire-wall.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Fire Wall <span class="badge must">Lv 10</span></div>
+    <div class="skill-desc">Fire DoT field; Embers stacks extra damage on each hit.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Enhanced Embers - Grants extra damage when landing an attack</li><li><span class="spec-lv">10</span>+2m wall width</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Enhanced Embers - Grants extra damage when landing an attack</li>
+        <li class="on"><span class="spec-lv">10</span>+2m wall width</li>
+        <li class=""><span class="spec-lv">15</span>+2s [Fire Wall] summoning duration</li>
+        <li class=""><span class="spec-lv">20</span>+10s Embers duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/cold-storm.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Cold Storm <span class="badge must">Lv 10</span></div>
+    <div class="skill-desc">Water DoT field with Frostbite and a root chance.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Enhanced Frostbite - Grants extra damage when landing an attack</li><li><span class="spec-lv">10</span>30% chance to inflict Root for 2s</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Enhanced Frostbite - Grants extra damage when landing an attack</li>
+        <li class="on"><span class="spec-lv">10</span>30% chance to inflict Root for 2s</li>
+        <li class=""><span class="spec-lv">15</span>+3s [Cold Storm] summoning duration</li>
+        <li class=""><span class="spec-lv">20</span>+10s Frostbite duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/delayed-explosion.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Delayed Explosion <span class="badge must">Lv 10</span></div>
+    <div class="skill-desc">The target takes +15% damage from you for 4s; level 10 cuts its cooldown to 20s.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Restores 200 MP</li><li><span class="spec-lv">10</span>-10s [Delayed Explosion] cooldown</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Restores 200 MP</li>
+        <li class="on"><span class="spec-lv">10</span>-10s [Delayed Explosion] cooldown</li>
+        <li class=""><span class="spec-lv">15</span>Changes to AoE Skill</li>
+        <li class=""><span class="spec-lv">20</span>+10% additional Damage Taken</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/steel-barrier.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Steel Barrier <span class="badge opt">leveling</span></div>
+    <div class="skill-desc">Shield worth 16% of Max HP — keep it while leveling solo.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+10% Move Speed</li><li><span class="spec-lv">10</span>HP Regen at fixed intervals</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+10% Move Speed</li>
+        <li class="on"><span class="spec-lv">10</span>HP Regen at fixed intervals</li>
+        <li class=""><span class="spec-lv">15</span>+10% PvE Damage Tolerance increase and +5% PvP Damage Tolerance increase</li>
+        <li class=""><span class="spec-lv">20</span>-15s cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/glacial-smite.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Glacial Smite <span class="badge opt">alt.</span></div>
+    <div class="skill-desc">AoE burst with a Frost chance; the swap for Cold Storm on short fights.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Up to +20% damage when more targets hit</li><li><span class="spec-lv">10</span>-30s cooldown</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Up to +20% damage when more targets hit</li>
+        <li class="on"><span class="spec-lv">10</span>-30s cooldown</li>
+        <li class=""><span class="spec-lv">15</span>50% chance to inflict Frost for 3s</li>
+        <li class=""><span class="spec-lv">20</span>Ignores Block and Evasion and lands as Multi-Hit</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="macro" class="g-section" data-only="pve" aria-labelledby="h-macro">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro">Macro &amp; rotation</h2></div>
+    <p>AION 2 has two separate tools:</p>
+  <ul>
+    <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the highest-priority skill that's ready, and in AION 2 the <strong>bottom slot has the highest priority</strong>. The cards show each line top to bottom as in the game.</li>
+    <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar buttons in order and cancels animation tails. Skills on cooldown are skipped.</li>
+  </ul>
+
+  <h3>1. Hotbar lines</h3>
+  <div class="hotlines">
+<div class="hotline">
+  <div class="hotline-head"><span class="key">MB5</span><span class="hotline-name">Fire line</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="">
+      <span class="hl-n">4</span>
+      <img src="../../assets/icons/sorcerer/flame-arrow.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Flame Arrow</span>
+    </li>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/sorcerer/firestorm.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Firestorm</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/sorcerer/blaze.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Blaze</span>
+    </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/sorcerer/flame-scattershot.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Flame Scattershot</span>
+    </li>
+  </ol>
+  <p class="hotline-order">In-game order, top to bottom. 1 = highest priority — the bottom slot.</p>
+<p class="hotline-note">Blaze only lights up on a Fire-Marked target, so it sits near the bottom; Flame Arrow fills the gaps and applies the next mark.</p></div><div class="hotline">
+  <div class="hotline-head"><span class="key">RMB</span><span class="hotline-name">Ice line</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/sorcerer/ice-chain.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Ice Chain</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/sorcerer/frost.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Frost</span>
+    </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/sorcerer/frost-burst.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Frost Burst</span>
+    </li>
+  </ol>
+  <p class="hotline-order">In-game order, top to bottom. 1 = highest priority — the bottom slot.</p>
+<p class="hotline-note">Frost Burst fires as soon as Frost lands; Ice Chain is the filler.</p></div>  </div>
+
+  <h3>2. In-game macro</h3>
+  <p>Bind it to the middle mouse button. Delay <strong>10 ms</strong> on every slot (40–50 ms with high ping):</p>
+  <ol class="macroseq">
+  <li><span class="ms-n">1</span><span class="ms-label">Fire line</span><span class="ms-detail">10 ms</span></li>
+  <li><span class="ms-n">2</span><span class="ms-label">Delayed Explosion</span><span class="ms-detail">10 ms</span></li>
+  <li><span class="ms-n">3</span><span class="ms-label">Bittercold Wind</span><span class="ms-detail">10 ms</span></li>
+  <li><span class="ms-n">4</span><span class="ms-label">Ice line</span><span class="ms-detail">10 ms</span></li>
+</ol>
+  <p class="note">Hellfire is a charged skill and Element Enhancement is a buff for your burst window — keep both out of the macro.</p>
+
+  <h3>3. Burst opener</h3>
+  <ol>
+    <li><span class="sk"><img src="../../assets/icons/sorcerer/delayed-explosion.webp" width="18" height="18" alt="" loading="lazy">Delayed Explosion</span> just before the tank pulls.</li>
+    <li><span class="sk"><img src="../../assets/icons/sorcerer/element-enhancement.webp" width="18" height="18" alt="" loading="lazy">Element Enhancement</span> and <span class="sk"><img src="../../assets/icons/sorcerer/wish-of-concentration.webp" width="18" height="18" alt="" loading="lazy">Wish of Concentration</span>.</li>
+    <li><span class="sk"><img src="../../assets/icons/sorcerer/fire-wall.webp" width="18" height="18" alt="" loading="lazy">Fire Wall</span> + <span class="sk"><img src="../../assets/icons/sorcerer/cold-storm.webp" width="18" height="18" alt="" loading="lazy">Cold Storm</span> under the boss.</li>
+    <li><span class="sk"><img src="../../assets/icons/sorcerer/bittercold-wind.webp" width="18" height="18" alt="" loading="lazy">Bittercold Wind</span>, then <span class="sk"><img src="../../assets/icons/sorcerer/winters-shackles.webp" width="18" height="18" alt="" loading="lazy">Winter&#39;s Shackles</span> for the +20% damage boost.</li>
+    <li><span class="sk"><img src="../../assets/icons/sorcerer/hellfire.webp" width="18" height="18" alt="" loading="lazy">Hellfire</span> charged to 3, then the macro.</li>
+  </ol>
+
+  <h3>4. What you actually press</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Hold</span><span class="press-what">Basic attack on <span class="key">LMB</span>, the Ice line on <span class="key">RMB</span>, the macro on <span class="key">MMB</span>.</span></li>
+    <li><span class="press-how">By hand</span><span class="press-what">The burst opener every time <span class="sk"><img src="../../assets/icons/sorcerer/element-enhancement.webp" width="18" height="18" alt="" loading="lazy">Element Enhancement</span> is back, <span class="sk"><img src="../../assets/icons/sorcerer/hellfire.webp" width="18" height="18" alt="" loading="lazy">Hellfire</span>, <span class="sk"><img src="../../assets/icons/sorcerer/defiance.webp" width="18" height="18" alt="" loading="lazy">Defiance</span>.</span></li>
+  </ul>
+
+</section>
+<section id="recap" class="g-section" data-only="pve" aria-labelledby="h-recap">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-recap">Recap</h2></div>
+    <div class="callout accent"><ul>
+    <li><strong>Skills:</strong> Blaze, Flame Arrow, Bittercold Wind, Ice Chain, Winter's Shackles, Wish of Concentration 16; the rest 12.</li>
+    <li><strong>Stigmas:</strong> Element Enhancement 20, Fire Wall 10, Cold Storm 10, Delayed Explosion 10.</li>
+    <li><strong>Passives:</strong> Robe of Flame, Grace of Enhancement, Fire Mark, Robe of Earth.</li>
+    <li><strong>Mana:</strong> keep it above 50% — Flame Arrow and Blaze restore MP.</li>
+  </ul></div>
+
+</section>
+<aside class="glance" data-only="pvp" aria-label="Build at a glance">
+  <p class="glance-title">Build at a glance</p>
+    <h3>Core skills</h3>
+  <ul class="core-row">
+  <li title="Frost">
+    <img src="../../assets/icons/sorcerer/frost.webp" width="52" height="52" alt="Frost" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Frost</span>
+  </li>
+  <li title="Winter&#39;s Shackles">
+    <img src="../../assets/icons/sorcerer/winters-shackles.webp" width="52" height="52" alt="Winter&#39;s Shackles" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Winter&#39;s Shackles</span>
+  </li>
+  <li title="Firestorm">
+    <img src="../../assets/icons/sorcerer/firestorm.webp" width="52" height="52" alt="Firestorm" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Firestorm</span>
+  </li>
+  <li title="Bittercold Wind">
+    <img src="../../assets/icons/sorcerer/bittercold-wind.webp" width="52" height="52" alt="Bittercold Wind" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Bittercold Wind</span>
+  </li>
+</ul>
+  <h3>Stigma loadout</h3>
+  <ol class="loadout">
+  <li class="slot" title="Element Enhancement">
+    <img src="../../assets/icons/sorcerer/element-enhancement.webp" width="56" height="56" alt="Element Enhancement" loading="lazy">
+    <span class="slot-lv">Lv 20</span>
+    <span class="slot-name">Element Enhancement</span>
+  </li>
+  <li class="slot" title="Soul Freeze">
+    <img src="../../assets/icons/sorcerer/soul-freeze.webp" width="56" height="56" alt="Soul Freeze" loading="lazy">
+    <span class="slot-lv">Lv 10</span>
+    <span class="slot-name">Soul Freeze</span>
+  </li>
+  <li class="slot" title="Curse: Tree">
+    <img src="../../assets/icons/sorcerer/curse-tree.webp" width="56" height="56" alt="Curse: Tree" loading="lazy">
+    <span class="slot-lv">Lv 10</span>
+    <span class="slot-name">Curse: Tree</span>
+  </li>
+  <li class="slot" title="Hibernation">
+    <img src="../../assets/icons/sorcerer/hibernation.webp" width="56" height="56" alt="Hibernation" loading="lazy">
+    <span class="slot-lv">Lv 10</span>
+    <span class="slot-name">Hibernation</span>
+  </li>
+</ol>
+  <h3>Key passives</h3>
+  <ul class="passive-row">
+<li><img src="../../assets/icons/sorcerer/robe-of-flame.webp" width="24" height="24" alt="" loading="lazy">Robe of Flame</li><li><img src="../../assets/icons/sorcerer/grace-of-enhancement.webp" width="24" height="24" alt="" loading="lazy">Grace of Enhancement</li><li><img src="../../assets/icons/sorcerer/revitalization-contract.webp" width="24" height="24" alt="" loading="lazy">Revitalization Contract</li><li><img src="../../assets/icons/sorcerer/robe-of-cold.webp" width="24" height="24" alt="" loading="lazy">Robe of Cold</li></ul>
+
+</aside>
+<section id="intro-pvp" class="g-section" data-only="pvp" aria-labelledby="h-intro-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro-pvp">Overview</h2></div>
+    <p>In PvP the Sorcerer wins with a control chain into burst: root, freeze or polymorph, then unload behind <span class="sk"><img src="../../assets/icons/sorcerer/element-enhancement.webp" width="18" height="18" alt="" loading="lazy">Element Enhancement</span>. Strong in 1v1 and arenas, very fragile in open zergs — stay at max range.</p>
+  <p class="note">A starting point from the global skill data and Korean notes, not a tested global PvP build.</p>
+
+</section>
+<section id="skills-pvp" class="g-section" data-only="pvp" aria-labelledby="h-skills-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-skills-pvp">Skills &amp; stigmas</h2></div>
+    <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/frost.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Frost <span class="badge must">16</span></div>
+    <div class="skill-desc">+25% Frost chance on players at 12, +1s duration at 16.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>-5s cooldown</li><li><span class="spec-lv">12</span>+25% PC target Frost Chance</li><li><span class="spec-lv">16</span>+1s Frost duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Restores 200 MP</li>
+        <li class="on"><span class="spec-lv">8</span>-5s cooldown</li>
+        <li class=""><span class="spec-lv">8</span>Reset [Frost Burst] cooldown on landing Frost</li>
+        <li class="on"><span class="spec-lv">12</span>+25% PC target Frost Chance</li>
+        <li class="on"><span class="spec-lv">16</span>+1s Frost duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/winters-shackles.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Winter&#39;s Shackles <span class="badge must">16</span></div>
+    <div class="skill-desc">Slow with a 30% Frost chance and a chain skill at 12.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>30% chance to inflict Frost for 3s on landing [Winter&#39;s Shackles]</li><li><span class="spec-lv">12</span>Adds [Winter&#39;s Illusion] Chain Skill</li><li><span class="spec-lv">16</span>-15s [Winter&#39;s Shackles] cooldown</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class="on"><span class="spec-lv">8</span>30% chance to inflict Frost for 3s on landing [Winter&#39;s Shackles]</li>
+        <li class=""><span class="spec-lv">8</span>+20% PvE Damage Boost and +10% PvP Damage Boost for 5s on landing [Winter&#39;s Shackles]</li>
+        <li class="on"><span class="spec-lv">12</span>Adds [Winter&#39;s Illusion] Chain Skill</li>
+        <li class="on"><span class="spec-lv">16</span>-15s [Winter&#39;s Shackles] cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/firestorm.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Firestorm <span class="badge must">16</span></div>
+    <div class="skill-desc">−60% incoming heal on hit — your anti-heal.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>-60% Incoming Heal for 5s on hit</li><li><span class="spec-lv">12</span>-2s [Hellfire] cooldown per fireball</li><li><span class="spec-lv">16</span>+15% damage per fireball, up to +75%</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>-50% MP Cost</li>
+        <li class=""><span class="spec-lv">8</span>+20% Skill Speed</li>
+        <li class="on"><span class="spec-lv">8</span>-60% Incoming Heal for 5s on hit</li>
+        <li class="on"><span class="spec-lv">12</span>-2s [Hellfire] cooldown per fireball</li>
+        <li class="on"><span class="spec-lv">16</span>+15% damage per fireball, up to +75%</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/bittercold-wind.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Bittercold Wind <span class="badge must">16</span></div>
+    <div class="skill-desc">Root plus pull; guaranteed crit at 12.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Pull effect</li><li><span class="spec-lv">12</span>Ignores Block and Evasion and lands as a Critical Hit</li><li><span class="spec-lv">16</span>-1s [Frost] cooldown on hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>+1s [Bittercold Wind] summon duration</li>
+        <li class=""><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class="on"><span class="spec-lv">8</span>Pull effect</li>
+        <li class="on"><span class="spec-lv">12</span>Ignores Block and Evasion and lands as a Critical Hit</li>
+        <li class="on"><span class="spec-lv">16</span>-1s [Frost] cooldown on hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/soul-freeze.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Soul Freeze <span class="badge must">Lv 10</span></div>
+    <div class="skill-desc">Seal for 5s and 1,000 Stamina drain at 10 — stops their escape.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>50% chance to inflict Root for 5s</li><li><span class="spec-lv">10</span>-1,000 Stamina</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>50% chance to inflict Root for 5s</li>
+        <li class="on"><span class="spec-lv">10</span>-1,000 Stamina</li>
+        <li class=""><span class="spec-lv">15</span>+2s Seal duration</li>
+        <li class=""><span class="spec-lv">20</span>+25% Seal chance</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/curse-tree.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Curse: Tree <span class="badge must">Lv 10</span></div>
+    <div class="skill-desc">10s polymorph and −20% Fire Tolerance; at 10 it cuts Block and Evasion when it ends.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Increases number of hits required to remove Polymorph</li><li><span class="spec-lv">10</span>-200 Block, Evasion for 10s when Polymorph ends</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Increases number of hits required to remove Polymorph</li>
+        <li class="on"><span class="spec-lv">10</span>-200 Block, Evasion for 10s when Polymorph ends</li>
+        <li class=""><span class="spec-lv">15</span>-20% Impact-type Resist for 10s when Polymorph ends</li>
+        <li class=""><span class="spec-lv">20</span>Inflicts debuff even if Polymorph is removed through attacks</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/hibernation.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Hibernation <span class="badge must">Lv 10</span></div>
+    <div class="skill-desc">5s immunity with healing — the Sorcerer's only real escape.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+100% Incoming Heal</li><li><span class="spec-lv">10</span>Restores 5% Max HP every 1s for the duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+100% Incoming Heal</li>
+        <li class="on"><span class="spec-lv">10</span>Restores 5% Max HP every 1s for the duration</li>
+        <li class=""><span class="spec-lv">15</span>+2s duration</li>
+        <li class=""><span class="spec-lv">20</span>Triggers when afflicted with Impact-type status</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/arctic-armor.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Arctic Armor <span class="badge opt">alt.</span></div>
+    <div class="skill-desc">+10% PvP Damage Tolerance and MP-based damage split.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+20% Impact-type Resist</li><li><span class="spec-lv">10</span>x1.5 [Absorb Essence] effect</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+20% Impact-type Resist</li>
+        <li class="on"><span class="spec-lv">10</span>x1.5 [Absorb Essence] effect</li>
+        <li class=""><span class="spec-lv">15</span>x1.5 [Robe of Cold] effect</li>
+        <li class=""><span class="spec-lv">20</span>+20% PvE Damage Tolerance increase and +10% PvP Damage Tolerance increase</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="recap-pvp" class="g-section" data-only="pvp" aria-labelledby="h-recap-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-recap-pvp">Recap</h2></div>
+    <div class="callout accent"><ul>
+    <li><strong>Combo:</strong> Bittercold Wind (root) → Frost → Element Enhancement → Firestorm (anti-heal) → Blaze.</li>
+    <li><strong>Stigmas:</strong> Element Enhancement, Soul Freeze, Curse: Tree, Hibernation.</li>
+    <li><strong>Daevanion:</strong> Azphel over Ariel.</li>
+  </ul></div>
+
+</section>
+<section id="fight-lvl" class="g-section" data-only="lvl" aria-labelledby="h-fight-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-fight-lvl">How to fight while leveling</h2></div>
+    <div class="callout"><ul>
+    <li><strong>Packs:</strong> <span class="sk"><img src="../../assets/icons/sorcerer/bittercold-wind.webp" width="18" height="18" alt="" loading="lazy">Bittercold Wind</span> (root + pull) → <span class="sk"><img src="../../assets/icons/sorcerer/hellfire.webp" width="18" height="18" alt="" loading="lazy">Hellfire</span> → <span class="sk"><img src="../../assets/icons/sorcerer/ice-chain.webp" width="18" height="18" alt="" loading="lazy">Ice Chain</span> until they drop.</li>
+    <li><strong>Elites:</strong> <span class="sk"><img src="../../assets/icons/sorcerer/flame-arrow.webp" width="18" height="18" alt="" loading="lazy">Flame Arrow</span> for Fire Mark → <span class="sk"><img src="../../assets/icons/sorcerer/blaze.webp" width="18" height="18" alt="" loading="lazy">Blaze</span> → <span class="sk"><img src="../../assets/icons/sorcerer/firestorm.webp" width="18" height="18" alt="" loading="lazy">Firestorm</span>, kiting with <span class="sk"><img src="../../assets/icons/sorcerer/ice-chain.webp" width="18" height="18" alt="" loading="lazy">Ice Chain</span> slows.</li>
+    <li><strong>Mana:</strong> use target mode so the basic attack keeps running, and weave Flame Arrow.</li>
+    <li><strong>Low HP:</strong> <span class="sk"><img src="../../assets/icons/sorcerer/steel-barrier.webp" width="18" height="18" alt="" loading="lazy">Steel Barrier</span> and distance — the Sorcerer has no heal.</li>
+  </ul></div>
+
+</section>
+<section id="macro-lvl" class="g-section" data-only="lvl" aria-labelledby="h-macro-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro-lvl">Leveling macro</h2></div>
+    <p>Early on, two lines are enough: the Fire line on MB5 and the Ice line on RMB. Add the in-game macro once Bittercold Wind and your stigmas are in.</p>
+  <div class="hotlines">
+    <div class="hotline">
+  <div class="hotline-head"><span class="key">MB5</span><span class="hotline-name">Fire line</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/sorcerer/flame-arrow.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Flame Arrow</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/sorcerer/firestorm.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Firestorm</span>
+    </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/sorcerer/blaze.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Blaze</span>
+    </li>
+  </ol>
+  <p class="hotline-order">In-game order, top to bottom. 1 = highest priority — the bottom slot.</p>
+</div>
+    <div class="hotline">
+  <div class="hotline-head"><span class="key">RMB</span><span class="hotline-name">Ice line</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/sorcerer/ice-chain.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Ice Chain</span>
+    </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/sorcerer/frost.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Frost</span>
+    </li>
+  </ol>
+  <p class="hotline-order">In-game order, top to bottom. 1 = highest priority — the bottom slot.</p>
+</div>
+  </div>
+
+</section>
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">Sources</h2>
+  <ul>
+    <li><a href="https://vortexgaming.io/en/postdetail/724101" target="_blank" rel="noopener">Vortex Gaming — Sorcerer PvE guide after the balance patch</a> — skill levels, specializations, stigmas, opener and macro (Korean servers)</li>
+    <li><a href="https://mmo-codex.com/articles/aion-2-sorcerer-guide/" target="_blank" rel="noopener">MMO Codex — Aion 2 Sorcerer guide</a> — stigma priority, macro order, leveling in target mode</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/sorcerer" target="_blank" rel="noopener">questlog.gg</a> — skill data and names from the global client</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — how hotbar lines and the in-game macro work</li>
+  </ul>
+  <p class="sources-all"><a href="../../en/sources/">All sources and creators →</a></p>
+</section>  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../en/">AION 2 Guides</a>
+      <p>Unofficial fan site, not affiliated with NCSOFT. AION 2 and its skill icons are © NCSOFT.</p>
+      <p>Last checked: 2026-09-27 (before the global launch).</p>
+      <p><a href="../../en/sources/">All sources and creators</a> · <button type="button" class="link-btn wn-open">Changelog</button></p>
+    </div>
+  </div>
+</footer>
+<dialog class="whatsnew" data-id="2026-09-28-sorcerer" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title" data-latest="What&#39;s new" data-history="Changelog">What&#39;s new</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="Got it">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <section class="wn-entry">
+      <time class="wn-date" datetime="2026-09-28">Sep 28, 2026</time>
+      <ul>
+        <li><a href="../../en/sorcerer/"><strong>Sorcerer guide (WIP)</strong> — fire &amp; ice build, stigmas, macro and leveling, assembled from Korean guides until proper global builds appear.</a></li>
+      </ul>
+    </section>
+    <section class="wn-entry wn-older">
+      <time class="wn-date" datetime="2026-09-27">Sep 27, 2026</time>
+      <ul>
+        <li><a href="../../en/chanter/"><strong>Chanter guide</strong> — TitanTheF's global build: skills, stigmas, mantras and the simple starting macro.</a></li>
+        <li><a href="../../en/assassin/"><strong>Assassin guide</strong> — Insignias, Heart Gore and the Illusive Clone burst window, with TitanTheF's global build.</a></li>
+        <li><a href="../../en/ranger/"><strong>Ranger reworked for global</strong> — realistic skill levels (16), the global stigma set and arcana targets instead of the Korean endgame.</a></li>
+        <li><a href="../../en/gladiator/"><strong>Macros fixed</strong> — the bottom slot of a hotbar line has the highest priority; leveling macros for every class (Grobs).</a></li>
+      </ul>
+    </section>
+    <section class="wn-entry wn-older">
+      <time class="wn-date" datetime="2026-09-27">Sep 27, 2026</time>
+      <ul>
+        <li><a href="../../en/templar/"><strong>Templar guide</strong> — PvE, PvP and leveling: skills, stigmas for global's 4 slots and a macro setup.</a></li>
+        <li><a href="../../en/week-1/"><strong>First week</strong> — what to finish before the first weekly reset and the one-time goals that are easy to miss.</a></li>
+        <li><a href="../../en/weekly/"><strong>Weekly tracker</strong> — weekly entries and Odyle energy for all your characters, with a reset timer. The checklist clears itself every week.</a></li>
+      </ul>
+    </section>
+    <button class="btn btn-primary wn-ok" value="close">Got it</button>
+  </form>
+</dialog>
+<script src="../../assets/js/site.js" defer></script>
+</body>
+</html>

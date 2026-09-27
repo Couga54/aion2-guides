@@ -122,7 +122,8 @@
             "ranger",
             "templar",
             "assassin",
-            "chanter"
+            "chanter",
+            "sorcerer"
           ],
           "links": [
             {
@@ -234,7 +235,8 @@
             "ranger",
             "templar",
             "assassin",
-            "chanter"
+            "chanter",
+            "sorcerer"
           ],
           "links": [
             {
@@ -276,6 +278,14 @@
                 "en": "Chanter skills",
                 "ru": "Скиллы Чародея"
               }
+            },
+            {
+              "type": "site",
+              "url": "https://questlog.gg/aion-2/en/db/skills/sorcerer",
+              "label": {
+                "en": "Sorcerer skills",
+                "ru": "Скиллы Волшебника"
+              }
             }
           ]
         },
@@ -307,7 +317,8 @@
           "used": [
             "gladiator",
             "ranger",
-            "templar"
+            "templar",
+            "sorcerer"
           ],
           "links": [
             {
@@ -464,7 +475,8 @@
             "ru": "Порядок скиллов Стража на прокачке и приоритет пассивок."
           },
           "used": [
-            "templar"
+            "templar",
+            "sorcerer"
           ],
           "links": [
             {

@@ -1,0 +1,29 @@
+{
+  "_note": "Sorcerer leveling steps (WIP: Korean guides + MMO Codex, no solid global source yet). [[slug]] = localized skill name, [[slug#N]] = its N-th specialization.",
+  "steps": [
+    {"id": "sorcerer-core", "order": 2, "skills": ["flame-arrow", "ice-chain"],
+     "when": {"en": "Lv 1", "ru": "Ур. 1"},
+     "text": {"en": "First points into [[flame-arrow]] (restores MP on every cast) and [[ice-chain]] for packs. At 8 take [[flame-arrow#0]] — mana is your limit while leveling.",
+              "ru": "Первые очки в [[flame-arrow]] (восполняет ману каждым кастом) и [[ice-chain]] для пачек. На 8 возьми [[flame-arrow#0]] — на прокачке всё упирается в ману."}},
+    {"id": "sorcerer-target", "order": 5, "skills": [],
+     "when": {"en": "Settings", "ru": "Настройки"},
+     "text": {"en": "Use <strong>target mode</strong>, not action combat: in action mode the basic attack stops whenever you cast, and the basic attack is what keeps your MP up.",
+              "ru": "Играй в <strong>режиме с таргетом</strong>, а не в action combat: в action-режиме автоатака останавливается при каждом касте, а именно она держит ману."}},
+    {"id": "sorcerer-fire", "order": 60, "skills": ["firestorm", "blaze"],
+     "when": {"en": "Lv 6–10", "ru": "Ур. 6–10"},
+     "text": {"en": "[[firestorm]] and [[blaze]] become your single-target damage. Blaze needs Fire Mark on the target — [[fire-mark]] applies it from any fire hit.",
+              "ru": "[[firestorm]] и [[blaze]] — основной урон по одной цели. Зареву нужна Огненная метка на цели — её вешает [[fire-mark]] с любого огненного удара."}},
+    {"id": "sorcerer-hellfire", "order": 120, "skills": ["hellfire", "bittercold-wind"],
+     "when": {"en": "Lv 12", "ru": "Ур. 12"},
+     "text": {"en": "[[hellfire]] (charge to 3) for big pulls and [[bittercold-wind]] to root the pack in place — [[bittercold-wind#2]] pulls them together.",
+              "ru": "[[hellfire]] (заряд до 3) для больших пулов и [[bittercold-wind]], чтобы приковать пачку на месте — [[bittercold-wind#2]] стягивает их в кучу."}},
+    {"id": "sorcerer-stigmas", "order": 221, "skills": ["element-enhancement", "fire-wall", "cold-storm", "steel-barrier"],
+     "when": {"en": "Lv ~22", "ru": "~Ур. 22"},
+     "text": {"en": "Stigmas: [[element-enhancement]] first, then [[fire-wall]] and [[cold-storm]] for packs. Keep [[steel-barrier]] while leveling solo — the Sorcerer is fragile.",
+              "ru": "Стигмы: сначала [[element-enhancement]], затем [[fire-wall]] и [[cold-storm]] для пачек. На соло-прокачке держи [[steel-barrier]] — Волшебник хрупкий."}},
+    {"id": "sorcerer-cap", "order": 455, "skills": ["blaze", "firestorm", "hellfire"],
+     "when": {"en": "Cap", "ru": "Кап"},
+     "text": {"en": "At the cap swap Steel Barrier for [[delayed-explosion]] in groups and push [[blaze]], [[firestorm]], [[hellfire]] toward 16+ — see the PvE tab.",
+              "ru": "На капе в группе меняй Стальную оболочку на [[delayed-explosion]] и качай [[blaze]], [[firestorm]], [[hellfire]] к 16+ — вкладка PvE."}}
+  ]
+}

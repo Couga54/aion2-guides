@@ -52,7 +52,7 @@
           <img class="class-card-art" src="{{ root }}assets/art/{{ c.slug }}.webp" alt="" loading="lazy"{% if c.get('art_pos') %} style="object-position:{{ c.art_pos }}"{% endif %}>
           <img class="class-emblem" src="{{ root }}assets/classes/{{ c.slug }}.webp" width="72" height="72" alt="" loading="lazy">
           <div class="class-card-body">
-            {% if c.status == 'ready' %}<span class="class-status">{{ t.guide_updated }} <time datetime="{{ c.updated }}">{{ fmt_day(c.updated, lang) }}</time></span>{% else %}<span class="class-status">{{ t.soon }}</span>{% endif %}
+            {% if c.status == 'ready' %}<span class="class-status">{% if c.get('wip') %}<span class="wip-tag">{{ t.wip }}</span> {% endif %}{{ t.guide_updated }} <time datetime="{{ c.updated }}">{{ fmt_day(c.updated, lang) }}</time></span>{% else %}<span class="class-status">{{ t.soon }}</span>{% endif %}
             <h3>{{ c.name[lang] }}</h3>
             <p class="class-role">{{ c.role[lang] }}{% if c.get('weapon') %} · {{ c.weapon[lang] }}{% endif %}</p>
             {% if c.get('pitch') %}<p class="class-pitch">{{ c.pitch[lang] }}</p>{% endif %}

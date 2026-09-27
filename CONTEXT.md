@@ -130,5 +130,12 @@ Requirements from the user (in their words, translated):
   regenerates per character, all in localStorage key `aion2-tracker-v1`.
 - Session 4 (Sep 27): Chanter and Assassin guides, Ranger reworked for global, macros corrected (bottom
   slot = highest priority) with leveling macros (Grobs), class cards show "Updated <date>" instead of "Guide ready".
+- Session 5 (Sep 28): Sorcerer guide marked WIP (`"wip": true` in site.json → WIP tag on card, class
+  menu, hero stamp and a "Work in progress" callout above the guide). No trusted global source: built from
+  Vortex Gaming's KR post-balance PvE guide + MMO Codex, KR names mapped to global: Flame Burst = Blaze,
+  Prayer of Focus = Wish of Concentration, Flame Harpoon = Firestorm, Infernal Flame = Hellfire,
+  Winter's Grasp = Winter's Shackles, Blizzard ≈ Bittercold Wind (uncertain), Elemental Boost = Element
+  Enhancement, Flame Barrier = Fire Wall, Frost Storm = Cold Storm. Accent "frost" (cyan). Remove `wip`
+  once a real global build (e.g. TitanTheF) exists.
 - Open ideas: more classes, Daevanion board visual per class, checklist export/import,
   verify global level cap and Daevanion values after launch (Oct 5).

@@ -1,0 +1,202 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq with context %}
+
+{# ============================== PvE ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('blaze', '16'), ('bittercold-wind', '16'), ('ice-chain', '16'), ('flame-arrow', '16'), ('wish-of-concentration', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('element-enhancement', 20), ('fire-wall', 10), ('cold-storm', 10), ('delayed-explosion', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['robe-of-flame', 'grace-of-enhancement', 'fire-mark', 'robe-of-earth']) }}
+{% endcall %}
+
+{% call section('intro', 'Обзор', 'pve') %}
+  <p>Волшебник — хрупкая дальнобойная «стеклянная пушка», которая кастует и огонь, и лёд. Огонь даёт урон — {{ s('fire-mark') }} помечает цель, а {{ s('blaze') }} превращает метку в урон, — а лёд замедляет, приковывает и замораживает, чтобы до тебя никто не добежал. Основной бурст укладывается в 10-секундное окно под {{ s('element-enhancement') }}.</p>
+  <div class="callout accent">
+    <h3>Билд в одном предложении</h3>
+    <p>Открывай бой {{ s('delayed-explosion') }} и {{ s('element-enhancement') }}, ставь {{ s('fire-wall') }} и {{ s('cold-storm') }}, дальше крути огненную и ледяную линии, а {{ s('flame-arrow') }} держит ману выше 50%.</p>
+  </div>
+  <p class="note">Собрано по корейским гайдам (PvE-гайд Vortex Gaming после баланс-патча, MMO Codex) и переведено на глобальные названия скиллов с questlog. Глобального билда Волшебника от проверенного игрока пока нет.</p>
+{% endcall %}
+
+{% call section('global', 'Глобальный 1 сезон: что меняется', 'pve pvp') %}
+  <p>Глобальные серверы открываются <strong>5 октября 2026</strong> (ранний доступ для Founder's Pack — с 30 сентября). Что это значит для Волшебника:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 слота стигм, максимум 20.</strong> В Корее Усиление стихий, Стена огня, Замедленный взрыв и Метель все на 20 — на глобалке поначалу до 20 дотянется только одна.</li>
+      <li><strong>Скиллы на 16, а не на 20.</strong> Выше 16 скиллы поднимают арканы и кольца, а они приходят медленно — специализации ниже подобраны под 16.</li>
+      <li><strong>На старте нет скорости боя.</strong> Длинные касты бьют по урону; где можно, бери специализации на скорость умений.</li>
+      <li data-only="pvp"><strong>PvP:</strong> все стартуют в одинаковой слабой экипировке, меты ещё нет.</li>
+    </ul>
+  </div>
+{% endcall %}
+
+{% call section('skills', 'Скиллы', 'pve') %}
+  <p>Шесть скиллов качаются до <strong>16</strong>, остальные остаются на <strong>12</strong>. Корейские игроки позже поднимают Зарево, Ледяную цепь и Леденящий ветер до 20.</p>
+  <ul class="skill-grid">
+    {% call skill('blaze', 'must', '16', [2, 3, 4]) %}Основной урон по цели с Огненной меткой, восстанавливает ману. На 16 каждое попадание сокращает Исток силы.{% endcall %}
+    {% call skill('flame-arrow', 'must', '16', [0, 3, 4]) %}Филлер, который восстанавливает ману. На 12 сам вешает Огненную метку, на 16 сбрасывает Зарево.{% endcall %}
+    {% call skill('bittercold-wind', 'must', '16', [1, 3, 4]) %}Поле с корнями, на 12 гарантированно критует; на 16 сокращает Заморозку.{% endcall %}
+    {% call skill('ice-chain', 'must', '16', [1, 3, 4]) %}Водный филлер без перезарядки, замедляет (Призыв холода срабатывает по замедленным).{% endcall %}
+    {% call skill('winters-shackles', 'must', '16', [2, 3, 4]) %}+20% к урону в PvE на 5 сек. при попадании — кастуй внутри бурста.{% endcall %}
+    {% call skill('wish-of-concentration', 'must', '16', [1, 3, 4]) %}+Атака и Точность на 10 сек.; на 16 сокращает перезарядку всех умений на 10 сек.{% endcall %}
+    {% call skill('hellfire', 'opt', '12', [1, 3]) %}АоЕ с зарядом до 3 уровней — зачистка пачек. Опытные корейские игроки качают его до 20.{% endcall %}
+    {% call skill('firestorm', 'opt', '12', [1, 3]) %}Каждый снаряд сокращает перезарядку Адского пламени.{% endcall %}
+    {% call skill('frost', 'opt', '12', [1, 2]) %}Заморозка по области; при попадании сбрасывает Замораживающий взрыв.{% endcall %}
+    {% call skill('frost-burst', 'opt', '12', [1, 3]) %}Только по замороженным целям; на 12 критует.{% endcall %}
+    {% call skill('flame-scattershot', 'opt', '12', [1, 3]) %}Только по целям в Ошеломлении.{% endcall %}
+    {% call skill('defiance', 'opt', '12', [2, 3]) %}Снятие контроля с лечением.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Пассивки', 'pve') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Пассивка</th><th>Зачем</th></tr></thead>
+    <tbody>
+      <tr><td>{{ s('robe-of-flame') }}</td><td>Точность и увеличение урона в PvE — качается первой.</td></tr>
+      <tr><td>{{ s('grace-of-enhancement') }}</td><td>+20% к урону в PvE, пока маны 25%+, и дополнительные удары.</td></tr>
+      <tr><td>{{ s('fire-mark') }}</td><td>Вешает Огненную метку, без которой не работает Зарево.</td></tr>
+      <tr><td>{{ s('robe-of-earth') }}</td><td>Макс. мана и шанс крита, пока маны 50%+.</td></tr>
+      <tr><td>{{ s('robe-of-cold') }}</td><td>Защита и замедление атакующих — для рейдов.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Четыре пассивки зависят от маны (Дар усиления, Мантия, Снежная кольчуга, Поглощение силы) — не давай ей проседать.</p>
+{% endcall %}
+
+{% call section('gear', 'Экипировка и статы', 'pve') %}
+  <div class="callout"><ul>
+    <li><strong>Манастоуны:</strong> Атака, шанс крита, Точность.</li>
+    <li>Следи за <strong>макс. маной</strong> и её регеном, пока ротация не перестанет упираться в ману.</li>
+    <li>Какой тир экипировки добивать, станет понятно после глобального запуска.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('daevanion', 'Доски Daevanion', 'pve pvp') %}
+  <p>Daevanion поднимает скиллы с 10 до 14 и даёт статы. Каждый синий узел — <strong>+1 уровень</strong> его скилла.</p>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>Приоритет:</strong> синие узлы {{ s('blaze') }}, {{ s('bittercold-wind') }}, {{ s('ice-chain') }}, затем оранжевые.</li>
+    <li data-only="pvp"><strong>Приоритет:</strong> синие узлы {{ s('frost') }}, {{ s('winters-shackles') }}, {{ s('firestorm') }}.</li>
+    <li data-only="pve"><strong>Ariel</strong> (PvE) на 45, а не Azphel.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (PvP) на 45.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('stigmas', 'Стигмы', 'pve') %}
+  <ul class="skill-grid">
+    {% call skill('element-enhancement', 'must', 'Lv 20', upto=20) %}+20% к атаке огнём и водой на 10 сек. (+10% сверху на 20) — это и есть окно бурста. Качай первой.{% endcall %}
+    {% call skill('fire-wall', 'must', 'Lv 10', upto=10) %}Огненное поле с периодическим уроном; Тлеющие угли добавляют урон с каждым попаданием.{% endcall %}
+    {% call skill('cold-storm', 'must', 'Lv 10', upto=10) %}Водное поле с Обморожением и шансом корней.{% endcall %}
+    {% call skill('delayed-explosion', 'must', 'Lv 10', upto=10) %}Цель получает от тебя +15% урона в течение 4 сек.; на 10 перезарядка сокращается до 20 сек.{% endcall %}
+    {% call skill('steel-barrier', 'opt', 'прокачка', upto=10) %}Щит на 16% макс. ОЗ — держи его на соло-прокачке.{% endcall %}
+    {% call skill('glacial-smite', 'opt', 'альт.', upto=10) %}АоЕ-бурст с шансом Заморозки; замена Метели на коротких боях.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Макрос и ротация', 'pve') %}
+  <p>В AION 2 есть два разных инструмента:</p>
+  <ul>
+    <li><strong>Линия на кнопке</strong> — несколько скиллов на <em>одной</em> кнопке панели. Нажатие кастует готовый скилл с наивысшим приоритетом, и в AION 2 <strong>наивысший приоритет у нижнего слота</strong>. Карточки показывают линию сверху вниз, как в игре.</li>
+    <li><strong>Встроенный макрос</strong> — пока ты держишь его клавишу, он по очереди нажимает кнопки панели и отменяет хвосты анимаций. Скиллы на перезарядке пропускаются.</li>
+  </ul>
+
+  <h3>1. Линии на кнопках</h3>
+  <div class="hotlines">
+    {% call hotline('MB5', 'Огненная линия', ['flame-scattershot', 'blaze', 'firestorm', 'flame-arrow']) %}Зарево загорается только по цели с Огненной меткой, поэтому стоит почти внизу; Огненная стрела заполняет паузы и вешает следующую метку.{% endcall %}
+    {% call hotline('ПКМ', 'Ледяная линия', ['frost-burst', 'frost', 'ice-chain']) %}Замораживающий взрыв срабатывает, как только прошла Заморозка; Ледяная цепь — филлер.{% endcall %}
+  </div>
+
+  <h3>2. Встроенный макрос</h3>
+  <p>Повесь его на среднюю кнопку мыши. Задержка <strong>10 мс</strong> в каждом слоте (40–50 мс при высоком пинге):</p>
+  {{ macroseq([('Огненная линия', '10 мс'), (skill_data('delayed-explosion')[lang].name, '10 мс'), (skill_data('bittercold-wind')[lang].name, '10 мс'), ('Ледяная линия', '10 мс')]) }}
+  <p class="note">Адское пламя — скилл с зарядом, а Усиление стихий — бафф под окно бурста: оба держи вне макроса.</p>
+
+  <h3>3. Открытие бурста</h3>
+  <ol>
+    <li>{{ s('delayed-explosion') }} прямо перед пулом танка.</li>
+    <li>{{ s('element-enhancement') }} и {{ s('wish-of-concentration') }}.</li>
+    <li>{{ s('fire-wall') }} + {{ s('cold-storm') }} под босса.</li>
+    <li>{{ s('bittercold-wind') }}, затем {{ s('winters-shackles') }} ради +20% к урону.</li>
+    <li>{{ s('hellfire') }} на 3 заряда, дальше макрос.</li>
+  </ol>
+
+  <h3>4. Что нажимать на самом деле</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Держать</span><span class="press-what">Базовая атака на <span class="key">ЛКМ</span>, ледяная линия на <span class="key">ПКМ</span>, макрос на <span class="key">СКМ</span>.</span></li>
+    <li><span class="press-how">Вручную</span><span class="press-what">Открытие бурста каждый раз, когда откатилось {{ s('element-enhancement') }}, {{ s('hellfire') }}, {{ s('defiance') }}.</span></li>
+  </ul>
+{% endcall %}
+
+{% call section('recap', 'Итог', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Скиллы:</strong> Зарево, Огненная стрела, Леденящий ветер, Ледяная цепь, Оковы зимы, Исток силы 16; остальное 12.</li>
+    <li><strong>Стигмы:</strong> Усиление стихий 20, Стена огня 10, Метель 10, Замедленный взрыв 10.</li>
+    <li><strong>Пассивки:</strong> Аура пламени, Дар усиления, Огненная метка, Мантия.</li>
+    <li><strong>Мана:</strong> держи выше 50% — Огненная стрела и Зарево её восстанавливают.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================== PvP ============================== #}
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('frost', '16'), ('winters-shackles', '16'), ('firestorm', '16'), ('bittercold-wind', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('element-enhancement', 20), ('soul-freeze', 10), ('curse-tree', 10), ('hibernation', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['robe-of-flame', 'grace-of-enhancement', 'revitalization-contract', 'robe-of-cold']) }}
+{% endcall %}
+
+{% call section('intro-pvp', 'Обзор', 'pvp') %}
+  <p>В PvP Волшебник побеждает цепочкой контроля и бурстом: корни, заморозка или превращение, затем весь урон под {{ s('element-enhancement') }}. Силён в 1 на 1 и на аренах, очень хрупок в больших замесах — держись на максимальной дистанции.</p>
+  <p class="note">Отправная точка по глобальным данным о скиллах и корейским заметкам, а не проверенный глобальный PvP-билд.</p>
+{% endcall %}
+
+{% call section('skills-pvp', 'Скиллы и стигмы', 'pvp') %}
+  <ul class="skill-grid">
+    {% call skill('frost', 'must', '16', [1, 3, 4]) %}+25% к шансу Заморозки по игрокам на 12, +1 сек. длительности на 16.{% endcall %}
+    {% call skill('winters-shackles', 'must', '16', [1, 3, 4]) %}Замедление с шансом Заморозки 30% и комбинацией на 12.{% endcall %}
+    {% call skill('firestorm', 'must', '16', [2, 3, 4]) %}−60% получаемого исцеления при попадании — твой антихил.{% endcall %}
+    {% call skill('bittercold-wind', 'must', '16', [2, 3, 4]) %}Корни и притягивание; на 12 гарантированный крит.{% endcall %}
+    {% call skill('soul-freeze', 'must', 'Lv 10', upto=10) %}Немота на 5 сек. и −1000 выносливости на 10 — не даёт убежать.{% endcall %}
+    {% call skill('curse-tree', 'must', 'Lv 10', upto=10) %}Превращение на 10 сек. и −20% стойкости к огню; на 10 снижает блок и уклонение, когда эффект спадает.{% endcall %}
+    {% call skill('hibernation', 'must', 'Lv 10', upto=10) %}5 сек. неуязвимости с лечением — единственный настоящий сейв Волшебника.{% endcall %}
+    {% call skill('arctic-armor', 'opt', 'альт.', upto=10) %}+10% стойкости к урону в PvP и разделение урона на ману.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('recap-pvp', 'Итог', 'pvp') %}
+  <div class="callout accent"><ul>
+    <li><strong>Комбо:</strong> Леденящий ветер (корни) → Заморозка → Усиление стихий → Огненный гарпун (антихил) → Зарево.</li>
+    <li><strong>Стигмы:</strong> Усиление стихий, Ледяная душа, Проклятие: Дерево, Сон.</li>
+    <li><strong>Daevanion:</strong> Azphel, а не Ariel.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Пачки:</strong> {{ s('bittercold-wind') }} (корни + притягивание) → {{ s('hellfire') }} → {{ s('ice-chain') }}, пока не упадут.</li>
+    <li><strong>Элитки:</strong> {{ s('flame-arrow') }} на Огненную метку → {{ s('blaze') }} → {{ s('firestorm') }}, кайтя замедлениями {{ s('ice-chain') }}.</li>
+    <li><strong>Мана:</strong> играй в режиме с таргетом, чтобы автоатака не прерывалась, и вплетай Огненную стрелу.</li>
+    <li><strong>Мало ОЗ:</strong> {{ s('steel-barrier') }} и дистанция — лечения у Волшебника нет.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Макрос на прокачке', 'lvl') %}
+  <p>Поначалу хватает двух линий: огненная на MB5 и ледяная на ПКМ. Встроенный макрос добавляй, когда появятся Леденящий ветер и стигмы.</p>
+  <div class="hotlines">
+    {{ hotline('MB5', 'Огненная линия', ['blaze', 'firestorm', 'flame-arrow']) }}
+    {{ hotline('ПКМ', 'Ледяная линия', ['frost', 'ice-chain']) }}
+  </div>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://vortexgaming.io/en/postdetail/724101" target="_blank" rel="noopener">Vortex Gaming — PvE-гайд на Волшебника после баланс-патча</a> — уровни скиллов, специализации, стигмы, открытие боя и макрос (корейские серверы)</li>
+    <li><a href="https://mmo-codex.com/articles/aion-2-sorcerer-guide/" target="_blank" rel="noopener">MMO Codex — гайд на Волшебника Aion 2</a> — приоритет стигм, порядок макроса, прокачка в режиме с таргетом</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/sorcerer" target="_blank" rel="noopener">questlog.gg</a> — данные и названия скиллов из глобального клиента</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — как работают линии на кнопках и встроенный макрос</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

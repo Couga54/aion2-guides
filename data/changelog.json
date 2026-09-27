@@ -2,6 +2,17 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-09-28-sorcerer",
+      "date": "2026-09-28",
+      "items": [
+        {
+          "href": "sorcerer/",
+          "en": "<strong>Sorcerer guide (WIP)</strong> — fire &amp; ice build, stigmas, macro and leveling, assembled from Korean guides until proper global builds appear.",
+          "ru": "<strong>Гайд на Волшебника (WIP)</strong> — билд огонь + лёд, стигмы, макрос и прокачка; собран из корейских гайдов, пока не появятся нормальные глобальные билды."
+        }
+      ]
+    },
+    {
       "id": "2026-09-27-chanter-assassin",
       "date": "2026-09-27",
       "items": [

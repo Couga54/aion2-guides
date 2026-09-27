@@ -1,0 +1,1268 @@
+<!doctype html>
+<html lang="ru" data-mode="pve" data-class="sorcerer">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Волшебник — AION 2 Гайды (PvE, PvP, Прокачка)</title>
+<meta name="description" content="Хрупкий кастер огня и льда: Огненная метка и Зарево на урон, Заморозка и корни на контроль и огромный бурст под Усилением стихий.">
+<link rel="canonical" href="https://couga54.github.io/aion2-guides/ru/sorcerer/">
+<link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/sorcerer/">
+<link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/sorcerer/">
+<link rel="alternate" hreflang="x-default" href="https://couga54.github.io/aion2-guides/en/sorcerer/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Гайды">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Волшебник — AION 2 Гайды (PvE, PvP, Прокачка)">
+<meta property="og:description" content="Хрупкий кастер огня и льда: Огненная метка и Зарево на урон, Заморозка и корни на контроль и огромный бурст под Усилением стихий.">
+<meta property="og:url" content="https://couga54.github.io/aion2-guides/ru/sorcerer/">
+<meta property="og:image" content="https://couga54.github.io/aion2-guides/assets/og/sorcerer-ru.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var modes = ['pve', 'pvp', 'lvl'];
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+  })(document.documentElement);
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css">
+</head>
+<body class="page-class accent-frost">
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../ru/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
+      <span>AION 2 Гайды</span>
+    </a>
+    <details class="class-menu">
+      <summary class="class-menu-btn accent-frost">
+<img src="../../assets/classes/sorcerer.webp" width="24" height="24" alt=""><span>Волшебник</span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="Классы">
+        <a href="../../ru/gladiator/" class="cm-item accent-crimson">
+          <img src="../../assets/classes/gladiator.webp" width="44" height="44" alt=""><span class="cm-name">Гладиатор</span><span class="cm-role">Ближний бой · брузер</span>
+        </a>
+        <a href="../../ru/ranger/" class="cm-item accent-emerald">
+          <img src="../../assets/classes/ranger.webp" width="44" height="44" alt=""><span class="cm-name">Лучник</span><span class="cm-role">Дальний бой · кайт</span>
+        </a>
+        <a href="../../ru/templar/" class="cm-item accent-sapphire">
+          <img src="../../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Страж</span><span class="cm-role">Танк · баффер группы</span>
+        </a>
+        <a href="../../ru/assassin/" class="cm-item accent-violet">
+          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Убийца</span><span class="cm-role">Ближний бой · бурст</span>
+        </a>
+        <a href="../../ru/sorcerer/" class="cm-item accent-frost" aria-current="page">
+          <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Волшебник <span class="wip-tag">WIP</span></span><span class="cm-role">Магический урон издалека</span>
+        </a>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Заклинатель</span><span class="cm-role">Скоро</span>
+        </span>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Целитель</span><span class="cm-role">Скоро</span>
+        </span>
+        <a href="../../ru/chanter/" class="cm-item accent-amber">
+          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Чародей</span><span class="cm-role">Поддержка ближнего боя · баффер</span>
+        </a>
+      </nav>
+    </details>
+    <div class="topbar-tools">
+      <a class="src-nav" href="../../ru/week-1/" title="Первая неделя: что успеть до сброса">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+        <span>Первая неделя</span>
+      </a>
+      <a class="src-nav" href="../../ru/weekly/" title="Недельный трекер">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+        <span>Неделя</span>
+      </a>
+      <a class="src-nav src-nav-sources" href="../../ru/sources/" title="Источники и авторы">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+        <span>Источники</span>
+      </a>
+      <a class="lang-switch" href="../../en/sorcerer/" hreflang="en" lang="en" data-keep-query>
+        <span aria-hidden="true">EN</span><span class="sr-only">English</span>
+      </a>
+<button class="icon-btn wn-open wn-top" type="button" aria-label="История изменений" title="История изменений">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </button>      <button class="icon-btn theme-toggle" type="button" aria-label="Переключить тёмную тему" title="Переключить тёмную тему">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="class-backdrop" aria-hidden="true" style="--art:url('../../assets/art/sorcerer.webp')"></div>
+<section class="class-hero">
+  <img class="class-hero-art" src="../../assets/art/sorcerer.webp" alt="" aria-hidden="true" fetchpriority="high">
+  <div class="wrap class-hero-in">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../ru/">Все классы</a><span aria-hidden="true">/</span><span>Волшебник</span></nav>
+    <div class="class-hero-main">
+      <img class="class-hero-emblem" src="../../assets/classes/sorcerer.webp" width="96" height="96" alt="">
+      <div>
+        <p class="kicker"><span data-only="pve">PvE</span><span data-only="pvp">PvP</span><span data-only="lvl">Прокачка</span> · Глобальный 1 сезон</p>
+        <h1>Волшебник</h1>
+        <p class="class-hero-pitch">Хрупкий кастер огня и льда: Огненная метка и Зарево на урон, Заморозка и корни на контроль и огромный бурст под Усилением стихий.</p>
+        <p class="guide-ver"><span>Обновлено: <time datetime="2026-09-28">28 сентября 2026</time></span><span>Патч: <b>уточняется</b></span><span class="wip-tag">WIP</span></p>
+      </div>
+    </div>
+    <dl class="class-facts">
+      <div><dt>Роль</dt><dd>Магический урон издалека</dd></div>
+      <div><dt>Оружие</dt><dd>Гримуар</dd></div>
+      <div><dt>Сложность</dt><dd class="diff"><i class="on"></i><i class="on"></i><i class="on"></i><span>Сложный</span></dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="guidebar">
+  <div class="wrap guidebar-in">
+    <div class="mode-switch" role="radiogroup" aria-label="Режим гайда">
+      <button type="button" role="radio" data-set-mode="pve" aria-checked="true">PvE</button>
+      <button type="button" role="radio" data-set-mode="pvp" aria-checked="false">PvP</button>
+      <button type="button" role="radio" data-set-mode="lvl" aria-checked="false">Прокачка</button>
+    </div>
+    <nav class="toc-mobile" aria-label="На странице"></nav>
+  </div>
+</div>
+
+<div class="wrap guide-layout">
+  <aside class="toc-side" aria-label="На странице">
+    <p class="toc-title">На странице</p>
+    <nav class="toc-list"></nav>
+  </aside>
+
+  <main id="main" class="guide">
+    <section id="progress" class="g-section tracker" data-only="lvl" data-class="sorcerer" aria-labelledby="h-progress">
+      <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-progress">Прогресс прокачки</h2></div>
+      <div class="tracker-bar">
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="22" aria-valuenow="0" aria-label="Прогресс прокачки"><span></span></div>
+        <span class="progress-text"><b class="progress-count">0</b>/22 готово</span>
+        <button type="button" class="btn btn-ghost btn-sm tracker-reset" data-confirm="Снять все отметки для этого класса?">Сбросить прогресс</button>
+      </div>
+      <p class="note">Отмечай шаги по ходу игры. Прогресс хранится в этом браузере, отдельно для каждого класса.</p>
+      <ol class="steps">
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-story">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Старт</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Иди <strong>только по жёлтым (сюжетным) квестам</strong>. Побочный контент подстраивается под уровень, поэтому ничего не теряешь, если сделаешь его позже.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="sorcerer-core">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 1</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+<img src="../../assets/icons/sorcerer/flame-arrow.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/sorcerer/ice-chain.webp" width="22" height="22" alt="" loading="lazy">              Первые очки в <strong>Огненная стрела</strong> (восполняет ману каждым кастом) и <strong>Ледяная цепь</strong> для пачек. На 8 возьми <em>Восстановление ОМ +20%</em> — на прокачке всё упирается в ману.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="sorcerer-target">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Настройки</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+              Играй в <strong>режиме с таргетом</strong>, а не в action combat: в action-режиме автоатака останавливается при каждом касте, а именно она держит ману.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-feathers">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">После пролога</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Собери <strong>40 перьев</strong> (120 осколков) для раннего усиления амулета.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="sorcerer-fire">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 6–10</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+<img src="../../assets/icons/sorcerer/firestorm.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/sorcerer/blaze.webp" width="22" height="22" alt="" loading="lazy">              <strong>Огненный гарпун</strong> и <strong>Зарево</strong> — основной урон по одной цели. Зареву нужна Огненная метка на цели — её вешает <strong>Огненная метка</strong> с любого огненного удара.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-daevanion">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 12</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Открывается <strong>Daevanion</strong> (доска Nezekan). Синие узлы дают +1 к уровню скилла — какие брать, смотри в шаге класса ниже.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="sorcerer-hellfire">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 12</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+<img src="../../assets/icons/sorcerer/hellfire.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/sorcerer/bittercold-wind.webp" width="22" height="22" alt="" loading="lazy">              <strong>Адское пламя</strong> (заряд до 3) для больших пулов и <strong>Леденящий ветер</strong>, чтобы приковать пачку на месте — <em>Эффект притягивания</em> стягивает их в кучу.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-hideouts">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 15 / 20 / 25</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Проходи убежища, которые попадаются по пути: первое прохождение даёт камни усиления и кристаллы Daevanion.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-amulet">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">~Ур. 17</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              <strong>Амулет +10</strong>, затем через морф сделай его синим.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-weapon">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">По ходу</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Оружие до <strong>~+10</strong> — самый большой прирост урона на прокачке. Выше до капа не точи.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-zikel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 20</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Открывается доска Zikel — приоритет узлов тот же.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-stigma">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">~Ур. 22</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Вознесение → <strong>открываются стигмы</strong> (4 слота в 1 сезоне глобала). Какие брать — в шаге класса.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="sorcerer-stigmas">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">~Ур. 22</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+<img src="../../assets/icons/sorcerer/element-enhancement.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/sorcerer/fire-wall.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/sorcerer/cold-storm.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/sorcerer/steel-barrier.webp" width="22" height="22" alt="" loading="lazy">              Стигмы: сначала <strong>Усиление стихий</strong>, затем <strong>Стена огня</strong> и <strong>Метель</strong> для пачек. На соло-прокачке держи <strong>Стальная защитная оболочка</strong> — Волшебник хрупкий.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-acts23">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Акты 2–3</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Только сюжет — не отвлекайся на карту.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-vaizel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 30</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Открывается доска Vaizel (критический урон).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-act4">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Акт 4</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Здесь снова стоит делать побочные задания и соло-подземелья.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-triniel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 40</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Открывается доска Triniel (мульти-удар; в основном для PvP — может подождать). Пещера Крао требует около 1000 GS.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-ariel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 45</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              <strong>Ariel (PvE) или Azphel (PvP)</strong> — стоят одинаково, ошибка здесь самая дорогая во всей системе.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="sorcerer-cap">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Кап</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+<img src="../../assets/icons/sorcerer/blaze.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/sorcerer/firestorm.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/sorcerer/hellfire.webp" width="22" height="22" alt="" loading="lazy">              На капе в группе меняй Стальную оболочку на <strong>Замедленный взрыв</strong> и качай <strong>Зарево</strong>, <strong>Огненный гарпун</strong>, <strong>Адское пламя</strong> к 16+ — вкладка PvE.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-shugo">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Кап</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Активности Шуго — полный набор наград за кап (золотое снаряжение, материалы).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-map">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Кап</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Зачисти карту: знаки вопроса, костры, зелёные задания, скрытые кубы, перья. Сдай перья — алтарь 30 уровня даёт титул.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-daily">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ежедневно</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Вход в Nightmare, этажи Трансформации по мере роста GS, подземелья: сначала T2, потом T3 (следи за энергией).
+            </span>
+          </label>
+        </li>
+      </ol>
+    </section>
+
+    <div class="callout wip-note" role="note"><h3><span class="wip-tag">WIP</span> Гайд в работе</h3><p>Надёжного глобального источника по этому классу пока нет. Гайд собран из корейских гайдов и глобальных данных о скиллах — считай его отправной точкой; он будет переработан, когда появятся нормальные глобальные билды.</p></div>
+
+<aside class="glance" data-only="pve" aria-label="Билд коротко">
+  <p class="glance-title">Билд коротко</p>
+    <h3>Основные скиллы</h3>
+  <ul class="core-row">
+  <li title="Зарево">
+    <img src="../../assets/icons/sorcerer/blaze.webp" width="52" height="52" alt="Зарево" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Зарево</span>
+  </li>
+  <li title="Леденящий ветер">
+    <img src="../../assets/icons/sorcerer/bittercold-wind.webp" width="52" height="52" alt="Леденящий ветер" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Леденящий ветер</span>
+  </li>
+  <li title="Ледяная цепь">
+    <img src="../../assets/icons/sorcerer/ice-chain.webp" width="52" height="52" alt="Ледяная цепь" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Ледяная цепь</span>
+  </li>
+  <li title="Огненная стрела">
+    <img src="../../assets/icons/sorcerer/flame-arrow.webp" width="52" height="52" alt="Огненная стрела" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Огненная стрела</span>
+  </li>
+  <li title="Исток силы">
+    <img src="../../assets/icons/sorcerer/wish-of-concentration.webp" width="52" height="52" alt="Исток силы" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Исток силы</span>
+  </li>
+</ul>
+  <h3>Стигмы</h3>
+  <ol class="loadout">
+  <li class="slot" title="Усиление стихий">
+    <img src="../../assets/icons/sorcerer/element-enhancement.webp" width="56" height="56" alt="Усиление стихий" loading="lazy">
+    <span class="slot-lv">ур. 20</span>
+    <span class="slot-name">Усиление стихий</span>
+  </li>
+  <li class="slot" title="Стена огня">
+    <img src="../../assets/icons/sorcerer/fire-wall.webp" width="56" height="56" alt="Стена огня" loading="lazy">
+    <span class="slot-lv">ур. 10</span>
+    <span class="slot-name">Стена огня</span>
+  </li>
+  <li class="slot" title="Метель">
+    <img src="../../assets/icons/sorcerer/cold-storm.webp" width="56" height="56" alt="Метель" loading="lazy">
+    <span class="slot-lv">ур. 10</span>
+    <span class="slot-name">Метель</span>
+  </li>
+  <li class="slot" title="Замедленный взрыв">
+    <img src="../../assets/icons/sorcerer/delayed-explosion.webp" width="56" height="56" alt="Замедленный взрыв" loading="lazy">
+    <span class="slot-lv">ур. 10</span>
+    <span class="slot-name">Замедленный взрыв</span>
+  </li>
+</ol>
+  <h3>Ключевые пассивки</h3>
+  <ul class="passive-row">
+<li><img src="../../assets/icons/sorcerer/robe-of-flame.webp" width="24" height="24" alt="" loading="lazy">Аура пламени</li><li><img src="../../assets/icons/sorcerer/grace-of-enhancement.webp" width="24" height="24" alt="" loading="lazy">Дар усиления</li><li><img src="../../assets/icons/sorcerer/fire-mark.webp" width="24" height="24" alt="" loading="lazy">Огненная метка</li><li><img src="../../assets/icons/sorcerer/robe-of-earth.webp" width="24" height="24" alt="" loading="lazy">Мантия</li></ul>
+
+</aside>
+<section id="intro" class="g-section" data-only="pve" aria-labelledby="h-intro">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro">Обзор</h2></div>
+    <p>Волшебник — хрупкая дальнобойная «стеклянная пушка», которая кастует и огонь, и лёд. Огонь даёт урон — <span class="sk"><img src="../../assets/icons/sorcerer/fire-mark.webp" width="18" height="18" alt="" loading="lazy">Огненная метка</span> помечает цель, а <span class="sk"><img src="../../assets/icons/sorcerer/blaze.webp" width="18" height="18" alt="" loading="lazy">Зарево</span> превращает метку в урон, — а лёд замедляет, приковывает и замораживает, чтобы до тебя никто не добежал. Основной бурст укладывается в 10-секундное окно под <span class="sk"><img src="../../assets/icons/sorcerer/element-enhancement.webp" width="18" height="18" alt="" loading="lazy">Усиление стихий</span>.</p>
+  <div class="callout accent">
+    <h3>Билд в одном предложении</h3>
+    <p>Открывай бой <span class="sk"><img src="../../assets/icons/sorcerer/delayed-explosion.webp" width="18" height="18" alt="" loading="lazy">Замедленный взрыв</span> и <span class="sk"><img src="../../assets/icons/sorcerer/element-enhancement.webp" width="18" height="18" alt="" loading="lazy">Усиление стихий</span>, ставь <span class="sk"><img src="../../assets/icons/sorcerer/fire-wall.webp" width="18" height="18" alt="" loading="lazy">Стена огня</span> и <span class="sk"><img src="../../assets/icons/sorcerer/cold-storm.webp" width="18" height="18" alt="" loading="lazy">Метель</span>, дальше крути огненную и ледяную линии, а <span class="sk"><img src="../../assets/icons/sorcerer/flame-arrow.webp" width="18" height="18" alt="" loading="lazy">Огненная стрела</span> держит ману выше 50%.</p>
+  </div>
+  <p class="note">Собрано по корейским гайдам (PvE-гайд Vortex Gaming после баланс-патча, MMO Codex) и переведено на глобальные названия скиллов с questlog. Глобального билда Волшебника от проверенного игрока пока нет.</p>
+
+</section>
+<section id="global" class="g-section" data-only="pve pvp" aria-labelledby="h-global">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-global">Глобальный 1 сезон: что меняется</h2></div>
+    <p>Глобальные серверы открываются <strong>5 октября 2026</strong> (ранний доступ для Founder's Pack — с 30 сентября). Что это значит для Волшебника:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 слота стигм, максимум 20.</strong> В Корее Усиление стихий, Стена огня, Замедленный взрыв и Метель все на 20 — на глобалке поначалу до 20 дотянется только одна.</li>
+      <li><strong>Скиллы на 16, а не на 20.</strong> Выше 16 скиллы поднимают арканы и кольца, а они приходят медленно — специализации ниже подобраны под 16.</li>
+      <li><strong>На старте нет скорости боя.</strong> Длинные касты бьют по урону; где можно, бери специализации на скорость умений.</li>
+      <li data-only="pvp"><strong>PvP:</strong> все стартуют в одинаковой слабой экипировке, меты ещё нет.</li>
+    </ul>
+  </div>
+
+</section>
+<section id="skills" class="g-section" data-only="pve" aria-labelledby="h-skills">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-skills">Скиллы</h2></div>
+    <p>Шесть скиллов качаются до <strong>16</strong>, остальные остаются на <strong>12</strong>. Корейские игроки позже поднимают Зарево, Ледяную цепь и Леденящий ветер до 20.</p>
+  <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/blaze.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Зарево <span class="badge must">16</span></div>
+    <div class="skill-desc">Основной урон по цели с Огненной меткой, восстанавливает ману. На 16 каждое попадание сокращает Исток силы.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Отложенный урон через 3s</li><li><span class="spec-lv">12</span>Гарантир. мультиудар при попадании</li><li><span class="spec-lv">16</span>Перезарядка [Истока силы] -3 сек. при попадании</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Поглощение 3% ОЗ</li>
+        <li class=""><span class="spec-lv">8</span>Восстановление ОМ +50%</li>
+        <li class="on"><span class="spec-lv">8</span>Отложенный урон через 3s</li>
+        <li class="on"><span class="spec-lv">12</span>Гарантир. мультиудар при попадании</li>
+        <li class="on"><span class="spec-lv">16</span>Перезарядка [Истока силы] -3 сек. при попадании</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/flame-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Огненная стрела <span class="badge must">16</span></div>
+    <div class="skill-desc">Филлер, который восстанавливает ману. На 12 сам вешает Огненную метку, на 16 сбрасывает Зарево.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Восстановление ОМ +20%</li><li><span class="spec-lv">12</span>Наложение Огненной метки на 5 сек. при попадании [Испепелением]</li><li><span class="spec-lv">16</span>Завершение перезарядки [Зарева] при попадании [Испепелением]</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>Восстановление ОМ +20%</li>
+        <li class=""><span class="spec-lv">8</span>Поглощение 1% ОЗ</li>
+        <li class=""><span class="spec-lv">8</span>Шанс мультиудара +50% при попадании</li>
+        <li class="on"><span class="spec-lv">12</span>Наложение Огненной метки на 5 сек. при попадании [Испепелением]</li>
+        <li class="on"><span class="spec-lv">16</span>Завершение перезарядки [Зарева] при попадании [Испепелением]</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/bittercold-wind.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Леденящий ветер <span class="badge must">16</span></div>
+    <div class="skill-desc">Поле с корнями, на 12 гарантированно критует; на 16 сокращает Заморозку.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li><li><span class="spec-lv">12</span>Крит. удар, несмотря на блок и уклонение</li><li><span class="spec-lv">16</span>-1 с к времени перезарядки [Заморозки] при попадании</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Время призыва [Леденящего ветра] +1 сек.</li>
+        <li class="on"><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>
+        <li class=""><span class="spec-lv">8</span>Эффект притягивания</li>
+        <li class="on"><span class="spec-lv">12</span>Крит. удар, несмотря на блок и уклонение</li>
+        <li class="on"><span class="spec-lv">16</span>-1 с к времени перезарядки [Заморозки] при попадании</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/ice-chain.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Ледяная цепь <span class="badge must">16</span></div>
+    <div class="skill-desc">Водный филлер без перезарядки, замедляет (Призыв холода срабатывает по замедленным).</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>СКР умений +20%</li><li><span class="spec-lv">12</span>Перезарядка [Оков зимы] -1 сек. при попадании</li><li><span class="spec-lv">16</span>Шанс 5% заморозить на 2 сек. при попадании [Волной холода]</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Затрата ОМ -20%</li>
+        <li class="on"><span class="spec-lv">8</span>СКР умений +20%</li>
+        <li class=""><span class="spec-lv">8</span>Чем меньше целей попадания, тем больше увелич. урона (макс. до 12%)</li>
+        <li class="on"><span class="spec-lv">12</span>Перезарядка [Оков зимы] -1 сек. при попадании</li>
+        <li class="on"><span class="spec-lv">16</span>Шанс 5% заморозить на 2 сек. при попадании [Волной холода]</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/winters-shackles.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Оковы зимы <span class="badge must">16</span></div>
+    <div class="skill-desc">+20% к урону в PvE на 5 сек. при попадании — кастуй внутри бурста.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Увеличение урона в PvE +20%, увеличение урона в PvP +10% на 5s при попадании [Оковами зимы]</li><li><span class="spec-lv">12</span>Добавление 2-ой комбинации [Иллюзия зимы]</li><li><span class="spec-lv">16</span>Перезарядка [Оков зимы] -15 сек.</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>
+        <li class=""><span class="spec-lv">8</span>Шанс 30% заморозить на 3 сек. при попадании [Оковами зимы]</li>
+        <li class="on"><span class="spec-lv">8</span>Увеличение урона в PvE +20%, увеличение урона в PvP +10% на 5s при попадании [Оковами зимы]</li>
+        <li class="on"><span class="spec-lv">12</span>Добавление 2-ой комбинации [Иллюзия зимы]</li>
+        <li class="on"><span class="spec-lv">16</span>Перезарядка [Оков зимы] -15 сек.</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/wish-of-concentration.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Исток силы <span class="badge must">16</span></div>
+    <div class="skill-desc">+Атака и Точность на 10 сек.; на 16 сокращает перезарядку всех умений на 10 сек.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>АТК доп. +10%</li><li><span class="spec-lv">12</span>СКР боя +10%</li><li><span class="spec-lv">16</span>Перезарядка всех умений -10 сек.</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Затрата ОМ -10%</li>
+        <li class="on"><span class="spec-lv">8</span>АТК доп. +10%</li>
+        <li class=""><span class="spec-lv">8</span>Макс. ОМ +500</li>
+        <li class="on"><span class="spec-lv">12</span>СКР боя +10%</li>
+        <li class="on"><span class="spec-lv">16</span>Перезарядка всех умений -10 сек.</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/hellfire.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Адское пламя <span class="badge opt">12</span></div>
+    <div class="skill-desc">АоЕ с зарядом до 3 уровней — зачистка пачек. Опытные корейские игроки качают его до 20.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Постоянный урон стихии огня на 10s при попадании</li><li><span class="spec-lv">12</span>Игнорирование блока и УКЛ, попадание мультиударом</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>СКР умений +30%</li>
+        <li class="on"><span class="spec-lv">8</span>Постоянный урон стихии огня на 10s при попадании</li>
+        <li class=""><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>
+        <li class="on"><span class="spec-lv">12</span>Игнорирование блока и УКЛ, попадание мультиударом</li>
+        <li class=""><span class="spec-lv">16</span>Перезарядка -15 сек.</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/firestorm.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Огненный гарпун <span class="badge opt">12</span></div>
+    <div class="skill-desc">Каждый снаряд сокращает перезарядку Адского пламени.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>СКР умений +20%</li><li><span class="spec-lv">12</span>Перезарядка [Адского пламени] -2 сек. за каждый снаряд</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Затрата ОМ -50%</li>
+        <li class="on"><span class="spec-lv">8</span>СКР умений +20%</li>
+        <li class=""><span class="spec-lv">8</span>-60% получ. исцеление на 5s при попадании</li>
+        <li class="on"><span class="spec-lv">12</span>Перезарядка [Адского пламени] -2 сек. за каждый снаряд</li>
+        <li class=""><span class="spec-lv">16</span>Урон +15% за каждый снаряд (макс. 75%)</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/frost.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Заморозка <span class="badge opt">12</span></div>
+    <div class="skill-desc">Заморозка по области; при попадании сбрасывает Замораживающий взрыв.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Перезарядка -5 сек.</li><li><span class="spec-lv">8</span>Завершение перезарядки [Замораживающего взрыва] при попадании Заморозкой</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Восстановление 200 ОМ</li>
+        <li class="on"><span class="spec-lv">8</span>Перезарядка -5 сек.</li>
+        <li class="on"><span class="spec-lv">8</span>Завершение перезарядки [Замораживающего взрыва] при попадании Заморозкой</li>
+        <li class=""><span class="spec-lv">12</span>Точность Заморозки по игрокам +25%</li>
+        <li class=""><span class="spec-lv">16</span>Длительность Заморозки +1 сек.</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/frost-burst.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Замораживающий взрыв <span class="badge opt">12</span></div>
+    <div class="skill-desc">Только по замороженным целям; на 12 критует.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li><li><span class="spec-lv">12</span>Крит. удар, несмотря на блок и уклонение</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Поглощение 7% ОЗ</li>
+        <li class="on"><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>
+        <li class=""><span class="spec-lv">8</span>Шанс 75% оттолкнуть на 2 м</li>
+        <li class="on"><span class="spec-lv">12</span>Крит. удар, несмотря на блок и уклонение</li>
+        <li class=""><span class="spec-lv">16</span>Вероятность 50% сбросить время перезарядки</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/flame-scattershot.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Огненная пальба <span class="badge opt">12</span></div>
+    <div class="skill-desc">Только по целям в Ошеломлении.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Восстановление 120 ОМ</li><li><span class="spec-lv">12</span>Гарантир. мультиудар при попадании</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Поглощение 5% ОЗ</li>
+        <li class="on"><span class="spec-lv">8</span>Восстановление 120 ОМ</li>
+        <li class=""><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>
+        <li class="on"><span class="spec-lv">12</span>Гарантир. мультиудар при попадании</li>
+        <li class=""><span class="spec-lv">16</span>Перезарядка всех умений -1s при попадании</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/defiance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Снятие шока <span class="badge opt">12</span></div>
+    <div class="skill-desc">Снятие контроля с лечением.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>При использовании [Снятия шока] восст. 20% ОЗ</li><li><span class="spec-lv">12</span>Длительность Непреклонности +2 сек.</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Добавляет 2-ую комбинацию [Проклятие: Вековое древо]</li>
+        <li class=""><span class="spec-lv">8</span>При использовании [Снятия шока] восст. 1000 ОД</li>
+        <li class="on"><span class="spec-lv">8</span>При использовании [Снятия шока] восст. 20% ОЗ</li>
+        <li class="on"><span class="spec-lv">12</span>Длительность Непреклонности +2 сек.</li>
+        <li class=""><span class="spec-lv">16</span>Стойкость к урону в PvE +50% и стойкость к урону в PvP +25% во время действия Непреклонности</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="passives" class="g-section" data-only="pve" aria-labelledby="h-passives">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-passives">Пассивки</h2></div>
+    <div class="table-wrap"><table>
+    <thead><tr><th>Пассивка</th><th>Зачем</th></tr></thead>
+    <tbody>
+      <tr><td><span class="sk"><img src="../../assets/icons/sorcerer/robe-of-flame.webp" width="18" height="18" alt="" loading="lazy">Аура пламени</span></td><td>Точность и увеличение урона в PvE — качается первой.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/sorcerer/grace-of-enhancement.webp" width="18" height="18" alt="" loading="lazy">Дар усиления</span></td><td>+20% к урону в PvE, пока маны 25%+, и дополнительные удары.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/sorcerer/fire-mark.webp" width="18" height="18" alt="" loading="lazy">Огненная метка</span></td><td>Вешает Огненную метку, без которой не работает Зарево.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/sorcerer/robe-of-earth.webp" width="18" height="18" alt="" loading="lazy">Мантия</span></td><td>Макс. мана и шанс крита, пока маны 50%+.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/sorcerer/robe-of-cold.webp" width="18" height="18" alt="" loading="lazy">Пелена льда</span></td><td>Защита и замедление атакующих — для рейдов.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Четыре пассивки зависят от маны (Дар усиления, Мантия, Снежная кольчуга, Поглощение силы) — не давай ей проседать.</p>
+
+</section>
+<section id="gear" class="g-section" data-only="pve" aria-labelledby="h-gear">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-gear">Экипировка и статы</h2></div>
+    <div class="callout"><ul>
+    <li><strong>Манастоуны:</strong> Атака, шанс крита, Точность.</li>
+    <li>Следи за <strong>макс. маной</strong> и её регеном, пока ротация не перестанет упираться в ману.</li>
+    <li>Какой тир экипировки добивать, станет понятно после глобального запуска.</li>
+  </ul></div>
+
+</section>
+<section id="daevanion" class="g-section" data-only="pve pvp" aria-labelledby="h-daevanion">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-daevanion">Доски Daevanion</h2></div>
+    <p>Daevanion поднимает скиллы с 10 до 14 и даёт статы. Каждый синий узел — <strong>+1 уровень</strong> его скилла.</p>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>Приоритет:</strong> синие узлы <span class="sk"><img src="../../assets/icons/sorcerer/blaze.webp" width="18" height="18" alt="" loading="lazy">Зарево</span>, <span class="sk"><img src="../../assets/icons/sorcerer/bittercold-wind.webp" width="18" height="18" alt="" loading="lazy">Леденящий ветер</span>, <span class="sk"><img src="../../assets/icons/sorcerer/ice-chain.webp" width="18" height="18" alt="" loading="lazy">Ледяная цепь</span>, затем оранжевые.</li>
+    <li data-only="pvp"><strong>Приоритет:</strong> синие узлы <span class="sk"><img src="../../assets/icons/sorcerer/frost.webp" width="18" height="18" alt="" loading="lazy">Заморозка</span>, <span class="sk"><img src="../../assets/icons/sorcerer/winters-shackles.webp" width="18" height="18" alt="" loading="lazy">Оковы зимы</span>, <span class="sk"><img src="../../assets/icons/sorcerer/firestorm.webp" width="18" height="18" alt="" loading="lazy">Огненный гарпун</span>.</li>
+    <li data-only="pve"><strong>Ariel</strong> (PvE) на 45, а не Azphel.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (PvP) на 45.</li>
+  </ul></div>
+
+</section>
+<section id="stigmas" class="g-section" data-only="pve" aria-labelledby="h-stigmas">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-stigmas">Стигмы</h2></div>
+    <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/element-enhancement.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Усиление стихий <span class="badge must">Lv 20</span></div>
+    <div class="skill-desc">+20% к атаке огнём и водой на 10 сек. (+10% сверху на 20) — это и есть окно бурста. Качай первой.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Меткость +200</li><li><span class="spec-lv">10</span>[Аура пламени] Пассивный эффект x1,5</li><li><span class="spec-lv">15</span>Пасс. эффект [Дара усиления] x1,5</li><li><span class="spec-lv">20</span>АТК стихии огня и стихии воды доп. +10%</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Меткость +200</li>
+        <li class="on"><span class="spec-lv">10</span>[Аура пламени] Пассивный эффект x1,5</li>
+        <li class="on"><span class="spec-lv">15</span>Пасс. эффект [Дара усиления] x1,5</li>
+        <li class="on"><span class="spec-lv">20</span>АТК стихии огня и стихии воды доп. +10%</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/fire-wall.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Стена огня <span class="badge must">Lv 10</span></div>
+    <div class="skill-desc">Огненное поле с периодическим уроном; Тлеющие угли добавляют урон с каждым попаданием.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Усиление: Догорающее пламя: доп. урон при атаке</li><li><span class="spec-lv">10</span>Ширина барьера +2 м</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Усиление: Догорающее пламя: доп. урон при атаке</li>
+        <li class="on"><span class="spec-lv">10</span>Ширина барьера +2 м</li>
+        <li class=""><span class="spec-lv">15</span>Время призыва [Стены огня] +2 сек.</li>
+        <li class=""><span class="spec-lv">20</span>Длительность Догорающего пламени +10 сек.</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/cold-storm.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Метель <span class="badge must">Lv 10</span></div>
+    <div class="skill-desc">Водное поле с Обморожением и шансом корней.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Усиление обморожения: доп. урон при атаке</li><li><span class="spec-lv">10</span>Шанс 30% взять в плен на 2 сек.</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Усиление обморожения: доп. урон при атаке</li>
+        <li class="on"><span class="spec-lv">10</span>Шанс 30% взять в плен на 2 сек.</li>
+        <li class=""><span class="spec-lv">15</span>Время призыва [Метель] +3 сек.</li>
+        <li class=""><span class="spec-lv">20</span>Длительность Обморожения +10 сек.</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/delayed-explosion.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Замедленный взрыв <span class="badge must">Lv 10</span></div>
+    <div class="skill-desc">Цель получает от тебя +15% урона в течение 4 сек.; на 10 перезарядка сокращается до 20 сек.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Восстановление 200 ОМ</li><li><span class="spec-lv">10</span>Перезарядка [Замедленного взрыва] -10 сек.</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Восстановление 200 ОМ</li>
+        <li class="on"><span class="spec-lv">10</span>Перезарядка [Замедленного взрыва] -10 сек.</li>
+        <li class=""><span class="spec-lv">15</span>Смена на массовое умение</li>
+        <li class=""><span class="spec-lv">20</span>Получ. урон доп. +10%</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/steel-barrier.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Стальная защитная оболочка <span class="badge opt">прокачка</span></div>
+    <div class="skill-desc">Щит на 16% макс. ОЗ — держи его на соло-прокачке.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>СКР движ. +10%</li><li><span class="spec-lv">10</span>Восстановление ОЗ с определенным интервалом</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>СКР движ. +10%</li>
+        <li class="on"><span class="spec-lv">10</span>Восстановление ОЗ с определенным интервалом</li>
+        <li class=""><span class="spec-lv">15</span>+10% к стойкости к урону в PvE и +5% к стойкости к урону в PvP</li>
+        <li class=""><span class="spec-lv">20</span>Перезарядка -15 сек.</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/glacial-smite.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Ледяной удар <span class="badge opt">альт.</span></div>
+    <div class="skill-desc">АоЕ-бурст с шансом Заморозки; замена Метели на коротких боях.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Чем больше целей попадания, тем больше увеличение урона (макс. до 20%)</li><li><span class="spec-lv">10</span>Перезарядка -30 сек.</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Чем больше целей попадания, тем больше увеличение урона (макс. до 20%)</li>
+        <li class="on"><span class="spec-lv">10</span>Перезарядка -30 сек.</li>
+        <li class=""><span class="spec-lv">15</span>Шанс 50% заморозить на 3 сек.</li>
+        <li class=""><span class="spec-lv">20</span>Игнорирование блока и УКЛ, попадание мультиударом</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="macro" class="g-section" data-only="pve" aria-labelledby="h-macro">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro">Макрос и ротация</h2></div>
+    <p>В AION 2 есть два разных инструмента:</p>
+  <ul>
+    <li><strong>Линия на кнопке</strong> — несколько скиллов на <em>одной</em> кнопке панели. Нажатие кастует готовый скилл с наивысшим приоритетом, и в AION 2 <strong>наивысший приоритет у нижнего слота</strong>. Карточки показывают линию сверху вниз, как в игре.</li>
+    <li><strong>Встроенный макрос</strong> — пока ты держишь его клавишу, он по очереди нажимает кнопки панели и отменяет хвосты анимаций. Скиллы на перезарядке пропускаются.</li>
+  </ul>
+
+  <h3>1. Линии на кнопках</h3>
+  <div class="hotlines">
+<div class="hotline">
+  <div class="hotline-head"><span class="key">MB5</span><span class="hotline-name">Огненная линия</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="">
+      <span class="hl-n">4</span>
+      <img src="../../assets/icons/sorcerer/flame-arrow.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Огненная стрела</span>
+    </li>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/sorcerer/firestorm.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Огненный гарпун</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/sorcerer/blaze.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Зарево</span>
+    </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/sorcerer/flame-scattershot.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Огненная пальба</span>
+    </li>
+  </ol>
+  <p class="hotline-order">Порядок как в игре, сверху вниз. 1 = высший приоритет — нижний слот.</p>
+<p class="hotline-note">Зарево загорается только по цели с Огненной меткой, поэтому стоит почти внизу; Огненная стрела заполняет паузы и вешает следующую метку.</p></div><div class="hotline">
+  <div class="hotline-head"><span class="key">ПКМ</span><span class="hotline-name">Ледяная линия</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/sorcerer/ice-chain.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Ледяная цепь</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/sorcerer/frost.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Заморозка</span>
+    </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/sorcerer/frost-burst.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Замораживающий взрыв</span>
+    </li>
+  </ol>
+  <p class="hotline-order">Порядок как в игре, сверху вниз. 1 = высший приоритет — нижний слот.</p>
+<p class="hotline-note">Замораживающий взрыв срабатывает, как только прошла Заморозка; Ледяная цепь — филлер.</p></div>  </div>
+
+  <h3>2. Встроенный макрос</h3>
+  <p>Повесь его на среднюю кнопку мыши. Задержка <strong>10 мс</strong> в каждом слоте (40–50 мс при высоком пинге):</p>
+  <ol class="macroseq">
+  <li><span class="ms-n">1</span><span class="ms-label">Огненная линия</span><span class="ms-detail">10 мс</span></li>
+  <li><span class="ms-n">2</span><span class="ms-label">Замедленный взрыв</span><span class="ms-detail">10 мс</span></li>
+  <li><span class="ms-n">3</span><span class="ms-label">Леденящий ветер</span><span class="ms-detail">10 мс</span></li>
+  <li><span class="ms-n">4</span><span class="ms-label">Ледяная линия</span><span class="ms-detail">10 мс</span></li>
+</ol>
+  <p class="note">Адское пламя — скилл с зарядом, а Усиление стихий — бафф под окно бурста: оба держи вне макроса.</p>
+
+  <h3>3. Открытие бурста</h3>
+  <ol>
+    <li><span class="sk"><img src="../../assets/icons/sorcerer/delayed-explosion.webp" width="18" height="18" alt="" loading="lazy">Замедленный взрыв</span> прямо перед пулом танка.</li>
+    <li><span class="sk"><img src="../../assets/icons/sorcerer/element-enhancement.webp" width="18" height="18" alt="" loading="lazy">Усиление стихий</span> и <span class="sk"><img src="../../assets/icons/sorcerer/wish-of-concentration.webp" width="18" height="18" alt="" loading="lazy">Исток силы</span>.</li>
+    <li><span class="sk"><img src="../../assets/icons/sorcerer/fire-wall.webp" width="18" height="18" alt="" loading="lazy">Стена огня</span> + <span class="sk"><img src="../../assets/icons/sorcerer/cold-storm.webp" width="18" height="18" alt="" loading="lazy">Метель</span> под босса.</li>
+    <li><span class="sk"><img src="../../assets/icons/sorcerer/bittercold-wind.webp" width="18" height="18" alt="" loading="lazy">Леденящий ветер</span>, затем <span class="sk"><img src="../../assets/icons/sorcerer/winters-shackles.webp" width="18" height="18" alt="" loading="lazy">Оковы зимы</span> ради +20% к урону.</li>
+    <li><span class="sk"><img src="../../assets/icons/sorcerer/hellfire.webp" width="18" height="18" alt="" loading="lazy">Адское пламя</span> на 3 заряда, дальше макрос.</li>
+  </ol>
+
+  <h3>4. Что нажимать на самом деле</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Держать</span><span class="press-what">Базовая атака на <span class="key">ЛКМ</span>, ледяная линия на <span class="key">ПКМ</span>, макрос на <span class="key">СКМ</span>.</span></li>
+    <li><span class="press-how">Вручную</span><span class="press-what">Открытие бурста каждый раз, когда откатилось <span class="sk"><img src="../../assets/icons/sorcerer/element-enhancement.webp" width="18" height="18" alt="" loading="lazy">Усиление стихий</span>, <span class="sk"><img src="../../assets/icons/sorcerer/hellfire.webp" width="18" height="18" alt="" loading="lazy">Адское пламя</span>, <span class="sk"><img src="../../assets/icons/sorcerer/defiance.webp" width="18" height="18" alt="" loading="lazy">Снятие шока</span>.</span></li>
+  </ul>
+
+</section>
+<section id="recap" class="g-section" data-only="pve" aria-labelledby="h-recap">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-recap">Итог</h2></div>
+    <div class="callout accent"><ul>
+    <li><strong>Скиллы:</strong> Зарево, Огненная стрела, Леденящий ветер, Ледяная цепь, Оковы зимы, Исток силы 16; остальное 12.</li>
+    <li><strong>Стигмы:</strong> Усиление стихий 20, Стена огня 10, Метель 10, Замедленный взрыв 10.</li>
+    <li><strong>Пассивки:</strong> Аура пламени, Дар усиления, Огненная метка, Мантия.</li>
+    <li><strong>Мана:</strong> держи выше 50% — Огненная стрела и Зарево её восстанавливают.</li>
+  </ul></div>
+
+</section>
+<aside class="glance" data-only="pvp" aria-label="Билд коротко">
+  <p class="glance-title">Билд коротко</p>
+    <h3>Основные скиллы</h3>
+  <ul class="core-row">
+  <li title="Заморозка">
+    <img src="../../assets/icons/sorcerer/frost.webp" width="52" height="52" alt="Заморозка" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Заморозка</span>
+  </li>
+  <li title="Оковы зимы">
+    <img src="../../assets/icons/sorcerer/winters-shackles.webp" width="52" height="52" alt="Оковы зимы" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Оковы зимы</span>
+  </li>
+  <li title="Огненный гарпун">
+    <img src="../../assets/icons/sorcerer/firestorm.webp" width="52" height="52" alt="Огненный гарпун" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Огненный гарпун</span>
+  </li>
+  <li title="Леденящий ветер">
+    <img src="../../assets/icons/sorcerer/bittercold-wind.webp" width="52" height="52" alt="Леденящий ветер" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Леденящий ветер</span>
+  </li>
+</ul>
+  <h3>Стигмы</h3>
+  <ol class="loadout">
+  <li class="slot" title="Усиление стихий">
+    <img src="../../assets/icons/sorcerer/element-enhancement.webp" width="56" height="56" alt="Усиление стихий" loading="lazy">
+    <span class="slot-lv">ур. 20</span>
+    <span class="slot-name">Усиление стихий</span>
+  </li>
+  <li class="slot" title="Ледяная душа">
+    <img src="../../assets/icons/sorcerer/soul-freeze.webp" width="56" height="56" alt="Ледяная душа" loading="lazy">
+    <span class="slot-lv">ур. 10</span>
+    <span class="slot-name">Ледяная душа</span>
+  </li>
+  <li class="slot" title="Проклятие: Дерево">
+    <img src="../../assets/icons/sorcerer/curse-tree.webp" width="56" height="56" alt="Проклятие: Дерево" loading="lazy">
+    <span class="slot-lv">ур. 10</span>
+    <span class="slot-name">Проклятие: Дерево</span>
+  </li>
+  <li class="slot" title="Сон">
+    <img src="../../assets/icons/sorcerer/hibernation.webp" width="56" height="56" alt="Сон" loading="lazy">
+    <span class="slot-lv">ур. 10</span>
+    <span class="slot-name">Сон</span>
+  </li>
+</ol>
+  <h3>Ключевые пассивки</h3>
+  <ul class="passive-row">
+<li><img src="../../assets/icons/sorcerer/robe-of-flame.webp" width="24" height="24" alt="" loading="lazy">Аура пламени</li><li><img src="../../assets/icons/sorcerer/grace-of-enhancement.webp" width="24" height="24" alt="" loading="lazy">Дар усиления</li><li><img src="../../assets/icons/sorcerer/revitalization-contract.webp" width="24" height="24" alt="" loading="lazy">Контракт оживления</li><li><img src="../../assets/icons/sorcerer/robe-of-cold.webp" width="24" height="24" alt="" loading="lazy">Пелена льда</li></ul>
+
+</aside>
+<section id="intro-pvp" class="g-section" data-only="pvp" aria-labelledby="h-intro-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro-pvp">Обзор</h2></div>
+    <p>В PvP Волшебник побеждает цепочкой контроля и бурстом: корни, заморозка или превращение, затем весь урон под <span class="sk"><img src="../../assets/icons/sorcerer/element-enhancement.webp" width="18" height="18" alt="" loading="lazy">Усиление стихий</span>. Силён в 1 на 1 и на аренах, очень хрупок в больших замесах — держись на максимальной дистанции.</p>
+  <p class="note">Отправная точка по глобальным данным о скиллах и корейским заметкам, а не проверенный глобальный PvP-билд.</p>
+
+</section>
+<section id="skills-pvp" class="g-section" data-only="pvp" aria-labelledby="h-skills-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-skills-pvp">Скиллы и стигмы</h2></div>
+    <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/frost.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Заморозка <span class="badge must">16</span></div>
+    <div class="skill-desc">+25% к шансу Заморозки по игрокам на 12, +1 сек. длительности на 16.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Перезарядка -5 сек.</li><li><span class="spec-lv">12</span>Точность Заморозки по игрокам +25%</li><li><span class="spec-lv">16</span>Длительность Заморозки +1 сек.</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Восстановление 200 ОМ</li>
+        <li class="on"><span class="spec-lv">8</span>Перезарядка -5 сек.</li>
+        <li class=""><span class="spec-lv">8</span>Завершение перезарядки [Замораживающего взрыва] при попадании Заморозкой</li>
+        <li class="on"><span class="spec-lv">12</span>Точность Заморозки по игрокам +25%</li>
+        <li class="on"><span class="spec-lv">16</span>Длительность Заморозки +1 сек.</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/winters-shackles.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Оковы зимы <span class="badge must">16</span></div>
+    <div class="skill-desc">Замедление с шансом Заморозки 30% и комбинацией на 12.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Шанс 30% заморозить на 3 сек. при попадании [Оковами зимы]</li><li><span class="spec-lv">12</span>Добавление 2-ой комбинации [Иллюзия зимы]</li><li><span class="spec-lv">16</span>Перезарядка [Оков зимы] -15 сек.</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>
+        <li class="on"><span class="spec-lv">8</span>Шанс 30% заморозить на 3 сек. при попадании [Оковами зимы]</li>
+        <li class=""><span class="spec-lv">8</span>Увеличение урона в PvE +20%, увеличение урона в PvP +10% на 5s при попадании [Оковами зимы]</li>
+        <li class="on"><span class="spec-lv">12</span>Добавление 2-ой комбинации [Иллюзия зимы]</li>
+        <li class="on"><span class="spec-lv">16</span>Перезарядка [Оков зимы] -15 сек.</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/firestorm.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Огненный гарпун <span class="badge must">16</span></div>
+    <div class="skill-desc">−60% получаемого исцеления при попадании — твой антихил.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>-60% получ. исцеление на 5s при попадании</li><li><span class="spec-lv">12</span>Перезарядка [Адского пламени] -2 сек. за каждый снаряд</li><li><span class="spec-lv">16</span>Урон +15% за каждый снаряд (макс. 75%)</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Затрата ОМ -50%</li>
+        <li class=""><span class="spec-lv">8</span>СКР умений +20%</li>
+        <li class="on"><span class="spec-lv">8</span>-60% получ. исцеление на 5s при попадании</li>
+        <li class="on"><span class="spec-lv">12</span>Перезарядка [Адского пламени] -2 сек. за каждый снаряд</li>
+        <li class="on"><span class="spec-lv">16</span>Урон +15% за каждый снаряд (макс. 75%)</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/bittercold-wind.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Леденящий ветер <span class="badge must">16</span></div>
+    <div class="skill-desc">Корни и притягивание; на 12 гарантированный крит.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Эффект притягивания</li><li><span class="spec-lv">12</span>Крит. удар, несмотря на блок и уклонение</li><li><span class="spec-lv">16</span>-1 с к времени перезарядки [Заморозки] при попадании</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Время призыва [Леденящего ветра] +1 сек.</li>
+        <li class=""><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>
+        <li class="on"><span class="spec-lv">8</span>Эффект притягивания</li>
+        <li class="on"><span class="spec-lv">12</span>Крит. удар, несмотря на блок и уклонение</li>
+        <li class="on"><span class="spec-lv">16</span>-1 с к времени перезарядки [Заморозки] при попадании</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/soul-freeze.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Ледяная душа <span class="badge must">Lv 10</span></div>
+    <div class="skill-desc">Немота на 5 сек. и −1000 выносливости на 10 — не даёт убежать.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Шанс 50% плена на 5 сек.</li><li><span class="spec-lv">10</span>ОД -1000</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Шанс 50% плена на 5 сек.</li>
+        <li class="on"><span class="spec-lv">10</span>ОД -1000</li>
+        <li class=""><span class="spec-lv">15</span>Длительность Запечатывания +2 сек.</li>
+        <li class=""><span class="spec-lv">20</span>+25% к шансу наложения Знака</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/curse-tree.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Проклятие: Дерево <span class="badge must">Lv 10</span></div>
+    <div class="skill-desc">Превращение на 10 сек. и −20% стойкости к огню; на 10 снижает блок и уклонение, когда эффект спадает.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Увеличение кол-ва получения атак для снятия Мутации</li><li><span class="spec-lv">10</span>Блок и УКЛ -200 на 10 сек. после завершения Мутации</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Увеличение кол-ва получения атак для снятия Мутации</li>
+        <li class="on"><span class="spec-lv">10</span>Блок и УКЛ -200 на 10 сек. после завершения Мутации</li>
+        <li class=""><span class="spec-lv">15</span>Сопротивление шок. эффектам -20% на 10 сек. после завершения Мутации</li>
+        <li class=""><span class="spec-lv">20</span>Активация эффекта ослабления с помощью атаки даже при завершении превращения</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/hibernation.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Сон <span class="badge must">Lv 10</span></div>
+    <div class="skill-desc">5 сек. неуязвимости с лечением — единственный настоящий сейв Волшебника.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Получ. исцеление +100%</li><li><span class="spec-lv">10</span>Восстановление по 5% от макс. ОЗ каждую секунду во время действия умения</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Получ. исцеление +100%</li>
+        <li class="on"><span class="spec-lv">10</span>Восстановление по 5% от макс. ОЗ каждую секунду во время действия умения</li>
+        <li class=""><span class="spec-lv">15</span>Длительность умения +2 сек.</li>
+        <li class=""><span class="spec-lv">20</span>Сон при воздействии шок. эффекта</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/sorcerer/arctic-armor.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Снежная кольчуга <span class="badge opt">альт.</span></div>
+    <div class="skill-desc">+10% стойкости к урону в PvP и разделение урона на ману.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Сопротивление шок. эффектам +20%</li><li><span class="spec-lv">10</span>Эффект [Поглощение силы] x1,5</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Сопротивление шок. эффектам +20%</li>
+        <li class="on"><span class="spec-lv">10</span>Эффект [Поглощение силы] x1,5</li>
+        <li class=""><span class="spec-lv">15</span>Эффект [Пелена льда] x1,5</li>
+        <li class=""><span class="spec-lv">20</span>+20% к стойкости к урону в PvE и +10% к стойкости к урону в PvP</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="recap-pvp" class="g-section" data-only="pvp" aria-labelledby="h-recap-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-recap-pvp">Итог</h2></div>
+    <div class="callout accent"><ul>
+    <li><strong>Комбо:</strong> Леденящий ветер (корни) → Заморозка → Усиление стихий → Огненный гарпун (антихил) → Зарево.</li>
+    <li><strong>Стигмы:</strong> Усиление стихий, Ледяная душа, Проклятие: Дерево, Сон.</li>
+    <li><strong>Daevanion:</strong> Azphel, а не Ariel.</li>
+  </ul></div>
+
+</section>
+<section id="fight-lvl" class="g-section" data-only="lvl" aria-labelledby="h-fight-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-fight-lvl">Как сражаться во время прокачки</h2></div>
+    <div class="callout"><ul>
+    <li><strong>Пачки:</strong> <span class="sk"><img src="../../assets/icons/sorcerer/bittercold-wind.webp" width="18" height="18" alt="" loading="lazy">Леденящий ветер</span> (корни + притягивание) → <span class="sk"><img src="../../assets/icons/sorcerer/hellfire.webp" width="18" height="18" alt="" loading="lazy">Адское пламя</span> → <span class="sk"><img src="../../assets/icons/sorcerer/ice-chain.webp" width="18" height="18" alt="" loading="lazy">Ледяная цепь</span>, пока не упадут.</li>
+    <li><strong>Элитки:</strong> <span class="sk"><img src="../../assets/icons/sorcerer/flame-arrow.webp" width="18" height="18" alt="" loading="lazy">Огненная стрела</span> на Огненную метку → <span class="sk"><img src="../../assets/icons/sorcerer/blaze.webp" width="18" height="18" alt="" loading="lazy">Зарево</span> → <span class="sk"><img src="../../assets/icons/sorcerer/firestorm.webp" width="18" height="18" alt="" loading="lazy">Огненный гарпун</span>, кайтя замедлениями <span class="sk"><img src="../../assets/icons/sorcerer/ice-chain.webp" width="18" height="18" alt="" loading="lazy">Ледяная цепь</span>.</li>
+    <li><strong>Мана:</strong> играй в режиме с таргетом, чтобы автоатака не прерывалась, и вплетай Огненную стрелу.</li>
+    <li><strong>Мало ОЗ:</strong> <span class="sk"><img src="../../assets/icons/sorcerer/steel-barrier.webp" width="18" height="18" alt="" loading="lazy">Стальная защитная оболочка</span> и дистанция — лечения у Волшебника нет.</li>
+  </ul></div>
+
+</section>
+<section id="macro-lvl" class="g-section" data-only="lvl" aria-labelledby="h-macro-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro-lvl">Макрос на прокачке</h2></div>
+    <p>Поначалу хватает двух линий: огненная на MB5 и ледяная на ПКМ. Встроенный макрос добавляй, когда появятся Леденящий ветер и стигмы.</p>
+  <div class="hotlines">
+    <div class="hotline">
+  <div class="hotline-head"><span class="key">MB5</span><span class="hotline-name">Огненная линия</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/sorcerer/flame-arrow.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Огненная стрела</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/sorcerer/firestorm.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Огненный гарпун</span>
+    </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/sorcerer/blaze.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Зарево</span>
+    </li>
+  </ol>
+  <p class="hotline-order">Порядок как в игре, сверху вниз. 1 = высший приоритет — нижний слот.</p>
+</div>
+    <div class="hotline">
+  <div class="hotline-head"><span class="key">ПКМ</span><span class="hotline-name">Ледяная линия</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/sorcerer/ice-chain.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Ледяная цепь</span>
+    </li>
+    <li class=" is-first">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/sorcerer/frost.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Заморозка</span>
+    </li>
+  </ol>
+  <p class="hotline-order">Порядок как в игре, сверху вниз. 1 = высший приоритет — нижний слот.</p>
+</div>
+  </div>
+
+</section>
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">Источники</h2>
+  <ul>
+    <li><a href="https://vortexgaming.io/en/postdetail/724101" target="_blank" rel="noopener">Vortex Gaming — PvE-гайд на Волшебника после баланс-патча</a> — уровни скиллов, специализации, стигмы, открытие боя и макрос (корейские серверы)</li>
+    <li><a href="https://mmo-codex.com/articles/aion-2-sorcerer-guide/" target="_blank" rel="noopener">MMO Codex — гайд на Волшебника Aion 2</a> — приоритет стигм, порядок макроса, прокачка в режиме с таргетом</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/sorcerer" target="_blank" rel="noopener">questlog.gg</a> — данные и названия скиллов из глобального клиента</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — как работают линии на кнопках и встроенный макрос</li>
+  </ul>
+  <p class="sources-all"><a href="../../ru/sources/">Все источники и авторы →</a></p>
+</section>  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../ru/">AION 2 Гайды</a>
+      <p>Неофициальный фанатский сайт, не связан с NCSOFT. AION 2 и иконки скиллов © NCSOFT.</p>
+      <p>Проверено: 2026-09-27 (до глобального запуска).</p>
+      <p><a href="../../ru/sources/">Все источники и авторы</a> · <button type="button" class="link-btn wn-open">История изменений</button></p>
+    </div>
+  </div>
+</footer>
+<dialog class="whatsnew" data-id="2026-09-28-sorcerer" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title" data-latest="Что нового" data-history="История изменений">Что нового</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="Понятно">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <section class="wn-entry">
+      <time class="wn-date" datetime="2026-09-28">28 сентября 2026</time>
+      <ul>
+        <li><a href="../../ru/sorcerer/"><strong>Гайд на Волшебника (WIP)</strong> — билд огонь + лёд, стигмы, макрос и прокачка; собран из корейских гайдов, пока не появятся нормальные глобальные билды.</a></li>
+      </ul>
+    </section>
+    <section class="wn-entry wn-older">
+      <time class="wn-date" datetime="2026-09-27">27 сентября 2026</time>
+      <ul>
+        <li><a href="../../ru/chanter/"><strong>Гайд на Чародея</strong> — глобальный билд TitanTheF: скиллы, стигмы, мантры и простой стартовый макрос.</a></li>
+        <li><a href="../../ru/assassin/"><strong>Гайд на Убийцу</strong> — эмблемы, Пронзание сердца и окно бурста с Иллюзорным двойником, по глобальному билду TitanTheF.</a></li>
+        <li><a href="../../ru/ranger/"><strong>Лучник переделан под глобалку</strong> — реальные уровни скиллов (16), глобальный набор стигм и цели для аркан вместо корейского эндгейма.</a></li>
+        <li><a href="../../ru/gladiator/"><strong>Макросы исправлены</strong> — у нижнего слота линии наивысший приоритет; макросы на прокачке для каждого класса (Grobs).</a></li>
+      </ul>
+    </section>
+    <section class="wn-entry wn-older">
+      <time class="wn-date" datetime="2026-09-27">27 сентября 2026</time>
+      <ul>
+        <li><a href="../../ru/templar/"><strong>Гайд на Стража</strong> — PvE, PvP и прокачка: скиллы, стигмы под 4 слота глобальной версии и настройка макроса.</a></li>
+        <li><a href="../../ru/week-1/"><strong>Первая неделя</strong> — что успеть до первого недельного сброса и разовые цели, которые легко упустить.</a></li>
+        <li><a href="../../ru/weekly/"><strong>Недельный трекер</strong> — недельные входы и энергия Odyle для всех твоих персонажей, с таймером сброса. Чек-лист очищается сам каждую неделю.</a></li>
+      </ul>
+    </section>
+    <button class="btn btn-primary wn-ok" value="close">Понятно</button>
+  </form>
+</dialog>
+<script src="../../assets/js/site.js" defer></script>
+</body>
+</html>

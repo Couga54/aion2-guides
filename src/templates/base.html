@@ -57,7 +57,7 @@
         {% for c in classes %}
         {% if c.status == 'ready' %}
         <a href="{{ root }}{{ lang }}/{{ c.slug }}/" class="cm-item accent-{{ c.accent }}"{% if cls and cls.slug == c.slug %} aria-current="page"{% endif %}>
-          <img src="{{ root }}assets/classes/{{ c.slug }}.webp" width="44" height="44" alt=""><span class="cm-name">{{ c.name[lang] }}</span><span class="cm-role">{{ c.role[lang] }}</span>
+          <img src="{{ root }}assets/classes/{{ c.slug }}.webp" width="44" height="44" alt=""><span class="cm-name">{{ c.name[lang] }}{% if c.get('wip') %} <span class="wip-tag">{{ t.wip }}</span>{% endif %}</span><span class="cm-role">{{ c.role[lang] }}</span>
         </a>
         {% else %}
         <span class="cm-item is-soon" aria-disabled="true">
