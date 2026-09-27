@@ -1,0 +1,28 @@
+{
+  "base_url": "https://couga54.github.io/aion2-guides/",
+  "langs": ["en", "ru"],
+  "launch_utc": "2026-10-05T13:00:00Z",
+  "updated": "2026-09-27",
+  "classes": [
+    {"slug": "gladiator", "status": "ready", "accent": "crimson",
+     "name": {"en": "Gladiator", "ru": "Гладиатор"},
+     "role": {"en": "Melee DPS · bruiser", "ru": "Ближний бой · брузер"},
+     "weapon": {"en": "Greatsword", "ru": "Двуручный меч"},
+     "difficulty": 1,
+     "pitch": {"en": "Front-loaded damage, a pseudo-tank toolkit and near-permanent cooldowns off one stigma.",
+               "ru": "Мощный фронтальный урон, полутанковый набор и почти вечные перезарядки от одной стигмы."}},
+    {"slug": "ranger", "status": "ready", "accent": "emerald",
+     "name": {"en": "Ranger", "ru": "Лучник"},
+     "role": {"en": "Ranged DPS · kiter", "ru": "Дальний бой · кайт"},
+     "weapon": {"en": "Bow", "ru": "Лук"},
+     "difficulty": 2,
+     "pitch": {"en": "20-metre burst built on buffs, charged Deadshots and bleeds — and the best zoning tools in PvP.",
+               "ru": "Урон с 20 метров на баффах, заряженных Прицельных выстрелах и кровотечениях — и лучший контроль дистанции в PvP."}},
+    {"slug": "templar", "status": "soon", "name": {"en": "Templar", "ru": "Страж"}, "role": {"en": "Tank", "ru": "Танк"}},
+    {"slug": "assassin", "status": "soon", "name": {"en": "Assassin", "ru": "Убийца"}, "role": {"en": "Melee DPS", "ru": "Ближний бой"}},
+    {"slug": "sorcerer", "status": "soon", "name": {"en": "Sorcerer", "ru": "Волшебник"}, "role": {"en": "Magic DPS", "ru": "Магический урон"}},
+    {"slug": "elementalist", "status": "soon", "name": {"en": "Elementalist", "ru": "Заклинатель"}, "role": {"en": "Summoner", "ru": "Призыватель"}},
+    {"slug": "cleric", "status": "soon", "name": {"en": "Cleric", "ru": "Целитель"}, "role": {"en": "Healer", "ru": "Лекарь"}},
+    {"slug": "chanter", "status": "soon", "name": {"en": "Chanter", "ru": "Чародей"}, "role": {"en": "Support", "ru": "Поддержка"}}
+  ]
+}

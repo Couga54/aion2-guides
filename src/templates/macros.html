@@ -1,0 +1,94 @@
+{#
+  Content macros. Content files import them with:
+    {% from "macros.html" import section, skill, loadout, core, passives with context %}
+#}
+
+{# A guide section, shown only in the listed modes ("pve", "pvp", "lvl", or several). #}
+{% macro section(id, title, modes) -%}
+<section id="{{ id }}" class="g-section" data-only="{{ modes }}" aria-labelledby="h-{{ id }}">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-{{ id }}">{{ title }}</h2></div>
+  {{ caller() }}
+</section>
+{%- endmacro %}
+
+{#
+  Skill card.
+  kind:   must | opt | skip
+  badge:  text for the badge (target level or a short label)
+  picks:  for active skills, indexes of specializations to take (see data/skills/<class>.json)
+  upto:   for stigmas, the target stigma level — tiers up to it are highlighted
+#}
+{% macro skill(slug, kind, badge, picks=[], upto=0) -%}
+{% set sk = skill_data(slug) %}
+{% set L = sk[lang] %}
+<li class="skill">
+  <img class="skill-icon" src="{{ icon_url(slug) }}" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">{{ L.name }} <span class="badge {{ kind }}">{{ badge }}</span></div>
+    <div class="skill-desc">{{ caller() }}</div>
+    {% set chosen = [] %}
+    {% for sp in L.specs %}{% if loop.index0 in picks or (upto and sp.level <= upto) %}{% do chosen.append(sp) %}{% endif %}{% endfor %}
+    {% if chosen %}
+    <ul class="spec-chips">
+      {% for sp in chosen %}<li><span class="spec-lv">{{ sp.level }}</span>{{ sp.text }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+    {% if L.specs %}
+    <details class="spec-all">
+      <summary>{{ t.all_specs }}</summary>
+      <ul>
+        {% for sp in L.specs %}
+        <li class="{{ 'on' if (loop.index0 in picks or (upto and sp.level <= upto)) }}"><span class="spec-lv">{{ sp.level }}</span>{{ sp.text }}</li>
+        {% endfor %}
+      </ul>
+    </details>
+    {% endif %}
+  </div>
+</li>
+{%- endmacro %}
+
+{# Row of skill icons with a level badge each: items = [(slug, "20"), ...] #}
+{% macro core(items) -%}
+<ul class="core-row">
+  {% for slug, lvl in items %}
+  <li title="{{ skill_data(slug)[lang].name }}">
+    <img src="{{ icon_url(slug) }}" width="52" height="52" alt="{{ skill_data(slug)[lang].name }}" loading="lazy">
+    <span class="core-lv">{{ lvl }}</span>
+    <span class="core-name">{{ skill_data(slug)[lang].name }}</span>
+  </li>
+  {% endfor %}
+</ul>
+{%- endmacro %}
+
+{# In-game style stigma slots: items = [(slug, level), ...]; None = flexible slot #}
+{% macro loadout(items) -%}
+<ol class="loadout">
+  {% for it in items %}
+  {% if it %}
+  {% set slug, lvl = it %}
+  <li class="slot" title="{{ skill_data(slug)[lang].name }}">
+    <img src="{{ icon_url(slug) }}" width="56" height="56" alt="{{ skill_data(slug)[lang].name }}" loading="lazy">
+    <span class="slot-lv">{{ t.lv }} {{ lvl }}</span>
+    <span class="slot-name">{{ skill_data(slug)[lang].name }}</span>
+  </li>
+  {% else %}
+  <li class="slot slot-empty"><span class="slot-name">{{ t.slot_empty }}</span></li>
+  {% endif %}
+  {% endfor %}
+</ol>
+{%- endmacro %}
+
+{# Passive names as chips: items = [slug, ...] #}
+{% macro passives(items) -%}
+<ul class="passive-row">
+  {% for slug in items %}<li><img src="{{ icon_url(slug) }}" width="24" height="24" alt="" loading="lazy">{{ skill_data(slug)[lang].name }}</li>{% endfor %}
+</ul>
+{%- endmacro %}
+
+{# The "build at a glance" panel for a mode #}
+{% macro glance(modes) -%}
+<aside class="glance" data-only="{{ modes }}" aria-label="{{ t.build_at_glance }}">
+  <p class="glance-title">{{ t.build_at_glance }}</p>
+  {{ caller() }}
+</aside>
+{%- endmacro %}

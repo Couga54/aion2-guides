@@ -1,0 +1,1384 @@
+<!doctype html>
+<html lang="en" data-mode="pve" data-class="gladiator">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gladiator — AION 2 Guides (PvE, PvP, Leveling)</title>
+<meta name="description" content="Front-loaded damage, a pseudo-tank toolkit and near-permanent cooldowns off one stigma.">
+<link rel="canonical" href="https://couga54.github.io/aion2-guides/en/gladiator/">
+<link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/gladiator/">
+<link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/gladiator/">
+<link rel="alternate" hreflang="x-default" href="https://couga54.github.io/aion2-guides/en/gladiator/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Guides">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Gladiator — AION 2 Guides (PvE, PvP, Leveling)">
+<meta property="og:description" content="Front-loaded damage, a pseudo-tank toolkit and near-permanent cooldowns off one stigma.">
+<meta property="og:url" content="https://couga54.github.io/aion2-guides/en/gladiator/">
+<meta property="og:image" content="https://couga54.github.io/aion2-guides/assets/og/gladiator-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var modes = ['pve', 'pvp', 'lvl'];
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+  })(document.documentElement);
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css">
+</head>
+<body class="page-class accent-crimson">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../en/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
+      <span>AION 2 Guides</span>
+    </a>
+    <nav class="class-nav" aria-label="Classes">
+      <a href="../../en/gladiator/" class="accent-crimson" aria-current="page">
+        <img src="../../assets/classes/gladiator.webp" width="22" height="22" alt="">Gladiator
+      </a>
+      <a href="../../en/ranger/" class="accent-emerald">
+        <img src="../../assets/classes/ranger.webp" width="22" height="22" alt="">Ranger
+      </a>
+    </nav>
+    <div class="topbar-tools">
+      <a class="lang-switch" href="../../ru/gladiator/" hreflang="ru" lang="ru" data-keep-query>
+        <span aria-hidden="true">RU</span><span class="sr-only">Русский</span>
+      </a>
+      <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="class-hero">
+  <div class="wrap class-hero-in">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../en/">All classes</a><span aria-hidden="true">/</span><span>Gladiator</span></nav>
+    <div class="class-hero-main">
+      <img class="class-hero-emblem" src="../../assets/classes/gladiator.webp" width="96" height="96" alt="">
+      <div>
+        <p class="kicker"><span data-only="pve">PvE</span><span data-only="pvp">PvP</span><span data-only="lvl">Leveling</span> · Global Season 1</p>
+        <h1>Gladiator</h1>
+        <p class="class-hero-pitch">Front-loaded damage, a pseudo-tank toolkit and near-permanent cooldowns off one stigma.</p>
+      </div>
+    </div>
+    <dl class="class-facts">
+      <div><dt>Role</dt><dd>Melee DPS · bruiser</dd></div>
+      <div><dt>Weapon</dt><dd>Greatsword</dd></div>
+      <div><dt>Difficulty</dt><dd class="diff"><i class="on"></i><i class=""></i><i class=""></i><span>Easy</span></dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="guidebar">
+  <div class="wrap guidebar-in">
+    <div class="mode-switch" role="radiogroup" aria-label="Guide mode">
+      <button type="button" role="radio" data-set-mode="pve" aria-checked="true">PvE</button>
+      <button type="button" role="radio" data-set-mode="pvp" aria-checked="false">PvP</button>
+      <button type="button" role="radio" data-set-mode="lvl" aria-checked="false">Leveling</button>
+    </div>
+    <nav class="toc-mobile" aria-label="On this page"></nav>
+  </div>
+</div>
+
+<div class="wrap guide-layout">
+  <aside class="toc-side" aria-label="On this page">
+    <p class="toc-title">On this page</p>
+    <nav class="toc-list"></nav>
+  </aside>
+
+  <main id="main" class="guide">
+    <section id="progress" class="g-section tracker" data-only="lvl" data-class="gladiator" aria-labelledby="h-progress">
+      <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-progress">Leveling progress</h2></div>
+      <div class="tracker-bar">
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="27" aria-valuenow="0" aria-label="Leveling progress"><span></span></div>
+        <span class="progress-text"><b class="progress-count">0</b>/27 done</span>
+        <button type="button" class="btn btn-ghost btn-sm tracker-reset" data-confirm="Clear all ticked steps for this class?">Reset progress</button>
+      </div>
+      <p class="note">Tick steps as you go. Progress is saved in this browser, separately for each class.</p>
+      <ol class="steps">
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-story">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Start</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Follow <strong>yellow (main story) quests only</strong>. Side content scales with your level, so nothing is lost by doing it later.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="gladiator-rending">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 1</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/gladiator/rending-blow.webp" width="22" height="22" alt="" loading="lazy">              First points: <strong>Rending Blow</strong> → 8, take <em>Changes to mobile skill</em>.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="gladiator-leaping">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 1</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/gladiator/leaping-slam.webp" width="22" height="22" alt="" loading="lazy">              <strong>Leaping Slam</strong> → 8: <em>Resets cooldown on defeating an enemy</em> — leap from pack to pack.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="gladiator-overhead">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 1</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/gladiator/overhead-slam.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/gladiator/mocking-blade.webp" width="22" height="22" alt="" loading="lazy">              <strong>Overhead Slam</strong> → 8: <em>Adds [Upward Strike] Chain Skill</em>. It only hits knocked-down targets — open elites with <strong>Mocking Blade</strong>.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-feathers">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">After prologue</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Collect <strong>40 feathers</strong> (120 shards) for an early amulet upgrade.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="gladiator-crushing">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 8</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/gladiator/crushing-wave.webp" width="22" height="22" alt="" loading="lazy">              <strong>Crushing Wave</strong> → 8: <em>Absorbs 2% HP</em>. Your AoE and heal on trash packs.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="gladiator-rush">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 10</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/gladiator/rush-strike.webp" width="22" height="22" alt="" loading="lazy">              <strong>Rush Strike</strong>: dodge → Rush Strike always knocks NPCs down → <strong>Overhead Slam</strong>.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-daevanion">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 12</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              <strong>Daevanion</strong> unlocks (Nezekan board). Blue nodes = +1 skill level — see your class step below.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="gladiator-daevanion">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 12</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/gladiator/overhead-slam.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/gladiator/rending-blow.webp" width="22" height="22" alt="" loading="lazy">              Daevanion blue nodes: <strong>Overhead Slam</strong> and <strong>Rending Blow</strong> first, then <strong>Ruinous Blow</strong>.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="gladiator-ruinous">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 14</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/gladiator/ruinous-blow.webp" width="22" height="22" alt="" loading="lazy">              <strong>Ruinous Blow</strong> → 10: <em>+30% Skill Critical Hit</em>. Use it on cooldown — it grants Prepare for Battle (+20% PvE damage for 20s).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-hideouts">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 15 / 20 / 25</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Clear hideouts that are on your route — first clears give Enhance Stones and Daevanion Crystals.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="gladiator-defiance">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 16</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/gladiator/defiance.webp" width="22" height="22" alt="" loading="lazy">              <strong>Defiance</strong>: one point is enough while leveling — it's your CC break.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-amulet">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">~Lv 17</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              <strong>Amulet +10</strong>, then Morph it into the blue version.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-weapon">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Any time</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Weapon to <strong>~+10</strong> — the biggest damage jump while leveling. Don't push further before the cap.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-zikel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 20</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Zikel board opens — same node priority as before.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-stigma">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv ~22</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Ascension → <strong>stigmas unlock</strong> (4 slots in global Season 1). Which ones — see your class step.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="gladiator-stigmas">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv ~22</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/gladiator/focused-block.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/gladiator/lunge-stance.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/gladiator/rage-burst.webp" width="22" height="22" alt="" loading="lazy">              Stigmas: <strong>Focused Block</strong> first, then <strong>Lunge Stance</strong> (aim for 20) and <strong>Rage Burst</strong> (5).
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="gladiator-macro">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">After Rage Burst</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/gladiator/rage-burst.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/gladiator/keen-strike.webp" width="22" height="22" alt="" loading="lazy">              <strong>Rage Burst</strong> lets <strong>Overhead Slam</strong> hit without a knockdown → build the PvE macro and stop pressing <strong>Keen Strike</strong>.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-acts23">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Acts 2–3</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Story only — don't get distracted by the map.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-vaizel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 30</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Vaizel board opens (critical damage).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-act4">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Act 4</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Side quests and solo dungeons are worth doing again here.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-triniel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 40</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Triniel board opens (multi-hit; mostly PvP — can wait). Krao Cave expects about 1000 Gear Score.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-ariel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 45</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              <strong>Ariel (PvE) or Azphel (PvP)</strong> — same cost, choosing wrong is the most expensive mistake in the system.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="gladiator-cap">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Cap</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/gladiator/overhead-slam.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/gladiator/rending-blow.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/gladiator/ruinous-blow.webp" width="22" height="22" alt="" loading="lazy">              Core three to 10 before anything else: <strong>Overhead Slam</strong>, <strong>Rending Blow</strong>, <strong>Ruinous Blow</strong>. Then switch to the PvE tab.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-shugo">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Cap</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Shugo activities for the full level-cap reward set (gold gear, materials).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-map">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Cap</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Sweep the map: question marks, bonfires, green quests, hidden cubes, feathers. Turn in feathers — altar Lv 30 gives a title.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-daily">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Daily</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Nightmare entry, Transformation floors as your GS allows, dungeons T2 before T3 (watch your energy).
+            </span>
+          </label>
+        </li>
+      </ol>
+    </section>
+
+
+<aside class="glance" data-only="pve" aria-label="Build at a glance">
+  <p class="glance-title">Build at a glance</p>
+    <h3>Core skills</h3>
+  <ul class="core-row">
+  <li title="Overhead Slam">
+    <img src="../../assets/icons/gladiator/overhead-slam.webp" width="52" height="52" alt="Overhead Slam" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Overhead Slam</span>
+  </li>
+  <li title="Rending Blow">
+    <img src="../../assets/icons/gladiator/rending-blow.webp" width="52" height="52" alt="Rending Blow" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Rending Blow</span>
+  </li>
+  <li title="Ruinous Blow">
+    <img src="../../assets/icons/gladiator/ruinous-blow.webp" width="52" height="52" alt="Ruinous Blow" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Ruinous Blow</span>
+  </li>
+</ul>
+  <h3>Stigma loadout</h3>
+  <ol class="loadout">
+  <li class="slot" title="Lunge Stance">
+    <img src="../../assets/icons/gladiator/lunge-stance.webp" width="56" height="56" alt="Lunge Stance" loading="lazy">
+    <span class="slot-lv">Lv 20</span>
+    <span class="slot-name">Lunge Stance</span>
+  </li>
+  <li class="slot" title="Focused Block">
+    <img src="../../assets/icons/gladiator/focused-block.webp" width="56" height="56" alt="Focused Block" loading="lazy">
+    <span class="slot-lv">Lv 5</span>
+    <span class="slot-name">Focused Block</span>
+  </li>
+  <li class="slot" title="Rage Burst">
+    <img src="../../assets/icons/gladiator/rage-burst.webp" width="56" height="56" alt="Rage Burst" loading="lazy">
+    <span class="slot-lv">Lv 5</span>
+    <span class="slot-name">Rage Burst</span>
+  </li>
+  <li class="slot" title="Zikel&#39;s Blessing">
+    <img src="../../assets/icons/gladiator/zikels-blessing.webp" width="56" height="56" alt="Zikel&#39;s Blessing" loading="lazy">
+    <span class="slot-lv">Lv 10</span>
+    <span class="slot-name">Zikel&#39;s Blessing</span>
+  </li>
+</ol>
+  <h3>Key passives</h3>
+  <ul class="passive-row">
+<li><img src="../../assets/icons/gladiator/attack-preparation.webp" width="24" height="24" alt="" loading="lazy">Attack Preparation</li><li><img src="../../assets/icons/gladiator/experienced-counterstrike.webp" width="24" height="24" alt="" loading="lazy">Experienced Counterstrike</li><li><img src="../../assets/icons/gladiator/murderous-burst.webp" width="24" height="24" alt="" loading="lazy">Murderous Burst</li><li><img src="../../assets/icons/gladiator/impact-hit.webp" width="24" height="24" alt="" loading="lazy">Impact Hit</li></ul>
+
+</aside>
+<section id="intro" class="g-section" data-only="pve" aria-labelledby="h-intro">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro">Overview</h2></div>
+    <p>Gladiator is NCSoft's flagship class and has stayed S-tier on the Korean and Taiwanese servers. It buffs the party, pseudo-tanks and deals huge damage with fewer decisions to make than other classes. Sorcerer and Assassin edge it out on a static dummy, but Gladiator is close behind and far simpler to play.</p>
+  <div class="callout accent">
+    <h3>The build in one sentence</h3>
+    <p><span class="sk"><img src="../../assets/icons/gladiator/overhead-slam.webp" width="18" height="18" alt="" loading="lazy">Overhead Slam</span> at 16–20, <span class="sk"><img src="../../assets/icons/gladiator/lunge-stance.webp" width="18" height="18" alt="" loading="lazy">Lunge Stance</span> at stigma level 20 and <span class="sk"><img src="../../assets/icons/gladiator/rage-burst.webp" width="18" height="18" alt="" loading="lazy">Rage Burst</span> to trigger Overhead Slam. Everything else is support.</p>
+  </div>
+
+</section>
+<section id="global" class="g-section" data-only="pve pvp" aria-labelledby="h-global">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-global">Global Season 1: what changes</h2></div>
+    <p>Global servers open on <strong>October 5, 2026</strong> (Founder's early access from September 30), separate from the Korean/Taiwanese servers. What that means for Gladiator:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 stigma slots</strong> instead of 6 (expected for Season 1 only).</li>
+      <li><strong>Stigmas cap at level 20</strong> — the level-25 tier doesn't exist in the global client.</li>
+      <li><strong>No Heroic gear</strong> in Season 1, so gear has fewer bonus lines for passives.</li>
+      <li><strong>Weaker Daevanion bonuses</strong> than in Taiwan: fights run longer, so uptime matters more.</li>
+      <li><strong>Bigger groups</strong>: 5-player expeditions and 10-player sanctuaries, and Elyos and Asmodians can queue together. Party buffs are worth more.</li>
+      <li data-only="pvp"><strong>PvP:</strong> everyone starts on the same limited gear and no meta has formed yet.</li>
+    </ul>
+  </div>
+  <p class="note">Active skills and passives are identical in the global and KR/TW data. Only stigmas lose their level-25 tier.</p>
+
+</section>
+<section id="skills" class="g-section" data-only="pve" aria-labelledby="h-skills">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-skills">Skills</h2></div>
+    <p>Only three skills need to go high: <strong>Overhead Slam → Rending Blow → Ruinous Blow</strong>. Skills reach <strong>10</strong> from skill points, <strong>14</strong> with Daevanion, <strong>16</strong> with two rings (+1 each) and <strong>20</strong> with arcana. Specializations unlock at 8, 12 and 16.</p>
+  <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/overhead-slam.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Overhead Slam <span class="badge must">16 → 20</span></div>
+    <div class="skill-desc">Your #1 damage source. With Rage Burst and Lunge Stance it's effectively always up.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Adds [Upward Strike] Chain Skill</li><li><span class="spec-lv">12</span>Critical Hit on hit</li><li><span class="spec-lv">16</span>Remove cooldown</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Absorbs 0.7% HP</li>
+        <li class=""><span class="spec-lv">8</span>Changes to AoE Skill</li>
+        <li class="on"><span class="spec-lv">8</span>Adds [Upward Strike] Chain Skill</li>
+        <li class="on"><span class="spec-lv">12</span>Critical Hit on hit</li>
+        <li class="on"><span class="spec-lv">16</span>Remove cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/rending-blow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Rending Blow <span class="badge must">16 → 20</span></div>
+    <div class="skill-desc">Second-biggest damage source and your mana engine.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Changes to mobile skill</li><li><span class="spec-lv">12</span>Deals up to 12% more damage when less targets are hit</li><li><span class="spec-lv">16</span>Restores 50 MP on landing a Critical Hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>-20% MP consumed</li>
+        <li class=""><span class="spec-lv">8</span>+200 Block while using skill</li>
+        <li class="on"><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class="on"><span class="spec-lv">12</span>Deals up to 12% more damage when less targets are hit</li>
+        <li class="on"><span class="spec-lv">16</span>Restores 50 MP on landing a Critical Hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/ruinous-blow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Ruinous Blow <span class="badge must">16</span></div>
+    <div class="skill-desc">Big nuke that grants Prepare for Battle (+20% PvE damage, 20s).</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+30% Skill Critical Hit</li><li><span class="spec-lv">12</span>Extra damage on hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>+20% Skill Speed</li>
+        <li class=""><span class="spec-lv">8</span>+12.5m Range</li>
+        <li class="on"><span class="spec-lv">8</span>+30% Skill Critical Hit</li>
+        <li class="on"><span class="spec-lv">12</span>Extra damage on hit</li>
+        <li class=""><span class="spec-lv">16</span>Ignores Block and Evasion and lands as Multi-Hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/leaping-slam.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Leaping Slam <span class="badge opt">12</span></div>
+    <div class="skill-desc">Main gap-closer; 3s of Prepare for Battle before Ruinous Blow extends it.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Prepare for Battle effect on the caster for 3s</li><li><span class="spec-lv">8</span>Resets cooldown on defeating an enemy</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>Prepare for Battle effect on the caster for 3s</li>
+        <li class=""><span class="spec-lv">8</span>50% chance to trigger [Ankle Slice] on hit</li>
+        <li class="on"><span class="spec-lv">8</span>Resets cooldown on defeating an enemy</li>
+        <li class=""><span class="spec-lv">12</span>+20% PvE Damage Tolerance and +10 PvP Damage Tolerance for 3s</li>
+        <li class=""><span class="spec-lv">16</span>Changes to AoE skill and pulls in enemies</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/rush-strike.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Rush Strike <span class="badge opt">12</span></div>
+    <div class="skill-desc">Dodge into a gap-close. With Lunge Stance's cooldown procs, Stamina beats −10s cooldown.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Restores 300 Stamina on hit</li><li><span class="spec-lv">8</span>+10m Range</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>Restores 300 Stamina on hit</li>
+        <li class="on"><span class="spec-lv">8</span>+10m Range</li>
+        <li class=""><span class="spec-lv">8</span>Changes to Charge Skill and deals AoE damage</li>
+        <li class=""><span class="spec-lv">12</span>-10s cooldown</li>
+        <li class=""><span class="spec-lv">16</span>+25% Knockdown Chance</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/mocking-blade.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Mocking Blade <span class="badge opt">12</span></div>
+    <div class="skill-desc">Emergency heal button: 15% HP absorbed from bosses.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Absorbs 4% HP, absorbs 15% HP of target with Incapacitated Immunity</li><li><span class="spec-lv">8</span>Changes to AoE damage on down strike</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>Absorbs 4% HP, absorbs 15% HP of target with Incapacitated Immunity</li>
+        <li class="on"><span class="spec-lv">8</span>Changes to AoE damage on down strike</li>
+        <li class=""><span class="spec-lv">8</span>Adds 2 additional strikes</li>
+        <li class=""><span class="spec-lv">12</span>+1s Knockdown duration</li>
+        <li class=""><span class="spec-lv">16</span>Ignores Block and Evasion and lands as Multi-Hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/ankle-slice.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Ankle Slice <span class="badge opt">12</span></div>
+    <div class="skill-desc">Backup closer. Skip the Ankle Smash chain — it slows your rotation.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+16m [Ankle Slice] range</li><li><span class="spec-lv">12</span>Ignores Block and Evasion and lands as Multi-Hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>30% chance to inflict Knockdown for 3s on landing [Ankle Slice]</li>
+        <li class=""><span class="spec-lv">8</span>Adds [Ankle Smash] Chain Skill</li>
+        <li class="on"><span class="spec-lv">8</span>+16m [Ankle Slice] range</li>
+        <li class="on"><span class="spec-lv">12</span>Ignores Block and Evasion and lands as Multi-Hit</li>
+        <li class=""><span class="spec-lv">16</span>25% chance to reset [Ankle Slice] cooldown on Block</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/crushing-wave.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Crushing Wave <span class="badge skip">12</span></div>
+    <div class="skill-desc">Too slow for bosses; AoE and self-heal on trash.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Absorbs 2% HP</li><li><span class="spec-lv">12</span>Resets cooldown on landing a Critical Hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>Absorbs 2% HP</li>
+        <li class=""><span class="spec-lv">8</span>Restores 50 MP on landing a Critical Hit</li>
+        <li class=""><span class="spec-lv">8</span>Up to +20% damage when more targets hit</li>
+        <li class="on"><span class="spec-lv">12</span>Resets cooldown on landing a Critical Hit</li>
+        <li class=""><span class="spec-lv">16</span>50% chance to pull</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/defiance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Defiance <span class="badge opt">16 if spare</span></div>
+    <div class="skill-desc">CC break. Nice for raids, not a priority.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">16</span>+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Adds [Wrath Burst] Chain Skill</li>
+        <li class=""><span class="spec-lv">8</span>Restores 1000 Stamina on using [Defiance]</li>
+        <li class=""><span class="spec-lv">8</span>Restores 20% HP on using [Defiance]</li>
+        <li class=""><span class="spec-lv">12</span>+2s Tenacity duration</li>
+        <li class="on"><span class="spec-lv">16</span>+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/sword-aura-rampage.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Sword Aura Rampage <span class="badge skip">leftovers</span></div>
+    <div class="skill-desc">Only hits Staggered targets — a few seconds per fight.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Changes to mobile skill</li><li><span class="spec-lv">16</span>-1s all skill cooldowns on hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Absorbs 5% HP</li>
+        <li class=""><span class="spec-lv">8</span>Restores 120 MP</li>
+        <li class="on"><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class=""><span class="spec-lv">12</span>Multi-Hit on hit</li>
+        <li class="on"><span class="spec-lv">16</span>-1s all skill cooldowns on hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/keen-strike.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Keen Strike <span class="badge skip">leveling</span></div>
+    <div class="skill-desc">Filler until the Overhead Slam macro is online.</div>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>+20% MP restored</li>
+        <li class=""><span class="spec-lv">8</span>Absorbs 1% HP</li>
+        <li class=""><span class="spec-lv">8</span>+50% Multi-Hit on hit</li>
+        <li class=""><span class="spec-lv">12</span>-1s [Ruinous Blow] cooldown on hit</li>
+        <li class=""><span class="spec-lv">16</span>Adds [Reckless Strike] Chain Skill</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/aerial-snare.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Aerial Snare <span class="badge skip">—</span></div>
+    <div class="skill-desc">PvP tool. Keep it out of your PvE macro.</div>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Multi-Hit on hit</li>
+        <li class=""><span class="spec-lv">8</span>+25% [Aerial Snare] Airborne Chance</li>
+        <li class=""><span class="spec-lv">8</span>+100% damage to targets with Incapacitated Immunity</li>
+        <li class=""><span class="spec-lv">12</span>Adds [Forced Fall] Chain Skill</li>
+        <li class=""><span class="spec-lv">16</span>-50% [Aerial Snare] cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="passives" class="g-section" data-only="pve" aria-labelledby="h-passives">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-passives">Passives</h2></div>
+    <p>Passive points are plentiful — most passives max out without any thought. Two traps:</p>
+  <div class="callout">
+    <ul>
+      <li><span class="sk"><img src="../../assets/icons/gladiator/protection-armor.webp" width="18" height="18" alt="" loading="lazy">Protection Armor</span> — a tiny heal on block. Reroll gear and cards that roll it.</li>
+      <li><span class="sk"><img src="../../assets/icons/gladiator/destructive-impulse.webp" width="18" height="18" alt="" loading="lazy">Destructive Impulse</span> — bonus damage only on Staggered targets. Too rare to matter.</li>
+    </ul>
+  </div>
+  <p><span class="sk"><img src="../../assets/icons/gladiator/blood-absorption.webp" width="18" height="18" alt="" loading="lazy">Blood Absorption</span> needs no investment: a 50% chance to heal on every hit, plus a big instant heal when you drop to 50% HP. It's why Gladiator gets by without a healer.</p>
+
+</section>
+<section id="gear" class="g-section" data-only="pve" aria-labelledby="h-gear">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-gear">Gear &amp; soulbind</h2></div>
+    <p>With no Heroic gear, attack speed, move speed, Might and Precision take most of the bonus lines, leaving 1–2 for passives. Priority:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>#</th><th>Passive</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><span class="sk"><img src="../../assets/icons/gladiator/attack-preparation.webp" width="18" height="18" alt="" loading="lazy">Attack Preparation</span></td><td>Flat PvE Damage Boost, Defense and Accuracy. No conditions.</td></tr>
+      <tr><td>2</td><td><span class="sk"><img src="../../assets/icons/gladiator/experienced-counterstrike.webp" width="18" height="18" alt="" loading="lazy">Experienced Counterstrike</span></td><td>Front damage at all times, plus a 20s PvE Damage Boost for you <em>and the party</em> on every block. Doesn't stack with a Templar's Fury but covers a party without one.</td></tr>
+      <tr><td>3</td><td><span class="sk"><img src="../../assets/icons/gladiator/murderous-burst.webp" width="18" height="18" alt="" loading="lazy">Murderous Burst</span> / <span class="sk"><img src="../../assets/icons/gladiator/impact-hit.webp" width="18" height="18" alt="" loading="lazy">Impact Hit</span></td><td>Every 5 hits = AoE burst + crit damage / more Impact and Double chance.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Weapon and front/back damage boosts are the strongest types, and Gladiator always fights from the front. Don't chase perfect manastone rolls in Season 1 — rerolls cost roughly 200–300k each on TW.</p>
+
+</section>
+<section id="arcana" class="g-section" data-only="pve" aria-labelledby="h-arcana">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-arcana">Arcana</h2></div>
+    <p>A card leveled to 5 averages about <strong>+2</strong> to a random skill it can roll.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Card</th><th>Look for</th></tr></thead>
+    <tbody>
+      <tr><td>Parchment</td><td><span class="sk"><img src="../../assets/icons/gladiator/overhead-slam.webp" width="18" height="18" alt="" loading="lazy">Overhead Slam</span> and <span class="sk"><img src="../../assets/icons/gladiator/ruinous-blow.webp" width="18" height="18" alt="" loading="lazy">Ruinous Blow</span> — the only two of its six that matter.</td></tr>
+      <tr><td>Compass</td><td><span class="sk"><img src="../../assets/icons/gladiator/rending-blow.webp" width="18" height="18" alt="" loading="lazy">Rending Blow</span> only. Use the Freedom version for Accuracy — parries in front of a boss are lost damage.</td></tr>
+      <tr><td>Grail</td><td>Rolls any skill; crafting lets you pick two. Top up whatever is still short of 20.</td></tr>
+    </tbody>
+  </table></div>
+  <p>Average luck: 14 + 2 (ring) + 2 + 2 = <strong>20</strong> on Overhead Slam. If only one more skill can reach 20, pick Rending Blow over Ruinous Blow.</p>
+  <div class="callout">
+    <h3>Sets &amp; passive cards</h3>
+    <p>Aim for 4-piece <strong>Primal Vigor</strong>. Gladiator never needs CDR (Illusion). If MP runs dry at Season 1 attack speed, switch to 2-piece <strong>Magic Armor</strong>. Passive cards: <span class="sk"><img src="../../assets/icons/gladiator/attack-preparation.webp" width="18" height="18" alt="" loading="lazy">Attack Preparation</span> first, then any mix of Experienced Counterstrike &gt; Murderous Burst &gt; Impact Hit &gt; Identify Weakness.</p>
+  </div>
+
+</section>
+<section id="daevanion" class="g-section" data-only="pve pvp" aria-labelledby="h-daevanion">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-daevanion">Daevanion boards</h2></div>
+    <p>Daevanion takes your skills from 10 to 14 and adds a pile of stats. Each blue node gives <strong>+1 level</strong> to its skill.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Board</th><th>Unlock</th><th>Focus</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Lv 12</td><td>Skill levels, base stats</td></tr>
+      <tr><td>Zikel</td><td>Lv 20</td><td>Evasion, damage boost / tolerance</td></tr>
+      <tr><td>Vaizel</td><td>Lv 30</td><td>Critical damage</td></tr>
+      <tr><td>Triniel</td><td>Lv 40</td><td>Multi-hit (mostly PvP)</td></tr>
+      <tr><td>Ariel</td><td>Lv 45</td><td>PvE damage &amp; resistance</td></tr>
+      <tr><td>Azphel</td><td>Lv 45</td><td>PvP damage &amp; resistance</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout">
+    <ul>
+      <li>Node costs: grey stat 1, green passive 2, blue skill 3, orange special 4.</li>
+      <li data-only="pve"><strong>Priority:</strong> blue nodes for <span class="sk"><img src="../../assets/icons/gladiator/overhead-slam.webp" width="18" height="18" alt="" loading="lazy">Overhead Slam</span>, <span class="sk"><img src="../../assets/icons/gladiator/rending-blow.webp" width="18" height="18" alt="" loading="lazy">Rending Blow</span>, <span class="sk"><img src="../../assets/icons/gladiator/ruinous-blow.webp" width="18" height="18" alt="" loading="lazy">Ruinous Blow</span>, then orange nodes, then stats.</li>
+      <li data-only="pvp"><strong>Priority:</strong> blue nodes for <span class="sk"><img src="../../assets/icons/gladiator/overhead-slam.webp" width="18" height="18" alt="" loading="lazy">Overhead Slam</span>, <span class="sk"><img src="../../assets/icons/gladiator/mocking-blade.webp" width="18" height="18" alt="" loading="lazy">Mocking Blade</span>, <span class="sk"><img src="../../assets/icons/gladiator/defiance.webp" width="18" height="18" alt="" loading="lazy">Defiance</span>, <span class="sk"><img src="../../assets/icons/gladiator/aerial-snare.webp" width="18" height="18" alt="" loading="lazy">Aerial Snare</span>, then orange nodes.</li>
+      <li data-only="pve"><strong>Ariel, not Azphel</strong> — same cost (reportedly 128 points), and choosing wrong is the most expensive mistake in the system.</li>
+      <li data-only="pvp"><strong>Azphel, not Ariel</strong>, and take Triniel earlier — multi-hit is a PvP stat.</li>
+    </ul>
+  </div>
+  <p class="note">Board layouts come from the KR/TW client, and global values are lower. Check the in-game board before committing a full route.</p>
+
+</section>
+<section id="stigmas" class="g-section" data-only="pve" aria-labelledby="h-stigmas">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-stigmas">Stigmas</h2></div>
+    <p>Three stigmas are locked in, and the fourth depends on your party. Skip Wrath Wave, Armor of Balance, Blade Toss, Forced Restraint, Assault Strike and Fracturing Rush in PvE.</p>
+  <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/lunge-stance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Lunge Stance <span class="badge must">Lv 20</span></div>
+    <div class="skill-desc">The level-20 proc cuts all cooldowns on crits: permanent Overhead Slam, Rage Burst, block and gap-closers. First stigma to max.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+5% Double Chance for the duration</li><li><span class="spec-lv">10</span>Increases Move Speed by 20% for the duration</li><li><span class="spec-lv">15</span>x1.5 [Identify Weakness] effect for the duration</li><li><span class="spec-lv">20</span>50% chance to reduce all skill cooldowns by 1s on Critical Hit for the duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+5% Double Chance for the duration</li>
+        <li class="on"><span class="spec-lv">10</span>Increases Move Speed by 20% for the duration</li>
+        <li class="on"><span class="spec-lv">15</span>x1.5 [Identify Weakness] effect for the duration</li>
+        <li class="on"><span class="spec-lv">20</span>50% chance to reduce all skill cooldowns by 1s on Critical Hit for the duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/focused-block.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Focused Block <span class="badge must">Lv 5</span></div>
+    <div class="skill-desc">Guaranteed Parry. Every block triggers Experienced Counterstrike's party buff — blocking is buffing. Take it first while leveling.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+1 consecutive use</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+1 consecutive use</li>
+        <li class=""><span class="spec-lv">10</span>Changes to mobile skill</li>
+        <li class=""><span class="spec-lv">15</span>+20% Move Speed for 3s on Parry</li>
+        <li class=""><span class="spec-lv">20</span>Restores 10% HP once on Parry</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/rage-burst.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Rage Burst <span class="badge must">Lv 5</span></div>
+    <div class="skill-desc">Triggers Overhead Slam on the target for 10s, +10% PvE Damage Boost and −10% boss Attack.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>-15s [Rage Burst] cooldown</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>-15s [Rage Burst] cooldown</li>
+        <li class=""><span class="spec-lv">10</span>+10% Attack reduction</li>
+        <li class=""><span class="spec-lv">15</span>Critical Hit on hit</li>
+        <li class=""><span class="spec-lv">20</span>+10% PvE Damage Boost increase and +5% PvP Damage Boost increase</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/zikels-blessing.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Zikel&#39;s Blessing <span class="badge opt">Lv 10</span></div>
+    <div class="skill-desc">Default 4th slot: +20% Attack, doesn't depend on how well your party plays.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+50% Stagger Gauge Damage</li><li><span class="spec-lv">10</span>+10% PvE Damage Boost and +5% PvP Damage Boost</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+50% Stagger Gauge Damage</li>
+        <li class="on"><span class="spec-lv">10</span>+10% PvE Damage Boost and +5% PvP Damage Boost</li>
+        <li class=""><span class="spec-lv">15</span>+50% Multi-Hit chance</li>
+        <li class=""><span class="spec-lv">20</span>+20% Status Effect Chance</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/lifestealing-blade.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Lifestealing Blade <span class="badge opt">Lv 20</span></div>
+    <div class="skill-desc">4th slot for an organized party: Predation boosts everyone's hits. Only worth it at 20.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Up to +20% damage when more targets hit</li><li><span class="spec-lv">10</span>Predation effect on party members for 20s</li><li><span class="spec-lv">15</span>-30s cooldown</li><li><span class="spec-lv">20</span>+5% HP absorbed</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Up to +20% damage when more targets hit</li>
+        <li class="on"><span class="spec-lv">10</span>Predation effect on party members for 20s</li>
+        <li class="on"><span class="spec-lv">15</span>-30s cooldown</li>
+        <li class="on"><span class="spec-lv">20</span>+5% HP absorbed</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/wave-armor.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Wave Armor <span class="badge skip">Lv 15</span></div>
+    <div class="skill-desc">Only without a Templar. Its strong level-25 tier doesn't exist in global.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Absorbs 2% HP</li><li><span class="spec-lv">10</span>x1.5 [Experienced Counterstrike] effect for the duration</li><li><span class="spec-lv">15</span>x1.5 [Murderous Burst] effect for the duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Absorbs 2% HP</li>
+        <li class="on"><span class="spec-lv">10</span>x1.5 [Experienced Counterstrike] effect for the duration</li>
+        <li class="on"><span class="spec-lv">15</span>x1.5 [Murderous Burst] effect for the duration</li>
+        <li class=""><span class="spec-lv">20</span>Reflects 10% of damage taken</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+  <p>Stigma sources: Nightmare shop, Shugo Festa shop and the tiered Abyss shop. Gladiator needs so few that it's set up within the first days.</p>
+
+</section>
+<section id="macro" class="g-section" data-only="pve" aria-labelledby="h-macro">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro">Macro &amp; rotation</h2></div>
+    <p>The whole kit fits in six buttons: <strong>2 buffs + 4 damage skills</strong>, driven by two in-game macros.</p>
+  <div class="combo"><span class="key">RMB</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/gladiator/overhead-slam.webp" width="18" height="18" alt="" loading="lazy">Overhead Slam</span> / <span class="sk"><img src="../../assets/icons/gladiator/rending-blow.webp" width="18" height="18" alt="" loading="lazy">Rending Blow</span> line, <span class="sk"><img src="../../assets/icons/gladiator/rage-burst.webp" width="18" height="18" alt="" loading="lazy">Rage Burst</span> at the bottom</div>
+  <div class="combo"><span class="key">E</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/gladiator/ruinous-blow.webp" width="18" height="18" alt="" loading="lazy">Ruinous Blow</span> — its own macro and its own buff</div>
+  <div class="callout">
+    <h3>Why Rage Burst sits at the bottom</h3>
+    <p>Lunge Stance keeps Overhead Slam permanently available, so Rage Burst has to stay in the line and refresh whenever it's off cooldown. The two macros can't be merged — they're woven separately. Don't stuff Lifestealing Blade into the Overhead Slam line: macro timing depends on frame rate, and any delay to Overhead Slam costs more than it adds.</p>
+  </div>
+  <div class="callout">
+    <h3>Where the damage comes from</h3>
+    <p>On a one-minute dummy parse: Overhead Slam (incl. Upward Strike) &gt; Rending Blow &gt; Ruinous Blow &gt; Lunge Stance &gt; Murderous Burst &gt; Rage Burst.</p>
+  </div>
+  <p>The macro keeps pace — it doesn't play for you. You still decide when to block (party buff!), when to close distance and when to self-heal. Season 1's weaker stats mean multi-minute boss fights, so every second of lost uptime counts.</p>
+
+</section>
+<section id="recap" class="g-section" data-only="pve" aria-labelledby="h-recap">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-recap">Recap</h2></div>
+    <div class="callout accent"><ul>
+    <li><strong>Skills:</strong> Overhead Slam 20, Rending Blow 16→20, Ruinous Blow 16; everything else 12 or less.</li>
+    <li><strong>Levels from:</strong> Daevanion (+4) → rings (+2) → arcana (+4).</li>
+    <li><strong>Stigmas:</strong> Lunge Stance 20, Focused Block 5, Rage Burst 5, Zikel's Blessing 10 (or Lifestealing Blade 20).</li>
+    <li><strong>Passives:</strong> Attack Preparation &gt; Experienced Counterstrike &gt; Murderous Burst / Impact Hit.</li>
+  </ul></div>
+
+</section>
+<aside class="glance" data-only="pvp" aria-label="Build at a glance">
+  <p class="glance-title">Build at a glance</p>
+    <h3>Core skills</h3>
+  <ul class="core-row">
+  <li title="Overhead Slam">
+    <img src="../../assets/icons/gladiator/overhead-slam.webp" width="52" height="52" alt="Overhead Slam" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Overhead Slam</span>
+  </li>
+  <li title="Mocking Blade">
+    <img src="../../assets/icons/gladiator/mocking-blade.webp" width="52" height="52" alt="Mocking Blade" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Mocking Blade</span>
+  </li>
+  <li title="Defiance">
+    <img src="../../assets/icons/gladiator/defiance.webp" width="52" height="52" alt="Defiance" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Defiance</span>
+  </li>
+  <li title="Aerial Snare">
+    <img src="../../assets/icons/gladiator/aerial-snare.webp" width="52" height="52" alt="Aerial Snare" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Aerial Snare</span>
+  </li>
+</ul>
+  <h3>Stigma loadout · Abyss</h3>
+  <ol class="loadout">
+  <li class="slot" title="Lunge Stance">
+    <img src="../../assets/icons/gladiator/lunge-stance.webp" width="56" height="56" alt="Lunge Stance" loading="lazy">
+    <span class="slot-lv">Lv 20</span>
+    <span class="slot-name">Lunge Stance</span>
+  </li>
+  <li class="slot" title="Armor of Balance">
+    <img src="../../assets/icons/gladiator/armor-of-balance.webp" width="56" height="56" alt="Armor of Balance" loading="lazy">
+    <span class="slot-lv">Lv 5</span>
+    <span class="slot-name">Armor of Balance</span>
+  </li>
+  <li class="slot" title="Tenaciousness">
+    <img src="../../assets/icons/gladiator/tenaciousness.webp" width="56" height="56" alt="Tenaciousness" loading="lazy">
+    <span class="slot-lv">Lv 10</span>
+    <span class="slot-name">Tenaciousness</span>
+  </li>
+  <li class="slot" title="Blade Toss">
+    <img src="../../assets/icons/gladiator/blade-toss.webp" width="56" height="56" alt="Blade Toss" loading="lazy">
+    <span class="slot-lv">Lv 5</span>
+    <span class="slot-name">Blade Toss</span>
+  </li>
+</ol>
+  <h3>Key passives</h3>
+  <ul class="passive-row">
+<li><img src="../../assets/icons/gladiator/attack-preparation.webp" width="24" height="24" alt="" loading="lazy">Attack Preparation</li><li><img src="../../assets/icons/gladiator/survival-willpower.webp" width="24" height="24" alt="" loading="lazy">Survival Willpower</li><li><img src="../../assets/icons/gladiator/survival-stance.webp" width="24" height="24" alt="" loading="lazy">Survival Stance</li><li><img src="../../assets/icons/gladiator/impact-hit.webp" width="24" height="24" alt="" loading="lazy">Impact Hit</li></ul>
+
+</aside>
+<section id="intro-pvp" class="g-section" data-only="pvp" aria-labelledby="h-intro-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro-pvp">Overview</h2></div>
+    <p>In PvP, Gladiator is a <strong>durable diver</strong>: it closes distance, knocks the target down and punishes the knockdown with Overhead Slam. It has enough HP, block and self-heal to survive in the middle of the fight. It's one of the most popular PvP classes, so expect mirror matches.</p>
+  <p>Priorities in order: <strong>anti-control</strong> → <strong>stickiness</strong> → <strong>burst</strong> when their defensives are down.</p>
+  <p class="note">No global PvP meta exists yet. This mode combines Korean/Taiwanese PvP builds with skill data from the global client — treat it as a starting point.</p>
+
+</section>
+<section id="skills-pvp" class="g-section" data-only="pvp" aria-labelledby="h-skills-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-skills-pvp">Skills</h2></div>
+    <div class="callout accent">
+    <h3>The one mechanic that matters: Knockdown</h3>
+    <p><span class="sk"><img src="../../assets/icons/gladiator/overhead-slam.webp" width="18" height="18" alt="" loading="lazy">Overhead Slam</span> and <span class="sk"><img src="../../assets/icons/gladiator/aerial-snare.webp" width="18" height="18" alt="" loading="lazy">Aerial Snare</span> only hit a target afflicted with <strong>Knockdown</strong> (bosses are an exception, which is why PvE never cares). Every burst window starts with a knockdown: Mocking Blade (guaranteed), Rush Strike after a dodge, Ankle Slice. The exception is <span class="sk"><img src="../../assets/icons/gladiator/rage-burst.webp" width="18" height="18" alt="" loading="lazy">Rage Burst</span>, which enables Overhead Slam on its target for 10s.</p>
+  </div>
+  <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/overhead-slam.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Overhead Slam <span class="badge must">16 → 20</span></div>
+    <div class="skill-desc">Your punish on knocked-down targets. Korean PvP guides call the level-20 guaranteed crit essential.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Adds [Upward Strike] Chain Skill</li><li><span class="spec-lv">12</span>Critical Hit on hit</li><li><span class="spec-lv">16</span>Remove cooldown</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Absorbs 0.7% HP</li>
+        <li class=""><span class="spec-lv">8</span>Changes to AoE Skill</li>
+        <li class="on"><span class="spec-lv">8</span>Adds [Upward Strike] Chain Skill</li>
+        <li class="on"><span class="spec-lv">12</span>Critical Hit on hit</li>
+        <li class="on"><span class="spec-lv">16</span>Remove cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/mocking-blade.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Mocking Blade <span class="badge must">16</span></div>
+    <div class="skill-desc">Guaranteed 3s Knockdown — your main opener.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Adds 2 additional strikes</li><li><span class="spec-lv">12</span>+1s Knockdown duration</li><li><span class="spec-lv">16</span>Ignores Block and Evasion and lands as Multi-Hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Absorbs 4% HP, absorbs 15% HP of target with Incapacitated Immunity</li>
+        <li class=""><span class="spec-lv">8</span>Changes to AoE damage on down strike</li>
+        <li class="on"><span class="spec-lv">8</span>Adds 2 additional strikes</li>
+        <li class="on"><span class="spec-lv">12</span>+1s Knockdown duration</li>
+        <li class="on"><span class="spec-lv">16</span>Ignores Block and Evasion and lands as Multi-Hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/defiance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Defiance <span class="badge must">16</span></div>
+    <div class="skill-desc">Breaks Stun, Knockdown, Airborne, Grab, Frost and Fear. Mandatory.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Restores 20% HP on using [Defiance]</li><li><span class="spec-lv">12</span>+2s Tenacity duration</li><li><span class="spec-lv">16</span>+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Adds [Wrath Burst] Chain Skill</li>
+        <li class=""><span class="spec-lv">8</span>Restores 1000 Stamina on using [Defiance]</li>
+        <li class="on"><span class="spec-lv">8</span>Restores 20% HP on using [Defiance]</li>
+        <li class="on"><span class="spec-lv">12</span>+2s Tenacity duration</li>
+        <li class="on"><span class="spec-lv">16</span>+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/aerial-snare.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Aerial Snare <span class="badge must">16</span></div>
+    <div class="skill-desc">Follow-up that launches a knocked-down target. Useless in PvE, core here.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+25% [Aerial Snare] Airborne Chance</li><li><span class="spec-lv">12</span>Adds [Forced Fall] Chain Skill</li><li><span class="spec-lv">16</span>-50% [Aerial Snare] cooldown</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Multi-Hit on hit</li>
+        <li class="on"><span class="spec-lv">8</span>+25% [Aerial Snare] Airborne Chance</li>
+        <li class=""><span class="spec-lv">8</span>+100% damage to targets with Incapacitated Immunity</li>
+        <li class="on"><span class="spec-lv">12</span>Adds [Forced Fall] Chain Skill</li>
+        <li class="on"><span class="spec-lv">16</span>-50% [Aerial Snare] cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/rush-strike.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Rush Strike <span class="badge opt">12–16</span></div>
+    <div class="skill-desc">Dodge → dash with a Knockdown chance.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+10m Range</li><li><span class="spec-lv">12</span>-10s cooldown</li><li><span class="spec-lv">16</span>+25% Knockdown Chance</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Restores 300 Stamina on hit</li>
+        <li class="on"><span class="spec-lv">8</span>+10m Range</li>
+        <li class=""><span class="spec-lv">8</span>Changes to Charge Skill and deals AoE damage</li>
+        <li class="on"><span class="spec-lv">12</span>-10s cooldown</li>
+        <li class="on"><span class="spec-lv">16</span>+25% Knockdown Chance</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/rending-blow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Rending Blow <span class="badge opt">16</span></div>
+    <div class="skill-desc">Still your filler and mana engine.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Changes to mobile skill</li><li><span class="spec-lv">16</span>Restores 50 MP on landing a Critical Hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>-20% MP consumed</li>
+        <li class=""><span class="spec-lv">8</span>+200 Block while using skill</li>
+        <li class="on"><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class=""><span class="spec-lv">12</span>Deals up to 12% more damage when less targets are hit</li>
+        <li class="on"><span class="spec-lv">16</span>Restores 50 MP on landing a Critical Hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/ruinous-blow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Ruinous Blow <span class="badge opt">12–16</span></div>
+    <div class="skill-desc">A third gap-closer; ignoring Block/Evasion is strong against Templars.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+12.5m Range</li><li><span class="spec-lv">16</span>Ignores Block and Evasion and lands as Multi-Hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>+20% Skill Speed</li>
+        <li class="on"><span class="spec-lv">8</span>+12.5m Range</li>
+        <li class=""><span class="spec-lv">8</span>+30% Skill Critical Hit</li>
+        <li class=""><span class="spec-lv">12</span>Extra damage on hit</li>
+        <li class="on"><span class="spec-lv">16</span>Ignores Block and Evasion and lands as Multi-Hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/crushing-wave.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Crushing Wave <span class="badge opt">16</span></div>
+    <div class="skill-desc">The pull drags a healer or caster out of their backline.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">12</span>Resets cooldown on landing a Critical Hit</li><li><span class="spec-lv">16</span>50% chance to pull</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Absorbs 2% HP</li>
+        <li class=""><span class="spec-lv">8</span>Restores 50 MP on landing a Critical Hit</li>
+        <li class=""><span class="spec-lv">8</span>Up to +20% damage when more targets hit</li>
+        <li class="on"><span class="spec-lv">12</span>Resets cooldown on landing a Critical Hit</li>
+        <li class="on"><span class="spec-lv">16</span>50% chance to pull</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/ankle-slice.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Ankle Slice <span class="badge opt">12</span></div>
+    <div class="skill-desc">Another way into the knockdown window.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>30% chance to inflict Knockdown for 3s on landing [Ankle Slice]</li><li><span class="spec-lv">8</span>+16m [Ankle Slice] range</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>30% chance to inflict Knockdown for 3s on landing [Ankle Slice]</li>
+        <li class=""><span class="spec-lv">8</span>Adds [Ankle Smash] Chain Skill</li>
+        <li class="on"><span class="spec-lv">8</span>+16m [Ankle Slice] range</li>
+        <li class=""><span class="spec-lv">12</span>Ignores Block and Evasion and lands as Multi-Hit</li>
+        <li class=""><span class="spec-lv">16</span>25% chance to reset [Ankle Slice] cooldown on Block</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/leaping-slam.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Leaping Slam <span class="badge opt">12</span></div>
+    <div class="skill-desc">20m leap that survives landing in a group.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>50% chance to trigger [Ankle Slice] on hit</li><li><span class="spec-lv">12</span>+20% PvE Damage Tolerance and +10 PvP Damage Tolerance for 3s</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Prepare for Battle effect on the caster for 3s</li>
+        <li class="on"><span class="spec-lv">8</span>50% chance to trigger [Ankle Slice] on hit</li>
+        <li class=""><span class="spec-lv">8</span>Resets cooldown on defeating an enemy</li>
+        <li class="on"><span class="spec-lv">12</span>+20% PvE Damage Tolerance and +10 PvP Damage Tolerance for 3s</li>
+        <li class=""><span class="spec-lv">16</span>Changes to AoE skill and pulls in enemies</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="passives-pvp" class="g-section" data-only="pvp" aria-labelledby="h-passives-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-passives-pvp">Passives</h2></div>
+    <div class="table-wrap"><table>
+    <thead><tr><th>Passive</th><th>PvP value</th></tr></thead>
+    <tbody>
+      <tr><td><span class="sk"><img src="../../assets/icons/gladiator/attack-preparation.webp" width="18" height="18" alt="" loading="lazy">Attack Preparation</span></td><td>Still #1: PvP Damage Boost, Defense, Accuracy.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/gladiator/survival-willpower.webp" width="18" height="18" alt="" loading="lazy">Survival Willpower</span></td><td>Status resist plus tolerance while you're CC'd. Dead weight in PvE, great here.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/gladiator/survival-stance.webp" width="18" height="18" alt="" loading="lazy">Survival Stance</span></td><td>HP and PvP Damage Tolerance.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/gladiator/impact-hit.webp" width="18" height="18" alt="" loading="lazy">Impact Hit</span></td><td>More Impact chance — your knockdowns land more often.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/gladiator/destructive-impulse.webp" width="18" height="18" alt="" loading="lazy">Destructive Impulse</span></td><td>Bonus damage on knocked-down targets — the PvE trap becomes useful.</td></tr>
+    </tbody>
+  </table></div>
+
+</section>
+<section id="gear-pvp" class="g-section" data-only="pvp" aria-labelledby="h-gear-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-gear-pvp">Gear &amp; arcana</h2></div>
+    <p>With Season 1's limited gear, don't build a separate PvP set yet — keep your PvE gear and change passives, stigmas and Daevanion.</p>
+  <div class="callout"><ul>
+    <li><strong>Accuracy</strong> — players Block and Evade far more than bosses.</li>
+    <li><strong>Critical Hit and Combat Speed</strong> — crits drive Lunge Stance's cooldown procs.</li>
+    <li><strong>PvP Damage Boost / Tolerance</strong> over the PvE versions wherever a slot offers them.</li>
+    <li><strong>Arcana:</strong> Overhead Slam to 20 first, then Mocking Blade, Defiance and Aerial Snare to 16.</li>
+  </ul></div>
+
+</section>
+<section id="stigmas-pvp" class="g-section" data-only="pvp" aria-labelledby="h-stigmas-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-stigmas-pvp">Stigmas</h2></div>
+    <p>Korean PvP builds run exactly four stigmas, so they fit global's slots as-is.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Mode</th><th>Stigmas</th></tr></thead>
+    <tbody>
+      <tr><td>Abyss</td><td>Lunge Stance, Armor of Balance, Blade Toss, Tenaciousness</td></tr>
+      <tr><td>Arena</td><td>Lunge Stance, Armor of Balance, Tenaciousness, Focused Block</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/lunge-stance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Lunge Stance <span class="badge must">Lv 20</span></div>
+    <div class="skill-desc">Crit cooldown procs also bring Tenaciousness and Defiance back faster.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+5% Double Chance for the duration</li><li><span class="spec-lv">10</span>Increases Move Speed by 20% for the duration</li><li><span class="spec-lv">15</span>x1.5 [Identify Weakness] effect for the duration</li><li><span class="spec-lv">20</span>50% chance to reduce all skill cooldowns by 1s on Critical Hit for the duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+5% Double Chance for the duration</li>
+        <li class="on"><span class="spec-lv">10</span>Increases Move Speed by 20% for the duration</li>
+        <li class="on"><span class="spec-lv">15</span>x1.5 [Identify Weakness] effect for the duration</li>
+        <li class="on"><span class="spec-lv">20</span>50% chance to reduce all skill cooldowns by 1s on Critical Hit for the duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/armor-of-balance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Armor of Balance <span class="badge must">Lv 5+</span></div>
+    <div class="skill-desc">Hard to knock down for 10s. Pop it <em>before</em> diving into a CC-heavy group.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+20% Ailment-type and Mental-type Resist</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+20% Ailment-type and Mental-type Resist</li>
+        <li class=""><span class="spec-lv">10</span>x1.5 [Blood Absorption] effect for the duration</li>
+        <li class=""><span class="spec-lv">15</span>x1.5 [Protection Armor] effect for the duration</li>
+        <li class=""><span class="spec-lv">20</span>+50% Impact-type Resist increase</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/tenaciousness.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Tenaciousness <span class="badge must">Lv 10+</span></div>
+    <div class="skill-desc">3s immunity to damage and status effects, then a heal. At 20 it triggers itself on Impact CC.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+100% Incoming Heal</li><li><span class="spec-lv">10</span>Restores 20% Max HP when the effect ends</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+100% Incoming Heal</li>
+        <li class="on"><span class="spec-lv">10</span>Restores 20% Max HP when the effect ends</li>
+        <li class=""><span class="spec-lv">15</span>+20% Attack</li>
+        <li class=""><span class="spec-lv">20</span>Trigger [Tenaciousness] when afflicted with Impact-type status</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/blade-toss.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Blade Toss <span class="badge opt">Abyss</span></div>
+    <div class="skill-desc">20m throw: −30% Defense and −50% healing received for 10s. Your answer to healers and runners.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+20% [Blade Toss] Incoming Heal reduction</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+20% [Blade Toss] Incoming Heal reduction</li>
+        <li class=""><span class="spec-lv">10</span>[Blade Toss] inflicts Slow for 5s</li>
+        <li class=""><span class="spec-lv">15</span>[Blade Toss] breaks Protective Shields</li>
+        <li class=""><span class="spec-lv">20</span>[Blade Dance] has 30% chance to inflict Knockdown for 3s</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/focused-block.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Focused Block <span class="badge opt">Arena</span></div>
+    <div class="skill-desc">Block their big damage skills in 1v1. Don't waste it on CC.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+1 consecutive use</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+1 consecutive use</li>
+        <li class=""><span class="spec-lv">10</span>Changes to mobile skill</li>
+        <li class=""><span class="spec-lv">15</span>+20% Move Speed for 3s on Parry</li>
+        <li class=""><span class="spec-lv">20</span>Restores 10% HP once on Parry</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/forced-restraint.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Forced Restraint <span class="badge opt">alt.</span></div>
+    <div class="skill-desc">Seal (silence) to lock a target during the Overhead Slam window.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>50% chance to inflict Root for 5s</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>50% chance to inflict Root for 5s</li>
+        <li class=""><span class="spec-lv">10</span>-1,000 Stamina</li>
+        <li class=""><span class="spec-lv">15</span>+2s Seal duration</li>
+        <li class=""><span class="spec-lv">20</span>+25% Seal Chance</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/gladiator/rage-burst.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Rage Burst <span class="badge opt">alt.</span></div>
+    <div class="skill-desc">Enables Overhead Slam without a knockdown for 10s.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>-15s [Rage Burst] cooldown</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>-15s [Rage Burst] cooldown</li>
+        <li class=""><span class="spec-lv">10</span>+10% Attack reduction</li>
+        <li class=""><span class="spec-lv">15</span>Critical Hit on hit</li>
+        <li class=""><span class="spec-lv">20</span>+10% PvE Damage Boost increase and +5% PvP Damage Boost increase</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="combos-pvp" class="g-section" data-only="pvp" aria-labelledby="h-combos-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-combos-pvp">Combos &amp; play</h2></div>
+    <div class="callout">
+    <h3>Knockdown punish</h3>
+    <div class="combo"><span class="sk"><img src="../../assets/icons/gladiator/mocking-blade.webp" width="18" height="18" alt="" loading="lazy">Mocking Blade</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/gladiator/overhead-slam.webp" width="18" height="18" alt="" loading="lazy">Overhead Slam</span> × N<span class="arrow">→</span><span class="sk"><img src="../../assets/icons/gladiator/aerial-snare.webp" width="18" height="18" alt="" loading="lazy">Aerial Snare</span><span class="arrow">→</span>Forced Fall</div>
+  </div>
+  <div class="callout">
+    <h3>Engage from range</h3>
+    <div class="combo"><span class="sk"><img src="../../assets/icons/gladiator/blade-toss.webp" width="18" height="18" alt="" loading="lazy">Blade Toss</span><span class="arrow">→</span>dodge + <span class="sk"><img src="../../assets/icons/gladiator/rush-strike.webp" width="18" height="18" alt="" loading="lazy">Rush Strike</span> / <span class="sk"><img src="../../assets/icons/gladiator/leaping-slam.webp" width="18" height="18" alt="" loading="lazy">Leaping Slam</span><span class="arrow">→</span>knockdown punish</div>
+    <p>No knockdown landed? <span class="sk"><img src="../../assets/icons/gladiator/rage-burst.webp" width="18" height="18" alt="" loading="lazy">Rage Burst</span> or <span class="sk"><img src="../../assets/icons/gladiator/forced-restraint.webp" width="18" height="18" alt="" loading="lazy">Forced Restraint</span> opens the window anyway.</p>
+  </div>
+  <div class="callout">
+    <h3>Staying alive</h3>
+    <ul>
+      <li><span class="sk"><img src="../../assets/icons/gladiator/defiance.webp" width="18" height="18" alt="" loading="lazy">Defiance</span> breaks the first hard CC; save <span class="sk"><img src="../../assets/icons/gladiator/tenaciousness.webp" width="18" height="18" alt="" loading="lazy">Tenaciousness</span> for the follow-up chain.</li>
+      <li><span class="sk"><img src="../../assets/icons/gladiator/armor-of-balance.webp" width="18" height="18" alt="" loading="lazy">Armor of Balance</span> goes up before you dive, not after you're down.</li>
+      <li>Against healers: Blade Toss first, then the Crushing Wave pull.</li>
+    </ul>
+  </div>
+
+</section>
+<section id="recap-pvp" class="g-section" data-only="pvp" aria-labelledby="h-recap-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-recap-pvp">Recap</h2></div>
+    <div class="callout accent"><ul>
+    <li><strong>Skills:</strong> Overhead Slam 16→20, Mocking Blade 16, Defiance 16, Aerial Snare 16.</li>
+    <li><strong>Stigmas:</strong> Lunge Stance 20 + Armor of Balance + Tenaciousness + Blade Toss (Abyss) or Focused Block (Arena).</li>
+    <li><strong>Daevanion:</strong> Azphel over Ariel, Triniel earlier.</li>
+    <li><strong>Play:</strong> knockdown → Overhead Slam; break CC with Defiance, save Tenaciousness.</li>
+  </ul></div>
+
+</section>
+<section id="fight-lvl" class="g-section" data-only="lvl" aria-labelledby="h-fight-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-fight-lvl">How to fight while leveling</h2></div>
+    <div class="callout"><ul>
+    <li><strong>Packs:</strong> <span class="sk"><img src="../../assets/icons/gladiator/leaping-slam.webp" width="18" height="18" alt="" loading="lazy">Leaping Slam</span> in → <span class="sk"><img src="../../assets/icons/gladiator/crushing-wave.webp" width="18" height="18" alt="" loading="lazy">Crushing Wave</span> → <span class="sk"><img src="../../assets/icons/gladiator/rending-blow.webp" width="18" height="18" alt="" loading="lazy">Rending Blow</span>. A kill resets Leaping Slam → next pack.</li>
+    <li><strong>Elites:</strong> <span class="sk"><img src="../../assets/icons/gladiator/mocking-blade.webp" width="18" height="18" alt="" loading="lazy">Mocking Blade</span> (knockdown) → spam <span class="sk"><img src="../../assets/icons/gladiator/overhead-slam.webp" width="18" height="18" alt="" loading="lazy">Overhead Slam</span> → <span class="sk"><img src="../../assets/icons/gladiator/ruinous-blow.webp" width="18" height="18" alt="" loading="lazy">Ruinous Blow</span> on cooldown. Dodge → <span class="sk"><img src="../../assets/icons/gladiator/rush-strike.webp" width="18" height="18" alt="" loading="lazy">Rush Strike</span> also knocks NPCs down.</li>
+    <li><strong>Low HP:</strong> Mocking Blade and Crushing Wave absorb HP; Blood Absorption heals at 50%. No potions needed on trash.</li>
+  </ul></div>
+
+</section>
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">Sources</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=tYTZ8VucMXw" target="_blank" rel="noopener">Arthars Gaming — The ULTIMATE AION 2 Gladiator Starter Guide</a> (PvE, from the TW server)</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/gladiator" target="_blank" rel="noopener">questlog.gg</a> — skill &amp; stigma data from the global client</li>
+    <li><a href="https://vortexgaming.io/en/postdetail/611533" target="_blank" rel="noopener">Vortex Gaming</a> — Korean PvP builds (Abyss / Arena)</li>
+    <li><a href="https://www.iggm.com/news/aion-2-global-servers-dungeon-gameplay-changes-expeditions-gear-progression-stigma-slots" target="_blank" rel="noopener">IGGM</a> — global Season 1 changes</li>
+    <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (TitanTheF's table) — leveling route</li>
+  </ul>
+</section>  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../en/">AION 2 Guides</a>
+      <p>Unofficial fan site, not affiliated with NCSOFT. AION 2 and its skill icons are © NCSOFT.</p>
+      <p>Last checked: 2026-09-27 (before the global launch).</p>
+    </div>
+  </div>
+</footer>
+<script src="../../assets/js/site.js" defer></script>
+</body>
+</html>

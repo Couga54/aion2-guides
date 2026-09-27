@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="{{ lang }}" data-mode="pve"{% block html_attrs %}{% endblock %}>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{% block title %}{{ t.home_title }}{% endblock %}</title>
+<meta name="description" content="{% block desc %}{{ t.home_desc }}{% endblock %}">
+<link rel="canonical" href="{{ canonical }}">
+{% for l, u in alt_urls.items() %}
+<link rel="alternate" hreflang="{{ l }}" href="{{ u }}">
+{% endfor %}
+<link rel="alternate" hreflang="x-default" href="{{ alt_urls.en }}">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ t.site_name }}">
+<meta property="og:locale" content="{{ 'ru_RU' if lang == 'ru' else 'en_US' }}">
+<meta property="og:title" content="{{ self.title() }}">
+<meta property="og:description" content="{{ self.desc() }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ SITE.base_url }}assets/og/{% block og %}home{% endblock %}-{{ lang }}.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="{{ root }}assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var modes = ['pve', 'pvp', 'lvl'];
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+  })(document.documentElement);
+</script>
+<link rel="stylesheet" href="{{ root }}assets/css/site.css">
+</head>
+<body class="{% block body_class %}{% endblock %}">
+<a class="skip-link" href="#main">{{ t.skip }}</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="{{ root }}{{ lang }}/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
+      <span>{{ t.site_name }}</span>
+    </a>
+    <nav class="class-nav" aria-label="{{ t.classes }}">
+      {% for c in classes if c.status == 'ready' %}
+      <a href="{{ root }}{{ lang }}/{{ c.slug }}/" class="accent-{{ c.accent }}"{% if cls and cls.slug == c.slug %} aria-current="page"{% endif %}>
+        <img src="{{ root }}assets/classes/{{ c.slug }}.webp" width="22" height="22" alt="">{{ c.name[lang] }}
+      </a>
+      {% endfor %}
+    </nav>
+    <div class="topbar-tools">
+      <a class="lang-switch" href="{{ root }}{{ other_lang }}/{{ path }}" hreflang="{{ other_lang }}" lang="{{ other_lang }}" data-keep-query>
+        <span aria-hidden="true">{{ other_lang|upper }}</span><span class="sr-only">{{ t.switch_lang }}</span>
+      </a>
+      <button class="icon-btn theme-toggle" type="button" aria-label="{{ t.theme }}" title="{{ t.theme }}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+{% block main %}{% endblock %}
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="{{ root }}{{ lang }}/">{{ t.site_name }}</a>
+      <p>{{ t.footer_disclaimer }}</p>
+      <p>{{ t.footer_updated }}: {{ updated }} ({{ t.footer_before_launch }}).</p>
+    </div>
+    {% block footer_extra %}{% endblock %}
+  </div>
+</footer>
+<script src="{{ root }}assets/js/site.js" defer></script>
+</body>
+</html>

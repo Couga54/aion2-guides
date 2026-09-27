@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}{{ cls.name[lang] }} — {{ t.site_name }} ({{ t.mode_pve }}, {{ t.mode_pvp }}, {{ t.mode_lvl }}){% endblock %}
+{% block desc %}{{ cls.pitch[lang] }}{% endblock %}
+{% block og %}{{ cls.slug }}{% endblock %}
+{% block html_attrs %} data-class="{{ cls.slug }}"{% endblock %}
+{% block body_class %}page-class accent-{{ cls.accent }}{% endblock %}
+{% block main %}
+<section class="class-hero">
+  <div class="wrap class-hero-in">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ root }}{{ lang }}/">{{ t.back_home }}</a><span aria-hidden="true">/</span><span>{{ cls.name[lang] }}</span></nav>
+    <div class="class-hero-main">
+      <img class="class-hero-emblem" src="{{ root }}assets/classes/{{ cls.slug }}.webp" width="96" height="96" alt="">
+      <div>
+        <p class="kicker"><span data-only="pve">{{ t.mode_pve }}</span><span data-only="pvp">{{ t.mode_pvp }}</span><span data-only="lvl">{{ t.mode_lvl }}</span> · {{ t.home_kicker }}</p>
+        <h1>{{ cls.name[lang] }}</h1>
+        <p class="class-hero-pitch">{{ cls.pitch[lang] }}</p>
+      </div>
+    </div>
+    <dl class="class-facts">
+      <div><dt>{{ t.role }}</dt><dd>{{ cls.role[lang] }}</dd></div>
+      <div><dt>{{ t.weapon }}</dt><dd>{{ cls.weapon[lang] }}</dd></div>
+      <div><dt>{{ t.difficulty }}</dt><dd class="diff">{% for i in range(3) %}<i class="{{ 'on' if i < cls.difficulty }}"></i>{% endfor %}<span>{{ t.diff[cls.difficulty] }}</span></dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="guidebar">
+  <div class="wrap guidebar-in">
+    <div class="mode-switch" role="radiogroup" aria-label="{{ t.mode_label }}">
+      <button type="button" role="radio" data-set-mode="pve" aria-checked="true">{{ t.mode_pve }}</button>
+      <button type="button" role="radio" data-set-mode="pvp" aria-checked="false">{{ t.mode_pvp }}</button>
+      <button type="button" role="radio" data-set-mode="lvl" aria-checked="false">{{ t.mode_lvl }}</button>
+    </div>
+    <nav class="toc-mobile" aria-label="{{ t.on_this_page }}"></nav>
+  </div>
+</div>
+
+<div class="wrap guide-layout">
+  <aside class="toc-side" aria-label="{{ t.on_this_page }}">
+    <p class="toc-title">{{ t.on_this_page }}</p>
+    <nav class="toc-list"></nav>
+  </aside>
+
+  <main id="main" class="guide">
+    <section id="progress" class="g-section tracker" data-only="lvl" data-class="{{ cls.slug }}" aria-labelledby="h-progress">
+      <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-progress">{{ t.lvl_progress }}</h2></div>
+      <div class="tracker-bar">
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="{{ steps|length }}" aria-valuenow="0" aria-label="{{ t.lvl_progress }}"><span></span></div>
+        <span class="progress-text"><b class="progress-count">0</b>/{{ steps|length }} {{ t.lvl_done }}</span>
+        <button type="button" class="btn btn-ghost btn-sm tracker-reset" data-confirm="{{ t.lvl_reset_confirm }}">{{ t.lvl_reset }}</button>
+      </div>
+      <p class="note">{{ t.lvl_hint }}</p>
+      <ol class="steps">
+        {% for st in steps %}
+        <li class="step step-{{ st.kind }}">
+          <label>
+            <input type="checkbox" data-step="{{ st.id }}">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">{{ st.when }}</span>
+            <span class="step-text">
+              <span class="step-tag">{{ t.lvl_class if st.kind == 'class' else t.lvl_general }}</span>
+              {% for sl in st.skills %}<img src="{{ icon_url(sl) }}" width="22" height="22" alt="" loading="lazy">{% endfor %}
+              {{ st.text|safe }}
+            </span>
+          </label>
+        </li>
+        {% endfor %}
+      </ol>
+    </section>
+
+    {% include content_tpl %}
+  </main>
+</div>
+{% endblock %}

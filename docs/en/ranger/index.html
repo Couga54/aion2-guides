@@ -1,0 +1,1348 @@
+<!doctype html>
+<html lang="en" data-mode="pve" data-class="ranger">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ranger — AION 2 Guides (PvE, PvP, Leveling)</title>
+<meta name="description" content="20-metre burst built on buffs, charged Deadshots and bleeds — and the best zoning tools in PvP.">
+<link rel="canonical" href="https://couga54.github.io/aion2-guides/en/ranger/">
+<link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/ranger/">
+<link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/ranger/">
+<link rel="alternate" hreflang="x-default" href="https://couga54.github.io/aion2-guides/en/ranger/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Guides">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Ranger — AION 2 Guides (PvE, PvP, Leveling)">
+<meta property="og:description" content="20-metre burst built on buffs, charged Deadshots and bleeds — and the best zoning tools in PvP.">
+<meta property="og:url" content="https://couga54.github.io/aion2-guides/en/ranger/">
+<meta property="og:image" content="https://couga54.github.io/aion2-guides/assets/og/ranger-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var modes = ['pve', 'pvp', 'lvl'];
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+  })(document.documentElement);
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css">
+</head>
+<body class="page-class accent-emerald">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../en/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
+      <span>AION 2 Guides</span>
+    </a>
+    <nav class="class-nav" aria-label="Classes">
+      <a href="../../en/gladiator/" class="accent-crimson">
+        <img src="../../assets/classes/gladiator.webp" width="22" height="22" alt="">Gladiator
+      </a>
+      <a href="../../en/ranger/" class="accent-emerald" aria-current="page">
+        <img src="../../assets/classes/ranger.webp" width="22" height="22" alt="">Ranger
+      </a>
+    </nav>
+    <div class="topbar-tools">
+      <a class="lang-switch" href="../../ru/ranger/" hreflang="ru" lang="ru" data-keep-query>
+        <span aria-hidden="true">RU</span><span class="sr-only">Русский</span>
+      </a>
+      <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="class-hero">
+  <div class="wrap class-hero-in">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../en/">All classes</a><span aria-hidden="true">/</span><span>Ranger</span></nav>
+    <div class="class-hero-main">
+      <img class="class-hero-emblem" src="../../assets/classes/ranger.webp" width="96" height="96" alt="">
+      <div>
+        <p class="kicker"><span data-only="pve">PvE</span><span data-only="pvp">PvP</span><span data-only="lvl">Leveling</span> · Global Season 1</p>
+        <h1>Ranger</h1>
+        <p class="class-hero-pitch">20-metre burst built on buffs, charged Deadshots and bleeds — and the best zoning tools in PvP.</p>
+      </div>
+    </div>
+    <dl class="class-facts">
+      <div><dt>Role</dt><dd>Ranged DPS · kiter</dd></div>
+      <div><dt>Weapon</dt><dd>Bow</dd></div>
+      <div><dt>Difficulty</dt><dd class="diff"><i class="on"></i><i class="on"></i><i class=""></i><span>Medium</span></dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="guidebar">
+  <div class="wrap guidebar-in">
+    <div class="mode-switch" role="radiogroup" aria-label="Guide mode">
+      <button type="button" role="radio" data-set-mode="pve" aria-checked="true">PvE</button>
+      <button type="button" role="radio" data-set-mode="pvp" aria-checked="false">PvP</button>
+      <button type="button" role="radio" data-set-mode="lvl" aria-checked="false">Leveling</button>
+    </div>
+    <nav class="toc-mobile" aria-label="On this page"></nav>
+  </div>
+</div>
+
+<div class="wrap guide-layout">
+  <aside class="toc-side" aria-label="On this page">
+    <p class="toc-title">On this page</p>
+    <nav class="toc-list"></nav>
+  </aside>
+
+  <main id="main" class="guide">
+    <section id="progress" class="g-section tracker" data-only="lvl" data-class="ranger" aria-labelledby="h-progress">
+      <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-progress">Leveling progress</h2></div>
+      <div class="tracker-bar">
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="28" aria-valuenow="0" aria-label="Leveling progress"><span></span></div>
+        <span class="progress-text"><b class="progress-count">0</b>/28 done</span>
+        <button type="button" class="btn btn-ghost btn-sm tracker-reset" data-confirm="Clear all ticked steps for this class?">Reset progress</button>
+      </div>
+      <p class="note">Tick steps as you go. Progress is saved in this browser, separately for each class.</p>
+      <ol class="steps">
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-story">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Start</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Follow <strong>yellow (main story) quests only</strong>. Side content scales with your level, so nothing is lost by doing it later.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="ranger-drill">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 1</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/ranger/drill-dart.webp" width="22" height="22" alt="" loading="lazy">              First points: <strong>Drill Dart</strong> → 8, take <em>Absorbs 3% HP</em> — your sustain while solo.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="ranger-snare">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 1</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/ranger/snare-shot.webp" width="22" height="22" alt="" loading="lazy">              <strong>Snare Shot</strong> → 8: <em>Changes to mobile skill</em>. Slow everything, then kite.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="ranger-marking">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 1</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/ranger/marking-shot.webp" width="22" height="22" alt="" loading="lazy">              <strong>Marking Shot</strong> moves you in the direction you press and grants Precision (+300 Critical Hit). Open every fight with it.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-feathers">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">After prologue</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Collect <strong>40 feathers</strong> (120 shards) for an early amulet upgrade.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="ranger-gale">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 7</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/ranger/gale-arrow.webp" width="22" height="22" alt="" loading="lazy">              <strong>Gale Arrow</strong> → 8: <em>Changes to mobile skill</em>. Keep the Gale buff up (+7% Combat Speed and damage).
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="ranger-trap">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 8</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/ranger/explosion-trap.webp" width="22" height="22" alt="" loading="lazy">              <strong>Explosion Trap</strong>: one point. With <em>Pulls enemies on explosion</em> it groups a pack for AoE.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="ranger-burst">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 10</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/ranger/burst-arrow.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/ranger/snare-shot.webp" width="22" height="22" alt="" loading="lazy">              <strong>Burst Arrow</strong> only hits Slowed/Rooted targets — always after <strong>Snare Shot</strong>. Take <em>Absorbs 10% HP</em>.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-daevanion">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 12</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              <strong>Daevanion</strong> unlocks (Nezekan board). Blue nodes = +1 skill level — see your class step below.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="ranger-daevanion">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 12</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/ranger/drill-dart.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/ranger/snare-shot.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/ranger/gale-arrow.webp" width="22" height="22" alt="" loading="lazy">              Daevanion blue nodes: <strong>Drill Dart</strong>, <strong>Snare Shot</strong>, <strong>Gale Arrow</strong>, later <strong>Deadshot</strong>.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="ranger-deadshot">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 14</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/ranger/deadshot.webp" width="22" height="22" alt="" loading="lazy">              <strong>Deadshot</strong> — your main nuke. Points to 10, take <em>+30% Skill Speed</em>. Fire it under Precision (+35% damage).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-hideouts">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 15 / 20 / 25</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Clear hideouts that are on your route — first clears give Enhance Stones and Daevanion Crystals.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="ranger-defiance">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 16</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/ranger/defiance.webp" width="22" height="22" alt="" loading="lazy">              <strong>Defiance</strong>: one point is enough while leveling — it's your CC break.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-amulet">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">~Lv 17</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              <strong>Amulet +10</strong>, then Morph it into the blue version.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-weapon">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Any time</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Weapon to <strong>~+10</strong> — the biggest damage jump while leveling. Don't push further before the cap.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-zikel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 20</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Zikel board opens — same node priority as before.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-stigma">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv ~22</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Ascension → <strong>stigmas unlock</strong> (4 slots in global Season 1). Which ones — see your class step.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="ranger-stigmas">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv ~22</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/ranger/vaizels-authority.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/ranger/bow-of-blessing.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/ranger/griffon-arrow.webp" width="22" height="22" alt="" loading="lazy">              Stigmas: <strong>Vaizel&#39;s Authority</strong> first (aim for 20), then <strong>Bow of Blessing</strong>, <strong>Griffon Arrow</strong> and <strong>Supporting Fire</strong>.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="ranger-macro">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">After stigmas</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/ranger/snipe.webp" width="22" height="22" alt="" loading="lazy">              Build the macro: hold <strong>Snipe</strong> + macro key, release <strong>Deadshot</strong> manually, recast <strong>Marking Shot</strong> when Precision drops.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-acts23">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Acts 2–3</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Story only — don't get distracted by the map.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-vaizel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 30</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Vaizel board opens (critical damage).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-act4">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Act 4</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Side quests and solo dungeons are worth doing again here.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-triniel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 40</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Triniel board opens (multi-hit; mostly PvP — can wait). Krao Cave expects about 1000 Gear Score.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-ariel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Lv 45</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              <strong>Ariel (PvE) or Azphel (PvP)</strong> — same cost, choosing wrong is the most expensive mistake in the system.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="ranger-cap">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Cap</span>
+            <span class="step-text">
+              <span class="step-tag">Class</span>
+<img src="../../assets/icons/ranger/deadshot.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/ranger/gale-arrow.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/ranger/drill-dart.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/ranger/snare-shot.webp" width="22" height="22" alt="" loading="lazy">              Core four to 10 first: <strong>Deadshot</strong>, <strong>Gale Arrow</strong>, <strong>Drill Dart</strong>, <strong>Snare Shot</strong>. Then switch to the PvE tab.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-shugo">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Cap</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Shugo activities for the full level-cap reward set (gold gear, materials).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-map">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Cap</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Sweep the map: question marks, bonfires, green quests, hidden cubes, feathers. Turn in feathers — altar Lv 30 gives a title.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-daily">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Daily</span>
+            <span class="step-text">
+              <span class="step-tag">Route</span>
+              Nightmare entry, Transformation floors as your GS allows, dungeons T2 before T3 (watch your energy).
+            </span>
+          </label>
+        </li>
+      </ol>
+    </section>
+
+
+<aside class="glance" data-only="pve" aria-label="Build at a glance">
+  <p class="glance-title">Build at a glance</p>
+    <h3>Core skills</h3>
+  <ul class="core-row">
+  <li title="Deadshot">
+    <img src="../../assets/icons/ranger/deadshot.webp" width="52" height="52" alt="Deadshot" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Deadshot</span>
+  </li>
+  <li title="Gale Arrow">
+    <img src="../../assets/icons/ranger/gale-arrow.webp" width="52" height="52" alt="Gale Arrow" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Gale Arrow</span>
+  </li>
+  <li title="Drill Dart">
+    <img src="../../assets/icons/ranger/drill-dart.webp" width="52" height="52" alt="Drill Dart" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Drill Dart</span>
+  </li>
+  <li title="Snare Shot">
+    <img src="../../assets/icons/ranger/snare-shot.webp" width="52" height="52" alt="Snare Shot" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Snare Shot</span>
+  </li>
+</ul>
+  <h3>Stigma loadout</h3>
+  <ol class="loadout">
+  <li class="slot" title="Vaizel&#39;s Authority">
+    <img src="../../assets/icons/ranger/vaizels-authority.webp" width="56" height="56" alt="Vaizel&#39;s Authority" loading="lazy">
+    <span class="slot-lv">Lv 20</span>
+    <span class="slot-name">Vaizel&#39;s Authority</span>
+  </li>
+  <li class="slot" title="Bow of Blessing">
+    <img src="../../assets/icons/ranger/bow-of-blessing.webp" width="56" height="56" alt="Bow of Blessing" loading="lazy">
+    <span class="slot-lv">Lv 20</span>
+    <span class="slot-name">Bow of Blessing</span>
+  </li>
+  <li class="slot" title="Griffon Arrow">
+    <img src="../../assets/icons/ranger/griffon-arrow.webp" width="56" height="56" alt="Griffon Arrow" loading="lazy">
+    <span class="slot-lv">Lv 20</span>
+    <span class="slot-name">Griffon Arrow</span>
+  </li>
+  <li class="slot" title="Supporting Fire">
+    <img src="../../assets/icons/ranger/supporting-fire.webp" width="56" height="56" alt="Supporting Fire" loading="lazy">
+    <span class="slot-lv">Lv 15</span>
+    <span class="slot-name">Supporting Fire</span>
+  </li>
+</ol>
+  <h3>Key passives</h3>
+  <ul class="passive-row">
+<li><img src="../../assets/icons/ranger/focused-eye.webp" width="24" height="24" alt="" loading="lazy">Focused Eye</li><li><img src="../../assets/icons/ranger/hunters-resolve.webp" width="24" height="24" alt="" loading="lazy">Hunter&#39;s Resolve</li><li><img src="../../assets/icons/ranger/concentrated-fire.webp" width="24" height="24" alt="" loading="lazy">Concentrated Fire</li><li><img src="../../assets/icons/ranger/hunters-soul.webp" width="24" height="24" alt="" loading="lazy">Hunter&#39;s Soul</li></ul>
+
+</aside>
+<section id="intro" class="g-section" data-only="pve" aria-labelledby="h-intro">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro">Overview</h2></div>
+    <p>The Ranger is a bow DPS that fights from about <strong>20 metres</strong> — the range of almost every skill it has. Its damage is top-tier, but survivability and utility are low, so positioning is everything.</p>
+  <div class="callout accent">
+    <h3>The build in one sentence</h3>
+    <p>Stack buffs first — <span class="sk"><img src="../../assets/icons/ranger/gale-arrow.webp" width="18" height="18" alt="" loading="lazy">Gale Arrow</span>, <span class="sk"><img src="../../assets/icons/ranger/marking-shot.webp" width="18" height="18" alt="" loading="lazy">Marking Shot</span> (Precision: +300 Critical Hit and +35% <span class="sk">Deadshot</span> damage), then the stigma buffs — and fire charged <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Deadshot</span>s while bleeds and burns tick.</p>
+  </div>
+
+</section>
+<section id="global" class="g-section" data-only="pve pvp" aria-labelledby="h-global">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-global">Global Season 1: what changes</h2></div>
+    <p>Global servers open on <strong>October 5, 2026</strong> (Founder's early access from September 30). What that means for the Ranger:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 stigma slots.</strong> Korean builds run five — the one that drops is the situational Explosive Arrow.</li>
+      <li><strong>Stigmas cap at level 20.</strong> Bow of Blessing loses its +5s duration tier, and Supporting Fire its extra-shot tier.</li>
+      <li><strong>No Heroic gear</strong> in Season 1: fewer bonus lines for skill levels and passives.</li>
+      <li><strong>Weaker Daevanion bonuses</strong> — longer fights make buff uptime matter more.</li>
+      <li data-only="pvp"><strong>PvP:</strong> everyone starts on the same limited gear and no meta has formed yet.</li>
+    </ul>
+  </div>
+  <p class="note">Active skills and passives are identical in the global and KR/TW data. Older Korean guides (before the stigma rework) put Snipe and Tempest Shot at 20 and skipped Gale Arrow — that advice is outdated.</p>
+
+</section>
+<section id="skills" class="g-section" data-only="pve" aria-labelledby="h-skills">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-skills">Skills</h2></div>
+    <p>Four skills go to <strong>20</strong>, three support skills to <strong>16</strong>, the rest stay at <strong>12</strong>. Levels come from skill points (10), Daevanion (14), rings and arcana (20).</p>
+  <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/deadshot.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Deadshot <span class="badge must">20</span></div>
+    <div class="skill-desc">Charged nuke (3 levels). Always fire it under Precision.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+30% Skill Speed</li><li><span class="spec-lv">12</span>Ignores Block and Evasion and lands as Multi-Hit</li><li><span class="spec-lv">16</span>[Deadshot] grants extra damage on hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Removes MP consumed</li>
+        <li class="on"><span class="spec-lv">8</span>+30% Skill Speed</li>
+        <li class=""><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class="on"><span class="spec-lv">12</span>Ignores Block and Evasion and lands as Multi-Hit</li>
+        <li class="on"><span class="spec-lv">16</span>[Deadshot] grants extra damage on hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/gale-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Gale Arrow <span class="badge must">20</span></div>
+    <div class="skill-desc">Gale: +7% Combat Speed and PvE damage. Keep it up at all times.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Changes to mobile skill</li><li><span class="spec-lv">12</span>Increases Combat Speed, PvE Damage Boost, and PvP Damage Boost when less targets hit</li><li><span class="spec-lv">16</span>-10s cooldown</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>+5s duration</li>
+        <li class=""><span class="spec-lv">8</span>50% chance to inflict Knock Back on hit</li>
+        <li class="on"><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class="on"><span class="spec-lv">12</span>Increases Combat Speed, PvE Damage Boost, and PvP Damage Boost when less targets hit</li>
+        <li class="on"><span class="spec-lv">16</span>-10s cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/drill-dart.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Drill Dart <span class="badge must">20</span></div>
+    <div class="skill-desc">Bleed that Concentrated Fire feeds on, plus your self-heal.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Absorbs 3% HP</li><li><span class="spec-lv">12</span>Multi-Hit on hit</li><li><span class="spec-lv">16</span>Activates [Drill Dart] 1 extra time</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>Absorbs 3% HP</li>
+        <li class=""><span class="spec-lv">8</span>+2s Bleed duration</li>
+        <li class=""><span class="spec-lv">8</span>+20% Skill Speed</li>
+        <li class="on"><span class="spec-lv">12</span>Multi-Hit on hit</li>
+        <li class="on"><span class="spec-lv">16</span>Activates [Drill Dart] 1 extra time</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/snare-shot.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Snare Shot <span class="badge must">20</span></div>
+    <div class="skill-desc">Slows the target — which enables Burst Arrow, Explosive Arrow and Rooting Eye.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+20% Skill Speed</li><li><span class="spec-lv">8</span>Changes to mobile skill</li><li><span class="spec-lv">12</span>Adds [Shackling Arrow] Chain Skill</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>+20% Move Speed reduction</li>
+        <li class="on"><span class="spec-lv">8</span>+20% Skill Speed</li>
+        <li class="on"><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class="on"><span class="spec-lv">12</span>Adds [Shackling Arrow] Chain Skill</li>
+        <li class=""><span class="spec-lv">16</span>+2s Slow and Root duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/snipe.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Snipe <span class="badge opt">16</span></div>
+    <div class="skill-desc">Your basic attack: hold it between skills; every hit shortens Deadshot's cooldown.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">12</span>-1s [Deadshot] cooldown on hit</li><li><span class="spec-lv">16</span>Adds [Tempest Arrow] Chain Skill</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>+20% MP restored</li>
+        <li class=""><span class="spec-lv">8</span>Absorbs 0.7% HP</li>
+        <li class=""><span class="spec-lv">8</span>+50% Multi-Hit on hit</li>
+        <li class="on"><span class="spec-lv">12</span>-1s [Deadshot] cooldown on hit</li>
+        <li class="on"><span class="spec-lv">16</span>Adds [Tempest Arrow] Chain Skill</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/tempest-shot.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Tempest Shot <span class="badge opt">16</span></div>
+    <div class="skill-desc">Filler in the macro; faster with the skill-speed tier.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Deals up to 12% more damage when less targets are hit</li><li><span class="spec-lv">16</span>+20% Skill Speed</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>-20% MP consumed</li>
+        <li class=""><span class="spec-lv">8</span>+10% skill Critical Hit</li>
+        <li class="on"><span class="spec-lv">8</span>Deals up to 12% more damage when less targets are hit</li>
+        <li class=""><span class="spec-lv">12</span>5% chance to inflict Knock Back on Critical Hit</li>
+        <li class="on"><span class="spec-lv">16</span>+20% Skill Speed</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/arrow-scattershot.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Arrow Scattershot <span class="badge opt">16</span></div>
+    <div class="skill-desc">Only on Staggered targets — then it cuts all cooldowns by 1s per hit.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">12</span>Multi-Hit on hit</li><li><span class="spec-lv">16</span>-1s all cooldowns on hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Absorbs 5% HP</li>
+        <li class=""><span class="spec-lv">8</span>Restores 120 MP on hit</li>
+        <li class=""><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class="on"><span class="spec-lv">12</span>Multi-Hit on hit</li>
+        <li class="on"><span class="spec-lv">16</span>-1s all cooldowns on hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/marking-shot.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Marking Shot <span class="badge opt">12</span></div>
+    <div class="skill-desc">Precision: +300 Critical Hit. Recast it the moment it drops.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+5s duration</li><li><span class="spec-lv">12</span>+1 consecutive use</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>+5% Perfect Chance for the duration</li>
+        <li class=""><span class="spec-lv">8</span>30% chance to inflict Knock Back on hit</li>
+        <li class="on"><span class="spec-lv">8</span>+5s duration</li>
+        <li class="on"><span class="spec-lv">12</span>+1 consecutive use</li>
+        <li class=""><span class="spec-lv">16</span>Ignores Block and Evasion and lands as a Critical Hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/burst-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Burst Arrow <span class="badge opt">12</span></div>
+    <div class="skill-desc">Hits only Slowed/Rooted targets — always after Snare Shot.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Absorbs 10% HP</li><li><span class="spec-lv">12</span>Up to +20% damage when less targets hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>Absorbs 10% HP</li>
+        <li class=""><span class="spec-lv">8</span>+50% Multi-Hit on hit</li>
+        <li class=""><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class="on"><span class="spec-lv">12</span>Up to +20% damage when less targets hit</li>
+        <li class=""><span class="spec-lv">16</span>25% chance to reset cooldown on hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/explosion-trap.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Explosion Trap <span class="badge skip">12</span></div>
+    <div class="skill-desc">Groups packs for AoE; minor on bosses.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Pulls enemies on explosion</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>Pulls enemies on explosion</li>
+        <li class=""><span class="spec-lv">8</span>+1s Stun duration</li>
+        <li class=""><span class="spec-lv">8</span>Extra damage after 3s on hit</li>
+        <li class=""><span class="spec-lv">12</span>+20% Stun Chance</li>
+        <li class=""><span class="spec-lv">16</span>+1 consecutive use</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/defiance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Defiance <span class="badge skip">12</span></div>
+    <div class="skill-desc">CC break. More important in PvP.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">12</span>+2s Tenacity duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Adds [Lightning Arrow] Chain Skill</li>
+        <li class=""><span class="spec-lv">8</span>Restores 1000 Stamina on using [Defiance]</li>
+        <li class=""><span class="spec-lv">8</span>Restores 20% HP on using [Defiance]</li>
+        <li class="on"><span class="spec-lv">12</span>+2s Tenacity duration</li>
+        <li class=""><span class="spec-lv">16</span>+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/suppressing-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Suppressing Arrow <span class="badge skip">—</span></div>
+    <div class="skill-desc">Stun tool — PvP.</div>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>+50% Multi-Hit on hit</li>
+        <li class=""><span class="spec-lv">8</span>+1s Stun duration</li>
+        <li class=""><span class="spec-lv">8</span>+20% Skill Speed</li>
+        <li class=""><span class="spec-lv">12</span>+20% Stun Chance</li>
+        <li class=""><span class="spec-lv">16</span>25% chance to reset cooldown on hit</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="passives" class="g-section" data-only="pve" aria-labelledby="h-passives">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-passives">Passives</h2></div>
+    <p>Two passives carry the build: <span class="sk"><img src="../../assets/icons/ranger/focused-eye.webp" width="18" height="18" alt="" loading="lazy">Focused Eye</span> (Accuracy, PvE Damage Boost, Double Chance) and <span class="sk"><img src="../../assets/icons/ranger/hunters-resolve.webp" width="18" height="18" alt="" loading="lazy">Hunter&#39;s Resolve</span> (Critical Damage Boost). Push both as high as gear and cards allow.</p>
+  <div class="callout"><ul>
+    <li><span class="sk"><img src="../../assets/icons/ranger/concentrated-fire.webp" width="18" height="18" alt="" loading="lazy">Concentrated Fire</span> — extra hits on targets taking damage over time (Drill Dart bleed, Griffon Arrow flames).</li>
+    <li><span class="sk"><img src="../../assets/icons/ranger/hunters-soul.webp" width="18" height="18" alt="" loading="lazy">Hunter&#39;s Soul</span> — extra damage on crits; Vaizel's Authority multiplies it.</li>
+    <li><span class="sk"><img src="../../assets/icons/ranger/rooting-eye.webp" width="18" height="18" alt="" loading="lazy">Rooting Eye</span> — extra damage on Slowed/Rooted targets; Snare Shot keeps it active.</li>
+    <li><span class="sk"><img src="../../assets/icons/ranger/vigilant-eye.webp" width="18" height="18" alt="" loading="lazy">Vigilant Eye</span> and <span class="sk"><img src="../../assets/icons/ranger/unyielding-resolve.webp" width="18" height="18" alt="" loading="lazy">Unyielding Resolve</span> are defensive — fine to leave where they land.</li>
+  </ul></div>
+
+</section>
+<section id="gear" class="g-section" data-only="pve" aria-labelledby="h-gear">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-gear">Gear &amp; stats</h2></div>
+    <div class="callout"><ul>
+    <li><strong>Soulbind lines:</strong> Focused Eye, Hunter's Resolve and Attack on everything. On weapons: Combat Speed, Damage Boost, Weapon Damage Boost, Multi-Hit.</li>
+    <li><strong>Rings:</strong> +1 levels on your four main skills (Deadshot, Gale Arrow, Drill Dart, Snare Shot).</li>
+    <li><strong>Manastones:</strong> Front Attack Damage Boost first, then Weapon / Critical Damage Boost.</li>
+    <li><strong>Accuracy</strong> matters: missed Deadshots are the biggest DPS loss a Ranger can have.</li>
+  </ul></div>
+  <p class="note">Korean endgame targets (Accuracy 2,600+, Critical Hit 3,150+, front damage boost 30–35%) come from a later gear tier than global Season 1 — use them as direction, not as a checklist.</p>
+
+</section>
+<section id="arcana" class="g-section" data-only="pve" aria-labelledby="h-arcana">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-arcana">Arcana</h2></div>
+    <p>Goal: <strong>+4</strong> on each of the four main skills — <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Deadshot</span>, <span class="sk"><img src="../../assets/icons/ranger/gale-arrow.webp" width="18" height="18" alt="" loading="lazy">Gale Arrow</span>, <span class="sk"><img src="../../assets/icons/ranger/drill-dart.webp" width="18" height="18" alt="" loading="lazy">Drill Dart</span>, <span class="sk"><img src="../../assets/icons/ranger/snare-shot.webp" width="18" height="18" alt="" loading="lazy">Snare Shot</span>. Leftover levels go into <span class="sk"><img src="../../assets/icons/ranger/focused-eye.webp" width="18" height="18" alt="" loading="lazy">Focused Eye</span> and <span class="sk"><img src="../../assets/icons/ranger/hunters-resolve.webp" width="18" height="18" alt="" loading="lazy">Hunter&#39;s Resolve</span>.</p>
+  <p>A card leveled to 5 averages about +2 to a random skill it can roll, so expect to finish at 18–20 on most of the four in Season 1. Prioritise Deadshot and Gale Arrow when you have to choose.</p>
+
+</section>
+<section id="daevanion" class="g-section" data-only="pve pvp" aria-labelledby="h-daevanion">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-daevanion">Daevanion boards</h2></div>
+    <p>Daevanion takes your skills from 10 to 14. Each blue node gives <strong>+1 level</strong> to its skill.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Board</th><th>Unlock</th><th>Focus</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Lv 12</td><td>Skill levels, base stats</td></tr>
+      <tr><td>Zikel</td><td>Lv 20</td><td>Evasion, damage boost / tolerance</td></tr>
+      <tr><td>Vaizel</td><td>Lv 30</td><td>Critical damage — big for Rangers</td></tr>
+      <tr><td>Triniel</td><td>Lv 40</td><td>Multi-hit (mostly PvP)</td></tr>
+      <tr><td>Ariel</td><td>Lv 45</td><td>PvE damage &amp; resistance</td></tr>
+      <tr><td>Azphel</td><td>Lv 45</td><td>PvP damage &amp; resistance</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>Priority:</strong> every golden/blue node for <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Deadshot</span>, <span class="sk"><img src="../../assets/icons/ranger/gale-arrow.webp" width="18" height="18" alt="" loading="lazy">Gale Arrow</span>, <span class="sk"><img src="../../assets/icons/ranger/drill-dart.webp" width="18" height="18" alt="" loading="lazy">Drill Dart</span>, <span class="sk"><img src="../../assets/icons/ranger/snare-shot.webp" width="18" height="18" alt="" loading="lazy">Snare Shot</span> and the key passives, then orange nodes.</li>
+    <li data-only="pvp"><strong>Priority:</strong> blue nodes for <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Deadshot</span>, <span class="sk"><img src="../../assets/icons/ranger/snare-shot.webp" width="18" height="18" alt="" loading="lazy">Snare Shot</span>, <span class="sk"><img src="../../assets/icons/ranger/suppressing-arrow.webp" width="18" height="18" alt="" loading="lazy">Suppressing Arrow</span>, <span class="sk"><img src="../../assets/icons/ranger/marking-shot.webp" width="18" height="18" alt="" loading="lazy">Marking Shot</span>, <span class="sk"><img src="../../assets/icons/ranger/defiance.webp" width="18" height="18" alt="" loading="lazy">Defiance</span>.</li>
+    <li data-only="pve"><strong>Ariel, not Azphel</strong> — same cost, and choosing wrong is the most expensive mistake in the system.</li>
+    <li data-only="pvp"><strong>Azphel, not Ariel</strong>, and Triniel earlier.</li>
+  </ul></div>
+  <p class="note">Board layouts come from the KR/TW client, and global values are lower. Check the in-game board before committing a full route.</p>
+
+</section>
+<section id="stigmas" class="g-section" data-only="pve" aria-labelledby="h-stigmas">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-stigmas">Stigmas</h2></div>
+    <p>Korean post-patch builds agree on the same four. Skip Stealth, Ambush Kick, Sealing Arrow, Illusory Arrow, Ensnaring Trap, Arrow Storm and Assault Smite in PvE.</p>
+  <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/vaizels-authority.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Vaizel&#39;s Authority <span class="badge must">Lv 20</span></div>
+    <div class="skill-desc">+20% Attack; ×1.5 Focused Eye and Hunter's Soul. At 20, crits cut all cooldowns by 1s — the rotation speeds up noticeably.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+10% Perfect Chance for the duration</li><li><span class="spec-lv">10</span>x1.5 [Focused Eye] effect for the duration</li><li><span class="spec-lv">15</span>x1.5 [Hunter&#39;s Soul] effect for the duration</li><li><span class="spec-lv">20</span>50% chance to reduce all skill cooldowns by 1s on Critical Hit for the duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+10% Perfect Chance for the duration</li>
+        <li class="on"><span class="spec-lv">10</span>x1.5 [Focused Eye] effect for the duration</li>
+        <li class="on"><span class="spec-lv">15</span>x1.5 [Hunter&#39;s Soul] effect for the duration</li>
+        <li class="on"><span class="spec-lv">20</span>50% chance to reduce all skill cooldowns by 1s on Critical Hit for the duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/bow-of-blessing.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Bow of Blessing <span class="badge must">Lv 15 → 20</span></div>
+    <div class="skill-desc">Crit and Accuracy buff. Level 15 gives +20% Critical Damage; 20 adds Double Chance, which stacks with a Chanter's buffs.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+50% Multi-Hit Chance for duration</li><li><span class="spec-lv">10</span>Increases Attack proportional to Critical Hit for the duration</li><li><span class="spec-lv">15</span>+20% Critical Damage Boost for the duration</li><li><span class="spec-lv">20</span>+7% Double Chance for the duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+50% Multi-Hit Chance for duration</li>
+        <li class="on"><span class="spec-lv">10</span>Increases Attack proportional to Critical Hit for the duration</li>
+        <li class="on"><span class="spec-lv">15</span>+20% Critical Damage Boost for the duration</li>
+        <li class="on"><span class="spec-lv">20</span>+7% Double Chance for the duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/griffon-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Griffon Arrow <span class="badge must">Lv 20</span></div>
+    <div class="skill-desc">Crimson Flames DoT — about 10% of total damage in Korean parses.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Changes to mobile skill</li><li><span class="spec-lv">10</span>+5s Damage over Time duration</li><li><span class="spec-lv">15</span>Enhanced Crimson Flames - Extra damage when hit while afflicted with Crimson Flames</li><li><span class="spec-lv">20</span>-50% Damage over Time intervals</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Changes to mobile skill</li>
+        <li class="on"><span class="spec-lv">10</span>+5s Damage over Time duration</li>
+        <li class="on"><span class="spec-lv">15</span>Enhanced Crimson Flames - Extra damage when hit while afflicted with Crimson Flames</li>
+        <li class="on"><span class="spec-lv">20</span>-50% Damage over Time intervals</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/supporting-fire.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Supporting Fire <span class="badge must">Lv 5 → 15</span></div>
+    <div class="skill-desc">An orb that shoots alongside you (~7% of damage). Level 20 makes its shots always crit — only if you have spare shards.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+25% activation chance</li><li><span class="spec-lv">10</span>+15s duration</li><li><span class="spec-lv">15</span>-30s cooldown</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+25% activation chance</li>
+        <li class="on"><span class="spec-lv">10</span>+15s duration</li>
+        <li class="on"><span class="spec-lv">15</span>-30s cooldown</li>
+        <li class=""><span class="spec-lv">20</span>Critical Hit on hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/explosive-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Explosive Arrow <span class="badge opt">alt.</span></div>
+    <div class="skill-desc">Swap in for short fights: +20% damage to Slowed targets and a guaranteed crit at 15.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>-15s cooldown</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>-15s cooldown</li>
+        <li class=""><span class="spec-lv">10</span>+10% additional damage to targets afflicted with Slow or Root</li>
+        <li class=""><span class="spec-lv">15</span>Critical Hit on hit</li>
+        <li class=""><span class="spec-lv">20</span>+20% additional damage to targets afflicted with Slow or Root</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="macro" class="g-section" data-only="pve" aria-labelledby="h-macro">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro">Rotation &amp; macro</h2></div>
+    <div class="callout accent">
+    <h3>Opener</h3>
+    <div class="combo"><span class="sk"><img src="../../assets/icons/ranger/gale-arrow.webp" width="18" height="18" alt="" loading="lazy">Gale Arrow</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/ranger/marking-shot.webp" width="18" height="18" alt="" loading="lazy">Marking Shot</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/ranger/vaizels-authority.webp" width="18" height="18" alt="" loading="lazy">Vaizel&#39;s Authority</span> + <span class="sk"><img src="../../assets/icons/ranger/bow-of-blessing.webp" width="18" height="18" alt="" loading="lazy">Bow of Blessing</span> + <span class="sk"><img src="../../assets/icons/ranger/supporting-fire.webp" width="18" height="18" alt="" loading="lazy">Supporting Fire</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/ranger/snare-shot.webp" width="18" height="18" alt="" loading="lazy">Snare Shot</span><span class="arrow">→</span>charged <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Deadshot</span></div>
+  </div>
+  <p>Korean top parses play with three buttons: <strong>hold</strong> <span class="sk"><img src="../../assets/icons/ranger/snipe.webp" width="18" height="18" alt="" loading="lazy">Snipe</span> (basic attack, shortens Deadshot's cooldown) <strong>+ hold</strong> the macro key, and <strong>press-release</strong> Deadshot manually when it's up. Recast Marking Shot yourself when Precision drops.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Macro line</th><th>Skills (top to bottom)</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><span class="sk"><img src="../../assets/icons/ranger/gale-arrow.webp" width="18" height="18" alt="" loading="lazy">Gale Arrow</span> → <span class="sk"><img src="../../assets/icons/ranger/griffon-arrow.webp" width="18" height="18" alt="" loading="lazy">Griffon Arrow</span> → <span class="sk"><img src="../../assets/icons/ranger/snare-shot.webp" width="18" height="18" alt="" loading="lazy">Snare Shot</span></td></tr>
+      <tr><td>2</td><td><span class="sk"><img src="../../assets/icons/ranger/drill-dart.webp" width="18" height="18" alt="" loading="lazy">Drill Dart</span> → <span class="sk"><img src="../../assets/icons/ranger/burst-arrow.webp" width="18" height="18" alt="" loading="lazy">Burst Arrow</span> → <span class="sk"><img src="../../assets/icons/ranger/tempest-shot.webp" width="18" height="18" alt="" loading="lazy">Tempest Shot</span></td></tr>
+      <tr><td>3</td><td><span class="sk"><img src="../../assets/icons/ranger/vaizels-authority.webp" width="18" height="18" alt="" loading="lazy">Vaizel&#39;s Authority</span> → <span class="sk"><img src="../../assets/icons/ranger/supporting-fire.webp" width="18" height="18" alt="" loading="lazy">Supporting Fire</span> → <span class="sk"><img src="../../assets/icons/ranger/bow-of-blessing.webp" width="18" height="18" alt="" loading="lazy">Bow of Blessing</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Snare Shot sits before Burst Arrow on purpose: Burst Arrow only hits a Slowed or Rooted target.</p>
+
+</section>
+<section id="recap" class="g-section" data-only="pve" aria-labelledby="h-recap">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-recap">Recap</h2></div>
+    <div class="callout accent"><ul>
+    <li><strong>Skills:</strong> Deadshot, Gale Arrow, Drill Dart, Snare Shot 20; Snipe, Tempest Shot, Arrow Scattershot 16; the rest 12.</li>
+    <li><strong>Stigmas:</strong> Vaizel's Authority 20, Bow of Blessing 15–20, Griffon Arrow 20, Supporting Fire 5–15.</li>
+    <li><strong>Passives:</strong> Focused Eye and Hunter's Resolve as high as possible.</li>
+    <li><strong>Play:</strong> buffs first, fire Deadshot under Precision, never let Gale or Precision drop.</li>
+  </ul></div>
+
+</section>
+<aside class="glance" data-only="pvp" aria-label="Build at a glance">
+  <p class="glance-title">Build at a glance</p>
+    <h3>Core skills</h3>
+  <ul class="core-row">
+  <li title="Deadshot">
+    <img src="../../assets/icons/ranger/deadshot.webp" width="52" height="52" alt="Deadshot" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Deadshot</span>
+  </li>
+  <li title="Snare Shot">
+    <img src="../../assets/icons/ranger/snare-shot.webp" width="52" height="52" alt="Snare Shot" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Snare Shot</span>
+  </li>
+  <li title="Suppressing Arrow">
+    <img src="../../assets/icons/ranger/suppressing-arrow.webp" width="52" height="52" alt="Suppressing Arrow" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Suppressing Arrow</span>
+  </li>
+  <li title="Marking Shot">
+    <img src="../../assets/icons/ranger/marking-shot.webp" width="52" height="52" alt="Marking Shot" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Marking Shot</span>
+  </li>
+  <li title="Defiance">
+    <img src="../../assets/icons/ranger/defiance.webp" width="52" height="52" alt="Defiance" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Defiance</span>
+  </li>
+</ul>
+  <h3>Stigma loadout · Abyss</h3>
+  <ol class="loadout">
+  <li class="slot" title="Stealth">
+    <img src="../../assets/icons/ranger/stealth.webp" width="56" height="56" alt="Stealth" loading="lazy">
+    <span class="slot-lv">Lv 15</span>
+    <span class="slot-name">Stealth</span>
+  </li>
+  <li class="slot" title="Ambush Kick">
+    <img src="../../assets/icons/ranger/ambush-kick.webp" width="56" height="56" alt="Ambush Kick" loading="lazy">
+    <span class="slot-lv">Lv 15</span>
+    <span class="slot-name">Ambush Kick</span>
+  </li>
+  <li class="slot" title="Sealing Arrow">
+    <img src="../../assets/icons/ranger/sealing-arrow.webp" width="56" height="56" alt="Sealing Arrow" loading="lazy">
+    <span class="slot-lv">Lv 5</span>
+    <span class="slot-name">Sealing Arrow</span>
+  </li>
+  <li class="slot" title="Mother Nature&#39;s Breath">
+    <img src="../../assets/icons/ranger/mother-natures-breath.webp" width="56" height="56" alt="Mother Nature&#39;s Breath" loading="lazy">
+    <span class="slot-lv">Lv 5</span>
+    <span class="slot-name">Mother Nature&#39;s Breath</span>
+  </li>
+</ol>
+  <h3>Key passives</h3>
+  <ul class="passive-row">
+<li><img src="../../assets/icons/ranger/focused-eye.webp" width="24" height="24" alt="" loading="lazy">Focused Eye</li><li><img src="../../assets/icons/ranger/revitalization-contract.webp" width="24" height="24" alt="" loading="lazy">Revitalization Contract</li><li><img src="../../assets/icons/ranger/unyielding-resolve.webp" width="24" height="24" alt="" loading="lazy">Unyielding Resolve</li><li><img src="../../assets/icons/ranger/vigilant-eye.webp" width="24" height="24" alt="" loading="lazy">Vigilant Eye</li></ul>
+
+</aside>
+<section id="intro-pvp" class="g-section" data-only="pvp" aria-labelledby="h-intro-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro-pvp">Overview</h2></div>
+    <p>A PvP Ranger doesn't win by trading blows — it wins by making sure <strong>no trade happens</strong>. Slows, roots, stuns, knockbacks and a silence keep enemies at 20 metres while Deadshot does the work.</p>
+  <p>Order of business: <strong>open from range or stealth</strong> → <strong>lock the target</strong> → <strong>burst under Precision</strong> → <strong>peel and reset distance</strong>.</p>
+  <p class="note">No global PvP meta exists yet. This mode combines Korean/Taiwanese PvP advice with skill data from the global client — treat it as a starting point.</p>
+
+</section>
+<section id="skills-pvp" class="g-section" data-only="pvp" aria-labelledby="h-skills-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-skills-pvp">Skills</h2></div>
+    <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/deadshot.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Deadshot <span class="badge must">16 → 20</span></div>
+    <div class="skill-desc">Still your kill button; ignoring Block/Evasion matters more against players.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+30% Skill Speed</li><li><span class="spec-lv">12</span>Ignores Block and Evasion and lands as Multi-Hit</li><li><span class="spec-lv">16</span>[Deadshot] grants extra damage on hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Removes MP consumed</li>
+        <li class="on"><span class="spec-lv">8</span>+30% Skill Speed</li>
+        <li class=""><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class="on"><span class="spec-lv">12</span>Ignores Block and Evasion and lands as Multi-Hit</li>
+        <li class="on"><span class="spec-lv">16</span>[Deadshot] grants extra damage on hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/marking-shot.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Marking Shot <span class="badge must">16</span></div>
+    <div class="skill-desc">Reposition + Precision. At 16 it always crits through Block and Evasion.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>30% chance to inflict Knock Back on hit</li><li><span class="spec-lv">12</span>+1 consecutive use</li><li><span class="spec-lv">16</span>Ignores Block and Evasion and lands as a Critical Hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>+5% Perfect Chance for the duration</li>
+        <li class="on"><span class="spec-lv">8</span>30% chance to inflict Knock Back on hit</li>
+        <li class=""><span class="spec-lv">8</span>+5s duration</li>
+        <li class="on"><span class="spec-lv">12</span>+1 consecutive use</li>
+        <li class="on"><span class="spec-lv">16</span>Ignores Block and Evasion and lands as a Critical Hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/suppressing-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Suppressing Arrow <span class="badge must">16</span></div>
+    <div class="skill-desc">Stun (40% under Precision). Longer stun, higher chance, cooldown resets.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+1s Stun duration</li><li><span class="spec-lv">12</span>+20% Stun Chance</li><li><span class="spec-lv">16</span>25% chance to reset cooldown on hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>+50% Multi-Hit on hit</li>
+        <li class="on"><span class="spec-lv">8</span>+1s Stun duration</li>
+        <li class=""><span class="spec-lv">8</span>+20% Skill Speed</li>
+        <li class="on"><span class="spec-lv">12</span>+20% Stun Chance</li>
+        <li class="on"><span class="spec-lv">16</span>25% chance to reset cooldown on hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/snare-shot.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Snare Shot <span class="badge must">16</span></div>
+    <div class="skill-desc">Slow → Shackling Arrow root. Your main zoning tool.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+20% Move Speed reduction</li><li><span class="spec-lv">12</span>Adds [Shackling Arrow] Chain Skill</li><li><span class="spec-lv">16</span>+2s Slow and Root duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>+20% Move Speed reduction</li>
+        <li class=""><span class="spec-lv">8</span>+20% Skill Speed</li>
+        <li class=""><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class="on"><span class="spec-lv">12</span>Adds [Shackling Arrow] Chain Skill</li>
+        <li class="on"><span class="spec-lv">16</span>+2s Slow and Root duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/defiance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Defiance <span class="badge must">16</span></div>
+    <div class="skill-desc">CC break. Mandatory against melee divers.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Restores 20% HP on using [Defiance]</li><li><span class="spec-lv">12</span>+2s Tenacity duration</li><li><span class="spec-lv">16</span>+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Adds [Lightning Arrow] Chain Skill</li>
+        <li class=""><span class="spec-lv">8</span>Restores 1000 Stamina on using [Defiance]</li>
+        <li class="on"><span class="spec-lv">8</span>Restores 20% HP on using [Defiance]</li>
+        <li class="on"><span class="spec-lv">12</span>+2s Tenacity duration</li>
+        <li class="on"><span class="spec-lv">16</span>+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/drill-dart.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Drill Dart <span class="badge opt">16</span></div>
+    <div class="skill-desc">Its bleed also cuts the target's healing received — start on healers with it.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Absorbs 3% HP</li><li><span class="spec-lv">12</span>Multi-Hit on hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>Absorbs 3% HP</li>
+        <li class=""><span class="spec-lv">8</span>+2s Bleed duration</li>
+        <li class=""><span class="spec-lv">8</span>+20% Skill Speed</li>
+        <li class="on"><span class="spec-lv">12</span>Multi-Hit on hit</li>
+        <li class=""><span class="spec-lv">16</span>Activates [Drill Dart] 1 extra time</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/gale-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Gale Arrow <span class="badge opt">12</span></div>
+    <div class="skill-desc">Buff plus a 50% knockback on hit.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>50% chance to inflict Knock Back on hit</li><li><span class="spec-lv">8</span>Changes to mobile skill</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>+5s duration</li>
+        <li class="on"><span class="spec-lv">8</span>50% chance to inflict Knock Back on hit</li>
+        <li class="on"><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class=""><span class="spec-lv">12</span>Increases Combat Speed, PvE Damage Boost, and PvP Damage Boost when less targets hit</li>
+        <li class=""><span class="spec-lv">16</span>-10s cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/explosion-trap.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Explosion Trap <span class="badge opt">12</span></div>
+    <div class="skill-desc">Drop it under a diving melee: stun.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+1s Stun duration</li><li><span class="spec-lv">12</span>+20% Stun Chance</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Pulls enemies on explosion</li>
+        <li class="on"><span class="spec-lv">8</span>+1s Stun duration</li>
+        <li class=""><span class="spec-lv">8</span>Extra damage after 3s on hit</li>
+        <li class="on"><span class="spec-lv">12</span>+20% Stun Chance</li>
+        <li class=""><span class="spec-lv">16</span>+1 consecutive use</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/burst-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Burst Arrow <span class="badge opt">12</span></div>
+    <div class="skill-desc">10% HP absorb on a slowed target — sustain while kiting.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Absorbs 10% HP</li><li><span class="spec-lv">8</span>Changes to mobile skill</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>Absorbs 10% HP</li>
+        <li class=""><span class="spec-lv">8</span>+50% Multi-Hit on hit</li>
+        <li class="on"><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class=""><span class="spec-lv">12</span>Up to +20% damage when less targets hit</li>
+        <li class=""><span class="spec-lv">16</span>25% chance to reset cooldown on hit</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="passives-pvp" class="g-section" data-only="pvp" aria-labelledby="h-passives-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-passives-pvp">Passives</h2></div>
+    <div class="table-wrap"><table>
+    <thead><tr><th>Passive</th><th>PvP value</th></tr></thead>
+    <tbody>
+      <tr><td><span class="sk"><img src="../../assets/icons/ranger/focused-eye.webp" width="18" height="18" alt="" loading="lazy">Focused Eye</span></td><td>Still #1: Accuracy and PvP Damage Boost.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/ranger/revitalization-contract.webp" width="18" height="18" alt="" loading="lazy">Revitalization Contract</span></td><td>Status resist that stacks while you're CC'd, plus an emergency 35% heal at 10% HP.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/ranger/unyielding-resolve.webp" width="18" height="18" alt="" loading="lazy">Unyielding Resolve</span></td><td>Ailment and Impact resist — harder to root and knock down.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/ranger/vigilant-eye.webp" width="18" height="18" alt="" loading="lazy">Vigilant Eye</span></td><td>Evasion and heals on evade.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/ranger/wind-vigor.webp" width="18" height="18" alt="" loading="lazy">Wind Vigor</span></td><td>More Stamina (dodges) and move speed when hit.</td></tr>
+    </tbody>
+  </table></div>
+
+</section>
+<section id="gear-pvp" class="g-section" data-only="pvp" aria-labelledby="h-gear-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-gear-pvp">Gear &amp; arcana</h2></div>
+    <p>Keep your PvE gear in Season 1; change passives, stigmas and Daevanion.</p>
+  <div class="callout"><ul>
+    <li><strong>Accuracy</strong> first — players Block and Evade.</li>
+    <li><strong>PvP Damage Boost / Tolerance</strong> over the PvE versions where a slot offers them.</li>
+    <li><strong>Arcana:</strong> Deadshot to 20, then Snare Shot, Suppressing Arrow, Marking Shot and Defiance to 16.</li>
+  </ul></div>
+
+</section>
+<section id="stigmas-pvp" class="g-section" data-only="pvp" aria-labelledby="h-stigmas-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-stigmas-pvp">Stigmas</h2></div>
+    <div class="table-wrap"><table>
+    <thead><tr><th>Mode</th><th>Stigmas</th></tr></thead>
+    <tbody>
+      <tr><td>Abyss / open world</td><td>Stealth, Ambush Kick, Sealing Arrow, Mother Nature's Breath</td></tr>
+      <tr><td>Arena</td><td>Vaizel's Authority, Ambush Kick, Sealing Arrow, Mother Nature's Breath</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/ambush-kick.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Ambush Kick <span class="badge must">Lv 15</span></div>
+    <div class="skill-desc">Jump behind, kick them away, hop back. Shield at 10, 50% stun at 15. Your answer to divers.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+5m Range</li><li><span class="spec-lv">10</span>10% Max HP Protective Shield for 5s on hit</li><li><span class="spec-lv">15</span>50% chance to inflict Stun for 3s on hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+5m Range</li>
+        <li class="on"><span class="spec-lv">10</span>10% Max HP Protective Shield for 5s on hit</li>
+        <li class="on"><span class="spec-lv">15</span>50% chance to inflict Stun for 3s on hit</li>
+        <li class=""><span class="spec-lv">20</span>+50% Stun Chance</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/sealing-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Sealing Arrow <span class="badge must">Lv 5+</span></div>
+    <div class="skill-desc">75% Seal (silence) for 5s. Use it on casters <em>before</em> they press their defensives.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>50% chance to inflict Root for 5s on hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>50% chance to inflict Root for 5s on hit</li>
+        <li class=""><span class="spec-lv">10</span>-1000 enemy Max Stamina for 5s on hit</li>
+        <li class=""><span class="spec-lv">15</span>+2s Seal duration</li>
+        <li class=""><span class="spec-lv">20</span>+25% Seal chance</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/mother-natures-breath.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Mother Nature&#39;s Breath <span class="badge must">Lv 5+</span></div>
+    <div class="skill-desc">6s of damage tolerance, crit resist and a 50% chance to absorb damage as HP. Level 5 cleanses DoTs.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Removes and grants immunity to Damage over Time effects</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Removes and grants immunity to Damage over Time effects</li>
+        <li class=""><span class="spec-lv">10</span>x1.5 [Vigilant Eye] effect for the duration</li>
+        <li class=""><span class="spec-lv">15</span>x1.5 [Unyielding Resolve] effect for the duration</li>
+        <li class=""><span class="spec-lv">20</span>+20% PvE Damage Tolerance increase and +10% PvP Damage Tolerance increase</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/stealth.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Stealth <span class="badge opt">Abyss · Lv 15</span></div>
+    <div class="skill-desc">Opener: crit from stealth at 5, usable in combat at 15.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Critical Hit on attack during Stealth</li><li><span class="spec-lv">10</span>+20% Move Speed for the duration</li><li><span class="spec-lv">15</span>Available in combat</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Critical Hit on attack during Stealth</li>
+        <li class="on"><span class="spec-lv">10</span>+20% Move Speed for the duration</li>
+        <li class="on"><span class="spec-lv">15</span>Available in combat</li>
+        <li class=""><span class="spec-lv">20</span>+10s Stealth duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/vaizels-authority.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Vaizel&#39;s Authority <span class="badge opt">Arena · Lv 20</span></div>
+    <div class="skill-desc">Burst and cooldown procs when there's nothing to sneak up on.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+10% Perfect Chance for the duration</li><li><span class="spec-lv">10</span>x1.5 [Focused Eye] effect for the duration</li><li><span class="spec-lv">15</span>x1.5 [Hunter&#39;s Soul] effect for the duration</li><li><span class="spec-lv">20</span>50% chance to reduce all skill cooldowns by 1s on Critical Hit for the duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+10% Perfect Chance for the duration</li>
+        <li class="on"><span class="spec-lv">10</span>x1.5 [Focused Eye] effect for the duration</li>
+        <li class="on"><span class="spec-lv">15</span>x1.5 [Hunter&#39;s Soul] effect for the duration</li>
+        <li class="on"><span class="spec-lv">20</span>50% chance to reduce all skill cooldowns by 1s on Critical Hit for the duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/illusory-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Illusory Arrow <span class="badge opt">alt.</span></div>
+    <div class="skill-desc">Blind for 3s; AoE at 10.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+1s Blind duration</li><li><span class="spec-lv">10</span>Changes to AoE Skill</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+1s Blind duration</li>
+        <li class="on"><span class="spec-lv">10</span>Changes to AoE Skill</li>
+        <li class=""><span class="spec-lv">15</span>Inflicts Slow for 5s on hit</li>
+        <li class=""><span class="spec-lv">20</span>+1 consecutive use</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/ensnaring-trap.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Ensnaring Trap <span class="badge opt">alt.</span></div>
+    <div class="skill-desc">Airborne trap; at 10 it strips up to 2 buffs.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Adds [Guerilla Strike] Chain Skill</li><li><span class="spec-lv">10</span>Removes up to 2 buffs</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Adds [Guerilla Strike] Chain Skill</li>
+        <li class="on"><span class="spec-lv">10</span>Removes up to 2 buffs</li>
+        <li class=""><span class="spec-lv">15</span>+1s Airborne duration</li>
+        <li class=""><span class="spec-lv">20</span>-30s cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="combos-pvp" class="g-section" data-only="pvp" aria-labelledby="h-combos-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-combos-pvp">Combos &amp; play</h2></div>
+    <div class="callout">
+    <h3>Opener</h3>
+    <div class="combo"><span class="sk"><img src="../../assets/icons/ranger/stealth.webp" width="18" height="18" alt="" loading="lazy">Stealth</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/ranger/marking-shot.webp" width="18" height="18" alt="" loading="lazy">Marking Shot</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/ranger/suppressing-arrow.webp" width="18" height="18" alt="" loading="lazy">Suppressing Arrow</span><span class="arrow">→</span>charged <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Deadshot</span></div>
+  </div>
+  <div class="callout">
+    <h3>Against casters</h3>
+    <div class="combo"><span class="sk"><img src="../../assets/icons/ranger/sealing-arrow.webp" width="18" height="18" alt="" loading="lazy">Sealing Arrow</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/ranger/snare-shot.webp" width="18" height="18" alt="" loading="lazy">Snare Shot</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Deadshot</span></div>
+    <p>Silence first, so they can't answer your burst with a shield or escape.</p>
+  </div>
+  <div class="callout">
+    <h3>When a melee dives you</h3>
+    <ul>
+      <li><span class="sk"><img src="../../assets/icons/ranger/ambush-kick.webp" width="18" height="18" alt="" loading="lazy">Ambush Kick</span> or <span class="sk"><img src="../../assets/icons/ranger/gale-arrow.webp" width="18" height="18" alt="" loading="lazy">Gale Arrow</span> knockback → <span class="sk"><img src="../../assets/icons/ranger/snare-shot.webp" width="18" height="18" alt="" loading="lazy">Snare Shot</span> → walk back to 20m.</li>
+      <li><span class="sk"><img src="../../assets/icons/ranger/explosion-trap.webp" width="18" height="18" alt="" loading="lazy">Explosion Trap</span> under your feet as they arrive.</li>
+      <li><span class="sk"><img src="../../assets/icons/ranger/defiance.webp" width="18" height="18" alt="" loading="lazy">Defiance</span> for the first hard CC, <span class="sk"><img src="../../assets/icons/ranger/mother-natures-breath.webp" width="18" height="18" alt="" loading="lazy">Mother Nature&#39;s Breath</span> when focused.</li>
+    </ul>
+  </div>
+
+</section>
+<section id="recap-pvp" class="g-section" data-only="pvp" aria-labelledby="h-recap-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-recap-pvp">Recap</h2></div>
+    <div class="callout accent"><ul>
+    <li><strong>Skills:</strong> Deadshot 16→20; Marking Shot, Suppressing Arrow, Snare Shot, Defiance 16.</li>
+    <li><strong>Stigmas:</strong> Ambush Kick, Sealing Arrow, Mother Nature's Breath + Stealth (Abyss) or Vaizel's Authority (Arena).</li>
+    <li><strong>Passives:</strong> Focused Eye &gt; Revitalization Contract / Unyielding Resolve.</li>
+    <li><strong>Play:</strong> never trade in melee — lock, burst, reset distance.</li>
+  </ul></div>
+
+</section>
+<section id="fight-lvl" class="g-section" data-only="lvl" aria-labelledby="h-fight-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-fight-lvl">How to fight while leveling</h2></div>
+    <div class="callout"><ul>
+    <li><strong>Packs:</strong> <span class="sk"><img src="../../assets/icons/ranger/explosion-trap.webp" width="18" height="18" alt="" loading="lazy">Explosion Trap</span> at your feet → <span class="sk"><img src="../../assets/icons/ranger/snare-shot.webp" width="18" height="18" alt="" loading="lazy">Snare Shot</span> → <span class="sk"><img src="../../assets/icons/ranger/drill-dart.webp" width="18" height="18" alt="" loading="lazy">Drill Dart</span> + <span class="sk"><img src="../../assets/icons/ranger/tempest-shot.webp" width="18" height="18" alt="" loading="lazy">Tempest Shot</span>. They walk into the trap.</li>
+    <li><strong>Elites:</strong> <span class="sk"><img src="../../assets/icons/ranger/marking-shot.webp" width="18" height="18" alt="" loading="lazy">Marking Shot</span> (Precision) → <span class="sk"><img src="../../assets/icons/ranger/snare-shot.webp" width="18" height="18" alt="" loading="lazy">Snare Shot</span> → <span class="sk"><img src="../../assets/icons/ranger/burst-arrow.webp" width="18" height="18" alt="" loading="lazy">Burst Arrow</span> → charged <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Deadshot</span>. Kite, don't tank.</li>
+    <li><strong>Low HP:</strong> Drill Dart and Burst Arrow absorb HP. Step back out of melee range before you heal up.</li>
+  </ul></div>
+
+</section>
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">Sources</h2>
+  <ul>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/ranger" target="_blank" rel="noopener">questlog.gg</a> — skill &amp; stigma data from the global client</li>
+    <li><a href="https://7mmo.com/threads/guide-ranger-aion-2-build-pve-complet-sorts-stigmas-stuff.5771/" target="_blank" rel="noopener">7MMO</a> — full Korean PvE build (skills, stigmas, macro)</li>
+    <li><a href="https://vortexgaming.io/postdetail/722757" target="_blank" rel="noopener">Vortex Gaming</a> — Korean post-patch stigma setup</li>
+    <li><a href="https://game8.co/games/Aion-2/archives/613085" target="_blank" rel="noopener">Game8</a> — skill unlock levels, rotation basics</li>
+    <li><a href="https://gamerstogether.cz/en/aion-2-ranger-build-guide/" target="_blank" rel="noopener">Gamers Together</a> — PvP approach</li>
+    <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (TitanTheF's table) — leveling route</li>
+  </ul>
+</section>  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../en/">AION 2 Guides</a>
+      <p>Unofficial fan site, not affiliated with NCSOFT. AION 2 and its skill icons are © NCSOFT.</p>
+      <p>Last checked: 2026-09-27 (before the global launch).</p>
+    </div>
+  </div>
+</footer>
+<script src="../../assets/js/site.js" defer></script>
+</body>
+</html>

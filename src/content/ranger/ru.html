@@ -1,0 +1,257 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance with context %}
+
+{# ============================== PvE ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('deadshot', '20'), ('gale-arrow', '20'), ('drill-dart', '20'), ('snare-shot', '20')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('vaizels-authority', 20), ('bow-of-blessing', 20), ('griffon-arrow', 20), ('supporting-fire', 15)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['focused-eye', 'hunters-resolve', 'concentrated-fire', 'hunters-soul']) }}
+{% endcall %}
+
+{% call section('intro', 'Обзор', 'pve') %}
+  <p>Лучник — стрелок с луком, который сражается примерно с <strong>20 метров</strong>: это дальность почти всех его скиллов. Урон у него один из лучших, но живучесть и полезность для группы низкие, поэтому позиционирование решает всё.</p>
+  <div class="callout accent">
+    <h3>Билд одной фразой</h3>
+    <p>Сначала накладывай баффы — {{ s('gale-arrow') }}, {{ s('marking-shot') }} (Точность: +300 крит. удара и +35% урона {{ s('deadshot', False) }}), затем баффы стигм — и стреляй заряженным {{ s('deadshot') }}, пока тикают кровотечение и горение.</p>
+  </div>
+{% endcall %}
+
+{% call section('global', 'Глобальный 1 сезон: что меняется', 'pve pvp') %}
+  <p>Глобальные серверы открываются <strong>5 октября 2026</strong> (ранний доступ для Founder's Pack — с 30 сентября). Что это значит для Лучника:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 слота стигм.</strong> Корейские билды используют пять — выпадает ситуативная Взрывная стрела.</li>
+      <li><strong>Стигмы ограничены 20 уровнем.</strong> Благословенный лук теряет +5 сек. длительности, Поддерживающий огонь — доп. выстрелы.</li>
+      <li><strong>Нет героического снаряжения</strong> в 1 сезоне: меньше строк под уровни скиллов и пассивки.</li>
+      <li><strong>Бонусы Daevanion слабее</strong> — бои дольше, поэтому аптайм баффов важнее.</li>
+      <li data-only="pvp"><strong>PvP:</strong> у всех одинаково ограниченное снаряжение, мета ещё не сложилась.</li>
+    </ul>
+  </div>
+  <p class="note">Активные скиллы и пассивки в глобальных и корейско-тайваньских данных совпадают. Старые корейские гайды (до переработки стигм) качали Меткий выстрел и Скоростную стрельбу до 20 и пропускали Шквал стрел — этот совет устарел.</p>
+{% endcall %}
+
+{% call section('skills', 'Скиллы', 'pve') %}
+  <p>Четыре скилла качаются до <strong>20</strong>, три вспомогательных — до <strong>16</strong>, остальные остаются на <strong>12</strong>. Уровни дают очки навыков (10), Daevanion (14), кольца и арканы (20).</p>
+  <ul class="skill-grid">
+    {% call skill('deadshot', 'must', '20', [1, 3, 4]) %}Заряжаемый удар (3 уровня заряда). Стреляй только под Точностью.{% endcall %}
+    {% call skill('gale-arrow', 'must', '20', [2, 3, 4]) %}Шквал: +7% скорости боя и урона в PvE. Держи его постоянно.{% endcall %}
+    {% call skill('drill-dart', 'must', '20', [0, 3, 4]) %}Кровотечение для Шквального огня и твоё самолечение.{% endcall %}
+    {% call skill('snare-shot', 'must', '20', [1, 2, 3]) %}Замедляет цель — это включает Рассекающую стрелу, Взрывную стрелу и Пленяющий взгляд.{% endcall %}
+    {% call skill('snipe', 'opt', '16', [3, 4]) %}Базовая атака: зажимай её между скиллами, каждое попадание сокращает перезарядку Прицельного выстрела.{% endcall %}
+    {% call skill('tempest-shot', 'opt', '16', [2, 4]) %}Заполнитель в макросе; быстрее со специализацией на скорость умений.{% endcall %}
+    {% call skill('arrow-scattershot', 'opt', '16', [3, 4]) %}Только по ошеломлённым целям — тогда каждое попадание сокращает все перезарядки на 1 сек.{% endcall %}
+    {% call skill('marking-shot', 'opt', '12', [2, 3]) %}Точность: +300 крит. удара. Обновляй сразу, как спадёт.{% endcall %}
+    {% call skill('burst-arrow', 'opt', '12', [0, 3]) %}Бьёт только цели под Замедлением или Пленом — всегда после Опутывающего выстрела.{% endcall %}
+    {% call skill('explosion-trap', 'skip', '12', [0]) %}Собирает пачки под АоЕ; на боссах мало пользы.{% endcall %}
+    {% call skill('defiance', 'skip', '12', [3]) %}Снятие контроля. Важнее в PvP.{% endcall %}
+    {% call skill('suppressing-arrow', 'skip', '—') %}Оглушение — инструмент для PvP.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Пассивки', 'pve') %}
+  <p>Билд держится на двух пассивках: {{ s('focused-eye') }} (точность, усиление урона в PvE, мощный удар) и {{ s('hunters-resolve') }} (усиление крит. урона). Поднимай обе настолько, насколько позволяют снаряжение и карты.</p>
+  <div class="callout"><ul>
+    <li>{{ s('concentrated-fire') }} — доп. удары по целям под периодическим уроном (кровотечение Пронзающей стрелы, пламя Стрелы грифона).</li>
+    <li>{{ s('hunters-soul') }} — доп. урон на критах; Сила Байзела умножает его.</li>
+    <li>{{ s('rooting-eye') }} — доп. урон по целям под Замедлением или Пленом; Опутывающий выстрел держит его активным.</li>
+    <li>{{ s('vigilant-eye') }} и {{ s('unyielding-resolve') }} — защитные, их можно не трогать.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('gear', 'Снаряжение и характеристики', 'pve') %}
+  <div class="callout"><ul>
+    <li><strong>Привязка:</strong> Око концентрации, Решимость охотника и атака на всём. На оружии: скорость боя, усиление урона, усиление урона оружием, мультиудар.</li>
+    <li><strong>Кольца:</strong> +1 уровень к четырём основным скиллам (Прицельный выстрел, Шквал стрел, Пронзающая стрела, Опутывающий выстрел).</li>
+    <li><strong>Манастоуны:</strong> сначала усиление урона спереди, затем усиление урона оружием / крит. урона.</li>
+    <li><strong>Точность</strong> важна: промах Прицельным выстрелом — самая большая потеря урона для Лучника.</li>
+  </ul></div>
+  <p class="note">Корейские цели эндгейма (точность 2600+, крит. удар 3150+, усиление урона спереди 30–35%) относятся к более позднему уровню снаряжения, чем глобальный 1 сезон — это направление, а не чек-лист.</p>
+{% endcall %}
+
+{% call section('arcana', 'Арканы', 'pve') %}
+  <p>Цель — <strong>+4</strong> к каждому из четырёх основных скиллов: {{ s('deadshot') }}, {{ s('gale-arrow') }}, {{ s('drill-dart') }}, {{ s('snare-shot') }}. Остаток — в {{ s('focused-eye') }} и {{ s('hunters-resolve') }}.</p>
+  <p>Карта на 5 уровне в среднем даёт около +2 к случайному скиллу из своего списка, так что в 1 сезоне большинство из четырёх будет на 18–20. Если приходится выбирать — приоритет Прицельному выстрелу и Шквалу стрел.</p>
+{% endcall %}
+
+{% call section('daevanion', 'Доски Daevanion', 'pve pvp') %}
+  <p>Daevanion поднимает скиллы с 10 до 14. Каждый синий узел — <strong>+1 уровень</strong> своего скилла.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Доска</th><th>Открытие</th><th>Фокус</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Ур. 12</td><td>Уровни скиллов, базовые характеристики</td></tr>
+      <tr><td>Zikel</td><td>Ур. 20</td><td>Уклонение, усиление / стойкость к урону</td></tr>
+      <tr><td>Vaizel</td><td>Ур. 30</td><td>Критический урон — очень важно для Лучника</td></tr>
+      <tr><td>Triniel</td><td>Ур. 40</td><td>Мультиудар (в основном PvP)</td></tr>
+      <tr><td>Ariel</td><td>Ур. 45</td><td>Урон и защита в PvE</td></tr>
+      <tr><td>Azphel</td><td>Ур. 45</td><td>Урон и защита в PvP</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>Приоритет:</strong> все золотые/синие узлы {{ s('deadshot') }}, {{ s('gale-arrow') }}, {{ s('drill-dart') }}, {{ s('snare-shot') }} и ключевых пассивок, затем оранжевые.</li>
+    <li data-only="pvp"><strong>Приоритет:</strong> синие узлы {{ s('deadshot') }}, {{ s('snare-shot') }}, {{ s('suppressing-arrow') }}, {{ s('marking-shot') }}, {{ s('defiance') }}.</li>
+    <li data-only="pve"><strong>Ariel, а не Azphel</strong> — стоят одинаково, и ошибка здесь самая дорогая во всей системе.</li>
+    <li data-only="pvp"><strong>Azphel, а не Ariel</strong>, и Triniel пораньше.</li>
+  </ul></div>
+  <p class="note">Схемы досок взяты из корейско-тайваньского клиента, значения в глобале ниже. Сверься с доской в игре, прежде чем вкладывать весь маршрут.</p>
+{% endcall %}
+
+{% call section('stigmas', 'Стигмы', 'pve') %}
+  <p>Корейские билды после патча сходятся на одной четвёрке. В PvE не бери Невидимость, Внезапный толчок, Стрелу печати, Иллюзорную стрелу, Капкан, Ураган стрел и Сокрушающий натиск.</p>
+  <ul class="skill-grid">
+    {% call skill('vaizels-authority', 'must', 'ур. 20', upto=20) %}+20% атаки; ×1,5 к Оку концентрации и Душе охотника. На 20 криты сокращают все перезарядки на 1 сек. — ротация заметно ускоряется.{% endcall %}
+    {% call skill('bow-of-blessing', 'must', 'ур. 15 → 20', upto=20) %}Бафф крита и точности. 15 уровень даёт +20% крит. урона, 20 — мощный удар, который складывается с баффами Чародея.{% endcall %}
+    {% call skill('griffon-arrow', 'must', 'ур. 20', upto=20) %}Периодический урон «Искра» — около 10% всего урона в корейских замерах.{% endcall %}
+    {% call skill('supporting-fire', 'must', 'ур. 5 → 15', upto=15) %}Сфера, которая стреляет вместе с тобой (~7% урона). На 20 её выстрелы всегда критуют — только если есть лишние осколки.{% endcall %}
+    {% call skill('explosive-arrow', 'opt', 'альт.', upto=5) %}Для коротких боёв: +20% урона по замедленным целям и гарантированный крит на 15.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('macro', 'Ротация и макрос', 'pve') %}
+  <div class="callout accent">
+    <h3>Начало боя</h3>
+    <div class="combo">{{ s('gale-arrow') }}<span class="arrow">→</span>{{ s('marking-shot') }}<span class="arrow">→</span>{{ s('vaizels-authority') }} + {{ s('bow-of-blessing') }} + {{ s('supporting-fire') }}<span class="arrow">→</span>{{ s('snare-shot') }}<span class="arrow">→</span>заряженный {{ s('deadshot') }}</div>
+  </div>
+  <p>Топовые корейские игроки играют на трёх кнопках: <strong>зажимают</strong> {{ s('snipe') }} (базовая атака, сокращает перезарядку Прицельного выстрела) <strong>+ зажимают</strong> кнопку макроса, а Прицельный выстрел <strong>нажимают и отпускают</strong> вручную, когда он готов. Помечающий выстрел обновляют сами, когда спадает Точность.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Линия</th><th>Скиллы (сверху вниз)</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>{{ s('gale-arrow') }} → {{ s('griffon-arrow') }} → {{ s('snare-shot') }}</td></tr>
+      <tr><td>2</td><td>{{ s('drill-dart') }} → {{ s('burst-arrow') }} → {{ s('tempest-shot') }}</td></tr>
+      <tr><td>3</td><td>{{ s('vaizels-authority') }} → {{ s('supporting-fire') }} → {{ s('bow-of-blessing') }}</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Опутывающий выстрел стоит перед Рассекающей стрелой не случайно: она бьёт только цель под Замедлением или Пленом.</p>
+{% endcall %}
+
+{% call section('recap', 'Итог', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Скиллы:</strong> Прицельный выстрел, Шквал стрел, Пронзающая стрела, Опутывающий выстрел — 20; Меткий выстрел, Скоростная стрельба, Град из стрел — 16; остальное 12.</li>
+    <li><strong>Стигмы:</strong> Сила Байзела 20, Благословенный лук 15–20, Стрела грифона 20, Поддерживающий огонь 5–15.</li>
+    <li><strong>Пассивки:</strong> Око концентрации и Решимость охотника как можно выше.</li>
+    <li><strong>Игра:</strong> сначала баффы, Прицельный выстрел только под Точностью, не давай спадать Шквалу и Точности.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================== PvP ============================== #}
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('deadshot', '20'), ('snare-shot', '16'), ('suppressing-arrow', '16'), ('marking-shot', '16'), ('defiance', '16')]) }}
+  <h3>{{ t.stigma_loadout }} · Бездна</h3>
+  {{ loadout([('stealth', 15), ('ambush-kick', 15), ('sealing-arrow', 5), ('mother-natures-breath', 5)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['focused-eye', 'revitalization-contract', 'unyielding-resolve', 'vigilant-eye']) }}
+{% endcall %}
+
+{% call section('intro-pvp', 'Обзор', 'pvp') %}
+  <p>PvP-Лучник побеждает не в размене ударами, а тем, что <strong>размена не происходит</strong>. Замедления, плен, оглушения, отталкивания и молчание держат врага на 20 метрах, пока работает Прицельный выстрел.</p>
+  <p>Порядок действий: <strong>открытие издалека или из невидимости</strong> → <strong>контроль цели</strong> → <strong>урон под Точностью</strong> → <strong>разрыв дистанции</strong>.</p>
+  <p class="note">Глобальной PvP-меты пока нет. Этот режим объединяет корейско-тайваньские советы по PvP с данными скиллов из глобального клиента — считай его отправной точкой.</p>
+{% endcall %}
+
+{% call section('skills-pvp', 'Скиллы', 'pvp') %}
+  <ul class="skill-grid">
+    {% call skill('deadshot', 'must', '16 → 20', [1, 3, 4]) %}Всё ещё главная кнопка убийства; игнорирование блока и уклонения против игроков важнее.{% endcall %}
+    {% call skill('marking-shot', 'must', '16', [1, 3, 4]) %}Смена позиции и Точность. На 16 всегда критует сквозь блок и уклонение.{% endcall %}
+    {% call skill('suppressing-arrow', 'must', '16', [1, 3, 4]) %}Оглушение (40% под Точностью). Дольше, чаще, со сбросом перезарядки.{% endcall %}
+    {% call skill('snare-shot', 'must', '16', [0, 3, 4]) %}Замедление → плен Сковывающей стрелой. Главный инструмент контроля дистанции.{% endcall %}
+    {% call skill('defiance', 'must', '16', [2, 3, 4]) %}Снятие контроля. Обязательно против ближников.{% endcall %}
+    {% call skill('drill-dart', 'opt', '16', [0, 3]) %}Кровотечение ещё и снижает получаемое лечение — начинай с него по хилерам.{% endcall %}
+    {% call skill('gale-arrow', 'opt', '12', [1, 2]) %}Бафф плюс 50% шанс отталкивания.{% endcall %}
+    {% call skill('explosion-trap', 'opt', '12', [1, 3]) %}Ставь под ныряющего ближника: оглушение.{% endcall %}
+    {% call skill('burst-arrow', 'opt', '12', [0, 2]) %}Поглощение 10% ОЗ с замедленной цели — лечение на кайте.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives-pvp', 'Пассивки', 'pvp') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Пассивка</th><th>Польза в PvP</th></tr></thead>
+    <tbody>
+      <tr><td>{{ s('focused-eye') }}</td><td>Всё ещё №1: точность и усиление урона в PvP.</td></tr>
+      <tr><td>{{ s('revitalization-contract') }}</td><td>Сопротивление эффектам, растущее под контролем, и экстренное лечение 35% на 10% ОЗ.</td></tr>
+      <tr><td>{{ s('unyielding-resolve') }}</td><td>Сопротивление физическим и шоковым эффектам — тебя сложнее сковать и сбить.</td></tr>
+      <tr><td>{{ s('vigilant-eye') }}</td><td>Уклонение и лечение при уклонении.</td></tr>
+      <tr><td>{{ s('wind-vigor') }}</td><td>Больше выносливости (уклонения) и скорость при получении урона.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear-pvp', 'Снаряжение и арканы', 'pvp') %}
+  <p>В 1 сезоне оставь PvE-снаряжение; меняй пассивки, стигмы и Daevanion.</p>
+  <div class="callout"><ul>
+    <li><strong>Точность</strong> в первую очередь — игроки блокируют и уклоняются.</li>
+    <li><strong>Усиление / стойкость к урону в PvP</strong> вместо PvE-версий, где слот это позволяет.</li>
+    <li><strong>Арканы:</strong> Прицельный выстрел до 20, затем Опутывающий выстрел, Поражающая стрела, Помечающий выстрел и Снятие шока до 16.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('stigmas-pvp', 'Стигмы', 'pvp') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Режим</th><th>Стигмы</th></tr></thead>
+    <tbody>
+      <tr><td>Бездна / открытый мир</td><td>Невидимость, Внезапный толчок, Стрела печати, Дыхание Матери-Природы</td></tr>
+      <tr><td>Арена</td><td>Сила Байзела, Внезапный толчок, Стрела печати, Дыхание Матери-Природы</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="skill-grid">
+    {% call skill('ambush-kick', 'must', 'ур. 15', upto=15) %}Прыжок за спину, отталкивание, отскок назад. Щит на 10, 50% оглушения на 15. Ответ ныряющим ближникам.{% endcall %}
+    {% call skill('sealing-arrow', 'must', 'ур. 5+', upto=5) %}75% Запечатывания (молчание) на 5 сек. Используй на магах <em>до того</em>, как они нажмут защиту.{% endcall %}
+    {% call skill('mother-natures-breath', 'must', 'ур. 5+', upto=5) %}6 сек. стойкости к урону, сопротивления критам и 50% шанс поглощать урон как ОЗ. 5 уровень снимает периодический урон.{% endcall %}
+    {% call skill('stealth', 'opt', 'Бездна · ур. 15', upto=15) %}Открытие: крит из невидимости на 5, в бою — на 15.{% endcall %}
+    {% call skill('vaizels-authority', 'opt', 'Арена · ур. 20', upto=20) %}Урон и сокращение перезарядок, когда подкрасться не к кому.{% endcall %}
+    {% call skill('illusory-arrow', 'opt', 'альт.', upto=10) %}Слепота на 3 сек.; по области на 10.{% endcall %}
+    {% call skill('ensnaring-trap', 'opt', 'альт.', upto=10) %}Ловушка с воздушными оковами; на 10 снимает до 2 баффов.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('combos-pvp', 'Комбо и игра', 'pvp') %}
+  <div class="callout">
+    <h3>Открытие</h3>
+    <div class="combo">{{ s('stealth') }}<span class="arrow">→</span>{{ s('marking-shot') }}<span class="arrow">→</span>{{ s('suppressing-arrow') }}<span class="arrow">→</span>заряженный {{ s('deadshot') }}</div>
+  </div>
+  <div class="callout">
+    <h3>Против магов</h3>
+    <div class="combo">{{ s('sealing-arrow') }}<span class="arrow">→</span>{{ s('snare-shot') }}<span class="arrow">→</span>{{ s('deadshot') }}</div>
+    <p>Сначала молчание — тогда на твой урон не ответят щитом или побегом.</p>
+  </div>
+  <div class="callout">
+    <h3>Когда на тебя прыгает ближник</h3>
+    <ul>
+      <li>Отталкивание {{ s('ambush-kick') }} или {{ s('gale-arrow') }} → {{ s('snare-shot') }} → отходи на 20 м.</li>
+      <li>{{ s('explosion-trap') }} под ноги, пока он подбегает.</li>
+      <li>{{ s('defiance') }} на первый жёсткий контроль, {{ s('mother-natures-breath') }} — когда тебя фокусят.</li>
+    </ul>
+  </div>
+{% endcall %}
+
+{% call section('recap-pvp', 'Итог', 'pvp') %}
+  <div class="callout accent"><ul>
+    <li><strong>Скиллы:</strong> Прицельный выстрел 16→20; Помечающий выстрел, Поражающая стрела, Опутывающий выстрел, Снятие шока — 16.</li>
+    <li><strong>Стигмы:</strong> Внезапный толчок, Стрела печати, Дыхание Матери-Природы + Невидимость (Бездна) или Сила Байзела (Арена).</li>
+    <li><strong>Пассивки:</strong> Око концентрации &gt; Контракт оживления / Железная воля.</li>
+    <li><strong>Игра:</strong> никогда не размениваться вблизи — контроль, урон, разрыв дистанции.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Пачки:</strong> {{ s('explosion-trap') }} под ноги → {{ s('snare-shot') }} → {{ s('drill-dart') }} + {{ s('tempest-shot') }}. Мобы сами забегают в ловушку.</li>
+    <li><strong>Элитки:</strong> {{ s('marking-shot') }} (Точность) → {{ s('snare-shot') }} → {{ s('burst-arrow') }} → заряженный {{ s('deadshot') }}. Кайти, не танкуй.</li>
+    <li><strong>Мало ОЗ:</strong> Пронзающая и Рассекающая стрелы поглощают ОЗ. Сначала выйди из ближнего боя, потом лечись.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://questlog.gg/aion-2/ru/db/skills/ranger" target="_blank" rel="noopener">questlog.gg</a> — данные скиллов и стигм из глобального клиента</li>
+    <li><a href="https://7mmo.com/threads/guide-ranger-aion-2-build-pve-complet-sorts-stigmas-stuff.5771/" target="_blank" rel="noopener">7MMO</a> — полный корейский PvE-билд (скиллы, стигмы, макрос)</li>
+    <li><a href="https://vortexgaming.io/postdetail/722757" target="_blank" rel="noopener">Vortex Gaming</a> — корейская сборка стигм после патча</li>
+    <li><a href="https://game8.co/games/Aion-2/archives/613085" target="_blank" rel="noopener">Game8</a> — уровни открытия скиллов, основы ротации</li>
+    <li><a href="https://gamerstogether.cz/en/aion-2-ranger-build-guide/" target="_blank" rel="noopener">Gamers Together</a> — подход к PvP</li>
+    <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (таблица TitanTheF) — маршрут прокачки</li>
+  </ul>
+</section>

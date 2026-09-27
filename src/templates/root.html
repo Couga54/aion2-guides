@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AION 2 Guides</title>
+<meta name="description" content="{{ t.home_desc }}">
+<link rel="canonical" href="{{ SITE.base_url }}en/">
+<link rel="alternate" hreflang="en" href="{{ SITE.base_url }}en/">
+<link rel="alternate" hreflang="ru" href="{{ SITE.base_url }}ru/">
+<link rel="alternate" hreflang="x-default" href="{{ SITE.base_url }}en/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>
+  // Remembered choice first, then browser language (ru/uk/be → Russian).
+  (function () {
+    var lang;
+    try { lang = localStorage.getItem('lang'); } catch (e) {}
+    if (lang !== 'en' && lang !== 'ru') {
+      var nav = (navigator.languages || [navigator.language || 'en']).join(',').toLowerCase();
+      lang = /(^|,)(ru|uk|be)/.test(nav) ? 'ru' : 'en';
+    }
+    location.replace(lang + '/' + location.search + location.hash);
+  })();
+</script>
+<style>
+  body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0b0e14;color:#e8e4da;font-family:system-ui,sans-serif;}
+  a{color:#d9b36c;margin:0 .6em;}
+</style>
+</head>
+<body>
+  <p><a href="en/">English</a> · <a href="ru/">Русский</a></p>
+</body>
+</html>
