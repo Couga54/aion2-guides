@@ -92,3 +92,34 @@
   {{ caller() }}
 </aside>
 {%- endmacro %}
+
+{#
+  Hotbar line: one hotbar button holding several skills; the game fires the first one that's ready.
+  key: key label, name: short line name, slugs: skills top → bottom (priority order),
+  opt: slugs shown as optional (dashed) at the end.
+#}
+{% macro hotline(key, name, slugs, opt=[]) -%}
+<div class="hotline">
+  <div class="hotline-head"><span class="key">{{ key }}</span><span class="hotline-name">{{ name }}</span></div>
+  <ol class="hotline-skills">
+    {% for slug in slugs + opt %}
+    <li class="{{ 'is-opt' if slug in opt }}">
+      <span class="hl-n">{{ loop.index }}</span>
+      <img src="{{ icon_url(slug) }}" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">{{ skill_data(slug)[lang].name }}</span>
+    </li>
+    {% endfor %}
+  </ol>
+  {% set note = caller() if caller is defined else '' %}
+  {% if note|trim %}<p class="hotline-note">{{ note }}</p>{% endif %}
+</div>
+{%- endmacro %}
+
+{# In-game macro slots: steps = [(label, detail), ...] in slot order. #}
+{% macro macroseq(steps) -%}
+<ol class="macroseq">
+  {% for label, detail in steps %}
+  <li><span class="ms-n">{{ loop.index }}</span><span class="ms-label">{{ label }}</span>{% if detail %}<span class="ms-detail">{{ detail }}</span>{% endif %}</li>
+  {% endfor %}
+</ol>
+{%- endmacro %}

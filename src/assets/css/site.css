@@ -456,3 +456,26 @@ td:first-child{font-weight:600;color:var(--text);white-space:nowrap;}
 .src-about h2{font:700 .7rem/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--text-faint);margin:0 0 10px;}
 .src-about p{margin:0 0 8px;color:var(--text-dim);font-size:.9rem;max-width:80ch;}
 .src-about p:last-child{margin:0;}
+
+/* ---- macro: hotbar lines + in-game macro slots ---- */
+.hotlines{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:12px;margin:12px 0 18px;}
+.hotline{padding:14px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--border);}
+.hotline-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.hotline-name{font-weight:700;font-size:.92rem;}
+.hotline-skills{list-style:none;margin:0;padding:0;display:grid;gap:6px;}
+.hotline-skills li{display:flex;align-items:center;gap:10px;padding:5px 8px;border-radius:9px;background:var(--bg-2);border:1px solid var(--border);}
+.hotline-skills li.is-opt{border-style:dashed;opacity:.75;}
+.hotline-skills img{width:32px;height:32px;border-radius:7px;flex:none;}
+.hl-n{flex:none;width:20px;text-align:center;font:700 .7rem var(--font-mono);color:var(--accent);}
+.hl-name{font-size:.88rem;font-weight:600;}
+.hotline-note{margin:10px 0 0;font-size:.82rem;color:var(--text-dim);}
+.macroseq{list-style:none;margin:10px 0 16px;padding:0;display:flex;flex-wrap:wrap;gap:8px;counter-reset:none;}
+.macroseq li{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--border-2);}
+.ms-n{font:700 .7rem var(--font-mono);color:var(--text-faint);}
+.ms-label{font-weight:700;font-size:.88rem;}
+.ms-detail{font:500 .72rem var(--font-mono);color:var(--text-faint);}
+.presslist{list-style:none;margin:10px 0 16px;padding:0;display:grid;gap:8px;}
+.presslist li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:4px 12px;align-items:baseline;}
+.press-what{line-height:1.9;}
+@media (max-width: 560px){ .presslist li{grid-template-columns:1fr;} }
+.press-how{font:700 .64rem var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);}

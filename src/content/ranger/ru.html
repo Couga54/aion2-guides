@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq with context %}
 
 {# ============================== PvE ============================== #}
 {% call glance('pve') %}
@@ -109,20 +109,35 @@
 {% endcall %}
 
 {% call section('macro', 'Ротация и макрос', 'pve') %}
+  <p>В AION 2 два разных инструмента, и билд использует оба:</p>
+  <ul>
+    <li><strong>Линия на кнопке</strong> — несколько скиллов на <em>одной</em> кнопке панели. Нажатие применяет первый скилл списка, который не на перезарядке, поэтому порядок = приоритет.</li>
+    <li><strong>Встроенный макрос</strong> — пока ты держишь его клавишу, он по очереди нажимает кнопки панели, вставляет базовые атаки и отменяет хвосты анимаций. Скиллы на перезарядке пропускаются.</li>
+  </ul>
+
   <div class="callout accent">
     <h3>Начало боя</h3>
     <div class="combo">{{ s('gale-arrow') }}<span class="arrow">→</span>{{ s('marking-shot') }}<span class="arrow">→</span>{{ s('vaizels-authority') }} + {{ s('bow-of-blessing') }} + {{ s('supporting-fire') }}<span class="arrow">→</span>{{ s('snare-shot') }}<span class="arrow">→</span>заряженный {{ s('deadshot') }}</div>
   </div>
-  <p>Топовые корейские игроки играют на трёх кнопках: <strong>зажимают</strong> {{ s('snipe') }} (базовая атака, сокращает перезарядку Прицельного выстрела) <strong>+ зажимают</strong> кнопку макроса, а Прицельный выстрел <strong>нажимают и отпускают</strong> вручную, когда он готов. Помечающий выстрел обновляют сами, когда спадает Точность.</p>
-  <div class="table-wrap"><table>
-    <thead><tr><th>Линия</th><th>Скиллы (сверху вниз)</th></tr></thead>
-    <tbody>
-      <tr><td>1</td><td>{{ s('gale-arrow') }} → {{ s('griffon-arrow') }} → {{ s('snare-shot') }}</td></tr>
-      <tr><td>2</td><td>{{ s('drill-dart') }} → {{ s('burst-arrow') }} → {{ s('tempest-shot') }}</td></tr>
-      <tr><td>3</td><td>{{ s('vaizels-authority') }} → {{ s('supporting-fire') }} → {{ s('bow-of-blessing') }}</td></tr>
-    </tbody>
-  </table></div>
-  <p class="note">Опутывающий выстрел стоит перед Рассекающей стрелой не случайно: она бьёт только цель под Замедлением или Пленом.</p>
+
+  <h3>1. Линии на кнопках</h3>
+  <div class="hotlines">
+    {% call hotline('1', 'Линия Шквала', ['gale-arrow', 'griffon-arrow', 'snare-shot'], ['explosive-arrow']) %}Взрывная стрела — только если поставил её в стигмы.{% endcall %}
+    {% call hotline('2', 'Линия Пронзающей', ['drill-dart', 'burst-arrow', 'tempest-shot']) %}Рассекающая стрела бьёт только цель под Замедлением или Пленом — их даёт Опутывающий выстрел из линии 1.{% endcall %}
+    {% call hotline('3', 'Линия баффов', ['vaizels-authority', 'supporting-fire', 'bow-of-blessing']) %}{% endcall %}
+  </div>
+
+  <h3>2. Встроенный макрос</h3>
+  <p>Окно скиллов → <strong>Макрос</strong>. Поставь три линии, затем Меткий выстрел, и везде <strong>Delay 10 мс</strong>. Клавиша: Настройки → Управление → Общее → Игровой процесс → <strong>Макрос</strong> (лучше боковая кнопка мыши).</p>
+  {{ macroseq([('Линия Шквала', '1 · 10 мс'), ('Линия Пронзающей', '2 · 10 мс'), ('Линия баффов', '3 · 10 мс'), (skill_data('snipe')[lang].name, '10 мс')]) }}
+  <p class="note">Никогда не ставь {{ s('snipe') }} и {{ s('mother-natures-breath') }} <em>внутрь</em> линии — они будут срабатывать вместо более сильных скиллов. Меткий выстрел идёт в макрос отдельным слотом.</p>
+
+  <h3>3. Что нажимать на самом деле</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Держать</span><span class="press-what">{{ s('snipe') }} (базовая атака, сокращает перезарядку Прицельного выстрела) <strong>и</strong> <span class="key">Макрос</span>.</span></li>
+    <li><span class="press-how">Нажать-отпустить</span><span class="press-what">{{ s('deadshot') }}, когда готов — заряжаемый скилл в макросе срабатывает на случайной стадии заряда, поэтому он на отдельной клавише.</span></li>
+    <li><span class="press-how">Каждые ~15 с</span><span class="press-what">{{ s('marking-shot') }}, чтобы обновить Точность.</span></li>
+  </ul>
 {% endcall %}
 
 {% call section('recap', 'Итог', 'pve') %}

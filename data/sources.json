@@ -57,8 +57,8 @@
            {"type": "site", "url": "https://vortexgaming.io/postdetail/722757", "label": {"en": "Ranger stigmas", "ru": "Стигмы Лучника"}}
          ]},
         {"name": "7MMO",
-         "what": {"en": "Full Korean Ranger PvE build: skills, stigmas, macro.",
-                  "ru": "Полный корейский PvE-билд Лучника: скиллы, стигмы, макрос."},
+         "what": {"en": "Full Korean Ranger PvE build: skills, stigmas, the three macro lines and what to press by hand.",
+                  "ru": "Полный корейский PvE-билд Лучника: скиллы, стигмы, три линии макроса и что жать вручную."},
          "used": ["ranger"],
          "links": [{"type": "site", "url": "https://7mmo.com/threads/guide-ranger-aion-2-build-pve-complet-sorts-stigmas-stuff.5771/", "label": "7mmo.com"}]},
         {"name": "Game8",
@@ -70,6 +70,14 @@
          "what": {"en": "Ranger PvP approach.", "ru": "Подход к PvP за Лучника."},
          "used": ["ranger"],
          "links": [{"type": "site", "url": "https://gamerstogether.cz/en/aion-2-ranger-build-guide/", "label": "gamerstogether.cz"}]},
+        {"name": "Gamers Together · allthings.how",
+         "what": {"en": "How the in-game macro works: hotbar buttons in order, 10 ms delay, cooldowns skipped, what not to put in it.",
+                  "ru": "Как работает встроенный макрос: кнопки панели по порядку, задержка 10 мс, пропуск перезарядок, что туда не ставить."},
+         "used": ["gladiator", "ranger"],
+         "links": [
+           {"type": "site", "url": "https://gamerstogether.cz/en/aion-2-macros/", "label": {"en": "Macro guide", "ru": "Гайд по макросам"}},
+           {"type": "site", "url": "https://allthings.how/aion-2-how-to-use-macros-and-pick-the-right-delay/", "label": "allthings.how"}
+         ]},
         {"name": "DCInside · AION 2 gallery",
          "what": {"en": "Korean player posts on current Ranger meta and stigma choices. Anonymous community authors — no single link to credit.",
                   "ru": "Посты корейских игроков о текущей мете Лучника и выборе стигм. Анонимные авторы сообщества — отдельной ссылки нет."},

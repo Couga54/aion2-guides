@@ -892,18 +892,89 @@
 </section>
 <section id="macro" class="g-section" data-only="pve" aria-labelledby="h-macro">
   <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro">Макрос и ротация</h2></div>
-    <p>Весь набор умещается в шесть кнопок: <strong>2 баффа + 4 атакующих скилла</strong> на двух встроенных макросах.</p>
-  <div class="combo"><span class="key">ПКМ</span><span class="arrow">→</span>линия <span class="sk"><img src="../../assets/icons/gladiator/overhead-slam.webp" width="18" height="18" alt="" loading="lazy">Разящий удар</span> / <span class="sk"><img src="../../assets/icons/gladiator/rending-blow.webp" width="18" height="18" alt="" loading="lazy">Ожесточенный удар</span>, внизу <span class="sk"><img src="../../assets/icons/gladiator/rage-burst.webp" width="18" height="18" alt="" loading="lazy">Выплеск гнева</span></div>
-  <div class="combo"><span class="key">E</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/gladiator/ruinous-blow.webp" width="18" height="18" alt="" loading="lazy">Резня</span> — свой макрос и свой бафф</div>
+    <p>В AION 2 два разных инструмента, и билд использует оба:</p>
+  <ul>
+    <li><strong>Линия на кнопке</strong> — несколько скиллов на <em>одной</em> кнопке панели. Нажатие применяет первый скилл списка, который не на перезарядке, поэтому порядок = приоритет.</li>
+    <li><strong>Встроенный макрос</strong> — пока ты держишь его клавишу, он по очереди нажимает кнопки панели, вставляет базовые атаки и отменяет хвосты анимаций. Скиллы на перезарядке пропускаются.</li>
+  </ul>
+  <p>Гладиатору нужно <strong>6 скиллов на 3 кнопках</strong>: 4 атакующих и 2 баффа.</p>
+
+  <h3>1. Линии на кнопках</h3>
+  <div class="hotlines">
+<div class="hotline">
+  <div class="hotline-head"><span class="key">ПКМ</span><span class="hotline-name">Основная линия</span></div>
+  <ol class="hotline-skills">
+    <li class="">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/gladiator/overhead-slam.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Разящий удар</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/gladiator/rending-blow.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Ожесточенный удар</span>
+    </li>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/gladiator/rage-burst.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Выплеск гнева</span>
+    </li>
+  </ol>
+<p class="hotline-note">Выплеск гнева — <strong>последним</strong>, см. ниже.</p></div><div class="hotline">
+  <div class="hotline-head"><span class="key">E</span><span class="hotline-name">Линия Резни</span></div>
+  <ol class="hotline-skills">
+    <li class="">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/gladiator/ruinous-blow.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Резня</span>
+    </li>
+    <li class="is-opt">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/gladiator/lifestealing-blade.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Клинок кровопийцы</span>
+    </li>
+  </ol>
+<p class="hotline-note">Даёт Боевую готовность. Клинок кровопийцы — только если он стоит в стигмах.</p></div><div class="hotline">
+  <div class="hotline-head"><span class="key">R</span><span class="hotline-name">Линия баффов</span></div>
+  <ol class="hotline-skills">
+    <li class="">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/gladiator/lunge-stance.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Боевой натиск</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/gladiator/zikels-blessing.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Благословение Джикела</span>
+    </li>
+  </ol>
+<p class="hotline-note">Оба держатся сами благодаря сокращению перезарядок от Боевого натиска.</p></div>  </div>
+
+  <h3>2. Встроенный макрос</h3>
+  <p>Окно скиллов → <strong>Макрос</strong>. Поставь три линии в этом порядке и везде <strong>Delay 10 мс</strong> (это пауза между кнопками, а не пинг). Клавиша: Настройки → Управление → Общее → Игровой процесс → <strong>Макрос</strong>. Лучше боковая кнопка мыши — её держат зажатой.</p>
+  <ol class="macroseq">
+  <li><span class="ms-n">1</span><span class="ms-label">Основная линия</span><span class="ms-detail">ПКМ · 10 мс</span></li>
+  <li><span class="ms-n">2</span><span class="ms-label">Линия Резни</span><span class="ms-detail">E · 10 мс</span></li>
+  <li><span class="ms-n">3</span><span class="ms-label">Линия баффов</span><span class="ms-detail">R · 10 мс</span></li>
+</ol>
+
+  <h3>3. Что нажимать на самом деле</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Держать</span><span class="press-what"><span class="key">Макрос</span> весь бой.</span></li>
+    <li><span class="press-how">Спамить</span><span class="press-what"><span class="key">ПКМ</span> основную линию и <span class="key">E</span> линию Резни поверх макроса — линии должны быть раздельными, чтобы их чередовать.</span></li>
+    <li><span class="press-how">Вручную</span><span class="press-what"><span class="sk"><img src="../../assets/icons/gladiator/focused-block.webp" width="18" height="18" alt="" loading="lazy">Концентрация на блоке</span> (блок = групповой бафф), <span class="sk"><img src="../../assets/icons/gladiator/mocking-blade.webp" width="18" height="18" alt="" loading="lazy">Попрание</span> (опрокидывание + лечение), <span class="sk"><img src="../../assets/icons/gladiator/leaping-slam.webp" width="18" height="18" alt="" loading="lazy">Удар в прыжке</span> (сближение), <span class="sk"><img src="../../assets/icons/gladiator/crushing-wave.webp" width="18" height="18" alt="" loading="lazy">Потрошитель</span> на пачках.</span></li>
+  </ul>
+
   <div class="callout">
     <h3>Почему Выплеск гнева внизу</h3>
-    <p>Боевой натиск держит Разящий удар постоянно доступным, поэтому Выплеск гнева должен оставаться в линии и срабатывать сразу после отката. Два макроса нельзя объединить — их чередуют раздельно. Не добавляй Клинок кровопийцы в линию Разящего удара: тайминг макроса зависит от FPS, и любая задержка Разящего удара стоит больше, чем даёт.</p>
+    <p>Боевой натиск держит Разящий удар постоянно доступным, а Выплеск гнева — ещё и бафф, который должен висеть всегда. Внизу основной линии он срабатывает при каждом откате и никогда не задерживает Разящий удар. Не добавляй в основную линию больше скиллов: тайминг макроса зависит от FPS, и любая задержка Разящего удара стоит больше, чем даёт лишний скилл.</p>
   </div>
   <div class="callout">
     <h3>Откуда урон</h3>
     <p>На минутном тесте на манекене: Разящий удар (с Апперкотом) &gt; Ожесточенный удар &gt; Резня &gt; Боевой натиск &gt; Энергия смерти &gt; Выплеск гнева.</p>
   </div>
-  <p>Макрос держит темп, но не играет за тебя. Ты сам решаешь, когда блокировать (групповой бафф!), когда сокращать дистанцию и когда лечиться. В 1 сезоне бои с боссами длятся минутами, поэтому каждая секунда простоя на счету.</p>
+  <p>Макрос держит темп, но не играет за тебя. Ты сам решаешь, когда блокировать, когда сокращать дистанцию и когда лечиться. В 1 сезоне бои с боссами длятся минутами, поэтому каждая секунда простоя на счету.</p>
+  <p class="note">Клавиши — раскладка Arthars в режиме action (ПКМ / E); в tab-target подойдут любые две клавиши, которые удобно спамить. Порядок слотов макроса — та же схема «линия за линией», что в корейских билдах.</p>
 
 </section>
 <section id="recap" class="g-section" data-only="pve" aria-labelledby="h-recap">

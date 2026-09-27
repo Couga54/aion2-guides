@@ -872,20 +872,99 @@
 </section>
 <section id="macro" class="g-section" data-only="pve" aria-labelledby="h-macro">
   <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro">Ротация и макрос</h2></div>
-    <div class="callout accent">
+    <p>В AION 2 два разных инструмента, и билд использует оба:</p>
+  <ul>
+    <li><strong>Линия на кнопке</strong> — несколько скиллов на <em>одной</em> кнопке панели. Нажатие применяет первый скилл списка, который не на перезарядке, поэтому порядок = приоритет.</li>
+    <li><strong>Встроенный макрос</strong> — пока ты держишь его клавишу, он по очереди нажимает кнопки панели, вставляет базовые атаки и отменяет хвосты анимаций. Скиллы на перезарядке пропускаются.</li>
+  </ul>
+
+  <div class="callout accent">
     <h3>Начало боя</h3>
     <div class="combo"><span class="sk"><img src="../../assets/icons/ranger/gale-arrow.webp" width="18" height="18" alt="" loading="lazy">Шквал стрел</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/ranger/marking-shot.webp" width="18" height="18" alt="" loading="lazy">Помечающий выстрел</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/ranger/vaizels-authority.webp" width="18" height="18" alt="" loading="lazy">Сила Байзела</span> + <span class="sk"><img src="../../assets/icons/ranger/bow-of-blessing.webp" width="18" height="18" alt="" loading="lazy">Благословенный лук</span> + <span class="sk"><img src="../../assets/icons/ranger/supporting-fire.webp" width="18" height="18" alt="" loading="lazy">Поддерживающий огонь</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/ranger/snare-shot.webp" width="18" height="18" alt="" loading="lazy">Опутывающий выстрел</span><span class="arrow">→</span>заряженный <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Прицельный выстрел</span></div>
   </div>
-  <p>Топовые корейские игроки играют на трёх кнопках: <strong>зажимают</strong> <span class="sk"><img src="../../assets/icons/ranger/snipe.webp" width="18" height="18" alt="" loading="lazy">Меткий выстрел</span> (базовая атака, сокращает перезарядку Прицельного выстрела) <strong>+ зажимают</strong> кнопку макроса, а Прицельный выстрел <strong>нажимают и отпускают</strong> вручную, когда он готов. Помечающий выстрел обновляют сами, когда спадает Точность.</p>
-  <div class="table-wrap"><table>
-    <thead><tr><th>Линия</th><th>Скиллы (сверху вниз)</th></tr></thead>
-    <tbody>
-      <tr><td>1</td><td><span class="sk"><img src="../../assets/icons/ranger/gale-arrow.webp" width="18" height="18" alt="" loading="lazy">Шквал стрел</span> → <span class="sk"><img src="../../assets/icons/ranger/griffon-arrow.webp" width="18" height="18" alt="" loading="lazy">Стрела грифона</span> → <span class="sk"><img src="../../assets/icons/ranger/snare-shot.webp" width="18" height="18" alt="" loading="lazy">Опутывающий выстрел</span></td></tr>
-      <tr><td>2</td><td><span class="sk"><img src="../../assets/icons/ranger/drill-dart.webp" width="18" height="18" alt="" loading="lazy">Пронзающая стрела</span> → <span class="sk"><img src="../../assets/icons/ranger/burst-arrow.webp" width="18" height="18" alt="" loading="lazy">Рассекающая стрела</span> → <span class="sk"><img src="../../assets/icons/ranger/tempest-shot.webp" width="18" height="18" alt="" loading="lazy">Скоростная стрельба</span></td></tr>
-      <tr><td>3</td><td><span class="sk"><img src="../../assets/icons/ranger/vaizels-authority.webp" width="18" height="18" alt="" loading="lazy">Сила Байзела</span> → <span class="sk"><img src="../../assets/icons/ranger/supporting-fire.webp" width="18" height="18" alt="" loading="lazy">Поддерживающий огонь</span> → <span class="sk"><img src="../../assets/icons/ranger/bow-of-blessing.webp" width="18" height="18" alt="" loading="lazy">Благословенный лук</span></td></tr>
-    </tbody>
-  </table></div>
-  <p class="note">Опутывающий выстрел стоит перед Рассекающей стрелой не случайно: она бьёт только цель под Замедлением или Пленом.</p>
+
+  <h3>1. Линии на кнопках</h3>
+  <div class="hotlines">
+<div class="hotline">
+  <div class="hotline-head"><span class="key">1</span><span class="hotline-name">Линия Шквала</span></div>
+  <ol class="hotline-skills">
+    <li class="">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/ranger/gale-arrow.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Шквал стрел</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/ranger/griffon-arrow.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Стрела грифона</span>
+    </li>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/ranger/snare-shot.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Опутывающий выстрел</span>
+    </li>
+    <li class="is-opt">
+      <span class="hl-n">4</span>
+      <img src="../../assets/icons/ranger/explosive-arrow.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Взрывная стрела</span>
+    </li>
+  </ol>
+<p class="hotline-note">Взрывная стрела — только если поставил её в стигмы.</p></div><div class="hotline">
+  <div class="hotline-head"><span class="key">2</span><span class="hotline-name">Линия Пронзающей</span></div>
+  <ol class="hotline-skills">
+    <li class="">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/ranger/drill-dart.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Пронзающая стрела</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/ranger/burst-arrow.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Рассекающая стрела</span>
+    </li>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/ranger/tempest-shot.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Скоростная стрельба</span>
+    </li>
+  </ol>
+<p class="hotline-note">Рассекающая стрела бьёт только цель под Замедлением или Пленом — их даёт Опутывающий выстрел из линии 1.</p></div><div class="hotline">
+  <div class="hotline-head"><span class="key">3</span><span class="hotline-name">Линия баффов</span></div>
+  <ol class="hotline-skills">
+    <li class="">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/ranger/vaizels-authority.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Сила Байзела</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/ranger/supporting-fire.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Поддерживающий огонь</span>
+    </li>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/ranger/bow-of-blessing.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Благословенный лук</span>
+    </li>
+  </ol>
+</div>  </div>
+
+  <h3>2. Встроенный макрос</h3>
+  <p>Окно скиллов → <strong>Макрос</strong>. Поставь три линии, затем Меткий выстрел, и везде <strong>Delay 10 мс</strong>. Клавиша: Настройки → Управление → Общее → Игровой процесс → <strong>Макрос</strong> (лучше боковая кнопка мыши).</p>
+  <ol class="macroseq">
+  <li><span class="ms-n">1</span><span class="ms-label">Линия Шквала</span><span class="ms-detail">1 · 10 мс</span></li>
+  <li><span class="ms-n">2</span><span class="ms-label">Линия Пронзающей</span><span class="ms-detail">2 · 10 мс</span></li>
+  <li><span class="ms-n">3</span><span class="ms-label">Линия баффов</span><span class="ms-detail">3 · 10 мс</span></li>
+  <li><span class="ms-n">4</span><span class="ms-label">Меткий выстрел</span><span class="ms-detail">10 мс</span></li>
+</ol>
+  <p class="note">Никогда не ставь <span class="sk"><img src="../../assets/icons/ranger/snipe.webp" width="18" height="18" alt="" loading="lazy">Меткий выстрел</span> и <span class="sk"><img src="../../assets/icons/ranger/mother-natures-breath.webp" width="18" height="18" alt="" loading="lazy">Дыхание Матери-Природы</span> <em>внутрь</em> линии — они будут срабатывать вместо более сильных скиллов. Меткий выстрел идёт в макрос отдельным слотом.</p>
+
+  <h3>3. Что нажимать на самом деле</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Держать</span><span class="press-what"><span class="sk"><img src="../../assets/icons/ranger/snipe.webp" width="18" height="18" alt="" loading="lazy">Меткий выстрел</span> (базовая атака, сокращает перезарядку Прицельного выстрела) <strong>и</strong> <span class="key">Макрос</span>.</span></li>
+    <li><span class="press-how">Нажать-отпустить</span><span class="press-what"><span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Прицельный выстрел</span>, когда готов — заряжаемый скилл в макросе срабатывает на случайной стадии заряда, поэтому он на отдельной клавише.</span></li>
+    <li><span class="press-how">Каждые ~15 с</span><span class="press-what"><span class="sk"><img src="../../assets/icons/ranger/marking-shot.webp" width="18" height="18" alt="" loading="lazy">Помечающий выстрел</span>, чтобы обновить Точность.</span></li>
+  </ul>
 
 </section>
 <section id="recap" class="g-section" data-only="pve" aria-labelledby="h-recap">

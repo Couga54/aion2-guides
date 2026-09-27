@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq with context %}
 
 {# ============================== PvE ============================== #}
 {% call glance('pve') %}
@@ -109,20 +109,35 @@
 {% endcall %}
 
 {% call section('macro', 'Rotation & macro', 'pve') %}
+  <p>AION 2 has two separate tools, and the build uses both:</p>
+  <ul>
+    <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the first skill in the list that's off cooldown, so the order is the priority.</li>
+    <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar buttons in order, weaves basic attacks and cancels animation tails. Skills on cooldown are skipped.</li>
+  </ul>
+
   <div class="callout accent">
     <h3>Opener</h3>
     <div class="combo">{{ s('gale-arrow') }}<span class="arrow">→</span>{{ s('marking-shot') }}<span class="arrow">→</span>{{ s('vaizels-authority') }} + {{ s('bow-of-blessing') }} + {{ s('supporting-fire') }}<span class="arrow">→</span>{{ s('snare-shot') }}<span class="arrow">→</span>charged {{ s('deadshot') }}</div>
   </div>
-  <p>Korean top parses play with three buttons: <strong>hold</strong> {{ s('snipe') }} (basic attack, shortens Deadshot's cooldown) <strong>+ hold</strong> the macro key, and <strong>press-release</strong> Deadshot manually when it's up. Recast Marking Shot yourself when Precision drops.</p>
-  <div class="table-wrap"><table>
-    <thead><tr><th>Macro line</th><th>Skills (top to bottom)</th></tr></thead>
-    <tbody>
-      <tr><td>1</td><td>{{ s('gale-arrow') }} → {{ s('griffon-arrow') }} → {{ s('snare-shot') }}</td></tr>
-      <tr><td>2</td><td>{{ s('drill-dart') }} → {{ s('burst-arrow') }} → {{ s('tempest-shot') }}</td></tr>
-      <tr><td>3</td><td>{{ s('vaizels-authority') }} → {{ s('supporting-fire') }} → {{ s('bow-of-blessing') }}</td></tr>
-    </tbody>
-  </table></div>
-  <p class="note">Snare Shot sits before Burst Arrow on purpose: Burst Arrow only hits a Slowed or Rooted target.</p>
+
+  <h3>1. Hotbar lines</h3>
+  <div class="hotlines">
+    {% call hotline('1', 'Gale line', ['gale-arrow', 'griffon-arrow', 'snare-shot'], ['explosive-arrow']) %}Explosive Arrow only if you swap it into your stigmas.{% endcall %}
+    {% call hotline('2', 'Drill line', ['drill-dart', 'burst-arrow', 'tempest-shot']) %}Burst Arrow only hits a Slowed or Rooted target — Snare Shot in line 1 sets it up.{% endcall %}
+    {% call hotline('3', 'Buff line', ['vaizels-authority', 'supporting-fire', 'bow-of-blessing']) %}{% endcall %}
+  </div>
+
+  <h3>2. In-game macro</h3>
+  <p>Skill window → <strong>Macro</strong>. Put the three lines, then Snipe, and set every <strong>Delay to 10 ms</strong>. Bind the macro in Settings → Key Settings → General → Gameplay → <strong>Macro</strong> (a side mouse button works best).</p>
+  {{ macroseq([('Gale line', '1 · 10 ms'), ('Drill line', '2 · 10 ms'), ('Buff line', '3 · 10 ms'), (skill_data('snipe')[lang].name, '10 ms')]) }}
+  <p class="note">Never put {{ s('snipe') }} or {{ s('mother-natures-breath') }} <em>inside</em> a line — they would fire instead of your stronger skills. Snipe goes in the macro as its own slot.</p>
+
+  <h3>3. What you actually press</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Hold</span><span class="press-what">{{ s('snipe') }} (basic attack, shortens Deadshot's cooldown) <strong>and</strong> the <span class="key">Macro key</span>.</span></li>
+    <li><span class="press-how">Press-release</span><span class="press-what">{{ s('deadshot') }} when it's up — a charged skill fires at a random charge stage inside a macro, so it stays on its own key.</span></li>
+    <li><span class="press-how">Every ~15 s</span><span class="press-what">{{ s('marking-shot') }} to refresh Precision.</span></li>
+  </ul>
 {% endcall %}
 
 {% call section('recap', 'Recap', 'pve') %}

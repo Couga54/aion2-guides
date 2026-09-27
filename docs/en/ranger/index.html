@@ -872,20 +872,99 @@
 </section>
 <section id="macro" class="g-section" data-only="pve" aria-labelledby="h-macro">
   <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro">Rotation &amp; macro</h2></div>
-    <div class="callout accent">
+    <p>AION 2 has two separate tools, and the build uses both:</p>
+  <ul>
+    <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the first skill in the list that's off cooldown, so the order is the priority.</li>
+    <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar buttons in order, weaves basic attacks and cancels animation tails. Skills on cooldown are skipped.</li>
+  </ul>
+
+  <div class="callout accent">
     <h3>Opener</h3>
     <div class="combo"><span class="sk"><img src="../../assets/icons/ranger/gale-arrow.webp" width="18" height="18" alt="" loading="lazy">Gale Arrow</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/ranger/marking-shot.webp" width="18" height="18" alt="" loading="lazy">Marking Shot</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/ranger/vaizels-authority.webp" width="18" height="18" alt="" loading="lazy">Vaizel&#39;s Authority</span> + <span class="sk"><img src="../../assets/icons/ranger/bow-of-blessing.webp" width="18" height="18" alt="" loading="lazy">Bow of Blessing</span> + <span class="sk"><img src="../../assets/icons/ranger/supporting-fire.webp" width="18" height="18" alt="" loading="lazy">Supporting Fire</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/ranger/snare-shot.webp" width="18" height="18" alt="" loading="lazy">Snare Shot</span><span class="arrow">→</span>charged <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Deadshot</span></div>
   </div>
-  <p>Korean top parses play with three buttons: <strong>hold</strong> <span class="sk"><img src="../../assets/icons/ranger/snipe.webp" width="18" height="18" alt="" loading="lazy">Snipe</span> (basic attack, shortens Deadshot's cooldown) <strong>+ hold</strong> the macro key, and <strong>press-release</strong> Deadshot manually when it's up. Recast Marking Shot yourself when Precision drops.</p>
-  <div class="table-wrap"><table>
-    <thead><tr><th>Macro line</th><th>Skills (top to bottom)</th></tr></thead>
-    <tbody>
-      <tr><td>1</td><td><span class="sk"><img src="../../assets/icons/ranger/gale-arrow.webp" width="18" height="18" alt="" loading="lazy">Gale Arrow</span> → <span class="sk"><img src="../../assets/icons/ranger/griffon-arrow.webp" width="18" height="18" alt="" loading="lazy">Griffon Arrow</span> → <span class="sk"><img src="../../assets/icons/ranger/snare-shot.webp" width="18" height="18" alt="" loading="lazy">Snare Shot</span></td></tr>
-      <tr><td>2</td><td><span class="sk"><img src="../../assets/icons/ranger/drill-dart.webp" width="18" height="18" alt="" loading="lazy">Drill Dart</span> → <span class="sk"><img src="../../assets/icons/ranger/burst-arrow.webp" width="18" height="18" alt="" loading="lazy">Burst Arrow</span> → <span class="sk"><img src="../../assets/icons/ranger/tempest-shot.webp" width="18" height="18" alt="" loading="lazy">Tempest Shot</span></td></tr>
-      <tr><td>3</td><td><span class="sk"><img src="../../assets/icons/ranger/vaizels-authority.webp" width="18" height="18" alt="" loading="lazy">Vaizel&#39;s Authority</span> → <span class="sk"><img src="../../assets/icons/ranger/supporting-fire.webp" width="18" height="18" alt="" loading="lazy">Supporting Fire</span> → <span class="sk"><img src="../../assets/icons/ranger/bow-of-blessing.webp" width="18" height="18" alt="" loading="lazy">Bow of Blessing</span></td></tr>
-    </tbody>
-  </table></div>
-  <p class="note">Snare Shot sits before Burst Arrow on purpose: Burst Arrow only hits a Slowed or Rooted target.</p>
+
+  <h3>1. Hotbar lines</h3>
+  <div class="hotlines">
+<div class="hotline">
+  <div class="hotline-head"><span class="key">1</span><span class="hotline-name">Gale line</span></div>
+  <ol class="hotline-skills">
+    <li class="">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/ranger/gale-arrow.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Gale Arrow</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/ranger/griffon-arrow.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Griffon Arrow</span>
+    </li>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/ranger/snare-shot.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Snare Shot</span>
+    </li>
+    <li class="is-opt">
+      <span class="hl-n">4</span>
+      <img src="../../assets/icons/ranger/explosive-arrow.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Explosive Arrow</span>
+    </li>
+  </ol>
+<p class="hotline-note">Explosive Arrow only if you swap it into your stigmas.</p></div><div class="hotline">
+  <div class="hotline-head"><span class="key">2</span><span class="hotline-name">Drill line</span></div>
+  <ol class="hotline-skills">
+    <li class="">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/ranger/drill-dart.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Drill Dart</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/ranger/burst-arrow.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Burst Arrow</span>
+    </li>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/ranger/tempest-shot.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Tempest Shot</span>
+    </li>
+  </ol>
+<p class="hotline-note">Burst Arrow only hits a Slowed or Rooted target — Snare Shot in line 1 sets it up.</p></div><div class="hotline">
+  <div class="hotline-head"><span class="key">3</span><span class="hotline-name">Buff line</span></div>
+  <ol class="hotline-skills">
+    <li class="">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/ranger/vaizels-authority.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Vaizel&#39;s Authority</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/ranger/supporting-fire.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Supporting Fire</span>
+    </li>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/ranger/bow-of-blessing.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Bow of Blessing</span>
+    </li>
+  </ol>
+</div>  </div>
+
+  <h3>2. In-game macro</h3>
+  <p>Skill window → <strong>Macro</strong>. Put the three lines, then Snipe, and set every <strong>Delay to 10 ms</strong>. Bind the macro in Settings → Key Settings → General → Gameplay → <strong>Macro</strong> (a side mouse button works best).</p>
+  <ol class="macroseq">
+  <li><span class="ms-n">1</span><span class="ms-label">Gale line</span><span class="ms-detail">1 · 10 ms</span></li>
+  <li><span class="ms-n">2</span><span class="ms-label">Drill line</span><span class="ms-detail">2 · 10 ms</span></li>
+  <li><span class="ms-n">3</span><span class="ms-label">Buff line</span><span class="ms-detail">3 · 10 ms</span></li>
+  <li><span class="ms-n">4</span><span class="ms-label">Snipe</span><span class="ms-detail">10 ms</span></li>
+</ol>
+  <p class="note">Never put <span class="sk"><img src="../../assets/icons/ranger/snipe.webp" width="18" height="18" alt="" loading="lazy">Snipe</span> or <span class="sk"><img src="../../assets/icons/ranger/mother-natures-breath.webp" width="18" height="18" alt="" loading="lazy">Mother Nature&#39;s Breath</span> <em>inside</em> a line — they would fire instead of your stronger skills. Snipe goes in the macro as its own slot.</p>
+
+  <h3>3. What you actually press</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Hold</span><span class="press-what"><span class="sk"><img src="../../assets/icons/ranger/snipe.webp" width="18" height="18" alt="" loading="lazy">Snipe</span> (basic attack, shortens Deadshot's cooldown) <strong>and</strong> the <span class="key">Macro key</span>.</span></li>
+    <li><span class="press-how">Press-release</span><span class="press-what"><span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Deadshot</span> when it's up — a charged skill fires at a random charge stage inside a macro, so it stays on its own key.</span></li>
+    <li><span class="press-how">Every ~15 s</span><span class="press-what"><span class="sk"><img src="../../assets/icons/ranger/marking-shot.webp" width="18" height="18" alt="" loading="lazy">Marking Shot</span> to refresh Precision.</span></li>
+  </ul>
 
 </section>
 <section id="recap" class="g-section" data-only="pve" aria-labelledby="h-recap">

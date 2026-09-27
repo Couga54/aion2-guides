@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq with context %}
 
 {# ============================== PvE ============================== #}
 {% call glance('pve') %}
@@ -131,18 +131,41 @@
 {% endcall %}
 
 {% call section('macro', 'Macro & rotation', 'pve') %}
-  <p>The whole kit fits in six buttons: <strong>2 buffs + 4 damage skills</strong>, driven by two in-game macros.</p>
-  <div class="combo"><span class="key">RMB</span><span class="arrow">→</span>{{ s('overhead-slam') }} / {{ s('rending-blow') }} line, {{ s('rage-burst') }} at the bottom</div>
-  <div class="combo"><span class="key">E</span><span class="arrow">→</span>{{ s('ruinous-blow') }} — its own macro and its own buff</div>
+  <p>AION 2 has two separate tools, and the build uses both:</p>
+  <ul>
+    <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the first skill in the list that's off cooldown, so the order is the priority.</li>
+    <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar buttons in order, weaves basic attacks and cancels animation tails. Skills on cooldown are skipped.</li>
+  </ul>
+  <p>Gladiator needs <strong>6 skills on 3 buttons</strong>: 4 damage skills and 2 buffs.</p>
+
+  <h3>1. Hotbar lines</h3>
+  <div class="hotlines">
+    {% call hotline('RMB', 'Main line', ['overhead-slam', 'rending-blow', 'rage-burst']) %}Rage Burst goes <strong>last</strong> — see below.{% endcall %}
+    {% call hotline('E', 'Ruinous line', ['ruinous-blow'], ['lifestealing-blade']) %}Grants Combat Ready. Add Lifestealing Blade only if it's in your stigmas.{% endcall %}
+    {% call hotline('R', 'Buff line', ['lunge-stance', 'zikels-blessing']) %}Both keep themselves up thanks to Lunge Stance's cooldown cuts.{% endcall %}
+  </div>
+
+  <h3>2. In-game macro</h3>
+  <p>Skill window → <strong>Macro</strong>. Put the three lines in this order and set every <strong>Delay to 10 ms</strong> (it's the pause between buttons, not your ping). Bind the macro in Settings → Key Settings → General → Gameplay → <strong>Macro</strong> — a side mouse button is ideal, because you hold it.</p>
+  {{ macroseq([('Main line', 'RMB · 10 ms'), ('Ruinous line', 'E · 10 ms'), ('Buff line', 'R · 10 ms')]) }}
+
+  <h3>3. What you actually press</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Hold</span><span class="press-what"><span class="key">Macro key</span> the whole fight.</span></li>
+    <li><span class="press-how">Spam</span><span class="press-what"><span class="key">RMB</span> main line and <span class="key">E</span> Ruinous line on top of it — the two lines must stay separate so they can be woven.</span></li>
+    <li><span class="press-how">By hand</span><span class="press-what">{{ s('focused-block') }} (block = party buff), {{ s('mocking-blade') }} (knockdown + heal), {{ s('leaping-slam') }} (gap closer), {{ s('crushing-wave') }} on packs.</span></li>
+  </ul>
+
   <div class="callout">
     <h3>Why Rage Burst sits at the bottom</h3>
-    <p>Lunge Stance keeps Overhead Slam permanently available, so Rage Burst has to stay in the line and refresh whenever it's off cooldown. The two macros can't be merged — they're woven separately. Don't stuff Lifestealing Blade into the Overhead Slam line: macro timing depends on frame rate, and any delay to Overhead Slam costs more than it adds.</p>
+    <p>Lunge Stance keeps Overhead Slam permanently available, and Rage Burst is also a buff that must stay up. At the bottom of the main line it fires every time it comes off cooldown without ever delaying Overhead Slam. Don't stuff more skills into the main line: macro timing depends on frame rate, and any delay to Overhead Slam costs more than the extra skill adds.</p>
   </div>
   <div class="callout">
     <h3>Where the damage comes from</h3>
     <p>On a one-minute dummy parse: Overhead Slam (incl. Upward Strike) &gt; Rending Blow &gt; Ruinous Blow &gt; Lunge Stance &gt; Murderous Burst &gt; Rage Burst.</p>
   </div>
-  <p>The macro keeps pace — it doesn't play for you. You still decide when to block (party buff!), when to close distance and when to self-heal. Season 1's weaker stats mean multi-minute boss fights, so every second of lost uptime counts.</p>
+  <p>The macro keeps pace — it doesn't play for you. You still decide when to block, when to close distance and when to self-heal. Season 1's weaker stats mean multi-minute boss fights, so every second of lost uptime counts.</p>
+  <p class="note">Keys are Arthars' action-mode layout (RMB / E); on tab-target use any two keys you can spam. The macro slot order follows the same line-by-line scheme Korean builds use.</p>
 {% endcall %}
 
 {% call section('recap', 'Recap', 'pve') %}

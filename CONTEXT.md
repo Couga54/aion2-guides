@@ -52,6 +52,13 @@ Requirements from the user (in their words, translated):
   global launch **Oct 5, 13:00 UTC**. Update `events` when NC announces more.
 - Class art: official renders from the global teaser page's class carousel
   (`tools/fetch_art.py` → `src/assets/art/<slug>.webp`; NC's "spiritmaster" = our Elementalist).
+- Macros (Sep 27): two tools. A **hotbar line** = several skills on one hotbar button, fires the first
+  one off cooldown (order = priority). The **in-game macro** (Skill window → Macro; one per preset, up to
+  20 slots; key in Settings → Key Settings → General → Gameplay → Macro) is held and presses hotbar
+  buttons top→bottom in a loop, weaving basic attacks; 10 ms delay; cooldowns skipped. Keep charged
+  skills, toggles/auras and gap closers out. Guides render lines with `hotline()` and slots with `macroseq()`.
+  Gladiator lines come from Arthars' video (RMB: Overhead Slam → Rending Blow → Rage Burst; E: Ruinous Blow;
+  buffs: Lunge Stance + Zikel's); the macro slot order is our inference. Ranger lines from 7MMO.
 - The old single-page guide had **Zikel's Blessing and Lunge Stance icons swapped** —
   icons here come fresh from questlog, keyed by skill name.
 - Gladiator: Overhead Slam & Aerial Snare only hit Knocked-down targets (bosses are an
