@@ -46,17 +46,37 @@
       <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
       <span>AION 2 Guides</span>
     </a>
-    <nav class="class-nav" aria-label="Classes">
-      <a href="../../en/gladiator/" class="accent-crimson">
-        <img src="../../assets/classes/gladiator.webp" width="22" height="22" alt=""><span>Gladiator</span>
-      </a>
-      <a href="../../en/ranger/" class="accent-emerald">
-        <img src="../../assets/classes/ranger.webp" width="22" height="22" alt=""><span>Ranger</span>
-      </a>
-      <a href="../../en/templar/" class="accent-sapphire">
-        <img src="../../assets/classes/templar.webp" width="22" height="22" alt=""><span>Templar</span>
-      </a>
-    </nav>
+    <details class="class-menu">
+      <summary class="class-menu-btn">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg><span>Classes</span>        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="Classes">
+        <a href="../../en/gladiator/" class="cm-item accent-crimson">
+          <img src="../../assets/classes/gladiator.webp" width="44" height="44" alt=""><span class="cm-name">Gladiator</span><span class="cm-role">Melee DPS · bruiser</span>
+        </a>
+        <a href="../../en/ranger/" class="cm-item accent-emerald">
+          <img src="../../assets/classes/ranger.webp" width="44" height="44" alt=""><span class="cm-name">Ranger</span><span class="cm-role">Ranged DPS · kiter</span>
+        </a>
+        <a href="../../en/templar/" class="cm-item accent-sapphire">
+          <img src="../../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Templar</span><span class="cm-role">Tank · party buffer</span>
+        </a>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Assassin</span><span class="cm-role">Coming soon</span>
+        </span>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Sorcerer</span><span class="cm-role">Coming soon</span>
+        </span>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Elementalist</span><span class="cm-role">Coming soon</span>
+        </span>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Cleric</span><span class="cm-role">Coming soon</span>
+        </span>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Chanter</span><span class="cm-role">Coming soon</span>
+        </span>
+      </nav>
+    </details>
     <div class="topbar-tools">
       <a class="src-nav" href="../../en/week-1/" aria-current="page" title="First week: what to finish before the reset">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
@@ -66,14 +86,16 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
         <span>Weekly</span>
       </a>
-      <a class="src-nav" href="../../en/sources/" title="Sources &amp; credits">
+      <a class="src-nav src-nav-sources" href="../../en/sources/" title="Sources &amp; credits">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
         <span>Sources</span>
       </a>
       <a class="lang-switch" href="../../ru/week-1/" hreflang="ru" lang="ru" data-keep-query>
         <span aria-hidden="true">RU</span><span class="sr-only">Русский</span>
       </a>
-      <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+<button class="icon-btn wn-open wn-top" type="button" aria-label="What&#39;s new" title="What&#39;s new">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </button>      <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
       </button>
     </div>
@@ -303,10 +325,29 @@
       <a class="brand brand-sm" href="../../en/">AION 2 Guides</a>
       <p>Unofficial fan site, not affiliated with NCSOFT. AION 2 and its skill icons are © NCSOFT.</p>
       <p>Last checked: 2026-09-27 (before the global launch).</p>
-      <p><a href="../../en/sources/">All sources and creators</a></p>
+      <p><a href="../../en/sources/">All sources and creators</a> · <button type="button" class="link-btn wn-open">What&#39;s new</button></p>
     </div>
   </div>
 </footer>
+<dialog class="whatsnew" data-id="2026-09-27-templar-week1" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title">What&#39;s new</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="Got it">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <section class="wn-entry">
+      <time class="wn-date" datetime="2026-09-27">Sep 27, 2026</time>
+      <ul>
+        <li><a href="../../en/templar/"><strong>Templar guide</strong> — PvE, PvP and leveling: skills, stigmas for global's 4 slots and a macro setup.</a></li>
+        <li><a href="../../en/week-1/"><strong>First week</strong> — what to finish before the first weekly reset and the one-time goals that are easy to miss.</a></li>
+        <li><a href="../../en/weekly/"><strong>Weekly tracker</strong> — weekly entries and Odyle energy for all your characters, with a reset timer. The checklist clears itself every week.</a></li>
+      </ul>
+    </section>
+    <button class="btn btn-primary wn-ok" value="close">Got it</button>
+  </form>
+</dialog>
 <script src="../../assets/js/site.js" defer></script>
 </body>
 </html>

@@ -32,6 +32,7 @@ I18N = load(DATA / "i18n.json")
 LANGS = SITE["langs"]
 SOURCES = load(DATA / "sources.json")
 WEEKLY = load(DATA / "weekly.json")
+CHANGELOG = load(DATA / "changelog.json")["entries"]
 WEEK1 = load(DATA / "week1.json")
 SKILLS = {p.stem: load(p) for p in (DATA / "skills").glob("*.json") if not p.stem.startswith("_")}
 for _cls, _fixes in load(DATA / "skills" / "_overrides.json").items():
@@ -133,7 +134,7 @@ def env():
         lstrip_blocks=True,
         extensions=["jinja2.ext.do"],
     )
-    e.globals.update(fmt_utc=fmt_utc, fmt_day=fmt_day, s=s, sp=sp, skill_data=skill_data, icon_url=icon_url, SITE=SITE)
+    e.globals.update(CHANGELOG=CHANGELOG, fmt_utc=fmt_utc, fmt_day=fmt_day, s=s, sp=sp, skill_data=skill_data, icon_url=icon_url, SITE=SITE)
     return e
 
 

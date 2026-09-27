@@ -475,6 +475,23 @@
           ]
         },
         {
+          "name": "Fextralife AION 2 Wiki",
+          "what": {
+            "en": "Class emblems (the official site only shows them small, inside its class nameplates). AION 2 © NCSOFT.",
+            "ru": "Эмблемы классов (на официальном сайте они есть только мелкими, внутри табличек с названием класса). AION 2 © NCSOFT."
+          },
+          "used": [
+            "site"
+          ],
+          "links": [
+            {
+              "type": "site",
+              "url": "https://aion2.wiki.fextralife.com/Classes",
+              "label": "aion2.wiki.fextralife.com"
+            }
+          ]
+        },
+        {
           "name": {
             "en": "Home page background",
             "ru": "Фон главной страницы"

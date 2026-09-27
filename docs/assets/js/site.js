@@ -18,6 +18,35 @@
     store('theme', root.dataset.theme);
   });
 
+  // ---- class picker: close on outside click and Escape --------------------
+  var cmenu = document.querySelector('.class-menu');
+  if (cmenu) {
+    document.addEventListener('click', function (ev) { if (cmenu.open && !cmenu.contains(ev.target)) cmenu.open = false; });
+    document.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape' && cmenu.open) { cmenu.open = false; cmenu.querySelector('summary').focus(); }
+    });
+  }
+
+  // ---- what's new: once per new changelog entry --------------------------
+  var wn = document.querySelector('.whatsnew');
+  if (wn && typeof wn.showModal === 'function') {
+    var seen = function () { store('whatsnew-seen', wn.dataset.id); };
+    wn.addEventListener('close', seen);
+    // A link inside the dialog navigates away — count that as seen too.
+    wn.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', seen); });
+    // Click on the backdrop closes it.
+    wn.addEventListener('click', function (ev) { if (ev.target === wn) wn.close(); });
+    var openers = document.querySelectorAll('.wn-open');
+    openers.forEach(function (b) { b.addEventListener('click', function () { wn.showModal(); }); });
+    // Dot on the "?" button until the newest entry has been seen.
+    var mark = function () { openers.forEach(function (b) { b.classList.toggle('has-new', store('whatsnew-seen') !== wn.dataset.id); }); };
+    wn.addEventListener('close', mark);
+    mark();
+    if (store('whatsnew-seen') !== wn.dataset.id) setTimeout(function () { if (!wn.open) wn.showModal(); }, 600);
+  } else {
+    document.querySelectorAll('.wn-open').forEach(function (b) { b.hidden = true; });
+  }
+
   // ---- language: remember the choice, keep ?mode and #section ------------
   store('lang', root.lang);
   document.querySelectorAll('[data-keep-query]').forEach(function (a) {

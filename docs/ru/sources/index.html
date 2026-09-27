@@ -46,17 +46,37 @@
       <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
       <span>AION 2 Гайды</span>
     </a>
-    <nav class="class-nav" aria-label="Классы">
-      <a href="../../ru/gladiator/" class="accent-crimson">
-        <img src="../../assets/classes/gladiator.webp" width="22" height="22" alt=""><span>Гладиатор</span>
-      </a>
-      <a href="../../ru/ranger/" class="accent-emerald">
-        <img src="../../assets/classes/ranger.webp" width="22" height="22" alt=""><span>Лучник</span>
-      </a>
-      <a href="../../ru/templar/" class="accent-sapphire">
-        <img src="../../assets/classes/templar.webp" width="22" height="22" alt=""><span>Страж</span>
-      </a>
-    </nav>
+    <details class="class-menu">
+      <summary class="class-menu-btn">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg><span>Классы</span>        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="Классы">
+        <a href="../../ru/gladiator/" class="cm-item accent-crimson">
+          <img src="../../assets/classes/gladiator.webp" width="44" height="44" alt=""><span class="cm-name">Гладиатор</span><span class="cm-role">Ближний бой · брузер</span>
+        </a>
+        <a href="../../ru/ranger/" class="cm-item accent-emerald">
+          <img src="../../assets/classes/ranger.webp" width="44" height="44" alt=""><span class="cm-name">Лучник</span><span class="cm-role">Дальний бой · кайт</span>
+        </a>
+        <a href="../../ru/templar/" class="cm-item accent-sapphire">
+          <img src="../../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Страж</span><span class="cm-role">Танк · баффер группы</span>
+        </a>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Убийца</span><span class="cm-role">Скоро</span>
+        </span>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Волшебник</span><span class="cm-role">Скоро</span>
+        </span>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Заклинатель</span><span class="cm-role">Скоро</span>
+        </span>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Целитель</span><span class="cm-role">Скоро</span>
+        </span>
+        <span class="cm-item is-soon" aria-disabled="true">
+          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Чародей</span><span class="cm-role">Скоро</span>
+        </span>
+      </nav>
+    </details>
     <div class="topbar-tools">
       <a class="src-nav" href="../../ru/week-1/" title="Первая неделя: что успеть до сброса">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
@@ -66,14 +86,16 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
         <span>Неделя</span>
       </a>
-      <a class="src-nav" href="../../ru/sources/" aria-current="page" title="Источники и авторы">
+      <a class="src-nav src-nav-sources" href="../../ru/sources/" aria-current="page" title="Источники и авторы">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
         <span>Источники</span>
       </a>
       <a class="lang-switch" href="../../en/sources/" hreflang="en" lang="en" data-keep-query>
         <span aria-hidden="true">EN</span><span class="sr-only">English</span>
       </a>
-      <button class="icon-btn theme-toggle" type="button" aria-label="Переключить тёмную тему" title="Переключить тёмную тему">
+<button class="icon-btn wn-open wn-top" type="button" aria-label="Что нового" title="Что нового">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </button>      <button class="icon-btn theme-toggle" type="button" aria-label="Переключить тёмную тему" title="Переключить тёмную тему">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
       </button>
     </div>
@@ -286,6 +308,16 @@
           </div>
         </li>
         <li class="src-card">
+          <h3>Fextralife AION 2 Wiki</h3>
+          <p>Эмблемы классов (на официальном сайте они есть только мелкими, внутри табличек с названием класса). AION 2 © NCSOFT.</p>
+          <p class="src-used"><span>Где использовано:</span>
+<span class="chip">Весь сайт</span>
+          </p>
+          <div class="src-links">
+            <a class="src-link src-site" href="https://aion2.wiki.fextralife.com/Classes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span>aion2.wiki.fextralife.com</span></a>
+          </div>
+        </li>
+        <li class="src-card">
           <h3>Фон главной страницы</h3>
           <p>Скриншот AION 2, опубликованный на Reddit; автор публикации неизвестен. AION 2 © NCSOFT.</p>
           <p class="src-used"><span>Где использовано:</span>
@@ -323,10 +355,29 @@
       <a class="brand brand-sm" href="../../ru/">AION 2 Гайды</a>
       <p>Неофициальный фанатский сайт, не связан с NCSOFT. AION 2 и иконки скиллов © NCSOFT.</p>
       <p>Проверено: 2026-09-27 (до глобального запуска).</p>
-      <p><a href="../../ru/sources/">Все источники и авторы</a></p>
+      <p><a href="../../ru/sources/">Все источники и авторы</a> · <button type="button" class="link-btn wn-open">Что нового</button></p>
     </div>
   </div>
 </footer>
+<dialog class="whatsnew" data-id="2026-09-27-templar-week1" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title">Что нового</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="Понятно">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <section class="wn-entry">
+      <time class="wn-date" datetime="2026-09-27">27 сентября 2026</time>
+      <ul>
+        <li><a href="../../ru/templar/"><strong>Гайд на Стража</strong> — PvE, PvP и прокачка: скиллы, стигмы под 4 слота глобальной версии и настройка макроса.</a></li>
+        <li><a href="../../ru/week-1/"><strong>Первая неделя</strong> — что успеть до первого недельного сброса и разовые цели, которые легко упустить.</a></li>
+        <li><a href="../../ru/weekly/"><strong>Недельный трекер</strong> — недельные входы и энергия Odyle для всех твоих персонажей, с таймером сброса. Чек-лист очищается сам каждую неделю.</a></li>
+      </ul>
+    </section>
+    <button class="btn btn-primary wn-ok" value="close">Понятно</button>
+  </form>
+</dialog>
 <script src="../../assets/js/site.js" defer></script>
 </body>
 </html>

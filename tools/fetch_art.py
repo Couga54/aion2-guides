@@ -8,6 +8,8 @@ Source: the class carousel on the official global teaser page
 figure, scale it down and write:
 
   src/assets/art/<slug>.webp     one figure per class (class hero, cards)
+  src/assets/classes/<slug>.webp class emblem, 150x150 (from the Fextralife wiki — the official
+                                 site only has them as ~65px parts of its class nameplates)
 
 src/assets/art/home-bg.webp (home hero landscape) is added by hand, not by this script.
 """
@@ -34,6 +36,13 @@ ART = {
 }
 HEIGHT = 720        # single figure
 
+EMBLEM_CDN = "https://static0.fextralifeimages.com/file/aion2/"
+EMBLEMS = {
+    "gladiator": "b/b2/Gladiator", "templar": "d/da/Templar", "assassin": "7/7e/Assassin",
+    "ranger": "c/c5/Ranger", "sorcerer": "e/ef/Sorcerer", "elementalist": "b/b2/Elementalist",
+    "cleric": "4/4e/Cleric", "chanter": "a/ac/Chanter",
+}
+
 
 def get(url):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (aion2-guides)"})
@@ -56,6 +65,12 @@ def main():
         w = round(im.width * HEIGHT / im.height)
         im.resize((w, HEIGHT), Image.LANCZOS).save(OUT / f"{slug}.webp", "WEBP", quality=82, method=6)
         print(f"{slug}: {w}x{HEIGHT}")
+
+    emblems = ROOT / "src" / "assets" / "classes"
+    for slug, path in EMBLEMS.items():
+        im = Image.open(io.BytesIO(get(EMBLEM_CDN + path + "-icon-aion2-wiki-guide.webp"))).convert("RGBA")
+        im.save(emblems / f"{slug}.webp", "WEBP", quality=90, method=6)
+        print(f"emblem {slug}: {im.width}x{im.height}")
 
 
 if __name__ == "__main__":

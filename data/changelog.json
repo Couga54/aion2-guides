@@ -1,0 +1,18 @@
+{
+  "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
+  "entries": [
+    {"id": "2026-09-27-templar-week1",
+     "date": "2026-09-27",
+     "items": [
+       {"href": "templar/",
+        "en": "<strong>Templar guide</strong> — PvE, PvP and leveling: skills, stigmas for global's 4 slots and a macro setup.",
+        "ru": "<strong>Гайд на Стража</strong> — PvE, PvP и прокачка: скиллы, стигмы под 4 слота глобальной версии и настройка макроса."},
+       {"href": "week-1/",
+        "en": "<strong>First week</strong> — what to finish before the first weekly reset and the one-time goals that are easy to miss.",
+        "ru": "<strong>Первая неделя</strong> — что успеть до первого недельного сброса и разовые цели, которые легко упустить."},
+       {"href": "weekly/",
+        "en": "<strong>Weekly tracker</strong> — weekly entries and Odyle energy for all your characters, with a reset timer. The checklist clears itself every week.",
+        "ru": "<strong>Недельный трекер</strong> — недельные входы и энергия Odyle для всех твоих персонажей, с таймером сброса. Чек-лист очищается сам каждую неделю."}
+     ]}
+  ]
+}

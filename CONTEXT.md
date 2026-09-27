@@ -50,6 +50,9 @@ Requirements from the user (in their words, translated):
   Early Access **Sep 30, 13:00 UTC** (NC: 16:00 Kyiv time, confirmed by the user);
   pre-download for free players — **not announced** (shown as "date not announced");
   global launch **Oct 5, 13:00 UTC**. Update `events` when NC announces more.
+- Class emblems (src/assets/classes/): the real silver class insignias, 150px, from the Fextralife wiki
+  (fetch_art.py). Earlier files there were skill icons by mistake. Topbar uses a class picker dropdown
+  (4×2 grid of all 8 classes, "soon" greyed out) instead of a row of links.
 - Class art: official renders from the global teaser page's class carousel
   (`tools/fetch_art.py` → `src/assets/art/<slug>.webp`; NC's "spiritmaster" = our Elementalist).
 - Macros (Sep 27): two tools. A **hotbar line** = several skills on one hotbar button, fires the first
@@ -82,6 +85,8 @@ Requirements from the user (in their words, translated):
 - `data/site.json` — classes (status ready/soon, names/roles in EN+RU), base URL, launch date.
 - `data/i18n.json` — UI strings EN/RU.
 - `data/weekly.json`, `data/week1.json` — tracker items and first-week goals (EN+RU).
+- `data/changelog.json` — "What's new" modal (base.html). Shown once per new top entry id
+  (localStorage `whatsnew-seen`); reopened from the footer. Add an entry with a new id for every release.
 - `data/transcripts/` — YouTube transcripts guides are based on (`tools/fetch_transcript.py`).
 - `data/sources.json` — Sources & credits page (`/<lang>/sources/`): creators with YouTube/Twitch links,
   guides/databases, launch info. Add a source here whenever a guide starts relying on it —
