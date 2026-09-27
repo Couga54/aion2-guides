@@ -27,18 +27,39 @@
     });
   });
 
-  // ---- launch countdown (home) --------------------------------------------
-  var cd = document.querySelector('.countdown');
-  if (cd) {
-    var target = Date.parse(cd.dataset.launch);
-    var out = cd.querySelector('.countdown-value');
+  // ---- launch schedule timers (home) ---------------------------------------
+  var evBox = document.querySelector('.events');
+  if (evBox) {
+    var evs = [].slice.call(evBox.querySelectorAll('.ev[data-at]')).map(function (li) {
+      return { li: li, at: Date.parse(li.dataset.at), cells: li.querySelectorAll('.ev-timer b') };
+    });
+    var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+    // Main date = the visitor's own local time; the UTC text from the build moves to the note.
+    try {
+      var fmt = new Intl.DateTimeFormat(evBox.dataset.lang === 'ru' ? 'ru-RU' : 'en-GB',
+        { weekday: 'short', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' });
+      evs.forEach(function (e) {
+        var t = e.li.querySelector('.ev-when time'), el = e.li.querySelector('.ev-local');
+        if (!t || !el) return;
+        el.textContent = t.textContent;
+        t.textContent = fmt.format(e.at);
+      });
+    } catch (err) {}
     var tick = function () {
-      var ms = target - Date.now();
-      if (ms <= 0) { out.textContent = cd.dataset.live; cd.querySelector('.countdown-label').hidden = true; return; }
-      var d = Math.floor(ms / 864e5), h = Math.floor(ms / 36e5) % 24, m = Math.floor(ms / 6e4) % 60, s = Math.floor(ms / 1e3) % 60;
-      var pad = function (n) { return (n < 10 ? '0' : '') + n; };
-      out.textContent = d + 'd ' + pad(h) + ':' + pad(m) + ':' + pad(s);
-      setTimeout(tick, 1000 - (Date.now() % 1000));
+      var now = Date.now(), next = null;
+      evs.forEach(function (e) {
+        var ms = e.at - now;
+        e.li.classList.toggle('is-done', ms <= 0);
+        e.li.classList.remove('is-next');
+        if (ms <= 0) return;
+        if (!next) next = e;
+        var v = [Math.floor(ms / 864e5), Math.floor(ms / 36e5) % 24, Math.floor(ms / 6e4) % 60, Math.floor(ms / 1e3) % 60];
+        for (var i = 0; i < 4; i++) e.cells[i].textContent = i ? pad(v[i]) : v[i];
+      });
+      if (next) {
+        next.li.classList.add('is-next');
+        setTimeout(tick, 1000 - (Date.now() % 1000));
+      }
     };
     tick();
   }

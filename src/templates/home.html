@@ -3,18 +3,43 @@
 {% block main %}
 <main id="main">
   <section class="home-hero">
+    <div class="home-hero-art" aria-hidden="true">
+      <img src="{{ root }}assets/art/home-bg.webp" width="1920" height="1103" alt="" fetchpriority="high">
+    </div>
     <div class="wrap home-hero-in">
-      <p class="kicker">{{ t.home_kicker }}</p>
-      <h1>{{ t.home_h1 }}</h1>
-      <p class="lead">{{ t.home_lead }}</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#classes">{{ t.home_cta }}</a>
-        <div class="countdown" data-launch="{{ SITE.launch_utc }}" data-live="{{ t.launch_live }}">
-          <span class="countdown-label">{{ t.launch_in }}</span>
-          <span class="countdown-value" aria-live="off">—</span>
-          <span class="countdown-date">{{ t.launch_date }}</span>
+      <div class="home-hero-text">
+        <p class="kicker">{{ t.home_kicker }}</p>
+        <h1>{{ t.home_h1 }}</h1>
+        <p class="lead">{{ t.home_lead }}</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#classes">{{ t.home_cta }}</a>
         </div>
       </div>
+
+      <aside class="events" aria-labelledby="h-events" data-units="{{ t.units|join(',') }}" data-lang="{{ lang }}">
+        <h2 id="h-events" class="events-title">{{ t.events_title }}</h2>
+        <ol class="ev-list">
+          {% for ev in SITE.events %}
+          <li class="ev ev-{{ ev.access }}"{% if ev.at %} data-at="{{ ev.at }}"{% endif %}>
+            <div class="ev-head">
+              <span class="ev-name">{{ t['ev_' ~ ev.id] }}</span>
+              <span class="ev-acc">{{ t['acc_' ~ ev.access] }}</span>
+            </div>
+            {% if ev.at %}
+            <div class="ev-timer" aria-hidden="true">{% for u in t.units %}<span><b>--</b><i>{{ u }}</i></span>{% endfor %}</div>
+            <div class="ev-done">{{ t.ev_done }}</div>
+            <p class="ev-when">
+              <time datetime="{{ ev.at }}">{{ fmt_utc(ev.at, lang) }}</time>
+              <span class="ev-local"></span>
+              {% if not ev.confirmed %}<span class="ev-note">{{ t.ev_unconfirmed }}</span>{% endif %}
+            </p>
+            {% else %}
+            <p class="ev-tba">{{ t.ev_tba }}</p>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ol>
+      </aside>
     </div>
   </section>
 
@@ -24,6 +49,7 @@
       {% for c in classes %}
       <li class="class-card {{ 'is-ready' if c.status == 'ready' else 'is-soon' }}{% if c.get('accent') %} accent-{{ c.accent }}{% endif %}">
         {% if c.status == 'ready' %}<a class="class-card-link" href="{{ c.slug }}/">{% else %}<div class="class-card-link" aria-disabled="true">{% endif %}
+          <img class="class-card-art" src="{{ root }}assets/art/{{ c.slug }}.webp" alt="" loading="lazy">
           <img class="class-emblem" src="{{ root }}assets/classes/{{ c.slug }}.webp" width="72" height="72" alt="" loading="lazy">
           <div class="class-card-body">
             <span class="class-status">{{ t.ready if c.status == 'ready' else t.soon }}</span>

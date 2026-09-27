@@ -30,6 +30,7 @@ def load(path):
 SITE = load(DATA / "site.json")
 I18N = load(DATA / "i18n.json")
 LANGS = SITE["langs"]
+SOURCES = load(DATA / "sources.json")
 SKILLS = {p.stem: load(p) for p in (DATA / "skills").glob("*.json")}
 
 
@@ -76,6 +77,21 @@ def expand(text, cls_slug, lang):
     return re.sub(r"\[\[([a-z0-9-]+)(?:#(\d+))?\]\]", rep, text)
 
 
+MONTHS = {
+    "en": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    "ru": ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа",
+           "сентября", "октября", "ноября", "декабря"],
+}
+
+
+def fmt_utc(iso, lang):
+    """'2026-09-28T13:00:00Z' -> 'Sep 28 · 13:00 UTC' / '28 сентября · 13:00 UTC'."""
+    from datetime import datetime
+    d = datetime.strptime(iso, "%Y-%m-%dT%H:%M:%SZ")
+    day = f"{MONTHS[lang][d.month - 1]} {d.day}" if lang == "en" else f"{d.day} {MONTHS[lang][d.month - 1]}"
+    return f"{day} · {d:%H:%M} UTC"
+
+
 def leveling_steps(cls_slug, lang):
     """Merge the shared route with class-specific steps, ordered by level."""
     steps = load(DATA / "leveling" / "common.json")["steps"]
@@ -104,7 +120,7 @@ def env():
         lstrip_blocks=True,
         extensions=["jinja2.ext.do"],
     )
-    e.globals.update(s=s, sp=sp, skill_data=skill_data, icon_url=icon_url, SITE=SITE)
+    e.globals.update(fmt_utc=fmt_utc, s=s, sp=sp, skill_data=skill_data, icon_url=icon_url, SITE=SITE)
     return e
 
 
@@ -155,6 +171,10 @@ def build():
             ctx["content_tpl"] = f'{cls["slug"]}/{lang}.html'
             write(f'{lang}/{path}index.html', e.get_template("class.html").render(ctx))
             urls.append(path)
+        ctx = page_ctx(lang, "sources/", "../../")
+        ctx["sources"] = SOURCES["groups"]
+        write(f"{lang}/sources/index.html", e.get_template("sources.html").render(ctx))
+        urls.append("sources/")
 
     # Root: language chooser that redirects by browser language.
     write("index.html", e.get_template("root.html").render(page_ctx("en", "", "")))

@@ -55,7 +55,17 @@
     "footer_before_launch": "before the global launch",
     "back_home": "All classes",
     "not_found": "This page doesn't exist.",
-    "skip": "Skip to content"
+    "skip": "Skip to content",
+    "events_title": "Launch schedule",
+    "ev_pre_founder": "Pre-download", "ev_early": "Early Access", "ev_pre_std": "Pre-download", "ev_launch": "Global launch",
+    "acc_founder": "Founder's Pack", "acc_all": "Free · all players",
+    "ev_done": "Started", "ev_tba": "Date not announced yet",
+    "ev_unconfirmed": "hour not confirmed by NC",
+    "units": ["d", "h", "m", "s"],
+    "src_title": "Sources & credits", "src_h1": "Sources & credits",
+    "src_desc": "Creators, videos and sites the AION 2 Guides are built on, with links to their YouTube and Twitch channels.",
+    "src_lead": "Everything on this site is checked against these people and sites. If a guide helped you, support the original authors.",
+    "src_used": "Used in", "src_site": "Whole site", "src_all": "All sources and creators"
   },
   "ru": {
     "site_name": "AION 2 Гайды",
@@ -113,6 +123,16 @@
     "footer_before_launch": "до глобального запуска",
     "back_home": "Все классы",
     "not_found": "Такой страницы нет.",
-    "skip": "Перейти к содержимому"
+    "skip": "Перейти к содержимому",
+    "events_title": "Расписание запуска",
+    "ev_pre_founder": "Предзагрузка", "ev_early": "Ранний доступ", "ev_pre_std": "Предзагрузка", "ev_launch": "Глобальный запуск",
+    "acc_founder": "Founder's Pack", "acc_all": "Бесплатно · все игроки",
+    "ev_done": "Началось", "ev_tba": "Дата ещё не объявлена",
+    "ev_unconfirmed": "час не подтверждён NC",
+    "units": ["д", "ч", "м", "с"],
+    "src_title": "Источники и авторы", "src_h1": "Источники и авторы",
+    "src_desc": "Авторы, видео и сайты, на которых построены гайды AION 2, со ссылками на их YouTube и Twitch.",
+    "src_lead": "Всё на сайте сверено с этими людьми и сайтами. Если гайд помог — поддержите оригинальных авторов.",
+    "src_used": "Где использовано", "src_site": "Весь сайт", "src_all": "Все источники и авторы"
   }
 }

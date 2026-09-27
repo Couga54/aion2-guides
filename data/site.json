@@ -2,6 +2,13 @@
   "base_url": "https://couga54.github.io/aion2-guides/",
   "langs": ["en", "ru"],
   "launch_utc": "2026-10-05T13:00:00Z",
+  "_events": "Home timers. at=null -> 'date TBA'. confirmed=false -> date is official, hour is not.",
+  "events": [
+    {"id": "pre_founder", "access": "founder", "at": "2026-09-28T13:00:00Z", "confirmed": true},
+    {"id": "early", "access": "founder", "at": "2026-09-30T13:00:00Z", "confirmed": true},
+    {"id": "pre_std", "access": "all", "at": null, "confirmed": false},
+    {"id": "launch", "access": "all", "at": "2026-10-05T13:00:00Z", "confirmed": true}
+  ],
   "updated": "2026-09-27",
   "classes": [
     {"slug": "gladiator", "status": "ready", "accent": "crimson",

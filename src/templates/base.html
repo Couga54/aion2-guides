@@ -50,11 +50,15 @@
     <nav class="class-nav" aria-label="{{ t.classes }}">
       {% for c in classes if c.status == 'ready' %}
       <a href="{{ root }}{{ lang }}/{{ c.slug }}/" class="accent-{{ c.accent }}"{% if cls and cls.slug == c.slug %} aria-current="page"{% endif %}>
-        <img src="{{ root }}assets/classes/{{ c.slug }}.webp" width="22" height="22" alt="">{{ c.name[lang] }}
+        <img src="{{ root }}assets/classes/{{ c.slug }}.webp" width="22" height="22" alt=""><span>{{ c.name[lang] }}</span>
       </a>
       {% endfor %}
     </nav>
     <div class="topbar-tools">
+      <a class="src-nav" href="{{ root }}{{ lang }}/sources/"{% if path == 'sources/' %} aria-current="page"{% endif %} title="{{ t.src_title }}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+        <span>{{ t.sources }}</span>
+      </a>
       <a class="lang-switch" href="{{ root }}{{ other_lang }}/{{ path }}" hreflang="{{ other_lang }}" lang="{{ other_lang }}" data-keep-query>
         <span aria-hidden="true">{{ other_lang|upper }}</span><span class="sr-only">{{ t.switch_lang }}</span>
       </a>
@@ -73,6 +77,7 @@
       <a class="brand brand-sm" href="{{ root }}{{ lang }}/">{{ t.site_name }}</a>
       <p>{{ t.footer_disclaimer }}</p>
       <p>{{ t.footer_updated }}: {{ updated }} ({{ t.footer_before_launch }}).</p>
+      <p><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }}</a></p>
     </div>
     {% block footer_extra %}{% endblock %}
   </div>

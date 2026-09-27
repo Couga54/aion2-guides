@@ -48,13 +48,17 @@
     </a>
     <nav class="class-nav" aria-label="Классы">
       <a href="../ru/gladiator/" class="accent-crimson">
-        <img src="../assets/classes/gladiator.webp" width="22" height="22" alt="">Гладиатор
+        <img src="../assets/classes/gladiator.webp" width="22" height="22" alt=""><span>Гладиатор</span>
       </a>
       <a href="../ru/ranger/" class="accent-emerald">
-        <img src="../assets/classes/ranger.webp" width="22" height="22" alt="">Лучник
+        <img src="../assets/classes/ranger.webp" width="22" height="22" alt=""><span>Лучник</span>
       </a>
     </nav>
     <div class="topbar-tools">
+      <a class="src-nav" href="../ru/sources/" title="Источники и авторы">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+        <span>Источники</span>
+      </a>
       <a class="lang-switch" href="../en/" hreflang="en" lang="en" data-keep-query>
         <span aria-hidden="true">EN</span><span class="sr-only">English</span>
       </a>
@@ -67,18 +71,67 @@
 
 <main id="main">
   <section class="home-hero">
+    <div class="home-hero-art" aria-hidden="true">
+      <img src="../assets/art/home-bg.webp" width="1920" height="1103" alt="" fetchpriority="high">
+    </div>
     <div class="wrap home-hero-in">
-      <p class="kicker">Глобальный 1 сезон</p>
-      <h1>Играй классом правильно с первого дня</h1>
-      <p class="lead">Билды для PvE и PvP, а также чек-лист прокачки, который удобно держать на втором мониторе. Данные скиллов взяты из глобального клиента, и каждый гайд честно отмечает, где он ещё опирается на опыт корейских и тайваньских серверов.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#classes">Выбрать класс</a>
-        <div class="countdown" data-launch="2026-10-05T13:00:00Z" data-live="Глобальные серверы запущены">
-          <span class="countdown-label">До глобального запуска</span>
-          <span class="countdown-value" aria-live="off">—</span>
-          <span class="countdown-date">5 октября 2026 · 13:00 UTC</span>
+      <div class="home-hero-text">
+        <p class="kicker">Глобальный 1 сезон</p>
+        <h1>Играй классом правильно с первого дня</h1>
+        <p class="lead">Билды для PvE и PvP, а также чек-лист прокачки, который удобно держать на втором мониторе. Данные скиллов взяты из глобального клиента, и каждый гайд честно отмечает, где он ещё опирается на опыт корейских и тайваньских серверов.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#classes">Выбрать класс</a>
         </div>
       </div>
+
+      <aside class="events" aria-labelledby="h-events" data-units="д,ч,м,с" data-lang="ru">
+        <h2 id="h-events" class="events-title">Расписание запуска</h2>
+        <ol class="ev-list">
+          <li class="ev ev-founder" data-at="2026-09-28T13:00:00Z">
+            <div class="ev-head">
+              <span class="ev-name">Предзагрузка</span>
+              <span class="ev-acc">Founder&#39;s Pack</span>
+            </div>
+            <div class="ev-timer" aria-hidden="true"><span><b>--</b><i>д</i></span><span><b>--</b><i>ч</i></span><span><b>--</b><i>м</i></span><span><b>--</b><i>с</i></span></div>
+            <div class="ev-done">Началось</div>
+            <p class="ev-when">
+              <time datetime="2026-09-28T13:00:00Z">28 сентября · 13:00 UTC</time>
+              <span class="ev-local"></span>
+            </p>
+          </li>
+          <li class="ev ev-founder" data-at="2026-09-30T13:00:00Z">
+            <div class="ev-head">
+              <span class="ev-name">Ранний доступ</span>
+              <span class="ev-acc">Founder&#39;s Pack</span>
+            </div>
+            <div class="ev-timer" aria-hidden="true"><span><b>--</b><i>д</i></span><span><b>--</b><i>ч</i></span><span><b>--</b><i>м</i></span><span><b>--</b><i>с</i></span></div>
+            <div class="ev-done">Началось</div>
+            <p class="ev-when">
+              <time datetime="2026-09-30T13:00:00Z">30 сентября · 13:00 UTC</time>
+              <span class="ev-local"></span>
+            </p>
+          </li>
+          <li class="ev ev-all">
+            <div class="ev-head">
+              <span class="ev-name">Предзагрузка</span>
+              <span class="ev-acc">Бесплатно · все игроки</span>
+            </div>
+            <p class="ev-tba">Дата ещё не объявлена</p>
+          </li>
+          <li class="ev ev-all" data-at="2026-10-05T13:00:00Z">
+            <div class="ev-head">
+              <span class="ev-name">Глобальный запуск</span>
+              <span class="ev-acc">Бесплатно · все игроки</span>
+            </div>
+            <div class="ev-timer" aria-hidden="true"><span><b>--</b><i>д</i></span><span><b>--</b><i>ч</i></span><span><b>--</b><i>м</i></span><span><b>--</b><i>с</i></span></div>
+            <div class="ev-done">Началось</div>
+            <p class="ev-when">
+              <time datetime="2026-10-05T13:00:00Z">5 октября · 13:00 UTC</time>
+              <span class="ev-local"></span>
+            </p>
+          </li>
+        </ol>
+      </aside>
     </div>
   </section>
 
@@ -86,7 +139,8 @@
     <h2 id="h-classes" class="section-title">Классы</h2>
     <ul class="class-grid">
       <li class="class-card is-ready accent-crimson">
-<a class="class-card-link" href="gladiator/">          <img class="class-emblem" src="../assets/classes/gladiator.webp" width="72" height="72" alt="" loading="lazy">
+<a class="class-card-link" href="gladiator/">          <img class="class-card-art" src="../assets/art/gladiator.webp" alt="" loading="lazy">
+          <img class="class-emblem" src="../assets/classes/gladiator.webp" width="72" height="72" alt="" loading="lazy">
           <div class="class-card-body">
             <span class="class-status">Гайд готов</span>
             <h3>Гладиатор</h3>
@@ -100,7 +154,8 @@
           </div>
 </a>      </li>
       <li class="class-card is-ready accent-emerald">
-<a class="class-card-link" href="ranger/">          <img class="class-emblem" src="../assets/classes/ranger.webp" width="72" height="72" alt="" loading="lazy">
+<a class="class-card-link" href="ranger/">          <img class="class-card-art" src="../assets/art/ranger.webp" alt="" loading="lazy">
+          <img class="class-emblem" src="../assets/classes/ranger.webp" width="72" height="72" alt="" loading="lazy">
           <div class="class-card-body">
             <span class="class-status">Гайд готов</span>
             <h3>Лучник</h3>
@@ -114,7 +169,8 @@
           </div>
 </a>      </li>
       <li class="class-card is-soon">
-<div class="class-card-link" aria-disabled="true">          <img class="class-emblem" src="../assets/classes/templar.webp" width="72" height="72" alt="" loading="lazy">
+<div class="class-card-link" aria-disabled="true">          <img class="class-card-art" src="../assets/art/templar.webp" alt="" loading="lazy">
+          <img class="class-emblem" src="../assets/classes/templar.webp" width="72" height="72" alt="" loading="lazy">
           <div class="class-card-body">
             <span class="class-status">Скоро</span>
             <h3>Страж</h3>
@@ -122,7 +178,8 @@
           </div>
 </div>      </li>
       <li class="class-card is-soon">
-<div class="class-card-link" aria-disabled="true">          <img class="class-emblem" src="../assets/classes/assassin.webp" width="72" height="72" alt="" loading="lazy">
+<div class="class-card-link" aria-disabled="true">          <img class="class-card-art" src="../assets/art/assassin.webp" alt="" loading="lazy">
+          <img class="class-emblem" src="../assets/classes/assassin.webp" width="72" height="72" alt="" loading="lazy">
           <div class="class-card-body">
             <span class="class-status">Скоро</span>
             <h3>Убийца</h3>
@@ -130,7 +187,8 @@
           </div>
 </div>      </li>
       <li class="class-card is-soon">
-<div class="class-card-link" aria-disabled="true">          <img class="class-emblem" src="../assets/classes/sorcerer.webp" width="72" height="72" alt="" loading="lazy">
+<div class="class-card-link" aria-disabled="true">          <img class="class-card-art" src="../assets/art/sorcerer.webp" alt="" loading="lazy">
+          <img class="class-emblem" src="../assets/classes/sorcerer.webp" width="72" height="72" alt="" loading="lazy">
           <div class="class-card-body">
             <span class="class-status">Скоро</span>
             <h3>Волшебник</h3>
@@ -138,7 +196,8 @@
           </div>
 </div>      </li>
       <li class="class-card is-soon">
-<div class="class-card-link" aria-disabled="true">          <img class="class-emblem" src="../assets/classes/elementalist.webp" width="72" height="72" alt="" loading="lazy">
+<div class="class-card-link" aria-disabled="true">          <img class="class-card-art" src="../assets/art/elementalist.webp" alt="" loading="lazy">
+          <img class="class-emblem" src="../assets/classes/elementalist.webp" width="72" height="72" alt="" loading="lazy">
           <div class="class-card-body">
             <span class="class-status">Скоро</span>
             <h3>Заклинатель</h3>
@@ -146,7 +205,8 @@
           </div>
 </div>      </li>
       <li class="class-card is-soon">
-<div class="class-card-link" aria-disabled="true">          <img class="class-emblem" src="../assets/classes/cleric.webp" width="72" height="72" alt="" loading="lazy">
+<div class="class-card-link" aria-disabled="true">          <img class="class-card-art" src="../assets/art/cleric.webp" alt="" loading="lazy">
+          <img class="class-emblem" src="../assets/classes/cleric.webp" width="72" height="72" alt="" loading="lazy">
           <div class="class-card-body">
             <span class="class-status">Скоро</span>
             <h3>Целитель</h3>
@@ -154,7 +214,8 @@
           </div>
 </div>      </li>
       <li class="class-card is-soon">
-<div class="class-card-link" aria-disabled="true">          <img class="class-emblem" src="../assets/classes/chanter.webp" width="72" height="72" alt="" loading="lazy">
+<div class="class-card-link" aria-disabled="true">          <img class="class-card-art" src="../assets/art/chanter.webp" alt="" loading="lazy">
+          <img class="class-emblem" src="../assets/classes/chanter.webp" width="72" height="72" alt="" loading="lazy">
           <div class="class-card-body">
             <span class="class-status">Скоро</span>
             <h3>Чародей</h3>
@@ -189,6 +250,7 @@
       <a class="brand brand-sm" href="../ru/">AION 2 Гайды</a>
       <p>Неофициальный фанатский сайт, не связан с NCSOFT. AION 2 и иконки скиллов © NCSOFT.</p>
       <p>Проверено: 2026-09-27 (до глобального запуска).</p>
+      <p><a href="../ru/sources/">Все источники и авторы</a></p>
     </div>
   </div>
 </footer>

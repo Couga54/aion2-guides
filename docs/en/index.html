@@ -48,13 +48,17 @@
     </a>
     <nav class="class-nav" aria-label="Classes">
       <a href="../en/gladiator/" class="accent-crimson">
-        <img src="../assets/classes/gladiator.webp" width="22" height="22" alt="">Gladiator
+        <img src="../assets/classes/gladiator.webp" width="22" height="22" alt=""><span>Gladiator</span>
       </a>
       <a href="../en/ranger/" class="accent-emerald">
-        <img src="../assets/classes/ranger.webp" width="22" height="22" alt="">Ranger
+        <img src="../assets/classes/ranger.webp" width="22" height="22" alt=""><span>Ranger</span>
       </a>
     </nav>
     <div class="topbar-tools">
+      <a class="src-nav" href="../en/sources/" title="Sources &amp; credits">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+        <span>Sources</span>
+      </a>
       <a class="lang-switch" href="../ru/" hreflang="ru" lang="ru" data-keep-query>
         <span aria-hidden="true">RU</span><span class="sr-only">Русский</span>
       </a>
@@ -67,18 +71,67 @@
 
 <main id="main">
   <section class="home-hero">
+    <div class="home-hero-art" aria-hidden="true">
+      <img src="../assets/art/home-bg.webp" width="1920" height="1103" alt="" fetchpriority="high">
+    </div>
     <div class="wrap home-hero-in">
-      <p class="kicker">Global Season 1</p>
-      <h1>Play your class right from day one</h1>
-      <p class="lead">Builds for PvE and PvP, plus a leveling checklist you can keep open on a second monitor. Skill data is taken from the global client, and every guide says where it still relies on Korean/Taiwanese experience.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#classes">Choose a class</a>
-        <div class="countdown" data-launch="2026-10-05T13:00:00Z" data-live="Global servers are live">
-          <span class="countdown-label">Global launch in</span>
-          <span class="countdown-value" aria-live="off">—</span>
-          <span class="countdown-date">October 5, 2026 · 13:00 UTC</span>
+      <div class="home-hero-text">
+        <p class="kicker">Global Season 1</p>
+        <h1>Play your class right from day one</h1>
+        <p class="lead">Builds for PvE and PvP, plus a leveling checklist you can keep open on a second monitor. Skill data is taken from the global client, and every guide says where it still relies on Korean/Taiwanese experience.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#classes">Choose a class</a>
         </div>
       </div>
+
+      <aside class="events" aria-labelledby="h-events" data-units="d,h,m,s" data-lang="en">
+        <h2 id="h-events" class="events-title">Launch schedule</h2>
+        <ol class="ev-list">
+          <li class="ev ev-founder" data-at="2026-09-28T13:00:00Z">
+            <div class="ev-head">
+              <span class="ev-name">Pre-download</span>
+              <span class="ev-acc">Founder&#39;s Pack</span>
+            </div>
+            <div class="ev-timer" aria-hidden="true"><span><b>--</b><i>d</i></span><span><b>--</b><i>h</i></span><span><b>--</b><i>m</i></span><span><b>--</b><i>s</i></span></div>
+            <div class="ev-done">Started</div>
+            <p class="ev-when">
+              <time datetime="2026-09-28T13:00:00Z">Sep 28 · 13:00 UTC</time>
+              <span class="ev-local"></span>
+            </p>
+          </li>
+          <li class="ev ev-founder" data-at="2026-09-30T13:00:00Z">
+            <div class="ev-head">
+              <span class="ev-name">Early Access</span>
+              <span class="ev-acc">Founder&#39;s Pack</span>
+            </div>
+            <div class="ev-timer" aria-hidden="true"><span><b>--</b><i>d</i></span><span><b>--</b><i>h</i></span><span><b>--</b><i>m</i></span><span><b>--</b><i>s</i></span></div>
+            <div class="ev-done">Started</div>
+            <p class="ev-when">
+              <time datetime="2026-09-30T13:00:00Z">Sep 30 · 13:00 UTC</time>
+              <span class="ev-local"></span>
+            </p>
+          </li>
+          <li class="ev ev-all">
+            <div class="ev-head">
+              <span class="ev-name">Pre-download</span>
+              <span class="ev-acc">Free · all players</span>
+            </div>
+            <p class="ev-tba">Date not announced yet</p>
+          </li>
+          <li class="ev ev-all" data-at="2026-10-05T13:00:00Z">
+            <div class="ev-head">
+              <span class="ev-name">Global launch</span>
+              <span class="ev-acc">Free · all players</span>
+            </div>
+            <div class="ev-timer" aria-hidden="true"><span><b>--</b><i>d</i></span><span><b>--</b><i>h</i></span><span><b>--</b><i>m</i></span><span><b>--</b><i>s</i></span></div>
+            <div class="ev-done">Started</div>
+            <p class="ev-when">
+              <time datetime="2026-10-05T13:00:00Z">Oct 5 · 13:00 UTC</time>
+              <span class="ev-local"></span>
+            </p>
+          </li>
+        </ol>
+      </aside>
     </div>
   </section>
 
@@ -86,7 +139,8 @@
     <h2 id="h-classes" class="section-title">Classes</h2>
     <ul class="class-grid">
       <li class="class-card is-ready accent-crimson">
-<a class="class-card-link" href="gladiator/">          <img class="class-emblem" src="../assets/classes/gladiator.webp" width="72" height="72" alt="" loading="lazy">
+<a class="class-card-link" href="gladiator/">          <img class="class-card-art" src="../assets/art/gladiator.webp" alt="" loading="lazy">
+          <img class="class-emblem" src="../assets/classes/gladiator.webp" width="72" height="72" alt="" loading="lazy">
           <div class="class-card-body">
             <span class="class-status">Guide ready</span>
             <h3>Gladiator</h3>
@@ -100,7 +154,8 @@
           </div>
 </a>      </li>
       <li class="class-card is-ready accent-emerald">
-<a class="class-card-link" href="ranger/">          <img class="class-emblem" src="../assets/classes/ranger.webp" width="72" height="72" alt="" loading="lazy">
+<a class="class-card-link" href="ranger/">          <img class="class-card-art" src="../assets/art/ranger.webp" alt="" loading="lazy">
+          <img class="class-emblem" src="../assets/classes/ranger.webp" width="72" height="72" alt="" loading="lazy">
           <div class="class-card-body">
             <span class="class-status">Guide ready</span>
             <h3>Ranger</h3>
@@ -114,7 +169,8 @@
           </div>
 </a>      </li>
       <li class="class-card is-soon">
-<div class="class-card-link" aria-disabled="true">          <img class="class-emblem" src="../assets/classes/templar.webp" width="72" height="72" alt="" loading="lazy">
+<div class="class-card-link" aria-disabled="true">          <img class="class-card-art" src="../assets/art/templar.webp" alt="" loading="lazy">
+          <img class="class-emblem" src="../assets/classes/templar.webp" width="72" height="72" alt="" loading="lazy">
           <div class="class-card-body">
             <span class="class-status">Coming soon</span>
             <h3>Templar</h3>
@@ -122,7 +178,8 @@
           </div>
 </div>      </li>
       <li class="class-card is-soon">
-<div class="class-card-link" aria-disabled="true">          <img class="class-emblem" src="../assets/classes/assassin.webp" width="72" height="72" alt="" loading="lazy">
+<div class="class-card-link" aria-disabled="true">          <img class="class-card-art" src="../assets/art/assassin.webp" alt="" loading="lazy">
+          <img class="class-emblem" src="../assets/classes/assassin.webp" width="72" height="72" alt="" loading="lazy">
           <div class="class-card-body">
             <span class="class-status">Coming soon</span>
             <h3>Assassin</h3>
@@ -130,7 +187,8 @@
           </div>
 </div>      </li>
       <li class="class-card is-soon">
-<div class="class-card-link" aria-disabled="true">          <img class="class-emblem" src="../assets/classes/sorcerer.webp" width="72" height="72" alt="" loading="lazy">
+<div class="class-card-link" aria-disabled="true">          <img class="class-card-art" src="../assets/art/sorcerer.webp" alt="" loading="lazy">
+          <img class="class-emblem" src="../assets/classes/sorcerer.webp" width="72" height="72" alt="" loading="lazy">
           <div class="class-card-body">
             <span class="class-status">Coming soon</span>
             <h3>Sorcerer</h3>
@@ -138,7 +196,8 @@
           </div>
 </div>      </li>
       <li class="class-card is-soon">
-<div class="class-card-link" aria-disabled="true">          <img class="class-emblem" src="../assets/classes/elementalist.webp" width="72" height="72" alt="" loading="lazy">
+<div class="class-card-link" aria-disabled="true">          <img class="class-card-art" src="../assets/art/elementalist.webp" alt="" loading="lazy">
+          <img class="class-emblem" src="../assets/classes/elementalist.webp" width="72" height="72" alt="" loading="lazy">
           <div class="class-card-body">
             <span class="class-status">Coming soon</span>
             <h3>Elementalist</h3>
@@ -146,7 +205,8 @@
           </div>
 </div>      </li>
       <li class="class-card is-soon">
-<div class="class-card-link" aria-disabled="true">          <img class="class-emblem" src="../assets/classes/cleric.webp" width="72" height="72" alt="" loading="lazy">
+<div class="class-card-link" aria-disabled="true">          <img class="class-card-art" src="../assets/art/cleric.webp" alt="" loading="lazy">
+          <img class="class-emblem" src="../assets/classes/cleric.webp" width="72" height="72" alt="" loading="lazy">
           <div class="class-card-body">
             <span class="class-status">Coming soon</span>
             <h3>Cleric</h3>
@@ -154,7 +214,8 @@
           </div>
 </div>      </li>
       <li class="class-card is-soon">
-<div class="class-card-link" aria-disabled="true">          <img class="class-emblem" src="../assets/classes/chanter.webp" width="72" height="72" alt="" loading="lazy">
+<div class="class-card-link" aria-disabled="true">          <img class="class-card-art" src="../assets/art/chanter.webp" alt="" loading="lazy">
+          <img class="class-emblem" src="../assets/classes/chanter.webp" width="72" height="72" alt="" loading="lazy">
           <div class="class-card-body">
             <span class="class-status">Coming soon</span>
             <h3>Chanter</h3>
@@ -189,6 +250,7 @@
       <a class="brand brand-sm" href="../en/">AION 2 Guides</a>
       <p>Unofficial fan site, not affiliated with NCSOFT. AION 2 and its skill icons are © NCSOFT.</p>
       <p>Last checked: 2026-09-27 (before the global launch).</p>
+      <p><a href="../en/sources/">All sources and creators</a></p>
     </div>
   </div>
 </footer>
