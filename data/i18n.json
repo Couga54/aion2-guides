@@ -65,7 +65,10 @@
     "src_title": "Sources & credits", "src_h1": "Sources & credits",
     "src_desc": "Creators, videos and sites the AION 2 Guides are built on, with links to their YouTube and Twitch channels.",
     "src_lead": "Everything on this site is checked against these people and sites. If a guide helped you, support the original authors.",
-    "src_used": "Used in", "src_site": "Whole site", "src_all": "All sources and creators"
+    "src_used": "Used in", "src_site": "Whole site", "src_all": "All sources and creators",
+    "src_ai_title": "About this site",
+    "src_ai": "This site was put together with the help of Claude, an AI assistant by Anthropic. All information belongs to the creators and sites credited on this page — we only collect, check and organise it. AION 2, its art and skill icons are © NCSOFT.",
+    "src_ai_fix": "Author of one of these sources and want a correction, a better credit or removal? Open an issue on GitHub."
   },
   "ru": {
     "site_name": "AION 2 Гайды",
@@ -133,6 +136,9 @@
     "src_title": "Источники и авторы", "src_h1": "Источники и авторы",
     "src_desc": "Авторы, видео и сайты, на которых построены гайды AION 2, со ссылками на их YouTube и Twitch.",
     "src_lead": "Всё на сайте сверено с этими людьми и сайтами. Если гайд помог — поддержите оригинальных авторов.",
-    "src_used": "Где использовано", "src_site": "Весь сайт", "src_all": "Все источники и авторы"
+    "src_used": "Где использовано", "src_site": "Весь сайт", "src_all": "Все источники и авторы",
+    "src_ai_title": "О сайте",
+    "src_ai": "Сайт собран с помощью Claude — ИИ-ассистента от Anthropic. Вся информация принадлежит авторам и сайтам, указанным на этой странице, — мы только собираем, проверяем и систематизируем её. AION 2, арты и иконки скиллов © NCSOFT.",
+    "src_ai_fix": "Вы автор одного из источников и хотите исправление, другое упоминание или удаление? Откройте issue на GitHub."
   }
 }

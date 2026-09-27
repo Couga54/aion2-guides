@@ -187,11 +187,22 @@ p{margin:0 0 12px;}
   radial-gradient(420px 180px at 100% 0%,var(--accent-glow,transparent),transparent 70%),var(--surface);}
 .class-card.is-ready .class-card-link:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 55%,var(--border));box-shadow:0 18px 40px -22px var(--accent-glow,rgba(0,0,0,.6));}
 .class-card-link{position:relative;overflow:hidden;isolation:isolate;}
-.class-card-art{max-width:none;position:absolute;z-index:-1;right:-18px;top:-6px;height:118%;width:auto;opacity:.34;pointer-events:none;transition:opacity .3s ease,transform .4s ease;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 55%),linear-gradient(180deg,#000 60%,transparent);-webkit-mask-composite:source-in;
-  mask-image:linear-gradient(90deg,transparent,#000 55%),linear-gradient(180deg,#000 60%,transparent);mask-composite:intersect;}
-.class-card.is-ready .class-card-link:hover .class-card-art{opacity:.55;transform:translateX(-6px) scale(1.03);}
-.class-card.is-soon .class-card-art{filter:grayscale(1);opacity:.2;}
+/* Character portrait in a right-hand panel: figure centred, cropped to the upper body. */
+.class-card-art{position:absolute;z-index:-1;top:0;right:0;width:46%;height:100%;max-width:none;object-fit:cover;object-position:50% 8%;
+  opacity:.5;pointer-events:none;transform-origin:50% 12%;transition:opacity .3s ease,transform .4s ease;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 45%);mask-image:linear-gradient(90deg,transparent,#000 45%);}
+.class-card.is-soon .class-card-art{transform:scale(1.7);filter:grayscale(1);opacity:.3;}
+/* Ready classes: wide cards, text on the left, portrait gets its own panel on the right. */
+.class-grid-ready{grid-template-columns:repeat(auto-fill,minmax(min(440px,100%),1fr));margin-bottom:14px;}
+.class-grid-ready .class-card-link{min-height:240px;}
+.class-grid-ready .class-card-body{max-width:calc(54% - 86px);}
+.class-grid-ready .class-card-art{width:48%;opacity:.8;-webkit-mask-image:linear-gradient(90deg,transparent,#000 35%);mask-image:linear-gradient(90deg,transparent,#000 35%);}
+.class-card.is-ready .class-card-link:hover .class-card-art{opacity:1;}
+@media (max-width: 520px){
+  .class-grid-ready .class-card-body{max-width:none;}
+  .class-grid-ready .class-card-art{opacity:.35;}
+}
+.class-card.is-ready .class-card-link:hover .class-card-art{transform:scale(1.04);}
 .class-card-body,.class-emblem{position:relative;}
 .class-emblem{width:72px;height:72px;border-radius:16px;flex:none;border:1px solid var(--border-2);box-shadow:0 8px 20px -10px rgba(0,0,0,.7);}
 .class-card.is-soon .class-emblem{filter:grayscale(1) brightness(.6);}
@@ -441,3 +452,7 @@ td:first-child{font-weight:600;color:var(--text);white-space:nowrap;}
 .src-telegram svg{color:#2aa8e0;}
 .src-site svg,.src-github svg{color:var(--text-dim);}
 .sources-all{margin:10px 0 0;font-weight:600;}
+.src-about{margin-top:40px;padding:18px 20px;border-radius:var(--radius);border:1px dashed var(--border-2);background:var(--bg-2);}
+.src-about h2{font:700 .7rem/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--text-faint);margin:0 0 10px;}
+.src-about p{margin:0 0 8px;color:var(--text-dim);font-size:.9rem;max-width:80ch;}
+.src-about p:last-child{margin:0;}

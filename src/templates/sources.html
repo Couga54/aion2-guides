@@ -37,7 +37,7 @@
       <ul class="src-grid{% if g.id == 'creators' %} src-grid-creators{% endif %}">
         {% for it in g['items'] %}
         <li class="src-card">
-          <h3>{{ it.name }}</h3>
+          <h3>{{ it.name[lang] if it.name is mapping else it.name }}</h3>
           <p>{{ it.what[lang] }}</p>
           <p class="src-used"><span>{{ t.src_used }}:</span>
             {% for u in it.used %}
@@ -45,16 +45,24 @@
             {% else %}{% for c in classes if c.slug == u %}<a class="chip accent-{{ c.accent }}" href="{{ root }}{{ lang }}/{{ c.slug }}/">{{ c.name[lang] }}</a>{% endfor %}{% endif %}
             {% endfor %}
           </p>
+          {% if it.links %}
           <div class="src-links">
             {% for l in it.links %}
             <a class="src-link src-{{ l.type }}" href="{{ l.url }}" target="_blank" rel="noopener">{{ icon(l.type) }}<span>{{ l.label[lang] if l.label is mapping else l.label }}</span></a>
             {% endfor %}
           </div>
+          {% endif %}
         </li>
         {% endfor %}
       </ul>
     </section>
     {% endfor %}
+
+    <section class="src-about" aria-labelledby="h-about">
+      <h2 id="h-about">{{ t.src_ai_title }}</h2>
+      <p>{{ t.src_ai }}</p>
+      <p><a href="https://github.com/Couga54/aion2-guides/issues" target="_blank" rel="noopener">{{ t.src_ai_fix }}</a></p>
+    </section>
   </div>
 </main>
 {% endblock %}

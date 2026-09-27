@@ -18,7 +18,7 @@
      "difficulty": 1,
      "pitch": {"en": "Front-loaded damage, a pseudo-tank toolkit and near-permanent cooldowns off one stigma.",
                "ru": "Мощный фронтальный урон, полутанковый набор и почти вечные перезарядки от одной стигмы."}},
-    {"slug": "ranger", "status": "ready", "accent": "emerald",
+    {"slug": "ranger", "status": "ready", "accent": "emerald", "art_pos": "28% 6%",
      "name": {"en": "Ranger", "ru": "Лучник"},
      "role": {"en": "Ranged DPS · kiter", "ru": "Дальний бой · кайт"},
      "weapon": {"en": "Bow", "ru": "Лук"},

@@ -45,11 +45,10 @@
 
   <section class="wrap" id="classes" aria-labelledby="h-classes">
     <h2 id="h-classes" class="section-title">{{ t.classes }}</h2>
-    <ul class="class-grid">
-      {% for c in classes %}
+    {% macro card(c) %}
       <li class="class-card {{ 'is-ready' if c.status == 'ready' else 'is-soon' }}{% if c.get('accent') %} accent-{{ c.accent }}{% endif %}">
         {% if c.status == 'ready' %}<a class="class-card-link" href="{{ c.slug }}/">{% else %}<div class="class-card-link" aria-disabled="true">{% endif %}
-          <img class="class-card-art" src="{{ root }}assets/art/{{ c.slug }}.webp" alt="" loading="lazy">
+          <img class="class-card-art" src="{{ root }}assets/art/{{ c.slug }}.webp" alt="" loading="lazy"{% if c.get('art_pos') %} style="object-position:{{ c.art_pos }}"{% endif %}>
           <img class="class-emblem" src="{{ root }}assets/classes/{{ c.slug }}.webp" width="72" height="72" alt="" loading="lazy">
           <div class="class-card-body">
             <span class="class-status">{{ t.ready if c.status == 'ready' else t.soon }}</span>
@@ -68,7 +67,12 @@
           </div>
         {% if c.status == 'ready' %}</a>{% else %}</div>{% endif %}
       </li>
-      {% endfor %}
+    {% endmacro %}
+    <ul class="class-grid class-grid-ready">
+      {% for c in classes if c.status == 'ready' %}{{ card(c) }}{% endfor %}
+    </ul>
+    <ul class="class-grid class-grid-soon">
+      {% for c in classes if c.status != 'ready' %}{{ card(c) }}{% endfor %}
     </ul>
   </section>
 
