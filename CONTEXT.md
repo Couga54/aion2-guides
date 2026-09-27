@@ -59,6 +59,15 @@ Requirements from the user (in their words, translated):
   skills, toggles/auras and gap closers out. Guides render lines with `hotline()` and slots with `macroseq()`.
   Gladiator lines come from Arthars' video (RMB: Overhead Slam → Rending Blow → Rage Burst; E: Ruinous Blow;
   buffs: Lunge Stance + Zikel's); the macro slot order is our inference. Ranger lines from 7MMO.
+- Templar (Sep 27): from NoBS Game Guides' video (transcript in data/transcripts/JEWRiaOb9JY.json)
+  + Korean posts (Inven, Vortex, FM Korea) + MMO Codex. Korean tanks run 5–6 stigmas; the global set of 4
+  is our pick: Doom Shield, Battlefield Banner, Taunt, Shield of Protection (PvP: Empyrean Lord's
+  Punishment, Shield of Protection, Doom Shield, Noble Armor). The macro lines are adapted from KR, untested.
+  RU client names Shield Rush and Shield Smite both "Удар щитом" — data/skills/_overrides.json fixes the display.
+- Weekly reset: NOT announced. `site.json → weekly_reset.anchor` = Early Access start (Wed Sep 30 13:00 UTC),
+  repeating every 7 days; the user will give the real time at launch. Odyle energy (EU test client):
+  +15 every 3 h, base cap 840, chest 40, 7 weekly crafts × 40 — in `site.json → energy`.
+  Weekly entry limits in data/weekly.json come from KR/TW/EU-test sites and need checking at launch.
 - The old single-page guide had **Zikel's Blessing and Lunge Stance icons swapped** —
   icons here come fresh from questlog, keyed by skill name.
 - Gladiator: Overhead Slam & Aerial Snare only hit Knocked-down targets (bosses are an
@@ -72,6 +81,8 @@ Requirements from the user (in their words, translated):
 
 - `data/site.json` — classes (status ready/soon, names/roles in EN+RU), base URL, launch date.
 - `data/i18n.json` — UI strings EN/RU.
+- `data/weekly.json`, `data/week1.json` — tracker items and first-week goals (EN+RU).
+- `data/transcripts/` — YouTube transcripts guides are based on (`tools/fetch_transcript.py`).
 - `data/sources.json` — Sources & credits page (`/<lang>/sources/`): creators with YouTube/Twitch links,
   guides/databases, launch info. Add a source here whenever a guide starts relying on it —
   and credit the author by name even when there is no link to give (`"links": []`).
@@ -96,5 +107,10 @@ Requirements from the user (in their words, translated):
   Заклинатель, Целитель, Чародей); RU skill names come from the global client via questlog.
 - Session 2 (Sep 27): pushed to GitHub, Pages live. Added class art (class cards,
   class hero + faint fixed backdrop on class pages), a landscape behind the home hero; a Sources & credits page (topbar button, footer, link under each guide's sources) and a launch schedule panel with timers on the home page.
+- Session 3 (Sep 27): Templar guide (EN/RU, PvE/PvP/leveling), "Updated / Patch: TBD" stamp on every
+  class page (site.json → classes[].updated / patch), First week page (/<lang>/week-1/, data/week1.json,
+  from Spid's and LittleFattyGG's videos) and Weekly tracker (/<lang>/weekly/, data/weekly.json,
+  assets/js/tracker.js): characters, weekly counters that clear themselves at each reset, Odyle energy that
+  regenerates per character, all in localStorage key `aion2-tracker-v1`.
 - Open ideas: more classes, Daevanion board visual per class, checklist export/import,
   verify global level cap and Daevanion values after launch (Oct 5).

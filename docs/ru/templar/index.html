@@ -1,0 +1,1426 @@
+<!doctype html>
+<html lang="ru" data-mode="pve" data-class="templar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Страж — AION 2 Гайды (PvE, PvP, Прокачка)</title>
+<meta name="description" content="Главный танк: блоки баффают всю группу, Суд превращает каждый удар щитом в урон, а контроля в PvP больше, чем у всех.">
+<link rel="canonical" href="https://couga54.github.io/aion2-guides/ru/templar/">
+<link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/templar/">
+<link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/templar/">
+<link rel="alternate" hreflang="x-default" href="https://couga54.github.io/aion2-guides/en/templar/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Гайды">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Страж — AION 2 Гайды (PvE, PvP, Прокачка)">
+<meta property="og:description" content="Главный танк: блоки баффают всю группу, Суд превращает каждый удар щитом в урон, а контроля в PvP больше, чем у всех.">
+<meta property="og:url" content="https://couga54.github.io/aion2-guides/ru/templar/">
+<meta property="og:image" content="https://couga54.github.io/aion2-guides/assets/og/templar-ru.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var modes = ['pve', 'pvp', 'lvl'];
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+  })(document.documentElement);
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css">
+</head>
+<body class="page-class accent-sapphire">
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../ru/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
+      <span>AION 2 Гайды</span>
+    </a>
+    <nav class="class-nav" aria-label="Классы">
+      <a href="../../ru/gladiator/" class="accent-crimson">
+        <img src="../../assets/classes/gladiator.webp" width="22" height="22" alt=""><span>Гладиатор</span>
+      </a>
+      <a href="../../ru/ranger/" class="accent-emerald">
+        <img src="../../assets/classes/ranger.webp" width="22" height="22" alt=""><span>Лучник</span>
+      </a>
+      <a href="../../ru/templar/" class="accent-sapphire" aria-current="page">
+        <img src="../../assets/classes/templar.webp" width="22" height="22" alt=""><span>Страж</span>
+      </a>
+    </nav>
+    <div class="topbar-tools">
+      <a class="src-nav" href="../../ru/week-1/" title="Первая неделя: что успеть до сброса">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+        <span>Первая неделя</span>
+      </a>
+      <a class="src-nav" href="../../ru/weekly/" title="Недельный трекер">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+        <span>Неделя</span>
+      </a>
+      <a class="src-nav" href="../../ru/sources/" title="Источники и авторы">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+        <span>Источники</span>
+      </a>
+      <a class="lang-switch" href="../../en/templar/" hreflang="en" lang="en" data-keep-query>
+        <span aria-hidden="true">EN</span><span class="sr-only">English</span>
+      </a>
+      <button class="icon-btn theme-toggle" type="button" aria-label="Переключить тёмную тему" title="Переключить тёмную тему">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="class-backdrop" aria-hidden="true" style="--art:url('../../assets/art/templar.webp')"></div>
+<section class="class-hero">
+  <img class="class-hero-art" src="../../assets/art/templar.webp" alt="" aria-hidden="true" fetchpriority="high">
+  <div class="wrap class-hero-in">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../ru/">Все классы</a><span aria-hidden="true">/</span><span>Страж</span></nav>
+    <div class="class-hero-main">
+      <img class="class-hero-emblem" src="../../assets/classes/templar.webp" width="96" height="96" alt="">
+      <div>
+        <p class="kicker"><span data-only="pve">PvE</span><span data-only="pvp">PvP</span><span data-only="lvl">Прокачка</span> · Глобальный 1 сезон</p>
+        <h1>Страж</h1>
+        <p class="class-hero-pitch">Главный танк: блоки баффают всю группу, Суд превращает каждый удар щитом в урон, а контроля в PvP больше, чем у всех.</p>
+        <p class="guide-ver"><span>Обновлено: <time datetime="2026-09-27">27 сентября 2026</time></span><span>Патч: <b>уточняется</b></span></p>
+      </div>
+    </div>
+    <dl class="class-facts">
+      <div><dt>Роль</dt><dd>Танк · баффер группы</dd></div>
+      <div><dt>Оружие</dt><dd>Меч и щит</dd></div>
+      <div><dt>Сложность</dt><dd class="diff"><i class="on"></i><i class="on"></i><i class=""></i><span>Средний</span></dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="guidebar">
+  <div class="wrap guidebar-in">
+    <div class="mode-switch" role="radiogroup" aria-label="Режим гайда">
+      <button type="button" role="radio" data-set-mode="pve" aria-checked="true">PvE</button>
+      <button type="button" role="radio" data-set-mode="pvp" aria-checked="false">PvP</button>
+      <button type="button" role="radio" data-set-mode="lvl" aria-checked="false">Прокачка</button>
+    </div>
+    <nav class="toc-mobile" aria-label="На странице"></nav>
+  </div>
+</div>
+
+<div class="wrap guide-layout">
+  <aside class="toc-side" aria-label="На странице">
+    <p class="toc-title">На странице</p>
+    <nav class="toc-list"></nav>
+  </aside>
+
+  <main id="main" class="guide">
+    <section id="progress" class="g-section tracker" data-only="lvl" data-class="templar" aria-labelledby="h-progress">
+      <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-progress">Прогресс прокачки</h2></div>
+      <div class="tracker-bar">
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="27" aria-valuenow="0" aria-label="Прогресс прокачки"><span></span></div>
+        <span class="progress-text"><b class="progress-count">0</b>/27 готово</span>
+        <button type="button" class="btn btn-ghost btn-sm tracker-reset" data-confirm="Снять все отметки для этого класса?">Сбросить прогресс</button>
+      </div>
+      <p class="note">Отмечай шаги по ходу игры. Прогресс хранится в этом браузере, отдельно для каждого класса.</p>
+      <ol class="steps">
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-story">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Старт</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Иди <strong>только по жёлтым (сюжетным) квестам</strong>. Побочный контент подстраивается под уровень, поэтому ничего не теряешь, если сделаешь его позже.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="templar-clicks">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 1</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+<img src="../../assets/icons/templar/vicious-strike.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/templar/pummel.webp" width="22" height="22" alt="" loading="lazy">              Все очки в <strong>Жестокий удар</strong> и <strong>Град ударов</strong>. Поставь Град ударов во встроенный макрос (10 мс) и держи его вместе с Жестоким ударом — они чередуются, и Жестокий удар восполняет ману, которую тратит Град ударов.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="templar-poach">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 1–8</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+<img src="../../assets/icons/templar/poach.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/templar/warding-strike.webp" width="22" height="22" alt="" loading="lazy">              Дальше <strong>Ловушка</strong> и <strong>Кара хранителя</strong>. На 8 бери <em>Завершение перезарядки при уничтожении врага</em> — притянул, убил, тянешь следующего.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-feathers">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">После пролога</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Собери <strong>40 перьев</strong> (120 осколков) для раннего усиления амулета.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="templar-judgment">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Открыт Суд</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+<img src="../../assets/icons/templar/judgment.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/templar/shield-smite.webp" width="22" height="22" alt="" loading="lazy">              <strong>Суд</strong> срабатывает после <strong>Удар щитом</strong>, <strong>Кара хранителя</strong> и рывка щитом. Сначала у него перезарядка 5 сек. — разноси эти триггеры по времени и после каждого жми Суд.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-daevanion">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 12</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Открывается <strong>Daevanion</strong> (доска Nezekan). Синие узлы дают +1 к уровню скилла — какие брать, смотри в шаге класса ниже.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="templar-daevanion">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 12</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+<img src="../../assets/icons/templar/judgment.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/templar/vicious-strike.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/templar/pummel.webp" width="22" height="22" alt="" loading="lazy">              Синие узлы Daevanion: сначала <strong>Суд</strong>, <strong>Жестокий удар</strong> и <strong>Град ударов</strong>, затем <strong>Кровавая месть</strong>.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="templar-punishment">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 14</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+<img src="../../assets/icons/templar/punishment.webp" width="22" height="22" alt="" loading="lazy">              Начинай качать <strong>Кровавая месть</strong>: заряжай до 3-й стадии и открывай ею каждую элитку.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-hideouts">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 15 / 20 / 25</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Проходи убежища, которые попадаются по пути: первое прохождение даёт камни усиления и кристаллы Daevanion.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-amulet">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">~Ур. 17</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              <strong>Амулет +10</strong>, затем через морф сделай его синим.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-weapon">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">По ходу</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Оружие до <strong>~+10</strong> — самый большой прирост урона на прокачке. Выше до капа не точи.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="templar-specs">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 19</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+<img src="../../assets/icons/templar/vicious-strike.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/templar/pummel.webp" width="22" height="22" alt="" loading="lazy">              Первые специализации: <em>Восстановление ОМ +20%</em> и <em>Затрата ОМ -20%</em>. На прокачке маны мало; на капе переключись на специализации на урон из вкладки PvE.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-zikel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 20</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Открывается доска Zikel — приоритет узлов тот же.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="templar-fury">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 21</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+<img src="../../assets/icons/templar/fury.webp" width="22" height="22" alt="" loading="lazy">              <strong>Ярость</strong> можно вкачать на все десять уровней — каждый блок баффает тебя и группу.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-stigma">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">~Ур. 22</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Вознесение → <strong>открываются стигмы</strong> (4 слота в 1 сезоне глобала). Какие брать — в шаге класса.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="templar-stigmas">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">~Ур. 22</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+<img src="../../assets/icons/templar/doom-shield.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/templar/battlefield-banner.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/templar/taunt.webp" width="22" height="22" alt="" loading="lazy">              Стигмы: сначала <strong>Щит погибели</strong> (запускает Суд), затем <strong>Боевое знамя</strong>; <strong>Провокация</strong> — как только начнёшь танковать данжи.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-acts23">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Акты 2–3</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Только сюжет — не отвлекайся на карту.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="templar-clicks10">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 25</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+<img src="../../assets/icons/templar/vicious-strike.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/templar/pummel.webp" width="22" height="22" alt="" loading="lazy">              <strong>Жестокий удар</strong> и <strong>Град ударов</strong> доходят до 10.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-vaizel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 30</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Открывается доска Vaizel (критический урон).
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="templar-punish10">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 32–38</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+<img src="../../assets/icons/templar/punishment.webp" width="22" height="22" alt="" loading="lazy">              <strong>Кровавая месть</strong> до 8 к 32 и до 10 к 38.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-act4">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Акт 4</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Здесь снова стоит делать побочные задания и соло-подземелья.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-triniel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 40</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Открывается доска Triniel (мульти-удар; в основном для PvP — может подождать). Пещера Крао требует около 1000 GS.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-ariel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 45</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              <strong>Ariel (PvE) или Azphel (PvP)</strong> — стоят одинаково, ошибка здесь самая дорогая во всей системе.
+            </span>
+          </label>
+        </li>
+        <li class="step step-class">
+          <label>
+            <input type="checkbox" data-step="templar-cap">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Кап</span>
+            <span class="step-text">
+              <span class="step-tag">Класс</span>
+<img src="../../assets/icons/templar/judgment.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/templar/vicious-strike.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/templar/pummel.webp" width="22" height="22" alt="" loading="lazy">              Основу до 10 раньше всего: <strong>Суд</strong>, <strong>Жестокий удар</strong>, <strong>Град ударов</strong>, <strong>Кровавая месть</strong>. Дальше — вкладка PvE.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-shugo">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Кап</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Активности Шуго — полный набор наград за кап (золотое снаряжение, материалы).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-map">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Кап</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Зачисти карту: знаки вопроса, костры, зелёные задания, скрытые кубы, перья. Сдай перья — алтарь 30 уровня даёт титул.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-daily">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ежедневно</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Вход в Nightmare, этажи Трансформации по мере роста GS, подземелья: сначала T2, потом T3 (следи за энергией).
+            </span>
+          </label>
+        </li>
+      </ol>
+    </section>
+
+
+<aside class="glance" data-only="pve" aria-label="Билд коротко">
+  <p class="glance-title">Билд коротко</p>
+    <h3>Основные скиллы</h3>
+  <ul class="core-row">
+  <li title="Суд">
+    <img src="../../assets/icons/templar/judgment.webp" width="52" height="52" alt="Суд" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Суд</span>
+  </li>
+  <li title="Жестокий удар">
+    <img src="../../assets/icons/templar/vicious-strike.webp" width="52" height="52" alt="Жестокий удар" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Жестокий удар</span>
+  </li>
+  <li title="Град ударов">
+    <img src="../../assets/icons/templar/pummel.webp" width="52" height="52" alt="Град ударов" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Град ударов</span>
+  </li>
+  <li title="Кровавая месть">
+    <img src="../../assets/icons/templar/punishment.webp" width="52" height="52" alt="Кровавая месть" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Кровавая месть</span>
+  </li>
+</ul>
+  <h3>Стигмы</h3>
+  <ol class="loadout">
+  <li class="slot" title="Щит погибели">
+    <img src="../../assets/icons/templar/doom-shield.webp" width="56" height="56" alt="Щит погибели" loading="lazy">
+    <span class="slot-lv">ур. 20</span>
+    <span class="slot-name">Щит погибели</span>
+  </li>
+  <li class="slot" title="Боевое знамя">
+    <img src="../../assets/icons/templar/battlefield-banner.webp" width="56" height="56" alt="Боевое знамя" loading="lazy">
+    <span class="slot-lv">ур. 20</span>
+    <span class="slot-name">Боевое знамя</span>
+  </li>
+  <li class="slot" title="Провокация">
+    <img src="../../assets/icons/templar/taunt.webp" width="56" height="56" alt="Провокация" loading="lazy">
+    <span class="slot-lv">ур. 15</span>
+    <span class="slot-name">Провокация</span>
+  </li>
+  <li class="slot" title="Щит спасения">
+    <img src="../../assets/icons/templar/shield-of-protection.webp" width="56" height="56" alt="Щит спасения" loading="lazy">
+    <span class="slot-lv">ур. 15</span>
+    <span class="slot-name">Щит спасения</span>
+  </li>
+</ol>
+  <h3>Ключевые пассивки</h3>
+  <ul class="passive-row">
+<li><img src="../../assets/icons/templar/fury.webp" width="24" height="24" alt="" loading="lazy">Ярость</li><li><img src="../../assets/icons/templar/insulting-roar.webp" width="24" height="24" alt="" loading="lazy">Неповиновение</li><li><img src="../../assets/icons/templar/punishing-benediction.webp" width="24" height="24" alt="" loading="lazy">Кара небес</li><li><img src="../../assets/icons/templar/ironclad-defense.webp" width="24" height="24" alt="" loading="lazy">Несокрушимая защита</li></ul>
+
+</aside>
+<section id="intro" class="g-section" data-only="pve" aria-labelledby="h-intro">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro">Обзор</h2></div>
+    <p>Страж — главный танк AION 2, вокруг него строятся сложные рейды. Он держит агро, принимает танкбастеры и через <span class="sk"><img src="../../assets/icons/templar/fury.webp" width="18" height="18" alt="" loading="lazy">Ярость</span> превращает каждый блок в бафф урона для всей группы. При этом урон у него приличный: в корейских группах одетый Страж делает около <strong>20–23%</strong> урона группы.</p>
+  <div class="callout accent">
+    <h3>Билд в одном предложении</h3>
+    <p>Удары щитом запускают <span class="sk"><img src="../../assets/icons/templar/judgment.webp" width="18" height="18" alt="" loading="lazy">Суд</span>: жмёшь <span class="sk"><img src="../../assets/icons/templar/shield-smite.webp" width="18" height="18" alt="" loading="lazy">Удар щитом</span>, <span class="sk"><img src="../../assets/icons/templar/warding-strike.webp" width="18" height="18" alt="" loading="lazy">Кара хранителя</span> и <span class="sk"><img src="../../assets/icons/templar/doom-shield.webp" width="18" height="18" alt="" loading="lazy">Щит погибели</span>, чтобы Суд срабатывал постоянно, паузы заполняешь <span class="sk"><img src="../../assets/icons/templar/vicious-strike.webp" width="18" height="18" alt="" loading="lazy">Жестокий удар</span> + <span class="sk"><img src="../../assets/icons/templar/pummel.webp" width="18" height="18" alt="" loading="lazy">Град ударов</span>, а сильные удары босса блокируешь, чтобы Ярость висела на группе.</p>
+  </div>
+
+</section>
+<section id="global" class="g-section" data-only="pve pvp" aria-labelledby="h-global">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-global">Глобальный 1 сезон: что меняется</h2></div>
+    <p>Глобальные серверы открываются <strong>5 октября 2026</strong> (ранний доступ для Founder's Pack — с 30 сентября) и не связаны с корейскими и тайваньскими. Что это значит для Стража:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 слота стигм</strong> вместо 6 — корейские танки носят пять-шесть, поэтому что-то придётся убрать (см. «Стигмы»).</li>
+      <li><strong>Стигмы качаются только до 20</strong> — ступени 25 в глобальном клиенте нет.</li>
+      <li><strong>Нет героической экипировки</strong> в 1 сезоне: меньше доп. строк под Блок и пассивки.</li>
+      <li><strong>Бонусы Daevanion слабее</strong>: боссы живут дольше, поэтому держать Ярость и Боевое знамя ещё важнее.</li>
+      <li><strong>Экспедиции на 5 человек и святилища на 10</strong>: Ярость и групповая стойкость от Кары хранителя цепляют больше людей.</li>
+      <li data-only="pvp"><strong>PvP:</strong> все стартуют в одинаковой слабой экипировке, меты ещё нет.</li>
+    </ul>
+  </div>
+  <p class="note">Активные скиллы и пассивки в глобальной и корейско-тайваньской версиях совпадают. У стигм пропала только ступень 25.</p>
+
+</section>
+<section id="skills" class="g-section" data-only="pve" aria-labelledby="h-skills">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-skills">Скиллы</h2></div>
+    <p>Высоко качаются четыре скилла: <strong>Суд → Жестокий удар → Град ударов → Кровавая месть</strong>. Скиллы доходят до <strong>10</strong> за очки навыков, до <strong>14</strong> с Daevanion, до <strong>16</strong> с двумя кольцами и до <strong>20</strong> с арканами. Специализации открываются на 8, 12 и 16.</p>
+  <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/judgment.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Суд <span class="badge must">20</span></div>
+    <div class="skill-desc">Основной урон. Его запускают Удар щитом, Кара хранителя, рывок щитом и Щит погибели; на 16 у него пропадает перезарядка, и за один запуск он бьёт два раза и больше.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Доп. урон при попадании</li><li><span class="spec-lv">12</span>Гарантир. крит. удар при попадании</li><li><span class="spec-lv">16</span>Удаление перезарядки [Суда]</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Поглощение 1% ОЗ</li>
+        <li class=""><span class="spec-lv">8</span>Доп. урон при атаке цели под воздействием шок. эффектов</li>
+        <li class="on"><span class="spec-lv">8</span>Доп. урон при попадании</li>
+        <li class="on"><span class="spec-lv">12</span>Гарантир. крит. удар при попадании</li>
+        <li class="on"><span class="spec-lv">16</span>Удаление перезарядки [Суда]</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/vicious-strike.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Жестокий удар <span class="badge must">20</span></div>
+    <div class="skill-desc">Базовая атака, восстанавливает ману. Держи её зажатой вместе с макросом. На прокачке бери +20% восстановления маны вместо вампиризма.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Поглощение 1% ОЗ</li><li><span class="spec-lv">8</span>Шанс мультиудара +50% при попадании</li><li><span class="spec-lv">16</span>Добавление 4-ой комбинации [Ожесточенный удар угрозы]</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Восстановление ОМ +20%</li>
+        <li class="on"><span class="spec-lv">8</span>Поглощение 1% ОЗ</li>
+        <li class="on"><span class="spec-lv">8</span>Шанс мультиудара +50% при попадании</li>
+        <li class=""><span class="spec-lv">12</span>Перезарядка [Кары хранителя] -2s при попадании</li>
+        <li class="on"><span class="spec-lv">16</span>Добавление 4-ой комбинации [Ожесточенный удар угрозы]</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/pummel.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Град ударов <span class="badge must">16 → 20</span></div>
+    <div class="skill-desc">Главный филлер и урон по оглушающей шкале. Специализация на 12 сокращает перезарядку Кровавой мести каждый раз, когда попадает Карающий удар.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Поглощение 3% ОЗ от [Удар возмездия]</li><li><span class="spec-lv">8</span>Чем меньше целей попадания, тем больше увелич. урона (макс. до 12%)</li><li><span class="spec-lv">12</span>Перезарядка [Кары] -1s при попадании [Ударом укора]</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Затрата ОМ -20%</li>
+        <li class="on"><span class="spec-lv">8</span>Поглощение 3% ОЗ от [Удар возмездия]</li>
+        <li class="on"><span class="spec-lv">8</span>Чем меньше целей попадания, тем больше увелич. урона (макс. до 12%)</li>
+        <li class="on"><span class="spec-lv">12</span>Перезарядка [Кары] -1s при попадании [Ударом укора]</li>
+        <li class=""><span class="spec-lv">16</span>[Удар возмездия] срабатывает еще раз</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/punishment.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Кровавая месть <span class="badge must">16 → 20</span></div>
+    <div class="skill-desc">Заряди до 3-й стадии и отпусти: мощный удар плюс «Палач» (+20% урона в PvE на 20 сек.). Жми первым и по откату; на 16 всегда критует и игнорирует Блок.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>СКР умений +30%</li><li><span class="spec-lv">12</span>Замена на умение с возможностью перемещения</li><li><span class="spec-lv">16</span>Крит. удар, несмотря на блок и уклонение</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Поглощение 10% ОЗ</li>
+        <li class=""><span class="spec-lv">8</span>Нанесение постоянного урона цели при попадании</li>
+        <li class="on"><span class="spec-lv">8</span>СКР умений +30%</li>
+        <li class="on"><span class="spec-lv">12</span>Замена на умение с возможностью перемещения</li>
+        <li class="on"><span class="spec-lv">16</span>Крит. удар, несмотря на блок и уклонение</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/warding-strike.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Кара хранителя <span class="badge must">16</span></div>
+    <div class="skill-desc">Запускает Суд, лечит и даёт «Защиту». Специализация на 16 даёт группе стойкость к урону — обязательно в группе, соло хватит 12.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Перезарядка -5 сек.</li><li><span class="spec-lv">8</span>Блок +100 во время Протекции</li><li><span class="spec-lv">16</span>Стойкость к урону в PvE участников группы +10%, стойкость к урону в PvP участников группы +5% при использовании умения</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>Перезарядка -5 сек.</li>
+        <li class="on"><span class="spec-lv">8</span>Блок +100 во время Протекции</li>
+        <li class=""><span class="spec-lv">8</span>Эффект продолжительного восстановления во время Протекции</li>
+        <li class=""><span class="spec-lv">12</span>Чем больше целей попадания, тем больше увеличение эффекта стойкости к урону в PvE и стойкости к урону PvP от Протекции</li>
+        <li class="on"><span class="spec-lv">16</span>Стойкость к урону в PvE участников группы +10%, стойкость к урону в PvP участников группы +5% при использовании умения</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/shield-smite.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Удар щитом <span class="badge opt">12–16</span></div>
+    <div class="skill-desc">Запускает Суд и может вызвать Удар изнеможения. Пока не хватает маны, бери специализацию на ману.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Шанс 50% активировать [Удар изнеможения] при попадании</li><li><span class="spec-lv">12</span>Перезарядка -2 сек.</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Длительность Оглушения +1 сек.</li>
+        <li class=""><span class="spec-lv">8</span>Удаление затраты ОМ, восстановление 200 ОМ при попадании</li>
+        <li class="on"><span class="spec-lv">8</span>Шанс 50% активировать [Удар изнеможения] при попадании</li>
+        <li class="on"><span class="spec-lv">12</span>Перезарядка -2 сек.</li>
+        <li class=""><span class="spec-lv">16</span>Оглушение по области</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/annihilate.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Истребление <span class="badge opt">12</span></div>
+    <div class="skill-desc">Мощный скилл по оглушённым и сбитым с ног; +100% урона по боссам с иммунитетом к контролю. Щит погибели сбрасывает его перезарядку.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+100% к урону по целям с иммунитетом к обездвиживанию</li><li><span class="spec-lv">12</span>Перезарядка -10 сек.</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Шанс мультиудара +50% при попадании</li>
+        <li class=""><span class="spec-lv">8</span>Шанс сбить с ног +20%</li>
+        <li class="on"><span class="spec-lv">8</span>+100% к урону по целям с иммунитетом к обездвиживанию</li>
+        <li class="on"><span class="spec-lv">12</span>Перезарядка -10 сек.</li>
+        <li class=""><span class="spec-lv">16</span>Смена на массовое умение</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/debilitating-smash.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Удар изнеможения <span class="badge opt">12</span></div>
+    <div class="skill-desc">Срабатывает после блока: −25% Защиты цели. Жми, как только загорится.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Длительность Изнеможения +3 сек.</li><li><span class="spec-lv">12</span>Игнорирование блока и УКЛ, попадание мультиударом</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Шанс 30% оглушить на 3s</li>
+        <li class="on"><span class="spec-lv">8</span>Длительность Изнеможения +3 сек.</li>
+        <li class=""><span class="spec-lv">8</span>Получ. исцеление -60% при истощении</li>
+        <li class="on"><span class="spec-lv">12</span>Игнорирование блока и УКЛ, попадание мультиударом</li>
+        <li class=""><span class="spec-lv">16</span>Шанс 25% сбросить время перезарядки при успешном блоке</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/poach.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Ловушка <span class="badge opt">12</span></div>
+    <div class="skill-desc">Притягивание. Против боссов первая специализация делает из него сближение.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Перемещение к цели при наличии у нее иммунитета к обездвиживанию</li><li><span class="spec-lv">8</span>Завершение перезарядки при уничтожении врага</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>Перемещение к цели при наличии у нее иммунитета к обездвиживанию</li>
+        <li class=""><span class="spec-lv">8</span>-20% к сопротивлению негат. эффектам на 5s при попадании</li>
+        <li class="on"><span class="spec-lv">8</span>Завершение перезарядки при уничтожении врага</li>
+        <li class=""><span class="spec-lv">12</span>Создание защитной оболочки, равной 10% от макс. ОЗ</li>
+        <li class=""><span class="spec-lv">16</span>50% шанс наложить Оглушение на 3s</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/shield-rush.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Удар щитом (рывок) <span class="badge opt">12</span></div>
+    <div class="skill-desc">Уклонение → рывок обратно к цели; тоже запускает Суд.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Дальность атаки +10 м</li><li><span class="spec-lv">12</span>Перезарядка -10 сек.</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Восстанавливает 300 ОД при попадании</li>
+        <li class="on"><span class="spec-lv">8</span>Дальность атаки +10 м</li>
+        <li class=""><span class="spec-lv">8</span>Умение становится заряжаемым и наносит урон по области</li>
+        <li class="on"><span class="spec-lv">12</span>Перезарядка -10 сек.</li>
+        <li class=""><span class="spec-lv">16</span>Шанс Оглушения +25%</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/flash-rampage.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Сияющий клинок <span class="badge skip">остатки</span></div>
+    <div class="skill-desc">Бьёт только цели под Оглушающей шкалой — слишком редко, чтобы вкладываться.</div>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Поглощение 5% ОЗ</li>
+        <li class=""><span class="spec-lv">8</span>Восстановление 120 ОМ при попадании</li>
+        <li class=""><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>
+        <li class=""><span class="spec-lv">12</span>Гарантир. мультиудар при попадании</li>
+        <li class=""><span class="spec-lv">16</span>Перезарядка всех умений -1s при попадании</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="passives" class="g-section" data-only="pve" aria-labelledby="h-passives">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-passives">Пассивки</h2></div>
+    <div class="table-wrap"><table>
+    <thead><tr><th>#</th><th>Пассивка</th><th>Зачем</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><span class="sk"><img src="../../assets/icons/templar/fury.webp" width="18" height="18" alt="" loading="lazy">Ярость</span></td><td>+урон в PvE тебе <em>и группе</em> на 20 сек. после каждого блока. Причина, по которой группы ищут Стража.</td></tr>
+      <tr><td>2</td><td><span class="sk"><img src="../../assets/icons/templar/insulting-roar.webp" width="18" height="18" alt="" loading="lazy">Неповиновение</span></td><td>Двойная ненависть и бафф Атаки при ударах спереди — агро и урон сразу.</td></tr>
+      <tr><td>3</td><td><span class="sk"><img src="../../assets/icons/templar/punishing-benediction.webp" width="18" height="18" alt="" loading="lazy">Кара небес</span></td><td>Шанс крита и 50%-й шанс доп. урона с каждого удара.</td></tr>
+      <tr><td>4</td><td><span class="sk"><img src="../../assets/icons/templar/ironclad-defense.webp" width="18" height="18" alt="" loading="lazy">Несокрушимая защита</span> / <span class="sk"><img src="../../assets/icons/templar/enhance-health.webp" width="18" height="18" alt="" loading="lazy">Закаление</span></td><td>Защита, стойкость, макс. ОЗ и входящее лечение — можно качать с самого начала.</td></tr>
+      <tr><td>5</td><td><span class="sk"><img src="../../assets/icons/templar/block-pain.webp" width="18" height="18" alt="" loading="lazy">Избавление</span></td><td>Стойкость на первый удар раз в 20 сек., чтобы тебя не снесли с открытия.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note"><span class="sk"><img src="../../assets/icons/templar/guarding-seal.webp" width="18" height="18" alt="" loading="lazy">Печать защиты</span> работает и на низком уровне; <span class="sk"><img src="../../assets/icons/templar/impact-hit.webp" width="18" height="18" alt="" loading="lazy">Попадание шоком</span> и <span class="sk"><img src="../../assets/icons/templar/survival-willpower.webp" width="18" height="18" alt="" loading="lazy">Инстинкт выживания</span> — пассивки для PvP.</p>
+
+</section>
+<section id="gear" class="g-section" data-only="pve" aria-labelledby="h-gear">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-gear">Экипировка и статы</h2></div>
+    <div class="callout"><ul>
+    <li><strong>Блок</strong> — каждый блок это Ярость для группы и срабатывание Удара изнеможения. Не меняй его на чистый урон.</li>
+    <li><strong>Точность</strong> — промах скиллом это потерянное агро. Держи её высокой наравне с защитными статами.</li>
+    <li><strong>% Атаки, усиление урона, крит. урон</strong> на остальных строках: корейские билды ставят % Атаки на наплечники и плащ, усиление урона на нагрудник, скорость боя на перчатки.</li>
+    <li><strong>ОЗ и Защита</strong> на глобальных серверах в начале важнее: у хилера экипировка тоже слабая.</li>
+  </ul></div>
+  <p><strong>Арканы:</strong> сначала Суд до 20, потом Жестокий удар, затем Град ударов и Кровавая месть. На уникальных картах ищи усиление урона, усиление крит. урона, урон оружием и Атаку.</p>
+
+</section>
+<section id="daevanion" class="g-section" data-only="pve pvp" aria-labelledby="h-daevanion">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-daevanion">Доски Daevanion</h2></div>
+    <p>Daevanion поднимает скиллы с 10 до 14 и даёт кучу статов. Каждый синий узел — <strong>+1 уровень</strong> своему скиллу.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Доска</th><th>Открытие</th><th>Что даёт</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Ур. 12</td><td>Уровни скиллов, базовые статы</td></tr>
+      <tr><td>Zikel</td><td>Ур. 20</td><td>Уклонение, усиление / стойкость к урону</td></tr>
+      <tr><td>Vaizel</td><td>Ур. 30</td><td>Критический урон</td></tr>
+      <tr><td>Triniel</td><td>Ур. 40</td><td>Мультиудар (в основном PvP)</td></tr>
+      <tr><td>Ariel</td><td>Ур. 45</td><td>Урон и сопротивления в PvE</td></tr>
+      <tr><td>Azphel</td><td>Ур. 45</td><td>Урон и сопротивления в PvP</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout">
+    <ul>
+      <li data-only="pve"><strong>Приоритет:</strong> синие узлы <span class="sk"><img src="../../assets/icons/templar/judgment.webp" width="18" height="18" alt="" loading="lazy">Суд</span>, <span class="sk"><img src="../../assets/icons/templar/vicious-strike.webp" width="18" height="18" alt="" loading="lazy">Жестокий удар</span>, <span class="sk"><img src="../../assets/icons/templar/pummel.webp" width="18" height="18" alt="" loading="lazy">Град ударов</span>, <span class="sk"><img src="../../assets/icons/templar/punishment.webp" width="18" height="18" alt="" loading="lazy">Кровавая месть</span>, затем оранжевые, затем статы.</li>
+      <li data-only="pvp"><strong>Приоритет:</strong> синие узлы <span class="sk"><img src="../../assets/icons/templar/judgment.webp" width="18" height="18" alt="" loading="lazy">Суд</span>, <span class="sk"><img src="../../assets/icons/templar/poach.webp" width="18" height="18" alt="" loading="lazy">Ловушка</span>, <span class="sk"><img src="../../assets/icons/templar/shield-rush.webp" width="18" height="18" alt="" loading="lazy">Удар щитом (рывок)</span>, <span class="sk"><img src="../../assets/icons/templar/defiance.webp" width="18" height="18" alt="" loading="lazy">Снятие шока</span>, затем оранжевые.</li>
+      <li data-only="pve"><strong>Ariel, а не Azphel</strong> — цена одинаковая, а ошибка тут самая дорогая в системе.</li>
+      <li data-only="pvp"><strong>Azphel, а не Ariel</strong>, и Triniel раньше.</li>
+      <li>В начале на каждой доске бери сторону усиления урона, а не стойкости — защиту позже закроет экипировка.</li>
+    </ul>
+  </div>
+  <p class="note">Раскладка досок взята из корейско-тайваньского клиента, в глобальной версии значения ниже. Проверь доску в игре, прежде чем вкладываться по всему маршруту.</p>
+
+</section>
+<section id="stigmas" class="g-section" data-only="pve" aria-labelledby="h-stigmas">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-stigmas">Стигмы</h2></div>
+    <p>Корейские танки носят Провокацию, Щит спасения, Щит погибели, Боевое знамя, Кару Владыки Эмпирея и Благородную кольчугу. В глобальной версии слотов четыре, поэтому набор ниже оставляет агро, блок против танкбастера, запуск Суда и бафф урона.</p>
+  <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/doom-shield.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Щит погибели <span class="badge must">Ур. 20</span></div>
+    <div class="skill-desc">Сближение, которое запускает Суд и на 5 сбрасывает Истребление. Эту стигму оставляет любой билд Стража.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Завершение перезарядки [Истребления] при попадании</li><li><span class="spec-lv">10</span>Блок +200 на 5s при попадании</li><li><span class="spec-lv">15</span>Завершение перезарядки при уничтожении врага</li><li><span class="spec-lv">20</span>Шанс сбить с ног +25%</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Завершение перезарядки [Истребления] при попадании</li>
+        <li class="on"><span class="spec-lv">10</span>Блок +200 на 5s при попадании</li>
+        <li class="on"><span class="spec-lv">15</span>Завершение перезарядки при уничтожении врага</li>
+        <li class="on"><span class="spec-lv">20</span>Шанс сбить с ног +25%</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/battlefield-banner.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Боевое знамя <span class="badge must">Ур. 20</span></div>
+    <div class="skill-desc">Атака от твоей Защиты. На 20 перезарядка короче на 30 сек. — самая сильная стигма на урон.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+10% к шансу мультиудара во время действия</li><li><span class="spec-lv">10</span>+10% к усилению урона от оружия во время действия</li><li><span class="spec-lv">15</span>Эффект увеличения АТК пропорционально ЗЩТ +20%</li><li><span class="spec-lv">20</span>Перезарядка -30 сек.</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+10% к шансу мультиудара во время действия</li>
+        <li class="on"><span class="spec-lv">10</span>+10% к усилению урона от оружия во время действия</li>
+        <li class="on"><span class="spec-lv">15</span>Эффект увеличения АТК пропорционально ЗЩТ +20%</li>
+        <li class="on"><span class="spec-lv">20</span>Перезарядка -30 сек.</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/taunt.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Провокация <span class="badge must">Ур. 15</span></div>
+    <div class="skill-desc">Агро плюс «Уменьшение» (−10% Атаки босса). На 15 короче перезарядка.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Снижение стойкости к урону в PvE на 10% и PvP на 5% при Смятении</li><li><span class="spec-lv">10</span>Доп. сниж. АТК на 10% при смятении</li><li><span class="spec-lv">15</span>Перезарядка -5 сек.</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Снижение стойкости к урону в PvE на 10% и PvP на 5% при Смятении</li>
+        <li class="on"><span class="spec-lv">10</span>Доп. сниж. АТК на 10% при смятении</li>
+        <li class="on"><span class="spec-lv">15</span>Перезарядка -5 сек.</li>
+        <li class=""><span class="spec-lv">20</span>Длительность Провокации +2 сек., длительность Смятении +5 сек.</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/shield-of-protection.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Щит спасения <span class="badge must">Ур. 15</span></div>
+    <div class="skill-desc">Гарантированный блок на 3 сек. — жми прямо перед танкбастером. Каждый блок заодно обновляет Ярость.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Непрерывное использование +1 раз</li><li><span class="spec-lv">10</span>Замена на умение с возможностью перемещения</li><li><span class="spec-lv">15</span>СКР движ. +5% на 3s при успешном блоке</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Непрерывное использование +1 раз</li>
+        <li class="on"><span class="spec-lv">10</span>Замена на умение с возможностью перемещения</li>
+        <li class="on"><span class="spec-lv">15</span>СКР движ. +5% на 3s при успешном блоке</li>
+        <li class=""><span class="spec-lv">20</span>Восст. 10% ОЗ 1 раз при успешном блоке щитом</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/empyrean-lords-punishment.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Кара Владыки Эмпирея <span class="badge opt">соло</span></div>
+    <div class="skill-desc">Дальнобойное АоЕ с большим уроном по оглушающей шкале. Ставь для фарма в открытом мире и соло-контента.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Чем меньше целей попадания, тем больше увелич. урона (макс. до 20%)</li><li><span class="spec-lv">10</span>Урон по шкале Ошеломления +50</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Чем меньше целей попадания, тем больше увелич. урона (макс. до 20%)</li>
+        <li class="on"><span class="spec-lv">10</span>Урон по шкале Ошеломления +50</li>
+        <li class=""><span class="spec-lv">15</span>Увеличение урона в PvE +10%, увеличение урона в PvP +5% на 10s при попадании</li>
+        <li class=""><span class="spec-lv">20</span>Шанс Оглушения +25%</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/noble-armor.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Благородная кольчуга <span class="badge opt">альт.</span></div>
+    <div class="skill-desc">Бафф на 300 сек.; на 10 и 15 усиливает Неповиновение и Ярость. Хорош, когда агро уже держится уверенно.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+5% к ЗЩТ во время действия</li><li><span class="spec-lv">10</span>Эффект [Неповиновение] x1,5 во время действия</li><li><span class="spec-lv">15</span>Эффект [Ярости] x1,5 во время действия</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+5% к ЗЩТ во время действия</li>
+        <li class="on"><span class="spec-lv">10</span>Эффект [Неповиновение] x1,5 во время действия</li>
+        <li class="on"><span class="spec-lv">15</span>Эффект [Ярости] x1,5 во время действия</li>
+        <li class=""><span class="spec-lv">20</span>+10% к получ. исцелению во время действия</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/nezekans-shield.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Щит Неджакана <span class="badge opt">рейды</span></div>
+    <div class="skill-desc">Щит группе на один общий удар. Ставь только под бой, где он нужен.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Стойкость ко всем стихиям +20% во время действия защитной оболочки</li><li><span class="spec-lv">10</span>Длительность защитной оболочки +2 сек.</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Стойкость ко всем стихиям +20% во время действия защитной оболочки</li>
+        <li class="on"><span class="spec-lv">10</span>Длительность защитной оболочки +2 сек.</li>
+        <li class=""><span class="spec-lv">15</span>Стойкость к урону в PvE +20%, стойкость к урону в PvP +10% во время действия защитной оболочки</li>
+        <li class=""><span class="spec-lv">20</span>Восстановление 20% от макс. ОЗ при снятии защитной оболочки</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="macro" class="g-section" data-only="pve" aria-labelledby="h-macro">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro">Макрос и ротация</h2></div>
+    <p>В AION 2 два разных инструмента, и билд использует оба:</p>
+  <ul>
+    <li><strong>Линия на кнопке</strong> — несколько скиллов на <em>одной</em> кнопке панели. Нажатие применяет первый скилл списка, который можно использовать, поэтому порядок = приоритет.</li>
+    <li><strong>Встроенный макрос</strong> — пока ты держишь его клавишу, он по очереди нажимает кнопки панели, вставляет базовые атаки и отменяет хвосты анимаций. Скиллы на перезарядке пропускаются.</li>
+  </ul>
+  <p>Урон Стража — это цикл: <strong>удар щитом → Суд → срабатывания → филлер</strong>. Линии ниже устроены так, чтобы Суд и срабатывания всегда шли первыми, как только загорятся.</p>
+
+  <h3>1. Линии на кнопках</h3>
+  <div class="hotlines">
+<div class="hotline">
+  <div class="hotline-head"><span class="key">ПКМ</span><span class="hotline-name">Линия срабатываний</span></div>
+  <ol class="hotline-skills">
+    <li class="">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/templar/judgment.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Суд</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/templar/annihilate.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Истребление</span>
+    </li>
+    <li class="">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/templar/debilitating-smash.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Удар изнеможения</span>
+    </li>
+    <li class="">
+      <span class="hl-n">4</span>
+      <img src="../../assets/icons/templar/doom-shield.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Щит погибели</span>
+    </li>
+    <li class="">
+      <span class="hl-n">5</span>
+      <img src="../../assets/icons/templar/pummel.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Град ударов</span>
+    </li>
+  </ol>
+<p class="hotline-note">Суд, Истребление и Удар изнеможения доступны только после своего триггера, поэтому в остальное время линия проваливается до Града ударов.</p></div><div class="hotline">
+  <div class="hotline-head"><span class="key">E</span><span class="hotline-name">Линия триггеров</span></div>
+  <ol class="hotline-skills">
+    <li class="">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/templar/shield-smite.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Удар щитом</span>
+    </li>
+    <li class="">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/templar/warding-strike.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Кара хранителя</span>
+    </li>
+  </ol>
+<p class="hotline-note">Оба запускают Суд — вместе со Щитом погибели держат его в работе.</p></div><div class="hotline">
+  <div class="hotline-head"><span class="key">R</span><span class="hotline-name">Линия баффов</span></div>
+  <ol class="hotline-skills">
+    <li class="">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/templar/battlefield-banner.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Боевое знамя</span>
+    </li>
+    <li class="is-opt">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/templar/noble-armor.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Благородная кольчуга</span>
+    </li>
+  </ol>
+<p class="hotline-note">Знамя по откату; добавь Благородную кольчугу, если она стоит в стигмах.</p></div>  </div>
+
+  <h3>2. Встроенный макрос</h3>
+  <p>Окно скиллов → <strong>Макрос</strong>. Поставь три линии в этом порядке и везде <strong>Delay 10 мс</strong>. Клавиша: Настройки → Управление → Общее → Игровой процесс → <strong>Макрос</strong> (лучше боковая кнопка мыши).</p>
+  <ol class="macroseq">
+  <li><span class="ms-n">1</span><span class="ms-label">Линия срабатываний</span><span class="ms-detail">ПКМ · 10 мс</span></li>
+  <li><span class="ms-n">2</span><span class="ms-label">Линия триггеров</span><span class="ms-detail">E · 10 мс</span></li>
+  <li><span class="ms-n">3</span><span class="ms-label">Линия баффов</span><span class="ms-detail">R · 10 мс</span></li>
+</ol>
+
+  <h3>3. Что нажимать на самом деле</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Держать</span><span class="press-what"><span class="sk"><img src="../../assets/icons/templar/vicious-strike.webp" width="18" height="18" alt="" loading="lazy">Жестокий удар</span> на <span class="key">ЛКМ</span> <strong>и</strong> <span class="key">Макрос</span> — Жестокий удар восполняет ману между скиллами.</span></li>
+    <li><span class="press-how">Зарядить</span><span class="press-what"><span class="sk"><img src="../../assets/icons/templar/punishment.webp" width="18" height="18" alt="" loading="lazy">Кровавая месть</span> до 3-й стадии вручную в начале каждого окна — заряжаемые скиллы в макросе срабатывают на случайной стадии.</span></li>
+    <li><span class="press-how">Вручную</span><span class="press-what"><span class="sk"><img src="../../assets/icons/templar/taunt.webp" width="18" height="18" alt="" loading="lazy">Провокация</span> и <span class="sk"><img src="../../assets/icons/templar/poach.webp" width="18" height="18" alt="" loading="lazy">Ловушка</span> (агро и притягивание), <span class="sk"><img src="../../assets/icons/templar/shield-of-protection.webp" width="18" height="18" alt="" loading="lazy">Щит спасения</span> перед танкбастером, <span class="sk"><img src="../../assets/icons/templar/shield-rush.webp" width="18" height="18" alt="" loading="lazy">Удар щитом (рывок)</span> после уклонения.</span></li>
+  </ul>
+  <div class="callout">
+    <h3>Танковать — не работа макроса</h3>
+    <p>Разверни босса от группы, блокируй телеграфированные удары (каждый блок — Ярость для всех) и держи «Уменьшение» от Провокации на цели. Макрос только держит плотным твой цикл урона, пока ты этим занят.</p>
+  </div>
+  <p class="note">Линии повторяют корейские сетапы Стража (Суд / Знамя / Щит погибели / Град ударов на одной клавише, Жестокий удар зажат на ЛКМ), адаптированные под четыре стигмы глобальной версии. Проверь их на манекене, когда откроется глобальный клиент.</p>
+
+</section>
+<section id="recap" class="g-section" data-only="pve" aria-labelledby="h-recap">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-recap">Итог</h2></div>
+    <div class="callout accent"><ul>
+    <li><strong>Скиллы:</strong> Суд 20, Жестокий удар 20, Град ударов и Кровавая месть 16→20, Кара хранителя 16; остальное 12.</li>
+    <li><strong>Стигмы:</strong> Щит погибели 20, Боевое знамя 20, Провокация 15, Щит спасения 15.</li>
+    <li><strong>Пассивки:</strong> Ярость &gt; Неповиновение &gt; Кара небес &gt; Несокрушимая защита / Закаление.</li>
+    <li><strong>Игра:</strong> удар щитом → Суд, заряженная Кровавая месть по откату, блокируй сильные удары.</li>
+  </ul></div>
+
+</section>
+<aside class="glance" data-only="pvp" aria-label="Билд коротко">
+  <p class="glance-title">Билд коротко</p>
+    <h3>Основные скиллы</h3>
+  <ul class="core-row">
+  <li title="Суд">
+    <img src="../../assets/icons/templar/judgment.webp" width="52" height="52" alt="Суд" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Суд</span>
+  </li>
+  <li title="Ловушка">
+    <img src="../../assets/icons/templar/poach.webp" width="52" height="52" alt="Ловушка" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Ловушка</span>
+  </li>
+  <li title="Удар щитом (рывок)">
+    <img src="../../assets/icons/templar/shield-rush.webp" width="52" height="52" alt="Удар щитом (рывок)" loading="lazy">
+    <span class="core-lv">20</span>
+    <span class="core-name">Удар щитом (рывок)</span>
+  </li>
+  <li title="Кровавая месть">
+    <img src="../../assets/icons/templar/punishment.webp" width="52" height="52" alt="Кровавая месть" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Кровавая месть</span>
+  </li>
+  <li title="Снятие шока">
+    <img src="../../assets/icons/templar/defiance.webp" width="52" height="52" alt="Снятие шока" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Снятие шока</span>
+  </li>
+</ul>
+  <h3>Стигмы</h3>
+  <ol class="loadout">
+  <li class="slot" title="Кара Владыки Эмпирея">
+    <img src="../../assets/icons/templar/empyrean-lords-punishment.webp" width="56" height="56" alt="Кара Владыки Эмпирея" loading="lazy">
+    <span class="slot-lv">ур. 20</span>
+    <span class="slot-name">Кара Владыки Эмпирея</span>
+  </li>
+  <li class="slot" title="Щит спасения">
+    <img src="../../assets/icons/templar/shield-of-protection.webp" width="56" height="56" alt="Щит спасения" loading="lazy">
+    <span class="slot-lv">ур. 20</span>
+    <span class="slot-name">Щит спасения</span>
+  </li>
+  <li class="slot" title="Щит погибели">
+    <img src="../../assets/icons/templar/doom-shield.webp" width="56" height="56" alt="Щит погибели" loading="lazy">
+    <span class="slot-lv">ур. 20</span>
+    <span class="slot-name">Щит погибели</span>
+  </li>
+  <li class="slot" title="Благородная кольчуга">
+    <img src="../../assets/icons/templar/noble-armor.webp" width="56" height="56" alt="Благородная кольчуга" loading="lazy">
+    <span class="slot-lv">ур. 15</span>
+    <span class="slot-name">Благородная кольчуга</span>
+  </li>
+</ol>
+  <h3>Ключевые пассивки</h3>
+  <ul class="passive-row">
+<li><img src="../../assets/icons/templar/survival-willpower.webp" width="24" height="24" alt="" loading="lazy">Инстинкт выживания</li><li><img src="../../assets/icons/templar/impact-hit.webp" width="24" height="24" alt="" loading="lazy">Попадание шоком</li><li><img src="../../assets/icons/templar/block-pain.webp" width="24" height="24" alt="" loading="lazy">Избавление</li><li><img src="../../assets/icons/templar/ironclad-defense.webp" width="24" height="24" alt="" loading="lazy">Несокрушимая защита</li></ul>
+
+</aside>
+<section id="intro-pvp" class="g-section" data-only="pvp" aria-labelledby="h-intro-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro-pvp">Обзор</h2></div>
+    <p>В PvP Страж — <strong>защитник и разрушитель строя</strong>. Он вытаскивает цели из позиции, оглушает и сбивает с ног, режет им лечение и выживает в толпе, пока никто не зайдёт ему за спину.</p>
+  <p>Приоритеты по порядку: <strong>контроль</strong> → <strong>выживание</strong> → урон по тому, кого ты только что заблокировал.</p>
+  <p class="note">Глобальной PvP-меты ещё нет. Этот режим совмещает корейские PvP-билды с данными скиллов из глобального клиента — это отправная точка.</p>
+
+</section>
+<section id="skills-pvp" class="g-section" data-only="pvp" aria-labelledby="h-skills-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-skills-pvp">Скиллы</h2></div>
+    <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/poach.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Ловушка <span class="badge must">16</span></div>
+    <div class="skill-desc">Притягивание + обездвиживание, а на 16 ещё 50% шанс оглушить. Корейские PvP-гайды называют 16 обязательным.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>-20% к сопротивлению негат. эффектам на 5s при попадании</li><li><span class="spec-lv">12</span>Создание защитной оболочки, равной 10% от макс. ОЗ</li><li><span class="spec-lv">16</span>50% шанс наложить Оглушение на 3s</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Перемещение к цели при наличии у нее иммунитета к обездвиживанию</li>
+        <li class="on"><span class="spec-lv">8</span>-20% к сопротивлению негат. эффектам на 5s при попадании</li>
+        <li class=""><span class="spec-lv">8</span>Завершение перезарядки при уничтожении врага</li>
+        <li class="on"><span class="spec-lv">12</span>Создание защитной оболочки, равной 10% от макс. ОЗ</li>
+        <li class="on"><span class="spec-lv">16</span>50% шанс наложить Оглушение на 3s</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/shield-rush.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Удар щитом (рывок) <span class="badge must">20</span></div>
+    <div class="skill-desc">Уклонение → рывок с шансом оглушения, заодно запускает Суд. Считается почти обязательным на 20.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Дальность атаки +10 м</li><li><span class="spec-lv">12</span>Перезарядка -10 сек.</li><li><span class="spec-lv">16</span>Шанс Оглушения +25%</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Восстанавливает 300 ОД при попадании</li>
+        <li class="on"><span class="spec-lv">8</span>Дальность атаки +10 м</li>
+        <li class=""><span class="spec-lv">8</span>Умение становится заряжаемым и наносит урон по области</li>
+        <li class="on"><span class="spec-lv">12</span>Перезарядка -10 сек.</li>
+        <li class="on"><span class="spec-lv">16</span>Шанс Оглушения +25%</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/judgment.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Суд <span class="badge must">20</span></div>
+    <div class="skill-desc">По-прежнему твой урон — доп. урон по оглушённым и сбитым с ног игрокам.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Доп. урон при атаке цели под воздействием шок. эффектов</li><li><span class="spec-lv">12</span>Гарантир. крит. удар при попадании</li><li><span class="spec-lv">16</span>Удаление перезарядки [Суда]</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Поглощение 1% ОЗ</li>
+        <li class="on"><span class="spec-lv">8</span>Доп. урон при атаке цели под воздействием шок. эффектов</li>
+        <li class=""><span class="spec-lv">8</span>Доп. урон при попадании</li>
+        <li class="on"><span class="spec-lv">12</span>Гарантир. крит. удар при попадании</li>
+        <li class="on"><span class="spec-lv">16</span>Удаление перезарядки [Суда]</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/punishment.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Кровавая месть <span class="badge must">16</span></div>
+    <div class="skill-desc">Удар, игнорирующий Блок и Уклонение; бери специализацию на применение в движении, чтобы заряжать в погоне.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>СКР умений +30%</li><li><span class="spec-lv">12</span>Замена на умение с возможностью перемещения</li><li><span class="spec-lv">16</span>Крит. удар, несмотря на блок и уклонение</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Поглощение 10% ОЗ</li>
+        <li class=""><span class="spec-lv">8</span>Нанесение постоянного урона цели при попадании</li>
+        <li class="on"><span class="spec-lv">8</span>СКР умений +30%</li>
+        <li class="on"><span class="spec-lv">12</span>Замена на умение с возможностью перемещения</li>
+        <li class="on"><span class="spec-lv">16</span>Крит. удар, несмотря на блок и уклонение</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/debilitating-smash.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Удар изнеможения <span class="badge must">12</span></div>
+    <div class="skill-desc">−60% входящего лечения цели — твой антихил.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Получ. исцеление -60% при истощении</li><li><span class="spec-lv">12</span>Игнорирование блока и УКЛ, попадание мультиударом</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Шанс 30% оглушить на 3s</li>
+        <li class=""><span class="spec-lv">8</span>Длительность Изнеможения +3 сек.</li>
+        <li class="on"><span class="spec-lv">8</span>Получ. исцеление -60% при истощении</li>
+        <li class="on"><span class="spec-lv">12</span>Игнорирование блока и УКЛ, попадание мультиударом</li>
+        <li class=""><span class="spec-lv">16</span>Шанс 25% сбросить время перезарядки при успешном блоке</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/defiance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Снятие шока <span class="badge must">16</span></div>
+    <div class="skill-desc">Снимает любой жёсткий контроль; цепочка добавляет собственный захват.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Добавляет 2-ное комбо [Взять живьем]</li><li><span class="spec-lv">12</span>Длительность Непреклонности +2 сек.</li><li><span class="spec-lv">16</span>Стойкость к урону в PvE +50% и стойкость к урону в PvP +25% во время действия Непреклонности</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>Добавляет 2-ное комбо [Взять живьем]</li>
+        <li class=""><span class="spec-lv">8</span>При использовании [Снятия шока] восстанавливает 1000 ОД</li>
+        <li class=""><span class="spec-lv">8</span>При использовании [Снятия шока] восстанавливает 20% ОЗ</li>
+        <li class="on"><span class="spec-lv">12</span>Длительность Непреклонности +2 сек.</li>
+        <li class="on"><span class="spec-lv">16</span>Стойкость к урону в PvE +50% и стойкость к урону в PvP +25% во время действия Непреклонности</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/warding-strike.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Кара хранителя <span class="badge opt">12–16</span></div>
+    <div class="skill-desc">Лечение и стойкость посреди боя; 16 для группового PvP.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Перезарядка -5 сек.</li><li><span class="spec-lv">8</span>Блок +100 во время Протекции</li><li><span class="spec-lv">16</span>Стойкость к урону в PvE участников группы +10%, стойкость к урону в PvP участников группы +5% при использовании умения</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>Перезарядка -5 сек.</li>
+        <li class="on"><span class="spec-lv">8</span>Блок +100 во время Протекции</li>
+        <li class=""><span class="spec-lv">8</span>Эффект продолжительного восстановления во время Протекции</li>
+        <li class=""><span class="spec-lv">12</span>Чем больше целей попадания, тем больше увеличение эффекта стойкости к урону в PvE и стойкости к урону PvP от Протекции</li>
+        <li class="on"><span class="spec-lv">16</span>Стойкость к урону в PvE участников группы +10%, стойкость к урону в PvP участников группы +5% при использовании умения</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/shield-smite.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Удар щитом <span class="badge opt">12</span></div>
+    <div class="skill-desc">Оглушение, а на 16 — оглушение по площади.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Длительность Оглушения +1 сек.</li><li><span class="spec-lv">12</span>Перезарядка -2 сек.</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>Длительность Оглушения +1 сек.</li>
+        <li class=""><span class="spec-lv">8</span>Удаление затраты ОМ, восстановление 200 ОМ при попадании</li>
+        <li class=""><span class="spec-lv">8</span>Шанс 50% активировать [Удар изнеможения] при попадании</li>
+        <li class="on"><span class="spec-lv">12</span>Перезарядка -2 сек.</li>
+        <li class=""><span class="spec-lv">16</span>Оглушение по области</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="passives-pvp" class="g-section" data-only="pvp" aria-labelledby="h-passives-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-passives-pvp">Пассивки</h2></div>
+    <div class="table-wrap"><table>
+    <thead><tr><th>Пассивка</th><th>Польза в PvP</th></tr></thead>
+    <tbody>
+      <tr><td><span class="sk"><img src="../../assets/icons/templar/survival-willpower.webp" width="18" height="18" alt="" loading="lazy">Инстинкт выживания</span></td><td>Сопротивление эффектам и стойкость, пока ты под контролем.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/templar/impact-hit.webp" width="18" height="18" alt="" loading="lazy">Попадание шоком</span></td><td>Выше шанс оглушения и сбивания — твой контроль проходит чаще.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/templar/block-pain.webp" width="18" height="18" alt="" loading="lazy">Избавление</span></td><td>Стойкость на первый удар — тот самый бурст, с которого начинается бой.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/templar/ironclad-defense.webp" width="18" height="18" alt="" loading="lazy">Несокрушимая защита</span></td><td>Защита и стойкость; корейские PvP-Стражи набирают этот стат со всех слотов.</td></tr>
+      <tr><td><span class="sk"><img src="../../assets/icons/templar/fury.webp" width="18" height="18" alt="" loading="lazy">Ярость</span></td><td>В групповом PvP по-прежнему бафф на группу.</td></tr>
+    </tbody>
+  </table></div>
+
+</section>
+<section id="gear-pvp" class="g-section" data-only="pvp" aria-labelledby="h-gear-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-gear-pvp">Экипировка и арканы</h2></div>
+    <p>Корейские PvP-Стражи выбирают одно из трёх направлений:</p>
+  <div class="callout"><ul>
+    <li><strong>Упор в Блок</strong> — текущая мета: держит нескольких противников, пока ты не подставляешь спину. Слаб против билдов на Точность.</li>
+    <li><strong>Упор в Точность</strong> — ответ уклоняющимся и блокирующим противникам; слаб, пока не набран порог стата.</li>
+    <li><strong>Урон</strong> — самый высокий потолок и лучший вклад в группу, но дорого и сложнее в управлении.</li>
+  </ul></div>
+  <p>В 1 сезоне оставь PvE-экипировку, набирай защитные статы на всём, кроме оружия, и меняй стигмы, пассивки и Daevanion.</p>
+
+</section>
+<section id="stigmas-pvp" class="g-section" data-only="pvp" aria-labelledby="h-stigmas-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-stigmas-pvp">Стигмы</h2></div>
+    <ul class="skill-grid">
+<li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/empyrean-lords-punishment.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Кара Владыки Эмпирея <span class="badge must">Ур. 20</span></div>
+    <div class="skill-desc">Дальнобойное АоЕ-оглушение (на 20 выше шанс) — инструмент давления с дистанции.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Чем меньше целей попадания, тем больше увелич. урона (макс. до 20%)</li><li><span class="spec-lv">10</span>Урон по шкале Ошеломления +50</li><li><span class="spec-lv">15</span>Увеличение урона в PvE +10%, увеличение урона в PvP +5% на 10s при попадании</li><li><span class="spec-lv">20</span>Шанс Оглушения +25%</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Чем меньше целей попадания, тем больше увелич. урона (макс. до 20%)</li>
+        <li class="on"><span class="spec-lv">10</span>Урон по шкале Ошеломления +50</li>
+        <li class="on"><span class="spec-lv">15</span>Увеличение урона в PvE +10%, увеличение урона в PvP +5% на 10s при попадании</li>
+        <li class="on"><span class="spec-lv">20</span>Шанс Оглушения +25%</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/shield-of-protection.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Щит спасения <span class="badge must">Ур. 20</span></div>
+    <div class="skill-desc">Блокирует всё 3 сек.; на 20 лечит 10% при блоке.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Непрерывное использование +1 раз</li><li><span class="spec-lv">10</span>Замена на умение с возможностью перемещения</li><li><span class="spec-lv">15</span>СКР движ. +5% на 3s при успешном блоке</li><li><span class="spec-lv">20</span>Восст. 10% ОЗ 1 раз при успешном блоке щитом</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Непрерывное использование +1 раз</li>
+        <li class="on"><span class="spec-lv">10</span>Замена на умение с возможностью перемещения</li>
+        <li class="on"><span class="spec-lv">15</span>СКР движ. +5% на 3s при успешном блоке</li>
+        <li class="on"><span class="spec-lv">20</span>Восст. 10% ОЗ 1 раз при успешном блоке щитом</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/doom-shield.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Щит погибели <span class="badge must">Ур. 20</span></div>
+    <div class="skill-desc">Рывок + 75% сбивания + щит. Корейские игроки ставят его выше Меча наказания.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Завершение перезарядки [Истребления] при попадании</li><li><span class="spec-lv">10</span>Блок +200 на 5s при попадании</li><li><span class="spec-lv">15</span>Завершение перезарядки при уничтожении врага</li><li><span class="spec-lv">20</span>Шанс сбить с ног +25%</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Завершение перезарядки [Истребления] при попадании</li>
+        <li class="on"><span class="spec-lv">10</span>Блок +200 на 5s при попадании</li>
+        <li class="on"><span class="spec-lv">15</span>Завершение перезарядки при уничтожении врага</li>
+        <li class="on"><span class="spec-lv">20</span>Шанс сбить с ног +25%</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/noble-armor.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Благородная кольчуга <span class="badge must">Ур. 15</span></div>
+    <div class="skill-desc">Макс. ОЗ и Защита, заодно усиливает Ярость. Хорошо сочетается со Щитом спасения.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+5% к ЗЩТ во время действия</li><li><span class="spec-lv">10</span>Эффект [Неповиновение] x1,5 во время действия</li><li><span class="spec-lv">15</span>Эффект [Ярости] x1,5 во время действия</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+5% к ЗЩТ во время действия</li>
+        <li class="on"><span class="spec-lv">10</span>Эффект [Неповиновение] x1,5 во время действия</li>
+        <li class="on"><span class="spec-lv">15</span>Эффект [Ярости] x1,5 во время действия</li>
+        <li class=""><span class="spec-lv">20</span>+10% к получ. исцелению во время действия</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/comrade-in-arms.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Плечом к плечу <span class="badge opt">групп. PvP</span></div>
+    <div class="skill-desc">Вместо Щита погибели в организованных групповых боях: половину урона союзника берёшь на себя.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Восст. 25% от макс. ОЗ 1 р. при получении атаки во время действия эффекта, если ОЗ не выше 25%</li><li><span class="spec-lv">10</span>Эффект [Печать защиты] x1,5 во время действия</li><li><span class="spec-lv">15</span>Эффект [Избавления] x1,5 во время действия</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Восст. 25% от макс. ОЗ 1 р. при получении атаки во время действия эффекта, если ОЗ не выше 25%</li>
+        <li class="on"><span class="spec-lv">10</span>Эффект [Печать защиты] x1,5 во время действия</li>
+        <li class="on"><span class="spec-lv">15</span>Эффект [Избавления] x1,5 во время действия</li>
+        <li class=""><span class="spec-lv">20</span>Восстанавливает 50% от макс. ОЗ заклинателя при завершении действия эффекта.</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/grapple.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Задержание <span class="badge opt">альт.</span></div>
+    <div class="skill-desc">АоЕ-притягивание + обездвиживание; с хорошим таймингом решает бой.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Шанс 50% наложить Оглушение на 3s при попадании</li><li><span class="spec-lv">10</span>Получение защитной оболочки, равной 20% от макс. ОЗ, на 10s при применении умения</li><li><span class="spec-lv">15</span>Перезарядка -30 сек.</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Шанс 50% наложить Оглушение на 3s при попадании</li>
+        <li class="on"><span class="spec-lv">10</span>Получение защитной оболочки, равной 20% от макс. ОЗ, на 10s при применении умения</li>
+        <li class="on"><span class="spec-lv">15</span>Перезарядка -30 сек.</li>
+        <li class=""><span class="spec-lv">20</span>Чем больше целей попадания, тем больше увеличение стойкости к урону в PvE (макс. до  20%) и PvP (макс. до 10%)</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/templar/second-skin.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Двойные доспехи <span class="badge opt">альт.</span></div>
+    <div class="skill-desc">Большая стойкость на 10 сек.; ступень 20 даёт сильный прирост.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+10% к стойкости ко всем стихиям во время действия</li><li><span class="spec-lv">10</span>+20% к блоку во время действия</li><li><span class="spec-lv">15</span>Эффект [Несокрушимой защиты] x1,5 во время действия</li><li><span class="spec-lv">20</span>+20% к стойкости к урону в PvE и +10% к стойкости к урону в PvP</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+10% к стойкости ко всем стихиям во время действия</li>
+        <li class="on"><span class="spec-lv">10</span>+20% к блоку во время действия</li>
+        <li class="on"><span class="spec-lv">15</span>Эффект [Несокрушимой защиты] x1,5 во время действия</li>
+        <li class="on"><span class="spec-lv">20</span>+20% к стойкости к урону в PvE и +10% к стойкости к урону в PvP</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+  <p class="note">Не бери Щит Неджакана (в PvP ломается слишком быстро) и Доспехи баланса (целый слот ради одного сопротивления).</p>
+
+</section>
+<section id="combos-pvp" class="g-section" data-only="pvp" aria-labelledby="h-combos-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-combos-pvp">Комбо и игра</h2></div>
+    <div class="callout">
+    <h3>Вытащить и наказать</h3>
+    <div class="combo"><span class="sk"><img src="../../assets/icons/templar/poach.webp" width="18" height="18" alt="" loading="lazy">Ловушка</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/templar/shield-smite.webp" width="18" height="18" alt="" loading="lazy">Удар щитом</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/templar/judgment.webp" width="18" height="18" alt="" loading="lazy">Суд</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/templar/annihilate.webp" width="18" height="18" alt="" loading="lazy">Истребление</span><span class="arrow">→</span>заряженная <span class="sk"><img src="../../assets/icons/templar/punishment.webp" width="18" height="18" alt="" loading="lazy">Кровавая месть</span></div>
+  </div>
+  <div class="callout">
+    <h3>Вход в бой</h3>
+    <div class="combo">уклонение + <span class="sk"><img src="../../assets/icons/templar/shield-rush.webp" width="18" height="18" alt="" loading="lazy">Удар щитом (рывок)</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/templar/doom-shield.webp" width="18" height="18" alt="" loading="lazy">Щит погибели</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/templar/debilitating-smash.webp" width="18" height="18" alt="" loading="lazy">Удар изнеможения</span> на цель хилера</div>
+  </div>
+  <div class="callout">
+    <h3>Выживание</h3>
+    <ul>
+      <li>Держись спиной к стене — блок работает только спереди.</li>
+      <li><span class="sk"><img src="../../assets/icons/templar/shield-of-protection.webp" width="18" height="18" alt="" loading="lazy">Щит спасения</span> — под их бурст, а не после него.</li>
+      <li><span class="sk"><img src="../../assets/icons/templar/defiance.webp" width="18" height="18" alt="" loading="lazy">Снятие шока</span> на первый жёсткий контроль; следующий прикроет Инстинкт выживания.</li>
+    </ul>
+  </div>
+
+</section>
+<section id="recap-pvp" class="g-section" data-only="pvp" aria-labelledby="h-recap-pvp">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-recap-pvp">Итог</h2></div>
+    <div class="callout accent"><ul>
+    <li><strong>Скиллы:</strong> Суд 20, Удар щитом (рывок) 20, Ловушка 16, Кровавая месть 16, Снятие шока 16, Удар изнеможения 12.</li>
+    <li><strong>Стигмы:</strong> Кара Владыки Эмпирея, Щит спасения, Щит погибели, Благородная кольчуга (Плечом к плечу для групповых боёв).</li>
+    <li><strong>Daevanion:</strong> Azphel вместо Ariel, Triniel раньше.</li>
+    <li><strong>Игра:</strong> притяни, оглуши, антихил; блокируй их бурст и не показывай спину.</li>
+  </ul></div>
+
+</section>
+<section id="fight-lvl" class="g-section" data-only="lvl" aria-labelledby="h-fight-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-fight-lvl">Как сражаться во время прокачки</h2></div>
+    <div class="callout"><ul>
+    <li><strong>Пачки:</strong> <span class="sk"><img src="../../assets/icons/templar/poach.webp" width="18" height="18" alt="" loading="lazy">Ловушка</span> одного (убийство сбрасывает перезарядку) → <span class="sk"><img src="../../assets/icons/templar/warding-strike.webp" width="18" height="18" alt="" loading="lazy">Кара хранителя</span> → зажми <span class="sk"><img src="../../assets/icons/templar/vicious-strike.webp" width="18" height="18" alt="" loading="lazy">Жестокий удар</span> + макрос с <span class="sk"><img src="../../assets/icons/templar/pummel.webp" width="18" height="18" alt="" loading="lazy">Град ударов</span>.</li>
+    <li><strong>Элитки:</strong> заряженная <span class="sk"><img src="../../assets/icons/templar/punishment.webp" width="18" height="18" alt="" loading="lazy">Кровавая месть</span> → <span class="sk"><img src="../../assets/icons/templar/shield-smite.webp" width="18" height="18" alt="" loading="lazy">Удар щитом</span> (оглушение) → <span class="sk"><img src="../../assets/icons/templar/judgment.webp" width="18" height="18" alt="" loading="lazy">Суд</span> → <span class="sk"><img src="../../assets/icons/templar/annihilate.webp" width="18" height="18" alt="" loading="lazy">Истребление</span>.</li>
+    <li><strong>Мана:</strong> Жестокий удар восполняет ману, Град ударов её тратит — чередуй их, и мана не кончится.</li>
+    <li><strong>Мало ОЗ:</strong> Кара хранителя лечит и режет урон; каждый блок лечит через Священный щит.</li>
+  </ul></div>
+
+</section>
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">Источники</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=JEWRiaOb9JY" target="_blank" rel="noopener">NoBS Game Guides — Aion 2 Templar Guide: Skills Introduction + Early Game Macro</a> (основа обзора скиллов и макроса на прокачке)</li>
+    <li><a href="https://questlog.gg/aion-2/ru/db/skills/templar" target="_blank" rel="noopener">questlog.gg</a> — данные скиллов и стигм из глобального клиента</li>
+    <li><a href="https://www.inven.co.kr/board/aion2/6438/12803" target="_blank" rel="noopener">Inven</a> — корейские специализации, стигмы и макрос Стража</li>
+    <li><a href="https://vortexgaming.io/postdetail/977999" target="_blank" rel="noopener">Vortex Gaming</a> — корейская PvE-сборка (уровни скиллов, статы) и <a href="https://vortexgaming.io/postdetail/836552" target="_blank" rel="noopener">направления PvP-сборки</a></li>
+    <li><a href="https://www.inven.co.kr/board/aion2/6438/7621" target="_blank" rel="noopener">Inven</a> и <a href="https://www.fmkorea.com/9447817669" target="_blank" rel="noopener">FM Korea</a> — выбор PvP-стигм</li>
+    <li><a href="https://mmo-codex.com/articles/aion-2-templar-guide/" target="_blank" rel="noopener">MMO Codex</a> — порядок скиллов на прокачке, приоритет пассивок</li>
+    <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (таблица TitanTheF) — маршрут прокачки</li>
+  </ul>
+  <p class="sources-all"><a href="../../ru/sources/">Все источники и авторы →</a></p>
+</section>  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../ru/">AION 2 Гайды</a>
+      <p>Неофициальный фанатский сайт, не связан с NCSOFT. AION 2 и иконки скиллов © NCSOFT.</p>
+      <p>Проверено: 2026-09-27 (до глобального запуска).</p>
+      <p><a href="../../ru/sources/">Все источники и авторы</a></p>
+    </div>
+  </div>
+</footer>
+<script src="../../assets/js/site.js" defer></script>
+</body>
+</html>

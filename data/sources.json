@@ -3,120 +3,519 @@
   "groups": [
     {
       "id": "creators",
-      "title": {"en": "Creators", "ru": "Авторы"},
-      "lead": {"en": "People whose videos and guides this site builds on. Go watch them — they do the real testing.",
-               "ru": "Люди, на чьих видео и гайдах построен сайт. Загляните к ним — основную проверку делают они."},
+      "title": {
+        "en": "Creators",
+        "ru": "Авторы"
+      },
+      "lead": {
+        "en": "People whose videos and guides this site builds on. Go watch them — they do the real testing.",
+        "ru": "Люди, на чьих видео и гайдах построен сайт. Загляните к ним — основную проверку делают они."
+      },
       "items": [
-        {"name": "Arthars Gaming",
-         "what": {"en": "“The ULTIMATE AION 2 Gladiator Starter Guide!” — the base of the Gladiator PvE guide (played on the Taiwanese server).",
-                  "ru": "«The ULTIMATE AION 2 Gladiator Starter Guide!» — основа PvE-гайда по Гладиатору (опыт с тайваньского сервера)."},
-         "used": ["gladiator"],
-         "links": [
-           {"type": "video", "url": "https://www.youtube.com/watch?v=tYTZ8VucMXw", "label": {"en": "Gladiator guide", "ru": "Гайд по Гладиатору"}},
-           {"type": "youtube", "url": "https://www.youtube.com/@ArtharsGaming", "label": "YouTube"},
-           {"type": "twitch", "url": "https://www.twitch.tv/arthars", "label": "Twitch"}
-         ]},
-        {"name": "TitanTheF",
-         "what": {"en": "Author of the leveling route table — the shared leveling checklist follows its order.",
-                  "ru": "Автор таблицы маршрута прокачки — общий чек-лист прокачки идёт по её порядку."},
-         "used": ["gladiator", "ranger"],
-         "links": [
-           {"type": "youtube", "url": "https://www.youtube.com/@TitanTheF", "label": "YouTube"},
-           {"type": "twitch", "url": "https://www.twitch.tv/titanthef", "label": "Twitch"},
-           {"type": "discord", "url": "https://discord.com/invite/m5UNHgK6P8", "label": "Discord"},
-           {"type": "telegram", "url": "https://t.me/titanforeve", "label": "Telegram"}
-         ]},
-        {"name": "nemobek",
-         "what": {"en": "Interactive version of TitanTheF’s table — the idea behind our leveling checklist with progress.",
-                  "ru": "Интерактивная версия таблицы TitanTheF — идея нашего чек-листа прокачки с прогрессом."},
-         "used": ["gladiator", "ranger"],
-         "links": [
-           {"type": "site", "url": "https://nemobek.github.io/aion2-guide/", "label": "nemobek.github.io/aion2-guide"},
-           {"type": "github", "url": "https://github.com/nemobek", "label": "GitHub"}
-         ]}
+        {
+          "name": "Arthars Gaming",
+          "what": {
+            "en": "“The ULTIMATE AION 2 Gladiator Starter Guide!” — the base of the Gladiator PvE guide (played on the Taiwanese server).",
+            "ru": "«The ULTIMATE AION 2 Gladiator Starter Guide!» — основа PvE-гайда по Гладиатору (опыт с тайваньского сервера)."
+          },
+          "used": [
+            "gladiator"
+          ],
+          "links": [
+            {
+              "type": "video",
+              "url": "https://www.youtube.com/watch?v=tYTZ8VucMXw",
+              "label": {
+                "en": "Gladiator guide",
+                "ru": "Гайд по Гладиатору"
+              }
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/@ArtharsGaming",
+              "label": "YouTube"
+            },
+            {
+              "type": "twitch",
+              "url": "https://www.twitch.tv/arthars",
+              "label": "Twitch"
+            }
+          ]
+        },
+        {
+          "name": "TitanTheF",
+          "what": {
+            "en": "Author of the leveling route table — the shared leveling checklist follows its order.",
+            "ru": "Автор таблицы маршрута прокачки — общий чек-лист прокачки идёт по её порядку."
+          },
+          "used": [
+            "gladiator",
+            "ranger",
+            "templar"
+          ],
+          "links": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/@TitanTheF",
+              "label": "YouTube"
+            },
+            {
+              "type": "twitch",
+              "url": "https://www.twitch.tv/titanthef",
+              "label": "Twitch"
+            },
+            {
+              "type": "discord",
+              "url": "https://discord.com/invite/m5UNHgK6P8",
+              "label": "Discord"
+            },
+            {
+              "type": "telegram",
+              "url": "https://t.me/titanforeve",
+              "label": "Telegram"
+            }
+          ]
+        },
+        {
+          "name": "NoBS Game Guides",
+          "what": {
+            "en": "“Aion 2 Templar Guide: Skills Introduction + Early Game Macro” — the base of the Templar skill overview and leveling macro.",
+            "ru": "«Aion 2 Templar Guide: Skills Introduction + Early Game Macro» — основа обзора скиллов Стража и макроса на прокачке."
+          },
+          "used": [
+            "templar"
+          ],
+          "links": [
+            {
+              "type": "video",
+              "url": "https://www.youtube.com/watch?v=JEWRiaOb9JY",
+              "label": {
+                "en": "Templar guide",
+                "ru": "Гайд по Стражу"
+              }
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/@NoBSGameGuides",
+              "label": "YouTube"
+            }
+          ]
+        },
+        {
+          "name": "Spid",
+          "what": {
+            "en": "“AION 2: 14 Tips I Wish I Knew Before Starting” — first-week goals and weekly caps.",
+            "ru": "«AION 2: 14 Tips I Wish I Knew Before Starting» — цели первой недели и недельные лимиты."
+          },
+          "used": [
+            "site"
+          ],
+          "links": [
+            {
+              "type": "video",
+              "url": "https://www.youtube.com/watch?v=gwMMpH-OY9c",
+              "label": {
+                "en": "14 tips",
+                "ru": "14 советов"
+              }
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/@SpidMMO",
+              "label": "YouTube"
+            }
+          ]
+        },
+        {
+          "name": "LittleFattyGG",
+          "what": {
+            "en": "“AION 2 Global Beginner Guide — Don't Waste Your First Week” — what to finish before the first reset.",
+            "ru": "«AION 2 Global Beginner Guide — Don't Waste Your First Week» — что успеть до первого сброса."
+          },
+          "used": [
+            "site"
+          ],
+          "links": [
+            {
+              "type": "video",
+              "url": "https://youtu.be/DVQWMJa7jq0",
+              "label": {
+                "en": "First week",
+                "ru": "Первая неделя"
+              }
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/@LittleFattyGaming",
+              "label": "YouTube"
+            }
+          ]
+        },
+        {
+          "name": "nemobek",
+          "what": {
+            "en": "Interactive version of TitanTheF’s table — the idea behind our leveling checklist with progress.",
+            "ru": "Интерактивная версия таблицы TitanTheF — идея нашего чек-листа прокачки с прогрессом."
+          },
+          "used": [
+            "gladiator",
+            "ranger",
+            "templar"
+          ],
+          "links": [
+            {
+              "type": "site",
+              "url": "https://nemobek.github.io/aion2-guide/",
+              "label": "nemobek.github.io/aion2-guide"
+            },
+            {
+              "type": "github",
+              "url": "https://github.com/nemobek",
+              "label": "GitHub"
+            }
+          ]
+        }
       ]
     },
     {
       "id": "guides",
-      "title": {"en": "Guides & databases", "ru": "Гайды и базы данных"},
+      "title": {
+        "en": "Guides & databases",
+        "ru": "Гайды и базы данных"
+      },
       "items": [
-        {"name": "questlog.gg",
-         "what": {"en": "Skill, specialization and stigma data from the global client (EN and RU), and all skill icons.",
-                  "ru": "Данные скиллов, специализаций и стигм из глобального клиента (EN и RU) и все иконки скиллов."},
-         "used": ["gladiator", "ranger"],
-         "links": [
-           {"type": "site", "url": "https://questlog.gg/aion-2/en/db/skills/gladiator", "label": {"en": "Gladiator skills", "ru": "Скиллы Гладиатора"}},
-           {"type": "site", "url": "https://questlog.gg/aion-2/en/db/skills/ranger", "label": {"en": "Ranger skills", "ru": "Скиллы Лучника"}}
-         ]},
-        {"name": "Vortex Gaming",
-         "what": {"en": "Korean builds: Gladiator PvP (Abyss / Arena) and the post-patch Ranger stigma setup.",
-                  "ru": "Корейские сборки: PvP Гладиатора (Бездна / Арена) и стигмы Лучника после патча."},
-         "used": ["gladiator", "ranger"],
-         "links": [
-           {"type": "site", "url": "https://vortexgaming.io/en/postdetail/611533", "label": {"en": "Gladiator PvP", "ru": "PvP Гладиатора"}},
-           {"type": "site", "url": "https://vortexgaming.io/postdetail/722757", "label": {"en": "Ranger stigmas", "ru": "Стигмы Лучника"}}
-         ]},
-        {"name": "7MMO",
-         "what": {"en": "Full Korean Ranger PvE build: skills, stigmas, the three macro lines and what to press by hand.",
-                  "ru": "Полный корейский PvE-билд Лучника: скиллы, стигмы, три линии макроса и что жать вручную."},
-         "used": ["ranger"],
-         "links": [{"type": "site", "url": "https://7mmo.com/threads/guide-ranger-aion-2-build-pve-complet-sorts-stigmas-stuff.5771/", "label": "7mmo.com"}]},
-        {"name": "Game8",
-         "what": {"en": "Ranger skill unlock levels and rotation basics.",
-                  "ru": "Уровни открытия скиллов Лучника и основы ротации."},
-         "used": ["ranger"],
-         "links": [{"type": "site", "url": "https://game8.co/games/Aion-2/archives/613085", "label": "game8.co"}]},
-        {"name": "Gamers Together",
-         "what": {"en": "Ranger PvP approach.", "ru": "Подход к PvP за Лучника."},
-         "used": ["ranger"],
-         "links": [{"type": "site", "url": "https://gamerstogether.cz/en/aion-2-ranger-build-guide/", "label": "gamerstogether.cz"}]},
-        {"name": "Gamers Together · allthings.how",
-         "what": {"en": "How the in-game macro works: hotbar buttons in order, 10 ms delay, cooldowns skipped, what not to put in it.",
-                  "ru": "Как работает встроенный макрос: кнопки панели по порядку, задержка 10 мс, пропуск перезарядок, что туда не ставить."},
-         "used": ["gladiator", "ranger"],
-         "links": [
-           {"type": "site", "url": "https://gamerstogether.cz/en/aion-2-macros/", "label": {"en": "Macro guide", "ru": "Гайд по макросам"}},
-           {"type": "site", "url": "https://allthings.how/aion-2-how-to-use-macros-and-pick-the-right-delay/", "label": "allthings.how"}
-         ]},
-        {"name": "DCInside · AION 2 gallery",
-         "what": {"en": "Korean player posts on current Ranger meta and stigma choices. Anonymous community authors — no single link to credit.",
-                  "ru": "Посты корейских игроков о текущей мете Лучника и выборе стигм. Анонимные авторы сообщества — отдельной ссылки нет."},
-         "used": ["ranger"],
-         "links": []},
-        {"name": "IGGM",
-         "what": {"en": "Global Season 1 changes vs Korea/Taiwan (stigma slots, expeditions, gear).",
-                  "ru": "Отличия глобального 1 сезона от Кореи/Тайваня (слоты стигм, экспедиции, снаряжение)."},
-         "used": ["gladiator", "ranger"],
-         "links": [{"type": "site", "url": "https://www.iggm.com/news/aion-2-global-servers-dungeon-gameplay-changes-expeditions-gear-progression-stigma-slots", "label": "iggm.com"}]}
+        {
+          "name": "questlog.gg",
+          "what": {
+            "en": "Skill, specialization and stigma data from the global client (EN and RU), and all skill icons.",
+            "ru": "Данные скиллов, специализаций и стигм из глобального клиента (EN и RU) и все иконки скиллов."
+          },
+          "used": [
+            "gladiator",
+            "ranger",
+            "templar"
+          ],
+          "links": [
+            {
+              "type": "site",
+              "url": "https://questlog.gg/aion-2/en/db/skills/gladiator",
+              "label": {
+                "en": "Gladiator skills",
+                "ru": "Скиллы Гладиатора"
+              }
+            },
+            {
+              "type": "site",
+              "url": "https://questlog.gg/aion-2/en/db/skills/ranger",
+              "label": {
+                "en": "Ranger skills",
+                "ru": "Скиллы Лучника"
+              }
+            },
+            {
+              "type": "site",
+              "url": "https://questlog.gg/aion-2/en/db/skills/templar",
+              "label": {
+                "en": "Templar skills",
+                "ru": "Скиллы Стража"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Vortex Gaming",
+          "what": {
+            "en": "Korean builds: Gladiator PvP (Abyss / Arena), the post-patch Ranger stigma setup and Templar PvE/PvP setups.",
+            "ru": "Корейские сборки: PvP Гладиатора (Бездна / Арена), стигмы Лучника после патча и сборки Стража для PvE/PvP."
+          },
+          "used": [
+            "gladiator",
+            "ranger",
+            "templar"
+          ],
+          "links": [
+            {
+              "type": "site",
+              "url": "https://vortexgaming.io/en/postdetail/611533",
+              "label": {
+                "en": "Gladiator PvP",
+                "ru": "PvP Гладиатора"
+              }
+            },
+            {
+              "type": "site",
+              "url": "https://vortexgaming.io/postdetail/722757",
+              "label": {
+                "en": "Ranger stigmas",
+                "ru": "Стигмы Лучника"
+              }
+            },
+            {
+              "type": "site",
+              "url": "https://vortexgaming.io/postdetail/977999",
+              "label": {
+                "en": "Templar PvE",
+                "ru": "Страж PvE"
+              }
+            }
+          ]
+        },
+        {
+          "name": "7MMO",
+          "what": {
+            "en": "Full Korean Ranger PvE build: skills, stigmas, the three macro lines and what to press by hand.",
+            "ru": "Полный корейский PvE-билд Лучника: скиллы, стигмы, три линии макроса и что жать вручную."
+          },
+          "used": [
+            "ranger"
+          ],
+          "links": [
+            {
+              "type": "site",
+              "url": "https://7mmo.com/threads/guide-ranger-aion-2-build-pve-complet-sorts-stigmas-stuff.5771/",
+              "label": "7mmo.com"
+            }
+          ]
+        },
+        {
+          "name": "Game8",
+          "what": {
+            "en": "Ranger skill unlock levels and rotation basics.",
+            "ru": "Уровни открытия скиллов Лучника и основы ротации."
+          },
+          "used": [
+            "ranger"
+          ],
+          "links": [
+            {
+              "type": "site",
+              "url": "https://game8.co/games/Aion-2/archives/613085",
+              "label": "game8.co"
+            }
+          ]
+        },
+        {
+          "name": "Gamers Together",
+          "what": {
+            "en": "Ranger PvP approach.",
+            "ru": "Подход к PvP за Лучника."
+          },
+          "used": [
+            "ranger"
+          ],
+          "links": [
+            {
+              "type": "site",
+              "url": "https://gamerstogether.cz/en/aion-2-ranger-build-guide/",
+              "label": "gamerstogether.cz"
+            }
+          ]
+        },
+        {
+          "name": "Gamers Together · allthings.how",
+          "what": {
+            "en": "How the in-game macro works: hotbar buttons in order, 10 ms delay, cooldowns skipped, what not to put in it.",
+            "ru": "Как работает встроенный макрос: кнопки панели по порядку, задержка 10 мс, пропуск перезарядок, что туда не ставить."
+          },
+          "used": [
+            "gladiator",
+            "ranger"
+          ],
+          "links": [
+            {
+              "type": "site",
+              "url": "https://gamerstogether.cz/en/aion-2-macros/",
+              "label": {
+                "en": "Macro guide",
+                "ru": "Гайд по макросам"
+              }
+            },
+            {
+              "type": "site",
+              "url": "https://allthings.how/aion-2-how-to-use-macros-and-pick-the-right-delay/",
+              "label": "allthings.how"
+            }
+          ]
+        },
+        {
+          "name": "DCInside · AION 2 gallery",
+          "what": {
+            "en": "Korean player posts on current Ranger meta and stigma choices. Anonymous community authors — no single link to credit.",
+            "ru": "Посты корейских игроков о текущей мете Лучника и выборе стигм. Анонимные авторы сообщества — отдельной ссылки нет."
+          },
+          "used": [
+            "ranger"
+          ],
+          "links": []
+        },
+        {
+          "name": "Inven · FM Korea",
+          "what": {
+            "en": "Korean Templar posts: skill specializations, stigma sets and the macro layout; PvP stigma choices.",
+            "ru": "Корейские посты о Страже: специализации, наборы стигм и раскладка макроса; выбор PvP-стигм."
+          },
+          "used": [
+            "templar"
+          ],
+          "links": [
+            {
+              "type": "site",
+              "url": "https://www.inven.co.kr/board/aion2/6438/12803",
+              "label": {
+                "en": "Skills & macro",
+                "ru": "Скиллы и макрос"
+              }
+            },
+            {
+              "type": "site",
+              "url": "https://www.inven.co.kr/board/aion2/6438/7621",
+              "label": {
+                "en": "Stigma guide",
+                "ru": "Гайд по стигмам"
+              }
+            },
+            {
+              "type": "site",
+              "url": "https://www.fmkorea.com/9447817669",
+              "label": "fmkorea.com"
+            }
+          ]
+        },
+        {
+          "name": "MMO Codex",
+          "what": {
+            "en": "Templar skill order while leveling and passive priority.",
+            "ru": "Порядок скиллов Стража на прокачке и приоритет пассивок."
+          },
+          "used": [
+            "templar"
+          ],
+          "links": [
+            {
+              "type": "site",
+              "url": "https://mmo-codex.com/articles/aion-2-templar-guide/",
+              "label": "mmo-codex.com"
+            }
+          ]
+        },
+        {
+          "name": "Aion 2 Kodex",
+          "what": {
+            "en": "Odyle energy numbers for the global client (+15 every 3 h, cap 840, 7 weekly crafts) used by the weekly tracker.",
+            "ru": "Цифры энергии Odyle для глобального клиента (+15 каждые 3 ч, лимит 840, 7 недельных крафтов) для недельного трекера."
+          },
+          "used": [
+            "site"
+          ],
+          "links": [
+            {
+              "type": "site",
+              "url": "https://kodex.yavuz.app/en/systems/odyle-energy/",
+              "label": "kodex.yavuz.app"
+            }
+          ]
+        },
+        {
+          "name": "IGGM",
+          "what": {
+            "en": "Global Season 1 changes vs Korea/Taiwan (stigma slots, expeditions, gear).",
+            "ru": "Отличия глобального 1 сезона от Кореи/Тайваня (слоты стигм, экспедиции, снаряжение)."
+          },
+          "used": [
+            "gladiator",
+            "ranger"
+          ],
+          "links": [
+            {
+              "type": "site",
+              "url": "https://www.iggm.com/news/aion-2-global-servers-dungeon-gameplay-changes-expeditions-gear-progression-stigma-slots",
+              "label": "iggm.com"
+            }
+          ]
+        }
       ]
     },
     {
       "id": "launch",
-      "title": {"en": "Launch dates & art", "ru": "Даты запуска и арты"},
+      "title": {
+        "en": "Launch dates & art",
+        "ru": "Даты запуска и арты"
+      },
       "items": [
-        {"name": "AION 2 (NCSOFT)",
-         "what": {"en": "Official dates (pre-download announced on the official YouTube channel) and the class artwork used on this site. AION 2 art © NCSOFT.",
-                  "ru": "Официальные даты (предзагрузку объявили на официальном YouTube-канале) и арты классов на этом сайте. Арты AION 2 © NCSOFT."},
-         "used": ["site"],
-         "links": [
-           {"type": "site", "url": "https://aion2.plaync.com/en-us/", "label": "aion2.plaync.com"},
-           {"type": "youtube", "url": "https://www.youtube.com/@Aion2Official", "label": "YouTube"},
-           {"type": "twitch", "url": "https://www.twitch.tv/aion2official", "label": "Twitch"},
-           {"type": "discord", "url": "https://discord.gg/aion2official", "label": "Discord"}
-         ]},
-        {"name": {"en": "Home page background", "ru": "Фон главной страницы"},
-         "what": {"en": "AION 2 in-game screenshot shared on Reddit; the original poster isn't known. AION 2 © NCSOFT.",
-                  "ru": "Скриншот AION 2, опубликованный на Reddit; автор публикации неизвестен. AION 2 © NCSOFT."},
-         "used": ["site"],
-         "links": [{"type": "site", "url": "https://i.redd.it/270q6wexjekf1.jpg", "label": "i.redd.it"}]},
-        {"name": "timesaver.gg · aion2guide.org",
-         "what": {"en": "Launch schedule cross-checks: what NC has confirmed and what it hasn't.",
-                  "ru": "Сверка расписания запуска: что NC подтвердили, а что нет."},
-         "used": ["site"],
-         "links": [
-           {"type": "site", "url": "https://timesaver.gg/blog/aion-2-pre-download", "label": "timesaver.gg"},
-           {"type": "site", "url": "https://aion2guide.org/guides/aion-2-release-date-and-launch-time/", "label": "aion2guide.org"}
-         ]}
+        {
+          "name": "AION 2 (NCSOFT)",
+          "what": {
+            "en": "Official dates (pre-download announced on the official YouTube channel) and the class artwork used on this site. AION 2 art © NCSOFT.",
+            "ru": "Официальные даты (предзагрузку объявили на официальном YouTube-канале) и арты классов на этом сайте. Арты AION 2 © NCSOFT."
+          },
+          "used": [
+            "site"
+          ],
+          "links": [
+            {
+              "type": "site",
+              "url": "https://aion2.plaync.com/en-us/",
+              "label": "aion2.plaync.com"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/@Aion2Official",
+              "label": "YouTube"
+            },
+            {
+              "type": "twitch",
+              "url": "https://www.twitch.tv/aion2official",
+              "label": "Twitch"
+            },
+            {
+              "type": "discord",
+              "url": "https://discord.gg/aion2official",
+              "label": "Discord"
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Home page background",
+            "ru": "Фон главной страницы"
+          },
+          "what": {
+            "en": "AION 2 in-game screenshot shared on Reddit; the original poster isn't known. AION 2 © NCSOFT.",
+            "ru": "Скриншот AION 2, опубликованный на Reddit; автор публикации неизвестен. AION 2 © NCSOFT."
+          },
+          "used": [
+            "site"
+          ],
+          "links": [
+            {
+              "type": "site",
+              "url": "https://i.redd.it/270q6wexjekf1.jpg",
+              "label": "i.redd.it"
+            }
+          ]
+        },
+        {
+          "name": "timesaver.gg · aion2guide.org",
+          "what": {
+            "en": "Launch schedule cross-checks: what NC has confirmed and what it hasn't.",
+            "ru": "Сверка расписания запуска: что NC подтвердили, а что нет."
+          },
+          "used": [
+            "site"
+          ],
+          "links": [
+            {
+              "type": "site",
+              "url": "https://timesaver.gg/blog/aion-2-pre-download",
+              "label": "timesaver.gg"
+            },
+            {
+              "type": "site",
+              "url": "https://aion2guide.org/guides/aion-2-release-date-and-launch-time/",
+              "label": "aion2guide.org"
+            }
+          ]
+        }
       ]
     }
   ]

@@ -16,6 +16,7 @@
         <p class="kicker"><span data-only="pve">{{ t.mode_pve }}</span><span data-only="pvp">{{ t.mode_pvp }}</span><span data-only="lvl">{{ t.mode_lvl }}</span> · {{ t.home_kicker }}</p>
         <h1>{{ cls.name[lang] }}</h1>
         <p class="class-hero-pitch">{{ cls.pitch[lang] }}</p>
+        <p class="guide-ver"><span>{{ t.guide_updated }}: <time datetime="{{ cls.updated }}">{{ fmt_day(cls.updated, lang) }}</time></span><span>{{ t.guide_patch }}: <b>{{ cls.patch or t.patch_tbd }}</b></span></p>
       </div>
     </div>
     <dl class="class-facts">

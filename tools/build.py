@@ -31,7 +31,13 @@ SITE = load(DATA / "site.json")
 I18N = load(DATA / "i18n.json")
 LANGS = SITE["langs"]
 SOURCES = load(DATA / "sources.json")
-SKILLS = {p.stem: load(p) for p in (DATA / "skills").glob("*.json")}
+WEEKLY = load(DATA / "weekly.json")
+WEEK1 = load(DATA / "week1.json")
+SKILLS = {p.stem: load(p) for p in (DATA / "skills").glob("*.json") if not p.stem.startswith("_")}
+for _cls, _fixes in load(DATA / "skills" / "_overrides.json").items():
+    for _slug, _langs in ([] if _cls.startswith("_") else _fixes.items()):
+        for _lang, _fields in _langs.items():
+            SKILLS[_cls][_slug][_lang].update(_fields)
 
 
 # ---- helpers exposed to templates -------------------------------------------------
@@ -92,6 +98,13 @@ def fmt_utc(iso, lang):
     return f"{day} · {d:%H:%M} UTC"
 
 
+def fmt_day(iso, lang):
+    """'2026-09-27' -> 'Sep 27, 2026' / '27 сентября 2026'."""
+    y, m, d = (int(x) for x in iso.split("-"))
+    mon = MONTHS[lang][m - 1]
+    return f"{mon} {d}, {y}" if lang == "en" else f"{d} {mon} {y}"
+
+
 def leveling_steps(cls_slug, lang):
     """Merge the shared route with class-specific steps, ordered by level."""
     steps = load(DATA / "leveling" / "common.json")["steps"]
@@ -120,7 +133,7 @@ def env():
         lstrip_blocks=True,
         extensions=["jinja2.ext.do"],
     )
-    e.globals.update(fmt_utc=fmt_utc, s=s, sp=sp, skill_data=skill_data, icon_url=icon_url, SITE=SITE)
+    e.globals.update(fmt_utc=fmt_utc, fmt_day=fmt_day, s=s, sp=sp, skill_data=skill_data, icon_url=icon_url, SITE=SITE)
     return e
 
 
@@ -170,6 +183,11 @@ def build():
             ctx["steps"] = leveling_steps(cls["slug"], lang)
             ctx["content_tpl"] = f'{cls["slug"]}/{lang}.html'
             write(f'{lang}/{path}index.html', e.get_template("class.html").render(ctx))
+            urls.append(path)
+        for path, tpl, key, data in (("week-1/", "week1.html", "week1", WEEK1), ("weekly/", "weekly.html", "weekly", WEEKLY)):
+            ctx = page_ctx(lang, path, "../../")
+            ctx[key] = data
+            write(f"{lang}/{path}index.html", e.get_template(tpl).render(ctx))
             urls.append(path)
         ctx = page_ctx(lang, "sources/", "../../")
         ctx["sources"] = SOURCES["groups"]

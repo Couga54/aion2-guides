@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en" data-mode="pve">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Weekly tracker — AION 2 Guides</title>
+<meta name="description" content="Track AION 2 weekly entries and Odyle energy for all your characters. Resets itself every week; saved in your browser.">
+<link rel="canonical" href="https://couga54.github.io/aion2-guides/en/weekly/">
+<link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/weekly/">
+<link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/weekly/">
+<link rel="alternate" hreflang="x-default" href="https://couga54.github.io/aion2-guides/en/weekly/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Guides">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Weekly tracker — AION 2 Guides">
+<meta property="og:description" content="Track AION 2 weekly entries and Odyle energy for all your characters. Resets itself every week; saved in your browser.">
+<meta property="og:url" content="https://couga54.github.io/aion2-guides/en/weekly/">
+<meta property="og:image" content="https://couga54.github.io/aion2-guides/assets/og/home-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var modes = ['pve', 'pvp', 'lvl'];
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+  })(document.documentElement);
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css">
+</head>
+<body class="page-tracker page-weekly">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../en/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
+      <span>AION 2 Guides</span>
+    </a>
+    <nav class="class-nav" aria-label="Classes">
+      <a href="../../en/gladiator/" class="accent-crimson">
+        <img src="../../assets/classes/gladiator.webp" width="22" height="22" alt=""><span>Gladiator</span>
+      </a>
+      <a href="../../en/ranger/" class="accent-emerald">
+        <img src="../../assets/classes/ranger.webp" width="22" height="22" alt=""><span>Ranger</span>
+      </a>
+      <a href="../../en/templar/" class="accent-sapphire">
+        <img src="../../assets/classes/templar.webp" width="22" height="22" alt=""><span>Templar</span>
+      </a>
+    </nav>
+    <div class="topbar-tools">
+      <a class="src-nav" href="../../en/week-1/" title="First week: what to finish before the reset">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+        <span>Week 1</span>
+      </a>
+      <a class="src-nav" href="../../en/weekly/" aria-current="page" title="Weekly tracker">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+        <span>Weekly</span>
+      </a>
+      <a class="src-nav" href="../../en/sources/" title="Sources &amp; credits">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+        <span>Sources</span>
+      </a>
+      <a class="lang-switch" href="../../ru/weekly/" hreflang="ru" lang="ru" data-keep-query>
+        <span aria-hidden="true">RU</span><span class="sr-only">Русский</span>
+      </a>
+      <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero tracker-hero">
+    <div class="wrap tracker-hero-in">
+      <div>
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="../../en/">All classes</a><span aria-hidden="true">/</span><span>Weekly</span></nav>
+        <h1>Weekly tracker</h1>
+        <p class="lead">Weekly entries and Odyle energy for each of your characters. The checklist clears itself at every weekly reset.</p>
+      </div>
+      <div class="reset-box" aria-live="off">
+  <span class="reset-label">Weekly reset in</span>
+  <div class="reset-timer"><span><b>--</b><i>d</i></span><span><b>--</b><i>h</i></span><span><b>--</b><i>m</i></span><span><b>--</b><i>s</i></span></div>
+  <time class="reset-when" datetime=""></time>
+<p class="reset-note">The weekly reset time isn&#39;t announced yet — the timer counts from the Early Access start (Wednesday 13:00 UTC) and will be corrected at launch.</p></div>
+    </div>
+  </section>
+
+  <div class="wrap tracker-page">
+    <section class="charbar" aria-label="Characters">
+  <div class="char-tabs" role="tablist"></div>
+  <details class="char-manage">
+    <summary>Add character · Rename</summary>
+    <form class="char-form char-form-edit">
+      <input name="cname" maxlength="24" required placeholder="Character name" aria-label="Character name">
+      <select name="cls" aria-label="Class">
+        <option value="">No class</option>
+<option value="gladiator">Gladiator</option><option value="ranger">Ranger</option><option value="templar">Templar</option><option value="assassin">Assassin</option><option value="sorcerer">Sorcerer</option><option value="elementalist">Elementalist</option><option value="cleric">Cleric</option><option value="chanter">Chanter</option>      </select>
+      <button type="submit" class="btn btn-sm">Save</button>
+      <button type="button" class="btn btn-ghost btn-sm char-del">Delete</button>
+    </form>
+    <form class="char-form char-form-add">
+      <input name="cname" maxlength="24" required placeholder="Character name" aria-label="Character name">
+      <select name="cls" aria-label="Class">
+        <option value="">No class</option>
+<option value="gladiator">Gladiator</option><option value="ranger">Ranger</option><option value="templar">Templar</option><option value="assassin">Assassin</option><option value="sorcerer">Sorcerer</option><option value="elementalist">Elementalist</option><option value="cleric">Cleric</option><option value="chanter">Chanter</option>      </select>
+      <button type="submit" class="btn btn-primary btn-sm">Add character</button>
+    </form>
+  </details>
+  <p class="note local-note">Saved in this browser only — no account, nothing is sent anywhere.</p>
+</section>
+
+    <div class="wk-layout">
+      <section class="energy-card" aria-labelledby="h-energy">
+        <h2 id="h-energy" class="card-title">Odyle energy</h2>
+        <div class="energy-main">
+          <span class="energy-value">—</span><span class="energy-cap">/ <span class="energy-cap-v">840</span></span>
+        </div>
+        <div class="progress energy-bar" aria-hidden="true"><span></span></div>
+        <p class="energy-status"></p>
+        <p class="energy-rate">+15 every 3 h (EU test client value)</p>
+        <div class="energy-actions">
+          <button type="button" class="btn btn-sm energy-chest">Open chest −40</button>
+          <form class="energy-form">
+            <label><span>Odyle energy</span><input type="number" name="v" min="0" max="9999" inputmode="numeric"></label>
+            <label><span>Cap</span><input type="number" name="cap" min="1" max="9999" inputmode="numeric"></label>
+            <button type="submit" class="btn btn-ghost btn-sm">Set</button>
+          </form>
+        </div>
+        <div class="energy-charged">
+          <label><span>Charged energy</span><input type="number" name="charged" min="0" max="9999" inputmode="numeric" class="energy-charged-in"></label>
+          <p class="note">From crafts and items; doesn&#39;t regenerate.</p>
+        </div>
+      </section>
+
+      <div class="wk-groups">
+        <p class="wk-summary"><b class="wk-done-n">0</b>/<span class="wk-total-n">0</span> done this week · <span class="wk-auto">Clears itself at every weekly reset.</span></p>
+        <section class="wk-group" aria-labelledby="h-wk-dungeons">
+          <h2 id="h-wk-dungeons" class="card-title">Dungeons</h2>
+          <ul class="wk-list">
+            <li class="wk-item" data-id="daily-dungeon" data-max="7">
+              <div class="wk-text"><span class="wk-name">Daily Dungeon</span><span class="wk-note">Weekly despite the name — all 7 can go on one day.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/7</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+              </div>
+            </li>
+            <li class="wk-item" data-id="nightmare" data-max="14">
+              <div class="wk-text"><span class="wk-name">Nightmare</span><span class="wk-note">2 charges a day — spend them before they cap.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/14</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+              </div>
+            </li>
+            <li class="wk-item" data-id="transcendence" data-max="2">
+              <div class="wk-text"><span class="wk-name">Transcendence</span><span class="wk-note">Arcana source. Reward pool 2 (blue cards) needs ~1.8k item level.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/2</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+              </div>
+            </li>
+            <li class="wk-item" data-id="expedition-conquest" data-max="3">
+              <div class="wk-text"><span class="wk-name">Expedition: Conquest</span><span class="wk-note">Chests cost Odyle energy.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/3</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+              </div>
+            </li>
+            <li class="wk-item" data-id="sanctuary" data-max="1">
+              <div class="wk-text"><span class="wk-name">Sanctuary (raid)</span><span class="wk-note">10-player raid.</span></div>
+              <div class="wk-ctrl"><button type="button" class="wk-check" aria-pressed="false" aria-label="Sanctuary (raid)"></button></div>
+            </li>
+            <li class="wk-item" data-id="ascension-trial" data-max="3">
+              <div class="wk-text"><span class="wk-name">Ascension Trial</span><span class="wk-note">Do it last, right before the reset, at your highest item level — first-clear rewards grow with difficulty.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/3</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <section class="wk-group" aria-labelledby="h-wk-resources">
+          <h2 id="h-wk-resources" class="card-title">Energy &amp; resources</h2>
+          <ul class="wk-list">
+            <li class="wk-item" data-id="odyle-craft" data-max="7">
+              <div class="wk-text"><span class="wk-name">Odyle energy craft (Substance Morph)</span><span class="wk-note">7 a week, 40 energy each — the weekly cap is lost if you skip it.</span></div>
+              <div class="wk-ctrl">
+                <button type="button" class="wk-btn" data-d="-1" aria-label="−1">−</button>
+                <span class="wk-count"><b>0</b>/7</span>
+                <button type="button" class="wk-btn" data-d="1" aria-label="+1">+</button>
+              </div>
+            </li>
+            <li class="wk-item" data-id="shugo-festa" data-max="1">
+              <div class="wk-text"><span class="wk-name">Shugo Festa keys spent</span><span class="wk-note">Keys stop at 14 — don&#39;t sit on a full stack.</span></div>
+              <div class="wk-ctrl"><button type="button" class="wk-check" aria-pressed="false" aria-label="Shugo Festa keys spent"></button></div>
+            </li>
+          </ul>
+        </section>
+        <section class="wk-group" aria-labelledby="h-wk-quests">
+          <h2 id="h-wk-quests" class="card-title">Quests &amp; Abyss</h2>
+          <ul class="wk-list">
+            <li class="wk-item" data-id="commander-scrolls" data-max="1">
+              <div class="wk-text"><span class="wk-name">Abyss commander scrolls</span><span class="wk-note">Pick them up and reroll for the rewards you need.</span></div>
+              <div class="wk-ctrl"><button type="button" class="wk-check" aria-pressed="false" aria-label="Abyss commander scrolls"></button></div>
+            </li>
+            <li class="wk-item" data-id="duty-quests" data-max="1">
+              <div class="wk-text"><span class="wk-name">Duty quests</span><span class="wk-note">Burn them in the pet dungeon (Odilium Repository).</span></div>
+              <div class="wk-ctrl"><button type="button" class="wk-check" aria-pressed="false" aria-label="Duty quests"></button></div>
+            </li>
+          </ul>
+        </section>
+        <p class="note">Weekly limits come from the Korean/Taiwanese servers and the EU test — they will be checked against the global client at launch.</p>
+      </div>
+    </div>
+  </div>
+</main>
+<script type="application/json" id="tracker-config">{"energy": {"cap": 840, "chest": 40, "interval_min": 180, "regen": 15}, "lang": "en", "reset": {"anchor": "2026-09-30T13:00:00Z", "confirmed": false}, "root": "../../", "t": {"char_default": "Main", "char_delete_confirm": "Delete this character and all its progress?", "energy_at_cap": "At the cap \u2014 regeneration is wasted, spend it", "energy_full": "full", "energy_next": "next +{n} in", "units": ["d", "h", "m", "s"]}}</script>
+<script src="../../assets/js/tracker.js" defer></script>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../en/">AION 2 Guides</a>
+      <p>Unofficial fan site, not affiliated with NCSOFT. AION 2 and its skill icons are © NCSOFT.</p>
+      <p>Last checked: 2026-09-27 (before the global launch).</p>
+      <p><a href="../../en/sources/">All sources and creators</a></p>
+    </div>
+  </div>
+</footer>
+<script src="../../assets/js/site.js" defer></script>
+</body>
+</html>

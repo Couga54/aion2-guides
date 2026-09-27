@@ -1,0 +1,44 @@
+{
+  "_note": "Weekly tracker items (/<lang>/weekly/). max = entries per week; 1 = a single checkbox. Limits come from KR/TW and the EU test client — check the in-game counters at launch and update here.",
+  "groups": [
+    {"id": "dungeons", "title": {"en": "Dungeons", "ru": "Подземелья"},
+     "items": [
+       {"id": "daily-dungeon", "max": 7,
+        "name": {"en": "Daily Dungeon", "ru": "Ежедневное подземелье (Daily Dungeon)"},
+        "note": {"en": "Weekly despite the name — all 7 can go on one day.", "ru": "Несмотря на название, лимит недельный — все 7 можно пройти за один день."}},
+       {"id": "nightmare", "max": 14,
+        "name": {"en": "Nightmare", "ru": "Кошмар (Nightmare)"},
+        "note": {"en": "2 charges a day — spend them before they cap.", "ru": "2 заряда в день — трать, пока не упёрлись в лимит."}},
+       {"id": "transcendence", "max": 2,
+        "name": {"en": "Transcendence", "ru": "Трансцендентность (Transcendence)"},
+        "note": {"en": "Arcana source. Reward pool 2 (blue cards) needs ~1.8k item level.", "ru": "Источник аркан. Для пула наград 2 (синие карты) нужно ~1.8k уровня предметов."}},
+       {"id": "expedition-conquest", "max": 3,
+        "name": {"en": "Expedition: Conquest", "ru": "Экспедиция: Завоевание (Conquest)"},
+        "note": {"en": "Chests cost Odyle energy.", "ru": "Сундуки тратят энергию Odyle."}},
+       {"id": "sanctuary", "max": 1,
+        "name": {"en": "Sanctuary (raid)", "ru": "Святилище (рейд)"},
+        "note": {"en": "10-player raid.", "ru": "Рейд на 10 человек."}},
+       {"id": "ascension-trial", "max": 3,
+        "name": {"en": "Ascension Trial", "ru": "Испытание восхождения (Ascension Trial)"},
+        "note": {"en": "Do it last, right before the reset, at your highest item level — first-clear rewards grow with difficulty.", "ru": "Проходи последним, прямо перед сбросом, на максимальном уровне предметов — награды за первое прохождение растут со сложностью."}}
+     ]},
+    {"id": "resources", "title": {"en": "Energy & resources", "ru": "Энергия и ресурсы"},
+     "items": [
+       {"id": "odyle-craft", "max": 7,
+        "name": {"en": "Odyle energy craft (Substance Morph)", "ru": "Крафт энергии Odyle (Substance Morph)"},
+        "note": {"en": "7 a week, 40 energy each — the weekly cap is lost if you skip it.", "ru": "7 в неделю по 40 энергии — пропущенный лимит сгорает."}},
+       {"id": "shugo-festa", "max": 1,
+        "name": {"en": "Shugo Festa keys spent", "ru": "Ключи Shugo Festa потрачены"},
+        "note": {"en": "Keys stop at 14 — don't sit on a full stack.", "ru": "Ключи копятся до 14 — не держи полный запас."}}
+     ]},
+    {"id": "quests", "title": {"en": "Quests & Abyss", "ru": "Квесты и Бездна"},
+     "items": [
+       {"id": "commander-scrolls", "max": 1,
+        "name": {"en": "Abyss commander scrolls", "ru": "Свитки командира Бездны"},
+        "note": {"en": "Pick them up and reroll for the rewards you need.", "ru": "Забери и перекинь награды на нужные."}},
+       {"id": "duty-quests", "max": 1,
+        "name": {"en": "Duty quests", "ru": "Служебные задания (Duty quests)"},
+        "note": {"en": "Burn them in the pet dungeon (Odilium Repository).", "ru": "Сдавай их в питомнике (Odilium Repository)."}}
+     ]}
+  ]
+}
