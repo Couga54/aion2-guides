@@ -2,6 +2,30 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-09-28-bosses-ranger",
+      "date": "2026-09-28",
+      "items": [
+        {
+          "href": "bosses/",
+          "en": "<strong>World bosses</strong> — the global Season 1 field bosses (Verteron, Altgard, Lower Reshanta) with a kill tracker. Respawn timers come after launch.",
+          "ru": "<strong>Мировые боссы</strong> — полевые боссы глобального 1 сезона (Бертрон, Альтгард, нижняя Бездна) с трекером убийств. Таймеры респауна — после запуска."
+        },
+        {
+          "href": "ranger/",
+          "en": "<strong>Ranger PvE rebuilt on Whelps' guide</strong> — Deadshot and Gale Arrow to 20, Vaizel's Authority first, the two-line macro, soul binds, accuracy and arcana.",
+          "ru": "<strong>PvE Лучника переписан по гайду Whelps</strong> — Прицельный выстрел и Шквал стрел до 20, сначала Сила Байзела, макрос из двух линий, связывания души, точность и арканы."
+        },
+        {
+          "en": "<strong>Only sourced guides</strong> — PvP for Ranger, Assassin, Chanter and Sorcerer is off until launch (no reliable source yet); modes built on Korean data carry a WIP note.",
+          "ru": "<strong>Только гайды с источниками</strong> — PvP у Лучника, Убийцы, Чародея и Волшебника отключён до запуска (надёжного источника нет); режимы на корейских данных помечены WIP."
+        },
+        {
+          "en": "<strong>Smoother site</strong> — modes switch with a fade, the header folds smoothly, the class menu animates, class figures step out of their cards on hover, and the theme button shows a sun or a moon.",
+          "ru": "<strong>Плавнее интерфейс</strong> — режимы переключаются с плавным переходом, шапка сворачивается плавно, меню классов анимировано, персонажи выходят из карточек при наведении, а кнопка темы показывает солнце или луну."
+        }
+      ]
+    },
+    {
       "id": "2026-09-28-sorcerer",
       "date": "2026-09-28",
       "items": [

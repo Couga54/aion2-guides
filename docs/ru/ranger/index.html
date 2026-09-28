@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru" data-mode="pve" data-class="ranger">
+<html lang="ru" data-mode="pve" data-class="ranger" data-off="pvp">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -29,10 +29,12 @@
   // Theme + guide mode before first paint (no flash).
   (function (r) {
     try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
-    var modes = ['pve', 'pvp', 'lvl'];
+    var off = (r.getAttribute('data-off') || '').split(' ');
+    var modes = ['pve', 'pvp', 'lvl'].filter(function (x) { return off.indexOf(x) < 0; });
     var m = new URLSearchParams(location.search).get('mode');
     if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
     if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+    else if (modes.indexOf(r.dataset.mode) < 0) r.dataset.mode = modes[0];
   })(document.documentElement);
 </script>
 <link rel="stylesheet" href="../../assets/css/site.css">
@@ -87,6 +89,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
         <span>Неделя</span>
       </a>
+      <a class="src-nav" href="../../ru/bosses/" title="Мировые боссы">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
+        <span>Боссы</span>
+      </a>
       <a class="src-nav src-nav-sources" href="../../ru/sources/" title="Источники и авторы">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
         <span>Источники</span>
@@ -97,7 +103,8 @@
 <button class="icon-btn wn-open wn-top" type="button" aria-label="История изменений" title="История изменений">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
       </button>      <button class="icon-btn theme-toggle" type="button" aria-label="Переключить тёмную тему" title="Переключить тёмную тему">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
       </button>
     </div>
   </div>
@@ -114,7 +121,7 @@
         <p class="kicker"><span data-only="pve">PvE</span><span data-only="pvp">PvP</span><span data-only="lvl">Прокачка</span> · Глобальный 1 сезон</p>
         <h1>Лучник</h1>
         <p class="class-hero-pitch">Урон с 20 метров на баффах, заряженных Прицельных выстрелах и кровотечениях — и лучший контроль дистанции в PvP.</p>
-        <p class="guide-ver"><span>Обновлено: <time datetime="2026-09-27">27 сентября 2026</time></span><span>Патч: <b>уточняется</b></span></p>
+        <p class="guide-ver"><span>Обновлено: <time datetime="2026-09-28">28 сентября 2026</time></span><span>Патч: <b>уточняется</b></span></p>
       </div>
     </div>
     <dl class="class-facts">
@@ -128,8 +135,8 @@
 <div class="guidebar">
   <div class="wrap guidebar-in">
     <div class="mode-switch" role="radiogroup" aria-label="Режим гайда">
-      <button type="button" role="radio" data-set-mode="pve" aria-checked="true">PvE</button>
-      <button type="button" role="radio" data-set-mode="pvp" aria-checked="false">PvP</button>
+      <button type="button" role="radio" data-set-mode="pve" aria-checked="false">PvE</button>
+      <button type="button" role="radio" data-set-mode="pvp" aria-checked="false" class="is-off" aria-disabled="true" disabled>PvP</button>
       <button type="button" role="radio" data-set-mode="lvl" aria-checked="false">Прокачка</button>
     </div>
     <nav class="toc-mobile" aria-label="На странице"></nav>
@@ -346,7 +353,7 @@
             <span class="step-when">~Ур. 22</span>
             <span class="step-text">
               <span class="step-tag">Класс</span>
-<img src="../../assets/icons/ranger/supporting-fire.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/ranger/bow-of-blessing.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/ranger/arrow-storm.webp" width="22" height="22" alt="" loading="lazy">              Стигмы: сначала <strong>Поддерживающий огонь</strong> (до 10), затем <strong>Благословенный лук</strong> и <strong>Ураган стрел</strong> для пачек. На капе переходи на <strong>Сила Байзела</strong> и <strong>Взрывная стрела</strong>.
+<img src="../../assets/icons/ranger/supporting-fire.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/ranger/bow-of-blessing.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/ranger/vaizels-authority.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/ranger/griffon-arrow.webp" width="22" height="22" alt="" loading="lazy">              Стигмы: <strong>Поддерживающий огонь</strong>, <strong>Благословенный лук</strong>, <strong>Сила Байзела</strong> и <strong>Стрела грифона</strong> (все четыре слота к 37 ур.). Качай ровно — 5 / 5 / 5, потом 10 — и первой доведи до 20 <strong>Сила Байзела</strong>, как только сможешь.
             </span>
           </label>
         </li>
@@ -357,7 +364,7 @@
             <span class="step-when">После стигм</span>
             <span class="step-text">
               <span class="step-tag">Класс</span>
-<img src="../../assets/icons/ranger/snipe.webp" width="22" height="22" alt="" loading="lazy">              Собери макрос: зажимай <strong>Меткий выстрел</strong> + кнопку макроса, <strong>Прицельный выстрел</strong> отпускай вручную, обновляй <strong>Помечающий выстрел</strong>, когда спадает Точность.
+<img src="../../assets/icons/ranger/snipe.webp" width="22" height="22" alt="" loading="lazy">              Собери макрос: линия грифона → линия шквала (10 мс) на ПКМ, держи <strong>Меткий выстрел</strong> на ЛКМ и заряженный <strong>Прицельный выстрел</strong> на боковой кнопке, обновляй <strong>Помечающий выстрел</strong>, когда спадает Точность.
             </span>
           </label>
         </li>
@@ -470,17 +477,12 @@
   <ul class="core-row">
   <li title="Прицельный выстрел">
     <img src="../../assets/icons/ranger/deadshot.webp" width="52" height="52" alt="Прицельный выстрел" loading="lazy">
-    <span class="core-lv">16</span>
+    <span class="core-lv">20</span>
     <span class="core-name">Прицельный выстрел</span>
-  </li>
-  <li title="Меткий выстрел">
-    <img src="../../assets/icons/ranger/snipe.webp" width="52" height="52" alt="Меткий выстрел" loading="lazy">
-    <span class="core-lv">16</span>
-    <span class="core-name">Меткий выстрел</span>
   </li>
   <li title="Шквал стрел">
     <img src="../../assets/icons/ranger/gale-arrow.webp" width="52" height="52" alt="Шквал стрел" loading="lazy">
-    <span class="core-lv">16</span>
+    <span class="core-lv">20</span>
     <span class="core-name">Шквал стрел</span>
   </li>
   <li title="Пронзающая стрела">
@@ -488,24 +490,19 @@
     <span class="core-lv">16</span>
     <span class="core-name">Пронзающая стрела</span>
   </li>
+  <li title="Меткий выстрел">
+    <img src="../../assets/icons/ranger/snipe.webp" width="52" height="52" alt="Меткий выстрел" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Меткий выстрел</span>
+  </li>
   <li title="Скоростная стрельба">
     <img src="../../assets/icons/ranger/tempest-shot.webp" width="52" height="52" alt="Скоростная стрельба" loading="lazy">
     <span class="core-lv">16</span>
     <span class="core-name">Скоростная стрельба</span>
   </li>
-  <li title="Рассекающая стрела">
-    <img src="../../assets/icons/ranger/burst-arrow.webp" width="52" height="52" alt="Рассекающая стрела" loading="lazy">
-    <span class="core-lv">16</span>
-    <span class="core-name">Рассекающая стрела</span>
-  </li>
 </ul>
   <h3>Стигмы</h3>
   <ol class="loadout">
-  <li class="slot" title="Поддерживающий огонь">
-    <img src="../../assets/icons/ranger/supporting-fire.webp" width="56" height="56" alt="Поддерживающий огонь" loading="lazy">
-    <span class="slot-lv">ур. 20</span>
-    <span class="slot-name">Поддерживающий огонь</span>
-  </li>
   <li class="slot" title="Сила Байзела">
     <img src="../../assets/icons/ranger/vaizels-authority.webp" width="56" height="56" alt="Сила Байзела" loading="lazy">
     <span class="slot-lv">ур. 20</span>
@@ -516,10 +513,15 @@
     <span class="slot-lv">ур. 10</span>
     <span class="slot-name">Благословенный лук</span>
   </li>
-  <li class="slot" title="Взрывная стрела">
-    <img src="../../assets/icons/ranger/explosive-arrow.webp" width="56" height="56" alt="Взрывная стрела" loading="lazy">
+  <li class="slot" title="Поддерживающий огонь">
+    <img src="../../assets/icons/ranger/supporting-fire.webp" width="56" height="56" alt="Поддерживающий огонь" loading="lazy">
     <span class="slot-lv">ур. 10</span>
-    <span class="slot-name">Взрывная стрела</span>
+    <span class="slot-name">Поддерживающий огонь</span>
+  </li>
+  <li class="slot" title="Стрела грифона">
+    <img src="../../assets/icons/ranger/griffon-arrow.webp" width="56" height="56" alt="Стрела грифона" loading="lazy">
+    <span class="slot-lv">ур. 10</span>
+    <span class="slot-name">Стрела грифона</span>
   </li>
 </ol>
   <h3>Ключевые пассивки</h3>
@@ -532,40 +534,40 @@
     <p>Лучник — стрелок с луком, который сражается примерно с <strong>20 метров</strong>: это дальность почти всех его скиллов. Урон у него один из лучших, но живучесть и полезность для группы низкие, поэтому позиционирование решает всё.</p>
   <div class="callout accent">
     <h3>Билд одной фразой</h3>
-    <p>Сначала накладывай баффы — <span class="sk"><img src="../../assets/icons/ranger/gale-arrow.webp" width="18" height="18" alt="" loading="lazy">Шквал стрел</span>, <span class="sk"><img src="../../assets/icons/ranger/marking-shot.webp" width="18" height="18" alt="" loading="lazy">Помечающий выстрел</span> (Точность: +300 крит. удара и +35% урона <span class="sk">Прицельный выстрел</span>), затем баффы стигм — и стреляй заряженным <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Прицельный выстрел</span>, пока тикают кровотечение и горение.</p>
+    <p>Накинь баффы, держи на цели <span class="sk"><img src="../../assets/icons/ranger/marking-shot.webp" width="18" height="18" alt="" loading="lazy">Помечающий выстрел</span> (Точность: +300 крит. удара и +35% урона <span class="sk">Прицельный выстрел</span>) и зажимай три кнопки: <span class="sk"><img src="../../assets/icons/ranger/snipe.webp" width="18" height="18" alt="" loading="lazy">Меткий выстрел</span>, макрос и полностью заряженный <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Прицельный выстрел</span>.</p>
   </div>
+  <p class="note">Гайд следует Whelps — мейну Лучника с 1 млн CP на корейских серверах, который играл и на глобальном тесте, — и его PvE-билду на эндгейм 1 сезона на questlog.</p>
 
 </section>
 <section id="global" class="g-section" data-only="pve pvp" aria-labelledby="h-global">
   <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-global">Глобальный 1 сезон: что меняется</h2></div>
-    <p>Глобальные серверы открываются <strong>5 октября 2026</strong> (ранний доступ для Founder's Pack — с 30 сентября). Гайд следует глобальному билду TitanTheF, который играл на EU-тесте, а не корейскому эндгейму. Что это значит для Лучника:</p>
+    <p>Глобальные серверы открываются <strong>5 октября 2026</strong> (ранний доступ для Founder's Pack — с 30 сентября). Что это значит для Лучника:</p>
   <div class="callout">
     <ul>
-      <li><strong>Реальные уровни скиллов.</strong> Daevanion в глобальной версии слабее и нет героической экипировки, поэтому цель — <strong>16 на шести основных скиллах</strong>, а не 20 на четырёх. Арканы поднимают самые важные выше.</li>
-      <li><strong>4 слота стигм, максимум 20.</strong> Глобальный набор — Поддерживающий огонь, Сила Байзела, Благословенный лук и Взрывная стрела; Стрела грифона из корейских билдов выпадает.</li>
-      <li><strong>Экипировка:</strong> после сюжета у тебя будет около <strong>800 GS</strong>. Какой тир экипировки лучше — станет ясно после запуска.</li>
+      <li><strong>Четыре стигмы на 37 уровне.</strong> Глобальный тест заканчивался на 37; пятый слот на 45 вероятен, но не подтверждён — если появится, в него идёт <span class="sk"><img src="../../assets/icons/ranger/explosive-arrow.webp" width="18" height="18" alt="" loading="lazy">Взрывная стрела</span>.</li>
+      <li><strong>До 20 дойдут лишь несколько скиллов.</strong> Очками скилл качается до 10; Daevanion даёт +4, кольца +2, арканы до +4. В 1 сезоне рассчитывай на 20 у Прицельного выстрела и Шквала стрел и на третий — если повезёт с арканами.</li>
+      <li><strong>Кап точности неизвестен.</strong> В Корее для Ludra это около 1300; глобальные цифры будут на запуске.</li>
       <li data-only="pvp"><strong>PvP:</strong> все стартуют в одинаковой слабой экипировке, меты ещё нет.</li>
     </ul>
   </div>
-  <p class="note">Активные скиллы и пассивки в глобальной и корейско-тайваньской версиях совпадают, но корейские билды рассчитаны на гораздо большие уровни скиллов и стигм, чем даёт глобальный 1 сезон.</p>
 
 </section>
 <section id="skills" class="g-section" data-only="pve" aria-labelledby="h-skills">
   <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-skills">Скиллы</h2></div>
-    <p>Шесть скиллов качаются до <strong>16</strong>, остальные остаются на <strong>12</strong>. Уровни дают очки навыков (10), Daevanion (14) и кольца (16); арканы добавляют сверху.</p>
+    <p>Слоты специализаций открываются на <strong>8</strong>, <strong>12</strong> и <strong>20</strong> (на 16 появляется новый вариант, но не слот) — каждый такой уровень заметно усиливает скилл. Сначала качай активные скиллы, пассивки потом.</p>
   <ul class="skill-grid">
 <li class="skill">
   <img class="skill-icon" src="../../assets/icons/ranger/deadshot.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
-    <div class="skill-name">Прицельный выстрел <span class="badge must">16</span></div>
-    <div class="skill-desc">Заряжаемый выстрел. Специализация «в движении» позволяет заряжать на ходу, а на 16 — доп. урон при попадании. Стреляй только под Точностью.</div>
+    <div class="skill-name">Прицельный выстрел <span class="badge must">20</span></div>
+    <div class="skill-desc">Заряжаемый выстрел — всегда на полный заряд и всегда под Точностью. До 20 бери первые две; если не нужно двигаться во время заряда, меняй «в движении» на +50% урона.</div>
     <ul class="spec-chips">
-<li><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li><li><span class="spec-lv">16</span>[Прицельный выстрел] Доп. урон при попадании</li>    </ul>
+<li><span class="spec-lv">8</span>СКР умений +30%</li><li><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li><li><span class="spec-lv">16</span>[Прицельный выстрел] Доп. урон при попадании</li>    </ul>
     <details class="spec-all">
       <summary>Все специализации</summary>
       <ul>
         <li class=""><span class="spec-lv">8</span>Удаление затраты ОМ</li>
-        <li class=""><span class="spec-lv">8</span>СКР умений +30%</li>
+        <li class="on"><span class="spec-lv">8</span>СКР умений +30%</li>
         <li class="on"><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>
         <li class=""><span class="spec-lv">12</span>Игнорирование блока и УКЛ, попадание мультиударом</li>
         <li class="on"><span class="spec-lv">16</span>[Прицельный выстрел] Доп. урон при попадании</li>
@@ -573,36 +575,18 @@
     </details>
   </div>
 </li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/snipe.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Меткий выстрел <span class="badge must">16</span></div>
-    <div class="skill-desc">Базовая атака — каждое попадание сокращает перезарядку Прицельного выстрела, а на 16 добавляет цепочку Tempest Arrow.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">12</span>Перезарядка [Прицельного выстрела] -1s при попадании</li><li><span class="spec-lv">16</span>Добавление 4-ой комбинации [Торнадо стрел]</li>    </ul>
-    <details class="spec-all">
-      <summary>Все специализации</summary>
-      <ul>
-        <li class=""><span class="spec-lv">8</span>Восстановление ОМ +20%</li>
-        <li class=""><span class="spec-lv">8</span>Поглощение 0.7% ОЗ</li>
-        <li class=""><span class="spec-lv">8</span>Шанс мультиудара +50% при попадании</li>
-        <li class="on"><span class="spec-lv">12</span>Перезарядка [Прицельного выстрела] -1s при попадании</li>
-        <li class="on"><span class="spec-lv">16</span>Добавление 4-ой комбинации [Торнадо стрел]</li>
-      </ul>
-    </details>
-  </div>
-</li><li class="skill">
   <img class="skill-icon" src="../../assets/icons/ranger/gale-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
-    <div class="skill-name">Шквал стрел <span class="badge must">16</span></div>
-    <div class="skill-desc">Бафф «Шквал»: скорость боя и урон. На 16 перезарядка короче на 10 сек. — держи его всегда.</div>
+    <div class="skill-name">Шквал стрел <span class="badge must">20</span></div>
+    <div class="skill-desc">Бафф скорости боя и урона. До 20 бери «в движении» и −10 сек. перезарядки (или урон вместо подвижности).</div>
     <ul class="spec-chips">
-<li><span class="spec-lv">12</span>Чем меньше целей попадания, тем больше увелич. СКР боя, усиление урона в PvE и PvP</li><li><span class="spec-lv">16</span>Перезарядка -10 сек.</li>    </ul>
+<li><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li><li><span class="spec-lv">12</span>Чем меньше целей попадания, тем больше увелич. СКР боя, усиление урона в PvE и PvP</li><li><span class="spec-lv">16</span>Перезарядка -10 сек.</li>    </ul>
     <details class="spec-all">
       <summary>Все специализации</summary>
       <ul>
         <li class=""><span class="spec-lv">8</span>+5 сек. к длительности</li>
         <li class=""><span class="spec-lv">8</span>50% шанс отталкивания при попадании</li>
-        <li class=""><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>
+        <li class="on"><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>
         <li class="on"><span class="spec-lv">12</span>Чем меньше целей попадания, тем больше увелич. СКР боя, усиление урона в PvE и PvP</li>
         <li class="on"><span class="spec-lv">16</span>Перезарядка -10 сек.</li>
       </ul>
@@ -612,7 +596,7 @@
   <img class="skill-icon" src="../../assets/icons/ranger/drill-dart.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Пронзающая стрела <span class="badge must">16</span></div>
-    <div class="skill-desc">Кровотечение и скорость скилла; на 16 срабатывает ещё раз.</div>
+    <div class="skill-desc">Минимум 16. Если на боссе не хватает живучести — поглощение ОЗ вместо скорости скилла.</div>
     <ul class="spec-chips">
 <li><span class="spec-lv">8</span>СКР умений +20%</li><li><span class="spec-lv">16</span>Доп. срабатывание [Пронзающей стрелы] 1 р.</li>    </ul>
     <details class="spec-all">
@@ -627,38 +611,38 @@
     </details>
   </div>
 </li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/tempest-shot.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <img class="skill-icon" src="../../assets/icons/ranger/snipe.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
-    <div class="skill-name">Скоростная стрельба <span class="badge must">16</span></div>
-    <div class="skill-desc">Основной филлер: доп. шанс крита и скорость скилла.</div>
+    <div class="skill-name">Меткий выстрел <span class="badge must">16</span></div>
+    <div class="skill-desc">Базовая атака: сокращает Прицельный выстрел и добавляет цепочку Tempest Arrow. На 20 — ещё мультиудар.</div>
     <ul class="spec-chips">
-<li><span class="spec-lv">8</span>Крит. удар от умения +10%</li><li><span class="spec-lv">16</span>СКР умений +20%</li>    </ul>
+<li><span class="spec-lv">12</span>Перезарядка [Прицельного выстрела] -1s при попадании</li><li><span class="spec-lv">16</span>Добавление 4-ой комбинации [Торнадо стрел]</li>    </ul>
     <details class="spec-all">
       <summary>Все специализации</summary>
       <ul>
-        <li class=""><span class="spec-lv">8</span>Затрата ОМ -20%</li>
-        <li class="on"><span class="spec-lv">8</span>Крит. удар от умения +10%</li>
-        <li class=""><span class="spec-lv">8</span>Чем меньше целей попадания, тем больше увеличение урона (макс. до 12%)</li>
-        <li class=""><span class="spec-lv">12</span>Отталкивание с шансом 5% при успешном крит. ударе</li>
-        <li class="on"><span class="spec-lv">16</span>СКР умений +20%</li>
+        <li class=""><span class="spec-lv">8</span>Восстановление ОМ +20%</li>
+        <li class=""><span class="spec-lv">8</span>Поглощение 0.7% ОЗ</li>
+        <li class=""><span class="spec-lv">8</span>Шанс мультиудара +50% при попадании</li>
+        <li class="on"><span class="spec-lv">12</span>Перезарядка [Прицельного выстрела] -1s при попадании</li>
+        <li class="on"><span class="spec-lv">16</span>Добавление 4-ой комбинации [Торнадо стрел]</li>
       </ul>
     </details>
   </div>
 </li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/burst-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <img class="skill-icon" src="../../assets/icons/ranger/tempest-shot.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
-    <div class="skill-name">Рассекающая стрела <span class="badge must">16</span></div>
-    <div class="skill-desc">Бьёт только цель под Замедлением или Пленом; на 16 может сбросить себе перезарядку.</div>
+    <div class="skill-name">Скоростная стрельба <span class="badge must">16</span></div>
+    <div class="skill-desc">Один из главных источников урона, но 16 хватает — крит всё равно будет в капе. В PvP его качают до 20 ради отбрасывания.</div>
     <ul class="spec-chips">
-<li><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li><li><span class="spec-lv">16</span>Шанс 25% сбросить время перезарядки при попадании [Рассекающей стрелы]</li>    </ul>
+<li><span class="spec-lv">8</span>Чем меньше целей попадания, тем больше увеличение урона (макс. до 12%)</li><li><span class="spec-lv">16</span>СКР умений +20%</li>    </ul>
     <details class="spec-all">
       <summary>Все специализации</summary>
       <ul>
-        <li class=""><span class="spec-lv">8</span>Поглощение 10% ОЗ</li>
-        <li class=""><span class="spec-lv">8</span>Шанс мультиудара +50% при попадании</li>
-        <li class="on"><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>
-        <li class=""><span class="spec-lv">12</span>Чем меньше целей попадания, тем больше увеличение урона (макс. до 20%)</li>
-        <li class="on"><span class="spec-lv">16</span>Шанс 25% сбросить время перезарядки при попадании [Рассекающей стрелы]</li>
+        <li class=""><span class="spec-lv">8</span>Затрата ОМ -20%</li>
+        <li class=""><span class="spec-lv">8</span>Крит. удар от умения +10%</li>
+        <li class="on"><span class="spec-lv">8</span>Чем меньше целей попадания, тем больше увеличение урона (макс. до 12%)</li>
+        <li class=""><span class="spec-lv">12</span>Отталкивание с шансом 5% при успешном крит. ударе</li>
+        <li class="on"><span class="spec-lv">16</span>СКР умений +20%</li>
       </ul>
     </details>
   </div>
@@ -666,7 +650,7 @@
   <img class="skill-icon" src="../../assets/icons/ranger/snare-shot.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Опутывающий выстрел <span class="badge opt">12</span></div>
-    <div class="skill-desc">Замедляет цель — это включает Рассекающую стрелу, Взрывную стрелу и Пленяющий взгляд.</div>
+    <div class="skill-desc">12 почти бесплатно даёт доска Daevanion.</div>
     <ul class="spec-chips">
 <li><span class="spec-lv">8</span>СКР умений +20%</li><li><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>    </ul>
     <details class="spec-all">
@@ -684,7 +668,7 @@
   <img class="skill-icon" src="../../assets/icons/ranger/marking-shot.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Помечающий выстрел <span class="badge opt">12</span></div>
-    <div class="skill-desc">Точность: +шанс крита. Специализация +5 сек. упрощает поддержание.</div>
+    <div class="skill-desc">+5% шанса идеального удара, +5 сек. длительности.</div>
     <ul class="spec-chips">
 <li><span class="spec-lv">8</span>Совершенный удар +5% во время действия умения</li><li><span class="spec-lv">8</span>+5 сек. к длительности</li>    </ul>
     <details class="spec-all">
@@ -699,20 +683,20 @@
     </details>
   </div>
 </li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/suppressing-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <img class="skill-icon" src="../../assets/icons/ranger/burst-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
-    <div class="skill-name">Поражающая стрела <span class="badge opt">12</span></div>
-    <div class="skill-desc">Мультиудар и скорость скилла; в PvP — твоё оглушение.</div>
+    <div class="skill-name">Рассекающая стрела <span class="badge opt">12</span></div>
+    <div class="skill-desc">На 20 бери и последнюю специализацию.</div>
     <ul class="spec-chips">
-<li><span class="spec-lv">8</span>Шанс мультиудара +50% при попадании</li><li><span class="spec-lv">8</span>СКР умений +20%</li>    </ul>
+<li><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li><li><span class="spec-lv">12</span>Чем меньше целей попадания, тем больше увеличение урона (макс. до 20%)</li>    </ul>
     <details class="spec-all">
       <summary>Все специализации</summary>
       <ul>
-        <li class="on"><span class="spec-lv">8</span>Шанс мультиудара +50% при попадании</li>
-        <li class=""><span class="spec-lv">8</span>Длительность Оглушения +1 сек.</li>
-        <li class="on"><span class="spec-lv">8</span>СКР умений +20%</li>
-        <li class=""><span class="spec-lv">12</span>Шанс Оглушения +20%</li>
-        <li class=""><span class="spec-lv">16</span>Шанс 25% сбросить время перезарядки при попадании [Поражающей стрелой]</li>
+        <li class=""><span class="spec-lv">8</span>Поглощение 10% ОЗ</li>
+        <li class=""><span class="spec-lv">8</span>Шанс мультиудара +50% при попадании</li>
+        <li class="on"><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>
+        <li class="on"><span class="spec-lv">12</span>Чем меньше целей попадания, тем больше увеличение урона (макс. до 20%)</li>
+        <li class=""><span class="spec-lv">16</span>Шанс 25% сбросить время перезарядки при попадании [Рассекающей стрелы]</li>
       </ul>
     </details>
   </div>
@@ -720,7 +704,7 @@
   <img class="skill-icon" src="../../assets/icons/ranger/explosion-trap.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Взрывной капкан <span class="badge opt">12</span></div>
-    <div class="skill-desc">Стягивает пачку для АоЕ.</div>
+    <div class="skill-desc">Только чтобы стянуть мобов (например, в Transcendence).</div>
     <ul class="spec-chips">
 <li><span class="spec-lv">8</span>Притягивание врагов при взрыве</li><li><span class="spec-lv">8</span>Доп. урон через 3 сек. при попадании</li>    </ul>
     <details class="spec-all">
@@ -735,20 +719,20 @@
     </details>
   </div>
 </li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/arrow-scattershot.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <img class="skill-icon" src="../../assets/icons/ranger/suppressing-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
-    <div class="skill-name">Град из стрел <span class="badge opt">12</span></div>
-    <div class="skill-desc">Только по целям под Оглушающей шкалой.</div>
+    <div class="skill-name">Поражающая стрела <span class="badge opt">12</span></div>
+    <div class="skill-desc">Только ради оглушения — на прокачке пригодится, в эндгейм-PvE не используется.</div>
     <ul class="spec-chips">
-<li><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li><li><span class="spec-lv">12</span>Гарантир. мультиудар при попадании</li>    </ul>
+<li><span class="spec-lv">8</span>Шанс мультиудара +50% при попадании</li><li><span class="spec-lv">8</span>СКР умений +20%</li>    </ul>
     <details class="spec-all">
       <summary>Все специализации</summary>
       <ul>
-        <li class=""><span class="spec-lv">8</span>Поглощение 5% ОЗ</li>
-        <li class=""><span class="spec-lv">8</span>Восстановление 120 ОМ при попадании</li>
-        <li class="on"><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>
-        <li class="on"><span class="spec-lv">12</span>Гарантир. мультиудар при попадании</li>
-        <li class=""><span class="spec-lv">16</span>Перезарядка всех умений -1s при попадании</li>
+        <li class="on"><span class="spec-lv">8</span>Шанс мультиудара +50% при попадании</li>
+        <li class=""><span class="spec-lv">8</span>Длительность Оглушения +1 сек.</li>
+        <li class="on"><span class="spec-lv">8</span>СКР умений +20%</li>
+        <li class=""><span class="spec-lv">12</span>Шанс Оглушения +20%</li>
+        <li class=""><span class="spec-lv">16</span>Шанс 25% сбросить время перезарядки при попадании [Поражающей стрелой]</li>
       </ul>
     </details>
   </div>
@@ -756,17 +740,33 @@
   <img class="skill-icon" src="../../assets/icons/ranger/defiance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Снятие шока <span class="badge opt">12</span></div>
-    <div class="skill-desc">Снятие контроля.</div>
+    <div class="skill-desc">На 16 — третья и пятая специализации.</div>
     <ul class="spec-chips">
-<li><span class="spec-lv">8</span>При использовании [Снятия шока] восстанавливает 20% ОЗ</li><li><span class="spec-lv">12</span>Длительность Непреклонности +2 сек.</li>    </ul>
+<li><span class="spec-lv">8</span>При использовании [Снятия шока] восстанавливает 1000 ОД</li><li><span class="spec-lv">8</span>При использовании [Снятия шока] восстанавливает 20% ОЗ</li>    </ul>
     <details class="spec-all">
       <summary>Все специализации</summary>
       <ul>
         <li class=""><span class="spec-lv">8</span>Добавляет 2-ой комбинации [Стрела молнии]</li>
-        <li class=""><span class="spec-lv">8</span>При использовании [Снятия шока] восстанавливает 1000 ОД</li>
+        <li class="on"><span class="spec-lv">8</span>При использовании [Снятия шока] восстанавливает 1000 ОД</li>
         <li class="on"><span class="spec-lv">8</span>При использовании [Снятия шока] восстанавливает 20% ОЗ</li>
-        <li class="on"><span class="spec-lv">12</span>Длительность Непреклонности +2 сек.</li>
+        <li class=""><span class="spec-lv">12</span>Длительность Непреклонности +2 сек.</li>
         <li class=""><span class="spec-lv">16</span>Стойкость к урону в PvE +50% и стойкость к урону в PvP +25% во время действия Непреклонности</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/arrow-scattershot.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Град из стрел <span class="badge skip">не качать</span></div>
+    <div class="skill-desc">Работает только по ошеломлённому боссу, а обычная ротация бьёт сильнее — не качай.</div>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Поглощение 5% ОЗ</li>
+        <li class=""><span class="spec-lv">8</span>Восстановление 120 ОМ при попадании</li>
+        <li class=""><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>
+        <li class=""><span class="spec-lv">12</span>Гарантир. мультиудар при попадании</li>
+        <li class=""><span class="spec-lv">16</span>Перезарядка всех умений -1s при попадании</li>
       </ul>
     </details>
   </div>
@@ -775,80 +775,77 @@
 </section>
 <section id="passives" class="g-section" data-only="pve" aria-labelledby="h-passives">
   <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-passives">Пассивки</h2></div>
-    <p>Билд держится на <span class="sk"><img src="../../assets/icons/ranger/focused-eye.webp" width="18" height="18" alt="" loading="lazy">Око концентрации</span> (16), затем <span class="sk"><img src="../../assets/icons/ranger/hunters-resolve.webp" width="18" height="18" alt="" loading="lazy">Решимость охотника</span> и <span class="sk"><img src="../../assets/icons/ranger/hunters-soul.webp" width="18" height="18" alt="" loading="lazy">Душа охотника</span> (15). Всё остальное — 10.</p>
+    <p>По-настоящему важны только <span class="sk"><img src="../../assets/icons/ranger/focused-eye.webp" width="18" height="18" alt="" loading="lazy">Око концентрации</span> (увеличение урона) и <span class="sk"><img src="../../assets/icons/ranger/hunters-resolve.webp" width="18" height="18" alt="" loading="lazy">Решимость охотника</span> (крит. урон); третья — <span class="sk"><img src="../../assets/icons/ranger/hunters-soul.webp" width="18" height="18" alt="" loading="lazy">Душа охотника</span>.</p>
   <div class="callout"><ul>
-    <li><span class="sk"><img src="../../assets/icons/ranger/focused-eye.webp" width="18" height="18" alt="" loading="lazy">Око концентрации</span> — Точность, усиление урона в PvE и шанс двойного удара; Сила Байзела умножает её.</li>
-    <li><span class="sk"><img src="../../assets/icons/ranger/hunters-resolve.webp" width="18" height="18" alt="" loading="lazy">Решимость охотника</span> — усиление крит. урона.</li>
-    <li><span class="sk"><img src="../../assets/icons/ranger/hunters-soul.webp" width="18" height="18" alt="" loading="lazy">Душа охотника</span> — доп. урон при крите.</li>
-    <li><span class="sk"><img src="../../assets/icons/ranger/concentrated-fire.webp" width="18" height="18" alt="" loading="lazy">Шквальный огонь</span> и <span class="sk"><img src="../../assets/icons/ranger/rooting-eye.webp" width="18" height="18" alt="" loading="lazy">Пленяющий взгляд</span> — доп. удары по кровоточащим и замедленным целям; 10 достаточно.</li>
+    <li>Дальше атакующие: <span class="sk"><img src="../../assets/icons/ranger/concentrated-fire.webp" width="18" height="18" alt="" loading="lazy">Шквальный огонь</span>, <span class="sk"><img src="../../assets/icons/ranger/rooting-eye.webp" width="18" height="18" alt="" loading="lazy">Пленяющий взгляд</span>, <span class="sk"><img src="../../assets/icons/ranger/melee-fire.webp" width="18" height="18" alt="" loading="lazy">Стрельба вблизи</span>.</li>
+    <li>Затем <span class="sk"><img src="../../assets/icons/ranger/vigilant-eye.webp" width="18" height="18" alt="" loading="lazy">Всевидящее око</span> (макс. ОЗ) и <span class="sk"><img src="../../assets/icons/ranger/revitalization-contract.webp" width="18" height="18" alt="" loading="lazy">Контракт оживления</span> (лечение при 10% ОЗ).</li>
+    <li><span class="sk"><img src="../../assets/icons/ranger/unyielding-resolve.webp" width="18" height="18" alt="" loading="lazy">Железная воля</span> и <span class="sk"><img src="../../assets/icons/ranger/wind-vigor.webp" width="18" height="18" alt="" loading="lazy">Сила ветра</span> почти бесполезны — качай остатками очков.</li>
   </ul></div>
 
 </section>
 <section id="gear" class="g-section" data-only="pve" aria-labelledby="h-gear">
-  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-gear">Экипировка и статы</h2></div>
-    <div class="callout"><ul>
-    <li><strong>После сюжета:</strong> около 800 GS; дальше — прогрессия 45+ (подземелья, крафт, Бездна).</li>
-    <li><strong>Кольца:</strong> +1 к уровню основных скиллов.</li>
-    <li><strong>Точность</strong> важна: промах Прицельным выстрелом — самая большая потеря урона для Лучника. Затем Атака и шанс крита.</li>
-    <li>Какой тир экипировки добывать — станет ясно после глобального запуска.</li>
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-gear">Экипировка и связывание души</h2></div>
+    <p>С экипировкой всё просто: бери предметы с наибольшим уровнем. На эндгейме это крафтовые оружие, гард и бижутерия, браслеты из Ludra и броня из подземелий.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Слот</th><th>Обязательные связывания души</th></tr></thead>
+    <tbody>
+      <tr><td>Оружие, гард</td><td>Скорость боя, увеличение урона оружия, увеличение урона, Мощь (+ мультиудар у крафтового)</td></tr>
+      <tr><td>Шлем, плащ</td><td>Двойной шанс, увеличение атаки</td></tr>
+      <tr><td>Наплечники</td><td>Двойной шанс, увеличение крит. урона</td></tr>
+      <tr><td>Нагрудник</td><td>Увеличение урона</td></tr>
+      <tr><td>Поножи</td><td>Увеличение атаки, стойкость к урону</td></tr>
+      <tr><td>Перчатки / сапоги</td><td>Скорость боя / скорость передвижения</td></tr>
+      <tr><td>Серьги / ожерелье</td><td>Скорость передвижения + Мощь / скорость боя + Мощь</td></tr>
+      <tr><td>Кольца</td><td>Уровни <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Прицельный выстрел</span> и <span class="sk"><img src="../../assets/icons/ranger/gale-arrow.webp" width="18" height="18" alt="" loading="lazy">Шквал стрел</span> (затем Пронзающая стрела или Меткий выстрел); иначе Мощь</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout"><ul>
+    <li><strong>Точность — второй по важности стат.</strong> Парированный удар теряет больше половины урона, а Лучник не всегда может бить в спину. Цель — ~1100–1200 (саппорты добавляют +100).</li>
+    <li>Остальные слоты: атака, шанс крита или Око концентрации — оставляй то, что выпало первым. Крит Лучнику капнуть проще (+300 от Помечающего выстрела).</li>
+    <li><strong>Манастоуны:</strong> в 1 сезоне хватит одной жёлтой строки атаки; не гонись за сетами «удар спереди/сзади».</li>
+    <li>Перекатывай связывания только на броне, где уже есть одно из обязательных.</li>
   </ul></div>
 
 </section>
 <section id="arcana" class="g-section" data-only="pve" aria-labelledby="h-arcana">
   <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-arcana">Арканы</h2></div>
-    <p>Ищи карты, которые дают уровни <span class="sk"><img src="../../assets/icons/ranger/snipe.webp" width="18" height="18" alt="" loading="lazy">Меткий выстрел</span>, <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Прицельный выстрел</span>, <span class="sk"><img src="../../assets/icons/ranger/tempest-shot.webp" width="18" height="18" alt="" loading="lazy">Скоростная стрельба</span> и <span class="sk"><img src="../../assets/icons/ranger/gale-arrow.webp" width="18" height="18" alt="" loading="lazy">Шквал стрел</span> — этим четырём уровни выше 16 дают больше всего.</p>
-  <p>Карта, прокачанная до 5, в среднем даёт около +2 к случайному скиллу из своего списка, так что в 1 сезоне выйдет поднять выше 16 два-три из них. Если выбирать — сначала Прицельный выстрел и Шквал стрел.</p>
+    <p>Арканы — способ поднять скиллы выше 16. Цель — <strong>+4 к <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Прицельный выстрел</span> и <span class="sk"><img src="../../assets/icons/ranger/gale-arrow.webp" width="18" height="18" alt="" loading="lazy">Шквал стрел</span></strong>; +4 к <span class="sk"><img src="../../assets/icons/ranger/snipe.webp" width="18" height="18" alt="" loading="lazy">Меткий выстрел</span> даст третий скилл на 20.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Карта</th><th>Тип</th><th>Что ловить</th></tr></thead>
+    <tbody>
+      <tr><td>Grail</td><td>Vigor</td><td>Прицельный выстрел, Шквал стрел (джокер: может выпасть что угодно)</td></tr>
+      <tr><td>Parchment</td><td>Vigor</td><td>Меткий выстрел, Скоростная стрельба (Пронзающая и Рассекающая стрелы — запасной вариант)</td></tr>
+      <tr><td>Compass</td><td>Death или Freedom</td><td>Прицельный выстрел, Шквал стрел</td></tr>
+      <tr><td>Bell</td><td>Destruction</td><td>Решимость охотника</td></tr>
+      <tr><td>Mirror</td><td>Wisdom</td><td>Око концентрации</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Арканы падают с 4-й стадии Transcendence и зависят от удачи — не переживай, во 2 сезоне систему, скорее всего, поменяют.</p>
 
 </section>
 <section id="daevanion" class="g-section" data-only="pve pvp" aria-labelledby="h-daevanion">
   <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-daevanion">Доски Daevanion</h2></div>
-    <p>Daevanion поднимает скиллы с 10 до 14. Каждый синий узел — <strong>+1 уровень</strong> своего скилла.</p>
-  <div class="table-wrap"><table>
-    <thead><tr><th>Доска</th><th>Открытие</th><th>Фокус</th></tr></thead>
-    <tbody>
-      <tr><td>Nezekan</td><td>Ур. 12</td><td>Уровни скиллов, базовые характеристики</td></tr>
-      <tr><td>Zikel</td><td>Ур. 20</td><td>Уклонение, усиление / стойкость к урону</td></tr>
-      <tr><td>Vaizel</td><td>Ур. 30</td><td>Критический урон — очень важно для Лучника</td></tr>
-      <tr><td>Triniel</td><td>Ур. 40</td><td>Мультиудар (в основном PvP)</td></tr>
-      <tr><td>Ariel</td><td>Ур. 45</td><td>Урон и защита в PvE</td></tr>
-      <tr><td>Azphel</td><td>Ур. 45</td><td>Урон и защита в PvP</td></tr>
-    </tbody>
-  </table></div>
+    <p>Со временем ты заполнишь почти все доски, так что не нужно всё планировать заранее. Каждый синий узел — <strong>+1 уровень</strong> его скилла.</p>
   <div class="callout"><ul>
-    <li data-only="pve"><strong>Приоритет:</strong> все золотые/синие узлы <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Прицельный выстрел</span>, <span class="sk"><img src="../../assets/icons/ranger/gale-arrow.webp" width="18" height="18" alt="" loading="lazy">Шквал стрел</span>, <span class="sk"><img src="../../assets/icons/ranger/drill-dart.webp" width="18" height="18" alt="" loading="lazy">Пронзающая стрела</span>, <span class="sk"><img src="../../assets/icons/ranger/snare-shot.webp" width="18" height="18" alt="" loading="lazy">Опутывающий выстрел</span> и ключевых пассивок, затем оранжевые.</li>
+    <li data-only="pve"><strong>1.</strong> Синие узлы, которые поднимают активные скиллы до 12 (открывает вторую специализацию): <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Прицельный выстрел</span>, <span class="sk"><img src="../../assets/icons/ranger/snipe.webp" width="18" height="18" alt="" loading="lazy">Меткий выстрел</span>, <span class="sk"><img src="../../assets/icons/ranger/gale-arrow.webp" width="18" height="18" alt="" loading="lazy">Шквал стрел</span>, <span class="sk"><img src="../../assets/icons/ranger/drill-dart.webp" width="18" height="18" alt="" loading="lazy">Пронзающая стрела</span>, <span class="sk"><img src="../../assets/icons/ranger/burst-arrow.webp" width="18" height="18" alt="" loading="lazy">Рассекающая стрела</span>.</li>
+    <li data-only="pve"><strong>2.</strong> Атакующие оранжевые узлы в углах досок — скорость боя, сокращение перезарядки. Иди кратчайшим путём и бери скиллы по дороге.</li>
+    <li data-only="pve"><strong>3.</strong> Узлы атаки, шанса крита, <span class="sk"><img src="../../assets/icons/ranger/focused-eye.webp" width="18" height="18" alt="" loading="lazy">Око концентрации</span> и <span class="sk"><img src="../../assets/icons/ranger/hunters-resolve.webp" width="18" height="18" alt="" loading="lazy">Решимость охотника</span>; затем всё остальное (защита: защита, ОЗ, сопротивление криту).</li>
+    <li data-only="pve">В самом конце обходи узлы MP+50. Сброс доски стоит дёшево.</li>
     <li data-only="pvp"><strong>Приоритет:</strong> синие узлы <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Прицельный выстрел</span>, <span class="sk"><img src="../../assets/icons/ranger/snare-shot.webp" width="18" height="18" alt="" loading="lazy">Опутывающий выстрел</span>, <span class="sk"><img src="../../assets/icons/ranger/suppressing-arrow.webp" width="18" height="18" alt="" loading="lazy">Поражающая стрела</span>, <span class="sk"><img src="../../assets/icons/ranger/marking-shot.webp" width="18" height="18" alt="" loading="lazy">Помечающий выстрел</span>, <span class="sk"><img src="../../assets/icons/ranger/defiance.webp" width="18" height="18" alt="" loading="lazy">Снятие шока</span>.</li>
-    <li data-only="pve"><strong>Ariel, а не Azphel</strong> — стоят одинаково, и ошибка здесь самая дорогая во всей системе.</li>
-    <li data-only="pvp"><strong>Azphel, а не Ariel</strong>, и Triniel пораньше.</li>
+    <li data-only="pve"><strong>Ariel, а не Azphel</strong> на 45.</li>
+    <li data-only="pvp"><strong>Azphel, а не Ariel</strong>, и Triniel раньше.</li>
   </ul></div>
-  <p class="note">Схемы досок взяты из корейско-тайваньского клиента, значения в глобале ниже. Сверься с доской в игре, прежде чем вкладывать весь маршрут.</p>
 
 </section>
 <section id="stigmas" class="g-section" data-only="pve" aria-labelledby="h-stigmas">
   <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-stigmas">Стигмы</h2></div>
-    <p>Глобальный набор из билда TitanTheF. В PvE не бери Невидимость, Внезапный толчок, Стрелу печати, Иллюзорную стрелу, Капкан и Сокрушающий натиск.</p>
+    <p>Сначала качай их ровно — 5 / 5 / 5, потом 10, — чтобы брать каждый порог. Как только хватит очков на <strong>Силу Байзела 20</strong>, сбрось и вложи сначала в неё: с этого момента Лучник раскрывается. Затем по очереди до 20 Благословенный лук, Поддерживающий огонь и Стрела грифона.</p>
   <ul class="skill-grid">
 <li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/supporting-fire.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Поддерживающий огонь <span class="badge must">Ур. 20</span></div>
-    <div class="skill-desc">Сфера, которая стреляет вместе с тобой; на 20 её выстрелы всегда критуют. Первая стигма на прокачке.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">5</span>Шанс срабатывания +25%</li><li><span class="spec-lv">10</span>Длительность умения +15 сек.</li><li><span class="spec-lv">15</span>Перезарядка -30 сек.</li><li><span class="spec-lv">20</span>Гарантир. крит. удар при попадании</li>    </ul>
-    <details class="spec-all">
-      <summary>Все специализации</summary>
-      <ul>
-        <li class="on"><span class="spec-lv">5</span>Шанс срабатывания +25%</li>
-        <li class="on"><span class="spec-lv">10</span>Длительность умения +15 сек.</li>
-        <li class="on"><span class="spec-lv">15</span>Перезарядка -30 сек.</li>
-        <li class="on"><span class="spec-lv">20</span>Гарантир. крит. удар при попадании</li>
-      </ul>
-    </details>
-  </div>
-</li><li class="skill">
   <img class="skill-icon" src="../../assets/icons/ranger/vaizels-authority.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
-    <div class="skill-name">Сила Байзела <span class="badge must">Ур. 20</span></div>
-    <div class="skill-desc">+20% Атаки; ×1,5 к Оку концентрации и Душе охотника. На 20 криты сокращают все перезарядки на 1 сек.</div>
+    <div class="skill-name">Сила Байзела <span class="badge must">Lv 20</span></div>
+    <div class="skill-desc">×1,5 к Оку концентрации и Душе охотника; на 20 каждый крит с шансом 50% сокращает перезарядку <em>всех</em> скиллов на 1 сек. — огромный прирост урона.</div>
     <ul class="spec-chips">
 <li><span class="spec-lv">5</span>Совершенный удар +10% во время действия умения</li><li><span class="spec-lv">10</span>Эффект [Око концентрации] во время действия умения x1,5</li><li><span class="spec-lv">15</span>Эффект [Души охотника] во время действия умения x1,5</li><li><span class="spec-lv">20</span>С шансом 50% уменьшает время перезарядки всех умений на 1s сек. при крит. ударе во время действия</li>    </ul>
     <details class="spec-all">
@@ -864,25 +861,59 @@
 </li><li class="skill">
   <img class="skill-icon" src="../../assets/icons/ranger/bow-of-blessing.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
-    <div class="skill-name">Благословенный лук <span class="badge must">Ур. 10</span></div>
-    <div class="skill-desc">Бафф шанса крита и Точности.</div>
+    <div class="skill-name">Благословенный лук <span class="badge must">Lv 10 → 20</span></div>
+    <div class="skill-desc">Мультиудар, атака от крита, крит. урон и двойной шанс.</div>
     <ul class="spec-chips">
-<li><span class="spec-lv">5</span>Попадание мультиударом +50% во время действия умения</li><li><span class="spec-lv">10</span>Увелич. АТК пропорционально крит. удару во время действия</li>    </ul>
+<li><span class="spec-lv">5</span>Попадание мультиударом +50% во время действия умения</li><li><span class="spec-lv">10</span>Увелич. АТК пропорционально крит. удару во время действия</li><li><span class="spec-lv">15</span>Увеличение крит. урона +20% во время действия умения</li><li><span class="spec-lv">20</span>Мощный удар +7% во время действия умения</li>    </ul>
     <details class="spec-all">
       <summary>Все специализации</summary>
       <ul>
         <li class="on"><span class="spec-lv">5</span>Попадание мультиударом +50% во время действия умения</li>
         <li class="on"><span class="spec-lv">10</span>Увелич. АТК пропорционально крит. удару во время действия</li>
-        <li class=""><span class="spec-lv">15</span>Увеличение крит. урона +20% во время действия умения</li>
-        <li class=""><span class="spec-lv">20</span>Мощный удар +7% во время действия умения</li>
+        <li class="on"><span class="spec-lv">15</span>Увеличение крит. урона +20% во время действия умения</li>
+        <li class="on"><span class="spec-lv">20</span>Мощный удар +7% во время действия умения</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/supporting-fire.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Поддерживающий огонь <span class="badge must">Lv 10 → 20</span></div>
+    <div class="skill-desc">Сфера, которая стреляет вместе с тобой; перезарядка как у Силы Байзела, поэтому их можно повесить на одну кнопку.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Шанс срабатывания +25%</li><li><span class="spec-lv">10</span>Длительность умения +15 сек.</li><li><span class="spec-lv">15</span>Перезарядка -30 сек.</li><li><span class="spec-lv">20</span>Гарантир. крит. удар при попадании</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Шанс срабатывания +25%</li>
+        <li class="on"><span class="spec-lv">10</span>Длительность умения +15 сек.</li>
+        <li class="on"><span class="spec-lv">15</span>Перезарядка -30 сек.</li>
+        <li class="on"><span class="spec-lv">20</span>Гарантир. крит. удар при попадании</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill">
+  <img class="skill-icon" src="../../assets/icons/ranger/griffon-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Стрела грифона <span class="badge must">Lv 10 → 20</span></div>
+    <div class="skill-desc">Периодический урон «Багровое пламя»; открывает линию макроса.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Замена на умение с возможностью перемещения</li><li><span class="spec-lv">10</span>Длительность постоянного урона +5 сек.</li><li><span class="spec-lv">15</span>Усиление Искры: доп. урон при атаке цели в состоянии «Искра»</li><li><span class="spec-lv">20</span>Интервалы постоянного урона сокращаются на 50%</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Замена на умение с возможностью перемещения</li>
+        <li class="on"><span class="spec-lv">10</span>Длительность постоянного урона +5 сек.</li>
+        <li class="on"><span class="spec-lv">15</span>Усиление Искры: доп. урон при атаке цели в состоянии «Искра»</li>
+        <li class="on"><span class="spec-lv">20</span>Интервалы постоянного урона сокращаются на 50%</li>
       </ul>
     </details>
   </div>
 </li><li class="skill">
   <img class="skill-icon" src="../../assets/icons/ranger/explosive-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
-    <div class="skill-name">Взрывная стрела <span class="badge must">Ур. 10</span></div>
-    <div class="skill-desc">Доп. урон по замедленным целям — Опутывающий выстрел держит их замедленными.</div>
+    <div class="skill-name">Взрывная стрела <span class="badge opt">5-й слот</span></div>
+    <div class="skill-desc">Если на 45 откроется пятый слот: держи её на 5–10, пока остальные не дойдут до 20.</div>
     <ul class="spec-chips">
 <li><span class="spec-lv">5</span>Перезарядка -15 сек.</li><li><span class="spec-lv">10</span>+10% дополнительного урона по целям, находящимся под эффектом Замедления или Плена</li>    </ul>
     <details class="spec-all">
@@ -899,7 +930,7 @@
   <img class="skill-icon" src="../../assets/icons/ranger/arrow-storm.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Ураган стрел <span class="badge opt">прокачка</span></div>
-    <div class="skill-desc">АоЕ по пачкам на прокачке; на капе убирай.</div>
+    <div class="skill-desc">АоЕ по пачкам на прокачке.</div>
     <ul class="spec-chips">
 <li><span class="spec-lv">5</span>Чем больше целей попадания, тем больше увеличение урона (макс. до 20%)</li>    </ul>
     <details class="spec-all">
@@ -912,48 +943,27 @@
       </ul>
     </details>
   </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/griffon-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Стрела грифона <span class="badge opt">KR</span></div>
-    <div class="skill-desc">Корейские билды берут её ради горения; в глобальном билде её место занимает Взрывная стрела.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">5</span>Замена на умение с возможностью перемещения</li><li><span class="spec-lv">10</span>Длительность постоянного урона +5 сек.</li>    </ul>
-    <details class="spec-all">
-      <summary>Все специализации</summary>
-      <ul>
-        <li class="on"><span class="spec-lv">5</span>Замена на умение с возможностью перемещения</li>
-        <li class="on"><span class="spec-lv">10</span>Длительность постоянного урона +5 сек.</li>
-        <li class=""><span class="spec-lv">15</span>Усиление Искры: доп. урон при атаке цели в состоянии «Искра»</li>
-        <li class=""><span class="spec-lv">20</span>Интервалы постоянного урона сокращаются на 50%</li>
-      </ul>
-    </details>
-  </div>
 </li>  </ul>
 
 </section>
 <section id="macro" class="g-section" data-only="pve" aria-labelledby="h-macro">
   <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro">Ротация и макрос</h2></div>
-    <p>В AION 2 два разных инструмента, и билд использует оба:</p>
+    <p>В AION 2 есть два разных инструмента, и билд использует оба:</p>
   <ul>
-    <li><strong>Линия на кнопке</strong> — несколько скиллов на <em>одной</em> кнопке панели. Нажатие применяет готовый скилл с наивысшим приоритетом, а в AION 2 <strong>наивысший приоритет у нижнего слота</strong>. Карточки ниже показывают линии сверху вниз, как в игре, с номером приоритета у каждого скилла.</li>
-    <li><strong>Встроенный макрос</strong> — пока ты держишь его клавишу, он по очереди нажимает линии панели и отменяет хвосты анимаций. Скиллы на перезарядке пропускаются. Базовую атаку (ЛКМ) держи <em>вместе</em> с клавишей макроса, а не ставь в сам макрос — так игра лучше вплетает и отменяет её.</li>
+    <li><strong>Линия на кнопке</strong> — несколько скиллов на <em>одной</em> кнопке панели. Нажатие кастует готовый скилл с наивысшим приоритетом, и в AION 2 <strong>наивысший приоритет у нижнего слота</strong>. Карточки показывают линию сверху вниз, как в игре.</li>
+    <li><strong>Встроенный макрос</strong> — пока ты держишь его клавишу, он по очереди нажимает линии и отменяет хвосты анимаций. Скиллы на перезарядке пропускаются.</li>
   </ul>
 
-  <div class="callout accent">
-    <h3>Начало боя</h3>
-    <div class="combo"><span class="sk"><img src="../../assets/icons/ranger/gale-arrow.webp" width="18" height="18" alt="" loading="lazy">Шквал стрел</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/ranger/marking-shot.webp" width="18" height="18" alt="" loading="lazy">Помечающий выстрел</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/ranger/vaizels-authority.webp" width="18" height="18" alt="" loading="lazy">Сила Байзела</span> + <span class="sk"><img src="../../assets/icons/ranger/bow-of-blessing.webp" width="18" height="18" alt="" loading="lazy">Благословенный лук</span> + <span class="sk"><img src="../../assets/icons/ranger/supporting-fire.webp" width="18" height="18" alt="" loading="lazy">Поддерживающий огонь</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/ranger/snare-shot.webp" width="18" height="18" alt="" loading="lazy">Опутывающий выстрел</span><span class="arrow">→</span>заряженный <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Прицельный выстрел</span></div>
-  </div>
-
   <h3>1. Линии на кнопках</h3>
+  <p>Важны только эти две линии; ставить их можно в любые слоты панели.</p>
   <div class="hotlines">
 <div class="hotline">
-  <div class="hotline-head"><span class="key">1</span><span class="hotline-name">Линия Шквала</span></div>
+  <div class="hotline-head"><span class="key">1</span><span class="hotline-name">Линия грифона</span></div>
   <ol class="hotline-skills" reversed>
     <li class="">
       <span class="hl-n">3</span>
-      <img src="../../assets/icons/ranger/explosive-arrow.webp" width="40" height="40" alt="" loading="lazy">
-      <span class="hl-name">Взрывная стрела</span>
+      <img src="../../assets/icons/ranger/burst-arrow.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Рассекающая стрела</span>
     </li>
     <li class="">
       <span class="hl-n">2</span>
@@ -962,13 +972,13 @@
     </li>
     <li class=" is-first">
       <span class="hl-n">1</span>
-      <img src="../../assets/icons/ranger/gale-arrow.webp" width="40" height="40" alt="" loading="lazy">
-      <span class="hl-name">Шквал стрел</span>
+      <img src="../../assets/icons/ranger/griffon-arrow.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Стрела грифона</span>
     </li>
   </ol>
   <p class="hotline-order">Порядок как в игре, сверху вниз. 1 = высший приоритет — нижний слот.</p>
-<p class="hotline-note">Опутывающий выстрел замедляет цель для Взрывной и Рассекающей стрелы.</p></div><div class="hotline">
-  <div class="hotline-head"><span class="key">2</span><span class="hotline-name">Линия Пронзающей</span></div>
+<p class="hotline-note">Опутывающий выстрел замедляет цель, чтобы по ней прошла Рассекающая стрела.</p></div><div class="hotline">
+  <div class="hotline-head"><span class="key">2</span><span class="hotline-name">Линия шквала</span></div>
   <ol class="hotline-skills" reversed>
     <li class="">
       <span class="hl-n">3</span>
@@ -977,486 +987,47 @@
     </li>
     <li class="">
       <span class="hl-n">2</span>
-      <img src="../../assets/icons/ranger/burst-arrow.webp" width="40" height="40" alt="" loading="lazy">
-      <span class="hl-name">Рассекающая стрела</span>
-    </li>
-    <li class=" is-first">
-      <span class="hl-n">1</span>
       <img src="../../assets/icons/ranger/drill-dart.webp" width="40" height="40" alt="" loading="lazy">
       <span class="hl-name">Пронзающая стрела</span>
     </li>
-  </ol>
-  <p class="hotline-order">Порядок как в игре, сверху вниз. 1 = высший приоритет — нижний слот.</p>
-<p class="hotline-note">Рассекающая стрела бьёт только цель под Замедлением или Пленом — их даёт Опутывающий выстрел из линии 1.</p></div><div class="hotline">
-  <div class="hotline-head"><span class="key">3</span><span class="hotline-name">Линия баффов</span></div>
-  <ol class="hotline-skills" reversed>
-    <li class="">
-      <span class="hl-n">3</span>
-      <img src="../../assets/icons/ranger/bow-of-blessing.webp" width="40" height="40" alt="" loading="lazy">
-      <span class="hl-name">Благословенный лук</span>
-    </li>
-    <li class="">
-      <span class="hl-n">2</span>
-      <img src="../../assets/icons/ranger/supporting-fire.webp" width="40" height="40" alt="" loading="lazy">
-      <span class="hl-name">Поддерживающий огонь</span>
-    </li>
     <li class=" is-first">
       <span class="hl-n">1</span>
-      <img src="../../assets/icons/ranger/vaizels-authority.webp" width="40" height="40" alt="" loading="lazy">
-      <span class="hl-name">Сила Байзела</span>
+      <img src="../../assets/icons/ranger/gale-arrow.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Шквал стрел</span>
     </li>
   </ol>
   <p class="hotline-order">Порядок как в игре, сверху вниз. 1 = высший приоритет — нижний слот.</p>
-</div>  </div>
-
-  <p class="note">Линии взяты из корейской настройки (7MMO) и адаптированы под глобальные стигмы; эндгейм-макрос TitanTheF выложит после теста на живых серверах.</p>
+<p class="hotline-note">Скоростная стрельба заполняет все паузы.</p></div>  </div>
 
   <h3>2. Встроенный макрос</h3>
-  <p>Окно скиллов → <strong>Макрос</strong>. Поставь три линии в этом порядке и везде <strong>Delay 10 мс</strong>. Клавиша: Настройки → Управление → Общее → Игровой процесс → <strong>Макрос</strong> (лучше боковая кнопка мыши).</p>
+  <p>Окно скиллов → <strong>Макрос</strong>: добавь линию грифона, затем линию шквала, по <strong>10 мс</strong> (кто-то находит оптимум между 10 и 20 мс — проверь сам). Повесь макрос на <span class="key">ПКМ</span> в Настройки → Управление → Общее → Макрос.</p>
   <ol class="macroseq">
-  <li><span class="ms-n">1</span><span class="ms-label">Линия Шквала</span><span class="ms-detail">1 · 10 мс</span></li>
-  <li><span class="ms-n">2</span><span class="ms-label">Линия Пронзающей</span><span class="ms-detail">2 · 10 мс</span></li>
-  <li><span class="ms-n">3</span><span class="ms-label">Линия баффов</span><span class="ms-detail">3 · 10 мс</span></li>
+  <li><span class="ms-n">1</span><span class="ms-label">Линия грифона</span><span class="ms-detail">1 · 10 мс</span></li>
+  <li><span class="ms-n">2</span><span class="ms-label">Линия шквала</span><span class="ms-detail">2 · 10 мс</span></li>
 </ol>
-  <p class="note">Никогда не ставь <span class="sk"><img src="../../assets/icons/ranger/snipe.webp" width="18" height="18" alt="" loading="lazy">Меткий выстрел</span> и <span class="sk"><img src="../../assets/icons/ranger/mother-natures-breath.webp" width="18" height="18" alt="" loading="lazy">Дыхание Матери-Природы</span> <em>внутрь</em> линии — они будут срабатывать вместо более сильных скиллов. Меткий выстрел остаётся на ЛКМ и зажимается рядом с макросом.</p>
-
-  <p class="note">Совет для 1 сезона (Grobs): на старте перезарядки долгие, и баффы ценнее вовремя — линию баффов можно убрать из макроса и жать самому прямо перед боссом или большой пачкой.</p>
+  <div class="callout"><ul>
+    <li>Играй в <strong>режиме управления AION 2</strong> — в режиме AION 1 встроенный макрос ограничен.</li>
+    <li>Включи <strong>очередь скиллов</strong> в настройках управления боем.</li>
+    <li>Назначь <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Прицельный выстрел</span> вторую клавишу в Управление → Быстрые слоты (боковая кнопка мыши).</li>
+  </ul></div>
 
   <h3>3. Что нажимать на самом деле</h3>
   <ul class="presslist">
-    <li><span class="press-how">Держать</span><span class="press-what"><span class="sk"><img src="../../assets/icons/ranger/snipe.webp" width="18" height="18" alt="" loading="lazy">Меткий выстрел</span> (базовая атака, сокращает перезарядку Прицельного выстрела) <strong>и</strong> <span class="key">Макрос</span>.</span></li>
-    <li><span class="press-how">Нажать-отпустить</span><span class="press-what"><span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Прицельный выстрел</span>, когда готов — заряжаемый скилл в макросе срабатывает на случайной стадии заряда, поэтому он на отдельной клавише.</span></li>
-    <li><span class="press-how">Каждые ~15 с</span><span class="press-what"><span class="sk"><img src="../../assets/icons/ranger/marking-shot.webp" width="18" height="18" alt="" loading="lazy">Помечающий выстрел</span>, чтобы обновить Точность.</span></li>
+    <li><span class="press-how">Открытие</span><span class="press-what">Баффы вручную — <span class="sk"><img src="../../assets/icons/ranger/bow-of-blessing.webp" width="18" height="18" alt="" loading="lazy">Благословенный лук</span>, <span class="sk"><img src="../../assets/icons/ranger/supporting-fire.webp" width="18" height="18" alt="" loading="lazy">Поддерживающий огонь</span> + <span class="sk"><img src="../../assets/icons/ranger/vaizels-authority.webp" width="18" height="18" alt="" loading="lazy">Сила Байзела</span> (одна кнопка, одинаковая перезарядка), — затем <span class="sk"><img src="../../assets/icons/ranger/marking-shot.webp" width="18" height="18" alt="" loading="lazy">Помечающий выстрел</span> и полностью заряженный <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Прицельный выстрел</span>.</span></li>
+    <li><span class="press-how">Держать</span><span class="press-what"><span class="sk"><img src="../../assets/icons/ranger/snipe.webp" width="18" height="18" alt="" loading="lazy">Меткий выстрел</span> на <span class="key">ЛКМ</span>, макрос на <span class="key">ПКМ</span> и <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Прицельный выстрел</span> на боковой кнопке — все три сразу.</span></li>
+    <li><span class="press-how">Поддерживать</span><span class="press-what"><span class="sk"><img src="../../assets/icons/ranger/marking-shot.webp" width="18" height="18" alt="" loading="lazy">Помечающий выстрел</span> — обновляй, когда Точности осталось меньше ~3 сек. (смотри на панель баффов). Точность: +5% шанса идеального удара, +300 крит. удара, +35% урона Прицельного выстрела.</span></li>
+    <li><span class="press-how">По откату</span><span class="press-what">Снова баффы.</span></li>
   </ul>
 
 </section>
 <section id="recap" class="g-section" data-only="pve" aria-labelledby="h-recap">
   <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-recap">Итог</h2></div>
     <div class="callout accent"><ul>
-    <li><strong>Скиллы:</strong> Прицельный выстрел, Меткий выстрел, Шквал стрел, Пронзающая стрела, Скоростная стрельба, Рассекающая стрела — 16; остальное 12.</li>
-    <li><strong>Стигмы:</strong> Поддерживающий огонь 20, Сила Байзела 20, Благословенный лук 10, Взрывная стрела 10.</li>
-    <li><strong>Пассивки:</strong> Око концентрации 16, Решимость охотника и Душа охотника 15, остальное 10.</li>
-    <li><strong>Арканы:</strong> Меткий выстрел, Прицельный выстрел, Скоростная стрельба, Шквал стрел.</li>
-  </ul></div>
-
-</section>
-<aside class="glance" data-only="pvp" aria-label="Билд коротко">
-  <p class="glance-title">Билд коротко</p>
-    <h3>Основные скиллы</h3>
-  <ul class="core-row">
-  <li title="Прицельный выстрел">
-    <img src="../../assets/icons/ranger/deadshot.webp" width="52" height="52" alt="Прицельный выстрел" loading="lazy">
-    <span class="core-lv">20</span>
-    <span class="core-name">Прицельный выстрел</span>
-  </li>
-  <li title="Опутывающий выстрел">
-    <img src="../../assets/icons/ranger/snare-shot.webp" width="52" height="52" alt="Опутывающий выстрел" loading="lazy">
-    <span class="core-lv">16</span>
-    <span class="core-name">Опутывающий выстрел</span>
-  </li>
-  <li title="Поражающая стрела">
-    <img src="../../assets/icons/ranger/suppressing-arrow.webp" width="52" height="52" alt="Поражающая стрела" loading="lazy">
-    <span class="core-lv">16</span>
-    <span class="core-name">Поражающая стрела</span>
-  </li>
-  <li title="Помечающий выстрел">
-    <img src="../../assets/icons/ranger/marking-shot.webp" width="52" height="52" alt="Помечающий выстрел" loading="lazy">
-    <span class="core-lv">16</span>
-    <span class="core-name">Помечающий выстрел</span>
-  </li>
-  <li title="Снятие шока">
-    <img src="../../assets/icons/ranger/defiance.webp" width="52" height="52" alt="Снятие шока" loading="lazy">
-    <span class="core-lv">16</span>
-    <span class="core-name">Снятие шока</span>
-  </li>
-</ul>
-  <h3>Стигмы · Бездна</h3>
-  <ol class="loadout">
-  <li class="slot" title="Невидимость">
-    <img src="../../assets/icons/ranger/stealth.webp" width="56" height="56" alt="Невидимость" loading="lazy">
-    <span class="slot-lv">ур. 15</span>
-    <span class="slot-name">Невидимость</span>
-  </li>
-  <li class="slot" title="Внезапный толчок">
-    <img src="../../assets/icons/ranger/ambush-kick.webp" width="56" height="56" alt="Внезапный толчок" loading="lazy">
-    <span class="slot-lv">ур. 15</span>
-    <span class="slot-name">Внезапный толчок</span>
-  </li>
-  <li class="slot" title="Стрела печати">
-    <img src="../../assets/icons/ranger/sealing-arrow.webp" width="56" height="56" alt="Стрела печати" loading="lazy">
-    <span class="slot-lv">ур. 5</span>
-    <span class="slot-name">Стрела печати</span>
-  </li>
-  <li class="slot" title="Дыхание Матери-Природы">
-    <img src="../../assets/icons/ranger/mother-natures-breath.webp" width="56" height="56" alt="Дыхание Матери-Природы" loading="lazy">
-    <span class="slot-lv">ур. 5</span>
-    <span class="slot-name">Дыхание Матери-Природы</span>
-  </li>
-</ol>
-  <h3>Ключевые пассивки</h3>
-  <ul class="passive-row">
-<li><img src="../../assets/icons/ranger/focused-eye.webp" width="24" height="24" alt="" loading="lazy">Око концентрации</li><li><img src="../../assets/icons/ranger/revitalization-contract.webp" width="24" height="24" alt="" loading="lazy">Контракт оживления</li><li><img src="../../assets/icons/ranger/unyielding-resolve.webp" width="24" height="24" alt="" loading="lazy">Железная воля</li><li><img src="../../assets/icons/ranger/vigilant-eye.webp" width="24" height="24" alt="" loading="lazy">Всевидящее око</li></ul>
-
-</aside>
-<section id="intro-pvp" class="g-section" data-only="pvp" aria-labelledby="h-intro-pvp">
-  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro-pvp">Обзор</h2></div>
-    <p>PvP-Лучник побеждает не в размене ударами, а тем, что <strong>размена не происходит</strong>. Замедления, плен, оглушения, отталкивания и молчание держат врага на 20 метрах, пока работает Прицельный выстрел.</p>
-  <p>Порядок действий: <strong>открытие издалека или из невидимости</strong> → <strong>контроль цели</strong> → <strong>урон под Точностью</strong> → <strong>разрыв дистанции</strong>.</p>
-  <p class="note">Глобальной PvP-меты пока нет. Этот режим объединяет корейско-тайваньские советы по PvP с данными скиллов из глобального клиента — считай его отправной точкой.</p>
-
-</section>
-<section id="skills-pvp" class="g-section" data-only="pvp" aria-labelledby="h-skills-pvp">
-  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-skills-pvp">Скиллы</h2></div>
-    <ul class="skill-grid">
-<li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/deadshot.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Прицельный выстрел <span class="badge must">16 → 20</span></div>
-    <div class="skill-desc">Всё ещё главная кнопка убийства; игнорирование блока и уклонения против игроков важнее.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">8</span>СКР умений +30%</li><li><span class="spec-lv">12</span>Игнорирование блока и УКЛ, попадание мультиударом</li><li><span class="spec-lv">16</span>[Прицельный выстрел] Доп. урон при попадании</li>    </ul>
-    <details class="spec-all">
-      <summary>Все специализации</summary>
-      <ul>
-        <li class=""><span class="spec-lv">8</span>Удаление затраты ОМ</li>
-        <li class="on"><span class="spec-lv">8</span>СКР умений +30%</li>
-        <li class=""><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>
-        <li class="on"><span class="spec-lv">12</span>Игнорирование блока и УКЛ, попадание мультиударом</li>
-        <li class="on"><span class="spec-lv">16</span>[Прицельный выстрел] Доп. урон при попадании</li>
-      </ul>
-    </details>
-  </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/marking-shot.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Помечающий выстрел <span class="badge must">16</span></div>
-    <div class="skill-desc">Смена позиции и Точность. На 16 всегда критует сквозь блок и уклонение.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">8</span>Шанс 30% оттолкнуть при попадании</li><li><span class="spec-lv">12</span>Непрерывное использование +1 раз</li><li><span class="spec-lv">16</span>Крит. удар, несмотря на блок и уклонение</li>    </ul>
-    <details class="spec-all">
-      <summary>Все специализации</summary>
-      <ul>
-        <li class=""><span class="spec-lv">8</span>Совершенный удар +5% во время действия умения</li>
-        <li class="on"><span class="spec-lv">8</span>Шанс 30% оттолкнуть при попадании</li>
-        <li class=""><span class="spec-lv">8</span>+5 сек. к длительности</li>
-        <li class="on"><span class="spec-lv">12</span>Непрерывное использование +1 раз</li>
-        <li class="on"><span class="spec-lv">16</span>Крит. удар, несмотря на блок и уклонение</li>
-      </ul>
-    </details>
-  </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/suppressing-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Поражающая стрела <span class="badge must">16</span></div>
-    <div class="skill-desc">Оглушение (40% под Точностью). Дольше, чаще, со сбросом перезарядки.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">8</span>Длительность Оглушения +1 сек.</li><li><span class="spec-lv">12</span>Шанс Оглушения +20%</li><li><span class="spec-lv">16</span>Шанс 25% сбросить время перезарядки при попадании [Поражающей стрелой]</li>    </ul>
-    <details class="spec-all">
-      <summary>Все специализации</summary>
-      <ul>
-        <li class=""><span class="spec-lv">8</span>Шанс мультиудара +50% при попадании</li>
-        <li class="on"><span class="spec-lv">8</span>Длительность Оглушения +1 сек.</li>
-        <li class=""><span class="spec-lv">8</span>СКР умений +20%</li>
-        <li class="on"><span class="spec-lv">12</span>Шанс Оглушения +20%</li>
-        <li class="on"><span class="spec-lv">16</span>Шанс 25% сбросить время перезарядки при попадании [Поражающей стрелой]</li>
-      </ul>
-    </details>
-  </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/snare-shot.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Опутывающий выстрел <span class="badge must">16</span></div>
-    <div class="skill-desc">Замедление → плен Сковывающей стрелой. Главный инструмент контроля дистанции.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">8</span>Снижение СКР движ. от [Опутывающего выстрела] +20%</li><li><span class="spec-lv">12</span>Добавление 2-ой комбинации [Сковывающая стрела]</li><li><span class="spec-lv">16</span>Длительность Замедления и Плена +2 сек.</li>    </ul>
-    <details class="spec-all">
-      <summary>Все специализации</summary>
-      <ul>
-        <li class="on"><span class="spec-lv">8</span>Снижение СКР движ. от [Опутывающего выстрела] +20%</li>
-        <li class=""><span class="spec-lv">8</span>СКР умений +20%</li>
-        <li class=""><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>
-        <li class="on"><span class="spec-lv">12</span>Добавление 2-ой комбинации [Сковывающая стрела]</li>
-        <li class="on"><span class="spec-lv">16</span>Длительность Замедления и Плена +2 сек.</li>
-      </ul>
-    </details>
-  </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/defiance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Снятие шока <span class="badge must">16</span></div>
-    <div class="skill-desc">Снятие контроля. Обязательно против ближников.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">8</span>При использовании [Снятия шока] восстанавливает 20% ОЗ</li><li><span class="spec-lv">12</span>Длительность Непреклонности +2 сек.</li><li><span class="spec-lv">16</span>Стойкость к урону в PvE +50% и стойкость к урону в PvP +25% во время действия Непреклонности</li>    </ul>
-    <details class="spec-all">
-      <summary>Все специализации</summary>
-      <ul>
-        <li class=""><span class="spec-lv">8</span>Добавляет 2-ой комбинации [Стрела молнии]</li>
-        <li class=""><span class="spec-lv">8</span>При использовании [Снятия шока] восстанавливает 1000 ОД</li>
-        <li class="on"><span class="spec-lv">8</span>При использовании [Снятия шока] восстанавливает 20% ОЗ</li>
-        <li class="on"><span class="spec-lv">12</span>Длительность Непреклонности +2 сек.</li>
-        <li class="on"><span class="spec-lv">16</span>Стойкость к урону в PvE +50% и стойкость к урону в PvP +25% во время действия Непреклонности</li>
-      </ul>
-    </details>
-  </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/drill-dart.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Пронзающая стрела <span class="badge opt">16</span></div>
-    <div class="skill-desc">Кровотечение ещё и снижает получаемое лечение — начинай с него по хилерам.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">8</span>Поглощение 3% ОЗ</li><li><span class="spec-lv">12</span>Гарантир. мультиудар при попадании</li>    </ul>
-    <details class="spec-all">
-      <summary>Все специализации</summary>
-      <ul>
-        <li class="on"><span class="spec-lv">8</span>Поглощение 3% ОЗ</li>
-        <li class=""><span class="spec-lv">8</span>Длительность Потери крови +2 сек.</li>
-        <li class=""><span class="spec-lv">8</span>СКР умений +20%</li>
-        <li class="on"><span class="spec-lv">12</span>Гарантир. мультиудар при попадании</li>
-        <li class=""><span class="spec-lv">16</span>Доп. срабатывание [Пронзающей стрелы] 1 р.</li>
-      </ul>
-    </details>
-  </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/gale-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Шквал стрел <span class="badge opt">12</span></div>
-    <div class="skill-desc">Бафф плюс 50% шанс отталкивания.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">8</span>50% шанс отталкивания при попадании</li><li><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>    </ul>
-    <details class="spec-all">
-      <summary>Все специализации</summary>
-      <ul>
-        <li class=""><span class="spec-lv">8</span>+5 сек. к длительности</li>
-        <li class="on"><span class="spec-lv">8</span>50% шанс отталкивания при попадании</li>
-        <li class="on"><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>
-        <li class=""><span class="spec-lv">12</span>Чем меньше целей попадания, тем больше увелич. СКР боя, усиление урона в PvE и PvP</li>
-        <li class=""><span class="spec-lv">16</span>Перезарядка -10 сек.</li>
-      </ul>
-    </details>
-  </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/explosion-trap.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Взрывной капкан <span class="badge opt">12</span></div>
-    <div class="skill-desc">Ставь под ныряющего ближника: оглушение.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">8</span>Длительность Оглушения +1 сек.</li><li><span class="spec-lv">12</span>Шанс Оглушения +20%</li>    </ul>
-    <details class="spec-all">
-      <summary>Все специализации</summary>
-      <ul>
-        <li class=""><span class="spec-lv">8</span>Притягивание врагов при взрыве</li>
-        <li class="on"><span class="spec-lv">8</span>Длительность Оглушения +1 сек.</li>
-        <li class=""><span class="spec-lv">8</span>Доп. урон через 3 сек. при попадании</li>
-        <li class="on"><span class="spec-lv">12</span>Шанс Оглушения +20%</li>
-        <li class=""><span class="spec-lv">16</span>Непрерывное использование +1 раз</li>
-      </ul>
-    </details>
-  </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/burst-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Рассекающая стрела <span class="badge opt">12</span></div>
-    <div class="skill-desc">Поглощение 10% ОЗ с замедленной цели — лечение на кайте.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">8</span>Поглощение 10% ОЗ</li><li><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>    </ul>
-    <details class="spec-all">
-      <summary>Все специализации</summary>
-      <ul>
-        <li class="on"><span class="spec-lv">8</span>Поглощение 10% ОЗ</li>
-        <li class=""><span class="spec-lv">8</span>Шанс мультиудара +50% при попадании</li>
-        <li class="on"><span class="spec-lv">8</span>Замена на умение с возможностью перемещения</li>
-        <li class=""><span class="spec-lv">12</span>Чем меньше целей попадания, тем больше увеличение урона (макс. до 20%)</li>
-        <li class=""><span class="spec-lv">16</span>Шанс 25% сбросить время перезарядки при попадании [Рассекающей стрелы]</li>
-      </ul>
-    </details>
-  </div>
-</li>  </ul>
-
-</section>
-<section id="passives-pvp" class="g-section" data-only="pvp" aria-labelledby="h-passives-pvp">
-  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-passives-pvp">Пассивки</h2></div>
-    <div class="table-wrap"><table>
-    <thead><tr><th>Пассивка</th><th>Польза в PvP</th></tr></thead>
-    <tbody>
-      <tr><td><span class="sk"><img src="../../assets/icons/ranger/focused-eye.webp" width="18" height="18" alt="" loading="lazy">Око концентрации</span></td><td>Всё ещё №1: точность и усиление урона в PvP.</td></tr>
-      <tr><td><span class="sk"><img src="../../assets/icons/ranger/revitalization-contract.webp" width="18" height="18" alt="" loading="lazy">Контракт оживления</span></td><td>Сопротивление эффектам, растущее под контролем, и экстренное лечение 35% на 10% ОЗ.</td></tr>
-      <tr><td><span class="sk"><img src="../../assets/icons/ranger/unyielding-resolve.webp" width="18" height="18" alt="" loading="lazy">Железная воля</span></td><td>Сопротивление физическим и шоковым эффектам — тебя сложнее сковать и сбить.</td></tr>
-      <tr><td><span class="sk"><img src="../../assets/icons/ranger/vigilant-eye.webp" width="18" height="18" alt="" loading="lazy">Всевидящее око</span></td><td>Уклонение и лечение при уклонении.</td></tr>
-      <tr><td><span class="sk"><img src="../../assets/icons/ranger/wind-vigor.webp" width="18" height="18" alt="" loading="lazy">Сила ветра</span></td><td>Больше выносливости (уклонения) и скорость при получении урона.</td></tr>
-    </tbody>
-  </table></div>
-
-</section>
-<section id="gear-pvp" class="g-section" data-only="pvp" aria-labelledby="h-gear-pvp">
-  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-gear-pvp">Снаряжение и арканы</h2></div>
-    <p>В 1 сезоне оставь PvE-снаряжение; меняй пассивки, стигмы и Daevanion.</p>
-  <div class="callout"><ul>
-    <li><strong>Точность</strong> в первую очередь — игроки блокируют и уклоняются.</li>
-    <li><strong>Усиление / стойкость к урону в PvP</strong> вместо PvE-версий, где слот это позволяет.</li>
-    <li><strong>Арканы:</strong> Прицельный выстрел до 20, затем Опутывающий выстрел, Поражающая стрела, Помечающий выстрел и Снятие шока до 16.</li>
-  </ul></div>
-
-</section>
-<section id="stigmas-pvp" class="g-section" data-only="pvp" aria-labelledby="h-stigmas-pvp">
-  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-stigmas-pvp">Стигмы</h2></div>
-    <div class="table-wrap"><table>
-    <thead><tr><th>Режим</th><th>Стигмы</th></tr></thead>
-    <tbody>
-      <tr><td>Бездна / открытый мир</td><td>Невидимость, Внезапный толчок, Стрела печати, Дыхание Матери-Природы</td></tr>
-      <tr><td>Арена</td><td>Сила Байзела, Внезапный толчок, Стрела печати, Дыхание Матери-Природы</td></tr>
-    </tbody>
-  </table></div>
-  <ul class="skill-grid">
-<li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/ambush-kick.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Внезапный толчок <span class="badge must">ур. 15</span></div>
-    <div class="skill-desc">Прыжок за спину, отталкивание, отскок назад. Щит на 10, 50% оглушения на 15. Ответ ныряющим ближникам.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">5</span>Дальность атаки +5 м</li><li><span class="spec-lv">10</span>Создание защитной оболочки, равной 10% от макс. ОЗ, на 5s при попадании</li><li><span class="spec-lv">15</span>Шанс 50% оглушить на 3s при попадании</li>    </ul>
-    <details class="spec-all">
-      <summary>Все специализации</summary>
-      <ul>
-        <li class="on"><span class="spec-lv">5</span>Дальность атаки +5 м</li>
-        <li class="on"><span class="spec-lv">10</span>Создание защитной оболочки, равной 10% от макс. ОЗ, на 5s при попадании</li>
-        <li class="on"><span class="spec-lv">15</span>Шанс 50% оглушить на 3s при попадании</li>
-        <li class=""><span class="spec-lv">20</span>Шанс Оглушения +50%</li>
-      </ul>
-    </details>
-  </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/sealing-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Стрела печати <span class="badge must">ур. 5+</span></div>
-    <div class="skill-desc">75% Запечатывания (молчание) на 5 сек. Используй на магах <em>до того</em>, как они нажмут защиту.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">5</span>Шанс 50% плена на 5s при попадании</li>    </ul>
-    <details class="spec-all">
-      <summary>Все специализации</summary>
-      <ul>
-        <li class="on"><span class="spec-lv">5</span>Шанс 50% плена на 5s при попадании</li>
-        <li class=""><span class="spec-lv">10</span>Макс. ОД -1000 на 5s при попадании</li>
-        <li class=""><span class="spec-lv">15</span>Длительность Запечатывания +2 сек.</li>
-        <li class=""><span class="spec-lv">20</span>Шанс Запечатывания +25%</li>
-      </ul>
-    </details>
-  </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/mother-natures-breath.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Дыхание Матери-Природы <span class="badge must">ур. 5+</span></div>
-    <div class="skill-desc">6 сек. стойкости к урону, сопротивления критам и 50% шанс поглощать урон как ОЗ. 5 уровень снимает периодический урон.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">5</span>Отмена эффекта постоянного урона и активация иммунитета</li>    </ul>
-    <details class="spec-all">
-      <summary>Все специализации</summary>
-      <ul>
-        <li class="on"><span class="spec-lv">5</span>Отмена эффекта постоянного урона и активация иммунитета</li>
-        <li class=""><span class="spec-lv">10</span>Эффект [Всевидящего ока] во время действия умения x1,5</li>
-        <li class=""><span class="spec-lv">15</span>Эффект [Железная воля] x1,5 во время действия</li>
-        <li class=""><span class="spec-lv">20</span>+20% к стойкости к урону в PvE и +10% к стойкости к урону в PvP</li>
-      </ul>
-    </details>
-  </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/stealth.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Невидимость <span class="badge opt">Бездна · ур. 15</span></div>
-    <div class="skill-desc">Открытие: крит из невидимости на 5, в бою — на 15.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">5</span>Крит. удар при атаке в состоянии невидимости</li><li><span class="spec-lv">10</span>СКР движ. +20% во время действия умения</li><li><span class="spec-lv">15</span>Можно использовать во время боя</li>    </ul>
-    <details class="spec-all">
-      <summary>Все специализации</summary>
-      <ul>
-        <li class="on"><span class="spec-lv">5</span>Крит. удар при атаке в состоянии невидимости</li>
-        <li class="on"><span class="spec-lv">10</span>СКР движ. +20% во время действия умения</li>
-        <li class="on"><span class="spec-lv">15</span>Можно использовать во время боя</li>
-        <li class=""><span class="spec-lv">20</span>Длительность невидимости +10 сек.</li>
-      </ul>
-    </details>
-  </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/vaizels-authority.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Сила Байзела <span class="badge opt">Арена · ур. 20</span></div>
-    <div class="skill-desc">Урон и сокращение перезарядок, когда подкрасться не к кому.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">5</span>Совершенный удар +10% во время действия умения</li><li><span class="spec-lv">10</span>Эффект [Око концентрации] во время действия умения x1,5</li><li><span class="spec-lv">15</span>Эффект [Души охотника] во время действия умения x1,5</li><li><span class="spec-lv">20</span>С шансом 50% уменьшает время перезарядки всех умений на 1s сек. при крит. ударе во время действия</li>    </ul>
-    <details class="spec-all">
-      <summary>Все специализации</summary>
-      <ul>
-        <li class="on"><span class="spec-lv">5</span>Совершенный удар +10% во время действия умения</li>
-        <li class="on"><span class="spec-lv">10</span>Эффект [Око концентрации] во время действия умения x1,5</li>
-        <li class="on"><span class="spec-lv">15</span>Эффект [Души охотника] во время действия умения x1,5</li>
-        <li class="on"><span class="spec-lv">20</span>С шансом 50% уменьшает время перезарядки всех умений на 1s сек. при крит. ударе во время действия</li>
-      </ul>
-    </details>
-  </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/illusory-arrow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Иллюзорная стрела <span class="badge opt">альт.</span></div>
-    <div class="skill-desc">Слепота на 3 сек.; по области на 10.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">5</span>Длительность Слепоты +1 сек.</li><li><span class="spec-lv">10</span>Смена на массовое умение</li>    </ul>
-    <details class="spec-all">
-      <summary>Все специализации</summary>
-      <ul>
-        <li class="on"><span class="spec-lv">5</span>Длительность Слепоты +1 сек.</li>
-        <li class="on"><span class="spec-lv">10</span>Смена на массовое умение</li>
-        <li class=""><span class="spec-lv">15</span>Замедление на 5s при попадании</li>
-        <li class=""><span class="spec-lv">20</span>Непрерывное использование +1 раз</li>
-      </ul>
-    </details>
-  </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/ranger/ensnaring-trap.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Капкан <span class="badge opt">альт.</span></div>
-    <div class="skill-desc">Ловушка с воздушными оковами; на 10 снимает до 2 баффов.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">5</span>Добавление 2-ой комбинации [Разрез с отступлением]</li><li><span class="spec-lv">10</span>Отмена до 2 маг. усилений</li>    </ul>
-    <details class="spec-all">
-      <summary>Все специализации</summary>
-      <ul>
-        <li class="on"><span class="spec-lv">5</span>Добавление 2-ой комбинации [Разрез с отступлением]</li>
-        <li class="on"><span class="spec-lv">10</span>Отмена до 2 маг. усилений</li>
-        <li class=""><span class="spec-lv">15</span>Длительность Воздушных оков +1 сек.</li>
-        <li class=""><span class="spec-lv">20</span>Перезарядка -30 сек.</li>
-      </ul>
-    </details>
-  </div>
-</li>  </ul>
-
-</section>
-<section id="combos-pvp" class="g-section" data-only="pvp" aria-labelledby="h-combos-pvp">
-  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-combos-pvp">Комбо и игра</h2></div>
-    <div class="callout">
-    <h3>Открытие</h3>
-    <div class="combo"><span class="sk"><img src="../../assets/icons/ranger/stealth.webp" width="18" height="18" alt="" loading="lazy">Невидимость</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/ranger/marking-shot.webp" width="18" height="18" alt="" loading="lazy">Помечающий выстрел</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/ranger/suppressing-arrow.webp" width="18" height="18" alt="" loading="lazy">Поражающая стрела</span><span class="arrow">→</span>заряженный <span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Прицельный выстрел</span></div>
-  </div>
-  <div class="callout">
-    <h3>Против магов</h3>
-    <div class="combo"><span class="sk"><img src="../../assets/icons/ranger/sealing-arrow.webp" width="18" height="18" alt="" loading="lazy">Стрела печати</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/ranger/snare-shot.webp" width="18" height="18" alt="" loading="lazy">Опутывающий выстрел</span><span class="arrow">→</span><span class="sk"><img src="../../assets/icons/ranger/deadshot.webp" width="18" height="18" alt="" loading="lazy">Прицельный выстрел</span></div>
-    <p>Сначала молчание — тогда на твой урон не ответят щитом или побегом.</p>
-  </div>
-  <div class="callout">
-    <h3>Когда на тебя прыгает ближник</h3>
-    <ul>
-      <li>Отталкивание <span class="sk"><img src="../../assets/icons/ranger/ambush-kick.webp" width="18" height="18" alt="" loading="lazy">Внезапный толчок</span> или <span class="sk"><img src="../../assets/icons/ranger/gale-arrow.webp" width="18" height="18" alt="" loading="lazy">Шквал стрел</span> → <span class="sk"><img src="../../assets/icons/ranger/snare-shot.webp" width="18" height="18" alt="" loading="lazy">Опутывающий выстрел</span> → отходи на 20 м.</li>
-      <li><span class="sk"><img src="../../assets/icons/ranger/explosion-trap.webp" width="18" height="18" alt="" loading="lazy">Взрывной капкан</span> под ноги, пока он подбегает.</li>
-      <li><span class="sk"><img src="../../assets/icons/ranger/defiance.webp" width="18" height="18" alt="" loading="lazy">Снятие шока</span> на первый жёсткий контроль, <span class="sk"><img src="../../assets/icons/ranger/mother-natures-breath.webp" width="18" height="18" alt="" loading="lazy">Дыхание Матери-Природы</span> — когда тебя фокусят.</li>
-    </ul>
-  </div>
-
-</section>
-<section id="recap-pvp" class="g-section" data-only="pvp" aria-labelledby="h-recap-pvp">
-  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-recap-pvp">Итог</h2></div>
-    <div class="callout accent"><ul>
-    <li><strong>Скиллы:</strong> Прицельный выстрел 16→20; Помечающий выстрел, Поражающая стрела, Опутывающий выстрел, Снятие шока — 16.</li>
-    <li><strong>Стигмы:</strong> Внезапный толчок, Стрела печати, Дыхание Матери-Природы + Невидимость (Бездна) или Сила Байзела (Арена).</li>
-    <li><strong>Пассивки:</strong> Око концентрации &gt; Контракт оживления / Железная воля.</li>
-    <li><strong>Игра:</strong> никогда не размениваться вблизи — контроль, урон, разрыв дистанции.</li>
+    <li><strong>Скиллы:</strong> Прицельный выстрел и Шквал стрел 20; Пронзающая стрела, Меткий выстрел, Скоростная стрельба 16; остальное 12; Град из стрел не качать.</li>
+    <li><strong>Стигмы:</strong> сначала Сила Байзела 20, затем Благословенный лук, Поддерживающий огонь, Стрела грифона; Взрывная стрела — если откроется 5-й слот.</li>
+    <li><strong>Пассивки:</strong> Око концентрации, Решимость охотника, затем Душа охотника.</li>
+    <li><strong>Статы:</strong> точность до капа, затем атака / шанс крита.</li>
+    <li><strong>Арканы:</strong> +4 к Прицельному выстрелу и Шквалу стрел.</li>
   </ul></div>
 
 </section>
@@ -1518,7 +1089,8 @@
 <section class="sources" aria-labelledby="h-sources">
   <h2 id="h-sources">Источники</h2>
   <ul>
-    <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener">TitanTheF — таблица прогрессии AION 2</a> (вкладка «Лучник») и его <a href="https://aion2t.com/ru/simulator?job=4&amp;b=8QbCF0" target="_blank" rel="noopener">билд 45+ на aion2t</a> — глобальный билд, которому следует гайд</li>
+    <li><a href="https://www.youtube.com/watch?v=wKOm6yKuu_I" target="_blank" rel="noopener">Whelps — гайд на Лучника AION 2</a> и его <a href="https://questlog.gg/aion-2/en/character-builder/AelonCommandAndTheSharpMerchant?build-id=8655" target="_blank" rel="noopener">PvE-билд на эндгейм 1 сезона на questlog</a> — билд, которому следует гайд (скиллы, стигмы, макрос, экипировка, арканы)</li>
+    <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener">TitanTheF — таблица прогрессии AION 2</a> (вкладка «Лучник») и его <a href="https://aion2t.com/ru/simulator?job=4&amp;b=8QbCF0" target="_blank" rel="noopener">билд 45+ на aion2t</a> — прежний глобальный билд (уровни скиллов, прокачка)</li>
     <li><a href="https://questlog.gg/aion-2/ru/db/skills/ranger" target="_blank" rel="noopener">questlog.gg</a> — данные скиллов и стигм из глобального клиента</li>
     <li><a href="https://7mmo.com/threads/guide-ranger-aion-2-build-pve-complet-sorts-stigmas-stuff.5771/" target="_blank" rel="noopener">7MMO</a> — полный корейский PvE-билд (скиллы, стигмы, макрос)</li>
     <li><a href="https://vortexgaming.io/postdetail/722757" target="_blank" rel="noopener">Vortex Gaming</a> — корейская сборка стигм после патча</li>
@@ -1542,7 +1114,7 @@
     </div>
   </div>
 </footer>
-<dialog class="whatsnew" data-id="2026-09-28-sorcerer" aria-labelledby="wn-title">
+<dialog class="whatsnew" data-id="2026-09-28-bosses-ranger" aria-labelledby="wn-title">
   <form method="dialog" class="wn-in">
     <div class="wn-head">
       <h2 id="wn-title" data-latest="Что нового" data-history="История изменений">Что нового</h2>
@@ -1551,6 +1123,15 @@
       </button>
     </div>
     <section class="wn-entry">
+      <time class="wn-date" datetime="2026-09-28">28 сентября 2026</time>
+      <ul>
+        <li><a href="../../ru/bosses/"><strong>Мировые боссы</strong> — полевые боссы глобального 1 сезона (Бертрон, Альтгард, нижняя Бездна) с трекером убийств. Таймеры респауна — после запуска.</a></li>
+        <li><a href="../../ru/ranger/"><strong>PvE Лучника переписан по гайду Whelps</strong> — Прицельный выстрел и Шквал стрел до 20, сначала Сила Байзела, макрос из двух линий, связывания души, точность и арканы.</a></li>
+        <li><span><strong>Только гайды с источниками</strong> — PvP у Лучника, Убийцы, Чародея и Волшебника отключён до запуска (надёжного источника нет); режимы на корейских данных помечены WIP.</span></li>
+        <li><span><strong>Плавнее интерфейс</strong> — режимы переключаются с плавным переходом, шапка сворачивается плавно, меню классов анимировано, персонажи выходят из карточек при наведении, а кнопка темы показывает солнце или луну.</span></li>
+      </ul>
+    </section>
+    <section class="wn-entry wn-older">
       <time class="wn-date" datetime="2026-09-28">28 сентября 2026</time>
       <ul>
         <li><a href="../../ru/sorcerer/"><strong>Гайд на Волшебника (WIP)</strong> — билд огонь + лёд, стигмы, макрос и прокачка; собран из корейских гайдов, пока не появятся нормальные глобальные билды.</a></li>

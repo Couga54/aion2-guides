@@ -137,8 +137,24 @@ Requirements from the user (in their words, translated):
   Winter's Grasp = Winter's Shackles, Blizzard ≈ Bittercold Wind (uncertain), Elemental Boost = Element
   Enhancement, Flame Barrier = Fire Wall, Frost Storm = Cold Storm. Accent "frost" (cyan). Remove `wip`
   once a real global build (e.g. TitanTheF) exists.
-- Session 6 (Sep 28, in progress): next task — **Cleric and Elementalist as WIP guides, Leveling mode only**
-  for now (no PvE/PvP content yet). Plan: fetch skills (`fetch_skills.py cleric elementalist` — questlog
+- Session 6 (Sep 28): Ranger PvE rebuilt on Whelps (video wKOm6yKuu_I, transcript saved; questlog character
+  build 8655 → skill build 9025 via `skillBuilder.getSkillBuilderBySlug`): Deadshot & Gale Arrow 20, Drill/Snipe/
+  Tempest 16, stigmas Vaizel's (20 first), Bow of Blessing, Supporting Fire, Griffon Arrow (+Explosive if a 5th
+  slot at 45); in-game macro Griffon line → Gale line on RMB, Snipe LMB, Deadshot on a side button. questlog
+  spec ids: <skill><N>0 → specialization index N-1; slot "9.0" = highest priority of hotbar line 9.
+  World bosses page (/<lang>/bosses/, data/bosses.json, assets/js/bosses.js, localStorage `aion2-bosses-v1`):
+  global list per aion2hub, verified in questlog (`database.getNpcs` with `searchTerm`, `database.getNpc` →
+  level, subDescription). Respawn/schedule null until launch. Free-player pre-download event removed.
+  UI: mode switch fades the guide (site.js setMode → applyMode after 160 ms), hero collapses via CSS
+  transitions (enabled by `html.anim`), class menu open/close animation, theme button sun/moon.
+- Mode policy (Sep 28, user decision): a mode without a real source is switched off, not written "from thin air".
+  site.json `modes_off: ["pvp"]` (Ranger, Assassin, Chanter, Sorcerer) → PvP button just disabled (no label), PvP chip hidden on home cards,
+  PvP text removed from content, head script/site.js skip the mode. `wip_modes` (Gladiator pvp, Templar pve+pvp)
+  → WIP callout at the top of that mode. Re-enable PvP when a global source appears.
+  Home cards: class figure rises out of the card on hover (`.pop-art`, mouse + ≥521px only).
+- Next (planned from the other PC): task — **Cleric and Elementalist as WIP guides, Leveling mode only**
+  for now (no PvE/PvP content yet) — use `modes_off: ["pve", "pvp"]` + `wip: true` in site.json
+  (the head script and site.js then open the Leveling mode). Plan: fetch skills (`fetch_skills.py cleric elementalist` — questlog
   categories are `cleric` and `elementalist`, 35 skills each; `spiritmaster` returns nothing), mark both
   `ready` + `wip` in site.json, write `data/leveling/<class>.json`, a leveling section with the macro in
   `src/content/<class>/en.html` + `ru.html`, changelog entry. Skill-point order: search the web if there is

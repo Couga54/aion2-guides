@@ -1,0 +1,30 @@
+{
+  "_note": "World/field bosses for global Season 1. Names, levels and titles are from the global client (questlog getNpc). respawn_min = respawn after a kill in minutes (null = not known yet); schedule = fixed spawn times ('Wed 22:30' in server time, null = not known yet). kr = the KR/TW schedule, shown for reference only. Fill respawn_min / schedule once global servers are live.",
+  "groups": [
+    {"id": "elyos", "zone": {"en": "Verteron", "ru": "Бертрон"}, "faction": {"en": "Elyos", "ru": "Элийцы"},
+     "bosses": [
+       {"id": "2101122", "name": {"en": "Soul Ruler Kashapa", "ru": "Властелин душ Кашапа"}, "level": 45, "respawn_min": null, "schedule": null, "kr": null},
+       {"id": "2101131", "name": {"en": "High Commander Lagta", "ru": "Глава армии Рагт"}, "level": 45, "respawn_min": null, "schedule": null, "kr": null},
+       {"id": "2101120", "name": {"en": "Silent Dartan", "ru": "Немая Тартан"}, "level": 45, "respawn_min": null, "schedule": null, "kr": null}
+     ]},
+    {"id": "asmodians", "zone": {"en": "Altgard", "ru": "Альтгард"}, "faction": {"en": "Asmodians", "ru": "Асмодиане"},
+     "bosses": [
+       {"id": "2400854", "name": {"en": "Soul Ruler Kashapa", "ru": "Властелин душ Кашапа"}, "level": 45, "respawn_min": null, "schedule": null, "kr": null},
+       {"id": "2400853", "name": {"en": "High Commander Lagta", "ru": "Глава армии Рагт"}, "level": 45, "respawn_min": null, "schedule": null, "kr": null},
+       {"id": "2400855", "name": {"en": "Silent Dartan", "ru": "Немая Тартан"}, "level": 45, "respawn_min": null, "schedule": null, "kr": null}
+     ]},
+    {"id": "abyss", "zone": {"en": "Chaotic Lower Reshanta", "ru": "Хаотическая нижняя Reshanta"}, "faction": {"en": "Abyss", "ru": "Бездна"},
+     "bosses": [
+       {"id": "2600089", "name": {"en": "Watcher Kaira", "ru": "Дозорщик Кайра"}, "level": 65, "respawn_min": null, "schedule": null,
+        "kr": {"en": "every 4 h from 01:00", "ru": "каждые 4 ч с 01:00"}},
+       {"id": "2600097", "name": {"en": "Executor Argo", "ru": "Исполнитель Агро"}, "level": 65, "respawn_min": null, "schedule": null,
+        "kr": {"en": "Wed, Sat 22:30", "ru": "ср, сб 22:30"}},
+       {"id": "2600098", "name": {"en": "Executor Kaira", "ru": "Исполнитель Кайра"}, "level": 65, "respawn_min": null, "schedule": null,
+        "kr": {"en": "Wed, Sat 22:30", "ru": "ср, сб 22:30"}},
+       {"id": "2600096", "name": {"en": "Executor Tamasa", "ru": "Исполнитель Тамаса"}, "level": 65, "respawn_min": null, "schedule": null,
+        "kr": {"en": "Wed, Sat 22:30", "ru": "ср, сб 22:30"}},
+       {"id": "siege-lower", "name": {"en": "Abyss siege boss", "ru": "Босс осады Бездны"}, "level": null, "respawn_min": null, "schedule": null,
+        "kr": {"en": "Fri, Sun 22:00", "ru": "пт, вс 22:00"}}
+     ]}
+  ]
+}

@@ -34,6 +34,7 @@ SOURCES = load(DATA / "sources.json")
 WEEKLY = load(DATA / "weekly.json")
 CHANGELOG = load(DATA / "changelog.json")["entries"]
 WEEK1 = load(DATA / "week1.json")
+BOSSES = load(DATA / "bosses.json")
 SKILLS = {p.stem: load(p) for p in (DATA / "skills").glob("*.json") if not p.stem.startswith("_")}
 for _cls, _fixes in load(DATA / "skills" / "_overrides.json").items():
     for _slug, _langs in ([] if _cls.startswith("_") else _fixes.items()):
@@ -185,7 +186,7 @@ def build():
             ctx["content_tpl"] = f'{cls["slug"]}/{lang}.html'
             write(f'{lang}/{path}index.html', e.get_template("class.html").render(ctx))
             urls.append(path)
-        for path, tpl, key, data in (("week-1/", "week1.html", "week1", WEEK1), ("weekly/", "weekly.html", "weekly", WEEKLY)):
+        for path, tpl, key, data in (("week-1/", "week1.html", "week1", WEEK1), ("weekly/", "weekly.html", "weekly", WEEKLY), ("bosses/", "bosses.html", "bosses", BOSSES)):
             ctx = page_ctx(lang, path, "../../")
             ctx[key] = data
             write(f"{lang}/{path}index.html", e.get_template(tpl).render(ctx))

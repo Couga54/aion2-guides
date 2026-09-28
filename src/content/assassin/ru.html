@@ -126,41 +126,6 @@
   </ul></div>
 {% endcall %}
 
-{# ============================== PvP ============================== #}
-{% call glance('pvp') %}
-  <h3>{{ t.core_skills }}</h3>
-  {{ core([('shadowstrike', '16'), ('flash-slice', '16'), ('heart-gore', '20'), ('defiance', '16')]) }}
-  <h3>{{ t.stigma_loadout }}</h3>
-  {{ loadout([('illusive-clone', 20), ('evasion-stance', 20), ('shadow-walk', 15), ('evasion-contract', 10)]) }}
-  <h3>{{ t.key_passives }}</h3>
-  {{ passives(['rear-smite', 'assault-stance', 'revitalization-contract', 'heightened-sixth-sense']) }}
-{% endcall %}
-
-{% call section('intro-pvp', 'Обзор', 'pvp') %}
-  <p>В PvP Убийца выбирает цель, открывает бой из невидимости или со спины, держит её оглушением и ослеплением и убивает раньше, чем она успевает ответить.</p>
-  <p class="note">Таблица TitanTheF посвящена PvE; PvP-выбор ниже построен на данных скиллов глобального клиента и служит отправной точкой, пока не сложится глобальная PvP-мета.</p>
-{% endcall %}
-
-{% call section('skills-pvp', 'Скиллы и стигмы', 'pvp') %}
-  <ul class="skill-grid">
-    {% call skill('shadowstrike', 'must', '16', [0, 2, 4]) %}Телепорт за спину и оглушение; шанс Печати блокирует скиллы цели.{% endcall %}
-    {% call skill('flash-slice', 'must', '16', [0, 3, 4]) %}Ослепление, два применения, а на 16 — оглушение по ослеплённым.{% endcall %}
-    {% call skill('defiance', 'must', '16', [2, 3, 4]) %}Снимает первый жёсткий контроль.{% endcall %}
-    {% call skill('shadow-walk', 'must', 'Ур. 15', upto=15) %}Невидимость для открытия; на 15 доступна в бою, чтобы сбросить бой.{% endcall %}
-    {% call skill('evasion-stance', 'must', 'Ур. 20', upto=20) %}Уклонись от их бурста; на 20 ещё и лечит.{% endcall %}
-    {% call skill('evasion-contract', 'opt', 'Ур. 10', upto=10) %}Снимает замедления и обездвиживания и даёт к ним иммунитет.{% endcall %}
-    {% call skill('spiral-slice', 'opt', 'альт.', upto=10) %}Снимает баффы и оглушает, если снял два и больше.{% endcall %}
-  </ul>
-{% endcall %}
-
-{% call section('recap-pvp', 'Итог', 'pvp') %}
-  <div class="callout accent"><ul>
-    <li><strong>Комбо:</strong> Поступь тени → Убийца из сумрака (оглушение) → Ослепляющий разрез → Взрыв эмблемы → Пронзание сердца под Иллюзорным двойником.</li>
-    <li><strong>Стигмы:</strong> Иллюзорный двойник, Стойка уклонения, Поступь тени, Обет уклонения.</li>
-    <li><strong>Daevanion:</strong> Azphel вместо Ariel.</li>
-  </ul></div>
-{% endcall %}
-
 {# ============================ Leveling ============================ #}
 {% call section('fight-lvl', t.lvl_combat, 'lvl') %}
   <div class="callout"><ul>

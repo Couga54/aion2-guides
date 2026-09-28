@@ -13,6 +13,34 @@
       },
       "items": [
         {
+          "name": "Whelps",
+          "what": {
+            "en": "Ranger main (1M CP on KR, played the global test). His Ranger guide video and S1 endgame PvE build on questlog are the basis of the Ranger guide.",
+            "ru": "Мейн Лучника (1 млн CP в Корее, играл на глобальном тесте). Его видеогайд и PvE-билд на эндгейм 1 сезона на questlog — основа гайда на Лучника."
+          },
+          "used": [
+            "ranger"
+          ],
+          "links": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=wKOm6yKuu_I",
+              "label": {
+                "en": "Ranger guide",
+                "ru": "Гайд на Лучника"
+              }
+            },
+            {
+              "type": "site",
+              "url": "https://questlog.gg/aion-2/en/character-builder/AelonCommandAndTheSharpMerchant?build-id=8655",
+              "label": {
+                "en": "questlog build",
+                "ru": "Билд на questlog"
+              }
+            }
+          ]
+        },
+        {
           "name": "Arthars Gaming",
           "what": {
             "en": "“The ULTIMATE AION 2 Gladiator Starter Guide!” — the base of the Gladiator PvE guide (played on the Taiwanese server).",

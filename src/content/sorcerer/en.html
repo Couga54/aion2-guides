@@ -135,42 +135,6 @@
   </ul></div>
 {% endcall %}
 
-{# ============================== PvP ============================== #}
-{% call glance('pvp') %}
-  <h3>{{ t.core_skills }}</h3>
-  {{ core([('frost', '16'), ('winters-shackles', '16'), ('firestorm', '16'), ('bittercold-wind', '16')]) }}
-  <h3>{{ t.stigma_loadout }}</h3>
-  {{ loadout([('element-enhancement', 20), ('soul-freeze', 10), ('curse-tree', 10), ('hibernation', 10)]) }}
-  <h3>{{ t.key_passives }}</h3>
-  {{ passives(['robe-of-flame', 'grace-of-enhancement', 'revitalization-contract', 'robe-of-cold']) }}
-{% endcall %}
-
-{% call section('intro-pvp', 'Overview', 'pvp') %}
-  <p>In PvP the Sorcerer wins with a control chain into burst: root, freeze or polymorph, then unload behind {{ s('element-enhancement') }}. Strong in 1v1 and arenas, very fragile in open zergs — stay at max range.</p>
-  <p class="note">A starting point from the global skill data and Korean notes, not a tested global PvP build.</p>
-{% endcall %}
-
-{% call section('skills-pvp', 'Skills & stigmas', 'pvp') %}
-  <ul class="skill-grid">
-    {% call skill('frost', 'must', '16', [1, 3, 4]) %}+25% Frost chance on players at 12, +1s duration at 16.{% endcall %}
-    {% call skill('winters-shackles', 'must', '16', [1, 3, 4]) %}Slow with a 30% Frost chance and a chain skill at 12.{% endcall %}
-    {% call skill('firestorm', 'must', '16', [2, 3, 4]) %}−60% incoming heal on hit — your anti-heal.{% endcall %}
-    {% call skill('bittercold-wind', 'must', '16', [2, 3, 4]) %}Root plus pull; guaranteed crit at 12.{% endcall %}
-    {% call skill('soul-freeze', 'must', 'Lv 10', upto=10) %}Seal for 5s and 1,000 Stamina drain at 10 — stops their escape.{% endcall %}
-    {% call skill('curse-tree', 'must', 'Lv 10', upto=10) %}10s polymorph and −20% Fire Tolerance; at 10 it cuts Block and Evasion when it ends.{% endcall %}
-    {% call skill('hibernation', 'must', 'Lv 10', upto=10) %}5s immunity with healing — the Sorcerer's only real escape.{% endcall %}
-    {% call skill('arctic-armor', 'opt', 'alt.', upto=10) %}+10% PvP Damage Tolerance and MP-based damage split.{% endcall %}
-  </ul>
-{% endcall %}
-
-{% call section('recap-pvp', 'Recap', 'pvp') %}
-  <div class="callout accent"><ul>
-    <li><strong>Combo:</strong> Bittercold Wind (root) → Frost → Element Enhancement → Firestorm (anti-heal) → Blaze.</li>
-    <li><strong>Stigmas:</strong> Element Enhancement, Soul Freeze, Curse: Tree, Hibernation.</li>
-    <li><strong>Daevanion:</strong> Azphel over Ariel.</li>
-  </ul></div>
-{% endcall %}
-
 {# ============================ Leveling ============================ #}
 {% call section('fight-lvl', t.lvl_combat, 'lvl') %}
   <div class="callout"><ul>

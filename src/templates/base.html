@@ -30,10 +30,12 @@
   // Theme + guide mode before first paint (no flash).
   (function (r) {
     try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
-    var modes = ['pve', 'pvp', 'lvl'];
+    var off = (r.getAttribute('data-off') || '').split(' ');
+    var modes = ['pve', 'pvp', 'lvl'].filter(function (x) { return off.indexOf(x) < 0; });
     var m = new URLSearchParams(location.search).get('mode');
     if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
     if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+    else if (modes.indexOf(r.dataset.mode) < 0) r.dataset.mode = modes[0];
   })(document.documentElement);
 </script>
 <link rel="stylesheet" href="{{ root }}assets/css/site.css">
@@ -76,6 +78,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
         <span>{{ t.nav_weekly }}</span>
       </a>
+      <a class="src-nav" href="{{ root }}{{ lang }}/bosses/"{% if path == 'bosses/' %} aria-current="page"{% endif %} title="{{ t.bs_title }}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
+        <span>{{ t.nav_bosses }}</span>
+      </a>
       <a class="src-nav src-nav-sources" href="{{ root }}{{ lang }}/sources/"{% if path == 'sources/' %} aria-current="page"{% endif %} title="{{ t.src_title }}">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
         <span>{{ t.sources }}</span>
@@ -87,7 +93,8 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
       </button>{% endif %}
       <button class="icon-btn theme-toggle" type="button" aria-label="{{ t.theme }}" title="{{ t.theme }}">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
       </button>
     </div>
   </div>
@@ -120,7 +127,7 @@
       <time class="wn-date" datetime="{{ e.date }}">{{ fmt_day(e.date, lang) }}</time>
       <ul>
         {% for it in e['items'] %}
-        <li>{% if it.href %}<a href="{{ root }}{{ lang }}/{{ it.href }}">{{ it[lang]|safe }}</a>{% else %}{{ it[lang]|safe }}{% endif %}</li>
+        <li>{% if it.get('href') %}<a href="{{ root }}{{ lang }}/{{ it.href }}">{{ it[lang]|safe }}</a>{% else %}<span>{{ it[lang]|safe }}</span>{% endif %}</li>
         {% endfor %}
       </ul>
     </section>

@@ -1,7 +1,8 @@
 (function () {
   'use strict';
   var root = document.documentElement;
-  var MODES = ['pve', 'pvp', 'lvl'];
+  var OFF = (root.getAttribute('data-off') || '').split(' ');
+  var MODES = ['pve', 'pvp', 'lvl'].filter(function (m) { return OFF.indexOf(m) < 0; });
 
   function store(key, value) {
     try {
@@ -20,10 +21,21 @@
 
   // ---- class picker: close on outside click and Escape --------------------
   var cmenu = document.querySelector('.class-menu');
+  var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (cmenu) {
-    document.addEventListener('click', function (ev) { if (cmenu.open && !cmenu.contains(ev.target)) cmenu.open = false; });
+    // <details> closes instantly, so play the closing animation first.
+    var closeMenu = function () {
+      if (!cmenu.open || cmenu.classList.contains('is-closing')) return;
+      if (calm) { cmenu.open = false; return; }
+      cmenu.classList.add('is-closing');
+      setTimeout(function () { cmenu.open = false; cmenu.classList.remove('is-closing'); }, 160);
+    };
+    cmenu.querySelector('summary').addEventListener('click', function (ev) {
+      if (cmenu.open) { ev.preventDefault(); closeMenu(); }
+    });
+    document.addEventListener('click', function (ev) { if (cmenu.open && !cmenu.contains(ev.target)) closeMenu(); });
     document.addEventListener('keydown', function (ev) {
-      if (ev.key === 'Escape' && cmenu.open) { cmenu.open = false; cmenu.querySelector('summary').focus(); }
+      if (ev.key === 'Escape' && cmenu.open) { closeMenu(); cmenu.querySelector('summary').focus(); }
     });
   }
 
@@ -147,11 +159,27 @@
 
   // ---- mode switch -----------------------------------------------------------
   var modeButtons = document.querySelectorAll('.mode-switch [data-set-mode]');
-  function syncButtons() {
-    modeButtons.forEach(function (b) { b.setAttribute('aria-checked', String(b.dataset.setMode === root.dataset.mode)); });
+  function syncButtons(mode) {
+    mode = mode || root.dataset.mode;
+    modeButtons.forEach(function (b) { b.setAttribute('aria-checked', String(b.dataset.setMode === mode)); });
   }
+  var guide = document.querySelector('.guide');
+  var switchTimer = null, target = null;
   function setMode(mode) {
-    if (mode === root.dataset.mode) return;
+    if (MODES.indexOf(mode) < 0 || mode === (target || root.dataset.mode)) return;
+    if (calm) return applyMode(mode);
+    target = mode;
+    // Fade the guide out, swap the mode (the hero animates in CSS), fade back in.
+    syncButtons(mode);
+    guide.classList.add('is-switching');
+    clearTimeout(switchTimer);
+    switchTimer = setTimeout(function () {
+      target = null;
+      applyMode(mode);
+      guide.classList.remove('is-switching');
+    }, 160);
+  }
+  function applyMode(mode) {
     var y = window.scrollY;              // keep the page exactly where it is
     root.dataset.mode = mode;
     window.scrollTo({ top: y, behavior: 'instant' });
@@ -169,9 +197,10 @@
     b.addEventListener('keydown', function (e) {
       if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
       e.preventDefault();
-      var i = MODES.indexOf(root.dataset.mode) + (e.key === 'ArrowRight' ? 1 : -1);
-      setMode(MODES[(i + MODES.length) % MODES.length]);
-      document.querySelector('.mode-switch [data-set-mode="' + root.dataset.mode + '"]').focus();
+      var i = MODES.indexOf(target || root.dataset.mode) + (e.key === 'ArrowRight' ? 1 : -1);
+      var next = MODES[(i + MODES.length) % MODES.length];
+      setMode(next);
+      document.querySelector('.mode-switch [data-set-mode="' + next + '"]').focus();
     });
   });
   // In-text links to another mode open that guide from the top.
@@ -183,10 +212,13 @@
   var hashTarget = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
   var scope = hashTarget && hashTarget.closest('[data-only]');
   if (scope && scope.dataset.only.split(' ').indexOf(root.dataset.mode) < 0) {
-    root.dataset.mode = scope.dataset.only.split(' ')[0];
+    var alt = scope.dataset.only.split(' ').filter(function (m) { return MODES.indexOf(m) >= 0; })[0];
+    if (alt) root.dataset.mode = alt;
   }
   syncButtons();
   buildToc();
+  // Turn on the mode transitions only after the first paint, so the page doesn't animate on load.
+  requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add('anim'); }); });
   if (hashTarget) window.addEventListener('load', function () { hashTarget.scrollIntoView({ behavior: 'instant' }); });
 
   // ---- leveling tracker --------------------------------------------------

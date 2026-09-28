@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-mode="pve" data-class="chanter">
+<html lang="en" data-mode="pve" data-class="chanter" data-off="pvp">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -29,10 +29,12 @@
   // Theme + guide mode before first paint (no flash).
   (function (r) {
     try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
-    var modes = ['pve', 'pvp', 'lvl'];
+    var off = (r.getAttribute('data-off') || '').split(' ');
+    var modes = ['pve', 'pvp', 'lvl'].filter(function (x) { return off.indexOf(x) < 0; });
     var m = new URLSearchParams(location.search).get('mode');
     if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
     if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+    else if (modes.indexOf(r.dataset.mode) < 0) r.dataset.mode = modes[0];
   })(document.documentElement);
 </script>
 <link rel="stylesheet" href="../../assets/css/site.css">
@@ -87,6 +89,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
         <span>Weekly</span>
       </a>
+      <a class="src-nav" href="../../en/bosses/" title="World bosses">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
+        <span>Bosses</span>
+      </a>
       <a class="src-nav src-nav-sources" href="../../en/sources/" title="Sources &amp; credits">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
         <span>Sources</span>
@@ -97,7 +103,8 @@
 <button class="icon-btn wn-open wn-top" type="button" aria-label="Changelog" title="Changelog">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
       </button>      <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
       </button>
     </div>
   </div>
@@ -128,8 +135,8 @@
 <div class="guidebar">
   <div class="wrap guidebar-in">
     <div class="mode-switch" role="radiogroup" aria-label="Guide mode">
-      <button type="button" role="radio" data-set-mode="pve" aria-checked="true">PvE</button>
-      <button type="button" role="radio" data-set-mode="pvp" aria-checked="false">PvP</button>
+      <button type="button" role="radio" data-set-mode="pve" aria-checked="false">PvE</button>
+      <button type="button" role="radio" data-set-mode="pvp" aria-checked="false" class="is-off" aria-disabled="true" disabled>PvP</button>
       <button type="button" role="radio" data-set-mode="lvl" aria-checked="false">Leveling</button>
     </div>
     <nav class="toc-mobile" aria-label="On this page"></nav>
@@ -925,185 +932,6 @@
   </ul></div>
 
 </section>
-<aside class="glance" data-only="pvp" aria-label="Build at a glance">
-  <p class="glance-title">Build at a glance</p>
-    <h3>Core skills</h3>
-  <ul class="core-row">
-  <li title="Impactful Crush">
-    <img src="../../assets/icons/chanter/impactful-crush.webp" width="52" height="52" alt="Impactful Crush" loading="lazy">
-    <span class="core-lv">16</span>
-    <span class="core-name">Impactful Crush</span>
-  </li>
-  <li title="Wave Blow">
-    <img src="../../assets/icons/chanter/wave-blow.webp" width="52" height="52" alt="Wave Blow" loading="lazy">
-    <span class="core-lv">16</span>
-    <span class="core-name">Wave Blow</span>
-  </li>
-  <li title="Dark Crush">
-    <img src="../../assets/icons/chanter/dark-crush.webp" width="52" height="52" alt="Dark Crush" loading="lazy">
-    <span class="core-lv">20</span>
-    <span class="core-name">Dark Crush</span>
-  </li>
-  <li title="Defiance">
-    <img src="../../assets/icons/chanter/defiance.webp" width="52" height="52" alt="Defiance" loading="lazy">
-    <span class="core-lv">16</span>
-    <span class="core-name">Defiance</span>
-  </li>
-</ul>
-  <h3>Stigma loadout</h3>
-  <ol class="loadout">
-  <li class="slot" title="Undefeated Mantra">
-    <img src="../../assets/icons/chanter/undefeated-mantra.webp" width="56" height="56" alt="Undefeated Mantra" loading="lazy">
-    <span class="slot-lv">Lv 20</span>
-    <span class="slot-name">Undefeated Mantra</span>
-  </li>
-  <li class="slot" title="Marchutan&#39;s Wrath">
-    <img src="../../assets/icons/chanter/marchutans-wrath.webp" width="56" height="56" alt="Marchutan&#39;s Wrath" loading="lazy">
-    <span class="slot-lv">Lv 15</span>
-    <span class="slot-name">Marchutan&#39;s Wrath</span>
-  </li>
-  <li class="slot" title="Power of the Storm">
-    <img src="../../assets/icons/chanter/power-of-the-storm.webp" width="56" height="56" alt="Power of the Storm" loading="lazy">
-    <span class="slot-lv">Lv 10</span>
-    <span class="slot-name">Power of the Storm</span>
-  </li>
-  <li class="slot" title="Barrier Spell">
-    <img src="../../assets/icons/chanter/barrier-spell.webp" width="56" height="56" alt="Barrier Spell" loading="lazy">
-    <span class="slot-lv">Lv 10</span>
-    <span class="slot-name">Barrier Spell</span>
-  </li>
-</ol>
-  <h3>Key passives</h3>
-  <ul class="passive-row">
-<li><img src="../../assets/icons/chanter/attack-preparation.webp" width="24" height="24" alt="" loading="lazy">Attack Preparation</li><li><img src="../../assets/icons/chanter/impact-hit.webp" width="24" height="24" alt="" loading="lazy">Impact Hit</li><li><img src="../../assets/icons/chanter/survival-willpower.webp" width="24" height="24" alt="" loading="lazy">Survival Willpower</li><li><img src="../../assets/icons/chanter/earths-promise.webp" width="24" height="24" alt="" loading="lazy">Earth&#39;s Promise</li></ul>
-
-</aside>
-<section id="intro-pvp" class="g-section" data-only="pvp" aria-labelledby="h-intro-pvp">
-  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro-pvp">Overview</h2></div>
-    <p>In PvP the Chanter is a front-line buffer that locks targets down: stun with <span class="sk"><img src="../../assets/icons/chanter/impactful-crush.webp" width="18" height="18" alt="" loading="lazy">Impactful Crush</span>, knock down with <span class="sk"><img src="../../assets/icons/chanter/wave-blow.webp" width="18" height="18" alt="" loading="lazy">Wave Blow</span>, then burst with <span class="sk"><img src="../../assets/icons/chanter/dark-crush.webp" width="18" height="18" alt="" loading="lazy">Dark Crush</span> — while the party fights inside your mantras.</p>
-  <p class="note">TitanTheF's sheet covers PvE; the PvP picks below come from the global skill data and are a starting point until a global PvP meta forms.</p>
-
-</section>
-<section id="skills-pvp" class="g-section" data-only="pvp" aria-labelledby="h-skills-pvp">
-  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-skills-pvp">Skills &amp; stigmas</h2></div>
-    <ul class="skill-grid">
-<li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/impactful-crush.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Impactful Crush <span class="badge must">16</span></div>
-    <div class="skill-desc">20m stun (+1s duration, +20% chance at 16) — your opener.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">8</span>+1s [Impactful Crush] Stun duration</li><li><span class="spec-lv">8</span>Changes to mobile skill</li><li><span class="spec-lv">16</span>+20% [Impactful Crush] Stun Chance</li>    </ul>
-    <details class="spec-all">
-      <summary>All specializations</summary>
-      <ul>
-        <li class=""><span class="spec-lv">8</span>Changes to AoE damage</li>
-        <li class="on"><span class="spec-lv">8</span>+1s [Impactful Crush] Stun duration</li>
-        <li class="on"><span class="spec-lv">8</span>Changes to mobile skill</li>
-        <li class=""><span class="spec-lv">12</span>+30% Skill Speed</li>
-        <li class="on"><span class="spec-lv">16</span>+20% [Impactful Crush] Stun Chance</li>
-      </ul>
-    </details>
-  </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/wave-blow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Wave Blow <span class="badge must">16</span></div>
-    <div class="skill-desc">Knockdown on the stunned target; the level-12 pick cuts their PvP damage.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">8</span>+6m Range</li><li><span class="spec-lv">8</span>+1s Knockdown duration</li><li><span class="spec-lv">12</span>-15% target&#39;s PvE Damage Boost and -7.5% PvP Damage Boost for 10s</li>    </ul>
-    <details class="spec-all">
-      <summary>All specializations</summary>
-      <ul>
-        <li class=""><span class="spec-lv">8</span>Multi-Hit on hit</li>
-        <li class="on"><span class="spec-lv">8</span>+6m Range</li>
-        <li class="on"><span class="spec-lv">8</span>+1s Knockdown duration</li>
-        <li class="on"><span class="spec-lv">12</span>-15% target&#39;s PvE Damage Boost and -7.5% PvP Damage Boost for 10s</li>
-        <li class=""><span class="spec-lv">16</span>-5s cooldown</li>
-      </ul>
-    </details>
-  </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/defiance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Defiance <span class="badge must">16</span></div>
-    <div class="skill-desc">Break the first hard CC.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">8</span>Restores 10% HP on using [Defiance]</li><li><span class="spec-lv">12</span>+2s Tenacity duration</li><li><span class="spec-lv">16</span>+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration</li>    </ul>
-    <details class="spec-all">
-      <summary>All specializations</summary>
-      <ul>
-        <li class=""><span class="spec-lv">8</span>Adds [Crushing Strike] Chain Skill</li>
-        <li class=""><span class="spec-lv">8</span>Restores 1000 Stamina on using [Defiance]</li>
-        <li class="on"><span class="spec-lv">8</span>Restores 10% HP on using [Defiance]</li>
-        <li class="on"><span class="spec-lv">12</span>+2s Tenacity duration</li>
-        <li class="on"><span class="spec-lv">16</span>+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration</li>
-      </ul>
-    </details>
-  </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/marchutans-wrath.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Marchutan&#39;s Wrath <span class="badge must">Lv 15</span></div>
-    <div class="skill-desc">Level 15 adds −70% healing and potion recovery — your anti-heal.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">5</span>Up to +20% damage when less targets hit</li><li><span class="spec-lv">10</span>50% chance to inflict Stun for 3s</li><li><span class="spec-lv">15</span>-70% Incoming Heal and Potion Recovery</li>    </ul>
-    <details class="spec-all">
-      <summary>All specializations</summary>
-      <ul>
-        <li class="on"><span class="spec-lv">5</span>Up to +20% damage when less targets hit</li>
-        <li class="on"><span class="spec-lv">10</span>50% chance to inflict Stun for 3s</li>
-        <li class="on"><span class="spec-lv">15</span>-70% Incoming Heal and Potion Recovery</li>
-        <li class=""><span class="spec-lv">20</span>+25% additional Stun Chance</li>
-      </ul>
-    </details>
-  </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/barrier-spell.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Barrier Spell <span class="badge opt">Lv 10</span></div>
-    <div class="skill-desc">Keeps the party above 10% HP for 3s — saves a lost fight.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">5</span>Restores 10% HP when effect expires naturally</li><li><span class="spec-lv">10</span>+10% PvE Damage Tolerance and +5% PvP Damage Tolerance for 10s when effect expires naturally</li>    </ul>
-    <details class="spec-all">
-      <summary>All specializations</summary>
-      <ul>
-        <li class="on"><span class="spec-lv">5</span>Restores 10% HP when effect expires naturally</li>
-        <li class="on"><span class="spec-lv">10</span>+10% PvE Damage Tolerance and +5% PvP Damage Tolerance for 10s when effect expires naturally</li>
-        <li class=""><span class="spec-lv">15</span>+10% HP limit</li>
-        <li class=""><span class="spec-lv">20</span>+1s effect duration</li>
-      </ul>
-    </details>
-  </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/impeding-authority.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
-  <div class="skill-body">
-    <div class="skill-name">Impeding Authority <span class="badge opt">alt.</span></div>
-    <div class="skill-desc">Party shield worth 16% of Max HP.</div>
-    <ul class="spec-chips">
-<li><span class="spec-lv">5</span>+15% Defense</li><li><span class="spec-lv">10</span>+10% Incoming Heal</li>    </ul>
-    <details class="spec-all">
-      <summary>All specializations</summary>
-      <ul>
-        <li class="on"><span class="spec-lv">5</span>+15% Defense</li>
-        <li class="on"><span class="spec-lv">10</span>+10% Incoming Heal</li>
-        <li class=""><span class="spec-lv">15</span>+10% PvE Damage Tolerance, +5% PvP Damage Tolerance</li>
-        <li class=""><span class="spec-lv">20</span>Restores 7% of Max HP when Protective Shield ends or is broken</li>
-      </ul>
-    </details>
-  </div>
-</li>  </ul>
-
-</section>
-<section id="recap-pvp" class="g-section" data-only="pvp" aria-labelledby="h-recap-pvp">
-  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-recap-pvp">Recap</h2></div>
-    <div class="callout accent"><ul>
-    <li><strong>Combo:</strong> Impactful Crush (stun) → Wave Blow (knockdown) → Dark Crush.</li>
-    <li><strong>Stigmas:</strong> Undefeated Mantra, Marchutan's Wrath 15 (anti-heal), Power of the Storm, Barrier Spell.</li>
-    <li><strong>Daevanion:</strong> Azphel over Ariel.</li>
-  </ul></div>
-
-</section>
 <section id="fight-lvl" class="g-section" data-only="lvl" aria-labelledby="h-fight-lvl">
   <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-fight-lvl">How to fight while leveling</h2></div>
     <div class="callout"><ul>
@@ -1170,7 +998,7 @@
     </div>
   </div>
 </footer>
-<dialog class="whatsnew" data-id="2026-09-28-sorcerer" aria-labelledby="wn-title">
+<dialog class="whatsnew" data-id="2026-09-28-bosses-ranger" aria-labelledby="wn-title">
   <form method="dialog" class="wn-in">
     <div class="wn-head">
       <h2 id="wn-title" data-latest="What&#39;s new" data-history="Changelog">What&#39;s new</h2>
@@ -1179,6 +1007,15 @@
       </button>
     </div>
     <section class="wn-entry">
+      <time class="wn-date" datetime="2026-09-28">Sep 28, 2026</time>
+      <ul>
+        <li><a href="../../en/bosses/"><strong>World bosses</strong> — the global Season 1 field bosses (Verteron, Altgard, Lower Reshanta) with a kill tracker. Respawn timers come after launch.</a></li>
+        <li><a href="../../en/ranger/"><strong>Ranger PvE rebuilt on Whelps' guide</strong> — Deadshot and Gale Arrow to 20, Vaizel's Authority first, the two-line macro, soul binds, accuracy and arcana.</a></li>
+        <li><span><strong>Only sourced guides</strong> — PvP for Ranger, Assassin, Chanter and Sorcerer is off until launch (no reliable source yet); modes built on Korean data carry a WIP note.</span></li>
+        <li><span><strong>Smoother site</strong> — modes switch with a fade, the header folds smoothly, the class menu animates, class figures step out of their cards on hover, and the theme button shows a sun or a moon.</span></li>
+      </ul>
+    </section>
+    <section class="wn-entry wn-older">
       <time class="wn-date" datetime="2026-09-28">Sep 28, 2026</time>
       <ul>
         <li><a href="../../en/sorcerer/"><strong>Sorcerer guide (WIP)</strong> — fire &amp; ice build, stigmas, macro and leveling, assembled from Korean guides until proper global builds appear.</a></li>

@@ -129,40 +129,6 @@
   </ul></div>
 {% endcall %}
 
-{# ============================== PvP ============================== #}
-{% call glance('pvp') %}
-  <h3>{{ t.core_skills }}</h3>
-  {{ core([('impactful-crush', '16'), ('wave-blow', '16'), ('dark-crush', '20'), ('defiance', '16')]) }}
-  <h3>{{ t.stigma_loadout }}</h3>
-  {{ loadout([('undefeated-mantra', 20), ('marchutans-wrath', 15), ('power-of-the-storm', 10), ('barrier-spell', 10)]) }}
-  <h3>{{ t.key_passives }}</h3>
-  {{ passives(['attack-preparation', 'impact-hit', 'survival-willpower', 'earths-promise']) }}
-{% endcall %}
-
-{% call section('intro-pvp', 'Overview', 'pvp') %}
-  <p>In PvP the Chanter is a front-line buffer that locks targets down: stun with {{ s('impactful-crush') }}, knock down with {{ s('wave-blow') }}, then burst with {{ s('dark-crush') }} — while the party fights inside your mantras.</p>
-  <p class="note">TitanTheF's sheet covers PvE; the PvP picks below come from the global skill data and are a starting point until a global PvP meta forms.</p>
-{% endcall %}
-
-{% call section('skills-pvp', 'Skills & stigmas', 'pvp') %}
-  <ul class="skill-grid">
-    {% call skill('impactful-crush', 'must', '16', [1, 2, 4]) %}20m stun (+1s duration, +20% chance at 16) — your opener.{% endcall %}
-    {% call skill('wave-blow', 'must', '16', [1, 2, 3]) %}Knockdown on the stunned target; the level-12 pick cuts their PvP damage.{% endcall %}
-    {% call skill('defiance', 'must', '16', [2, 3, 4]) %}Break the first hard CC.{% endcall %}
-    {% call skill('marchutans-wrath', 'must', 'Lv 15', upto=15) %}Level 15 adds −70% healing and potion recovery — your anti-heal.{% endcall %}
-    {% call skill('barrier-spell', 'opt', 'Lv 10', upto=10) %}Keeps the party above 10% HP for 3s — saves a lost fight.{% endcall %}
-    {% call skill('impeding-authority', 'opt', 'alt.', upto=10) %}Party shield worth 16% of Max HP.{% endcall %}
-  </ul>
-{% endcall %}
-
-{% call section('recap-pvp', 'Recap', 'pvp') %}
-  <div class="callout accent"><ul>
-    <li><strong>Combo:</strong> Impactful Crush (stun) → Wave Blow (knockdown) → Dark Crush.</li>
-    <li><strong>Stigmas:</strong> Undefeated Mantra, Marchutan's Wrath 15 (anti-heal), Power of the Storm, Barrier Spell.</li>
-    <li><strong>Daevanion:</strong> Azphel over Ariel.</li>
-  </ul></div>
-{% endcall %}
-
 {# ============================ Leveling ============================ #}
 {% call section('fight-lvl', t.lvl_combat, 'lvl') %}
   <div class="callout"><ul>

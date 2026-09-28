@@ -58,7 +58,7 @@
             {% if c.get('pitch') %}<p class="class-pitch">{{ c.pitch[lang] }}</p>{% endif %}
             {% if c.status == 'ready' %}
             <div class="class-meta">
-              <span class="chips"><span class="chip">PvE</span><span class="chip">PvP</span><span class="chip">{{ t.mode_lvl }}</span></span>
+              <span class="chips">{% for m in ['pve', 'pvp', 'lvl'] if m not in c.get('modes_off', []) %}<span class="chip">{{ t['mode_' ~ m] }}</span>{% endfor %}</span>
               <span class="diff" title="{{ t.difficulty }}: {{ t.diff[c.difficulty] }}">
                 {% for i in range(3) %}<i class="{{ 'on' if i < c.difficulty }}"></i>{% endfor %}
                 <span>{{ t.diff[c.difficulty] }}</span>
@@ -67,6 +67,7 @@
             {% endif %}
           </div>
         {% if c.status == 'ready' %}</a>{% else %}</div>{% endif %}
+        {% if c.status == 'ready' %}<div class="pop-art" aria-hidden="true"><img src="{{ root }}assets/art/{{ c.slug }}.webp" alt="" loading="lazy"{% if c.get('art_pos') %} style="--fx:{{ c.art_pos.split()[0] }}"{% endif %}></div>{% endif %}
       </li>
     {% endmacro %}
     <ul class="class-grid class-grid-ready">

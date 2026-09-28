@@ -129,40 +129,6 @@
   </ul></div>
 {% endcall %}
 
-{# ============================== PvP ============================== #}
-{% call glance('pvp') %}
-  <h3>{{ t.core_skills }}</h3>
-  {{ core([('impactful-crush', '16'), ('wave-blow', '16'), ('dark-crush', '20'), ('defiance', '16')]) }}
-  <h3>{{ t.stigma_loadout }}</h3>
-  {{ loadout([('undefeated-mantra', 20), ('marchutans-wrath', 15), ('power-of-the-storm', 10), ('barrier-spell', 10)]) }}
-  <h3>{{ t.key_passives }}</h3>
-  {{ passives(['attack-preparation', 'impact-hit', 'survival-willpower', 'earths-promise']) }}
-{% endcall %}
-
-{% call section('intro-pvp', 'Обзор', 'pvp') %}
-  <p>В PvP Чародей — баффер на передовой, который держит цели под контролем: оглушение {{ s('impactful-crush') }}, сбивание {{ s('wave-blow') }}, затем бурст {{ s('dark-crush') }} — пока группа дерётся под твоими мантрами.</p>
-  <p class="note">Таблица TitanTheF посвящена PvE; PvP-выбор ниже построен на данных скиллов глобального клиента и служит отправной точкой, пока не сложится глобальная PvP-мета.</p>
-{% endcall %}
-
-{% call section('skills-pvp', 'Скиллы и стигмы', 'pvp') %}
-  <ul class="skill-grid">
-    {% call skill('impactful-crush', 'must', '16', [1, 2, 4]) %}Оглушение на 20 м (+1 сек. длительности, +20% шанса на 16) — твоё открытие.{% endcall %}
-    {% call skill('wave-blow', 'must', '16', [1, 2, 3]) %}Сбивает с ног оглушённую цель; специализация на 12 режет её урон в PvP.{% endcall %}
-    {% call skill('defiance', 'must', '16', [2, 3, 4]) %}Снимает первый жёсткий контроль.{% endcall %}
-    {% call skill('marchutans-wrath', 'must', 'Ур. 15', upto=15) %}На 15 добавляет −70% к лечению и зельям — твой антихил.{% endcall %}
-    {% call skill('barrier-spell', 'opt', 'Ур. 10', upto=10) %}Не даёт ОЗ группы упасть ниже 10% на 3 сек. — спасает проигранный бой.{% endcall %}
-    {% call skill('impeding-authority', 'opt', 'альт.', upto=10) %}Щит группе на 16% макс. ОЗ.{% endcall %}
-  </ul>
-{% endcall %}
-
-{% call section('recap-pvp', 'Итог', 'pvp') %}
-  <div class="callout accent"><ul>
-    <li><strong>Комбо:</strong> Дробящий удар (оглушение) → Волновой удар (сбивание) → Удар скалы.</li>
-    <li><strong>Стигмы:</strong> Песнь непобедимости, Ярость Маркутана 15 (антихил), Повелитель бурь, Защитный барьер.</li>
-    <li><strong>Daevanion:</strong> Azphel вместо Ariel.</li>
-  </ul></div>
-{% endcall %}
-
 {# ============================ Leveling ============================ #}
 {% call section('fight-lvl', t.lvl_combat, 'lvl') %}
   <div class="callout"><ul>

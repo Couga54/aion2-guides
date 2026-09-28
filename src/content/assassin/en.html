@@ -126,41 +126,6 @@
   </ul></div>
 {% endcall %}
 
-{# ============================== PvP ============================== #}
-{% call glance('pvp') %}
-  <h3>{{ t.core_skills }}</h3>
-  {{ core([('shadowstrike', '16'), ('flash-slice', '16'), ('heart-gore', '20'), ('defiance', '16')]) }}
-  <h3>{{ t.stigma_loadout }}</h3>
-  {{ loadout([('illusive-clone', 20), ('evasion-stance', 20), ('shadow-walk', 15), ('evasion-contract', 10)]) }}
-  <h3>{{ t.key_passives }}</h3>
-  {{ passives(['rear-smite', 'assault-stance', 'revitalization-contract', 'heightened-sixth-sense']) }}
-{% endcall %}
-
-{% call section('intro-pvp', 'Overview', 'pvp') %}
-  <p>In PvP the Assassin picks a target, opens from stealth or behind, locks it down with stun and blind, and bursts it before it can react.</p>
-  <p class="note">TitanTheF's sheet covers PvE; the PvP picks below come from the global skill data and are a starting point until a global PvP meta forms.</p>
-{% endcall %}
-
-{% call section('skills-pvp', 'Skills & stigmas', 'pvp') %}
-  <ul class="skill-grid">
-    {% call skill('shadowstrike', 'must', '16', [0, 2, 4]) %}Teleport behind and stun; Seal chance stops their skills.{% endcall %}
-    {% call skill('flash-slice', 'must', '16', [0, 3, 4]) %}Blind, two uses, and at 16 a stun on blinded targets.{% endcall %}
-    {% call skill('defiance', 'must', '16', [2, 3, 4]) %}Break the first hard CC.{% endcall %}
-    {% call skill('shadow-walk', 'must', 'Lv 15', upto=15) %}Stealth for the opener; at 15 usable in combat to reset a fight.{% endcall %}
-    {% call skill('evasion-stance', 'must', 'Lv 20', upto=20) %}Dodge their burst; heals at 20.{% endcall %}
-    {% call skill('evasion-contract', 'opt', 'Lv 10', upto=10) %}Removes slows and roots and grants immunity to them.{% endcall %}
-    {% call skill('spiral-slice', 'opt', 'alt.', upto=10) %}Strips buffs and stuns when it removes two or more.{% endcall %}
-  </ul>
-{% endcall %}
-
-{% call section('recap-pvp', 'Recap', 'pvp') %}
-  <div class="callout accent"><ul>
-    <li><strong>Combo:</strong> Shadow Walk → Shadowstrike (stun) → Flash Slice (blind) → Insignia Explosion → Heart Gore under Illusive Clone.</li>
-    <li><strong>Stigmas:</strong> Illusive Clone, Evasion Stance, Shadow Walk, Evasion Contract.</li>
-    <li><strong>Daevanion:</strong> Azphel over Ariel.</li>
-  </ul></div>
-{% endcall %}
-
 {# ============================ Leveling ============================ #}
 {% call section('fight-lvl', t.lvl_combat, 'lvl') %}
   <div class="callout"><ul>
