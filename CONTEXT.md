@@ -1,7 +1,7 @@
 # AION 2 Guides — session context
 
 Working notes carried over from the chat that created this repo, so work can continue
-from `C:\Projects\aion2-guides` as the working directory.
+from the repo root on any machine (paths below are relative to it).
 
 ## Goal
 
@@ -22,7 +22,7 @@ Requirements from the user (in their words, translated):
 
 ## History
 
-1. Started in `C:\Projects\aion2-gladiator-guide` (repo `Couga54/aion2-gladiator-guide`):
+1. Started in a separate repo `Couga54/aion2-gladiator-guide`:
    a single-page Gladiator guide built from Arthars Gaming's video
    ("The ULTIMATE AION 2 Gladiator Starter Guide!", https://www.youtube.com/watch?v=tYTZ8VucMXw),
    transcript in that repo's `data/chapters.json`. Local commits only, never pushed.
@@ -137,5 +137,18 @@ Requirements from the user (in their words, translated):
   Winter's Grasp = Winter's Shackles, Blizzard ≈ Bittercold Wind (uncertain), Elemental Boost = Element
   Enhancement, Flame Barrier = Fire Wall, Frost Storm = Cold Storm. Accent "frost" (cyan). Remove `wip`
   once a real global build (e.g. TitanTheF) exists.
+- Session 6 (Sep 28, in progress): next task — **Cleric and Elementalist as WIP guides, Leveling mode only**
+  for now (no PvE/PvP content yet). Plan: fetch skills (`fetch_skills.py cleric elementalist` — questlog
+  categories are `cleric` and `elementalist`, 35 skills each; `spiritmaster` returns nothing), mark both
+  `ready` + `wip` in site.json, write `data/leveling/<class>.json`, a leveling section with the macro in
+  `src/content/<class>/en.html` + `ru.html`, changelog entry. Skill-point order: search the web if there is
+  no solid data.
+  Macro source: Grobs' "early game macros" slide from his macro video (HMod6Z4GrE0, transcript in
+  data/transcripts/) — saved as `data/sources/grobs-early-game-macros.webp` (all 8 classes; the transcript
+  itself has no per-class layouts). Read from the slide: Cleric macro = 1 slot (≈ "Chain of Torment");
+  Elementalist ("Spiritmaster") macro = 2 slots: "Summon: Water Spirit", "Elemental Fusion". The hotbar
+  lines are icons only — identify them against the fetched icons.
+  Network note: on the work PC questlog fails SSL verification (corporate proxy); `pip install truststore`
+  + `truststore.inject_into_ssl()` works around it. At home the plain fetch should work.
 - Open ideas: more classes, Daevanion board visual per class, checklist export/import,
   verify global level cap and Daevanion values after launch (Oct 5).
