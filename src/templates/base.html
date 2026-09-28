@@ -89,9 +89,9 @@
       <a class="lang-switch" href="{{ root }}{{ other_lang }}/{{ path }}" hreflang="{{ other_lang }}" lang="{{ other_lang }}" data-keep-query>
         <span aria-hidden="true">{{ other_lang|upper }}</span><span class="sr-only">{{ t.switch_lang }}</span>
       </a>
-      {% if CHANGELOG %}<button class="icon-btn wn-open wn-top" type="button" aria-label="{{ t.wn_history }}" title="{{ t.wn_history }}">
+      {% if CHANGELOG %}<a class="icon-btn wn-top" href="{{ root }}{{ lang }}/changelog/"{% if path == 'changelog/' %} aria-current="page"{% endif %} aria-label="{{ t.wn_history }}" title="{{ t.wn_history }}">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
-      </button>{% endif %}
+      </a>{% endif %}
       <button class="icon-btn theme-toggle" type="button" aria-label="{{ t.theme }}" title="{{ t.theme }}">
         <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
         <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -108,7 +108,7 @@
       <a class="brand brand-sm" href="{{ root }}{{ lang }}/">{{ t.site_name }}</a>
       <p>{{ t.footer_disclaimer }}</p>
       <p>{{ t.footer_updated }}: {{ updated }} ({{ t.footer_before_launch }}).</p>
-      <p><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }}</a> · <button type="button" class="link-btn wn-open">{{ t.wn_history }}</button></p>
+      <p><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }}</a> · <a href="{{ root }}{{ lang }}/changelog/">{{ t.wn_history }}</a></p>
     </div>
     {% block footer_extra %}{% endblock %}
   </div>
@@ -117,13 +117,13 @@
 <dialog class="whatsnew" data-id="{{ CHANGELOG[0].id }}" aria-labelledby="wn-title">
   <form method="dialog" class="wn-in">
     <div class="wn-head">
-      <h2 id="wn-title" data-latest="{{ t.wn_title }}" data-history="{{ t.wn_history }}">{{ t.wn_title }}</h2>
+      <h2 id="wn-title">{{ t.wn_title }}</h2>
       <button class="icon-btn wn-x" value="close" aria-label="{{ t.wn_close }}">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
     </div>
-    {% for e in CHANGELOG %}
-    <section class="wn-entry{{ ' wn-older' if not loop.first }}">
+    {% for e in CHANGELOG[:1] %}
+    <section class="wn-entry">
       <time class="wn-date" datetime="{{ e.date }}">{{ fmt_day(e.date, lang) }}</time>
       <ul>
         {% for it in e['items'] %}
@@ -133,9 +133,11 @@
     </section>
     {% endfor %}
     <button class="btn btn-primary wn-ok" value="close">{{ t.wn_close }}</button>
+    <p class="wn-all"><a href="{{ root }}{{ lang }}/changelog/">{{ t.wn_all }} →</a></p>
   </form>
 </dialog>
 {% endif %}
 <script src="{{ root }}assets/js/site.js" defer></script>
+<script src="{{ root }}assets/js/fx.js" defer></script>
 </body>
 </html>

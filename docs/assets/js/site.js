@@ -39,32 +39,24 @@
     });
   }
 
-  // ---- what's new: once per new changelog entry --------------------------
+  // ---- what's new: the latest entry pops up once; the "?" button leads to the changelog page ----
   var wn = document.querySelector('.whatsnew');
+  var top = document.querySelector('.wn-top');
+  var latest = wn ? wn.dataset.id : null;
+  // Opening the changelog page counts as having seen the latest entry.
+  var clPage = document.querySelector('[data-changelog-seen]');
+  if (clPage) store('whatsnew-seen', clPage.dataset.changelogSeen);
+  var markDot = function () { if (top) top.classList.toggle('has-new', !!latest && store('whatsnew-seen') !== latest); };
   if (wn && typeof wn.showModal === 'function') {
-    var seen = function () { store('whatsnew-seen', wn.dataset.id); };
+    var seen = function () { store('whatsnew-seen', latest); markDot(); };
     wn.addEventListener('close', seen);
     // A link inside the dialog navigates away — count that as seen too.
     wn.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', seen); });
     // Click on the backdrop closes it.
     wn.addEventListener('click', function (ev) { if (ev.target === wn) wn.close(); });
-    var openers = document.querySelectorAll('.wn-open');
-    // Auto popup = only the latest entry ("What's new"); the "?" button = the whole changelog.
-    var title = wn.querySelector('#wn-title');
-    var open = function (history) {
-      wn.classList.toggle('is-history', history);
-      title.textContent = history ? title.dataset.history : title.dataset.latest;
-      wn.showModal();
-    };
-    openers.forEach(function (b) { b.addEventListener('click', function () { open(true); }); });
-    // Dot on the "?" button until the newest entry has been seen.
-    var mark = function () { openers.forEach(function (b) { b.classList.toggle('has-new', store('whatsnew-seen') !== wn.dataset.id); }); };
-    wn.addEventListener('close', mark);
-    mark();
-    if (store('whatsnew-seen') !== wn.dataset.id) setTimeout(function () { if (!wn.open) open(false); }, 600);
-  } else {
-    document.querySelectorAll('.wn-open').forEach(function (b) { b.hidden = true; });
+    if (!clPage && store('whatsnew-seen') !== latest) setTimeout(function () { if (!wn.open) wn.showModal(); }, 600);
   }
+  markDot();
 
   // ---- language: remember the choice, keep ?mode and #section ------------
   store('lang', root.lang);

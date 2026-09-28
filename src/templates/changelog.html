@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}{{ t.wn_history }} — {{ t.site_name }}{% endblock %}
+{% block desc %}{{ t.cl_lead }}{% endblock %}
+{% block body_class %}page-changelog{% endblock %}
+{% block main %}
+<main id="main" data-changelog-seen="{{ changelog[0].id }}">
+  <section class="page-hero">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ root }}{{ lang }}/">{{ t.back_home }}</a><span aria-hidden="true">/</span><span>{{ t.wn_history }}</span></nav>
+      <h1>{{ t.wn_history }}</h1>
+      <p class="lead">{{ t.cl_lead }}</p>
+    </div>
+  </section>
+  <div class="wrap cl-page">
+    {% for e in changelog %}
+    <section class="wn-entry cl-entry" aria-label="{{ fmt_day(e.date, lang) }}">
+      <time class="wn-date" datetime="{{ e.date }}">{{ fmt_day(e.date, lang) }}</time>
+      <ul>
+        {% for it in e['items'] %}
+        <li>{% if it.get('href') %}<a href="{{ root }}{{ lang }}/{{ it.href }}">{{ it[lang]|safe }}</a>{% else %}<span>{{ it[lang]|safe }}</span>{% endif %}</li>
+        {% endfor %}
+      </ul>
+    </section>
+    {% endfor %}
+  </div>
+</main>
+{% endblock %}

@@ -663,8 +663,6 @@ a.cm-item[aria-current="page"]{background:var(--accent-soft);border-color:color-
 .energy-chest:disabled{opacity:.4;cursor:not-allowed;}
 .hotline-skills li.is-first{border-color:color-mix(in srgb,var(--accent) 55%,var(--border));background:linear-gradient(90deg,var(--accent-soft),transparent 70%),var(--bg-2);}
 .hotline-order{margin:8px 0 0;font:500 .68rem var(--font-mono);color:var(--text-faint);}
-.whatsnew:not(.is-history) .wn-older{display:none;}
-.whatsnew.is-history .wn-in{max-height:calc(100vh - 48px);overflow-y:auto;}
 
 /* ---- world bosses ---- */
 .bs-page{padding-block:26px 64px;}
@@ -730,3 +728,34 @@ details.spec-all[open] > *:not(summary),.wk-group,.bs-group{animation:fade-in .3
   details.spec-all > *,.wk-group,.bs-group{animation:none !important;}
   a,button,.btn,.icon-btn,.src-nav,.lang-switch,.chip,.class-menu-btn,.cm-item,.wk-item,.bs-item,.ev,.toc-list a,.toc-mobile a,.skill,.hotline{transition:none;}
 }
+
+/* ---- ambient motion (assets/js/fx.js adds the particle canvas and the scroll reveal) ---- */
+.fx-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
+/* home: the landscape drifts slowly */
+.home-hero-art img{animation:hero-drift 38s ease-in-out infinite alternate;transform-origin:60% 40%;}
+@keyframes hero-drift{from{transform:scale(1.02) translate(0,0);}to{transform:scale(1.12) translate(-2.5%,-1.5%);}}
+/* class pages: the figure breathes, a glow in the class colour pulses behind it */
+.class-hero-art{animation:hero-breathe 11s ease-in-out infinite;}
+@keyframes hero-breathe{0%,100%{translate:0 0;}50%{translate:0 -6px;}}
+.hero-glow{position:absolute;z-index:0;top:10px;right:max(0px,calc((100vw - 1180px) / 2 + 60px));width:420px;height:420px;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,var(--hero-glow),transparent 65%);animation:hero-pulse 6s ease-in-out infinite;}
+@keyframes hero-pulse{0%,100%{opacity:.35;transform:scale(.92);}50%{opacity:.85;transform:scale(1.06);}}
+[data-mode="lvl"] .hero-glow{width:300px;height:300px;top:-20px;}
+@media (max-width: 900px){ .hero-glow{right:-80px;opacity:.5;} }
+/* guide blocks below the fold fade in on scroll */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1);}
+.rv.rv-in{opacity:1;transform:none;}
+@media (prefers-reduced-motion: reduce){
+  .home-hero-art img,.class-hero-art,.hero-glow{animation:none;}
+  .rv{opacity:1;transform:none;transition:none;}
+}
+
+/* ---- changelog page (the "?" button) ---- */
+.wn-all{margin:12px 0 0;text-align:center;font-size:.85rem;}
+.wn-all a{color:var(--text-dim);}
+.wn-all a:hover{color:var(--gold);}
+.cl-page{padding-block:24px 64px;}
+.cl-page > *{max-width:760px;}
+.cl-entry{padding:18px 0;}
+.cl-entry ul{gap:10px;}
+.wn-top[aria-current="page"]{color:var(--text);border-color:var(--gold);}

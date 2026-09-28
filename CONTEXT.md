@@ -96,7 +96,9 @@ Requirements from the user (in their words, translated):
 - `data/i18n.json` — UI strings EN/RU.
 - `data/weekly.json`, `data/week1.json` — tracker items and first-week goals (EN+RU).
 - `data/changelog.json` — "What's new" modal (base.html). Shown once per new top entry id
-  (localStorage `whatsnew-seen`) and only that entry; the "?" button and the footer open the full changelog.
+  (localStorage `whatsnew-seen`) and only that entry, with a link to the full changelog page
+  (/<lang>/changelog/, templates/changelog.html). The "?" button and the footer link to that page; visiting it
+  marks the latest entry as seen.
   Add an entry with a new id for every release.
 - `data/transcripts/` — YouTube transcripts guides are based on (`tools/fetch_transcript.py`).
 - `data/sources.json` — Sources & credits page (`/<lang>/sources/`): creators with YouTube/Twitch links,
@@ -152,6 +154,12 @@ Requirements from the user (in their words, translated):
   PvP text removed from content, head script/site.js skip the mode. `wip_modes` (Gladiator pvp, Templar pve+pvp)
   → WIP callout at the top of that mode. Re-enable PvP when a global source appears.
   Home cards: class figure rises out of the card on hover (`.pop-art`, mouse + ≥521px only).
+- Ambient motion (Sep 28): assets/js/fx.js — canvas particles in any hero with `data-fx` (home: aether; class
+  pages: the class slug; presets for all 8 classes incl. cleric/elementalist), one rAF loop per hero, paused when
+  hidden/off screen; guide blocks below the fold fade in (.rv). CSS: home landscape drift 38s, class portrait
+  "breathes" 11s, .hero-glow pulse. All off with prefers-reduced-motion. A looping video portrait was tried for
+  the Gladiator (Gemini clips don't loop cleanly; a forward+reverse "palindrome" mp4 via imageio-ffmpeg works) —
+  parked until the user generates one locally (SwarmUI, Wan 2.1 FLF2V 14B GGUF with the same start/end frame).
 - Next (planned from the other PC): task — **Cleric and Elementalist as WIP guides, Leveling mode only**
   for now (no PvE/PvP content yet) — use `modes_off: ["pve", "pvp"]` + `wip: true` in site.json
   (the head script and site.js then open the Leveling mode). Plan: fetch skills (`fetch_skills.py cleric elementalist` — questlog

@@ -6,7 +6,8 @@
 {% block body_class %}page-class accent-{{ cls.accent }}{% endblock %}
 {% block main %}
 <div class="class-backdrop" aria-hidden="true" style="--art:url('{{ root }}assets/art/{{ cls.slug }}.webp')"></div>
-<section class="class-hero">
+<section class="class-hero" data-fx="{{ cls.slug }}">
+  <div class="hero-glow" aria-hidden="true"></div>
   <img class="class-hero-art" src="{{ root }}assets/art/{{ cls.slug }}.webp" alt="" aria-hidden="true" fetchpriority="high">
   <div class="wrap class-hero-in">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ root }}{{ lang }}/">{{ t.back_home }}</a><span aria-hidden="true">/</span><span>{{ cls.name[lang] }}</span></nav>

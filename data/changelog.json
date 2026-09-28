@@ -2,6 +2,16 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-09-28-motion",
+      "date": "2026-09-28",
+      "items": [
+        {
+          "en": "<strong>A livelier site</strong> — the home landscape drifts slowly with rising aether sparks; each class page has its own element particles, a breathing portrait and a glow in the class colour, and guide blocks fade in as you scroll.",
+          "ru": "<strong>Живее сайт</strong> — пейзаж на главной медленно движется, поднимаются искры эфира; у каждого класса свои стихийные частицы, «дышащий» портрет и свечение в цвете класса, а блоки гайда проявляются при прокрутке."
+        }
+      ]
+    },
+    {
       "id": "2026-09-28-bosses-ranger",
       "date": "2026-09-28",
       "items": [

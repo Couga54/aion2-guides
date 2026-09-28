@@ -186,7 +186,7 @@ def build():
             ctx["content_tpl"] = f'{cls["slug"]}/{lang}.html'
             write(f'{lang}/{path}index.html', e.get_template("class.html").render(ctx))
             urls.append(path)
-        for path, tpl, key, data in (("week-1/", "week1.html", "week1", WEEK1), ("weekly/", "weekly.html", "weekly", WEEKLY), ("bosses/", "bosses.html", "bosses", BOSSES)):
+        for path, tpl, key, data in (("week-1/", "week1.html", "week1", WEEK1), ("weekly/", "weekly.html", "weekly", WEEKLY), ("bosses/", "bosses.html", "bosses", BOSSES), ("changelog/", "changelog.html", "changelog", CHANGELOG)):
             ctx = page_ctx(lang, path, "../../")
             ctx[key] = data
             write(f"{lang}/{path}index.html", e.get_template(tpl).render(ctx))
