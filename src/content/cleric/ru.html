@@ -1,0 +1,56 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq with context %}
+
+{# Пока только прокачка: PvE и PvP выключены (site.json modes_off), пока нет настоящего глобального источника. #}
+
+{% call section('intro-lvl', 'Обзор', 'lvl') %}
+  <p>Целитель — лекарь, но на прокачке он играет как дальнобойный боец: {{ s('chain-of-torment') }} метит цель, {{ s('condemnation') }} добивает её, а пассивка {{ s('radiant-benediction') }} лечит тебя и группу при каждом попадании. Лечись только когда нужно.</p>
+  <div class="callout accent">
+    <h3>Прокачка в одном предложении</h3>
+    <p>Держи {{ s('earths-retribution') }} ради маны, крути линию Цепи встроенным макросом и вкладывай очки навыков в атаки, а не в лечение.</p>
+  </div>
+{% endcall %}
+
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Пачки:</strong> {{ s('chain-of-torment') }} (бьёт до 4 целей) → {{ s('condemnation') }} → {{ s('divine-aura') }} со специализацией на АоЕ → {{ s('judgment-thunder') }}.</li>
+    <li><strong>Элитки:</strong> {{ s('debilitating-mark') }} (снижает защиту) → {{ s('chain-of-torment') }} → заряженный {{ s('bolt') }} → {{ s('condemnation') }}.</li>
+    <li><strong>Мана:</strong> режим с таргетом и {{ s('earths-retribution') }} между скиллами — он восполняет ману каждым кастом.</li>
+    <li><strong>Мало ОЗ:</strong> {{ s('healing-light') }}, а {{ s('radiant-benediction') }} лечит, пока ты бьёшь.</li>
+    <li><strong>Ошеломлённый босс:</strong> {{ s('lightning-strike-scattershot') }} работает только пока цель ошеломлена.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Макрос на прокачке', 'lvl') %}
+  <p>Стартовая настройка Grobs: одна линия на кнопке и встроенный макрос из одного слота. В AION 2 <strong>наивысший приоритет у нижнего слота линии</strong> — карточка показывает линию сверху вниз, как в игре.</p>
+  <div class="hotlines">
+    {% call hotline('ПКМ', 'Линия Цепи', ['chain-of-torment', 'debilitating-mark', 'condemnation', 'judgment-thunder']) %}Цепь боли идёт первой, чтобы Приговор мог бить; Карающая молния без перезарядки заполняет паузы.{% endcall %}
+  </div>
+  <p>Встроенный макрос (окно скиллов → Макрос), задержка <strong>10 мс</strong>:</p>
+  {{ macroseq([('Линия Цепи', '10 мс')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Держать</span><span class="press-what">{{ s('earths-retribution') }} на <span class="key">ЛКМ</span> вместе с кнопкой макроса.</span></li>
+    <li><span class="press-how">Вручную</span><span class="press-what">{{ s('bolt') }} (скилл с зарядом — не в макрос), лечение, стигмы.</span></li>
+  </ul>
+{% endcall %}
+
+{% call section('stigmas-lvl', 'Стигмы на прокачке', 'lvl') %}
+  <p>Стигмы открываются на 22 уровне.</p>
+  <ul class="skill-grid">
+    {% call skill('summon-resurrection', 'must', 'Ур. 1', upto=1) %}Поначалу хватит одного очка; на 5 уровне позже сокращается время каста.{% endcall %}
+    {% call skill('noble-aura', 'must', 'Ур. 5', upto=5) %}Аура, которая 5 минут сражается рядом с тобой, — бесплатный урон.{% endcall %}
+    {% call skill('earth-punishment', 'must', 'Ур. 5', upto=5) %}Урон со временем; на 5 уровне Приговор всегда критует.{% endcall %}
+    {% call skill('benevolence', 'must', 'Ур. 5', upto=5) %}Лечение со временем на 20 сек. — живучесть между пачками.{% endcall %}
+    {% call skill('absolution', 'opt', 'Ур. 5', upto=5) %}Сильное лечение и снятие дебаффов.{% endcall %}
+  </ul>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — слайд со стартовыми макросами (линия и макрос Целителя)</li>
+    <li><a href="https://mmo-codex.com/articles/aion-2-cleric-guide/" target="_blank" rel="noopener">MMO Codex — гайд на Целителя Aion 2</a> — порядок скиллов и специализации на прокачке, стигмы на 22</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/cleric" target="_blank" rel="noopener">questlog.gg</a> — данные скиллов из глобального клиента</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

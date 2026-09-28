@@ -1,0 +1,56 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq with context %}
+
+{# Пока только прокачка: PvE и PvP выключены (site.json modes_off), пока нет настоящего глобального источника. #}
+
+{% call section('intro-lvl', 'Обзор', 'lvl') %}
+  <p>Заклинатель (Spiritmaster) — единственный призыватель: рядом с тобой сражается дух, каждый его скилл даёт элемент, а на четырёх элементах готов {{ s('elemental-fusion') }}. {{ s('dimensional-control') }} срабатывает каждый раз, когда дух использует скилл, а проклятия продолжают тикать на цели.</p>
+  <div class="callout accent">
+    <h3>Прокачка в одном предложении</h3>
+    <p>Качайся с {{ s('summon-water-spirit') }} (урон и мана), держи {{ s('cold-shock') }} ради маны, а встроенный макрос пусть крутит линию духов и линию Синтеза.</p>
+  </div>
+{% endcall %}
+
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Дух:</strong> {{ s('summon-water-spirit') }} до самого капа — лучший урон по одной цели и подпитка маной. Остальные на прокачке держатся на 1 уровне.</li>
+    <li><strong>Пачки:</strong> {{ s('jointstrike-curse') }} (бьёт до 4 целей) → {{ s('combustion') }} → {{ s('elemental-fusion') }} со специализацией на АоЕ, когда он готов.</li>
+    <li><strong>Мана:</strong> главная проблема на старте — режим с таргетом, {{ s('cold-shock') }} между скиллами и ротация духов, которая заканчивается на Духе воды.</li>
+    <li><strong>Ошеломлённые цели:</strong> {{ s('rapid-scattershot') }}.</li>
+    <li>{{ s('souls-cry') }} не качай — это PvP-скилл.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Макрос на прокачке', 'lvl') %}
+  <p>Стартовая настройка Grobs: две линии на кнопках и встроенный макрос из двух слотов. В AION 2 <strong>наивысший приоритет у нижнего слота линии</strong> — карточки показывают линии сверху вниз, как в игре.</p>
+  <div class="hotlines">
+    {% call hotline('1', 'Линия духов', ['summon-water-spirit', 'jointstrike-corrode', 'summon-earth-spirit', 'summon-fire-spirit']) %}Сначала Дух воды; Кооперация: Разложение (стигма) заставляет цель получать больше урона от духа.{% endcall %}
+    {% call hotline('2', 'Линия Синтеза', ['elemental-fusion', 'dimensional-control', 'jointstrike-curse', 'combustion']) %}Синтез элементов и Повелитель пространства срабатывают, как только духи их открывают; Воспламенение заполняет паузы.{% endcall %}
+  </div>
+  <p>Встроенный макрос (окно скиллов → Макрос), задержка <strong>10 мс</strong> в каждом слоте:</p>
+  {{ macroseq([('Линия духов', '1 · 10 мс'), ('Линия Синтеза', '2 · 10 мс')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Держать</span><span class="press-what">{{ s('cold-shock') }} на <span class="key">ЛКМ</span> вместе с кнопкой макроса.</span></li>
+    <li><span class="press-how">Вручную</span><span class="press-what">{{ s('enhance-spirits-benediction') }}, затем {{ s('summon-ancient-spirit') }} (сначала бафф — Древний дух живёт 30 сек.).</span></li>
+  </ul>
+{% endcall %}
+
+{% call section('stigmas-lvl', 'Стигмы на прокачке', 'lvl') %}
+  <p>Стигмы открываются на 22 уровне.</p>
+  <ul class="skill-grid">
+    {% call skill('summon-ancient-spirit', 'must', 'Ур. 5', upto=5) %}Дополнительный дух на 30 сек., который тоже даёт элементы для Синтеза.{% endcall %}
+    {% call skill('enhance-spirits-benediction', 'must', 'Ур. 5', upto=5) %}+20% к урону и стойкости в PvE с лечением на 10 сек. — кастуй до Древнего духа.{% endcall %}
+    {% call skill('jointstrike-corrode', 'must', 'Ур. 5', upto=5) %}В линии духов у Grobs: цель получает больше урона от духа.{% endcall %}
+    {% call skill('flame-blessing', 'opt', 'Ур. 5', upto=5) %}Доп. урон при попадании на 10 сек. — бери, когда хватает точности.{% endcall %}
+  </ul>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — слайд со стартовыми макросами (линии и макрос Spiritmaster)</li>
+    <li><a href="https://mmo-codex.com/articles/aion-2-spiritmaster-guide/" target="_blank" rel="noopener">MMO Codex — билд Spiritmaster для Aion 2</a> — порядок скиллов по уровням, Дух воды на прокачке, стигмы</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/elementalist" target="_blank" rel="noopener">questlog.gg</a> — данные скиллов из глобального клиента</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

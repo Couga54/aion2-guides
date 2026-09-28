@@ -68,12 +68,12 @@
         <a href="../../en/sorcerer/" class="cm-item accent-frost">
           <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Sorcerer <span class="wip-tag">WIP</span></span><span class="cm-role">Ranged magic DPS</span>
         </a>
-        <span class="cm-item is-soon" aria-disabled="true">
-          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Elementalist</span><span class="cm-role">Coming soon</span>
-        </span>
-        <span class="cm-item is-soon" aria-disabled="true">
-          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Cleric</span><span class="cm-role">Coming soon</span>
-        </span>
+        <a href="../../en/elementalist/" class="cm-item accent-spirit">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Elementalist <span class="wip-tag">WIP</span></span><span class="cm-role">Summoner · magic DPS</span>
+        </a>
+        <a href="../../en/cleric/" class="cm-item accent-sunlight">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Cleric <span class="wip-tag">WIP</span></span><span class="cm-role">Healer · earth and lightning damage</span>
+        </a>
         <a href="../../en/chanter/" class="cm-item accent-amber">
           <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Chanter</span><span class="cm-role">Melee support · buffer</span>
         </a>
@@ -99,6 +99,9 @@
       <a class="lang-switch" href="../../ru/bosses/" hreflang="ru" lang="ru" data-keep-query>
         <span aria-hidden="true">RU</span><span class="sr-only">Русский</span>
       </a>
+      <button class="icon-btn search-open" type="button" aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
 <a class="icon-btn wn-top" href="../../en/changelog/" aria-label="Changelog" title="Changelog">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
       </a>      <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
@@ -118,13 +121,22 @@
     </div>
   </section>
 
-  <div class="wrap bs-page" data-lang="en" data-t-killed="killed" data-t-next="next" data-t-up="may be up">
+  <div class="wrap bs-page" data-lang="en" data-t-killed="killed" data-t-next="next" data-t-up="may be up" data-t-notify="{name} may be up">
+    <div class="notify-box">
+  <button type="button" class="btn btn-ghost btn-sm notify-toggle" aria-pressed="false"
+    data-t-on="Notifications on" data-t-off="Turn on notifications" data-t-denied="Notifications are blocked in the browser" data-t-unsupported="This browser has no notifications">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+    <span class="notify-label">Turn on notifications</span>
+  </button>
+  <span class="notify-note">They fire while this tab is open.</span>
+</div>
+<script src="../../assets/js/notify.js" defer></script>
     <section class="bs-group bs-elyos" aria-labelledby="h-bs-elyos">
       <h2 id="h-bs-elyos" class="bs-group-title"><span>Verteron</span><small>Elyos</small></h2>
       <ul class="bs-list">
-        <li class="bs-item" data-id="2101122">
+        <li class="bs-item" id="b-2101122" data-id="2101122">
           <div class="bs-main">
-            <span class="bs-name">Soul Ruler Kashapa</span>
+            <span class="bs-name">Soul Ruler Kashapa</span><span hidden class="bs-zone">Verteron</span>
             <span class="bs-meta">Lv 45 · Respawn: <i>after launch</i></span>
             <span class="bs-status" aria-live="polite"></span>
           </div>
@@ -133,9 +145,9 @@
             <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Undo</button>
           </div>
         </li>
-        <li class="bs-item" data-id="2101131">
+        <li class="bs-item" id="b-2101131" data-id="2101131">
           <div class="bs-main">
-            <span class="bs-name">High Commander Lagta</span>
+            <span class="bs-name">High Commander Lagta</span><span hidden class="bs-zone">Verteron</span>
             <span class="bs-meta">Lv 45 · Respawn: <i>after launch</i></span>
             <span class="bs-status" aria-live="polite"></span>
           </div>
@@ -144,9 +156,9 @@
             <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Undo</button>
           </div>
         </li>
-        <li class="bs-item" data-id="2101120">
+        <li class="bs-item" id="b-2101120" data-id="2101120">
           <div class="bs-main">
-            <span class="bs-name">Silent Dartan</span>
+            <span class="bs-name">Silent Dartan</span><span hidden class="bs-zone">Verteron</span>
             <span class="bs-meta">Lv 45 · Respawn: <i>after launch</i></span>
             <span class="bs-status" aria-live="polite"></span>
           </div>
@@ -160,9 +172,9 @@
     <section class="bs-group bs-asmodians" aria-labelledby="h-bs-asmodians">
       <h2 id="h-bs-asmodians" class="bs-group-title"><span>Altgard</span><small>Asmodians</small></h2>
       <ul class="bs-list">
-        <li class="bs-item" data-id="2400854">
+        <li class="bs-item" id="b-2400854" data-id="2400854">
           <div class="bs-main">
-            <span class="bs-name">Soul Ruler Kashapa</span>
+            <span class="bs-name">Soul Ruler Kashapa</span><span hidden class="bs-zone">Altgard</span>
             <span class="bs-meta">Lv 45 · Respawn: <i>after launch</i></span>
             <span class="bs-status" aria-live="polite"></span>
           </div>
@@ -171,9 +183,9 @@
             <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Undo</button>
           </div>
         </li>
-        <li class="bs-item" data-id="2400853">
+        <li class="bs-item" id="b-2400853" data-id="2400853">
           <div class="bs-main">
-            <span class="bs-name">High Commander Lagta</span>
+            <span class="bs-name">High Commander Lagta</span><span hidden class="bs-zone">Altgard</span>
             <span class="bs-meta">Lv 45 · Respawn: <i>after launch</i></span>
             <span class="bs-status" aria-live="polite"></span>
           </div>
@@ -182,9 +194,9 @@
             <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Undo</button>
           </div>
         </li>
-        <li class="bs-item" data-id="2400855">
+        <li class="bs-item" id="b-2400855" data-id="2400855">
           <div class="bs-main">
-            <span class="bs-name">Silent Dartan</span>
+            <span class="bs-name">Silent Dartan</span><span hidden class="bs-zone">Altgard</span>
             <span class="bs-meta">Lv 45 · Respawn: <i>after launch</i></span>
             <span class="bs-status" aria-live="polite"></span>
           </div>
@@ -198,9 +210,9 @@
     <section class="bs-group bs-abyss" aria-labelledby="h-bs-abyss">
       <h2 id="h-bs-abyss" class="bs-group-title"><span>Chaotic Lower Reshanta</span><small>Abyss</small></h2>
       <ul class="bs-list">
-        <li class="bs-item" data-id="2600089">
+        <li class="bs-item" id="b-2600089" data-id="2600089">
           <div class="bs-main">
-            <span class="bs-name">Watcher Kaira</span>
+            <span class="bs-name">Watcher Kaira</span><span hidden class="bs-zone">Chaotic Lower Reshanta</span>
             <span class="bs-meta">Lv 65 · Respawn: <i>after launch</i> · <span class="bs-kr">KR/TW: every 4 h from 01:00</span></span>
             <span class="bs-status" aria-live="polite"></span>
           </div>
@@ -209,9 +221,9 @@
             <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Undo</button>
           </div>
         </li>
-        <li class="bs-item" data-id="2600097">
+        <li class="bs-item" id="b-2600097" data-id="2600097">
           <div class="bs-main">
-            <span class="bs-name">Executor Argo</span>
+            <span class="bs-name">Executor Argo</span><span hidden class="bs-zone">Chaotic Lower Reshanta</span>
             <span class="bs-meta">Lv 65 · Respawn: <i>after launch</i> · <span class="bs-kr">KR/TW: Wed, Sat 22:30</span></span>
             <span class="bs-status" aria-live="polite"></span>
           </div>
@@ -220,9 +232,9 @@
             <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Undo</button>
           </div>
         </li>
-        <li class="bs-item" data-id="2600098">
+        <li class="bs-item" id="b-2600098" data-id="2600098">
           <div class="bs-main">
-            <span class="bs-name">Executor Kaira</span>
+            <span class="bs-name">Executor Kaira</span><span hidden class="bs-zone">Chaotic Lower Reshanta</span>
             <span class="bs-meta">Lv 65 · Respawn: <i>after launch</i> · <span class="bs-kr">KR/TW: Wed, Sat 22:30</span></span>
             <span class="bs-status" aria-live="polite"></span>
           </div>
@@ -231,9 +243,9 @@
             <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Undo</button>
           </div>
         </li>
-        <li class="bs-item" data-id="2600096">
+        <li class="bs-item" id="b-2600096" data-id="2600096">
           <div class="bs-main">
-            <span class="bs-name">Executor Tamasa</span>
+            <span class="bs-name">Executor Tamasa</span><span hidden class="bs-zone">Chaotic Lower Reshanta</span>
             <span class="bs-meta">Lv 65 · Respawn: <i>after launch</i> · <span class="bs-kr">KR/TW: Wed, Sat 22:30</span></span>
             <span class="bs-status" aria-live="polite"></span>
           </div>
@@ -242,9 +254,9 @@
             <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Undo</button>
           </div>
         </li>
-        <li class="bs-item" data-id="siege-lower">
+        <li class="bs-item" id="b-siege-lower" data-id="siege-lower">
           <div class="bs-main">
-            <span class="bs-name">Abyss siege boss</span>
+            <span class="bs-name">Abyss siege boss</span><span hidden class="bs-zone">Chaotic Lower Reshanta</span>
             <span class="bs-meta">Respawn: <i>after launch</i> · <span class="bs-kr">KR/TW: Fri, Sun 22:00</span></span>
             <span class="bs-status" aria-live="polite"></span>
           </div>
@@ -267,11 +279,28 @@
       <a class="brand brand-sm" href="../../en/">AION 2 Guides</a>
       <p>Unofficial fan site, not affiliated with NCSOFT. AION 2 and its skill icons are © NCSOFT.</p>
       <p>Last checked: 2026-09-27 (before the global launch).</p>
-      <p><a href="../../en/sources/">All sources and creators</a> · <a href="../../en/changelog/">Changelog</a></p>
+      <p><a href="../../en/sources/">All sources and creators</a> · <a href="../../en/changelog/">Changelog</a> · <a class="report-link" href="https://github.com/Couga54/aion2-guides/issues/new" target="_blank" rel="noopener" title="Opens a GitHub issue for this page" data-body="Page: {url}
+Mode: {mode}
+
+What is wrong / outdated:
+
+Source or proof (link, screenshot):
+" data-page="en/bosses/">Report a mistake</a></p>
     </div>
   </div>
 </footer>
-<dialog class="whatsnew" data-id="2026-09-28-motion" aria-labelledby="wn-title">
+<dialog class="search-dlg" aria-label="Search" data-index="../../en/search.json" data-base="../../en/" data-empty="Nothing found"
+  data-kinds="{&#34;boss&#34;: &#34;Boss&#34;, &#34;class&#34;: &#34;Class&#34;, &#34;page&#34;: &#34;Page&#34;, &#34;section&#34;: &#34;Section&#34;, &#34;skill&#34;: &#34;Skill&#34;}" data-root="../../">
+  <div class="search-in">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-q" placeholder="Class, skill, boss, section…" aria-label="Search" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-res" role="listbox"></ul>
+  </div>
+</dialog>
+<dialog class="whatsnew" data-id="2026-09-28-tools" aria-labelledby="wn-title">
   <form method="dialog" class="wn-in">
     <div class="wn-head">
       <h2 id="wn-title">What&#39;s new</h2>
@@ -282,7 +311,11 @@
     <section class="wn-entry">
       <time class="wn-date" datetime="2026-09-28">Sep 28, 2026</time>
       <ul>
-        <li><span><strong>A livelier site</strong> — the home landscape drifts slowly with rising aether sparks; each class page has its own element particles, a breathing portrait and a glow in the class colour, and guide blocks fade in as you scroll.</span></li>
+        <li><a href="../../en/cleric/"><strong>Cleric and Elementalist (WIP)</strong> — leveling guides with Grobs' early macros; PvE and PvP come once there is a real global source.</a></li>
+        <li><span><strong>Search</strong> — press Ctrl+K (or /) to find a class, skill, boss or guide section.</span></li>
+        <li><span><strong>Skill tooltips</strong> — hover any skill in a guide to see its description, cooldown and all specializations.</span></li>
+        <li><a href="../../en/weekly/"><strong>Notifications</strong> — the weekly tracker and the boss page can notify you when energy is full or a boss may be up (while the tab is open).</a></li>
+        <li><span><strong>Sources with dates and error reports</strong> — every guide mode shows where its info comes from and when it was checked; "Report a mistake" opens a GitHub issue.</span></li>
       </ul>
     </section>
     <button class="btn btn-primary wn-ok" value="close">Got it</button>

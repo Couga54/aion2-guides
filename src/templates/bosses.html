@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% from "tracker_parts.html" import notify_toggle with context %}
 {% block title %}{{ t.bs_title }} — {{ t.site_name }}{% endblock %}
 {% block desc %}{{ t.bs_desc }}{% endblock %}
 {% block body_class %}page-bosses{% endblock %}
@@ -12,15 +13,16 @@
     </div>
   </section>
 
-  <div class="wrap bs-page" data-lang="{{ lang }}" data-t-killed="{{ t.bs_killed_at }}" data-t-next="{{ t.bs_next }}" data-t-up="{{ t.bs_up }}">
+  <div class="wrap bs-page" data-lang="{{ lang }}" data-t-killed="{{ t.bs_killed_at }}" data-t-next="{{ t.bs_next }}" data-t-up="{{ t.bs_up }}" data-t-notify="{{ t.notify_boss }}">
+    {{ notify_toggle() }}
     {% for g in bosses.groups %}
     <section class="bs-group bs-{{ g.id }}" aria-labelledby="h-bs-{{ g.id }}">
       <h2 id="h-bs-{{ g.id }}" class="bs-group-title"><span>{{ g.zone[lang] }}</span><small>{{ g.faction[lang] }}</small></h2>
       <ul class="bs-list">
         {% for b in g.bosses %}
-        <li class="bs-item" data-id="{{ b.id }}"{% if b.respawn_min %} data-respawn="{{ b.respawn_min }}"{% endif %}>
+        <li class="bs-item" id="b-{{ b.id }}" data-id="{{ b.id }}"{% if b.respawn_min %} data-respawn="{{ b.respawn_min }}"{% endif %}>
           <div class="bs-main">
-            <span class="bs-name">{{ b.name[lang] }}</span>
+            <span class="bs-name">{{ b.name[lang] }}</span><span hidden class="bs-zone">{{ g.zone[lang] }}</span>
             <span class="bs-meta">{% if b.level %}{{ t.bs_level }} {{ b.level }} · {% endif %}{{ t.bs_respawn }}: {% if b.respawn_min %}{{ b.respawn_min // 60 }} h{% if b.respawn_min % 60 %} {{ b.respawn_min % 60 }} min{% endif %}{% elif b.schedule %}{{ b.schedule }}{% else %}<i>{{ t.bs_tba }}</i>{% endif %}{% if b.kr %} · <span class="bs-kr">{{ t.bs_kr }}: {{ b.kr[lang] }}</span>{% endif %}</span>
             <span class="bs-status" aria-live="polite"></span>
           </div>

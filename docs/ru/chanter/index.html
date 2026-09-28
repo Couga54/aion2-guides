@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Чародей — AION 2 Гайды (PvE, PvP, Прокачка)</title>
+<title>Чародей — AION 2 Гайды (PvE, Прокачка)</title>
 <meta name="description" content="Боец с посохом, который баффает всю группу: мантры на урон и скорость, Повелитель бурь на перезарядки и комбо Удара скалы, которое всё равно бьёт больно.">
 <link rel="canonical" href="https://couga54.github.io/aion2-guides/ru/chanter/">
 <link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/chanter/">
@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AION 2 Гайды">
 <meta property="og:locale" content="ru_RU">
-<meta property="og:title" content="Чародей — AION 2 Гайды (PvE, PvP, Прокачка)">
+<meta property="og:title" content="Чародей — AION 2 Гайды (PvE, Прокачка)">
 <meta property="og:description" content="Боец с посохом, который баффает всю группу: мантры на урон и скорость, Повелитель бурь на перезарядки и комбо Удара скалы, которое всё равно бьёт больно.">
 <meta property="og:url" content="https://couga54.github.io/aion2-guides/ru/chanter/">
 <meta property="og:image" content="https://couga54.github.io/aion2-guides/assets/og/chanter-ru.jpg">
@@ -69,12 +69,12 @@
         <a href="../../ru/sorcerer/" class="cm-item accent-frost">
           <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Волшебник <span class="wip-tag">WIP</span></span><span class="cm-role">Магический урон издалека</span>
         </a>
-        <span class="cm-item is-soon" aria-disabled="true">
-          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Заклинатель</span><span class="cm-role">Скоро</span>
-        </span>
-        <span class="cm-item is-soon" aria-disabled="true">
-          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Целитель</span><span class="cm-role">Скоро</span>
-        </span>
+        <a href="../../ru/elementalist/" class="cm-item accent-spirit">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Заклинатель <span class="wip-tag">WIP</span></span><span class="cm-role">Призыватель · магический урон</span>
+        </a>
+        <a href="../../ru/cleric/" class="cm-item accent-sunlight">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Целитель <span class="wip-tag">WIP</span></span><span class="cm-role">Лекарь · урон землёй и молнией</span>
+        </a>
         <a href="../../ru/chanter/" class="cm-item accent-amber" aria-current="page">
           <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Чародей</span><span class="cm-role">Поддержка ближнего боя · баффер</span>
         </a>
@@ -100,6 +100,9 @@
       <a class="lang-switch" href="../../en/chanter/" hreflang="en" lang="en" data-keep-query>
         <span aria-hidden="true">EN</span><span class="sr-only">English</span>
       </a>
+      <button class="icon-btn search-open" type="button" aria-label="Поиск (Ctrl+K)" title="Поиск (Ctrl+K)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
 <a class="icon-btn wn-top" href="../../ru/changelog/" aria-label="История изменений" title="История изменений">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
       </a>      <button class="icon-btn theme-toggle" type="button" aria-label="Переключить тёмную тему" title="Переключить тёмную тему">
@@ -123,7 +126,7 @@
         <h1>Чародей</h1>
         <p class="class-hero-pitch">Боец с посохом, который баффает всю группу: мантры на урон и скорость, Повелитель бурь на перезарядки и комбо Удара скалы, которое всё равно бьёт больно.</p>
         <p class="guide-ver"><span>Обновлено: <time datetime="2026-09-27">27 сентября 2026</time></span><span>Патч: <b>уточняется</b></span></p>
-      </div>
+<p class="guide-src"><span data-only="pve">Источник: <b>TitanTheF</b> · сверено <time datetime="2026-09-27">27 сентября 2026</time></span><span data-only="lvl">Источник: <b>TitanTheF · Grobs</b> · сверено <time datetime="2026-09-27">27 сентября 2026</time></span></p>      </div>
     </div>
     <dl class="class-facts">
       <div><dt>Роль</dt><dd>Поддержка ближнего боя · баффер</dd></div>
@@ -178,7 +181,7 @@
             <span class="step-when">Ур. 1</span>
             <span class="step-text">
               <span class="step-tag">Класс</span>
-<img src="../../assets/icons/chanter/onslaught.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/chanter/incandescent-blow.webp" width="22" height="22" alt="" loading="lazy">              Первые очки в <strong>Разгром</strong> (восполняет ману) и <strong>Раскаленный удар</strong>. На 8: <em>Восстановление ОМ +20%</em> и <em>Блок +200 во время использования умения</em>.
+<img src="../../assets/icons/chanter/onslaught.webp" width="22" height="22" alt="" loading="lazy" data-sk="onslaught"><img src="../../assets/icons/chanter/incandescent-blow.webp" width="22" height="22" alt="" loading="lazy" data-sk="incandescent-blow">              Первые очки в <strong>Разгром</strong> (восполняет ману) и <strong>Раскаленный удар</strong>. На 8: <em>Восстановление ОМ +20%</em> и <em>Блок +200 во время использования умения</em>.
             </span>
           </label>
         </li>
@@ -189,7 +192,7 @@
             <span class="step-when">Ур. 1–8</span>
             <span class="step-text">
               <span class="step-tag">Класс</span>
-<img src="../../assets/icons/chanter/impactful-crush.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/chanter/dark-crush.webp" width="22" height="22" alt="" loading="lazy">              <strong>Дробящий удар</strong> оглушает и открывает <strong>Удар скалы</strong> на 2 сек. — поставь оба в одну линию, Дробящий удар внизу.
+<img src="../../assets/icons/chanter/impactful-crush.webp" width="22" height="22" alt="" loading="lazy" data-sk="impactful-crush"><img src="../../assets/icons/chanter/dark-crush.webp" width="22" height="22" alt="" loading="lazy" data-sk="dark-crush">              <strong>Дробящий удар</strong> оглушает и открывает <strong>Удар скалы</strong> на 2 сек. — поставь оба в одну линию, Дробящий удар внизу.
             </span>
           </label>
         </li>
@@ -211,7 +214,7 @@
             <span class="step-when">Ур. 8</span>
             <span class="step-text">
               <span class="step-tag">Класс</span>
-<img src="../../assets/icons/chanter/rushing-smash.webp" width="22" height="22" alt="" loading="lazy">              <strong>Скачок</strong> → 12: <em>Завершение перезарядки при уничтожении врага</em> — рывок к следующему мобу после каждого убийства.
+<img src="../../assets/icons/chanter/rushing-smash.webp" width="22" height="22" alt="" loading="lazy" data-sk="rushing-smash">              <strong>Скачок</strong> → 12: <em>Завершение перезарядки при уничтожении врага</em> — рывок к следующему мобу после каждого убийства.
             </span>
           </label>
         </li>
@@ -233,7 +236,7 @@
             <span class="step-when">Ур. 13</span>
             <span class="step-text">
               <span class="step-tag">Класс</span>
-<img src="../../assets/icons/chanter/spinning-strike.webp" width="22" height="22" alt="" loading="lazy">              <strong>Удар с вращением</strong> → 12 с <em>Перезарядка -5 сек.</em>: складывающийся крит. урон и ещё один запуск Удара скалы.
+<img src="../../assets/icons/chanter/spinning-strike.webp" width="22" height="22" alt="" loading="lazy" data-sk="spinning-strike">              <strong>Удар с вращением</strong> → 12 с <em>Перезарядка -5 сек.</em>: складывающийся крит. урон и ещё один запуск Удара скалы.
             </span>
           </label>
         </li>
@@ -299,7 +302,7 @@
             <span class="step-when">~Ур. 22</span>
             <span class="step-text">
               <span class="step-tag">Класс</span>
-<img src="../../assets/icons/chanter/undefeated-mantra.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/chanter/power-of-the-storm.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/chanter/obliterate.webp" width="22" height="22" alt="" loading="lazy">              Стигмы: сначала <strong>Песнь непобедимости</strong> (до 10), затем <strong>Повелитель бурь</strong>, <strong>Заклятие ускорения</strong> и <strong>Истребляющий огонь</strong> для пачек. Мантры включи один раз — никогда не ставь их в макрос.
+<img src="../../assets/icons/chanter/undefeated-mantra.webp" width="22" height="22" alt="" loading="lazy" data-sk="undefeated-mantra"><img src="../../assets/icons/chanter/power-of-the-storm.webp" width="22" height="22" alt="" loading="lazy" data-sk="power-of-the-storm"><img src="../../assets/icons/chanter/obliterate.webp" width="22" height="22" alt="" loading="lazy" data-sk="obliterate">              Стигмы: сначала <strong>Песнь непобедимости</strong> (до 10), затем <strong>Повелитель бурь</strong>, <strong>Заклятие ускорения</strong> и <strong>Истребляющий огонь</strong> для пачек. Мантры включи один раз — никогда не ставь их в макрос.
             </span>
           </label>
         </li>
@@ -365,7 +368,7 @@
             <span class="step-when">Кап</span>
             <span class="step-text">
               <span class="step-tag">Класс</span>
-<img src="../../assets/icons/chanter/onslaught.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/chanter/dark-crush.webp" width="22" height="22" alt="" loading="lazy"><img src="../../assets/icons/chanter/spinning-strike.webp" width="22" height="22" alt="" loading="lazy">              Стартовый билд готов: Разгром, Раскалённый удар, Удар с вращением, Скачок на 12. Дальше <strong>Разгром</strong>, <strong>Удар скалы</strong>, <strong>Удар с вращением</strong> к 20 — вкладка PvE.
+<img src="../../assets/icons/chanter/onslaught.webp" width="22" height="22" alt="" loading="lazy" data-sk="onslaught"><img src="../../assets/icons/chanter/dark-crush.webp" width="22" height="22" alt="" loading="lazy" data-sk="dark-crush"><img src="../../assets/icons/chanter/spinning-strike.webp" width="22" height="22" alt="" loading="lazy" data-sk="spinning-strike">              Стартовый билд готов: Разгром, Раскалённый удар, Удар с вращением, Скачок на 12. Дальше <strong>Разгром</strong>, <strong>Удар скалы</strong>, <strong>Удар с вращением</strong> к 20 — вкладка PvE.
             </span>
           </label>
         </li>
@@ -410,27 +413,27 @@
   <p class="glance-title">Билд коротко</p>
     <h3>Основные скиллы</h3>
   <ul class="core-row">
-  <li title="Разгром">
+  <li data-sk="onslaught">
     <img src="../../assets/icons/chanter/onslaught.webp" width="52" height="52" alt="Разгром" loading="lazy">
     <span class="core-lv">20</span>
     <span class="core-name">Разгром</span>
   </li>
-  <li title="Удар скалы">
+  <li data-sk="dark-crush">
     <img src="../../assets/icons/chanter/dark-crush.webp" width="52" height="52" alt="Удар скалы" loading="lazy">
     <span class="core-lv">20</span>
     <span class="core-name">Удар скалы</span>
   </li>
-  <li title="Удар с вращением">
+  <li data-sk="spinning-strike">
     <img src="../../assets/icons/chanter/spinning-strike.webp" width="52" height="52" alt="Удар с вращением" loading="lazy">
     <span class="core-lv">20</span>
     <span class="core-name">Удар с вращением</span>
   </li>
-  <li title="Раскаленный удар">
+  <li data-sk="incandescent-blow">
     <img src="../../assets/icons/chanter/incandescent-blow.webp" width="52" height="52" alt="Раскаленный удар" loading="lazy">
     <span class="core-lv">16</span>
     <span class="core-name">Раскаленный удар</span>
   </li>
-  <li title="Дробящий удар">
+  <li data-sk="impactful-crush">
     <img src="../../assets/icons/chanter/impactful-crush.webp" width="52" height="52" alt="Дробящий удар" loading="lazy">
     <span class="core-lv">16</span>
     <span class="core-name">Дробящий удар</span>
@@ -438,22 +441,22 @@
 </ul>
   <h3>Стигмы</h3>
   <ol class="loadout">
-  <li class="slot" title="Песнь непобедимости">
+  <li class="slot" data-sk="undefeated-mantra">
     <img src="../../assets/icons/chanter/undefeated-mantra.webp" width="56" height="56" alt="Песнь непобедимости" loading="lazy">
     <span class="slot-lv">ур. 20</span>
     <span class="slot-name">Песнь непобедимости</span>
   </li>
-  <li class="slot" title="Повелитель бурь">
+  <li class="slot" data-sk="power-of-the-storm">
     <img src="../../assets/icons/chanter/power-of-the-storm.webp" width="56" height="56" alt="Повелитель бурь" loading="lazy">
     <span class="slot-lv">ур. 10</span>
     <span class="slot-name">Повелитель бурь</span>
   </li>
-  <li class="slot" title="Заклятие ускорения">
+  <li class="slot" data-sk="sprint-mantra">
     <img src="../../assets/icons/chanter/sprint-mantra.webp" width="56" height="56" alt="Заклятие ускорения" loading="lazy">
     <span class="slot-lv">ур. 10</span>
     <span class="slot-name">Заклятие ускорения</span>
   </li>
-  <li class="slot" title="Ярость Маркутана">
+  <li class="slot" data-sk="marchutans-wrath">
     <img src="../../assets/icons/chanter/marchutans-wrath.webp" width="56" height="56" alt="Ярость Маркутана" loading="lazy">
     <span class="slot-lv">ур. 10</span>
     <span class="slot-name">Ярость Маркутана</span>
@@ -461,15 +464,15 @@
 </ol>
   <h3>Ключевые пассивки</h3>
   <ul class="passive-row">
-<li><img src="../../assets/icons/chanter/attack-preparation.webp" width="24" height="24" alt="" loading="lazy">Подготовка к атаке</li><li><img src="../../assets/icons/chanter/impact-hit.webp" width="24" height="24" alt="" loading="lazy">Попадание шоком</li><li><img src="../../assets/icons/chanter/winds-promise.webp" width="24" height="24" alt="" loading="lazy">Обет ветра</li><li><img src="../../assets/icons/chanter/earths-promise.webp" width="24" height="24" alt="" loading="lazy">Призыв земли</li></ul>
+<li data-sk="attack-preparation"><img src="../../assets/icons/chanter/attack-preparation.webp" width="24" height="24" alt="" loading="lazy">Подготовка к атаке</li><li data-sk="impact-hit"><img src="../../assets/icons/chanter/impact-hit.webp" width="24" height="24" alt="" loading="lazy">Попадание шоком</li><li data-sk="winds-promise"><img src="../../assets/icons/chanter/winds-promise.webp" width="24" height="24" alt="" loading="lazy">Обет ветра</li><li data-sk="earths-promise"><img src="../../assets/icons/chanter/earths-promise.webp" width="24" height="24" alt="" loading="lazy">Призыв земли</li></ul>
 
 </aside>
 <section id="intro" class="g-section" data-only="pve" aria-labelledby="h-intro">
   <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro">Обзор</h2></div>
-    <p>Чародей дерётся посохом в ближнем бою и при этом усиливает всю группу. Мантры висят постоянно, <span class="sk"><img src="../../assets/icons/chanter/power-of-the-storm.webp" width="18" height="18" alt="" loading="lazy">Повелитель бурь</span> ускоряет скиллы всем, а собственный урон идёт от связки «оглушение → <span class="sk"><img src="../../assets/icons/chanter/dark-crush.webp" width="18" height="18" alt="" loading="lazy">Удар скалы</span>», которая крутится по кругу.</p>
+    <p>Чародей дерётся посохом в ближнем бою и при этом усиливает всю группу. Мантры висят постоянно, <span class="sk" data-sk="power-of-the-storm"><img src="../../assets/icons/chanter/power-of-the-storm.webp" width="18" height="18" alt="" loading="lazy">Повелитель бурь</span> ускоряет скиллы всем, а собственный урон идёт от связки «оглушение → <span class="sk" data-sk="dark-crush"><img src="../../assets/icons/chanter/dark-crush.webp" width="18" height="18" alt="" loading="lazy">Удар скалы</span>», которая крутится по кругу.</p>
   <div class="callout accent">
     <h3>Билд в одном предложении</h3>
-    <p>Держи включёнными <span class="sk"><img src="../../assets/icons/chanter/undefeated-mantra.webp" width="18" height="18" alt="" loading="lazy">Песнь непобедимости</span> и <span class="sk"><img src="../../assets/icons/chanter/sprint-mantra.webp" width="18" height="18" alt="" loading="lazy">Заклятие ускорения</span>, открывай бой <span class="sk"><img src="../../assets/icons/chanter/power-of-the-storm.webp" width="18" height="18" alt="" loading="lazy">Повелитель бурь</span> и спамь линию, где <span class="sk"><img src="../../assets/icons/chanter/impactful-crush.webp" width="18" height="18" alt="" loading="lazy">Дробящий удар</span> и <span class="sk"><img src="../../assets/icons/chanter/spinning-strike.webp" width="18" height="18" alt="" loading="lazy">Удар с вращением</span> открывают <span class="sk"><img src="../../assets/icons/chanter/dark-crush.webp" width="18" height="18" alt="" loading="lazy">Удар скалы</span>, пока <span class="sk"><img src="../../assets/icons/chanter/onslaught.webp" width="18" height="18" alt="" loading="lazy">Разгром</span> восполняет ману.</p>
+    <p>Держи включёнными <span class="sk" data-sk="undefeated-mantra"><img src="../../assets/icons/chanter/undefeated-mantra.webp" width="18" height="18" alt="" loading="lazy">Песнь непобедимости</span> и <span class="sk" data-sk="sprint-mantra"><img src="../../assets/icons/chanter/sprint-mantra.webp" width="18" height="18" alt="" loading="lazy">Заклятие ускорения</span>, открывай бой <span class="sk" data-sk="power-of-the-storm"><img src="../../assets/icons/chanter/power-of-the-storm.webp" width="18" height="18" alt="" loading="lazy">Повелитель бурь</span> и спамь линию, где <span class="sk" data-sk="impactful-crush"><img src="../../assets/icons/chanter/impactful-crush.webp" width="18" height="18" alt="" loading="lazy">Дробящий удар</span> и <span class="sk" data-sk="spinning-strike"><img src="../../assets/icons/chanter/spinning-strike.webp" width="18" height="18" alt="" loading="lazy">Удар с вращением</span> открывают <span class="sk" data-sk="dark-crush"><img src="../../assets/icons/chanter/dark-crush.webp" width="18" height="18" alt="" loading="lazy">Удар скалы</span>, пока <span class="sk" data-sk="onslaught"><img src="../../assets/icons/chanter/onslaught.webp" width="18" height="18" alt="" loading="lazy">Разгром</span> восполняет ману.</p>
   </div>
   <p class="note">Гайд построен на глобальном билде TitanTheF (старт 1–45 и цель на 45+) из его таблицы прогрессии AION 2.</p>
 
@@ -492,8 +495,8 @@
   <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-skills">Скиллы</h2></div>
     <p>Три скилла качаются до <strong>20</strong>, три до <strong>16</strong>, остальные остаются на <strong>12</strong>. Уровни дают очки навыков (10), Daevanion (14), кольца (16) и арканы (20).</p>
   <ul class="skill-grid">
-<li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/onslaught.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+<li class="skill" data-sk-card="onslaught">
+  <img class="skill-icon" data-sk="onslaught" src="../../assets/icons/chanter/onslaught.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Разгром <span class="badge must">20</span></div>
     <div class="skill-desc">Базовая атака, восстанавливает ману; каждое попадание сокращает перезарядку Удара с вращением, а на 16 добавляет цепочку Storm Chain.</div>
@@ -510,8 +513,8 @@
       </ul>
     </details>
   </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/dark-crush.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+</li><li class="skill" data-sk-card="dark-crush">
+  <img class="skill-icon" data-sk="dark-crush" src="../../assets/icons/chanter/dark-crush.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Удар скалы <span class="badge must">20</span></div>
     <div class="skill-desc">Основной урон. Открывается на несколько секунд после Дробящего удара, Удара с вращением и Ярости Маркутана; на 16 у него пропадает собственная перезарядка.</div>
@@ -528,8 +531,8 @@
       </ul>
     </details>
   </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/spinning-strike.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+</li><li class="skill" data-sk-card="spinning-strike">
+  <img class="skill-icon" data-sk="spinning-strike" src="../../assets/icons/chanter/spinning-strike.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Удар с вращением <span class="badge must">20</span></div>
     <div class="skill-desc">Складывающиеся +15% крит. урона на 30 сек. и открывает Удар скалы.</div>
@@ -546,8 +549,8 @@
       </ul>
     </details>
   </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/incandescent-blow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+</li><li class="skill" data-sk-card="incandescent-blow">
+  <img class="skill-icon" data-sk="incandescent-blow" src="../../assets/icons/chanter/incandescent-blow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Раскаленный удар <span class="badge must">16</span></div>
     <div class="skill-desc">Филлер без перезарядки; специализация на Блок бережёт тебя в ближнем бою.</div>
@@ -564,8 +567,8 @@
       </ul>
     </details>
   </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/impactful-crush.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+</li><li class="skill" data-sk-card="impactful-crush">
+  <img class="skill-icon" data-sk="impactful-crush" src="../../assets/icons/chanter/impactful-crush.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Дробящий удар <span class="badge must">16</span></div>
     <div class="skill-desc">Оглушение с дистанции, открывает Удар скалы; на 12 — в движении и быстрее.</div>
@@ -582,8 +585,8 @@
       </ul>
     </details>
   </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/defiance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+</li><li class="skill" data-sk-card="defiance">
+  <img class="skill-icon" data-sk="defiance" src="../../assets/icons/chanter/defiance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Снятие шока <span class="badge must">16</span></div>
     <div class="skill-desc">Снятие контроля с лечением, а на 16 — большая стойкость к урону.</div>
@@ -600,8 +603,8 @@
       </ul>
     </details>
   </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/wave-blow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+</li><li class="skill" data-sk-card="wave-blow">
+  <img class="skill-icon" data-sk="wave-blow" src="../../assets/icons/chanter/wave-blow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Волновой удар <span class="badge opt">12</span></div>
     <div class="skill-desc">Сбивает с ног оглушённую цель; специализация на 12 режет урон босса.</div>
@@ -618,8 +621,8 @@
       </ul>
     </details>
   </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/heat-wave-blow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+</li><li class="skill" data-sk-card="heat-wave-blow">
+  <img class="skill-icon" data-sk="heat-wave-blow" src="../../assets/icons/chanter/heat-wave-blow.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Тепловой удар <span class="badge opt">12</span></div>
     <div class="skill-desc">АоЕ с Печатью; хорош на пачках.</div>
@@ -636,8 +639,8 @@
       </ul>
     </details>
   </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/rushing-smash.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+</li><li class="skill" data-sk-card="rushing-smash">
+  <img class="skill-icon" data-sk="rushing-smash" src="../../assets/icons/chanter/rushing-smash.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Скачок <span class="badge opt">12</span></div>
     <div class="skill-desc">Сближение, восполняет ману; сбрасывается при убийстве.</div>
@@ -654,8 +657,8 @@
       </ul>
     </details>
   </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/recuperation.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+</li><li class="skill" data-sk-card="recuperation">
+  <img class="skill-icon" data-sk="recuperation" src="../../assets/icons/chanter/recuperation.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Заклинание выздоровления <span class="badge opt">12</span></div>
     <div class="skill-desc">Лечение группы и снятие дебаффов.</div>
@@ -672,8 +675,8 @@
       </ul>
     </details>
   </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/tremor-crush.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+</li><li class="skill" data-sk-card="tremor-crush">
+  <img class="skill-icon" data-sk="tremor-crush" src="../../assets/icons/chanter/tremor-crush.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Сотрясение <span class="badge opt">12</span></div>
     <div class="skill-desc">Уклонение → рывок с оглушением.</div>
@@ -690,8 +693,8 @@
       </ul>
     </details>
   </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/gust-rampage.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+</li><li class="skill" data-sk-card="gust-rampage">
+  <img class="skill-icon" data-sk="gust-rampage" src="../../assets/icons/chanter/gust-rampage.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Танец ветра <span class="badge opt">12</span></div>
     <div class="skill-desc">Только по целям под Оглушающей шкалой.</div>
@@ -716,10 +719,10 @@
     <div class="table-wrap"><table>
     <thead><tr><th>Пассивка</th><th>Уровень</th><th>Зачем</th></tr></thead>
     <tbody>
-      <tr><td><span class="sk"><img src="../../assets/icons/chanter/attack-preparation.webp" width="18" height="18" alt="" loading="lazy">Подготовка к атаке</span></td><td>20</td><td>Усиление урона в PvE, Защита и Точность.</td></tr>
-      <tr><td><span class="sk"><img src="../../assets/icons/chanter/impact-hit.webp" width="18" height="18" alt="" loading="lazy">Попадание шоком</span></td><td>20</td><td>Выше шанс оглушения — каждое оглушение открывает Удар скалы.</td></tr>
-      <tr><td><span class="sk"><img src="../../assets/icons/chanter/winds-promise.webp" width="18" height="18" alt="" loading="lazy">Обет ветра</span></td><td>16</td><td>Усиление крит. урона и доп. урон при крите.</td></tr>
-      <tr><td><span class="sk"><img src="../../assets/icons/chanter/blessing-of-life.webp" width="18" height="18" alt="" loading="lazy">Благословение жизни</span> / <span class="sk"><img src="../../assets/icons/chanter/earths-promise.webp" width="18" height="18" alt="" loading="lazy">Призыв земли</span></td><td>14</td><td>ОЗ и усиление лечения / −стойкость цели в PvE для всей группы.</td></tr>
+      <tr><td><span class="sk" data-sk="attack-preparation"><img src="../../assets/icons/chanter/attack-preparation.webp" width="18" height="18" alt="" loading="lazy">Подготовка к атаке</span></td><td>20</td><td>Усиление урона в PvE, Защита и Точность.</td></tr>
+      <tr><td><span class="sk" data-sk="impact-hit"><img src="../../assets/icons/chanter/impact-hit.webp" width="18" height="18" alt="" loading="lazy">Попадание шоком</span></td><td>20</td><td>Выше шанс оглушения — каждое оглушение открывает Удар скалы.</td></tr>
+      <tr><td><span class="sk" data-sk="winds-promise"><img src="../../assets/icons/chanter/winds-promise.webp" width="18" height="18" alt="" loading="lazy">Обет ветра</span></td><td>16</td><td>Усиление крит. урона и доп. урон при крите.</td></tr>
+      <tr><td><span class="sk" data-sk="blessing-of-life"><img src="../../assets/icons/chanter/blessing-of-life.webp" width="18" height="18" alt="" loading="lazy">Благословение жизни</span> / <span class="sk" data-sk="earths-promise"><img src="../../assets/icons/chanter/earths-promise.webp" width="18" height="18" alt="" loading="lazy">Призыв земли</span></td><td>14</td><td>ОЗ и усиление лечения / −стойкость цели в PvE для всей группы.</td></tr>
       <tr><td>Остальные</td><td>10</td><td>Перекрестная оборона, Защитный круг, Заклинание воодушевления, Заклинание гнева, Инстинкт выживания.</td></tr>
     </tbody>
   </table></div>
@@ -738,8 +741,8 @@
   <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-daevanion">Доски Daevanion</h2></div>
     <p>Daevanion поднимает скиллы с 10 до 14 и даёт статы. Каждый синий узел — <strong>+1 уровень</strong> своему скиллу. В таблице TitanTheF есть стартовый маршрут на 1–45 — открой его и бери эти узлы по ходу прокачки.</p>
   <div class="callout"><ul>
-    <li data-only="pve"><strong>Приоритет:</strong> синие узлы <span class="sk"><img src="../../assets/icons/chanter/onslaught.webp" width="18" height="18" alt="" loading="lazy">Разгром</span>, <span class="sk"><img src="../../assets/icons/chanter/dark-crush.webp" width="18" height="18" alt="" loading="lazy">Удар скалы</span>, <span class="sk"><img src="../../assets/icons/chanter/spinning-strike.webp" width="18" height="18" alt="" loading="lazy">Удар с вращением</span>, затем оранжевые.</li>
-    <li data-only="pvp"><strong>Приоритет:</strong> синие узлы <span class="sk"><img src="../../assets/icons/chanter/impactful-crush.webp" width="18" height="18" alt="" loading="lazy">Дробящий удар</span>, <span class="sk"><img src="../../assets/icons/chanter/wave-blow.webp" width="18" height="18" alt="" loading="lazy">Волновой удар</span>, <span class="sk"><img src="../../assets/icons/chanter/defiance.webp" width="18" height="18" alt="" loading="lazy">Снятие шока</span>.</li>
+    <li data-only="pve"><strong>Приоритет:</strong> синие узлы <span class="sk" data-sk="onslaught"><img src="../../assets/icons/chanter/onslaught.webp" width="18" height="18" alt="" loading="lazy">Разгром</span>, <span class="sk" data-sk="dark-crush"><img src="../../assets/icons/chanter/dark-crush.webp" width="18" height="18" alt="" loading="lazy">Удар скалы</span>, <span class="sk" data-sk="spinning-strike"><img src="../../assets/icons/chanter/spinning-strike.webp" width="18" height="18" alt="" loading="lazy">Удар с вращением</span>, затем оранжевые.</li>
+    <li data-only="pvp"><strong>Приоритет:</strong> синие узлы <span class="sk" data-sk="impactful-crush"><img src="../../assets/icons/chanter/impactful-crush.webp" width="18" height="18" alt="" loading="lazy">Дробящий удар</span>, <span class="sk" data-sk="wave-blow"><img src="../../assets/icons/chanter/wave-blow.webp" width="18" height="18" alt="" loading="lazy">Волновой удар</span>, <span class="sk" data-sk="defiance"><img src="../../assets/icons/chanter/defiance.webp" width="18" height="18" alt="" loading="lazy">Снятие шока</span>.</li>
     <li data-only="pve"><strong>Ariel</strong> (PvE) на 45, а не Azphel.</li>
     <li data-only="pvp"><strong>Azphel</strong> (PvP) на 45, и Triniel раньше.</li>
   </ul></div>
@@ -749,8 +752,8 @@
 <section id="stigmas" class="g-section" data-only="pve" aria-labelledby="h-stigmas">
   <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-stigmas">Стигмы</h2></div>
     <ul class="skill-grid">
-<li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/undefeated-mantra.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+<li class="skill" data-sk-card="undefeated-mantra">
+  <img class="skill-icon" data-sk="undefeated-mantra" src="../../assets/icons/chanter/undefeated-mantra.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Песнь непобедимости <span class="badge must">Ур. 20</span></div>
     <div class="skill-desc">+урон и стойкость в PvE тебе и группе — мантра, ради которой Чародея берут в группу. Качай первой.</div>
@@ -766,8 +769,8 @@
       </ul>
     </details>
   </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/power-of-the-storm.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+</li><li class="skill" data-sk-card="power-of-the-storm">
+  <img class="skill-icon" data-sk="power-of-the-storm" src="../../assets/icons/chanter/power-of-the-storm.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Повелитель бурь <span class="badge must">Ур. 10</span></div>
     <div class="skill-desc">+20% скорости боя и −20% перезарядок на 10 сек. (группе — половина сокращения). На 5 её собственная перезарядка короче на 30 сек.</div>
@@ -783,8 +786,8 @@
       </ul>
     </details>
   </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/sprint-mantra.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+</li><li class="skill" data-sk-card="sprint-mantra">
+  <img class="skill-icon" data-sk="sprint-mantra" src="../../assets/icons/chanter/sprint-mantra.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Заклятие ускорения <span class="badge must">Ур. 10</span></div>
     <div class="skill-desc">Скорость бега и лечение при ударах для группы.</div>
@@ -800,8 +803,8 @@
       </ul>
     </details>
   </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/marchutans-wrath.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+</li><li class="skill" data-sk-card="marchutans-wrath">
+  <img class="skill-icon" data-sk="marchutans-wrath" src="../../assets/icons/chanter/marchutans-wrath.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Ярость Маркутана <span class="badge must">Ур. 10</span></div>
     <div class="skill-desc">Дальнобойное АоЕ, которое тоже открывает Удар скалы.</div>
@@ -817,8 +820,8 @@
       </ul>
     </details>
   </div>
-</li><li class="skill">
-  <img class="skill-icon" src="../../assets/icons/chanter/obliterate.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+</li><li class="skill" data-sk-card="obliterate">
+  <img class="skill-icon" data-sk="obliterate" src="../../assets/icons/chanter/obliterate.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
     <div class="skill-name">Истребляющий огонь <span class="badge opt">прокачка</span></div>
     <div class="skill-desc">АоЕ-сбивание для пачек на прокачке; на капе меняй на Ярость Маркутана.</div>
@@ -851,22 +854,22 @@
 <div class="hotline">
   <div class="hotline-head"><span class="key">ПКМ</span><span class="hotline-name">Линия Удара скалы</span></div>
   <ol class="hotline-skills" reversed>
-    <li class="">
+    <li class="" data-sk="incandescent-blow">
       <span class="hl-n">4</span>
       <img src="../../assets/icons/chanter/incandescent-blow.webp" width="40" height="40" alt="" loading="lazy">
       <span class="hl-name">Раскаленный удар</span>
     </li>
-    <li class="">
+    <li class="" data-sk="spinning-strike">
       <span class="hl-n">3</span>
       <img src="../../assets/icons/chanter/spinning-strike.webp" width="40" height="40" alt="" loading="lazy">
       <span class="hl-name">Удар с вращением</span>
     </li>
-    <li class="">
+    <li class="" data-sk="dark-crush">
       <span class="hl-n">2</span>
       <img src="../../assets/icons/chanter/dark-crush.webp" width="40" height="40" alt="" loading="lazy">
       <span class="hl-name">Удар скалы</span>
     </li>
-    <li class=" is-first">
+    <li class=" is-first" data-sk="impactful-crush">
       <span class="hl-n">1</span>
       <img src="../../assets/icons/chanter/impactful-crush.webp" width="40" height="40" alt="" loading="lazy">
       <span class="hl-name">Дробящий удар</span>
@@ -876,12 +879,12 @@
 <p class="hotline-note">Дробящий удар и Удар с вращением открывают Удар скалы, и он срабатывает следующим по приоритету; Раскалённый удар заполняет паузы.</p></div><div class="hotline">
   <div class="hotline-head"><span class="key">2</span><span class="hotline-name">Линия волны</span></div>
   <ol class="hotline-skills" reversed>
-    <li class="">
+    <li class="" data-sk="heat-wave-blow">
       <span class="hl-n">2</span>
       <img src="../../assets/icons/chanter/heat-wave-blow.webp" width="40" height="40" alt="" loading="lazy">
       <span class="hl-name">Тепловой удар</span>
     </li>
-    <li class=" is-first">
+    <li class=" is-first" data-sk="wave-blow">
       <span class="hl-n">1</span>
       <img src="../../assets/icons/chanter/wave-blow.webp" width="40" height="40" alt="" loading="lazy">
       <span class="hl-name">Волновой удар</span>
@@ -891,12 +894,12 @@
 <p class="hotline-note">Волновой удар сбивает с ног оглушённую цель.</p></div><div class="hotline">
   <div class="hotline-head"><span class="key">3</span><span class="hotline-name">Линия рывков</span></div>
   <ol class="hotline-skills" reversed>
-    <li class="">
+    <li class="" data-sk="tremor-crush">
       <span class="hl-n">2</span>
       <img src="../../assets/icons/chanter/tremor-crush.webp" width="40" height="40" alt="" loading="lazy">
       <span class="hl-name">Сотрясение</span>
     </li>
-    <li class=" is-first">
+    <li class=" is-first" data-sk="rushing-smash">
       <span class="hl-n">1</span>
       <img src="../../assets/icons/chanter/rushing-smash.webp" width="40" height="40" alt="" loading="lazy">
       <span class="hl-name">Скачок</span>
@@ -917,9 +920,9 @@
 
   <h3>3. Что нажимать на самом деле</h3>
   <ul class="presslist">
-    <li><span class="press-how">Держать</span><span class="press-what"><span class="sk"><img src="../../assets/icons/chanter/onslaught.webp" width="18" height="18" alt="" loading="lazy">Разгром</span> на <span class="key">ЛКМ</span>, линию Удара скалы на <span class="key">ПКМ</span> и макрос на <span class="key">СКМ</span>.</span></li>
+    <li><span class="press-how">Держать</span><span class="press-what"><span class="sk" data-sk="onslaught"><img src="../../assets/icons/chanter/onslaught.webp" width="18" height="18" alt="" loading="lazy">Разгром</span> на <span class="key">ЛКМ</span>, линию Удара скалы на <span class="key">ПКМ</span> и макрос на <span class="key">СКМ</span>.</span></li>
     <li><span class="press-how">Макрос мыши</span><span class="press-what">Или пусть софт мыши крутит ЛКМ → ПКМ → СКМ (по 10 мс) на одной кнопке-переключателе — TitanTheF использует Witchmana, но подойдёт любой софт мыши.</span></li>
-    <li><span class="press-how">Вручную</span><span class="press-what">Мантры (один раз), <span class="sk"><img src="../../assets/icons/chanter/recuperation.webp" width="18" height="18" alt="" loading="lazy">Заклинание выздоровления</span>, когда группа получает урон, линия рывков для сближения, <span class="sk"><img src="../../assets/icons/chanter/defiance.webp" width="18" height="18" alt="" loading="lazy">Снятие шока</span>.</span></li>
+    <li><span class="press-how">Вручную</span><span class="press-what">Мантры (один раз), <span class="sk" data-sk="recuperation"><img src="../../assets/icons/chanter/recuperation.webp" width="18" height="18" alt="" loading="lazy">Заклинание выздоровления</span>, когда группа получает урон, линия рывков для сближения, <span class="sk" data-sk="defiance"><img src="../../assets/icons/chanter/defiance.webp" width="18" height="18" alt="" loading="lazy">Снятие шока</span>.</span></li>
   </ul>
 
 </section>
@@ -936,10 +939,10 @@
 <section id="fight-lvl" class="g-section" data-only="lvl" aria-labelledby="h-fight-lvl">
   <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-fight-lvl">Как сражаться во время прокачки</h2></div>
     <div class="callout"><ul>
-    <li><strong>Пачки:</strong> <span class="sk"><img src="../../assets/icons/chanter/rushing-smash.webp" width="18" height="18" alt="" loading="lazy">Скачок</span> (сбрасывается при убийстве) → <span class="sk"><img src="../../assets/icons/chanter/obliterate.webp" width="18" height="18" alt="" loading="lazy">Истребляющий огонь</span> → линия Удара скалы + <span class="sk"><img src="../../assets/icons/chanter/onslaught.webp" width="18" height="18" alt="" loading="lazy">Разгром</span>.</li>
-    <li><strong>Элитки:</strong> <span class="sk"><img src="../../assets/icons/chanter/impactful-crush.webp" width="18" height="18" alt="" loading="lazy">Дробящий удар</span> (оглушение) → <span class="sk"><img src="../../assets/icons/chanter/dark-crush.webp" width="18" height="18" alt="" loading="lazy">Удар скалы</span> → <span class="sk"><img src="../../assets/icons/chanter/wave-blow.webp" width="18" height="18" alt="" loading="lazy">Волновой удар</span> → <span class="sk"><img src="../../assets/icons/chanter/spinning-strike.webp" width="18" height="18" alt="" loading="lazy">Удар с вращением</span> → снова Удар скалы.</li>
+    <li><strong>Пачки:</strong> <span class="sk" data-sk="rushing-smash"><img src="../../assets/icons/chanter/rushing-smash.webp" width="18" height="18" alt="" loading="lazy">Скачок</span> (сбрасывается при убийстве) → <span class="sk" data-sk="obliterate"><img src="../../assets/icons/chanter/obliterate.webp" width="18" height="18" alt="" loading="lazy">Истребляющий огонь</span> → линия Удара скалы + <span class="sk" data-sk="onslaught"><img src="../../assets/icons/chanter/onslaught.webp" width="18" height="18" alt="" loading="lazy">Разгром</span>.</li>
+    <li><strong>Элитки:</strong> <span class="sk" data-sk="impactful-crush"><img src="../../assets/icons/chanter/impactful-crush.webp" width="18" height="18" alt="" loading="lazy">Дробящий удар</span> (оглушение) → <span class="sk" data-sk="dark-crush"><img src="../../assets/icons/chanter/dark-crush.webp" width="18" height="18" alt="" loading="lazy">Удар скалы</span> → <span class="sk" data-sk="wave-blow"><img src="../../assets/icons/chanter/wave-blow.webp" width="18" height="18" alt="" loading="lazy">Волновой удар</span> → <span class="sk" data-sk="spinning-strike"><img src="../../assets/icons/chanter/spinning-strike.webp" width="18" height="18" alt="" loading="lazy">Удар с вращением</span> → снова Удар скалы.</li>
     <li><strong>Мана:</strong> Разгром восполняет ману с каждого удара — не переставай его вплетать.</li>
-    <li><strong>Мало ОЗ:</strong> <span class="sk"><img src="../../assets/icons/chanter/recuperation.webp" width="18" height="18" alt="" loading="lazy">Заклинание выздоровления</span>, а Заклятие ускорения лечит при ударах.</li>
+    <li><strong>Мало ОЗ:</strong> <span class="sk" data-sk="recuperation"><img src="../../assets/icons/chanter/recuperation.webp" width="18" height="18" alt="" loading="lazy">Заклинание выздоровления</span>, а Заклятие ускорения лечит при ударах.</li>
   </ul></div>
 
 </section>
@@ -950,22 +953,22 @@
     <div class="hotline">
   <div class="hotline-head"><span class="key">ПКМ</span><span class="hotline-name">Линия Удара скалы</span></div>
   <ol class="hotline-skills" reversed>
-    <li class="">
+    <li class="" data-sk="incandescent-blow">
       <span class="hl-n">4</span>
       <img src="../../assets/icons/chanter/incandescent-blow.webp" width="40" height="40" alt="" loading="lazy">
       <span class="hl-name">Раскаленный удар</span>
     </li>
-    <li class="">
+    <li class="" data-sk="spinning-strike">
       <span class="hl-n">3</span>
       <img src="../../assets/icons/chanter/spinning-strike.webp" width="40" height="40" alt="" loading="lazy">
       <span class="hl-name">Удар с вращением</span>
     </li>
-    <li class="">
+    <li class="" data-sk="dark-crush">
       <span class="hl-n">2</span>
       <img src="../../assets/icons/chanter/dark-crush.webp" width="40" height="40" alt="" loading="lazy">
       <span class="hl-name">Удар скалы</span>
     </li>
-    <li class=" is-first">
+    <li class=" is-first" data-sk="impactful-crush">
       <span class="hl-n">1</span>
       <img src="../../assets/icons/chanter/impactful-crush.webp" width="40" height="40" alt="" loading="lazy">
       <span class="hl-name">Дробящий удар</span>
@@ -986,7 +989,17 @@
     <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — как работают линии и встроенный макрос</li>
   </ul>
   <p class="sources-all"><a href="../../ru/sources/">Все источники и авторы →</a></p>
-</section>  </main>
+</section>    <p class="report-box"><a class="btn btn-ghost btn-sm report-link" href="https://github.com/Couga54/aion2-guides/issues/new" target="_blank" rel="noopener" data-body="Страница: {url}
+Режим: {mode}
+
+Что не так / устарело:
+
+Источник или доказательство (ссылка, скриншот):
+" data-page="ru/chanter/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+      Сообщить об ошибке</a> <span class="note">Откроет issue на GitHub для этой страницы</span></p>
+    <script type="application/json" id="sk-data" data-cd="Перезарядка" data-s="с" data-active="Активный" data-stigma="Стигма" data-passive="Пассивный">{"barrier-spell":{"n":"Защитный барьер","c":"stigma","cd":180,"d":"Не дает ОЗ персонажа и участников группы в радиусе 40 м опуститься ниже 10% в течение 3s.\n\nНе может блокировать некоторые мощные атаки. Эффекты увеличения времени перезарядки не действуют.\nЭффекты Упорства, Спасения, Защитного барьера и Неудержимости не могут быть применены в течение 30s, если суммирование Неуязвимости заблокировано.","sp":[[5,"Восстановление 10% ОЗ при естественном завершении эффекта"],[10,"Стойкость к урону в PvE +10%, стойкость к урону в PvP +5% на 10s при естественном завершении эффекта"],[15,"Фиксации ОЗ +10%"],[20,"Длительность эффекта +1 сек."]]},"onslaught":{"n":"Разгром","c":"active","cd":0,"d":"Наносит X–X ед. урона макс. 4 врагам в радиусе 4 м и восстанавливает 100 ОМ.","sp":[[8,"Восстановление ОМ +20%"],[8,"Поглощение 0.7% ОЗ"],[8,"Шанс мультиудара +50% при попадании"],[12,"Перезарядка [Удара с вращением] -1s при попадании"],[16,"Добавление 4-ой комбинации [Ураганное дробление]"]]},"incandescent-blow":{"n":"Раскаленный удар","c":"active","cd":0,"d":"Наносит X–X урона макс. 4 врагам в радиусе 4 м.\n\nУрон по шкале ошеломления — 2","sp":[[8,"Затрата ОМ -20%"],[8,"Блок +200 во время использования умения"],[8,"Чем меньше целей попадания, тем больше увеличение урона (макс. до 12%)"],[12,"Меткость -200 на 3s при попадании [Взрывным ударом]"],[16,"Игнорирование блока и УКЛ, попадание мультиударом"]]},"impactful-crush":{"n":"Дробящий удар","c":"active","cd":15,"d":"Наносит X урона цели в радиусе 20 м и с шансом 60% оглушает ее на 3s.\nДля NPC оглушение срабатывает гарантированно.\n\nПри использовании умения можно использовать [Удар скалы] в теч. 2s\nУрон по шкале ошеломления — 10 ед.","sp":[[8,"Смена на урон по области"],[8,"Длительность Оглушения от [Дробящего удара] +1 сек."],[8,"Замена на умение с возможностью перемещения"],[12,"СКР умений +30%"],[16,"Шанс Оглушения от [Дробящего удара] +20%"]]},"wave-blow":{"n":"Волновой удар","c":"active","cd":20,"d":"Наносит X урона оглушенной цели в радиусе 4 м и сбивает ее с ног на 3s\nАктивируется со сменой анимации с шансом 7% при атаке цели с иммунитетом к обездвиживанию.\n\nУрон по шкале ошеломления — 10 ед.","sp":[[8,"Гарантир. мультиудар при попадании"],[8,"Дальность атаки +6 м"],[8,"Длительность Сбивания с ног +1 сек."],[12,"Увеличение урона в PvE цели -15%, Увеличение урона в PvP -7.5% на 10s"],[16,"Перезарядка -5 сек."]]},"rushing-smash":{"n":"Скачок","c":"active","cd":15,"d":"Совершает рывок к цели в радиусе 20 м, наносит X–X урона макс. 4 врагам и восстанавливает 100 ОМ.\n\nУрон по шкале ошеломления —10 ед.","sp":[[8,"Сниж. способности цели к сопротивлению шок. эффектам на 20% в течение 5s"],[8,"Превращается в заряжаемое умение, до +200% урона"],[8,"Шанс 50% активировать [Тепловой удар] при попадании [Скачок]"],[12,"Завершение перезарядки при уничтожении врага"],[16,"Игнорирование блока и УКЛ, попадание мультиударом"]]},"dark-crush":{"n":"Удар скалы","c":"active","cd":5,"d":"Наносит X урона цели в радиусе 20 м.\n\nУрон по шкале ошеломления — 5 ед.","sp":[[8,"Поглощение 0.7% ОЗ"],[8,"Доп. урон при атаке цели под воздействием шок. эффектов"],[8,"Гарантир. крит. удар при попадании"],[12,"Добавление 2-ой комбинации [Дробящее пробитие]"],[16,"Удаление времени перезарядки [Удара скалы]"]]},"recuperation":{"n":"Заклинание выздоровления","c":"active","cd":15,"d":"Восстанавливает 183-201 ОЗ себе и участникам группы в радиусе 40 м и отменяет эффекты ослабления (1 шт.). В течение 8s восстанавливает по X ОЗ с интервалом 2s","sp":[[8,"Непрерывное использование +1 р., макс. 2 заряда продолжительного восстановления"],[8,"Отмена эффектов ослабления (макс. 2 шт.)"],[8,"Длительность восстановления +4 сек."],[12,"Доп. восстановление 5% ОЗ"],[16,"Перезарядка -3 сек."]]},"fracturing-blow":{"n":"Разрушительный удар","c":"stigma","cd":45,"d":"Совершает рывок к цели в радиусе 20 м, наносит X–X урона и снижает ЗЩТ врага на 30% в теч. 5s. Увелич. урон на 20% целям под воздействием шок. эффекта.\n\nУрон по шкале ошеломления — 20 ед.","sp":[[5,"Перезарядка -15 сек."],[10,"Активирует Уязвимость на 5s при попадании"],[15,"Гарантир. крит. удар при попадании"],[20,"+30% доп. урона по целям под воздействием шок. эффекта"]]},"focused-defense":{"n":"Концентрация на защите","c":"stigma","cd":20,"d":"Временно увелич. снижение урона при блоке на 100% и обеспечивает гарантированный блок щитом. При успешном блоке восст. 110 ОМ и ОД 1 р.","sp":[[5,"Непрерывное использование +1 раз"],[10,"Замена на умение с возможностью перемещения"],[15,"СКР движ. +20% на 3s при успешном блоке"],[20,"Восстановление 5% ОЗ 1 раз при успешном блоке оружием"]]},"heat-wave-blow":{"n":"Тепловой удар","c":"active","cd":10,"d":"При успешном блоке наносит X–X урона врагам (макс. 4) в радиусе 4 м от цели в пределах 4 м и с шансом 40% накладывает Печать на 3s\nДля NPC запечатывание срабатывает гарантированно.\n\nУрон по шкале ошеломления — 10","sp":[[8,"Шанс 40% оглушить на 3s"],[8,"Шанс попадания Запечатыванием +20%"],[8,"Чем больше целей попадания, тем больше увеличение урона (макс. до 20%)"],[12,"Игнорирование блока и УКЛ, попадание мультиударом"],[16,"Шанс 25% сбросить время перезарядки [Удара тепловой волны] при успешном блоке"]]},"sprint-mantra":{"n":"Заклятие ускорения","c":"stigma","cd":5,"d":"Увеличивает СКР движ. для себя и участников группы поблизости на 10.5%, при каждом попадании атакой с шансом 15% восстанавливает 127-140 ОЗ.\n\nПерезарядка восстановления: 1s","sp":[[5,"Получ. исцеление +10%"],[10,"Естественное восстановление ОД +30%"],[15,"Восстановление ОЗ +50% при ОЗ 50% или ниже"],[20,"Регенерация +10%"]]},"healing-touch":{"n":"Рука жизни","c":"stigma","cd":30,"d":"Восстанавливает 927-1020 ОЗ себе и участникам группы в радиусе 40 м.","sp":[[5,"Восстановление ОЗ +20% при ОЗ 50% или ниже"],[10,"Восстановление 1000 ОД"],[15,"Отмена эффектов ослабления x5"],[20,"Доп. восстановление 5% ОЗ"]]},"undefeated-mantra":{"n":"Песнь непобедимости","c":"stigma","cd":5,"d":"Увелич. усиление урона в PvE и стойкость к урону в PvE для себя и участников группы поблизости на 10.5%, усиление урона в PvP и стойкость к урону в PvP — на 5.25%.\n\nНе суммируется с умением Целителя [Свет охраны]: применяется только 1 эффект более высокого по уровню умения. Если уровни умений одинаковы, применяется эффект Песни непобедимости.","sp":[[5,"Крит. удар +100"],[10,"Меткость +100"],[15,"Увеличение крит. урона +5%"],[20,"Мощный удар +5%"]]},"defiance":{"n":"Снятие шока","c":"active","cd":60,"d":"Отменяет эффекты Оглушения, Сбивания с ног, Воздушные оковы, захват, Заморозку и Ужас на 5s активирует для персонажа Непреклонность.\nНепреклонность: иммунитет к негат. эффектам\n\nЭффекты снижения времени перезарядки не действуют.","sp":[[8,"Добавляет 2-ное комбо [Сокрушающий удар]"],[8,"Восстановление 1000 ОД при использовании [Снятия шока]"],[8,"Восстановление 10% ОЗ при использовании [Снятия шока]"],[12,"Длительность Непреклонности +2 сек."],[16,"Стойкость к урону в PvE +50% и стойкость к урону в PvP +25% во время действия Непреклонности"]]},"tremor-crush":{"n":"Сотрясение","c":"active","cd":20,"d":"При использовании [Срочного уклонения] или в состоянии полета перемещается к цели в радиусе 10 м, наносит X урона и с шансом 50% оглушает ее на 3s\nДля NPC оглушение срабатывает гарантированно.\n\nУрон по шкале ошеломления — 10","sp":[[8,"Восстановление 300 ОД при попадании"],[8,"Дальность атаки [Сотрясения] +10 м"],[8,"Шанс мультиудара +50% при попадании"],[12,"Добавление 2-ой комбинации [Дробящий всплеск]"],[16,"Шанс Оглушения от [Сотрясения] +25%"]]},"obliterate":{"n":"Истребляющий огонь","c":"stigma","cd":60,"d":"Наносит X–X урона макс. 4 врагам в радиусе 4 м от цели с шансом 50% накладывает Сбивание с ног.\nДля NPC сбивание с ног срабатывает гарантированно.\n\nУрон по шкале ошеломления — 50","sp":[[5,"Чем больше целей попадания, тем больше увеличение урона (макс. до 20%)"],[10,"СКР умений +20%"],[15,"Гарантир. крит. удар при попадании"],[20,"Шанс сбить с ног +25%"]]},"ensnaring-mark":{"n":"Клеймо оков","c":"stigma","cd":60,"d":"Наносит X–X урона врагам (макс. 4) в радиусе 4 м от выбранной цели в пределах 20 м . С шансом 50% запечатывает врага на 5s.\nДля NPC запечатывание гарантировано.\n\nПри использовании можно использовать умение [Удар скала] на 3s.","sp":[[5,"Шанс 50% взять в плен"],[10,"Шанс 50% снизить макс. ОД на 1000"],[15,"Запечатывание, Плен и эффект снижения макс. ОД +3 сек."],[20,"Шанс запечатывания, плена и эффекта снижения макс. ОД +25%"]]},"impeding-authority":{"n":"Сила заслона","c":"stigma","cd":90,"d":"На 20s создает для себя и участников группы в радиусе 40 м защитную оболочку, блокирующую урон в 16% макс. ОЗ.","sp":[[5,"ЗЩТ +15%"],[10,"Получ. исцеление +10%"],[15,"Стойкость к урону в PvE +10%, стойкость к урону в PvP +5%"],[20,"Восстановление 7% от макс. ОЗ при завершении действия или разрушении защитной оболочки"]]},"power-of-the-storm":{"n":"Повелитель бурь","c":"stigma","cd":120,"d":"Увелич. СКР боя на 20% в теч. 10s. Сокращает перезарядку умений на 20%. Для союзников в радиусе 40 м увелич. СКР боя на 20%, а также сокращает перезарядку умений на 10%.\n\n\nВо время действия [Повелитель бурь] эффект восстановления [Благословения природы] не применяется.","sp":[[5,"Перезарядка -30 сек."],[10,"Меткость +200"],[15,"Крит. удар +200"],[20,"АТК персонажа +20, АТК союзников +10%"]]},"spinning-strike":{"n":"Удар с вращением","c":"active","cd":30,"d":"Наносит X–X ед. урона макс. 4 врагам в радиусе 20 м от цели. Увелич. усиление крит. урона на 15% в теч. 30s при попадании. Суммируется не более 2 раз.\n\nПосле применения можно в течение 2s использовать умение [Удар скалы].\nУрон по шкале ошеломления —15 ед.","sp":[[8,"Перезарядка -5 сек."],[8,"Увеличение исцеления +30% (макс. 20%)"],[8,"Чем меньше целей попадания, тем больше увеличение урона (макс. до 20%)"],[12,"Шанс 40% наложить Запечатывание на 3s"],[16,"Крит. удар, несмотря на блок и уклонение"]]},"gust-rampage":{"n":"Танец ветра","c":"active","cd":0,"d":"Наносит X урона цели в состоянии Ошеломления в радиусе 4 м.","sp":[[8,"Поглощение 5% ОЗ"],[8,"Восстановление 120 ОМ"],[8,"Замена на умение с возможностью перемещения"],[12,"Гарантир. мультиудар при попадании"],[16,"Перезарядка всех умений -1s при попадании"]]},"marchutans-wrath":{"n":"Ярость Маркутана","c":"stigma","cd":30,"d":"Наносит X~X ед. урона макс. 4 врагам в радиусе 4 м от цели в пределах 20 м.\n\nПри использовании можно в теч. 3s использовать [Удар скалы].","sp":[[5,"Чем меньше целей попадания, тем больше увеличение урона (макс. до 20%)"],[10,"Шанс 50% оглушить на 3s"],[15,"Получ. исцеление и восстановление от зелий -70%"],[20,"Шанс Оглушения доп. +25%"]]},"guardian-blessing":{"n":"Благословение хранителя","c":"stigma","cd":300,"d":"Увелич. макс. ОЗ на 5.4% и мгновенно восст. ОЗ на 5.4% в теч. 300s.\n\nЭффекты маг. усиления не действуют.","sp":[[5,"+10% к сопротивлению негат. эффектам"],[10,"Эффект [Перекрестная оборона] во время действия умения x1,5"],[15,"Эффект [Обет ветра] x1,5 во время действия"],[20,"Получ. исцеление +10%"]]},"assault-shock":{"n":"Внезапное замешательство","c":"stigma","cd":120,"d":"Наносит X–X урона врагам (макс. 4) в радиусе 4 м от выбранной цели в пределах 20 м. С шансом 30% накладывает Оглушение на 3s.\nДля NPC оглушение срабатывает гарантированно.\n\nУвеличивает ЗЩТ до 20% пропорционально количеству пораженных целей.","sp":[[5,"АТК +20% на 5s при попадании"],[10,"500 урона по ОМ при попадании"],[15,"Дальность атаки +10 м"],[20,"Шанс Оглушения +20%"]]},"blessing-of-life":{"n":"Благословение жизни","c":"passive","cd":0,"d":"Увелич. ОЗ на 15300. Дополнительно увеличивает макс. ОЗ на 1.5%, исцеление — на 15300% от АТК.","sp":[]},"crossguard":{"n":"Перекрестная оборона","c":"passive","cd":0,"d":"Увеличивает блок на 200 и восстанавливает 53–58 ОЗ при блоке.\n\nВремя перезарядки: 1s","sp":[]},"protection-circle":{"n":"Защитный круг","c":"passive","cd":0,"d":"При каждом попадании атакой дает Защитный круг на 5s. При накоплении 10 суммирований Защитный круг снимается, а персонаж и участники группы получают Священную защитную оболочку, которая блокирует урон, равный 3.1% макс. ОЗ на 10s. Если во время действия Священной защитной оболочки накапливается 10 зарядов Защитного круга, действие Священной защитной оболочки продлевается.\nПри падении ОЗ персонажа ниже 50% создает Благородную защитную оболочку на 5s, блокирующую до 21% урона.\n\nВремя перезарядки Защитного круга: 0.5s\nВремя перезарядки Благородного защитного барьера: 60s","sp":[]},"inspiring-spell":{"n":"Заклинание воодушевления","c":"passive","cd":0,"d":"Увеличивает крит. удар на 100, Совершенный удар — на 0.5%.","sp":[]},"attack-preparation":{"n":"Подготовка к атаке","c":"passive","cd":0,"d":"Увеличивает эскалацию урона в PvE на 5.5%, эскалацию урона в PvP — на 2.75%, ЗЩТ — на 2%, меткость — на 100.","sp":[]},"impact-hit":{"n":"Попадание шоком","c":"passive","cd":0,"d":"Увеличивает попадание шок. эффектами на 11.2%, мощный удар — на 0.3%.","sp":[]},"raging-spell":{"n":"Заклинание гнева","c":"passive","cd":0,"d":"Наносит X–X ед. дополнительного урона целям под действием Ошеломления или шок. эффекта.\n\nВремя перезарядки: 1s","sp":[]},"earths-promise":{"n":"Призыв земли","c":"passive","cd":0,"d":"Снижает стойкость цели к урону в PvE на 5.4% и стойкость к урону в PvP на 2.7% на 5s при каждом попадании атакой.\n\nЭффект снижения стойкости к урону от [Призыва земли] в PvE/PvP не действует при совместном использовании с умением Целителя [Цепь боли].\n\nВремя перезарядки: 10s","sp":[]},"survival-willpower":{"n":"Инстинкт выживания","c":"passive","cd":0,"d":"Увеличивает сопротивление негат. эффектам  на 17%. Увеличивает стойкость к урону в PvE на 12% и стойкость к урону в PvP на 6% на 5s под действием Оглушения, Сбивания с ног, Воздушных оков, Заморозки или Ужаса. Увеличивает сопротивление негат. эффектам  на 10% на 5s при получении удара в состоянии Оглушения, Сбивания с ног, Воздушных оков, Заморозки или Ужаса (суммируется не более 10 раз).\n\nВремя перезарядки увеличения стойкости к урону: 60s\nВремя перезарядки увеличения сопротивления негат. эффектам: 1s","sp":[]},"winds-promise":{"n":"Обет ветра","c":"passive","cd":0,"d":"Увелич. усиление крит. урона на 5.7%, а при успешном попадании крит. удара шансом 50% наносит доп. урон X.\n\nВремя перезарядки доп. урона: 1s","sp":[]}}</script>
+  </main>
 </div>
 
 <footer class="site-footer">
@@ -995,11 +1008,28 @@
       <a class="brand brand-sm" href="../../ru/">AION 2 Гайды</a>
       <p>Неофициальный фанатский сайт, не связан с NCSOFT. AION 2 и иконки скиллов © NCSOFT.</p>
       <p>Проверено: 2026-09-27 (до глобального запуска).</p>
-      <p><a href="../../ru/sources/">Все источники и авторы</a> · <a href="../../ru/changelog/">История изменений</a></p>
+      <p><a href="../../ru/sources/">Все источники и авторы</a> · <a href="../../ru/changelog/">История изменений</a> · <a class="report-link" href="https://github.com/Couga54/aion2-guides/issues/new" target="_blank" rel="noopener" title="Откроет issue на GitHub для этой страницы" data-body="Страница: {url}
+Режим: {mode}
+
+Что не так / устарело:
+
+Источник или доказательство (ссылка, скриншот):
+" data-page="ru/chanter/">Сообщить об ошибке</a></p>
     </div>
   </div>
 </footer>
-<dialog class="whatsnew" data-id="2026-09-28-motion" aria-labelledby="wn-title">
+<dialog class="search-dlg" aria-label="Поиск" data-index="../../ru/search.json" data-base="../../ru/" data-empty="Ничего не найдено"
+  data-kinds="{&#34;boss&#34;: &#34;\u0411\u043e\u0441\u0441&#34;, &#34;class&#34;: &#34;\u041a\u043b\u0430\u0441\u0441&#34;, &#34;page&#34;: &#34;\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430&#34;, &#34;section&#34;: &#34;\u0420\u0430\u0437\u0434\u0435\u043b&#34;, &#34;skill&#34;: &#34;\u0421\u043a\u0438\u043b\u043b&#34;}" data-root="../../">
+  <div class="search-in">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-q" placeholder="Класс, скилл, босс, раздел…" aria-label="Поиск" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-res" role="listbox"></ul>
+  </div>
+</dialog>
+<dialog class="whatsnew" data-id="2026-09-28-tools" aria-labelledby="wn-title">
   <form method="dialog" class="wn-in">
     <div class="wn-head">
       <h2 id="wn-title">Что нового</h2>
@@ -1010,7 +1040,11 @@
     <section class="wn-entry">
       <time class="wn-date" datetime="2026-09-28">28 сентября 2026</time>
       <ul>
-        <li><span><strong>Живее сайт</strong> — пейзаж на главной медленно движется, поднимаются искры эфира; у каждого класса свои стихийные частицы, «дышащий» портрет и свечение в цвете класса, а блоки гайда проявляются при прокрутке.</span></li>
+        <li><a href="../../ru/cleric/"><strong>Целитель и Заклинатель (WIP)</strong> — гайды на прокачку со стартовыми макросами Grobs; PvE и PvP появятся, когда будет настоящий глобальный источник.</a></li>
+        <li><span><strong>Поиск</strong> — нажми Ctrl+K (или /), чтобы найти класс, скилл, босса или раздел гайда.</span></li>
+        <li><span><strong>Подсказки скиллов</strong> — наведи на любой скилл в гайде, чтобы увидеть описание, перезарядку и все специализации.</span></li>
+        <li><a href="../../ru/weekly/"><strong>Уведомления</strong> — недельный трекер и страница боссов сообщат, когда энергия заполнена или босс может быть жив (пока вкладка открыта).</a></li>
+        <li><span><strong>Источники с датами и сообщения об ошибках</strong> — у каждого режима гайда видно, откуда информация и когда сверена; «Сообщить об ошибке» открывает issue на GitHub.</span></li>
       </ul>
     </section>
     <button class="btn btn-primary wn-ok" value="close">Понятно</button>

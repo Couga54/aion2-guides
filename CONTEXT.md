@@ -160,7 +160,17 @@ Requirements from the user (in their words, translated):
   "breathes" 11s, .hero-glow pulse. All off with prefers-reduced-motion. A looping video portrait was tried for
   the Gladiator (Gemini clips don't loop cleanly; a forward+reverse "palindrome" mp4 via imageio-ffmpeg works) —
   parked until the user generates one locally (SwarmUI, Wan 2.1 FLF2V 14B GGUF with the same start/end frame).
-- Next (planned from the other PC): task — **Cleric and Elementalist as WIP guides, Leveling mode only**
+- Session 7 (Sep 28): all 8 classes have pages. Cleric and Elementalist are WIP, Leveling only
+  (`modes_off: ["pve","pvp"]`; accents `sunlight` / `spirit`), from Grobs' early-macro slide
+  (data/sources/grobs-early-game-macros.webp — decoded: Cleric line Chain of Torment ← Debilitating Mark ←
+  Condemnation ← Judgment Thunder, LMB Earth's Retribution; Elementalist lines Water Spirit ← Jointstrike: Corrode ←
+  Earth ← Fire Spirit and Elemental Fusion ← Dimensional Control ← Jointstrike: Curse ← Combustion, LMB Cold Shock)
+  and MMO Codex leveling order. New site features: skill tooltips (`data-sk` on every skill mention, JSON in
+  class pages from build.py `tooltip_json`), search (Ctrl+K / "/", docs/<lang>/search.json from build.py
+  `search_entries`/`page_entries`; `?sk=<slug>` jumps to a skill card), notifications (assets/js/notify.js,
+  energy full + boss respawn, only while the tab is open), per-mode source + date (`classes[].src`), "Report a
+  mistake" → GitHub issue (`SITE.repo`), launch checklist in LAUNCH.md.
+- Done (was planned from the other PC): task — **Cleric and Elementalist as WIP guides, Leveling mode only**
   for now (no PvE/PvP content yet) — use `modes_off: ["pve", "pvp"]` + `wip: true` in site.json
   (the head script and site.js then open the Leveling mode). Plan: fetch skills (`fetch_skills.py cleric elementalist` — questlog
   categories are `cleric` and `elementalist`, 35 skills each; `spiritmaster` returns nothing), mark both

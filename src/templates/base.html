@@ -89,6 +89,9 @@
       <a class="lang-switch" href="{{ root }}{{ other_lang }}/{{ path }}" hreflang="{{ other_lang }}" lang="{{ other_lang }}" data-keep-query>
         <span aria-hidden="true">{{ other_lang|upper }}</span><span class="sr-only">{{ t.switch_lang }}</span>
       </a>
+      <button class="icon-btn search-open" type="button" aria-label="{{ t.search }} ({{ t.search_hint }})" title="{{ t.search }} ({{ t.search_hint }})">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
       {% if CHANGELOG %}<a class="icon-btn wn-top" href="{{ root }}{{ lang }}/changelog/"{% if path == 'changelog/' %} aria-current="page"{% endif %} aria-label="{{ t.wn_history }}" title="{{ t.wn_history }}">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
       </a>{% endif %}
@@ -108,12 +111,23 @@
       <a class="brand brand-sm" href="{{ root }}{{ lang }}/">{{ t.site_name }}</a>
       <p>{{ t.footer_disclaimer }}</p>
       <p>{{ t.footer_updated }}: {{ updated }} ({{ t.footer_before_launch }}).</p>
-      <p><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }}</a> · <a href="{{ root }}{{ lang }}/changelog/">{{ t.wn_history }}</a></p>
+      <p><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }}</a> · <a href="{{ root }}{{ lang }}/changelog/">{{ t.wn_history }}</a> · <a class="report-link" href="{{ SITE.repo }}/issues/new" target="_blank" rel="noopener" title="{{ t.report_hint }}" data-body="{{ t.report_body }}" data-page="{{ lang }}/{{ path }}">{{ t.report }}</a></p>
     </div>
     {% block footer_extra %}{% endblock %}
   </div>
 </footer>
 {% if CHANGELOG %}
+<dialog class="search-dlg" aria-label="{{ t.search }}" data-index="{{ root }}{{ lang }}/search.json" data-base="{{ root }}{{ lang }}/" data-empty="{{ t.search_empty }}"
+  data-kinds="{{ t.search_kind|tojson|forceescape }}" data-root="{{ root }}">
+  <div class="search-in">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-q" placeholder="{{ t.search_ph }}" aria-label="{{ t.search }}" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-res" role="listbox"></ul>
+  </div>
+</dialog>
 <dialog class="whatsnew" data-id="{{ CHANGELOG[0].id }}" aria-labelledby="wn-title">
   <form method="dialog" class="wn-in">
     <div class="wn-head">

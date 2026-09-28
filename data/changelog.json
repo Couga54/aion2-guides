@@ -2,6 +2,34 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-09-28-tools",
+      "date": "2026-09-28",
+      "items": [
+        {
+          "href": "cleric/",
+          "en": "<strong>Cleric and Elementalist (WIP)</strong> — leveling guides with Grobs' early macros; PvE and PvP come once there is a real global source.",
+          "ru": "<strong>Целитель и Заклинатель (WIP)</strong> — гайды на прокачку со стартовыми макросами Grobs; PvE и PvP появятся, когда будет настоящий глобальный источник."
+        },
+        {
+          "en": "<strong>Search</strong> — press Ctrl+K (or /) to find a class, skill, boss or guide section.",
+          "ru": "<strong>Поиск</strong> — нажми Ctrl+K (или /), чтобы найти класс, скилл, босса или раздел гайда."
+        },
+        {
+          "en": "<strong>Skill tooltips</strong> — hover any skill in a guide to see its description, cooldown and all specializations.",
+          "ru": "<strong>Подсказки скиллов</strong> — наведи на любой скилл в гайде, чтобы увидеть описание, перезарядку и все специализации."
+        },
+        {
+          "href": "weekly/",
+          "en": "<strong>Notifications</strong> — the weekly tracker and the boss page can notify you when energy is full or a boss may be up (while the tab is open).",
+          "ru": "<strong>Уведомления</strong> — недельный трекер и страница боссов сообщат, когда энергия заполнена или босс может быть жив (пока вкладка открыта)."
+        },
+        {
+          "en": "<strong>Sources with dates and error reports</strong> — every guide mode shows where its info comes from and when it was checked; \"Report a mistake\" opens a GitHub issue.",
+          "ru": "<strong>Источники с датами и сообщения об ошибках</strong> — у каждого режима гайда видно, откуда информация и когда сверена; «Сообщить об ошибке» открывает issue на GitHub."
+        }
+      ]
+    },
+    {
       "id": "2026-09-28-motion",
       "date": "2026-09-28",
       "items": [

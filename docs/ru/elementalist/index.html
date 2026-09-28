@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="ru" data-mode="pve" data-class="elementalist" data-off="pve pvp">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Заклинатель — AION 2 Гайды (Прокачка)</title>
+<meta name="description" content="Единственный призыватель: духи огня, воды, земли и воздуха сражаются за тебя, каждый их скилл заряжает Синтез элементов, а проклятия тикают на цели.">
+<link rel="canonical" href="https://couga54.github.io/aion2-guides/ru/elementalist/">
+<link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/elementalist/">
+<link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/elementalist/">
+<link rel="alternate" hreflang="x-default" href="https://couga54.github.io/aion2-guides/en/elementalist/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Гайды">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Заклинатель — AION 2 Гайды (Прокачка)">
+<meta property="og:description" content="Единственный призыватель: духи огня, воды, земли и воздуха сражаются за тебя, каждый их скилл заряжает Синтез элементов, а проклятия тикают на цели.">
+<meta property="og:url" content="https://couga54.github.io/aion2-guides/ru/elementalist/">
+<meta property="og:image" content="https://couga54.github.io/aion2-guides/assets/og/elementalist-ru.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var off = (r.getAttribute('data-off') || '').split(' ');
+    var modes = ['pve', 'pvp', 'lvl'].filter(function (x) { return off.indexOf(x) < 0; });
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+    else if (modes.indexOf(r.dataset.mode) < 0) r.dataset.mode = modes[0];
+  })(document.documentElement);
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css">
+</head>
+<body class="page-class accent-spirit">
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../ru/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
+      <span>AION 2 Гайды</span>
+    </a>
+    <details class="class-menu">
+      <summary class="class-menu-btn accent-spirit">
+<img src="../../assets/classes/elementalist.webp" width="24" height="24" alt=""><span>Заклинатель</span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="Классы">
+        <a href="../../ru/gladiator/" class="cm-item accent-crimson">
+          <img src="../../assets/classes/gladiator.webp" width="44" height="44" alt=""><span class="cm-name">Гладиатор</span><span class="cm-role">Ближний бой · брузер</span>
+        </a>
+        <a href="../../ru/ranger/" class="cm-item accent-emerald">
+          <img src="../../assets/classes/ranger.webp" width="44" height="44" alt=""><span class="cm-name">Лучник</span><span class="cm-role">Дальний бой · кайт</span>
+        </a>
+        <a href="../../ru/templar/" class="cm-item accent-sapphire">
+          <img src="../../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Страж</span><span class="cm-role">Танк · баффер группы</span>
+        </a>
+        <a href="../../ru/assassin/" class="cm-item accent-violet">
+          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Убийца</span><span class="cm-role">Ближний бой · бурст</span>
+        </a>
+        <a href="../../ru/sorcerer/" class="cm-item accent-frost">
+          <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Волшебник <span class="wip-tag">WIP</span></span><span class="cm-role">Магический урон издалека</span>
+        </a>
+        <a href="../../ru/elementalist/" class="cm-item accent-spirit" aria-current="page">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Заклинатель <span class="wip-tag">WIP</span></span><span class="cm-role">Призыватель · магический урон</span>
+        </a>
+        <a href="../../ru/cleric/" class="cm-item accent-sunlight">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Целитель <span class="wip-tag">WIP</span></span><span class="cm-role">Лекарь · урон землёй и молнией</span>
+        </a>
+        <a href="../../ru/chanter/" class="cm-item accent-amber">
+          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Чародей</span><span class="cm-role">Поддержка ближнего боя · баффер</span>
+        </a>
+      </nav>
+    </details>
+    <div class="topbar-tools">
+      <a class="src-nav" href="../../ru/week-1/" title="Первая неделя: что успеть до сброса">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+        <span>Первая неделя</span>
+      </a>
+      <a class="src-nav" href="../../ru/weekly/" title="Недельный трекер">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+        <span>Неделя</span>
+      </a>
+      <a class="src-nav" href="../../ru/bosses/" title="Мировые боссы">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
+        <span>Боссы</span>
+      </a>
+      <a class="src-nav src-nav-sources" href="../../ru/sources/" title="Источники и авторы">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+        <span>Источники</span>
+      </a>
+      <a class="lang-switch" href="../../en/elementalist/" hreflang="en" lang="en" data-keep-query>
+        <span aria-hidden="true">EN</span><span class="sr-only">English</span>
+      </a>
+      <button class="icon-btn search-open" type="button" aria-label="Поиск (Ctrl+K)" title="Поиск (Ctrl+K)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+<a class="icon-btn wn-top" href="../../ru/changelog/" aria-label="История изменений" title="История изменений">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </a>      <button class="icon-btn theme-toggle" type="button" aria-label="Переключить тёмную тему" title="Переключить тёмную тему">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="class-backdrop" aria-hidden="true" style="--art:url('../../assets/art/elementalist.webp')"></div>
+<section class="class-hero" data-fx="elementalist">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <img class="class-hero-art" src="../../assets/art/elementalist.webp" alt="" aria-hidden="true" fetchpriority="high">
+  <div class="wrap class-hero-in">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../ru/">Все классы</a><span aria-hidden="true">/</span><span>Заклинатель</span></nav>
+    <div class="class-hero-main">
+      <img class="class-hero-emblem" src="../../assets/classes/elementalist.webp" width="96" height="96" alt="">
+      <div>
+        <p class="kicker"><span data-only="pve">PvE</span><span data-only="pvp">PvP</span><span data-only="lvl">Прокачка</span> · Глобальный 1 сезон</p>
+        <h1>Заклинатель</h1>
+        <p class="class-hero-pitch">Единственный призыватель: духи огня, воды, земли и воздуха сражаются за тебя, каждый их скилл заряжает Синтез элементов, а проклятия тикают на цели.</p>
+        <p class="guide-ver"><span>Обновлено: <time datetime="2026-09-28">28 сентября 2026</time></span><span>Патч: <b>уточняется</b></span><span class="wip-tag">WIP</span></p>
+<p class="guide-src"><span data-only="lvl">Источник: <b>Grobs · MMO Codex</b> · сверено <time datetime="2026-09-28">28 сентября 2026</time></span></p>      </div>
+    </div>
+    <dl class="class-facts">
+      <div><dt>Роль</dt><dd>Призыватель · магический урон</dd></div>
+      <div><dt>Оружие</dt><dd>Сфера</dd></div>
+      <div><dt>Сложность</dt><dd class="diff"><i class="on"></i><i class="on"></i><i class="on"></i><span>Сложный</span></dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="guidebar">
+  <div class="wrap guidebar-in">
+    <div class="mode-switch" role="radiogroup" aria-label="Режим гайда">
+      <button type="button" role="radio" data-set-mode="pve" aria-checked="false" class="is-off" aria-disabled="true" disabled>PvE</button>
+      <button type="button" role="radio" data-set-mode="pvp" aria-checked="false" class="is-off" aria-disabled="true" disabled>PvP</button>
+      <button type="button" role="radio" data-set-mode="lvl" aria-checked="false">Прокачка</button>
+    </div>
+    <nav class="toc-mobile" aria-label="На странице"></nav>
+  </div>
+</div>
+
+<div class="wrap guide-layout">
+  <aside class="toc-side" aria-label="На странице">
+    <p class="toc-title">На странице</p>
+    <nav class="toc-list"></nav>
+  </aside>
+
+  <main id="main" class="guide">
+    <section id="progress" class="g-section tracker" data-only="lvl" data-class="elementalist" aria-labelledby="h-progress">
+      <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-progress">Прогресс прокачки</h2></div>
+      <div class="tracker-bar">
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="23" aria-valuenow="0" aria-label="Прогресс прокачки"><span></span></div>
+        <span class="progress-text"><b class="progress-count">0</b>/23 готово</span>
+        <button type="button" class="btn btn-ghost btn-sm tracker-reset" data-confirm="Снять все отметки для этого класса?">Сбросить прогресс</button>
+      </div>
+      <p class="note">Отмечай шаги по ходу игры. Прогресс хранится в этом браузере, отдельно для каждого класса.</p>
+      <ol class="steps">
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-story">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Старт</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Иди <strong>только по жёлтым (сюжетным) квестам</strong>. Побочный контент подстраивается под уровень, поэтому ничего не теряешь, если сделаешь его позже.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="el-clicks">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 1</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+<img src="../../assets/icons/elementalist/cold-shock.webp" width="22" height="22" alt="" loading="lazy" data-sk="cold-shock"><img src="../../assets/icons/elementalist/combustion.webp" width="22" height="22" alt="" loading="lazy" data-sk="combustion">              Сначала качай <strong>Шоковая заморозка</strong> (восполняет ману) и <strong>Воспламенение</strong>. Играй в <strong>режиме с таргетом</strong>, чтобы автоатака не прерывалась: мана — главная проблема Заклинателя на старте.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-feathers">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">После пролога</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Собери <strong>40 перьев</strong> (120 осколков) для раннего усиления амулета.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="el-water">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">~Ур. 9</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+<img src="../../assets/icons/elementalist/summon-water-spirit.webp" width="22" height="22" alt="" loading="lazy" data-sk="summon-water-spirit">              <strong>Призыв: Дух воды</strong> — твой дух на прокачке: лучший урон по одной цели и подпитка маной. Остальных духов пока держи на 1.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-daevanion">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 12</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Открывается <strong>Daevanion</strong> (доска Nezekan). Синие узлы дают +1 к уровню скилла — какие брать, смотри в шаге класса ниже.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="el-curse">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 9–18</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+<img src="../../assets/icons/elementalist/jointstrike-curse.webp" width="22" height="22" alt="" loading="lazy" data-sk="jointstrike-curse"><img src="../../assets/icons/elementalist/dimensional-control.webp" width="22" height="22" alt="" loading="lazy" data-sk="dimensional-control"><img src="../../assets/icons/elementalist/rapid-scattershot.webp" width="22" height="22" alt="" loading="lazy" data-sk="rapid-scattershot">              Добавь <strong>Кооперация: Проклятие</strong> (урон со временем), <strong>Повелитель пространства</strong> (срабатывает каждый раз, когда дух использует скилл) и <strong>Беспорядочный огонь</strong> (только по ошеломлённым).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-hideouts">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 15 / 20 / 25</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Проходи убежища, которые попадаются по пути: первое прохождение даёт камни усиления и кристаллы Daevanion.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-amulet">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">~Ур. 17</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              <strong>Амулет +10</strong>, затем через морф сделай его синим.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-weapon">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">По ходу</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Оружие до <strong>~+10</strong> — самый большой прирост урона на прокачке. Выше до капа не точи.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="el-spec">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 19</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+<img src="../../assets/icons/elementalist/cold-shock.webp" width="22" height="22" alt="" loading="lazy" data-sk="cold-shock"><img src="../../assets/icons/elementalist/combustion.webp" width="22" height="22" alt="" loading="lazy" data-sk="combustion"><img src="../../assets/icons/elementalist/summon-water-spirit.webp" width="22" height="22" alt="" loading="lazy" data-sk="summon-water-spirit">              Первые специализации: <em>Восстановление ОМ +20%</em> и <em>Чем меньше целей попадания, тем больше увеличение урона (макс. до 12%)</em>. Дух воды, Кооперация: Проклятие и Беспорядочный огонь — до 8.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-zikel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 20</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Открывается доска Zikel — приоритет узлов тот же.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-stigma">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">~Ур. 22</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Вознесение → <strong>открываются стигмы</strong> (4 слота в 1 сезоне глобала). Какие брать — в шаге класса.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="el-stigmas">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 22</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+<img src="../../assets/icons/elementalist/summon-ancient-spirit.webp" width="22" height="22" alt="" loading="lazy" data-sk="summon-ancient-spirit"><img src="../../assets/icons/elementalist/enhance-spirits-benediction.webp" width="22" height="22" alt="" loading="lazy" data-sk="enhance-spirits-benediction"><img src="../../assets/icons/elementalist/jointstrike-corrode.webp" width="22" height="22" alt="" loading="lazy" data-sk="jointstrike-corrode">              Стигмы: <strong>Призыв: Древний дух</strong> и <strong>Усиление: Благословение духа</strong> до 5 (сначала бафф, потом призыв Древнего духа); Grobs ставит ещё <strong>Кооперация: Разложение</strong>; <strong>Благословение пламени</strong> — если позволяет точность.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-acts23">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Акты 2–3</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Только сюжет — не отвлекайся на карту.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-vaizel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 30</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Открывается доска Vaizel (критический урон).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="el-fusion">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 26–37</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+<img src="../../assets/icons/elementalist/elemental-fusion.webp" width="22" height="22" alt="" loading="lazy" data-sk="elemental-fusion">              <strong>Синтез элементов</strong>: каждый скилл духа даёт элемент, на четырёх его можно кастовать. Повелитель пространства и Синтез элементов — до 8.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-act4">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Акт 4</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Здесь снова стоит делать побочные задания и соло-подземелья.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-triniel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 40</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Открывается доска Triniel (мульти-удар; в основном для PvP — может подождать). Пещера Крао требует около 1000 GS.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-ariel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ур. 45</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              <strong>Ariel (PvE) или Azphel (PvP)</strong> — стоят одинаково, ошибка здесь самая дорогая во всей системе.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="el-cap">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Кап</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+<img src="../../assets/icons/elementalist/elemental-fusion.webp" width="22" height="22" alt="" loading="lazy" data-sk="elemental-fusion"><img src="../../assets/icons/elementalist/summon-fire-spirit.webp" width="22" height="22" alt="" loading="lazy" data-sk="summon-fire-spirit"><img src="../../assets/icons/elementalist/summon-earth-spirit.webp" width="22" height="22" alt="" loading="lazy" data-sk="summon-earth-spirit">              Синтез элементов и всех четырёх духов — до 10. <strong>Вопль души</strong> не качай — он для PvP.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-shugo">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Кап</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Активности Шуго — полный набор наград за кап (золотое снаряжение, материалы).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-map">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Кап</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Зачисти карту: знаки вопроса, костры, зелёные задания, скрытые кубы, перья. Сдай перья — алтарь 30 уровня даёт титул.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-daily">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Ежедневно</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Вход в Nightmare, этажи Трансформации по мере роста GS, подземелья: сначала T2, потом T3 (следи за энергией).
+            </span>
+          </label>
+        </li>
+      </ol>
+    </section>
+
+    <div class="callout wip-note" role="note"><h3><span class="wip-tag">WIP</span> Гайд в работе</h3><p>Надёжного глобального источника по этому классу пока нет. Гайд собран из корейских гайдов и глобальных данных о скиллах — считай его отправной точкой; он будет переработан, когда появятся нормальные глобальные билды.</p></div>
+
+
+<section id="intro-lvl" class="g-section" data-only="lvl" aria-labelledby="h-intro-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro-lvl">Обзор</h2></div>
+    <p>Заклинатель (Spiritmaster) — единственный призыватель: рядом с тобой сражается дух, каждый его скилл даёт элемент, а на четырёх элементах готов <span class="sk" data-sk="elemental-fusion"><img src="../../assets/icons/elementalist/elemental-fusion.webp" width="18" height="18" alt="" loading="lazy">Синтез элементов</span>. <span class="sk" data-sk="dimensional-control"><img src="../../assets/icons/elementalist/dimensional-control.webp" width="18" height="18" alt="" loading="lazy">Повелитель пространства</span> срабатывает каждый раз, когда дух использует скилл, а проклятия продолжают тикать на цели.</p>
+  <div class="callout accent">
+    <h3>Прокачка в одном предложении</h3>
+    <p>Качайся с <span class="sk" data-sk="summon-water-spirit"><img src="../../assets/icons/elementalist/summon-water-spirit.webp" width="18" height="18" alt="" loading="lazy">Призыв: Дух воды</span> (урон и мана), держи <span class="sk" data-sk="cold-shock"><img src="../../assets/icons/elementalist/cold-shock.webp" width="18" height="18" alt="" loading="lazy">Шоковая заморозка</span> ради маны, а встроенный макрос пусть крутит линию духов и линию Синтеза.</p>
+  </div>
+
+</section>
+<section id="fight-lvl" class="g-section" data-only="lvl" aria-labelledby="h-fight-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-fight-lvl">Как сражаться во время прокачки</h2></div>
+    <div class="callout"><ul>
+    <li><strong>Дух:</strong> <span class="sk" data-sk="summon-water-spirit"><img src="../../assets/icons/elementalist/summon-water-spirit.webp" width="18" height="18" alt="" loading="lazy">Призыв: Дух воды</span> до самого капа — лучший урон по одной цели и подпитка маной. Остальные на прокачке держатся на 1 уровне.</li>
+    <li><strong>Пачки:</strong> <span class="sk" data-sk="jointstrike-curse"><img src="../../assets/icons/elementalist/jointstrike-curse.webp" width="18" height="18" alt="" loading="lazy">Кооперация: Проклятие</span> (бьёт до 4 целей) → <span class="sk" data-sk="combustion"><img src="../../assets/icons/elementalist/combustion.webp" width="18" height="18" alt="" loading="lazy">Воспламенение</span> → <span class="sk" data-sk="elemental-fusion"><img src="../../assets/icons/elementalist/elemental-fusion.webp" width="18" height="18" alt="" loading="lazy">Синтез элементов</span> со специализацией на АоЕ, когда он готов.</li>
+    <li><strong>Мана:</strong> главная проблема на старте — режим с таргетом, <span class="sk" data-sk="cold-shock"><img src="../../assets/icons/elementalist/cold-shock.webp" width="18" height="18" alt="" loading="lazy">Шоковая заморозка</span> между скиллами и ротация духов, которая заканчивается на Духе воды.</li>
+    <li><strong>Ошеломлённые цели:</strong> <span class="sk" data-sk="rapid-scattershot"><img src="../../assets/icons/elementalist/rapid-scattershot.webp" width="18" height="18" alt="" loading="lazy">Беспорядочный огонь</span>.</li>
+    <li><span class="sk" data-sk="souls-cry"><img src="../../assets/icons/elementalist/souls-cry.webp" width="18" height="18" alt="" loading="lazy">Вопль души</span> не качай — это PvP-скилл.</li>
+  </ul></div>
+
+</section>
+<section id="macro-lvl" class="g-section" data-only="lvl" aria-labelledby="h-macro-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro-lvl">Макрос на прокачке</h2></div>
+    <p>Стартовая настройка Grobs: две линии на кнопках и встроенный макрос из двух слотов. В AION 2 <strong>наивысший приоритет у нижнего слота линии</strong> — карточки показывают линии сверху вниз, как в игре.</p>
+  <div class="hotlines">
+<div class="hotline">
+  <div class="hotline-head"><span class="key">1</span><span class="hotline-name">Линия духов</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="" data-sk="summon-fire-spirit">
+      <span class="hl-n">4</span>
+      <img src="../../assets/icons/elementalist/summon-fire-spirit.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Призыв: Дух огня</span>
+    </li>
+    <li class="" data-sk="summon-earth-spirit">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/elementalist/summon-earth-spirit.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Призыв: Дух земли</span>
+    </li>
+    <li class="" data-sk="jointstrike-corrode">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/elementalist/jointstrike-corrode.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Кооперация: Разложение</span>
+    </li>
+    <li class=" is-first" data-sk="summon-water-spirit">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/elementalist/summon-water-spirit.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Призыв: Дух воды</span>
+    </li>
+  </ol>
+  <p class="hotline-order">Порядок как в игре, сверху вниз. 1 = высший приоритет — нижний слот.</p>
+<p class="hotline-note">Сначала Дух воды; Кооперация: Разложение (стигма) заставляет цель получать больше урона от духа.</p></div><div class="hotline">
+  <div class="hotline-head"><span class="key">2</span><span class="hotline-name">Линия Синтеза</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="" data-sk="combustion">
+      <span class="hl-n">4</span>
+      <img src="../../assets/icons/elementalist/combustion.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Воспламенение</span>
+    </li>
+    <li class="" data-sk="jointstrike-curse">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/elementalist/jointstrike-curse.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Кооперация: Проклятие</span>
+    </li>
+    <li class="" data-sk="dimensional-control">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/elementalist/dimensional-control.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Повелитель пространства</span>
+    </li>
+    <li class=" is-first" data-sk="elemental-fusion">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/elementalist/elemental-fusion.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Синтез элементов</span>
+    </li>
+  </ol>
+  <p class="hotline-order">Порядок как в игре, сверху вниз. 1 = высший приоритет — нижний слот.</p>
+<p class="hotline-note">Синтез элементов и Повелитель пространства срабатывают, как только духи их открывают; Воспламенение заполняет паузы.</p></div>  </div>
+  <p>Встроенный макрос (окно скиллов → Макрос), задержка <strong>10 мс</strong> в каждом слоте:</p>
+  <ol class="macroseq">
+  <li><span class="ms-n">1</span><span class="ms-label">Линия духов</span><span class="ms-detail">1 · 10 мс</span></li>
+  <li><span class="ms-n">2</span><span class="ms-label">Линия Синтеза</span><span class="ms-detail">2 · 10 мс</span></li>
+</ol>
+  <ul class="presslist">
+    <li><span class="press-how">Держать</span><span class="press-what"><span class="sk" data-sk="cold-shock"><img src="../../assets/icons/elementalist/cold-shock.webp" width="18" height="18" alt="" loading="lazy">Шоковая заморозка</span> на <span class="key">ЛКМ</span> вместе с кнопкой макроса.</span></li>
+    <li><span class="press-how">Вручную</span><span class="press-what"><span class="sk" data-sk="enhance-spirits-benediction"><img src="../../assets/icons/elementalist/enhance-spirits-benediction.webp" width="18" height="18" alt="" loading="lazy">Усиление: Благословение духа</span>, затем <span class="sk" data-sk="summon-ancient-spirit"><img src="../../assets/icons/elementalist/summon-ancient-spirit.webp" width="18" height="18" alt="" loading="lazy">Призыв: Древний дух</span> (сначала бафф — Древний дух живёт 30 сек.).</span></li>
+  </ul>
+
+</section>
+<section id="stigmas-lvl" class="g-section" data-only="lvl" aria-labelledby="h-stigmas-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-stigmas-lvl">Стигмы на прокачке</h2></div>
+    <p>Стигмы открываются на 22 уровне.</p>
+  <ul class="skill-grid">
+<li class="skill" data-sk-card="summon-ancient-spirit">
+  <img class="skill-icon" data-sk="summon-ancient-spirit" src="../../assets/icons/elementalist/summon-ancient-spirit.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Призыв: Древний дух <span class="badge must">Ур. 5</span></div>
+    <div class="skill-desc">Дополнительный дух на 30 сек., который тоже даёт элементы для Синтеза.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>АТК древнего духа +10%</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>АТК древнего духа +10%</li>
+        <li class=""><span class="spec-lv">10</span>Увеличение шанса срабатывания и урон [Пришествия духа] x1,5 на 30s</li>
+        <li class=""><span class="spec-lv">15</span>Применение умения после использования 5 обычных атак</li>
+        <li class=""><span class="spec-lv">20</span>Характеристики древнего духа +20%</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="enhance-spirits-benediction">
+  <img class="skill-icon" data-sk="enhance-spirits-benediction" src="../../assets/icons/elementalist/enhance-spirits-benediction.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Усиление: Благословение духа <span class="badge must">Ур. 5</span></div>
+    <div class="skill-desc">+20% к урону и стойкости в PvE с лечением на 10 сек. — кастуй до Древнего духа.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Восстановление 10% ОЗ при использовании умения</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Восстановление 10% ОЗ при использовании умения</li>
+        <li class=""><span class="spec-lv">10</span>Эффект увелич. урона от пассивного умения [Удар элемента] x1,5</li>
+        <li class=""><span class="spec-lv">15</span>Увеличение шанса срабатывания и восстановление от [Духовное единство] x1,5</li>
+        <li class=""><span class="spec-lv">20</span>Увеличение урона в PvE и стойкости к урону в PvE для себя и духа +25%, увеличение урона в PvP и стойкость к урону в PvP +12,5%</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="jointstrike-corrode">
+  <img class="skill-icon" data-sk="jointstrike-corrode" src="../../assets/icons/elementalist/jointstrike-corrode.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Кооперация: Разложение <span class="badge must">Ур. 5</span></div>
+    <div class="skill-desc">В линии духов у Grobs: цель получает больше урона от духа.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+15% доп. урона от персонажа при действии Разложения</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+15% доп. урона от персонажа при действии Разложения</li>
+        <li class=""><span class="spec-lv">10</span>СКР боя -20% на 10s при попадании</li>
+        <li class=""><span class="spec-lv">15</span>Получ. исцеление -70% под действием Разложения</li>
+        <li class=""><span class="spec-lv">20</span>Длительность Разложения +10 сек.</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="flame-blessing">
+  <img class="skill-icon" data-sk="flame-blessing" src="../../assets/icons/elementalist/flame-blessing.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Благословение пламени <span class="badge opt">Ур. 5</span></div>
+    <div class="skill-desc">Доп. урон при попадании на 10 сек. — бери, когда хватает точности.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Меткость +100</li>    </ul>
+    <details class="spec-all">
+      <summary>Все специализации</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Меткость +100</li>
+        <li class=""><span class="spec-lv">10</span>Крит. удар +100</li>
+        <li class=""><span class="spec-lv">15</span>Увеличение крит. урона +10%</li>
+        <li class=""><span class="spec-lv">20</span>Перезарядка доп. урона -50%</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">Источники</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — слайд со стартовыми макросами (линии и макрос Spiritmaster)</li>
+    <li><a href="https://mmo-codex.com/articles/aion-2-spiritmaster-guide/" target="_blank" rel="noopener">MMO Codex — билд Spiritmaster для Aion 2</a> — порядок скиллов по уровням, Дух воды на прокачке, стигмы</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/elementalist" target="_blank" rel="noopener">questlog.gg</a> — данные скиллов из глобального клиента</li>
+  </ul>
+  <p class="sources-all"><a href="../../ru/sources/">Все источники и авторы →</a></p>
+</section>    <p class="report-box"><a class="btn btn-ghost btn-sm report-link" href="https://github.com/Couga54/aion2-guides/issues/new" target="_blank" rel="noopener" data-body="Страница: {url}
+Режим: {mode}
+
+Что не так / устарело:
+
+Источник или доказательство (ссылка, скриншот):
+" data-page="ru/elementalist/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+      Сообщить об ошибке</a> <span class="note">Откроет issue на GitHub для этой страницы</span></p>
+    <script type="application/json" id="sk-data" data-cd="Перезарядка" data-s="с" data-active="Активный" data-stigma="Стигма" data-passive="Пассивный">{"command-proxy":{"n":"Свиток приказа: Жертва духа","c":"stigma","cd":60,"d":"Дает духу увеличение стойкости к урону в PvE на 20% и стойкости к урону в PvP на 10% на 4s, а также перенаправляет урон при каждой атаке на персонажа, распределяя 50% на персонажа и 50% на духа.\nЭффект применяется к призванному духу с макс. ОЗ. При одинаковом уровне ОЗ эффект применяется к ближайшей цели. Урон распределяется только при расстоянии до духа не более 25 м.\n\nЭффекты увеличения времени перезарядки не действуют.","sp":[[5,"Длительность [Свиток приказа: Жертва духа] +2 сек."],[10,"Стойкость к урону в PvE духа доп. +10%, стойкость к урону в PvP духа доп. +5%"],[15,"Эффект [Защита стихии] x1,5 во время действия [Приказа: Замена]"],[20,"Восстанавливает 3% ОЗ духа каждую секунду на протяжении действия Свитка приказа: Замена"]]},"cold-shock":{"n":"Шоковая заморозка","c":"active","cd":0,"d":"Наносит X урона стихии воды цели в радиусе 20 м и восстанавливает 100 ОМ.","sp":[[8,"Восстановление ОМ +20%"],[8,"Поглощение 1% ОЗ"],[8,"Шанс мультиудара +50% при попадании"],[12,"АТК +2% при попадании [Дрожи земли] (макс. 5 зарядов)"],[16,"Шанс 10% снять 1 полож. эффект с цели при попадании [Дрожи земли]"]]},"combustion":{"n":"Воспламенение","c":"active","cd":0,"d":"Наносит X урона стихии огня врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м.\n\nУрон по шкале ошеломления — 3","sp":[[8,"Затрата ОМ -20%"],[8,"Чем меньше целей попадания, тем больше увеличение урона (макс. до 12%)"],[8,"Меткость +100"],[12,"СКР умений +20%"],[16,"Добавление 2-ой комбинации [Зов пепла]"]]},"siphon":{"n":"Поглощение","c":"stigma","cd":30,"d":"Наносит X урона и 300 урона по ОМ цели в радиусе 20 м. Поглощает 10% ОЗ и восстанавливает 300 ОМ.","sp":[[5,"СКР умений +20%"],[10,"Поглощение ОЗ +5%"],[15,"Получение защитного барьера, равного 30% от макс. ОЗ, на 30s при использовании умения"],[20,"Оглушение на 3s при попадании"]]},"souls-cry":{"n":"Вопль души","c":"active","cd":45,"d":"Наносит X урона цели в радиусе 20 м и с шансом 70% повергает ее в Ужас на 5s\nДля NPC Ужас активируется гарантированно..\n\nУрон по шкале ошеломления — 15","sp":[[8,"Шанс мультиудара +50% при попадании"],[8,"Сковывание на 5s"],[8,"Замена на умение с возможностью перемещения"],[12,"Перезарядка -10 сек."],[16,"Длительность Ужаса +2 сек."]]},"cry-of-terror":{"n":"Крик ужаса","c":"stigma","cd":90,"d":"Наносит X урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и с шансом 50% повергает их в Ужас на 5s\nДля NPC Ужас срабатывает гарантированно.","sp":[[5,"Плен на 5s при попадании"],[10,"Чем больше целей попадания, тем больше увеличение урона (макс. до 20%)"],[15,"Длительность Ужаса +2 сек."],[20,"Шанс Ужаса +20%"]]},"summon-fire-spirit":{"n":"Призыв: Дух огня","c":"active","cd":15,"d":"Призывает духа огня.\nДух огня прорывается к цели в радиусе 20 м и использует умение, наносящее X урона стихии огня врагам (макс. 4) в радиусе 5 м.\nПосле использования умения продолжает бой обычными атаками и при каждом попадании атакой с шансом 15% использует умение. При нажатии на иконку призыва призыв отменяется.\nС каждым повышением уровня умения АТК и ЗЩТ духа огня увеличиваются на 2%.\n\nУрон по шкале ошеломления — 7\nПерезарядка умения духа: 3 сек.","sp":[[8,"Затрата ОМ -50%"],[8,"Крит. урон духа огня +20%"],[8,"Шанс срабатывания умения +10% при попадании атакой духа огня"],[12,"Шанс 5% сбить с ног на 3s при попадании атакой духа огня"],[16,"Характеристики духа огня +20%"]]},"summon-water-spirit":{"n":"Призыв: Дух воды","c":"active","cd":15,"d":"Призывает духа воды.\nДух воды использует умение, наносящее X урона стихии воды цели в радиусе 20 м.\nПосле использования умения продолжает бой обычными атаками. При каждом попадании атакой с шансом 15% использует умение и восстанавливает 20 ОМ призвавшего духа Заклинателя. При нажатии на иконку призыва призыв отменяется.\nС каждым повышением уровня умения АТК и крит. удар духа воды увеличиваются на 2%.\n\nУрон по шкале ошеломления — 7\nПерезарядка умения духа: 3 сек.","sp":[[8,"Затрата ОМ -50%"],[8,"АТК духа воды +10%"],[8,"Шанс срабатывания умения +10% при попадании атакой духа воды"],[12,"Шанс 5% плена на 2s при попадании атакой духа воды"],[16,"Характеристики духа воды +20%"]]},"summon-wind-spirit":{"n":"Призыв: Дух воздуха","c":"active","cd":15,"d":"Призывает духа воздуха.\nДух воздуха использует умение, наносящее X урона стихии воздуха врагам (макс. 4) в радиусе 5 м вокруг цели, находящейся в радиусе 20 м, и восстанавливающее 134-147 ОЗ Заклинателя.\nПосле использования умения продолжает бой обычными атаками. При каждом попадании атакой с шансом 10% использует умение и восстанавливает 1.5% ОЗ Заклинателя. При нажатии на иконку призыва призыв отменяется.\nС каждым повышением уровня умения меткость и крит. удар духа воздуха увеличиваются на 2%.\n\nУрон по шкале ошеломления — 7\nПерезарядка умения духа: 3 сек.","sp":[[8,"Затрата ОМ -50%"],[8,"Крит. удар духа воздуха +20%"],[8,"Шанс срабатывания умения +10% при попадании атакой духа воздуха"],[12,"Шанс 5% снизить СКР АТК на 30% на 10s при атаке духа воздуха"],[16,"Характеристики духа воздуха +20%"]]},"summon-earth-spirit":{"n":"Призыв: Дух земли","c":"active","cd":15,"d":"Призывает духа земли.\nДух земли использует умение, наносящее X урона стихии земли цели в радиусе 20 м и увеличивающее враждебность на 3750. Если цель — игровой персонаж, с шансом 30% провоцирует его на 2s\nПосле использования умения продолжает бой обычными атаками, при каждом попадании атакой с шансом 10% применяет умение и увеличивает враждебность. При нажатии на иконку призыва призыв отменяется.\nС каждым повышением уровня умения ЗЩТ и ОЗ духа земли увеличиваются на 2%.\n\nУрон по шкале ошеломления — 7\nПерезарядка умения духа: 3 сек.","sp":[[8,"Затрата ОМ -50%"],[8,"Стойкость к урону в PvE духа земли +20%, стойкость к урону в PvP духа земли +10%"],[8,"Шанс срабатывания умения +10% при попадании атакой духа земли"],[12,"Шанс 5% восстановить 5% ОЗ духа при попадании атакой духа земли"],[16,"Характеристики духа земли +20%"]]},"jointstrike-curse":{"n":"Кооперация: Проклятие","c":"active","cd":10,"d":"Выберите цель в радиусе 20 м и нанесите X–X урона макс. 4 врагам в радиусе 4 м от цели, наложите проклятие.\n\nПроклятие: наносит X–X продолжительного урона кажд. 1 сек. и снижает наносимый Заклинателю урон на 10% на 5s\n\nДух участвует в совместной атаке.\nСтихия огня: X–X урона по области\nСтихия воды: X–X урона\nСтихия земли: X–X урона и снижение сопротивления эффектам контроля на 10%\nСтихия воздуха: X–X урона по области и X–X продолжительного урона\nДревний дух: X–X урона по области\n\n10 ед. урона по шкале Истощения","sp":[[8,"Длительность Проклятия +2 сек."],[8,"Шанс мультиудара +50% при попадании"],[8,"Замена на умение с возможностью перемещения"],[12,"Перезарядка -2 сек."],[16,"[Кооперация: Проклятие] Игнорирование блока и УКЛ, попадание крит. ударом"]]},"jointstrike-corrode":{"n":"Кооперация: Разложение","c":"stigma","cd":45,"d":"Наносит X урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и накладывает на них Разложение на 20s\n\nРазложение: получ. от духов урон +10%, X постоянного урона каждую секунду\n\nАтакует вместе с духом.\nОгонь: X урона по области и Сбивание с ног\nВода: X урона и Замедление\nЗемля: X урона и Запечатывание\nВоздух: X урона по области и Оглушение\nДревний: X урона по области и Сбивание с ног\n\nУрон по шкале ошеломления — 10","sp":[[5,"+15% доп. урона от персонажа при действии Разложения"],[10,"СКР боя -20% на 10s при попадании"],[15,"Получ. исцеление -70% под действием Разложения"],[20,"Длительность Разложения +10 сек."]]},"enhance-spirits-benediction":{"n":"Усиление: Благословение духа","c":"stigma","cd":60,"d":"Дает персонажу и духу увеличение усиления урона в PvE на 20%, усиления урона в PvP на 10%, стойкости к урону в PvE на 20%, стойкости к урону в PvP на 10%, и восстанавливает X–X ед. ОЗ каждую секунду в течение 10s.\n\nЭффекты увеличения времени перезарядки не действуют.","sp":[[5,"Восстановление 10% ОЗ при использовании умения"],[10,"Эффект увелич. урона от пассивного умения [Удар элемента] x1,5"],[15,"Увеличение шанса срабатывания и восстановление от [Духовное единство] x1,5"],[20,"Увеличение урона в PvE и стойкости к урону в PvE для себя и духа +25%, увеличение урона в PvP и стойкость к урону в PvP +12,5%"]]},"defiance":{"n":"Снятие шока","c":"active","cd":60,"d":"Отменяет эффекты Оглушения, Сбивания с ног, Воздушные оковы, захват, Заморозку и Ужас на 5s активирует для персонажа Непреклонность.\nНепреклонность: иммунитет к негат. эффектам\n\nЭффекты снижения времени перезарядки не действуют.","sp":[[8,"Добавляет 2-ное комбо [Проклятие отчаяния]"],[8,"При использовании [Снятия шока] восстанавливает 1000 ОД"],[8,"При использовании [Снятия шока] восстанавливает 20% ОЗ"],[12,"Длительность Непреклонности +2 сек."],[16,"Стойкость к урону в PvE +50% и стойкость к урону в PvP +25% во время действия Непреклонности"]]},"cursed-cloud":{"n":"Облако проклятия","c":"stigma","cd":90,"d":"Наносит X урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в пределах 20 м. В течение 10s наносит X постоянного урона каждую секунду.\n\nУрон по шкале ошеломления — 20","sp":[[5,"Макс. ОД -1000 под действием постоянного урона"],[10,"Макс. ОЗ игрового персонажа -20% под действием постоянного урона"],[15,"Длительность постоянного урона +10 сек."],[20,"Сопротивление негат. эффектам -30% под действием постоянного урона"]]},"seize-magic":{"n":"Кража маны","c":"stigma","cd":90,"d":"Наносит X урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и снимает до 2 полож. эффектов.\n\nВ зависимости от количества снятых полож. эффектов наносит X доп. урона.\n\nУрон по шкале ошеломления — 20","sp":[[5,"Снятие до 3 полож. эффектов"],[10,"Запечатывание цели на 5 сек. при снятии 3 и более полож. эффектов"],[15,"Снятие до 5 полож. эффектов"],[20,"Перезарядка -30 сек."]]},"jointstrike-destructive-attack":{"n":"Кооперация: Наступление погибели","c":"stigma","cd":60,"d":"Наносит X урона цели в радиусе 20 м.\n\nАтакует вместе с духом.\nОгонь: X урона по области\nВода: X урона\nЗемля: X урона\nВоздух: X урона по области\nДревний: X урона по области\n\nУрон по шкале ошеломления — 50","sp":[[5,"Смена на заряжаемое умение, увеличение урона [Кооперации: Наступление погибели] макс. до 200%"],[10,"СКР умений +30%"],[15,"Гарантир. крит. удар при попадании"],[20,"Завершение перезарядки [Кооперации: Проклятие] и [Кооперации: Разложение] при попадании первым ударом от умения [Кооперация: Наступление погибели]"]]},"summon-ancient-spirit":{"n":"Призыв: Древний дух","c":"stigma","cd":90,"d":"Призывает древнего духа на 30 сек. Каждый раз, когда древний дух использует умение, получает эффект 4 стихий.\nДревний дух использует умение, которое наносит X урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в пределах 20 м.\nПосле использования умения продолжает бой базовыми атаками. После 7 обычных атак снова применяет умение. При выборе значка призыва дух исчезает.\nС каждым повышением уровня умения АТК, ЗЩТ, меткость и крит. удар древнего духа увеличиваются на 2%.\n\nУрон по шкале ошеломления — 20","sp":[[5,"АТК древнего духа +10%"],[10,"Увеличение шанса срабатывания и урон [Пришествия духа] x1,5 на 30s"],[15,"Применение умения после использования 5 обычных атак"],[20,"Характеристики древнего духа +20%"]]},"magic-block":{"n":"Блокировка магии","c":"stigma","cd":60,"d":"Наносит X–X урона цели в радиусе 20 м и с шансом 75% запечатывает ее на 5s.\n\nУрон по шкале ошеломления — 20 ед.","sp":[[5,"Шанс 50% плена на 5s при попадании"],[10,"Макс. ОД -1000 на 5s при попадании"],[15,"Длительность Запечатывания +2 сек."],[20,"Шанс Запечатывания +25%"]]},"rapid-scattershot":{"n":"Беспорядочный огонь","c":"active","cd":0,"d":"Наносит X урона цели в состоянии Ошеломления в радиусе 20 м.","sp":[[8,"Поглощение 5% ОЗ"],[8,"Восстановление 120 ОМ"],[8,"Замена на умение с возможностью перемещения"],[12,"Гарантир. мультиудар при попадании"],[16,"Перезарядка всех умений -1s при попадании"]]},"elemental-fusion":{"n":"Синтез элементов","c":"active","cd":0,"d":"При каждом использовании умения духом Заклинатель получает заряд элемента. При накоплении 4 зарядов на Заклинателя накладывается состояние Четырех элементов, позволяющее использовать умение [Ситез элементов]. Применить [Синтез элементов] можно только в состоянии Четырех элементов. После использования умения состояние мгновенно снимается. В данном состоянии дополнительные заряды элементов не накапливаются.\n\nНаносит X урона цели в радиусе 20 м.\n\nУрон по шкале ошеломления — 10","sp":[[8,"Смена на массовое умение"],[8,"Доп. урон через 3s при попадании"],[8,"Усиление всех стихий +10% при попадании"],[12,"Смена на заряжаемое умение, увеличение урона макс. до 200%"],[16,"Шанс 25% повторно получить Четыре элемента"]]},"dimensional-control":{"n":"Повелитель пространства","c":"active","cd":0,"d":"Активируется на короткое время каждый раз, когда дух использует умение.\nНаносит X урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в пределах 20 м, и на 3s замедляет их, снижающее СКР движ. на 40%. Восстанавливает 100 ОМ.\n\nУрон по шкале ошеломления — 5","sp":[[8,"Эффект Замедления +20%"],[8,"Доп. урон через 3s при попадании"],[8,"Шанс мультиудара +50% при попадании"],[12,"Притягивание врагов к цели"],[16,"Шанс 30% плена на 3s при попадании"]]},"kaisinels-power":{"n":"Сила Кайсинеля","c":"stigma","cd":60,"d":"На 10s увеличивает активация негат. эффектов на 20%, сопротивление негат. эффектам  — на 20%.","sp":[[5,"Блок и УКЛ +150"],[10,"Сопротивление негат. эффектам +15%"],[15,"Меткость +150"],[20,"Активация негат. эффектов +15%"]]},"flame-blessing":{"n":"Благословение пламени","c":"stigma","cd":60,"d":"В течение 10s при каждой атаке с шансом 50% наносит врагу X доп. урона.\n\nПерезарядка: 1s","sp":[[5,"Меткость +100"],[10,"Крит. удар +100"],[15,"Увеличение крит. урона +10%"],[20,"Перезарядка доп. урона -50%"]]},"assault-terror":{"n":"Внезапный ужас","c":"stigma","cd":120,"d":"Наносит X урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и с шансом 30% повергает их в Ужас на 5s\nДля NPC Ужас срабатывает гарантированно.\n\nУвеличивает ЗЩТ пропорционально количеству целей попадания (макс. до 20%).","sp":[[5,"АТК +20% на 5s"],[10,"500 урона по ОМ при попадании"],[15,"Дальность атаки +10 м"],[20,"Шанс Ужаса +20%"]]},"spirit-strike":{"n":"Удар элемента","c":"passive","cd":0,"d":"Увеличивает эскалацию урона в PvE на 6%, эскалацию урона в PvP — на 3%, Совершенный удар — на 0.4%, а также увеличивает эскалацию урона духа в PvE на 6%, эскалацию урона духа в PvP — на 3% и Совершенный удар духа — на 0.4%.","sp":[]},"spirit-protection":{"n":"Защита стихии","c":"passive","cd":0,"d":"Увеличивает ЗЩТ на 2%, ЗЩТ духа — на 2%.","sp":[]},"spirits-descent":{"n":"Пришествие духа","c":"passive","cd":0,"d":"С шансом 50% наносит X–X ед. дополнительного урона каждый раз, когда атаки персонажа попадают по врагу в течение 10 сек. после призыва духа. При призыве Древнего духа длительность увеличивается до 30 сек.\n\nВремя перезарядки: 1 сек.","sp":[]},"corrode":{"n":"Порча","c":"passive","cd":0,"d":"Дает персонажу увеличение крит. удара на 100 и с шансом 50% наносит X–X ед. дополнительного урона при крит. ударе.\n\nВремя перезарядки: 1 с","sp":[]},"spirit-revitalization":{"n":"Оживление духа","c":"passive","cd":30,"d":"С шансом 11% уменьшает время перезарядки умений призыва духа на 1s при попадании. Мгновенно восстанавливает духу 12% макс. ОЗ при уровне ОЗ 50% или меньше.\n\nВремя перезарядки: 1 с\nВремя перезарядки исцеления духа: 30 с","sp":[]},"mental-focus":{"n":"Чистый разум","c":"passive","cd":0,"d":"Увеличивает попадание псих. эффектами на 11%, мощный удар — на 0.3%.","sp":[]},"spirit-communion":{"n":"Духовное единство","c":"passive","cd":0,"d":"Увеличивает Меткость персонажа на 100. С шансом 10% восстанавливает ОЗ персонажа и духа на 182–200 ед. при успешной атаке.\n\nВремя перезарядки: 1 с","sp":[]},"element-unification":{"n":"Слияние стихий","c":"passive","cd":0,"d":"Дает персонажу и духу увеличение усиления крит. урона на 1.1% на 10s при атаке умением духа.\n\nВремя перезарядки: 1 с","sp":[]},"revitalization-contract":{"n":"Контракт оживления","c":"passive","cd":0,"d":"Увеличивает сопротивление негат. эффектам  на 17%. Увеличивает сопротивление негат. эффектам  на 10% на 5s при получении удара в состоянии Оглушения, Сбивания с ног, Воздушных оков, Заморозки или Ужаса (суммируется не более 10 раз).\nПри падении ОЗ до 10% и ниже мгновенно восстанавливает 35% макс. ОЗ.\n\nВремя перезарядки исцеления: 60s\nВремя перезарядки сопротивления негат. эффектам: 1s","sp":[]},"consecutive-countercurrent":{"n":"Обратный поток","c":"passive","cd":0,"d":"С шансом 50% наносит X–X ед. дополнительного урона при атаке цели, получающей постоянный урон.\n\nВремя перезарядки: 1 сек.","sp":[]}}</script>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../ru/">AION 2 Гайды</a>
+      <p>Неофициальный фанатский сайт, не связан с NCSOFT. AION 2 и иконки скиллов © NCSOFT.</p>
+      <p>Проверено: 2026-09-27 (до глобального запуска).</p>
+      <p><a href="../../ru/sources/">Все источники и авторы</a> · <a href="../../ru/changelog/">История изменений</a> · <a class="report-link" href="https://github.com/Couga54/aion2-guides/issues/new" target="_blank" rel="noopener" title="Откроет issue на GitHub для этой страницы" data-body="Страница: {url}
+Режим: {mode}
+
+Что не так / устарело:
+
+Источник или доказательство (ссылка, скриншот):
+" data-page="ru/elementalist/">Сообщить об ошибке</a></p>
+    </div>
+  </div>
+</footer>
+<dialog class="search-dlg" aria-label="Поиск" data-index="../../ru/search.json" data-base="../../ru/" data-empty="Ничего не найдено"
+  data-kinds="{&#34;boss&#34;: &#34;\u0411\u043e\u0441\u0441&#34;, &#34;class&#34;: &#34;\u041a\u043b\u0430\u0441\u0441&#34;, &#34;page&#34;: &#34;\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430&#34;, &#34;section&#34;: &#34;\u0420\u0430\u0437\u0434\u0435\u043b&#34;, &#34;skill&#34;: &#34;\u0421\u043a\u0438\u043b\u043b&#34;}" data-root="../../">
+  <div class="search-in">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-q" placeholder="Класс, скилл, босс, раздел…" aria-label="Поиск" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-res" role="listbox"></ul>
+  </div>
+</dialog>
+<dialog class="whatsnew" data-id="2026-09-28-tools" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title">Что нового</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="Понятно">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <section class="wn-entry">
+      <time class="wn-date" datetime="2026-09-28">28 сентября 2026</time>
+      <ul>
+        <li><a href="../../ru/cleric/"><strong>Целитель и Заклинатель (WIP)</strong> — гайды на прокачку со стартовыми макросами Grobs; PvE и PvP появятся, когда будет настоящий глобальный источник.</a></li>
+        <li><span><strong>Поиск</strong> — нажми Ctrl+K (или /), чтобы найти класс, скилл, босса или раздел гайда.</span></li>
+        <li><span><strong>Подсказки скиллов</strong> — наведи на любой скилл в гайде, чтобы увидеть описание, перезарядку и все специализации.</span></li>
+        <li><a href="../../ru/weekly/"><strong>Уведомления</strong> — недельный трекер и страница боссов сообщат, когда энергия заполнена или босс может быть жив (пока вкладка открыта).</a></li>
+        <li><span><strong>Источники с датами и сообщения об ошибках</strong> — у каждого режима гайда видно, откуда информация и когда сверена; «Сообщить об ошибке» открывает issue на GitHub.</span></li>
+      </ul>
+    </section>
+    <button class="btn btn-primary wn-ok" value="close">Понятно</button>
+    <p class="wn-all"><a href="../../ru/changelog/">Вся история изменений →</a></p>
+  </form>
+</dialog>
+<script src="../../assets/js/site.js" defer></script>
+<script src="../../assets/js/fx.js" defer></script>
+</body>
+</html>

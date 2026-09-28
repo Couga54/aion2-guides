@@ -58,6 +58,101 @@
   }
   markDot();
 
+  // ---- search (Ctrl+K or "/"): index built per language at docs/<lang>/search.json ----
+  var sdlg = document.querySelector('.search-dlg');
+  if (sdlg && typeof sdlg.showModal === 'function') {
+    var sq = sdlg.querySelector('.search-q'), sres = sdlg.querySelector('.search-res');
+    var KINDS = {};
+    try { KINDS = JSON.parse(sdlg.dataset.kinds); } catch (e) {}
+    var INDEX = null, hits = [], sel = 0;
+    var norm = function (s) { return String(s).toLowerCase().replace(/ё/g, 'е'); };
+    var escH = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+    var loadIndex = function () {
+      if (INDEX) return Promise.resolve(INDEX);
+      return fetch(sdlg.dataset.index).then(function (r) { return r.json(); }).then(function (d) {
+        INDEX = d.map(function (x) { x.n = norm(x.t); x.ns = norm(x.s); return x; });
+        return INDEX;
+      }).catch(function () { INDEX = []; return INDEX; });
+    };
+    var ORDER = { class: 0, page: 1, section: 2, skill: 3, boss: 4 };
+    var search = function (q) {
+      q = norm(q.trim());
+      if (!q) return [];
+      var words = q.split(/\s+/);
+      return INDEX.map(function (x) {
+        var score = 0;
+        for (var i = 0; i < words.length; i++) {
+          var w = words[i];
+          if (x.n.indexOf(w) === 0) score += 4;
+          else if (x.n.indexOf(' ' + w) >= 0) score += 3;
+          else if (x.n.indexOf(w) >= 0) score += 2;
+          else if (x.ns.indexOf(w) >= 0) score += 1;
+          else return null;
+        }
+        return { x: x, score: score };
+      }).filter(Boolean).sort(function (a, b) {
+        return b.score - a.score || ORDER[a.x.k] - ORDER[b.x.k] || a.x.t.localeCompare(b.x.t);
+      }).slice(0, 30).map(function (r) { return r.x; });
+    };
+    var mark = function () {
+      [].forEach.call(sres.children, function (li, i) { li.setAttribute('aria-selected', String(i === sel)); });
+      var cur = sres.children[sel];
+      if (cur && cur.scrollIntoView) cur.scrollIntoView({ block: 'nearest' });
+    };
+    var render = function () {
+      sres.textContent = '';
+      if (!hits.length) {
+        if (sq.value.trim()) sres.innerHTML = '<li class="search-empty">' + escH(sdlg.dataset.empty) + '</li>';
+        return;
+      }
+      hits.forEach(function (x, i) {
+        var li = document.createElement('li');
+        li.setAttribute('role', 'option');
+        li.setAttribute('aria-selected', String(i === sel));
+        li.innerHTML = '<a href="' + sdlg.dataset.base + x.u + '">' +
+          (x.i ? '<img src="' + sdlg.dataset.root + x.i + '" width="28" height="28" alt="">' : '<span class="search-ico" aria-hidden="true"></span>') +
+          '<span class="search-t">' + escH(x.t) + (x.s ? '<small>' + escH(x.s) + '</small>' : '') + '</span>' +
+          '<span class="search-k">' + escH(KINDS[x.k] || '') + '</span></a>';
+        li.addEventListener('mousemove', function () { if (sel !== i) { sel = i; mark(); } });
+        sres.appendChild(li);
+      });
+    };
+    var run = function () { loadIndex().then(function () { hits = search(sq.value); sel = 0; render(); }); };
+    var openSearch = function () {
+      if (sdlg.open) return;
+      sdlg.showModal();
+      sq.select();
+      run();
+    };
+    sq.addEventListener('input', run);
+    sq.addEventListener('keydown', function (ev) {
+      if (ev.key === 'ArrowDown') { ev.preventDefault(); if (sel < hits.length - 1) { sel++; mark(); } }
+      else if (ev.key === 'ArrowUp') { ev.preventDefault(); if (sel > 0) { sel--; mark(); } }
+      else if (ev.key === 'Enter') { var a = sres.children[sel] && sres.children[sel].querySelector('a'); if (a) { ev.preventDefault(); a.click(); } }
+    });
+    sdlg.addEventListener('click', function (ev) {
+      if (ev.target === sdlg) sdlg.close();
+      // links to this same page (another section of the guide) must close the dialog too
+      if (ev.target.closest && ev.target.closest('a')) setTimeout(function () { sdlg.close(); }, 0);
+    });
+    document.querySelectorAll('.search-open').forEach(function (b) { b.addEventListener('click', openSearch); });
+    document.addEventListener('keydown', function (ev) {
+      var typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement && document.activeElement.tagName);
+      if ((ev.key === 'k' || ev.key === 'K') && (ev.ctrlKey || ev.metaKey)) { ev.preventDefault(); openSearch(); }
+      else if (ev.key === '/' && !typing && !sdlg.open) { ev.preventDefault(); openSearch(); }
+    });
+  }
+
+  // ---- "Report a mistake": prefill a GitHub issue with this page and mode ----
+  document.querySelectorAll('.report-link').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var mode = document.querySelector('.guide') ? root.dataset.mode : '-';
+      var title = '[' + a.dataset.page.replace(/\/$/, '') + (mode !== '-' ? ' · ' + mode : '') + '] ';
+      var body = a.dataset.body.replace(/\\n/g, '\n').replace('{url}', location.href).replace('{mode}', mode);
+      a.href = a.href.split('?')[0] + '?title=' + encodeURIComponent(title) + '&body=' + encodeURIComponent(body);
+    });
+  });
+
   // ---- language: remember the choice, keep ?mode and #section ------------
   store('lang', root.lang);
   document.querySelectorAll('[data-keep-query]').forEach(function (a) {
@@ -212,6 +307,76 @@
   // Turn on the mode transitions only after the first paint, so the page doesn't animate on load.
   requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add('anim'); }); });
   if (hashTarget) window.addEventListener('load', function () { hashTarget.scrollIntoView({ behavior: 'instant' }); });
+
+  // ---- ?sk=<slug> (search result): jump to that skill's card, in whichever mode has it ----
+  var wantSk = new URLSearchParams(location.search).get('sk');
+  if (wantSk) {
+    var cards = [].slice.call(document.querySelectorAll('.skill[data-sk-card="' + wantSk.replace(/"/g, '') + '"]'));
+    var card = cards.filter(function (c) { return c.offsetParent; })[0];
+    if (!card && cards.length) {
+      var sc = cards[0].closest('[data-only]');
+      var m = sc && sc.dataset.only.split(' ').filter(function (x) { return MODES.indexOf(x) >= 0; })[0];
+      if (m) { applyMode(m); card = cards[0]; }
+    }
+    if (!card) card = document.querySelector('.guide [data-sk="' + wantSk.replace(/"/g, '') + '"]');
+    if (card) {
+      window.addEventListener('load', function () {
+        card.scrollIntoView({ block: 'center', behavior: 'instant' });
+        // lazy images above may still shift the layout: settle once more
+        setTimeout(function () { card.scrollIntoView({ block: 'center', behavior: 'instant' }); }, 350);
+        card.classList.add('is-found');
+        setTimeout(function () { card.classList.remove('is-found'); }, 2500);
+      });
+    }
+  }
+
+  // ---- skill tooltips: hover (or tap) any skill name or icon ---------------------
+  var skEl = document.getElementById('sk-data');
+  if (skEl) {
+    var SK = {};
+    try { SK = JSON.parse(skEl.textContent); } catch (e) {}
+    var tip = document.createElement('div');
+    tip.className = 'sk-tip';
+    tip.setAttribute('role', 'tooltip');
+    tip.hidden = true;
+    document.body.appendChild(tip);
+    var shownFor = null;
+    var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+    var showTip = function (el) {
+      var d = SK[el.dataset.sk];
+      if (!d) return;
+      shownFor = el;
+      var meta = [skEl.dataset[d.c] || ''];
+      if (d.cd) meta.push(skEl.dataset.cd + ' ' + d.cd + ' ' + skEl.dataset.s);
+      tip.innerHTML = '<p class="sk-tip-name">' + esc(d.n) + '</p>' +
+        '<p class="sk-tip-meta">' + esc(meta.filter(Boolean).join(' · ')) + '</p>' +
+        (d.d ? '<p class="sk-tip-desc">' + esc(d.d).replace(/\n+/g, '<br>') + '</p>' : '') +
+        (d.sp.length ? '<ul>' + d.sp.map(function (s) { return '<li><b>' + s[0] + '</b>' + esc(s[1]) + '</li>'; }).join('') + '</ul>' : '');
+      tip.hidden = false;
+      var r = el.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
+      var x = Math.min(Math.max(8, r.left + r.width / 2 - w / 2), window.innerWidth - w - 8);
+      var y = r.bottom + 8;
+      if (y + h > window.innerHeight - 8 && r.top - h - 8 > 8) y = r.top - h - 8;
+      tip.style.left = x + 'px';
+      tip.style.top = y + 'px';
+    };
+    var hideTip = function () { tip.hidden = true; shownFor = null; };
+    var hoverable = matchMedia('(hover: hover)').matches;
+    if (hoverable) {
+      document.addEventListener('mouseover', function (ev) {
+        var el = ev.target.closest && ev.target.closest('[data-sk]');
+        if (el && el !== shownFor) showTip(el); else if (!el && shownFor) hideTip();
+      });
+    } else {
+      // Touch: tap a skill to open its tooltip, tap anywhere else to close it.
+      document.addEventListener('click', function (ev) {
+        var el = ev.target.closest && ev.target.closest('[data-sk]');
+        if (el && el !== shownFor) { showTip(el); ev.preventDefault(); } else hideTip();
+      });
+    }
+    window.addEventListener('scroll', hideTip, { passive: true });
+    document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') hideTip(); });
+  }
 
   // ---- leveling tracker --------------------------------------------------
   var tracker = document.querySelector('.tracker');

@@ -1,0 +1,121 @@
+{
+ "_note": "Cleric leveling steps (WIP: Grobs' early-game macro slide + MMO Codex leveling order). [[slug]] = localized skill name, [[slug#N]] = its N-th specialization.",
+ "steps": [
+  {
+   "id": "cleric-clicks",
+   "order": 2,
+   "skills": [
+    "earths-retribution",
+    "judgment-thunder"
+   ],
+   "when": {
+    "en": "Lv 1",
+    "ru": "Ур. 1"
+   },
+   "text": {
+    "en": "Level your two no-cooldown attacks first: [[earths-retribution]] (restores MP) and [[judgment-thunder]]. Play in <strong>target mode</strong> — it keeps the basic attack going between skills, and that is your mana.",
+    "ru": "Сначала качай две атаки без перезарядки: [[earths-retribution]] (восполняет ману) и [[judgment-thunder]]. Играй в <strong>режиме с таргетом</strong> — так автоатака идёт между скиллами, а это твоя мана."
+   }
+  },
+  {
+   "id": "cleric-chain",
+   "order": 60,
+   "skills": [
+    "chain-of-torment",
+    "condemnation"
+   ],
+   "when": {
+    "en": "Lv ~6",
+    "ru": "~Ур. 6"
+   },
+   "text": {
+    "en": "[[chain-of-torment]] marks the target; [[condemnation]] only hits a target under Chain of Torment — put both in one hotbar line with Chain at the bottom.",
+    "ru": "[[chain-of-torment]] метит цель, а [[condemnation]] бьёт только по цели под Цепью боли — поставь оба в одну линию, Цепь внизу."
+   }
+  },
+  {
+   "id": "cleric-spec",
+   "order": 80,
+   "skills": [
+    "earths-retribution",
+    "judgment-thunder",
+    "chain-of-torment",
+    "debilitating-mark"
+   ],
+   "when": {
+    "en": "Lv 8",
+    "ru": "Ур. 8"
+   },
+   "text": {
+    "en": "First specializations: [[earths-retribution#0]], [[judgment-thunder#1]], [[chain-of-torment#1]], [[debilitating-mark#1]].",
+    "ru": "Первые специализации: [[earths-retribution#0]], [[judgment-thunder#1]], [[chain-of-torment#1]], [[debilitating-mark#1]]."
+   }
+  },
+  {
+   "id": "cleric-bolt",
+   "order": 120,
+   "skills": [
+    "bolt",
+    "healing-light"
+   ],
+   "when": {
+    "en": "Lv 9–18",
+    "ru": "Ур. 9–18"
+   },
+   "text": {
+    "en": "[[bolt]] for burst and stagger (take [[bolt#2]]); [[healing-light]] for yourself. Raise attack skills, not heals — a healing-focused Cleric levels slowly.",
+    "ru": "[[bolt]] для бурста и ошеломления (бери [[bolt#2]]); [[healing-light]] — для себя. Качай атакующие скиллы, а не лечение: Целитель-хилер качается медленно."
+   }
+  },
+  {
+   "id": "cleric-grace",
+   "order": 210,
+   "skills": [
+    "earths-grace"
+   ],
+   "when": {
+    "en": "Lv 21",
+    "ru": "Ур. 21"
+   },
+   "text": {
+    "en": "Passive [[earths-grace]] (Critical Damage and Accuracy) — straight to 10 the moment you learn it.",
+    "ru": "Пассивку [[earths-grace]] (крит. урон и точность) — сразу до 10, как только выучишь."
+   }
+  },
+  {
+   "id": "cleric-stigmas",
+   "order": 221,
+   "skills": [
+    "summon-resurrection",
+    "noble-aura",
+    "earth-punishment",
+    "benevolence"
+   ],
+   "when": {
+    "en": "Lv 22",
+    "ru": "Ур. 22"
+   },
+   "text": {
+    "en": "Stigmas: one point into [[summon-resurrection]], then [[noble-aura]], [[earth-punishment]], [[benevolence]] and [[absolution]] to 5.",
+    "ru": "Стигмы: одно очко в [[summon-resurrection]], затем [[noble-aura]], [[earth-punishment]], [[benevolence]] и [[absolution]] до 5."
+   }
+  },
+  {
+   "id": "cleric-cap",
+   "order": 455,
+   "skills": [
+    "earths-retribution",
+    "condemnation",
+    "healing-light"
+   ],
+   "when": {
+    "en": "Cap",
+    "ru": "Кап"
+   },
+   "text": {
+    "en": "Both clicks at 10 by level 25; then [[condemnation]], [[bolt]] and [[healing-light]]. Before group dungeons get Healing Light to 16.",
+    "ru": "Обе атаки на 10 к 25 уровню; дальше [[condemnation]], [[bolt]] и [[healing-light]]. Перед групповыми подземельями подними Целительный свет до 16."
+   }
+  }
+ ]
+}

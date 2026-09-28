@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ cls.name[lang] }} — {{ t.site_name }} ({{ t.mode_pve }}, {{ t.mode_pvp }}, {{ t.mode_lvl }}){% endblock %}
+{% block title %}{{ cls.name[lang] }} — {{ t.site_name }} ({% for m in ['pve', 'pvp', 'lvl'] if m not in cls.get('modes_off', []) %}{{ t['mode_' ~ m] }}{{ ', ' if not loop.last }}{% endfor %}){% endblock %}
 {% block desc %}{{ cls.pitch[lang] }}{% endblock %}
 {% block og %}{{ cls.slug }}{% endblock %}
 {% block html_attrs %} data-class="{{ cls.slug }}"{% if cls.get('modes_off') %} data-off="{{ cls.modes_off|join(' ') }}"{% endif %}{% endblock %}
@@ -18,6 +18,7 @@
         <h1>{{ cls.name[lang] }}</h1>
         <p class="class-hero-pitch">{{ cls.pitch[lang] }}</p>
         <p class="guide-ver"><span>{{ t.guide_updated }}: <time datetime="{{ cls.updated }}">{{ fmt_day(cls.updated, lang) }}</time></span><span>{{ t.guide_patch }}: <b>{{ cls.patch or t.patch_tbd }}</b></span>{% if cls.get('wip') %}<span class="wip-tag">{{ t.wip }}</span>{% endif %}</p>
+        {% if cls.get('src') %}<p class="guide-src">{% for m, v in cls.src.items() %}<span data-only="{{ m }}">{{ t.guide_src }}: <b>{{ v[0] }}</b> · {{ t.guide_checked }} <time datetime="{{ v[1] }}">{{ fmt_day(v[1], lang) }}</time></span>{% endfor %}</p>{% endif %}
       </div>
     </div>
     <dl class="class-facts">
@@ -63,7 +64,7 @@
             <span class="step-when">{{ st.when }}</span>
             <span class="step-text">
               <span class="step-tag">{{ t.lvl_class if st.kind == 'class' else t.lvl_general }}</span>
-              {% for sl in st.skills %}<img src="{{ icon_url(sl) }}" width="22" height="22" alt="" loading="lazy">{% endfor %}
+              {% for sl in st.skills %}<img src="{{ icon_url(sl) }}" width="22" height="22" alt="" loading="lazy" data-sk="{{ sl }}">{% endfor %}
               {{ st.text|safe }}
             </span>
           </label>
@@ -79,6 +80,10 @@
     <div class="callout wip-note" role="note" data-only="{{ m }}"><h3><span class="wip-tag">{{ t.wip }}</span> {{ t['wip_mode_' ~ m] }} · {{ t.wip_mode_title }}</h3><p>{{ t.wip_mode_text }}</p></div>
     {% endfor %}
     {% include content_tpl %}
+    <p class="report-box"><a class="btn btn-ghost btn-sm report-link" href="{{ SITE.repo }}/issues/new" target="_blank" rel="noopener" data-body="{{ t.report_body }}" data-page="{{ lang }}/{{ path }}">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+      {{ t.report }}</a> <span class="note">{{ t.report_hint }}</span></p>
+    <script type="application/json" id="sk-data" data-cd="{{ t.tip_cd }}" data-s="{{ t.tip_s }}" data-active="{{ t.tip_cat.active }}" data-stigma="{{ t.tip_cat.stigma }}" data-passive="{{ t.tip_cat.passive }}">{{ tooltip_json(cls.slug, lang) }}</script>
   </main>
 </div>
 {% endblock %}

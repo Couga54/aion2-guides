@@ -25,11 +25,16 @@
       var status = li.querySelector('.bs-status');
       li.querySelector('.bs-undo').hidden = !at;
       li.classList.remove('is-dead', 'is-up');
-      if (!at) { status.textContent = ''; return; }
+      if (!at) { status.textContent = ''; if (window.A2Notify) window.A2Notify.cancel('boss-' + li.dataset.id); return; }
       var text = page.dataset.tKilled + ' ' + time.format(at);
       var respawn = +li.dataset.respawn || 0;
       if (respawn) {
         var next = at + respawn * 6e4;
+        if (window.A2Notify) {
+          window.A2Notify.schedule('boss-' + li.dataset.id, next,
+            page.dataset.tNotify.replace('{name}', li.querySelector('.bs-name').textContent),
+            li.querySelector('.bs-zone').textContent);
+        }
         if (next > now) { li.classList.add('is-dead'); text += ' · ' + page.dataset.tNext + ' ' + time.format(next) + ' (' + left(next - now) + ')'; }
         else { li.classList.add('is-up'); text += ' · ' + page.dataset.tUp; }
       }
@@ -42,4 +47,9 @@
   });
   render();
   setInterval(render, 30000);
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!window.A2Notify) return;
+    window.A2Notify.onChange(render);
+    render();
+  });
 })();

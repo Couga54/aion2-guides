@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "tracker_parts.html" import reset_box, charbar, tracker_config with context %}
+{% from "tracker_parts.html" import reset_box, charbar, tracker_config, notify_toggle with context %}
 {% block title %}{{ t.wk_title }} — {{ t.site_name }}{% endblock %}
 {% block desc %}{{ t.wk_desc }}{% endblock %}
 {% block body_class %}page-tracker page-weekly{% endblock %}
@@ -36,6 +36,7 @@
             <button type="submit" class="btn btn-ghost btn-sm">{{ t.energy_set }}</button>
           </form>
         </div>
+        {{ notify_toggle() }}
         <div class="energy-charged">
           <label><span>{{ t.energy_charged }}</span><input type="number" name="charged" min="0" max="9999" inputmode="numeric" class="energy-charged-in"></label>
           <p class="note">{{ t.energy_charged_note }}</p>

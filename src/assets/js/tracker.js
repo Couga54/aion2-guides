@@ -185,7 +185,27 @@
     var now = Date.now();
     rollWeeks(now);
     renderTabs(); renderWeekly(); renderWeek1(); renderEnergy(now); renderReset(now);
+    scheduleEnergy(now);
   }
+
+  // Notification when a character's energy reaches the cap (notify.js; only on the weekly page).
+  function scheduleEnergy(now) {
+    var N = window.A2Notify;
+    if (!N || !$('.energy-card')) return;
+    state.chars.forEach(function (c) {
+      var e = c.energy;
+      settleEnergy(c, now);
+      if (e.v >= e.cap) { N.cancel('energy-' + c.id); return; }
+      var fullAt = e.t + Math.ceil((e.cap - e.v) / EN.regen) * INTERVAL;
+      N.schedule('energy-' + c.id, fullAt, T.notify_energy, c.name + ' · ' + e.cap);
+    });
+  }
+  // notify.js may load after this script: hook in once every deferred script has run
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!window.A2Notify) return;
+    window.A2Notify.onChange(function () { scheduleEnergy(Date.now()); });
+    scheduleEnergy(Date.now());
+  });
 
   // ---- events ------------------------------------------------------------------
   function bind() {

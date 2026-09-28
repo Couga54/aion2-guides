@@ -68,12 +68,12 @@
         <a href="../../ru/sorcerer/" class="cm-item accent-frost">
           <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Волшебник <span class="wip-tag">WIP</span></span><span class="cm-role">Магический урон издалека</span>
         </a>
-        <span class="cm-item is-soon" aria-disabled="true">
-          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Заклинатель</span><span class="cm-role">Скоро</span>
-        </span>
-        <span class="cm-item is-soon" aria-disabled="true">
-          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Целитель</span><span class="cm-role">Скоро</span>
-        </span>
+        <a href="../../ru/elementalist/" class="cm-item accent-spirit">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Заклинатель <span class="wip-tag">WIP</span></span><span class="cm-role">Призыватель · магический урон</span>
+        </a>
+        <a href="../../ru/cleric/" class="cm-item accent-sunlight">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Целитель <span class="wip-tag">WIP</span></span><span class="cm-role">Лекарь · урон землёй и молнией</span>
+        </a>
         <a href="../../ru/chanter/" class="cm-item accent-amber">
           <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Чародей</span><span class="cm-role">Поддержка ближнего боя · баффер</span>
         </a>
@@ -99,6 +99,9 @@
       <a class="lang-switch" href="../../en/changelog/" hreflang="en" lang="en" data-keep-query>
         <span aria-hidden="true">EN</span><span class="sr-only">English</span>
       </a>
+      <button class="icon-btn search-open" type="button" aria-label="Поиск (Ctrl+K)" title="Поиск (Ctrl+K)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
 <a class="icon-btn wn-top" href="../../ru/changelog/" aria-current="page" aria-label="История изменений" title="История изменений">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
       </a>      <button class="icon-btn theme-toggle" type="button" aria-label="Переключить тёмную тему" title="Переключить тёмную тему">
@@ -109,7 +112,7 @@
   </div>
 </header>
 
-<main id="main" data-changelog-seen="2026-09-28-motion">
+<main id="main" data-changelog-seen="2026-09-28-tools">
   <section class="page-hero">
     <div class="wrap">
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../../ru/">Все классы</a><span aria-hidden="true">/</span><span>История изменений</span></nav>
@@ -118,6 +121,16 @@
     </div>
   </section>
   <div class="wrap cl-page">
+    <section class="wn-entry cl-entry" aria-label="28 сентября 2026">
+      <time class="wn-date" datetime="2026-09-28">28 сентября 2026</time>
+      <ul>
+        <li><a href="../../ru/cleric/"><strong>Целитель и Заклинатель (WIP)</strong> — гайды на прокачку со стартовыми макросами Grobs; PvE и PvP появятся, когда будет настоящий глобальный источник.</a></li>
+        <li><span><strong>Поиск</strong> — нажми Ctrl+K (или /), чтобы найти класс, скилл, босса или раздел гайда.</span></li>
+        <li><span><strong>Подсказки скиллов</strong> — наведи на любой скилл в гайде, чтобы увидеть описание, перезарядку и все специализации.</span></li>
+        <li><a href="../../ru/weekly/"><strong>Уведомления</strong> — недельный трекер и страница боссов сообщат, когда энергия заполнена или босс может быть жив (пока вкладка открыта).</a></li>
+        <li><span><strong>Источники с датами и сообщения об ошибках</strong> — у каждого режима гайда видно, откуда информация и когда сверена; «Сообщить об ошибке» открывает issue на GitHub.</span></li>
+      </ul>
+    </section>
     <section class="wn-entry cl-entry" aria-label="28 сентября 2026">
       <time class="wn-date" datetime="2026-09-28">28 сентября 2026</time>
       <ul>
@@ -165,11 +178,28 @@
       <a class="brand brand-sm" href="../../ru/">AION 2 Гайды</a>
       <p>Неофициальный фанатский сайт, не связан с NCSOFT. AION 2 и иконки скиллов © NCSOFT.</p>
       <p>Проверено: 2026-09-27 (до глобального запуска).</p>
-      <p><a href="../../ru/sources/">Все источники и авторы</a> · <a href="../../ru/changelog/">История изменений</a></p>
+      <p><a href="../../ru/sources/">Все источники и авторы</a> · <a href="../../ru/changelog/">История изменений</a> · <a class="report-link" href="https://github.com/Couga54/aion2-guides/issues/new" target="_blank" rel="noopener" title="Откроет issue на GitHub для этой страницы" data-body="Страница: {url}
+Режим: {mode}
+
+Что не так / устарело:
+
+Источник или доказательство (ссылка, скриншот):
+" data-page="ru/changelog/">Сообщить об ошибке</a></p>
     </div>
   </div>
 </footer>
-<dialog class="whatsnew" data-id="2026-09-28-motion" aria-labelledby="wn-title">
+<dialog class="search-dlg" aria-label="Поиск" data-index="../../ru/search.json" data-base="../../ru/" data-empty="Ничего не найдено"
+  data-kinds="{&#34;boss&#34;: &#34;\u0411\u043e\u0441\u0441&#34;, &#34;class&#34;: &#34;\u041a\u043b\u0430\u0441\u0441&#34;, &#34;page&#34;: &#34;\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430&#34;, &#34;section&#34;: &#34;\u0420\u0430\u0437\u0434\u0435\u043b&#34;, &#34;skill&#34;: &#34;\u0421\u043a\u0438\u043b\u043b&#34;}" data-root="../../">
+  <div class="search-in">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-q" placeholder="Класс, скилл, босс, раздел…" aria-label="Поиск" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-res" role="listbox"></ul>
+  </div>
+</dialog>
+<dialog class="whatsnew" data-id="2026-09-28-tools" aria-labelledby="wn-title">
   <form method="dialog" class="wn-in">
     <div class="wn-head">
       <h2 id="wn-title">Что нового</h2>
@@ -180,7 +210,11 @@
     <section class="wn-entry">
       <time class="wn-date" datetime="2026-09-28">28 сентября 2026</time>
       <ul>
-        <li><span><strong>Живее сайт</strong> — пейзаж на главной медленно движется, поднимаются искры эфира; у каждого класса свои стихийные частицы, «дышащий» портрет и свечение в цвете класса, а блоки гайда проявляются при прокрутке.</span></li>
+        <li><a href="../../ru/cleric/"><strong>Целитель и Заклинатель (WIP)</strong> — гайды на прокачку со стартовыми макросами Grobs; PvE и PvP появятся, когда будет настоящий глобальный источник.</a></li>
+        <li><span><strong>Поиск</strong> — нажми Ctrl+K (или /), чтобы найти класс, скилл, босса или раздел гайда.</span></li>
+        <li><span><strong>Подсказки скиллов</strong> — наведи на любой скилл в гайде, чтобы увидеть описание, перезарядку и все специализации.</span></li>
+        <li><a href="../../ru/weekly/"><strong>Уведомления</strong> — недельный трекер и страница боссов сообщат, когда энергия заполнена или босс может быть жив (пока вкладка открыта).</a></li>
+        <li><span><strong>Источники с датами и сообщения об ошибках</strong> — у каждого режима гайда видно, откуда информация и когда сверена; «Сообщить об ошибке» открывает issue на GitHub.</span></li>
       </ul>
     </section>
     <button class="btn btn-primary wn-ok" value="close">Понятно</button>

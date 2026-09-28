@@ -50,9 +50,26 @@ def s(ctx, slug, icon=True):
     sk = SKILLS[ctx["cls"]["slug"]][slug]
     name = escape(sk[ctx["lang"]]["name"])
     if not icon:
-        return Markup(f'<span class="sk">{name}</span>')
+        return Markup(f'<span class="sk" data-sk="{slug}">{name}</span>')
     src = f'{ctx["root"]}assets/icons/{ctx["cls"]["slug"]}/{sk["icon"]}'
-    return Markup(f'<span class="sk"><img src="{src}" width="18" height="18" alt="" loading="lazy">{name}</span>')
+    return Markup(f'<span class="sk" data-sk="{slug}"><img src="{src}" width="18" height="18" alt="" loading="lazy">{name}</span>')
+
+
+def clean_desc(text):
+    """Skill descriptions carry damage placeholders like {se_dmg:...}-{se_dmg:...}; show them as X."""
+    import re
+    text = re.sub(r"\{se_[^}]*\}\s*-\s*\{se_[^}]*\}", "X", text)
+    return re.sub(r"\{se_[^}]*\}", "X", text).strip()
+
+
+def tooltip_json(cls_slug, lang):
+    """Compact skill data for the hover tooltips on a class page (embedded as JSON)."""
+    out = {}
+    for slug, sk in SKILLS[cls_slug].items():
+        L = sk[lang]
+        out[slug] = {"n": L["name"], "c": sk.get("category"), "cd": round((sk.get("cooldown") or 0) / 1000),
+                     "d": clean_desc(L.get("desc", "")), "sp": [[x["level"], x["text"]] for x in L.get("specs", [])]}
+    return Markup(json.dumps(out, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"))
 
 
 @pass_context
@@ -135,7 +152,7 @@ def env():
         lstrip_blocks=True,
         extensions=["jinja2.ext.do"],
     )
-    e.globals.update(CHANGELOG=CHANGELOG, fmt_utc=fmt_utc, fmt_day=fmt_day, s=s, sp=sp, skill_data=skill_data, icon_url=icon_url, SITE=SITE)
+    e.globals.update(tooltip_json=tooltip_json, CHANGELOG=CHANGELOG, fmt_utc=fmt_utc, fmt_day=fmt_day, s=s, sp=sp, skill_data=skill_data, icon_url=icon_url, SITE=SITE)
     return e
 
 
@@ -164,6 +181,46 @@ def write(rel, html):
     p.write_text(html, encoding="utf-8")
 
 
+MODES = ("pve", "pvp", "lvl")
+
+
+def search_entries(cls, lang, html):
+    """Search entries for one class page: the class, its guide sections and the skills it mentions."""
+    import re
+    t = I18N[lang]
+    slug, name = cls["slug"], cls["name"][lang]
+    off = cls.get("modes_off", [])
+    out = [{"k": "class", "t": name, "s": cls["role"][lang], "u": f"{slug}/", "i": f"assets/classes/{slug}.webp"}]
+    for sid, only, title in re.findall(
+            r'<section id="([^"]+)" class="g-section[^"]*" data-only="([^"]+)"[^>]*>.*?<h2 id="h-[^"]+">(.*?)</h2>', html, re.S):
+        modes = [m for m in only.split() if m in MODES and m not in off]
+        if not modes:
+            continue
+        label = t["mode_" + modes[0]]
+        out.append({"k": "section", "t": re.sub(r"<[^>]+>", "", title), "s": f"{name} · {label}",
+                    "u": f"{slug}/?mode={modes[0]}#{sid}"})
+    used = set(re.findall(r'data-sk="([^"]+)"', html))
+    for sk_slug in sorted(used):
+        sk = SKILLS[slug].get(sk_slug)
+        if sk:
+            out.append({"k": "skill", "t": sk[lang]["name"], "s": name, "u": f"{slug}/?sk={sk_slug}",
+                        "i": f"assets/icons/{slug}/{sk['icon']}"})
+    return out
+
+
+def page_entries(lang):
+    """Search entries for the standalone pages and the world bosses."""
+    t = I18N[lang]
+    out = [{"k": "page", "t": t[key], "s": "", "u": path} for path, key in (
+        ("week-1/", "w1_title"), ("weekly/", "wk_title"), ("bosses/", "bs_title"),
+        ("sources/", "src_title"), ("changelog/", "wn_history"))]
+    for g in BOSSES["groups"]:
+        for b in g["bosses"]:
+            out.append({"k": "boss", "t": b["name"][lang], "s": f'{g["zone"][lang]} · {g["faction"][lang]}',
+                        "u": f'bosses/#b-{b["id"]}'})
+    return out
+
+
 def build():
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -174,6 +231,7 @@ def build():
     e = env()
     urls = []
     for lang in LANGS:
+        index = []   # search index for this language (docs/<lang>/search.json)
         ctx = page_ctx(lang, "", "../")
         write(f"{lang}/index.html", e.get_template("home.html").render(ctx))
         urls.append("")
@@ -184,8 +242,10 @@ def build():
             ctx = page_ctx(lang, path, "../../", cls)
             ctx["steps"] = leveling_steps(cls["slug"], lang)
             ctx["content_tpl"] = f'{cls["slug"]}/{lang}.html'
-            write(f'{lang}/{path}index.html', e.get_template("class.html").render(ctx))
+            html = e.get_template("class.html").render(ctx)
+            write(f'{lang}/{path}index.html', html)
             urls.append(path)
+            index += search_entries(cls, lang, html)
         for path, tpl, key, data in (("week-1/", "week1.html", "week1", WEEK1), ("weekly/", "weekly.html", "weekly", WEEKLY), ("bosses/", "bosses.html", "bosses", BOSSES), ("changelog/", "changelog.html", "changelog", CHANGELOG)):
             ctx = page_ctx(lang, path, "../../")
             ctx[key] = data
@@ -195,6 +255,8 @@ def build():
         ctx["sources"] = SOURCES["groups"]
         write(f"{lang}/sources/index.html", e.get_template("sources.html").render(ctx))
         urls.append("sources/")
+        index += page_entries(lang)
+        write(f"{lang}/search.json", json.dumps(index, ensure_ascii=False, separators=(",", ":")))
 
     # Root: language chooser that redirects by browser language.
     write("index.html", e.get_template("root.html").render(page_ctx("en", "", "")))

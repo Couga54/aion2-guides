@@ -151,7 +151,9 @@
             "templar",
             "assassin",
             "chanter",
-            "sorcerer"
+            "sorcerer",
+            "cleric",
+            "elementalist"
           ],
           "links": [
             {
@@ -264,7 +266,9 @@
             "templar",
             "assassin",
             "chanter",
-            "sorcerer"
+            "sorcerer",
+            "cleric",
+            "elementalist"
           ],
           "links": [
             {
@@ -313,6 +317,22 @@
               "label": {
                 "en": "Sorcerer skills",
                 "ru": "Скиллы Волшебника"
+              }
+            },
+            {
+              "type": "site",
+              "url": "https://questlog.gg/aion-2/en/db/skills/cleric",
+              "label": {
+                "en": "Cleric skills",
+                "ru": "Скиллы Целителя"
+              }
+            },
+            {
+              "type": "site",
+              "url": "https://questlog.gg/aion-2/en/db/skills/elementalist",
+              "label": {
+                "en": "Elementalist skills",
+                "ru": "Скиллы Заклинателя"
               }
             }
           ]
@@ -504,7 +524,9 @@
           },
           "used": [
             "templar",
-            "sorcerer"
+            "sorcerer",
+            "cleric",
+            "elementalist"
           ],
           "links": [
             {

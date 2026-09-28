@@ -21,10 +21,10 @@
 {% macro skill(slug, kind, badge, picks=[], upto=0) -%}
 {% set sk = skill_data(slug) %}
 {% set L = sk[lang] %}
-<li class="skill">
-  <img class="skill-icon" src="{{ icon_url(slug) }}" width="44" height="44" alt="" loading="lazy" decoding="async">
+<li class="skill" data-sk-card="{{ slug }}">
+  <img class="skill-icon" data-sk="{{ slug }}" src="{{ icon_url(slug) }}" width="44" height="44" alt="" loading="lazy" decoding="async">
   <div class="skill-body">
-    <div class="skill-name">{{ L.name }} <span class="badge {{ kind }}">{{ badge }}</span></div>
+    <div class="skill-name">{{ L.name }} <span class="badge {{ kind }}">{% for part in badge.split('→') %}{{ part }}{% if not loop.last %}<svg class="arr" viewBox="0 0 12 8" aria-label="→"><path d="M1 4h9M7 1l3 3-3 3"/></svg>{% endif %}{% endfor %}</span></div>
     <div class="skill-desc">{{ caller() }}</div>
     {% set chosen = [] %}
     {% for sp in L.specs %}{% if loop.index0 in picks or (upto and sp.level <= upto) %}{% do chosen.append(sp) %}{% endif %}{% endfor %}
@@ -51,7 +51,7 @@
 {% macro core(items) -%}
 <ul class="core-row">
   {% for slug, lvl in items %}
-  <li title="{{ skill_data(slug)[lang].name }}">
+  <li data-sk="{{ slug }}">
     <img src="{{ icon_url(slug) }}" width="52" height="52" alt="{{ skill_data(slug)[lang].name }}" loading="lazy">
     <span class="core-lv">{{ lvl }}</span>
     <span class="core-name">{{ skill_data(slug)[lang].name }}</span>
@@ -66,7 +66,7 @@
   {% for it in items %}
   {% if it %}
   {% set slug, lvl = it %}
-  <li class="slot" title="{{ skill_data(slug)[lang].name }}">
+  <li class="slot" data-sk="{{ slug }}">
     <img src="{{ icon_url(slug) }}" width="56" height="56" alt="{{ skill_data(slug)[lang].name }}" loading="lazy">
     <span class="slot-lv">{{ t.lv }} {{ lvl }}</span>
     <span class="slot-name">{{ skill_data(slug)[lang].name }}</span>
@@ -81,7 +81,7 @@
 {# Passive names as chips: items = [slug, ...] #}
 {% macro passives(items) -%}
 <ul class="passive-row">
-  {% for slug in items %}<li><img src="{{ icon_url(slug) }}" width="24" height="24" alt="" loading="lazy">{{ skill_data(slug)[lang].name }}</li>{% endfor %}
+  {% for slug in items %}<li data-sk="{{ slug }}"><img src="{{ icon_url(slug) }}" width="24" height="24" alt="" loading="lazy">{{ skill_data(slug)[lang].name }}</li>{% endfor %}
 </ul>
 {%- endmacro %}
 
@@ -105,7 +105,7 @@
   <div class="hotline-head"><span class="key">{{ key }}</span><span class="hotline-name">{{ name }}</span></div>
   <ol class="hotline-skills" reversed>
     {% for slug in rows|reverse %}
-    <li class="{{ 'is-opt' if slug in opt }}{{ ' is-first' if loop.last }}">
+    <li class="{{ 'is-opt' if slug in opt }}{{ ' is-first' if loop.last }}" data-sk="{{ slug }}">
       <span class="hl-n">{{ rows|length - loop.index0 }}</span>
       <img src="{{ icon_url(slug) }}" width="40" height="40" alt="" loading="lazy">
       <span class="hl-name">{{ skill_data(slug)[lang].name }}</span>

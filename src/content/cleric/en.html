@@ -1,0 +1,56 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq with context %}
+
+{# Leveling only for now: PvE and PvP are switched off (site.json modes_off) until a real global source exists. #}
+
+{% call section('intro-lvl', 'Overview', 'lvl') %}
+  <p>The Cleric is the healer, but while leveling it plays as a ranged damage dealer: {{ s('chain-of-torment') }} marks the target, {{ s('condemnation') }} punishes it, and the passive {{ s('radiant-benediction') }} heals you and the party on every hit. Heal only when you need to.</p>
+  <div class="callout accent">
+    <h3>Leveling in one sentence</h3>
+    <p>Hold {{ s('earths-retribution') }} for mana, spam the Chain line with the in-game macro, and put your skill points into attacks rather than heals.</p>
+  </div>
+{% endcall %}
+
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Packs:</strong> {{ s('chain-of-torment') }} (hits up to 4) → {{ s('condemnation') }} → {{ s('divine-aura') }} with the AoE pick → {{ s('judgment-thunder') }}.</li>
+    <li><strong>Elites:</strong> {{ s('debilitating-mark') }} (lower Defense) → {{ s('chain-of-torment') }} → {{ s('bolt') }} charged → {{ s('condemnation') }}.</li>
+    <li><strong>Mana:</strong> target mode, and weave {{ s('earths-retribution') }} — it restores MP on every cast.</li>
+    <li><strong>Low HP:</strong> {{ s('healing-light') }}, and {{ s('radiant-benediction') }} keeps ticking as long as you hit.</li>
+    <li><strong>Staggered bosses:</strong> {{ s('lightning-strike-scattershot') }} only works while the target is staggered.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Leveling macro', 'lvl') %}
+  <p>Grobs' early-game setup: one hotbar line and a one-slot in-game macro. In AION 2 the <strong>bottom slot of a line has the highest priority</strong> — the card shows the line top to bottom as in the game.</p>
+  <div class="hotlines">
+    {% call hotline('RMB', 'Chain line', ['chain-of-torment', 'debilitating-mark', 'condemnation', 'judgment-thunder']) %}Chain of Torment goes first so Condemnation can hit; Judgment Thunder has no cooldown and fills the gaps.{% endcall %}
+  </div>
+  <p>In-game macro (Skill window → Macro), delay <strong>10 ms</strong>:</p>
+  {{ macroseq([('Chain line', '10 ms')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Hold</span><span class="press-what">{{ s('earths-retribution') }} on <span class="key">LMB</span> and the macro key together.</span></li>
+    <li><span class="press-how">By hand</span><span class="press-what">{{ s('bolt') }} (charged skill — keep it out of the macro), heals, stigmas.</span></li>
+  </ul>
+{% endcall %}
+
+{% call section('stigmas-lvl', 'Stigmas while leveling', 'lvl') %}
+  <p>Stigmas unlock at level 22.</p>
+  <ul class="skill-grid">
+    {% call skill('summon-resurrection', 'must', 'Lv 1', upto=1) %}One point is enough at first; level 5 cuts the cast time later.{% endcall %}
+    {% call skill('noble-aura', 'must', 'Lv 5', upto=5) %}An aura that fights next to you for 5 minutes — free damage.{% endcall %}
+    {% call skill('earth-punishment', 'must', 'Lv 5', upto=5) %}Damage over time; level 5 makes Condemnation crit.{% endcall %}
+    {% call skill('benevolence', 'must', 'Lv 5', upto=5) %}Heal over time for 20s — sustain between packs.{% endcall %}
+    {% call skill('absolution', 'opt', 'Lv 5', upto=5) %}Big heal and debuff removal.{% endcall %}
+  </ul>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — the early-game macro slide (Cleric hotbar line and macro)</li>
+    <li><a href="https://mmo-codex.com/articles/aion-2-cleric-guide/" target="_blank" rel="noopener">MMO Codex — Aion 2 Cleric guide</a> — skill order and specializations while leveling, stigmas at 22</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/cleric" target="_blank" rel="noopener">questlog.gg</a> — skill data from the global client</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

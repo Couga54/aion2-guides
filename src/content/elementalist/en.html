@@ -1,0 +1,56 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq with context %}
+
+{# Leveling only for now: PvE and PvP are switched off (site.json modes_off) until a real global source exists. #}
+
+{% call section('intro-lvl', 'Overview', 'lvl') %}
+  <p>The Elementalist (Spiritmaster) is the only summoner: a spirit fights next to you, every spirit skill gives you an element, and at four elements {{ s('elemental-fusion') }} is ready. {{ s('dimensional-control') }} fires each time a spirit uses its skill, and curses keep ticking on the target.</p>
+  <div class="callout accent">
+    <h3>Leveling in one sentence</h3>
+    <p>Level with {{ s('summon-water-spirit') }} (damage and mana), hold {{ s('cold-shock') }} for MP, and let the in-game macro cycle the Spirit line and the Fusion line.</p>
+  </div>
+{% endcall %}
+
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Spirit:</strong> {{ s('summon-water-spirit') }} until the cap — best single-target damage, and it feeds your mana. The others stay at level 1 while leveling.</li>
+    <li><strong>Packs:</strong> {{ s('jointstrike-curse') }} (hits up to 4) → {{ s('combustion') }} → {{ s('elemental-fusion') }} with the AoE pick once it's ready.</li>
+    <li><strong>Mana:</strong> the main early problem — target mode, {{ s('cold-shock') }} between skills, and end your spirit rotation on the Water Spirit.</li>
+    <li><strong>Staggered targets:</strong> {{ s('rapid-scattershot') }}.</li>
+    <li>Skip {{ s('souls-cry') }} — it's a PvP skill.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Leveling macro', 'lvl') %}
+  <p>Grobs' early-game setup: two hotbar lines and a two-slot in-game macro. In AION 2 the <strong>bottom slot of a line has the highest priority</strong> — the cards show each line top to bottom as in the game.</p>
+  <div class="hotlines">
+    {% call hotline('1', 'Spirit line', ['summon-water-spirit', 'jointstrike-corrode', 'summon-earth-spirit', 'summon-fire-spirit']) %}Water Spirit first; Jointstrike: Corrode (a stigma) makes the target take more damage from your spirit.{% endcall %}
+    {% call hotline('2', 'Fusion line', ['elemental-fusion', 'dimensional-control', 'jointstrike-curse', 'combustion']) %}Elemental Fusion and Dimensional Control fire as soon as the spirits unlock them; Combustion fills the gaps.{% endcall %}
+  </div>
+  <p>In-game macro (Skill window → Macro), delay <strong>10 ms</strong> on each slot:</p>
+  {{ macroseq([('Spirit line', '1 · 10 ms'), ('Fusion line', '2 · 10 ms')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Hold</span><span class="press-what">{{ s('cold-shock') }} on <span class="key">LMB</span> and the macro key together.</span></li>
+    <li><span class="press-how">By hand</span><span class="press-what">{{ s('enhance-spirits-benediction') }}, then {{ s('summon-ancient-spirit') }} (buff first — the Ancient Spirit lasts 30s).</span></li>
+  </ul>
+{% endcall %}
+
+{% call section('stigmas-lvl', 'Stigmas while leveling', 'lvl') %}
+  <p>Stigmas unlock at level 22.</p>
+  <ul class="skill-grid">
+    {% call skill('summon-ancient-spirit', 'must', 'Lv 5', upto=5) %}A 30-second extra spirit that also grants elements for Elemental Fusion.{% endcall %}
+    {% call skill('enhance-spirits-benediction', 'must', 'Lv 5', upto=5) %}+20% PvE Damage Boost and Tolerance with healing for 10s — cast before the Ancient Spirit.{% endcall %}
+    {% call skill('jointstrike-corrode', 'must', 'Lv 5', upto=5) %}In Grobs' Spirit line: the target takes more damage from your spirit.{% endcall %}
+    {% call skill('flame-blessing', 'opt', 'Lv 5', upto=5) %}Extra damage on hit for 10s — take it once your accuracy holds up.{% endcall %}
+  </ul>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — the early-game macro slide (Spiritmaster hotbar lines and macro)</li>
+    <li><a href="https://mmo-codex.com/articles/aion-2-spiritmaster-guide/" target="_blank" rel="noopener">MMO Codex — Aion 2 Spiritmaster build</a> — skill order by level, Water Spirit for leveling, stigmas</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/elementalist" target="_blank" rel="noopener">questlog.gg</a> — skill data from the global client</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>
