@@ -712,10 +712,10 @@ a.cm-item[aria-current="page"]{background:var(--accent-soft);border-color:color-
     clip-path:inset(-80% 0 0 0 round 0 0 var(--radius) 0);}
   .pop-art img{position:absolute;left:62%;bottom:-30%;height:125%;width:auto;max-width:none;opacity:.8;
     /* --fx = where the figure stands inside the image (art_pos), so wide renders like the Ranger's stay centred */
-    transform:translateX(calc(-1 * var(--fx,50%)));transform-origin:var(--fx,50%) 100%;
+    transform:translateX(calc(-1 * var(--fx,50%))) translateY(calc(-1 * var(--fy,0%)));transform-origin:var(--fx,50%) 100%;
     transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .3s ease,filter .3s ease;
     -webkit-mask-image:linear-gradient(90deg,transparent 18%,#000 42%);mask-image:linear-gradient(90deg,transparent 18%,#000 42%);}
-  .class-card:hover .pop-art img{transform:translateX(calc(-1 * var(--fx,50%))) translateY(-12%) scale(1.14);opacity:1;
+  .class-card:hover .pop-art img{transform:translateX(calc(-1 * var(--fx,50%))) translateY(calc(-12% - var(--fy,0%))) scale(1.14);opacity:1;
     -webkit-mask-image:linear-gradient(90deg,transparent 6%,#000 26%);mask-image:linear-gradient(90deg,transparent 6%,#000 26%);
     filter:drop-shadow(0 18px 30px rgba(0,0,0,.55));}
 }

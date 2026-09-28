@@ -67,7 +67,7 @@
             {% endif %}
           </div>
         {% if c.status == 'ready' %}</a>{% else %}</div>{% endif %}
-        {% if c.status == 'ready' %}<div class="pop-art" aria-hidden="true"><img src="{{ root }}assets/art/{{ c.slug }}.webp" alt="" loading="lazy"{% if c.get('art_pos') %} style="--fx:{{ c.art_pos.split()[0] }}"{% endif %}></div>{% endif %}
+        {% if c.status == 'ready' %}<div class="pop-art" aria-hidden="true"><img src="{{ root }}assets/art/{{ c.slug }}.webp" alt="" loading="lazy"{% if c.get('art_pos') or c.get('art_up') %} style="{% if c.get('art_pos') %}--fx:{{ c.art_pos.split()[0] }};{% endif %}{% if c.get('art_up') %}--fy:{{ c.art_up }};{% endif %}"{% endif %}></div>{% endif %}
       </li>
     {% endmacro %}
     <ul class="class-grid class-grid-ready">
