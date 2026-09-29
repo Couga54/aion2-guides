@@ -1,0 +1,170 @@
+{
+  "_note": "Progression page (/<lang>/progression/): the item level route after 45. Source: Sanya Jacuzzi's video a8zVweGN--4 (RU, global datamine the day before launch) — facts read from the video frames (timestamps in 'at'). Text may reference items as {i:key}; the keys are listed in 'items' and fetched by tools/fetch_items.py into data/items.json + assets/icons/items/. Blocks: p (text), list (items), table (head + rows), tip (callout).",
+  "source": {"name": "Sanya Jacuzzi — Они всё изменили! Мой новый план прокачки после 45 уровня", "url": "https://www.youtube.com/watch?v=a8zVweGN--4", "channel": "https://www.youtube.com/@Sanya_Jacuzzi"},
+  "items": {
+    "wings": "Ultimate Daeva Wings (Bound)",
+    "bracelet": "Ascension Bracelet",
+    "trace": "Empyrean Trace: Altgard (Bound)",
+    "dcrystal": "Daevanion Crystal (Bound)",
+    "dcrystal_ariel": "Daevanion Crystal: Ariel (Bound)",
+    "dcrystal_azphel": "Daevanion Crystal: Azphel (Bound)",
+    "wisdom": "Wisdom Stone (Bound)",
+    "clashrune": "Clash Rune Chest (Bound)",
+    "beltscroll": "Noble Belt Enhance Scroll (Bound)",
+    "shugokey": "Shugo Festival Reward Key (Bound)",
+    "bakarma": "Bakarma Breastplate",
+    "voucher": "Gear Change Voucher: Vakron Sky Island (Bound)",
+    "vakronguard": "Vakron Guard",
+    "mana_sup": "Superior Manastone (Bound)",
+    "mana_int": "Intermediate Manastone (Bound)",
+    "mana_less": "Lesser Manastone (Bound)",
+    "theostone": "Theostone: Jumentis's Dexterity (Bound)",
+    "enhance": "Enhance Stone",
+    "bell_green": {"name": "Bell of Vigor", "grade": 21},
+    "mirror_green": {"name": "Mirror of Magic", "grade": 21},
+    "compass_grey": {"name": "Compass of Magic", "grade": 11},
+    "chalice_grey": {"name": "Chalice of Magic", "grade": 11},
+    "mirror_gold": {"name": "Mirror of Vigor", "grade": 41},
+    "transfer_w": "Transfer Stone: Weapon (Unique) (Bound)",
+    "transfer_a": "Transfer Stone: Armor (Unique) (Bound)"
+  },
+  "sections": [
+    {"id": "global", "title": {"en": "What changes on global", "ru": "Что меняется на глобалке"},
+     "lead": {"en": "From the datamine of the global client. This is why the Korean route no longer works as is.", "ru": "По датамайну глобального клиента. Из-за этого корейский маршрут больше не работает как есть."},
+     "blocks": [
+       {"type": "table", "at": "3:42",
+        "head": {"en": ["Map point", "On your map", "On the enemy map"], "ru": ["Точка на карте", "На своей карте", "На вражеской карте"]},
+        "rows": [
+          {"en": ["Sealed dungeon (?)", "{i:dcrystal} ×2, 2 skill points, wing / statue material", "Kina, 1,000 AP, 2,500 {i:enhance}"],
+           "ru": ["Запечатанное подземелье (?)", "{i:dcrystal} ×2, 2 очка навыков, материал для крыльев / статуи", "Кина, 1 000 AP, 2 500 {i:enhance}"]},
+          {"en": ["Stronghold", "{i:beltscroll} ×2", "AP"],
+           "ru": ["Крепость", "{i:beltscroll} ×2", "AP"]}
+        ]},
+       {"type": "list", "items": [
+         {"en": "<strong>Enemy ? marks lost the Daevanion crystals</strong> — they used to be the top goal at launch; now clear them at your own pace.",
+          "ru": "<strong>Вражеские знаки вопроса лишились кристаллов Daevanion</strong> — раньше это была цель номер один на старте, теперь закрывай в своём темпе."},
+         {"en": "<strong>Feathers ({i:trace}) are nerfed</strong> — collect them all, but last.",
+          "ru": "<strong>Перья ({i:trace}) понерфили</strong> — собирай все, но в последнюю очередь."},
+         {"en": "<strong>Gear has a lower item level on global</strong> (for example True Dragon Lord Greatsword: 70 on KR/TW, 62 on global) — lower item level means cheaper enhancement.",
+          "ru": "<strong>У экипировки на глобалке ниже уровень предмета</strong> (например, True Dragon Lord Greatsword: 70 на KR/TW, 62 на глобалке) — чем ниже уровень, тем дешевле заточка."}
+       ]}
+     ]},
+    {"id": "s45", "gs": "45", "title": {"en": "Story, regional quests and your map", "ru": "Сюжет, региональные квесты и своя карта"},
+     "blocks": [
+       {"type": "list", "at": "1:27", "items": [
+         {"en": "<strong>Finish the main story first.</strong> It gives a gold weapon for your class, {i:bracelet} and {i:wings} (equipped: HP 500, MP 250, Penetration 500, Critical Hit 35; owned: Penetration 100, Accuracy +20, Attack +10).",
+          "ru": "<strong>Сначала добей сюжет.</strong> Он даёт золотое оружие твоего класса, {i:bracelet} и {i:wings} (надетые: HP 500, MP 250, пробивание 500, крит 35; во владении: пробивание 100, точность +20, атака +10)."},
+         {"en": "<strong>Regional quests</strong> (Journal → Regional): two rings, two earrings and a necklace (blue), plus two PvE runes. They also give titles and Theostone chests.",
+          "ru": "<strong>Региональные квесты</strong> (Журнал → Регион): два кольца, две серьги и ожерелье (синие), плюс две PvE-руны. Ещё дают титулы и сундуки с Теостоунами."},
+         {"en": "Enhance a little, set up your PvE macro and clear <strong>every ? on your own map</strong>: each sealed dungeon gives {i:dcrystal} ×2 and 2 skill points, each stronghold {i:beltscroll} ×2.",
+          "ru": "Немного заточись, настрой PvE-макрос и закрой <strong>все знаки вопроса на своей карте</strong>: каждое запечатанное подземелье даёт {i:dcrystal} ×2 и 2 очка навыков, каждая крепость — {i:beltscroll} ×2."},
+         {"en": "Then the remaining regional quests and the feathers: <strong>at least 95 {i:trace}</strong> take the Monolith to level 11, which upgrades the amulet from green to blue.",
+          "ru": "Потом оставшиеся региональные квесты и перья: <strong>минимум 95 {i:trace}</strong> поднимают Монолит до 11 уровня — это улучшает амулет с зелёного до синего."}
+       ]}
+     ]},
+    {"id": "s1400", "gs": "1400", "title": {"en": "To 1,400: Shugo, Nightmare, Draupnir", "ru": "До 1 400: Шуго, Кошмар, Друпнир"},
+     "lead": {"en": "Without the enemy ? marks you end up around 1,279 — about 121 short of the 1,400 needed for the tier 2 dungeons. This is how to close the gap.", "ru": "Без вражеских знаков вопроса выходит около 1 279 — примерно на 121 меньше, чем нужно для подземелий второго тира (1 400). Вот чем закрыть разницу."},
+     "blocks": [
+       {"type": "h", "text": {"en": "Shugo Festival and boss rifts", "ru": "Шуго-фестиваль и босс-разломы"}},
+       {"type": "p", "at": "5:06", "text": {
+         "en": "Mini-games with a reward card at the end. Your place decides how many cards you open. If you placed badly you can skip the reward — the {i:shugokey} is only spent when you take it. Keys: 7 by default, +1 a day, up to 30 more stored — don't let them cap.",
+         "ru": "Мини-игры с карточкой наград в конце. От места зависит, сколько карточек откроешь. Если занял плохое место, от награды можно отказаться — {i:shugokey} тратится только когда забираешь. Ключи: 7 по умолчанию, +1 в день, ещё до 30 в запасе — не упирайся в лимит."}},
+       {"type": "table", "at": "5:24",
+        "head": {"en": ["Place", "Cards"], "ru": ["Место", "Карточек"]},
+        "rows": [{"en": ["1st, 2nd", "3"], "ru": ["1-е, 2-е", "3"]}, {"en": ["3rd and lower", "2"], "ru": ["3-е и ниже", "2"]}]},
+       {"type": "p", "at": "5:54", "text": {
+         "en": "<strong>Boss rifts</strong> (e.g. Beritra Air Raid): hold off the waves, then kill the mini-boss. <strong>100 contribution points = 3 cards</strong>, the same rewards as Shugo. Invite Chanters, Clerics and Templars right at the portal — their party buffs make 100 points easy.",
+         "ru": "<strong>Босс-разломы</strong> (например, Beritra Air Raid): отбиваешься от волн, потом бьёшь мини-босса. <strong>100 очков вклада = 3 карточки</strong>, награды те же, что в Шуго. Зови Чародеев, Целителей и Стражей прямо у портала — с их групповыми баффами 100 очков набираются легко."}},
+       {"type": "tip", "at": "6:36", "text": {
+         "en": "The main prize is Shugo currency: spend all of it on {i:dcrystal} in the Festival Shop — per character, price goes up in steps: 50 (×10), 100 (×10), 200 (×15), then step 4 (×15).",
+         "ru": "Главное — шуго-валюта: трать её всю на {i:dcrystal} в магазине фестиваля — на персонажа, цена растёт ступенями: 50 (×10), 100 (×10), 200 (×15), потом 4-я ступень (×15)."}},
+       {"type": "h", "text": {"en": "Nightmare", "ru": "Кошмар"}},
+       {"type": "list", "at": "7:06", "items": [
+         {"en": "Solo boss dungeon. 14 attempts, +2 a day, up to 30 more stored; charges start piling up at <strong>level 45</strong> — reach it before the first reset.",
+          "ru": "Соло-подземелье с боссом. 14 попыток, +2 в день, ещё до 30 в запасе; заряды начинают копиться <strong>с 45 уровня</strong> — успей до первого сброса."},
+         {"en": "Every boss has 10 challenge levels; kill each on all of them. An attempt is spent only on a kill, so leave and come back stronger. Greys first, then greens, then the Last Boss.",
+          "ru": "У каждого босса 10 уровней сложности — убей каждого на всех. Попытка тратится только за убийство, так что можно уйти и вернуться сильнее. Сначала серые, потом зелёные, затем Last Boss."},
+         {"en": "First clear gives 500 Nightmare currency, repeats 100. Shop: {i:dcrystal_ariel} for 800 (×10 per character), {i:wisdom} for 700 (×5), {i:clashrune} for 500. Keep 14,000 for the statue.",
+          "ru": "Первое убийство — 500 валюты Кошмара, повторные — 100. Магазин: {i:dcrystal_ariel} за 800 (×10 на персонажа), {i:wisdom} за 700 (×5), {i:clashrune} за 500. Оставь 14 000 на статую."}
+       ]},
+       {"type": "h", "text": {"en": "Expedition: Conquest — Draupnir", "ru": "Экспедиция: Завоевание — Друпнир"}},
+       {"type": "list", "at": "7:45", "items": [
+         {"en": "Run it up to the <strong>guarantee: 14 chest openings</strong> (7 with premium), 40 Odyle energy each. The goal is two gold pieces from drops and a third from the guarantee — you pick which Bakarma piece ({i:bakarma}, helm, pauldrons, gloves, greaves, boots).",
+          "ru": "Ходи до <strong>гаранта: 14 открытий сундука</strong> (7 с премиумом), по 40 энергии Odyle. Цель — две золотые вещи из дропа и третья с гаранта: часть сета Bakarma выбираешь сам ({i:bakarma}, шлем, наплечники, перчатки, поножи, сапоги)."},
+         {"en": "Collect every {i:trace} in Chaotic Lower Reshanta: the Monolith resonance levels give Daevanion crystals such as {i:dcrystal_azphel}.",
+          "ru": "Собери все {i:trace} в Хаотической нижней Бездне: уровни резонанса Монолита дают кристаллы Daevanion, например {i:dcrystal_azphel}."},
+         {"en": "Still short? Three runs of <strong>Exploration: Draupnir</strong> guarantee another gold piece — take any you don't have and put an {i:mana_int} in it.",
+          "ru": "Не хватает — три <strong>Исследования Друпнира</strong> дают гарантом ещё одну золотую вещь: бери любую, которой нет, и вставь в неё {i:mana_int}."}
+       ]},
+       {"type": "h", "text": {"en": "Enhancement at 1,400", "ru": "Заточка на 1 400"}},
+       {"type": "table", "at": "8:09",
+        "head": {"en": ["Slot", "Level", "Manastone"], "ru": ["Слот", "Заточка", "Манастоун"]},
+        "rows": [
+          {"en": ["Gold weapon and bracelets", "+10", "{i:mana_sup} ×1"], "ru": ["Золотое оружие и браслеты", "+10", "{i:mana_sup} ×1"]},
+          {"en": ["Gold armor from Draupnir", "+10", "{i:mana_int} ×1"], "ru": ["Золотая броня из Друпнира", "+10", "{i:mana_int} ×1"]},
+          {"en": ["Blue armor, earrings, necklace, rings", "+5", "{i:mana_less}"], "ru": ["Синяя броня, серьги, ожерелье, кольца", "+5", "{i:mana_less}"]},
+          {"en": ["Belt, amulet", "+3", "—"], "ru": ["Пояс, амулет", "+3", "—"]}
+        ]},
+       {"type": "p", "at": "8:27", "text": {
+         "en": "Plus a green Theostone in the weapon (for example {i:theostone}) — the regional quests hand one out. Done right, that is exactly 1,400.",
+         "ru": "Плюс зелёный Теостоун в оружие (например, {i:theostone}) — его дают региональные квесты. Если всё сделано правильно, выходит ровно 1 400."}}
+     ]},
+    {"id": "s1900", "gs": "1900", "title": {"en": "To 1,900: Vakron", "ru": "До 1 900: Вакрон"},
+     "blocks": [
+       {"type": "list", "at": "9:06", "items": [
+         {"en": "Farm <strong>Vakron Sky Island</strong> (2–5 players, 40 energy a chest) until you have almost the whole armor set. Weapon and accessories are best crafted later, so Urugugu Canyon (weapon, accessories) can wait.",
+          "ru": "Фарми <strong>Vakron Sky Island</strong> (2–5 игроков, 40 энергии за сундук), пока не соберёшь почти весь сет брони. Оружие и бижутерию лучше потом скрафтить, так что Urugugu Canyon (оружие, бижутерия) подождёт."},
+         {"en": "{i:vakronguard} has no real alternative early. If it doesn't drop: every 21st chest gives {i:voucher}; two of them + 1,500,000 kina make the guard in Substance Morph.",
+          "ru": "Альтернатив {i:vakronguard} на старте нет. Если не выпал: каждый 21-й сундук даёт {i:voucher}; два таких + 1 500 000 кины — и наручи делаются в Substance Morph."},
+         {"en": "Take the set to +10. If you bought every Daevanion crystal, you should be around 1,900. Short? Manastones, or one run on each boss of ★1 Transcendence — grey arcana add about 40.",
+          "ru": "Заточи сет на +10. Если выкупал все кристаллы Daevanion, выйдет около 1 900. Не хватает — манастоуны или по разу на каждого босса Трансцендентности ★1: серые арканы дают ещё около 40."}
+       ]}
+     ]},
+    {"id": "s2100", "gs": "2100", "title": {"en": "To 2,100: ★2 Transcendence", "ru": "До 2 100: Трансцендентность ★2"},
+     "blocks": [
+       {"type": "p", "at": "9:57", "text": {
+         "en": "Run ★2 Transcendence until you have the two green slots — bell and mirror ({i:bell_green}, {i:mirror_green}, item level 40 each). Fill the other slots with grey arcana ({i:compass_grey}, {i:chalice_grey} — item level 20). Bonuses don't matter yet, only item level.",
+         "ru": "Ходи в Трансцендентность ★2, пока не выбьешь два зелёных слота — колокол и зеркало ({i:bell_green}, {i:mirror_green}, по 40 уровня предмета). Остальные слоты забей серыми арканами ({i:compass_grey}, {i:chalice_grey} — по 20). Бонусы пока неважны, важен только уровень предметов."}}
+     ]},
+    {"id": "s2500", "gs": "2500", "title": {"en": "To 2,500: Ferocious Horn Den", "ru": "До 2 500: Ferocious Horn Den"},
+     "blocks": [
+       {"type": "p", "at": "10:18", "text": {
+         "en": "Go straight to <strong>Ferocious Horn Den</strong> (the RU community calls it “the Dog”) and stay until you have most of its armor set. Move your Vakron enhancement into the new pieces with Gear Transfer.",
+         "ru": "Сразу иди в <strong>Ferocious Horn Den</strong> («Собака») и сиди там, пока не соберёшь почти весь сет брони. Заточку с вещей Вакрона перенеси на новые через перенос экипировки."}}
+     ]},
+    {"id": "s2800", "gs": "2800", "title": {"en": "To 2,800: gold arcana and the raid", "ru": "До 2 800: золотые арканы и рейд"},
+     "blocks": [
+       {"type": "p", "at": "10:30", "text": {
+         "en": "Farm gold arcana in ★4 Transcendence and roll the skills you need for your PvE and PvP setups (for example {i:mirror_gold} +5 with the Primal Vigor set). At 2,800 the <strong>10-player dragon raid</strong> opens — the hardest PvE of Season 1 and a source of resources for the next update.",
+         "ru": "Фарми золотые арканы в Трансцендентности ★4 и выкатывай нужные скиллы под PvE- и PvP-сетапы (например, {i:mirror_gold} +5 с сетом Primal Vigor). На 2 800 открывается <strong>рейд на дракона на 10 человек</strong> — самый сложный PvE 1 сезона и источник ресурсов на следующее обновление."}}
+     ]},
+    {"id": "hardcore", "title": {"en": "Hardcore route: enhance a cheap blank, then transfer", "ru": "Хардкорный путь: точи дешёвую болванку, потом переноси"},
+     "lead": {"en": "Same steps as above, but saving every enhancement stone and kina. Depends on the datamine holding up — if transfers are limited at launch, skip this.", "ru": "Те же шаги, но с экономией каждого камня заточки и кины. Держится на датамайне — если на старте перенос ограничат, пропусти."},
+     "blocks": [
+       {"type": "list", "at": "11:48", "items": [
+         {"en": "Enhancement cost grows with item level (Vakron Cloak, 76: 380 stones and 9,500 kina a try; Abyssal Bracelet, 84: 420 and 10,500). After +10 the chance drops (+13 → +14: 25%, +5% after each fail) and a try at the top costs about 2 million kina.",
+          "ru": "Цена заточки растёт с уровнем предмета (Vakron Cloak, 76: 380 камней и 9 500 кины за попытку; Abyssal Bracelet, 84: 420 и 10 500). После +10 шанс падает (+13 → +14: 25%, +5% после каждой неудачи), а попытка на верхних уровнях стоит около 2 млн кины."},
+         {"en": "A transfer stone ({i:transfer_w}, {i:transfer_a}) moves the enhancement level and rolled stats to any item — even from the cheapest gold piece to the best one. Made in Substance Morph from gold gear.",
+          "ru": "Камень переноса ({i:transfer_w}, {i:transfer_a}) переносит уровень заточки и выпавшие статы на любую вещь — даже с самой дешёвой золотой на топовую. Делается в Substance Morph из золотой экипировки."},
+         {"en": "Plan: wear the lowest item level gold gear, don't enhance new drops. When a long-term upgrade drops, take a cheap blank for that slot to +15 and transfer it. Works for weapon, armor and guard, not accessories (no cheap sources).",
+          "ru": "План: ходи в самой низкоуровневой золотой экипировке и не точи новый дроп. Когда выпала вещь надолго — точи дешёвую болванку этого слота до +15 и переноси. Работает для оружия, брони и наручей, но не для бижутерии (нет дешёвых источников)."},
+         {"en": "It is slow without alts: 3–4 extra characters bring the additional enhancement stones.",
+          "ru": "Без твинков это долго: 3–4 дополнительных персонажа приносят дополнительные камни заточки."}
+       ]}
+     ]},
+    {"id": "all", "title": {"en": "Tips for everyone", "ru": "Советы для всех"},
+     "blocks": [
+       {"type": "p", "at": "14:18", "text": {
+         "en": "<strong>Daily contracts</strong> (Journal → Duty → Mission) reset every day. Only the first random reward is guaranteed; the others are a chance that drops along the list — 100%, 50%, 33%, 25%, 10%.",
+         "ru": "<strong>Ежедневные контракты</strong> (Журнал → Служба → Задания) обновляются каждый день. Гарантирована только первая случайная награда, остальные — шанс, который падает по списку: 100%, 50%, 33%, 25%, 10%."}},
+       {"type": "list", "items": [
+         {"en": "Take every contract with the <strong>golden key</strong> in slots 1–4.", "ru": "Бери каждый контракт, где <strong>золотой ключ</strong> стоит в слотах 1–4."},
+         {"en": "No key: short on enhancement stones — the one with the most stones; otherwise the one with the most rainbow and other pet stones.", "ru": "Ключа нет: не хватает камней заточки — бери с наибольшим числом камней; иначе — с наибольшим числом радужных и других камней питомцев."},
+         {"en": "A gold item or resource at the end of the list is almost always a trap — skip those.", "ru": "Золотая вещь или ресурс в конце списка — почти всегда обман, пропускай."}
+       ]},
+       {"type": "tip", "at": "15:21", "text": {
+         "en": "<strong>Daily Dungeon and the trials:</strong> don't touch them and don't open their pass boxes if they are handed out at launch. They are being reworked, rewards depend on your score (kill speed), and they refresh only at the end of the week — go then, at your strongest. Weekly world and Abyss rewards are being reworked too; wait for the live numbers.",
+         "ru": "<strong>Daily Dungeon и испытания:</strong> не трогай и не открывай коробки с проходками, если их раздадут на старте. Их переделывают, награда зависит от очков (скорости убийства мобов), а обновляются они только в конце недели — иди туда тогда, на пике силы. Недельные награды в мире и Бездне тоже переделывают — жди живых цифр."}}
+     ]}
+  ]
+}

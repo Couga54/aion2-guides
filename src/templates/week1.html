@@ -42,23 +42,11 @@
     </section>
     {% endfor %}
 
-    {% set rm = week1.roadmap %}
-    {% if rm %}
-    <section class="w1-route" aria-labelledby="h-w1-route">
-      <h2 id="h-w1-route" class="section-title">{{ rm.title[lang] }}</h2>
-      <p class="w1-lead">{{ rm.lead[lang] }}</p>
-      <p class="w1-route-note"><span class="wip-tag">{{ t.w1_datamine }}</span> {{ rm.note[lang] }}
-        {% for sk in rm.src.split() %}<a class="w1-src" href="{{ week1.sources[sk].url }}" target="_blank" rel="noopener" title="{{ t.src_label }}: {{ week1.sources[sk].name }}">{{ week1.sources[sk].name.split(' — ')[0] }}</a>{% endfor %}</p>
-      <ol class="w1-route-list">
-        {% for s in rm.steps %}
-        <li class="w1-route-step">
-          <span class="w1-route-at">{{ s.at }}</span>
-          <div><h3>{{ s.title[lang] }}</h3><p>{{ s.text[lang] }}</p></div>
-        </li>
-        {% endfor %}
-      </ol>
-    </section>
-    {% endif %}
+    <a class="w1-route-card" href="{{ root }}{{ lang }}/progression/">
+      <span class="w1-route-card-gs" aria-hidden="true">45 → 2800</span>
+      <span><b>{{ t.w1_route_title }}</b><span>{{ t.w1_route_text }}</span></span>
+      <span class="btn btn-ghost btn-sm">{{ t.w1_route_btn }} →</span>
+    </a>
 
     <p class="w1-cta"><a class="btn btn-primary" href="{{ root }}{{ lang }}/weekly/">{{ t.w1_open_weekly }} →</a></p>
   </div>

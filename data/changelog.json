@@ -2,6 +2,22 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-09-29-progression",
+      "date": "2026-09-29",
+      "items": [
+        {
+          "href": "progression/",
+          "en": "<strong>New page: After level 45</strong> — the item level route from 45 to the 2,800 dragon raid: what changes on global, Shugo, Nightmare, Draupnir, Vakron, Transcendence, a hardcore route and daily contract tips. Every block links to its moment in the video.",
+          "ru": "<strong>Новая страница: После 45 уровня</strong> — маршрут по уровню предметов от 45 до рейда на дракона (2 800): что меняется на глобалке, Шуго, Кошмар, Друпнир, Вакрон, Трансцендентность, хардкорный путь и советы по контрактам. У каждого блока — ссылка на момент в видео."
+        },
+        {
+          "href": "progression/",
+          "en": "<strong>Item tooltips</strong> — hover an item on that page to see its description, item level, stats and arcana set bonuses.",
+          "ru": "<strong>Подсказки предметов</strong> — наведи на предмет на этой странице, чтобы увидеть описание, уровень предмета, характеристики и бонусы сета аркан."
+        }
+      ]
+    },
+    {
       "id": "2026-09-29-route-bosses",
       "date": "2026-09-29",
       "items": [

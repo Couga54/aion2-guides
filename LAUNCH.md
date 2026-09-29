@@ -29,9 +29,13 @@ Work top to bottom, then rebuild (`.venv/Scripts/python tools/build.py`), check 
       enemy-side ? marks / sealed dungeons give 1,000 AP + 2–5k stones instead of Daevanion nodes (`rift`);
       feathers nerfed, 95 for Monolith level 11 (`feathers`); Nightmare charges start at 45 (`nightmare-45`);
       Daily Dungeon / trial pass boxes (`pass-boxes`).
-- [ ] **Item level route** (`roadmap` in `data/week1.json`, "After 45" on /week-1/): the thresholds 1,400 / 1,900 /
-      2,100 / 2,500 / 2,800, the Drupnir guarantee (14 chests, 7 with premium), the Vakron guard tickets and the real
-      name of "the Dog" dungeon. When confirmed, drop `note` (the "Datamine" tag) or reword it.
+- [ ] **Item level route** — page /progression/ (`data/progression.json`, from Sanya Jacuzzi's datamine video; every
+      block has the video timestamp in `at`): the thresholds 1,279 / 1,400 / 1,900 / 2,100 / 2,500 / 2,800, sealed dungeon
+      and stronghold rewards, Shugo shop steps, Nightmare shop prices, the Draupnir guarantee (14 chests, 7 with premium),
+      Vakron guard (2 vouchers + 1.5M kina) and the transfer stones. When confirmed, reword `pg_note` in `data/i18n.json`
+      (drop the "Datamine" tag). New items: add to `items` and run `tools/fetch_items.py`.
+- [ ] Counters seen in that video differ from `data/weekly.json` / `data/week1.json`: Daily Dungeon 14 entries a week
+      (site: 7), Shugo Festival keys 7 + 1 a day, up to 30 stored (site: "keys stop at 14"). Check which is right.
 
 ## 4. World bosses (`data/bosses.json`)
 

@@ -1,5 +1,5 @@
 {
-  "_note": "First-week page (/<lang>/week-1/). 'reset' = weekly caps that are lost for good if missed before the first reset; 'goals' = one-time things not to miss. src: spid = Spid '14 Tips I Wish I Knew', lfg = LittleFattyGG 'Don't waste your first week'. sanya = Sanya Jacuzzi 'New plan after level 45' (RU, from the global datamine the day before launch, unconfirmed). roadmap = the item-level route after 45 (shown as a timeline, not a checklist).",
+  "_note": "First-week page (/<lang>/week-1/). 'reset' = weekly caps that are lost for good if missed before the first reset; 'goals' = one-time things not to miss. src: spid = Spid '14 Tips I Wish I Knew', lfg = LittleFattyGG 'Don't waste your first week'. sanya = Sanya Jacuzzi 'New plan after level 45' (RU, from the global datamine the day before launch, unconfirmed). The item level route after 45 lives on its own page (data/progression.json).",
   "groups": [
     {"id": "reset",
      "title": {"en": "Before the first weekly reset", "ru": "До первого недельного сброса"},
@@ -83,33 +83,6 @@
                  "ru": "<strong>Не открывай коробки с проходками в Daily Dungeon и испытания</strong>, если их раздадут на старте. Эти режимы переделывают, и выгоднее всего идти туда в конце недели на пике силы — награда зависит от скорости убийства мобов."}}
      ]}
   ],
-  "roadmap": {
-    "title": {"en": "After 45: the item level route", "ru": "После 45: маршрут по уровню предметов"},
-    "lead": {"en": "The order to gear up in until the first raid. Numbers are the item level you leave each step with.",
-             "ru": "В каком порядке одеваться до первого рейда. Числа — уровень предметов, с которым выходишь из шага."},
-    "note": {"en": "From the global datamine a day before launch — not confirmed on live servers yet.",
-             "ru": "По датамайну глобалки за день до запуска — на живых серверах ещё не подтверждено."},
-    "src": "sanya",
-    "steps": [
-      {"at": "45", "title": {"en": "Story and your own map", "ru": "Сюжет и своя карта"},
-       "text": {"en": "Finish the main story — it hands out a gold weapon, a bracelet and wings. Then the regional quests: 2 rings, 2 earrings, a necklace (blue) and 2 PvE runes. Enhance a little, set up your PvE macro and clear every ? on your side of the map; after that the remaining regional quests and the feathers.",
-                "ru": "Добей сюжет — он даёт золотое оружие, браслет и крылья. Затем региональные квесты: 2 кольца, 2 серьги, ожерелье (синие) и 2 PvE-руны. Немного заточись, настрой PvE-макрос и закрой все знаки вопроса на своей стороне карты; после этого — оставшиеся региональные квесты и перья."}},
-      {"at": "1400", "title": {"en": "Shugo, Nightmare, Drupnir", "ru": "Шуго, Кошмар, Друпнир"},
-       "text": {"en": "Shugo Festa and boss rifts for Shugo currency, Nightmare for its currency — spend both on Daevanion nodes. Then Expedition: Conquest in Drupnir up to the guarantee (14 chest openings, 7 with premium): two gold items from drops, the third from the guarantee. One superior stone into the gold weapon and bracelet, intermediate stones into the Drupnir gold pieces, the cheapest stones into the blues, a green Theostone into the weapon. Still short? Three runs of Exploration: Drupnir guarantee another gold piece.",
-                "ru": "Шуго-фесты и босс-разломы ради шуго-валюты, Кошмар ради его валюты — всё в узлы Daevanion. Затем Экспедиция: Завоевание в Друпнире до гаранта (14 открытий сундука, с премиумом 7): две золотые вещи из дропа, третья с гаранта. По одному улучшенному камню в золотое оружие и браслет, средние камни в золото Друпнира, самые дешёвые в синие вещи, зелёный Теостоун в оружие. Не хватает — три Исследования Друпнира дают гарантом ещё одну золотую вещь."}},
-      {"at": "1900", "title": {"en": "Vakron", "ru": "Вакрон"},
-       "text": {"en": "Farm Vakron Sky Island until you have almost the whole set — it is the only early source of a guard (or buy it for 2 tickets: one per 21st chest). Weapon and accessories are best crafted later. Take the set to +10. Still short? One run on each boss of Transcendence T1 — grey arcana add about 40.",
-                "ru": "Фарми Vakron Sky Island, пока не соберёшь почти весь сет — это единственный ранний источник щита (или купи его за 2 билета: по одному за каждый 21-й сундук). Оружие и бижутерию потом лучше крафтить. Заточи сет на +10. Не хватает — по разу на каждого босса Трансцендентности T1: серые арканы дают ещё около 40."}},
-      {"at": "2100", "title": {"en": "Transcendence T2", "ru": "Трансцендентность T2"},
-       "text": {"en": "Run T2 until you get the two green slots — bell and mirror; fill the rest with grey arcana. Bonuses don't matter yet, only item level.",
-                "ru": "Ходи в T2, пока не выбьешь два зелёных слота — колокол и зеркало; остальные слоты забей серыми арканами. Бонусы пока неважны, важен только уровень предметов."}},
-      {"at": "2500", "title": {"en": "Next armor set", "ru": "Следующий сет брони"},
-       "text": {"en": "Go straight to the next dungeon (“the Dog” in the RU community) and stay until you have most of its armor set; transfer your Vakron enhancement into it.",
-                "ru": "Сразу иди в следующее подземелье («Собака») и сиди там, пока не соберёшь почти весь сет брони; перенеси в него заточку с вещей Вакрона."}},
-      {"at": "2800", "title": {"en": "Gold arcana and the raid", "ru": "Золотые арканы и рейд"},
-       "text": {"en": "Farm gold arcana in Transcendence T4 and roll the skills you need for your PvE and PvP setups. At 2,800 the 10-player dragon raid opens — the hardest PvE of Season 1.",
-                "ru": "Фарми золотые арканы в Трансцендентности T4 и выкатывай нужные скиллы под PvE- и PvP-сетапы. На 2 800 открывается рейд на дракона на 10 человек — самый сложный PvE-контент 1 сезона."}}
-    ]},
   "sources": {
     "spid": {"name": "Spid — 14 Tips I Wish I Knew Before Starting", "url": "https://www.youtube.com/watch?v=gwMMpH-OY9c"},
     "lfg": {"name": "LittleFattyGG — Don't Waste Your First Week", "url": "https://youtu.be/DVQWMJa7jq0"},

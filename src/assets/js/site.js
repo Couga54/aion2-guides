@@ -203,6 +203,55 @@
     tick();
   }
 
+  // ---- tooltips: hover (or tap) any skill name or icon, or an item on the progression page ---------------------
+  var skEl = document.getElementById('sk-data');
+  if (skEl) {
+    var SK = {};
+    try { SK = JSON.parse(skEl.textContent); } catch (e) {}
+    var tip = document.createElement('div');
+    tip.className = 'sk-tip';
+    tip.setAttribute('role', 'tooltip');
+    tip.hidden = true;
+    document.body.appendChild(tip);
+    var shownFor = null;
+    var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+    var showTip = function (el) {
+      var d = SK[el.dataset.sk];
+      if (!d) return;
+      shownFor = el;
+      // Items (progression page) bring their own meta line and grade; skills get category + cooldown.
+      var meta = d.m !== undefined ? [d.m] : [skEl.dataset[d.c] || ''];
+      if (d.cd) meta.push(skEl.dataset.cd + ' ' + d.cd + ' ' + skEl.dataset.s);
+      tip.innerHTML = '<p class="sk-tip-name' + (d.g ? ' is-item g' + d.g : '') + '">' + esc(d.n) + '</p>' +
+        '<p class="sk-tip-meta">' + esc(meta.filter(Boolean).join(' · ')) + '</p>' +
+        (d.d ? '<p class="sk-tip-desc">' + esc(d.d).replace(/\n+/g, '<br>') + '</p>' : '') +
+        (d.sp.length ? '<ul>' + d.sp.map(function (s) { return '<li><b>' + s[0] + '</b>' + esc(s[1]) + '</li>'; }).join('') + '</ul>' : '');
+      tip.hidden = false;
+      var r = el.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
+      var x = Math.min(Math.max(8, r.left + r.width / 2 - w / 2), window.innerWidth - w - 8);
+      var y = r.bottom + 8;
+      if (y + h > window.innerHeight - 8 && r.top - h - 8 > 8) y = r.top - h - 8;
+      tip.style.left = x + 'px';
+      tip.style.top = y + 'px';
+    };
+    var hideTip = function () { tip.hidden = true; shownFor = null; };
+    var hoverable = matchMedia('(hover: hover)').matches;
+    if (hoverable) {
+      document.addEventListener('mouseover', function (ev) {
+        var el = ev.target.closest && ev.target.closest('[data-sk]');
+        if (el && el !== shownFor) showTip(el); else if (!el && shownFor) hideTip();
+      });
+    } else {
+      // Touch: tap a skill to open its tooltip, tap anywhere else to close it.
+      document.addEventListener('click', function (ev) {
+        var el = ev.target.closest && ev.target.closest('[data-sk]');
+        if (el && el !== shownFor) { showTip(el); ev.preventDefault(); } else hideTip();
+      });
+    }
+    window.addEventListener('scroll', hideTip, { passive: true });
+    document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') hideTip(); });
+  }
+
   // Everything below is for class pages.
   if (!document.querySelector('.guide')) return;
 
@@ -332,54 +381,6 @@
         setTimeout(function () { card.classList.remove('is-found'); }, 2500);
       });
     }
-  }
-
-  // ---- skill tooltips: hover (or tap) any skill name or icon ---------------------
-  var skEl = document.getElementById('sk-data');
-  if (skEl) {
-    var SK = {};
-    try { SK = JSON.parse(skEl.textContent); } catch (e) {}
-    var tip = document.createElement('div');
-    tip.className = 'sk-tip';
-    tip.setAttribute('role', 'tooltip');
-    tip.hidden = true;
-    document.body.appendChild(tip);
-    var shownFor = null;
-    var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
-    var showTip = function (el) {
-      var d = SK[el.dataset.sk];
-      if (!d) return;
-      shownFor = el;
-      var meta = [skEl.dataset[d.c] || ''];
-      if (d.cd) meta.push(skEl.dataset.cd + ' ' + d.cd + ' ' + skEl.dataset.s);
-      tip.innerHTML = '<p class="sk-tip-name">' + esc(d.n) + '</p>' +
-        '<p class="sk-tip-meta">' + esc(meta.filter(Boolean).join(' · ')) + '</p>' +
-        (d.d ? '<p class="sk-tip-desc">' + esc(d.d).replace(/\n+/g, '<br>') + '</p>' : '') +
-        (d.sp.length ? '<ul>' + d.sp.map(function (s) { return '<li><b>' + s[0] + '</b>' + esc(s[1]) + '</li>'; }).join('') + '</ul>' : '');
-      tip.hidden = false;
-      var r = el.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
-      var x = Math.min(Math.max(8, r.left + r.width / 2 - w / 2), window.innerWidth - w - 8);
-      var y = r.bottom + 8;
-      if (y + h > window.innerHeight - 8 && r.top - h - 8 > 8) y = r.top - h - 8;
-      tip.style.left = x + 'px';
-      tip.style.top = y + 'px';
-    };
-    var hideTip = function () { tip.hidden = true; shownFor = null; };
-    var hoverable = matchMedia('(hover: hover)').matches;
-    if (hoverable) {
-      document.addEventListener('mouseover', function (ev) {
-        var el = ev.target.closest && ev.target.closest('[data-sk]');
-        if (el && el !== shownFor) showTip(el); else if (!el && shownFor) hideTip();
-      });
-    } else {
-      // Touch: tap a skill to open its tooltip, tap anywhere else to close it.
-      document.addEventListener('click', function (ev) {
-        var el = ev.target.closest && ev.target.closest('[data-sk]');
-        if (el && el !== shownFor) { showTip(el); ev.preventDefault(); } else hideTip();
-      });
-    }
-    window.addEventListener('scroll', hideTip, { passive: true });
-    document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') hideTip(); });
   }
 
   // ---- leveling tracker --------------------------------------------------

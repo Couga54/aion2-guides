@@ -35,6 +35,8 @@ WEEKLY = load(DATA / "weekly.json")
 CHANGELOG = load(DATA / "changelog.json")["entries"]
 WEEK1 = load(DATA / "week1.json")
 BOSSES = load(DATA / "bosses.json")
+PROGRESSION = load(DATA / "progression.json")
+ITEMS = load(DATA / "items.json")
 SKILLS = {p.stem: load(p) for p in (DATA / "skills").glob("*.json") if not p.stem.startswith("_")}
 for _cls, _fixes in load(DATA / "skills" / "_overrides.json").items():
     for _slug, _langs in ([] if _cls.startswith("_") else _fixes.items()):
@@ -53,6 +55,50 @@ def s(ctx, slug, icon=True):
         return Markup(f'<span class="sk" data-sk="{slug}">{name}</span>')
     src = f'{ctx["root"]}assets/icons/{ctx["cls"]["slug"]}/{sk["icon"]}'
     return Markup(f'<span class="sk" data-sk="{slug}"><img src="{src}" width="18" height="18" alt="" loading="lazy">{name}</span>')
+
+
+@pass_context
+def it(ctx, text):
+    """Progression page text: replace {i:key} with an item chip (icon + localized name, colored by grade)."""
+    import re
+    lang, root = ctx["lang"], ctx["root"]
+
+    def chip(m):
+        item = ITEMS[m.group(1)]
+        name = re.sub(r"\s*\((Bound|привяз\.)\)$", "", item[lang])
+        return (f'<span class="it g{item["grade"]}" data-sk="i:{m.group(1)}"><img src="{root}assets/icons/items/{item["icon"]}"'
+                f' width="20" height="20" alt="" loading="lazy">{escape(name)}</span>')
+    return Markup(re.sub(r"\{i:(\w+)\}", chip, text))
+
+
+# Stat ids used by the items on the progression page -> labels (questlog gives ids only).
+STAT_LABELS = {
+    "en": {"weaponfixingdamage": "Attack", "armordefense": "Defense", "hpmax": "HP", "critical": "Critical Hit",
+           "weaponaccuracy": "Accuracy", "justice": "Justice [Nezekan]", "wisdom": "Wisdom [Lumiel]", "death": "Death [Triniel]",
+           "space": "Space [Israphel]", "illusion": "Illusion [Kaisinel]", "destruction": "Destruction [Zikel]",
+           "life": "Life [Yustiel]", "destiny": "Destiny [Marchutan]"},
+    "ru": {"weaponfixingdamage": "Атака", "armordefense": "Защита", "hpmax": "ОЗ", "critical": "Крит. удар",
+           "weaponaccuracy": "Точность", "justice": "Справедливость [Нэзакан]", "wisdom": "Мудрость [Люмиэль]",
+           "death": "Смерть [Триниэль]", "space": "Пространство [Исфаэль]", "illusion": "Иллюзия [Кайсинель]",
+           "destruction": "Разрушение [Зикель]", "life": "Жизнь [Юстиэль]", "destiny": "Судьба [Марчутан]"},
+}
+
+
+def items_tip_json(lang):
+    """Hover tooltips for the item chips on the progression page, in the same shape as the skill tooltips
+    (n name, m meta line, d description, sp list of [label, text]) so site.js shows them the same way."""
+    t = I18N[lang]
+    out = {}
+    for key, item in ITEMS.items():
+        tip = item["tip_" + lang]
+        meta = [f'{t["pg_il"]} {tip["il"]}'] if tip.get("il") else []
+        if tip.get("set"):
+            meta.append(f'{t["pg_set"]}: {tip["set"]["name"]}')
+        lines = [tip["desc"]] if tip["desc"] else []
+        lines += [f'{STAT_LABELS[lang].get(k, k)}: {v}' for k, v in tip["stats"] if k in STAT_LABELS[lang]]
+        out["i:" + key] = {"n": item[lang], "m": " · ".join(meta), "g": item["grade"], "d": "\n".join(lines),
+                           "sp": [[f'{n}×', b] for n, b in (tip["set"]["bonus"] if tip.get("set") else [])]}
+    return Markup(json.dumps(out, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"))
 
 
 def asset_version():
@@ -161,7 +207,7 @@ def env():
         lstrip_blocks=True,
         extensions=["jinja2.ext.do"],
     )
-    e.globals.update(ASSET_V=asset_version(), tooltip_json=tooltip_json, CHANGELOG=CHANGELOG, fmt_utc=fmt_utc, fmt_day=fmt_day, s=s, sp=sp, skill_data=skill_data, icon_url=icon_url, SITE=SITE)
+    e.globals.update(ASSET_V=asset_version(), tooltip_json=tooltip_json, CHANGELOG=CHANGELOG, fmt_utc=fmt_utc, fmt_day=fmt_day, s=s, sp=sp, skill_data=skill_data, icon_url=icon_url, it=it, items_tip_json=items_tip_json, SITE=SITE)
     return e
 
 
@@ -221,7 +267,7 @@ def page_entries(lang):
     """Search entries for the standalone pages and the world bosses."""
     t = I18N[lang]
     out = [{"k": "page", "t": t[key], "s": "", "u": path} for path, key in (
-        ("week-1/", "w1_title"), ("weekly/", "wk_title"), ("bosses/", "bs_title"),
+        ("week-1/", "w1_title"), ("progression/", "pg_title"), ("weekly/", "wk_title"), ("bosses/", "bs_title"),
         ("sources/", "src_title"), ("changelog/", "wn_history"))]
     for g in BOSSES["groups"]:
         for b in g["bosses"]:
@@ -255,7 +301,7 @@ def build():
             write(f'{lang}/{path}index.html', html)
             urls.append(path)
             index += search_entries(cls, lang, html)
-        for path, tpl, key, data in (("week-1/", "week1.html", "week1", WEEK1), ("weekly/", "weekly.html", "weekly", WEEKLY), ("bosses/", "bosses.html", "bosses", BOSSES), ("changelog/", "changelog.html", "changelog", CHANGELOG)):
+        for path, tpl, key, data in (("week-1/", "week1.html", "week1", WEEK1), ("progression/", "progression.html", "prog", PROGRESSION), ("weekly/", "weekly.html", "weekly", WEEKLY), ("bosses/", "bosses.html", "bosses", BOSSES), ("changelog/", "changelog.html", "changelog", CHANGELOG)):
             ctx = page_ctx(lang, path, "../../")
             ctx[key] = data
             write(f"{lang}/{path}index.html", e.get_template(tpl).render(ctx))
