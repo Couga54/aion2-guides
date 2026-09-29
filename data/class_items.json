@@ -1,0 +1,9 @@
+{
+  "_note": "Items shown as chips with tooltips inside class guides ({{ it('{i:key}') }}); fetched by tools/fetch_items.py like the guide pages.",
+  "items": {
+    "parchment_vigor": {"name": "Parchment of Vigor", "grade": 41},
+    "compass_vigor": {"name": "Compass of Vigor", "grade": 41},
+    "chalice_vigor": {"name": "Chalice of Vigor", "grade": 41},
+    "mirror_magic_gold": {"name": "Mirror of Magic", "grade": 41}
+  }
+}

@@ -7,3 +7,6 @@ __pycache__/
 Thumbs.db
 desktop.ini
 .claude/settings.local.json
+
+# video storyboards (tools/storyboard.py), local only
+frames/

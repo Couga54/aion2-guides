@@ -37,6 +37,8 @@ WEEK1 = load(DATA / "week1.json")
 BOSSES = load(DATA / "bosses.json")
 PROGRESSION = load(DATA / "progression.json")
 CRAFTING = load(DATA / "crafting.json")
+BOARDS = {p.stem: load(p) for p in (DATA / "boards").glob("*.json") if p.stem != "presets"}
+BOARD_PRESETS = load(DATA / "boards" / "presets.json")
 ITEMS = load(DATA / "items.json")
 SKILLS = {p.stem: load(p) for p in (DATA / "skills").glob("*.json") if not p.stem.startswith("_")}
 for _cls, _fixes in load(DATA / "skills" / "_overrides.json").items():
@@ -86,8 +88,13 @@ STAT_LABELS = {
 
 
 def items_tip_json(lang):
-    """Hover tooltips for the item chips on the progression page, in the same shape as the skill tooltips
-    (n name, m meta line, d description, sp list of [label, text]) so site.js shows them the same way."""
+    """Hover tooltips for the item chips on the guide pages (embedded as JSON)."""
+    return Markup(json.dumps(items_tip(lang), ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"))
+
+
+def items_tip(lang):
+    """Item chip tooltips in the same shape as the skill tooltips (n name, m meta line, d description,
+    sp list of [label, text]) so site.js shows them the same way. Used on guide pages and class guides."""
     t = I18N[lang]
     out = {}
     for key, item in ITEMS.items():
@@ -99,7 +106,7 @@ def items_tip_json(lang):
         lines += [f'{STAT_LABELS[lang].get(k, k)}: {v}' for k, v in tip["stats"] if k in STAT_LABELS[lang]]
         out["i:" + key] = {"n": item[lang], "m": " · ".join(meta), "g": item["grade"], "d": "\n".join(lines),
                            "sp": [[f'{n}×', b] for n, b in (tip["set"]["bonus"] if tip.get("set") else [])]}
-    return Markup(json.dumps(out, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"))
+    return out
 
 
 WATCH_FILL = {"ru": "en"}   # RU pages fill free places with the English-speaking authors of the guide
@@ -128,6 +135,81 @@ def watch_for(cls, lang, limit=3):
     return (authors + streamers + fill)[:limit]
 
 
+def board_route(board, targets):
+    """Cheapest connected set of nodes from Start that includes every target (targets taken nearest-first,
+    so shared path segments are reused). Node weight = its Daevanion point cost."""
+    import heapq
+    pos = {(n["row"], n["col"]): n for n in board["nodes"]}
+    by_id = {n["id"]: n for n in board["nodes"]}
+    start = next(n for n in board["nodes"] if n["auto"])
+    taken, left = {start["id"]}, set(targets)
+
+    def near(n):
+        return [pos[k] for k in ((n["row"] + 1, n["col"]), (n["row"] - 1, n["col"]), (n["row"], n["col"] + 1), (n["row"], n["col"] - 1)) if k in pos]
+    while left:
+        dist, prev, pq = {i: 0 for i in taken}, {}, [(0, i) for i in taken]
+        while pq:
+            c, i = heapq.heappop(pq)
+            if c > dist[i]:
+                continue
+            for m in near(by_id[i]):
+                if c + (m["cost"] or 0) < dist.get(m["id"], 1e9):
+                    dist[m["id"]], prev[m["id"]] = c + (m["cost"] or 0), i
+                    heapq.heappush(pq, (dist[m["id"]], m["id"]))
+        reach = [t for t in left if t in dist]
+        if not reach:
+            break
+        t = min(reach, key=lambda x: dist[x])
+        while t not in taken:
+            taken.add(t)
+            t = prev[t]
+        left -= taken                 # the target and any others picked up on its path
+    return taken
+
+
+@pass_context
+def board_view(ctx, cls_slug, mode):
+    """One Daevanion route (data/boards/presets.json -> mode) on every board of the class, for the static board macro."""
+    lang = ctx["lang"]
+    skills = SKILLS[cls_slug]
+    preset = BOARD_PRESETS[cls_slug][mode]
+    out, total, levels, focus = [], 0, {}, set()
+    for i, b in enumerate(BOARDS[cls_slug]["boards"]):
+        rule = preset[str(i)] if str(i) in preset else preset.get("*")
+        targets = []
+        if rule:
+            focus.update(rule.get("skills", []))
+            targets = [n["id"] for n in b["nodes"] if (n["skill"] in rule.get("skills", [])) or (rule.get("special") and n["grade"] == 41)]
+        if not rule and preset.get("_hide_empty"):
+            continue
+        taken = board_route(b, targets)
+        r0, c0 = min(n["row"] for n in b["nodes"]), min(n["col"] for n in b["nodes"])      # crop empty rows / columns
+        rows, cols = max(n["row"] for n in b["nodes"]) - r0 + 1, max(n["col"] for n in b["nodes"]) - c0 + 1
+        pos = {(n["row"], n["col"]): n for n in b["nodes"]}
+        nodes, lines, cost = [], [], 0
+        for n in b["nodes"]:
+            on = n["id"] in taken
+            cost += (n["cost"] or 0) if on else 0
+            sk = n["skill"] if n["skill"] in skills else None
+            if on and sk:
+                levels[sk] = levels.get(sk, 0) + 1
+            nodes.append({"x": (n["col"] - c0 + 0.5) / cols * 100, "y": (n["row"] - r0 + 0.5) / rows * 100, "g": n["grade"], "on": on,
+                          "start": n["auto"], "skill": sk, "icon": f'assets/icons/{cls_slug}/{skills[sk]["icon"]}' if sk else None,
+                          "name": skills[sk][lang]["name"] if sk else n["name"][lang], "cost": n["cost"] or 0})
+            for d in ((0, 1), (1, 0)):
+                m = pos.get((n["row"] + d[0], n["col"] + d[1]))
+                if m:
+                    lines.append({"x1": n["col"] - c0 + 0.5, "y1": n["row"] - r0 + 0.5, "x2": m["col"] - c0 + 0.5, "y2": m["row"] - r0 + 0.5,
+                                  "on": on and m["id"] in taken})
+        total += cost
+        out.append({"id": b["id"], "name": b["name"][lang], "lv": b["needLevel"], "rows": rows, "cols": cols, "cost": cost,
+                    "max": sum(n["cost"] or 0 for n in b["nodes"]), "nodes": nodes, "lines": lines})
+    key = sorted((s for s in levels if s in focus), key=lambda s: -levels[s])
+    other = sorted((s for s in levels if s not in focus), key=lambda s: -levels[s])
+    name = lambda s: skills[s][lang]["name"]
+    return {"boards": out, "total": total, "key": [(s, name(s), levels[s]) for s in key], "other": [(s, name(s), levels[s]) for s in other]}
+
+
 def asset_version():
     """Short hash of the CSS/JS files and preview images: added to their URLs so browsers and chat apps
     pick up a new build instead of a cached one."""
@@ -152,6 +234,7 @@ def tooltip_json(cls_slug, lang):
         L = sk[lang]
         out[slug] = {"n": L["name"], "c": sk.get("category"), "cd": round((sk.get("cooldown") or 0) / 1000),
                      "d": clean_desc(L.get("desc", "")), "sp": [[x["level"], x["text"]] for x in L.get("specs", [])]}
+    out.update(items_tip(lang))   # item chips inside the guide text: {{ it('{i:key}') }}
     return Markup(json.dumps(out, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"))
 
 
@@ -235,7 +318,7 @@ def env():
         lstrip_blocks=True,
         extensions=["jinja2.ext.do"],
     )
-    e.globals.update(ASSET_V=asset_version(), tooltip_json=tooltip_json, CHANGELOG=CHANGELOG, fmt_utc=fmt_utc, fmt_day=fmt_day, s=s, sp=sp, skill_data=skill_data, icon_url=icon_url, it=it, items_tip_json=items_tip_json, SITE=SITE, watch_for=watch_for)
+    e.globals.update(ASSET_V=asset_version(), tooltip_json=tooltip_json, CHANGELOG=CHANGELOG, fmt_utc=fmt_utc, fmt_day=fmt_day, s=s, sp=sp, skill_data=skill_data, icon_url=icon_url, it=it, items_tip_json=items_tip_json, board_view=board_view, BOARDS=BOARDS, SITE=SITE, watch_for=watch_for)
     return e
 
 

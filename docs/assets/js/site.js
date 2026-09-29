@@ -254,6 +254,26 @@
     document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') hideTip(); });
   }
 
+  // ---- Daevanion board tabs (dv_board macro) ----
+  [].forEach.call(document.querySelectorAll('[data-dvb]'), function (box) {
+    var tabs = [].slice.call(box.querySelectorAll('[role="tab"]'));
+    function pick(tab) {
+      tabs.forEach(function (x) {
+        var on = x === tab;
+        x.setAttribute('aria-selected', String(on));
+        x.tabIndex = on ? 0 : -1;
+        document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
+      });
+    }
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () { pick(tab); });
+      tab.addEventListener('keydown', function (ev) {
+        var d = ev.key === 'ArrowRight' ? 1 : ev.key === 'ArrowLeft' ? -1 : 0;
+        if (d) { var next = tabs[(i + d + tabs.length) % tabs.length]; pick(next); next.focus(); ev.preventDefault(); }
+      });
+    });
+  });
+
   // Everything below is for class pages.
   if (!document.querySelector('.guide')) return;
 

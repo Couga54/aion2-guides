@@ -9,6 +9,10 @@ Read `CONTEXT.md` first — it has the user's requirements, verified game facts 
 - Refresh skill data/icons: `.venv/Scripts/python tools/fetch_skills.py gladiator ranger templar assassin chanter sorcerer cleric elementalist`
 - Refresh class art: `.venv/Scripts/python tools/fetch_art.py`
 - Social previews (og images) after changing a title, lead or header art: `.venv/Scripts/python tools/make_og.py`, then build
+- Daevanion boards (interactive board on class pages): `.venv/Scripts/python tools/fetch_boards.py gladiator` → `data/boards/<class>.json`;
+  presets (which skills each mode takes) are in `data/boards/presets.json`; show it in a guide with `{{ dv_board('pve') }}`.
+- Storyboard a guide video (frames + contact sheets with the transcript line, local `frames/<id>/`, git-ignored):
+  `.venv/Scripts/python tools/storyboard.py <file.mp4> <youtube id>`; full-size frames: `... --at 7:45 465`.
 - Refresh item icons/names for the guide pages (progression, crafting): `.venv/Scripts/python tools/fetch_items.py` (search: `--find <name>`)
 - Save a video transcript: `.venv/Scripts/python tools/fetch_transcript.py <video id>` → `data/transcripts/`
 - Launch day (Oct 5): work through `LAUNCH.md` — every value that must be checked against the live servers.

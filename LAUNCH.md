@@ -61,6 +61,9 @@ Work top to bottom, then rebuild (`.venv/Scripts/python tools/build.py`), check 
 - [ ] **Sources** — after re-checking a mode, update its date in `classes[].src` (shown in the guide header)
       and `classes[].updated`.
 
+- [ ] **Daevanion boards** — re-run `tools/fetch_boards.py` for every class with a board; the global data had no
+      Ariel (PvE, lv 45) board before launch, only Azphel (PvP). If Ariel appears, update the Daevanion text in the guides.
+
 ## 6. Publish
 
 - [ ] New entry at the top of `data/changelog.json` (new `id`, so everyone sees it once).

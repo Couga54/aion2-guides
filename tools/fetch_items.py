@@ -22,7 +22,7 @@ from fetch_skills import CDN, get, trpc  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 ICONS = ROOT / "src" / "assets" / "icons" / "items"
-PAGES = ("progression.json", "crafting.json")   # guide pages whose "items" are fetched
+PAGES = ("progression.json", "crafting.json", "class_items.json")   # files whose "items" are fetched
 
 
 def search(term):

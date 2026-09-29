@@ -2,6 +2,22 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-09-30-gladiator-boards",
+      "date": "2026-09-30",
+      "items": [
+        {
+          "href": "gladiator/",
+          "en": "<strong>Gladiator: Daevanion boards</strong> — the real global boards with the route for PvE, PvP and leveling (Grobs' 65-point route). Global has no Ariel board, only Azphel (PvP) — the guide is corrected.",
+          "ru": "<strong>Гладиатор: доски Daevanion</strong> — настоящие доски глобала с маршрутом для PvE, PvP и прокачки (маршрут Grobs на 65 очков). В глобале нет доски Ariel, только Azphel (PvP) — гайд исправлен."
+        },
+        {
+          "href": "gladiator/",
+          "en": "<strong>Gladiator guide updated</strong> — boss opener, the boss orientation setting, Focused Block charges, Sword Aura Rampage, leveling priorities and arcana cards with tooltips.",
+          "ru": "<strong>Гайд на Гладиатора обновлён</strong> — начало боя с боссом, настройка направления босса, два заряда Сосредоточенного блока, Неистовый клинок, приоритеты на прокачке и карты аркан с подсказками."
+        }
+      ]
+    },
+    {
       "id": "2026-09-30-menu",
       "date": "2026-09-30",
       "items": [

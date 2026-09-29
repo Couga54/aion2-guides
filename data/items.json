@@ -910,5 +910,221 @@
       "stats": [],
       "set": null
     }
+  },
+  "parchment_vigor": {
+    "id": "810230001",
+    "grade": 41,
+    "cat": "parchment",
+    "icon": "parchment_vigor.webp",
+    "en": "Parchment of Vigor",
+    "tip_en": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "life",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Primal Vigor",
+        "bonus": [
+          [
+            2,
+            "+60 PvE Attack when HP is 70% or more"
+          ],
+          [
+            4,
+            "+150 PvE Attack when HP is 70% or more"
+          ]
+        ]
+      }
+    },
+    "ru": "Пергамент жизни",
+    "tip_ru": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "life",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Первозданная витальность",
+        "bonus": [
+          [
+            2,
+            "АТК в PvE +60 при ОЗ 70% и выше"
+          ],
+          [
+            4,
+            "АТК в PvE +150 при ОЗ 70% и выше"
+          ]
+        ]
+      }
+    }
+  },
+  "compass_vigor": {
+    "id": "810330001",
+    "grade": 41,
+    "cat": "compass",
+    "icon": "compass_vigor.webp",
+    "en": "Compass of Vigor",
+    "tip_en": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "freedom",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Primal Vigor",
+        "bonus": [
+          [
+            2,
+            "+60 PvE Attack when HP is 70% or more"
+          ],
+          [
+            4,
+            "+150 PvE Attack when HP is 70% or more"
+          ]
+        ]
+      }
+    },
+    "ru": "Компас жизни",
+    "tip_ru": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "freedom",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Первозданная витальность",
+        "bonus": [
+          [
+            2,
+            "АТК в PvE +60 при ОЗ 70% и выше"
+          ],
+          [
+            4,
+            "АТК в PvE +150 при ОЗ 70% и выше"
+          ]
+        ]
+      }
+    }
+  },
+  "chalice_vigor": {
+    "id": "810130001",
+    "grade": 41,
+    "cat": "grail",
+    "icon": "chalice_vigor.webp",
+    "en": "Chalice of Vigor",
+    "tip_en": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "time",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Primal Vigor",
+        "bonus": [
+          [
+            2,
+            "+60 PvE Attack when HP is 70% or more"
+          ],
+          [
+            4,
+            "+150 PvE Attack when HP is 70% or more"
+          ]
+        ]
+      }
+    },
+    "ru": "Грааль жизни",
+    "tip_ru": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "time",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Первозданная витальность",
+        "bonus": [
+          [
+            2,
+            "АТК в PvE +60 при ОЗ 70% и выше"
+          ],
+          [
+            4,
+            "АТК в PvE +150 при ОЗ 70% и выше"
+          ]
+        ]
+      }
+    }
+  },
+  "mirror_magic_gold": {
+    "id": "810530002",
+    "grade": 41,
+    "cat": "mirror",
+    "icon": "mirror_magic_gold.webp",
+    "en": "Mirror of Magic",
+    "tip_en": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "wisdom",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Magic Armor",
+        "bonus": [
+          [
+            2,
+            "Restores 1,500 MP when MP is 20% or less [30s cooldown]"
+          ],
+          [
+            4,
+            "+1,000 PvE Defense when MP is 50% or more"
+          ]
+        ]
+      }
+    },
+    "ru": "Зеркало магии",
+    "tip_ru": {
+      "desc": "",
+      "il": 80,
+      "stats": [
+        [
+          "wisdom",
+          20
+        ]
+      ],
+      "set": {
+        "name": "Магические доспехи",
+        "bonus": [
+          [
+            2,
+            "Восстанавливает 1500 ОМ, когда ОМ достигает 20% или меньше [Время перезарядки 30 с]"
+          ],
+          [
+            4,
+            "ЗЩТ в PvE +1000 при ОМ 50% и выше"
+          ]
+        ]
+      }
+    }
   }
 }
