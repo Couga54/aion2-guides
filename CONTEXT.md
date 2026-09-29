@@ -170,6 +170,12 @@ Requirements from the user (in their words, translated):
   `search_entries`/`page_entries`; `?sk=<slug>` jumps to a skill card), notifications (assets/js/notify.js,
   energy full + boss respawn, only while the tab is open), per-mode source + date (`classes[].src`), "Report a
   mistake" → GitHub issue (`SITE.repo`), launch checklist in LAUNCH.md.
+- Session 8 (Sep 29): Templar PvE+PvP rebuilt on SolAshur (solashur.com/builds/templar-global-build.html, video
+  ayyzLdGOaNc; specializations from his questlog character QuickCobraLifeBanish → skill build 5276, marked for the
+  NC client, Sep 12) — trinity Judgment/Punishment/Pummel 20, stigma profiles PvE/PvX/PvP, RMB Pummel line + side-
+  button Judgment line; WIP removed. Cleric PvE enabled (WIP) from Kaeria's Russian video 7LjTwlZ4v_s (TW client).
+  Grobs' Gladiator PvE video xRPr30JetyY confirms our Gladiator guide — user chose to change nothing, only listed it
+  in sources. questlog character API: `characterBuilder.getCharacter` with {"slug": <character url>}.
 - Done (was planned from the other PC): task — **Cleric and Elementalist as WIP guides, Leveling mode only**
   for now (no PvE/PvP content yet) — use `modes_off: ["pve", "pvp"]` + `wip: true` in site.json
   (the head script and site.js then open the Leveling mode). Plan: fetch skills (`fetch_skills.py cleric elementalist` — questlog

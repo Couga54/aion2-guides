@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en" data-mode="pve" data-class="cleric" data-off="pve pvp">
+<html lang="en" data-mode="pve" data-class="cleric" data-off="pvp">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Cleric — AION 2 Guides (Leveling)</title>
+<title>Cleric — AION 2 Guides (PvE, Leveling)</title>
 <meta name="description" content="The healer who levels by hitting: Chain of Torment marks the target, Condemnation punishes it, and every hit heals the party.">
 <link rel="canonical" href="https://couga54.github.io/aion2-guides/en/cleric/">
 <link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/cleric/">
@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AION 2 Guides">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="Cleric — AION 2 Guides (Leveling)">
+<meta property="og:title" content="Cleric — AION 2 Guides (PvE, Leveling)">
 <meta property="og:description" content="The healer who levels by hitting: Chain of Torment marks the target, Condemnation punishes it, and every hit heals the party.">
 <meta property="og:url" content="https://couga54.github.io/aion2-guides/en/cleric/">
 <meta property="og:image" content="https://couga54.github.io/aion2-guides/assets/og/cleric-en.jpg">
@@ -125,8 +125,8 @@
         <p class="kicker"><span data-only="pve">PvE</span><span data-only="pvp">PvP</span><span data-only="lvl">Leveling</span> · Global Season 1</p>
         <h1>Cleric</h1>
         <p class="class-hero-pitch">The healer who levels by hitting: Chain of Torment marks the target, Condemnation punishes it, and every hit heals the party.</p>
-        <p class="guide-ver"><span>Updated: <time datetime="2026-09-28">Sep 28, 2026</time></span><span>Patch: <b>TBD</b></span><span class="wip-tag">WIP</span></p>
-<p class="guide-src"><span data-only="lvl">Source: <b>Grobs · MMO Codex</b> · checked <time datetime="2026-09-28">Sep 28, 2026</time></span></p>      </div>
+        <p class="guide-ver"><span>Updated: <time datetime="2026-09-29">Sep 29, 2026</time></span><span>Patch: <b>TBD</b></span><span class="wip-tag">WIP</span></p>
+<p class="guide-src"><span data-only="pve">Source: <b>Kaeria (TW client)</b> · checked <time datetime="2026-09-29">Sep 29, 2026</time></span><span data-only="lvl">Source: <b>Grobs · MMO Codex · Kaeria</b> · checked <time datetime="2026-09-29">Sep 29, 2026</time></span></p>      </div>
     </div>
     <dl class="class-facts">
       <div><dt>Role</dt><dd>Healer · earth and lightning damage</dd></div>
@@ -139,7 +139,7 @@
 <div class="guidebar">
   <div class="wrap guidebar-in">
     <div class="mode-switch" role="radiogroup" aria-label="Guide mode">
-      <button type="button" role="radio" data-set-mode="pve" aria-checked="false" class="is-off" aria-disabled="true" disabled>PvE</button>
+      <button type="button" role="radio" data-set-mode="pve" aria-checked="false">PvE</button>
       <button type="button" role="radio" data-set-mode="pvp" aria-checked="false" class="is-off" aria-disabled="true" disabled>PvP</button>
       <button type="button" role="radio" data-set-mode="lvl" aria-checked="false">Leveling</button>
     </div>
@@ -214,7 +214,7 @@
             <span class="step-when">Lv 8</span>
             <span class="step-text">
               <span class="step-tag">Class</span>
-<img src="../../assets/icons/cleric/earths-retribution.webp" width="22" height="22" alt="" loading="lazy" data-sk="earths-retribution"><img src="../../assets/icons/cleric/judgment-thunder.webp" width="22" height="22" alt="" loading="lazy" data-sk="judgment-thunder"><img src="../../assets/icons/cleric/chain-of-torment.webp" width="22" height="22" alt="" loading="lazy" data-sk="chain-of-torment"><img src="../../assets/icons/cleric/debilitating-mark.webp" width="22" height="22" alt="" loading="lazy" data-sk="debilitating-mark">              First specializations: <em>+20% MP restored</em>, <em>Deals up to 12% more damage when less targets are hit</em>, <em>+3s Damage over Time</em>, <em>-15% target Defense for duration of Damage over Time</em>.
+<img src="../../assets/icons/cleric/earths-retribution.webp" width="22" height="22" alt="" loading="lazy" data-sk="earths-retribution"><img src="../../assets/icons/cleric/judgment-thunder.webp" width="22" height="22" alt="" loading="lazy" data-sk="judgment-thunder"><img src="../../assets/icons/cleric/chain-of-torment.webp" width="22" height="22" alt="" loading="lazy" data-sk="chain-of-torment"><img src="../../assets/icons/cleric/debilitating-mark.webp" width="22" height="22" alt="" loading="lazy" data-sk="debilitating-mark">              First specializations: <em>+20% [Discharge] Chain Skill trigger chance</em>, <em>Deals up to 12% more damage when less targets are hit</em>, <em>+3s Damage over Time</em>, <em>-15% target Defense for duration of Damage over Time</em>.
             </span>
           </label>
         </li>
@@ -422,6 +422,491 @@
     <div class="callout wip-note" role="note"><h3><span class="wip-tag">WIP</span> Work in progress</h3><p>There is no solid global source for this class yet. The guide is put together from Korean guides and the global skill data — treat it as a starting point; it will be reworked once proper global builds appear.</p></div>
 
 
+<aside class="glance" data-only="pve" aria-label="Build at a glance">
+  <p class="glance-title">Build at a glance</p>
+    <h3>Core skills</h3>
+  <ul class="core-row">
+  <li data-sk="condemnation">
+    <img src="../../assets/icons/cleric/condemnation.webp" width="52" height="52" alt="Condemnation" loading="lazy">
+    <span class="core-lv">16 → 20</span>
+    <span class="core-name">Condemnation</span>
+  </li>
+  <li data-sk="divine-aura">
+    <img src="../../assets/icons/cleric/divine-aura.webp" width="52" height="52" alt="Divine Aura" loading="lazy">
+    <span class="core-lv">16 → 20</span>
+    <span class="core-name">Divine Aura</span>
+  </li>
+  <li data-sk="bolt">
+    <img src="../../assets/icons/cleric/bolt.webp" width="52" height="52" alt="Bolt" loading="lazy">
+    <span class="core-lv">16 → 20</span>
+    <span class="core-name">Bolt</span>
+  </li>
+  <li data-sk="judgment-thunder">
+    <img src="../../assets/icons/cleric/judgment-thunder.webp" width="52" height="52" alt="Judgment Thunder" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Judgment Thunder</span>
+  </li>
+  <li data-sk="lightning-strike-scattershot">
+    <img src="../../assets/icons/cleric/lightning-strike-scattershot.webp" width="52" height="52" alt="Lightning Strike Scattershot" loading="lazy">
+    <span class="core-lv">16</span>
+    <span class="core-name">Lightning Strike Scattershot</span>
+  </li>
+</ul>
+  <h3>Stigma loadout</h3>
+  <ol class="loadout">
+  <li class="slot" data-sk="earth-punishment">
+    <img src="../../assets/icons/cleric/earth-punishment.webp" width="56" height="56" alt="Earth Punishment" loading="lazy">
+    <span class="slot-lv">Lv 20</span>
+    <span class="slot-name">Earth Punishment</span>
+  </li>
+  <li class="slot" data-sk="light-of-protection">
+    <img src="../../assets/icons/cleric/light-of-protection.webp" width="56" height="56" alt="Light of Protection" loading="lazy">
+    <span class="slot-lv">Lv 20</span>
+    <span class="slot-name">Light of Protection</span>
+  </li>
+  <li class="slot" data-sk="prayer-of-amplification">
+    <img src="../../assets/icons/cleric/prayer-of-amplification.webp" width="56" height="56" alt="Prayer of Amplification" loading="lazy">
+    <span class="slot-lv">Lv 10</span>
+    <span class="slot-name">Prayer of Amplification</span>
+  </li>
+  <li class="slot" data-sk="noble-aura">
+    <img src="../../assets/icons/cleric/noble-aura.webp" width="56" height="56" alt="Noble Aura" loading="lazy">
+    <span class="slot-lv">Lv 10</span>
+    <span class="slot-name">Noble Aura</span>
+  </li>
+</ol>
+  <h3>Key passives</h3>
+  <ul class="passive-row">
+<li data-sk="empyrean-lords-grace"><img src="../../assets/icons/cleric/empyrean-lords-grace.webp" width="24" height="24" alt="" loading="lazy">Empyrean Lord&#39;s Grace</li><li data-sk="earths-grace"><img src="../../assets/icons/cleric/earths-grace.webp" width="24" height="24" alt="" loading="lazy">Earth&#39;s Grace</li><li data-sk="healing-enhancement"><img src="../../assets/icons/cleric/healing-enhancement.webp" width="24" height="24" alt="" loading="lazy">Healing Enhancement</li><li data-sk="radiant-benediction"><img src="../../assets/icons/cleric/radiant-benediction.webp" width="24" height="24" alt="" loading="lazy">Radiant Benediction</li></ul>
+
+</aside>
+<section id="intro" class="g-section" data-only="pve" aria-labelledby="h-intro">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro">Overview</h2></div>
+    <p>In AION 2 dungeons the Cleric is a healer that <strong>has to deal damage</strong>: rewards depend on your contribution, and a Cleric who only heals can walk out with nothing. Your party has plenty of dodges and invulnerabilities of its own — top people up after hits, and put everything else into damage.</p>
+  <div class="callout accent">
+    <h3>The build in one sentence</h3>
+    <p><span class="sk" data-sk="earth-punishment"><img src="../../assets/icons/cleric/earth-punishment.webp" width="18" height="18" alt="" loading="lazy">Earth Punishment</span> makes <span class="sk" data-sk="condemnation"><img src="../../assets/icons/cleric/condemnation.webp" width="18" height="18" alt="" loading="lazy">Condemnation</span> always crit, and a crit resets Condemnation — so it fires with no cooldown, while <span class="sk" data-sk="divine-aura"><img src="../../assets/icons/cleric/divine-aura.webp" width="18" height="18" alt="" loading="lazy">Divine Aura</span>, <span class="sk" data-sk="bolt"><img src="../../assets/icons/cleric/bolt.webp" width="18" height="18" alt="" loading="lazy">Bolt</span> and <span class="sk" data-sk="noble-aura"><img src="../../assets/icons/cleric/noble-aura.webp" width="18" height="18" alt="" loading="lazy">Noble Aura</span> add damage on top.</p>
+  </div>
+  <p class="note">This mode follows Kaeria's Cleric PvE guide (Russian, recorded on the Taiwan client; she says it applies to global too). Skill picks are reversible for free — only arcana cost resources.</p>
+
+</section>
+<section id="skills" class="g-section" data-only="pve" aria-labelledby="h-skills">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-skills">Skills</h2></div>
+    <p>Almost everything goes into damage. The heals that matter need 16: Healing Light and Radiant Recovery.</p>
+  <ul class="skill-grid">
+<li class="skill" data-sk-card="condemnation">
+  <img class="skill-icon" data-sk="condemnation" src="../../assets/icons/cleric/condemnation.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Condemnation <span class="badge must">16 <svg class="arr" viewBox="0 0 12 8" aria-label="→"><path d="M1 4h9M7 1l3 3-3 3"/></svg> 20</span></div>
+    <div class="skill-desc">The most important skill on your bar: +12% on a single target and a cooldown reset on crit. At 20 add MP if mana is short, Multi-Hit if not.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Up to +12% damage when less targets hit</li><li><span class="spec-lv">12</span>Resets cooldown on landing a Critical Hit with [Condemnation]</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Restores 100 MP on hit</li>
+        <li class="on"><span class="spec-lv">8</span>Up to +12% damage when less targets hit</li>
+        <li class=""><span class="spec-lv">8</span>20% chance to inflict Root for 3s</li>
+        <li class="on"><span class="spec-lv">12</span>Resets cooldown on landing a Critical Hit with [Condemnation]</li>
+        <li class=""><span class="spec-lv">16</span>Multi-Hit on hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="divine-aura">
+  <img class="skill-icon" data-sk="divine-aura" src="../../assets/icons/cleric/divine-aura.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Divine Aura <span class="badge must">16 <svg class="arr" viewBox="0 0 12 8" aria-label="→"><path d="M1 4h9M7 1l3 3-3 3"/></svg> 20</span></div>
+    <div class="skill-desc">Underrated: it deals damage in parallel with you, so the longer it stays up the better — attack speed, +3s, −10s cooldown.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+50% [Divine Aura] attacking speed</li><li><span class="spec-lv">12</span>+3s [Divine Aura] duration</li><li><span class="spec-lv">16</span>-10s cooldown</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>-40% Move Speed for 3s to up to 4 enemies within 4m of the Aura</li>
+        <li class=""><span class="spec-lv">8</span>Changes to AoE Skill</li>
+        <li class="on"><span class="spec-lv">8</span>+50% [Divine Aura] attacking speed</li>
+        <li class="on"><span class="spec-lv">12</span>+3s [Divine Aura] duration</li>
+        <li class="on"><span class="spec-lv">16</span>-10s cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="bolt">
+  <img class="skill-icon" data-sk="bolt" src="../../assets/icons/cleric/bolt.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Bolt <span class="badge must">16 <svg class="arr" viewBox="0 0 12 8" aria-label="→"><path d="M1 4h9M7 1l3 3-3 3"/></svg> 20</span></div>
+    <div class="skill-desc">Your strongest hit. Charge it fully. +30% skill speed, +20% damage on a single target; at 20 add the guaranteed crit.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+30% Skill Speed</li><li><span class="spec-lv">12</span>Up to +20% damage when less targets hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>30% chance to inflict Stun for 3s when fully charged</li>
+        <li class=""><span class="spec-lv">8</span>+300 Skill Accuracy</li>
+        <li class="on"><span class="spec-lv">8</span>+30% Skill Speed</li>
+        <li class="on"><span class="spec-lv">12</span>Up to +20% damage when less targets hit</li>
+        <li class=""><span class="spec-lv">16</span>Critical Hit on hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="judgment-thunder">
+  <img class="skill-icon" data-sk="judgment-thunder" src="../../assets/icons/cleric/judgment-thunder.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Judgment Thunder <span class="badge must">16</span></div>
+    <div class="skill-desc">Constant damage and animation cancel; the Divine Punishment pick roughly doubles it. At 20 add −20% MP.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Deals up to 12% more damage when less targets are hit</li><li><span class="spec-lv">16</span>Activates [Divine Punishment] 1 extra time</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>-20% MP consumed</li>
+        <li class="on"><span class="spec-lv">8</span>Deals up to 12% more damage when less targets are hit</li>
+        <li class=""><span class="spec-lv">8</span>-10% enemy Combat Speed for 5s on landing [Divine Punishment]</li>
+        <li class=""><span class="spec-lv">12</span>10% chance to inflict Root for 2s on landing [Divine Punishment]</li>
+        <li class="on"><span class="spec-lv">16</span>Activates [Divine Punishment] 1 extra time</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="lightning-strike-scattershot">
+  <img class="skill-icon" data-sk="lightning-strike-scattershot" src="../../assets/icons/cleric/lightning-strike-scattershot.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Lightning Strike Scattershot <span class="badge must">16</span></div>
+    <div class="skill-desc">Only during Stagger, but every hit cuts all your cooldowns by 1s.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">12</span>Multi-Hit on hit</li><li><span class="spec-lv">16</span>-1s all skill cooldowns on hit</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Absorbs 5% HP</li>
+        <li class=""><span class="spec-lv">8</span>Restores 120 MP</li>
+        <li class=""><span class="spec-lv">8</span>Changes to mobile skill</li>
+        <li class="on"><span class="spec-lv">12</span>Multi-Hit on hit</li>
+        <li class="on"><span class="spec-lv">16</span>-1s all skill cooldowns on hit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="healing-light">
+  <img class="skill-icon" data-sk="healing-light" src="../../assets/icons/cleric/healing-light.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Healing Light <span class="badge must">16</span></div>
+    <div class="skill-desc">Near-cooldownless quick heal: +2 uses and +2% HP (scales with heal boost). At 20 add −2s.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+2 consecutive uses</li><li><span class="spec-lv">12</span>+2% HP restored</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>+2 consecutive uses</li>
+        <li class=""><span class="spec-lv">8</span>+20% amount healed when HP is 50% or less</li>
+        <li class=""><span class="spec-lv">8</span>50% chance to remove 1 debuff</li>
+        <li class="on"><span class="spec-lv">12</span>+2% HP restored</li>
+        <li class=""><span class="spec-lv">16</span>-2s cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="radiant-recovery">
+  <img class="skill-icon" data-sk="radiant-recovery" src="../../assets/icons/cleric/radiant-recovery.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Radiant Recovery <span class="badge must">16</span></div>
+    <div class="skill-desc">Your strongest heal outside stigmas; removes a debuff. At 20 add −3s.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">16</span>+5% HP restored</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Removes up to 2 debuffs</li>
+        <li class=""><span class="spec-lv">8</span>+20% Skill Speed</li>
+        <li class=""><span class="spec-lv">8</span>-3s cooldown</li>
+        <li class=""><span class="spec-lv">12</span>+10% Incoming Heal for 10s</li>
+        <li class="on"><span class="spec-lv">16</span>+5% HP restored</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="earths-retribution">
+  <img class="skill-icon" data-sk="earths-retribution" src="../../assets/icons/cleric/earths-retribution.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Earth&#39;s Retribution <span class="badge opt">12 <svg class="arr" viewBox="0 0 12 8" aria-label="→"><path d="M1 4h9M7 1l3 3-3 3"/></svg> 16</span></div>
+    <div class="skill-desc">Basic attack used to cancel animations: Discharge chance and −7s Bolt cooldown on Discharge.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+20% [Discharge] Chain Skill trigger chance</li><li><span class="spec-lv">12</span>-7s [Bolt] cooldown on landing [Discharge]</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>+20% MP restored</li>
+        <li class="on"><span class="spec-lv">8</span>+20% [Discharge] Chain Skill trigger chance</li>
+        <li class=""><span class="spec-lv">8</span>+50% Multi-Hit on hit</li>
+        <li class="on"><span class="spec-lv">12</span>-7s [Bolt] cooldown on landing [Discharge]</li>
+        <li class=""><span class="spec-lv">16</span>Ignores Block and Evasion</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="debilitating-mark">
+  <img class="skill-icon" data-sk="debilitating-mark" src="../../assets/icons/cleric/debilitating-mark.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Debilitating Mark <span class="badge opt">12</span></div>
+    <div class="skill-desc">−15% Defense on the boss and less damage from it.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>-15% target Defense for duration of Damage over Time</li><li><span class="spec-lv">12</span>+10% PvE Damage Boost reduction and +5% PvP Damage Boost reduction</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Removes MP Consumed and restores 150 MP</li>
+        <li class="on"><span class="spec-lv">8</span>-15% target Defense for duration of Damage over Time</li>
+        <li class=""><span class="spec-lv">8</span>Has a 20% chance to inflict Stun on the target for 3s</li>
+        <li class="on"><span class="spec-lv">12</span>+10% PvE Damage Boost reduction and +5% PvP Damage Boost reduction</li>
+        <li class=""><span class="spec-lv">16</span>Ignores Block and Evasion and reduces Damage over Time interval by 50%</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="chain-of-torment">
+  <img class="skill-icon" data-sk="chain-of-torment" src="../../assets/icons/cleric/chain-of-torment.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Chain of Torment <span class="badge opt">14</span></div>
+    <div class="skill-desc">Exists to enable Condemnation; −10% PvE damage tolerance on the boss.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+3s Damage over Time</li><li><span class="spec-lv">12</span>+10% PvE Damage Tolerance reduction and +5% PvP Damage Tolerance reduction</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Slows target for 5s</li>
+        <li class="on"><span class="spec-lv">8</span>+3s Damage over Time</li>
+        <li class=""><span class="spec-lv">8</span>Has a 20% chance to inflict Knockdown on the target for 3s</li>
+        <li class="on"><span class="spec-lv">12</span>+10% PvE Damage Tolerance reduction and +5% PvP Damage Tolerance reduction</li>
+        <li class=""><span class="spec-lv">16</span>Ignores Block and Evasion and reduces Damage over Time interval by 50%</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="light-of-regeneration">
+  <img class="skill-icon" data-sk="light-of-regeneration" src="../../assets/icons/cleric/light-of-regeneration.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Light of Regeneration <span class="badge opt">12–16</span></div>
+    <div class="skill-desc">Recast on cooldown; at 16 take the 5% tolerance pick.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>+5% Defense while healing</li><li><span class="spec-lv">16</span>+5% PvE Damage Tolerance and +2.5% PvP Damage Tolerance during healing</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">8</span>+5% Defense while healing</li>
+        <li class=""><span class="spec-lv">8</span>+20% amount healed when HP is 50% or less</li>
+        <li class=""><span class="spec-lv">8</span>+5% Incoming Heal during healing</li>
+        <li class=""><span class="spec-lv">12</span>+5% Move Speed during healing</li>
+        <li class="on"><span class="spec-lv">16</span>+5% PvE Damage Tolerance and +2.5% PvP Damage Tolerance during healing</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="defiance">
+  <img class="skill-icon" data-sk="defiance" src="../../assets/icons/cleric/defiance.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Defiance <span class="badge opt">12</span></div>
+    <div class="skill-desc">CC break; 10% HP and +2s immunity.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">8</span>Restores 10% HP on using [Defiance]</li><li><span class="spec-lv">12</span>+2s Tenacity duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">8</span>Adds [Blessing of Regeneration] Chain Skill</li>
+        <li class=""><span class="spec-lv">8</span>Restores 1000 Stamina on using [Defiance]</li>
+        <li class="on"><span class="spec-lv">8</span>Restores 10% HP on using [Defiance]</li>
+        <li class="on"><span class="spec-lv">12</span>+2s Tenacity duration</li>
+        <li class=""><span class="spec-lv">16</span>+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section id="passives" class="g-section" data-only="pve" aria-labelledby="h-passives">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-passives">Passives</h2></div>
+    <div class="callout"><ul>
+    <li><span class="sk" data-sk="empyrean-lords-grace"><img src="../../assets/icons/cleric/empyrean-lords-grace.webp" width="18" height="18" alt="" loading="lazy">Empyrean Lord&#39;s Grace</span> — the most important one: Critical Damage, Double Chance and extra damage on every hit. As high as you can.</li>
+    <li><span class="sk" data-sk="earths-grace"><img src="../../assets/icons/cleric/earths-grace.webp" width="18" height="18" alt="" loading="lazy">Earth&#39;s Grace</span> — used to buff the party, now only you; still worth leveling.</li>
+    <li><span class="sk" data-sk="healing-enhancement"><img src="../../assets/icons/cleric/healing-enhancement.webp" width="18" height="18" alt="" loading="lazy">Healing Enhancement</span> — heal boost if you heal a lot.</li>
+    <li><span class="sk" data-sk="radiant-benediction"><img src="../../assets/icons/cleric/radiant-benediction.webp" width="18" height="18" alt="" loading="lazy">Radiant Benediction</span> — heals nearby allies on attacks; take it if you go all-in on damage.</li>
+    <li><span class="sk" data-sk="warm-benediction"><img src="../../assets/icons/cleric/warm-benediction.webp" width="18" height="18" alt="" loading="lazy">Warm Benediction</span> and <span class="sk" data-sk="immortal-veil"><img src="../../assets/icons/cleric/immortal-veil.webp" width="18" height="18" alt="" loading="lazy">Immortal Veil</span> are fine to have; <span class="sk" data-sk="empyrean-lords-benediction"><img src="../../assets/icons/cleric/empyrean-lords-benediction.webp" width="18" height="18" alt="" loading="lazy">Empyrean Lords&#39; Benediction</span> is for PvP.</li>
+  </ul></div>
+
+</section>
+<section id="stigmas" class="g-section" data-only="pve" aria-labelledby="h-stigmas">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-stigmas">Stigmas</h2></div>
+    <ul class="skill-grid">
+<li class="skill" data-sk-card="earth-punishment">
+  <img class="skill-icon" data-sk="earth-punishment" src="../../assets/icons/cleric/earth-punishment.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Earth Punishment <span class="badge must">Lv 15 <svg class="arr" viewBox="0 0 12 8" aria-label="→"><path d="M1 4h9M7 1l3 3-3 3"/></svg> 20</span></div>
+    <div class="skill-desc">Condemnation always crits (so it has no cooldown), and the party gets Defense, Attack and Double Chance. One of your most important skills.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>[Condemnation] lands as a Critical Hit on targets afflicted with [Earth Punishment]</li><li><span class="spec-lv">10</span>+10% Double Chance to caster and +5% to party members from [Earth&#39;s Blessing]</li><li><span class="spec-lv">15</span>+10% Attack and Defense to caster and +5% to party members from [Earth&#39;s Blessing]</li><li><span class="spec-lv">20</span>+10s [Earth Punishment] and [Earth&#39;s Blessing] duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>[Condemnation] lands as a Critical Hit on targets afflicted with [Earth Punishment]</li>
+        <li class="on"><span class="spec-lv">10</span>+10% Double Chance to caster and +5% to party members from [Earth&#39;s Blessing]</li>
+        <li class="on"><span class="spec-lv">15</span>+10% Attack and Defense to caster and +5% to party members from [Earth&#39;s Blessing]</li>
+        <li class="on"><span class="spec-lv">20</span>+10s [Earth Punishment] and [Earth&#39;s Blessing] duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="light-of-protection">
+  <img class="skill-icon" data-sk="light-of-protection" src="../../assets/icons/cleric/light-of-protection.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Light of Protection <span class="badge must">Lv 20</span></div>
+    <div class="skill-desc">Your mantra: incoming heal, accuracy, +10% HP and Perfect Chance, no cooldown. Doesn't stack with a Chanter's mantra — with a Chanter in the party swap it out.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+10% Incoming Heal</li><li><span class="spec-lv">10</span>+100 Accuracy</li><li><span class="spec-lv">15</span>+10% Max HP</li><li><span class="spec-lv">20</span>+10% Perfect Chance</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+10% Incoming Heal</li>
+        <li class="on"><span class="spec-lv">10</span>+100 Accuracy</li>
+        <li class="on"><span class="spec-lv">15</span>+10% Max HP</li>
+        <li class="on"><span class="spec-lv">20</span>+10% Perfect Chance</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="prayer-of-amplification">
+  <img class="skill-icon" data-sk="prayer-of-amplification" src="../../assets/icons/cleric/prayer-of-amplification.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Prayer of Amplification <span class="badge must">Lv 10+</span></div>
+    <div class="skill-desc">+20% Attack on cooldown, and it boosts Empyrean Lord's Grace and Earth's Grace. Without it a Cleric has no damage.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+20% PvE Damage Boost and +10% PvP Damage Boost</li><li><span class="spec-lv">10</span>x1.5 [Empyrean Lord&#39;s Grace] effect for the duration</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+20% PvE Damage Boost and +10% PvP Damage Boost</li>
+        <li class="on"><span class="spec-lv">10</span>x1.5 [Empyrean Lord&#39;s Grace] effect for the duration</li>
+        <li class=""><span class="spec-lv">15</span>x1.5 [Earth&#39;s Grace] effect for the duration</li>
+        <li class=""><span class="spec-lv">20</span>+15% additional Attack</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="noble-aura">
+  <img class="skill-icon" data-sk="noble-aura" src="../../assets/icons/cleric/noble-aura.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Noble Aura <span class="badge must">Lv 10+</span></div>
+    <div class="skill-desc">An orb that attacks alongside you — about double your damage; the higher the better.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+200 Aura Critical Hit</li><li><span class="spec-lv">10</span>+20 damage to targets afflicted with Debilitating Mark</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+200 Aura Critical Hit</li>
+        <li class="on"><span class="spec-lv">10</span>+20 damage to targets afflicted with Debilitating Mark</li>
+        <li class=""><span class="spec-lv">15</span>+30% damage to targets with Incapacitated Immunity</li>
+        <li class=""><span class="spec-lv">20</span>-1s Aura attack cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="absolution">
+  <img class="skill-icon" data-sk="absolution" src="../../assets/icons/cleric/absolution.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Absolution <span class="badge opt">sanctuary</span></div>
+    <div class="skill-desc">Strongest heal stigma, but only good at 15+. Swap in only if the party lacks healing.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>-30s cooldown</li><li><span class="spec-lv">10</span>Removes all debuffs</li><li><span class="spec-lv">15</span>+5% HP restored</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>-30s cooldown</li>
+        <li class="on"><span class="spec-lv">10</span>Removes all debuffs</li>
+        <li class="on"><span class="spec-lv">15</span>+5% HP restored</li>
+        <li class=""><span class="spec-lv">20</span>Restores 1.5% HP every 2s for 10s</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="yustiels-power">
+  <img class="skill-icon" data-sk="yustiels-power" src="../../assets/icons/cleric/yustiels-power.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Yustiel&#39;s Power <span class="badge opt">sanctuary</span></div>
+    <div class="skill-desc">Party damage tolerance for 10s — a sanctuary swap instead of Noble Aura or Prayer.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>10% Max HP Protective Shield</li><li><span class="spec-lv">10</span>+100 Block, Evasion</li><li><span class="spec-lv">15</span>+20% Status Effect Resist</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>10% Max HP Protective Shield</li>
+        <li class="on"><span class="spec-lv">10</span>+100 Block, Evasion</li>
+        <li class="on"><span class="spec-lv">15</span>+20% Status Effect Resist</li>
+        <li class=""><span class="spec-lv">20</span>+10% PvE Damage Tolerance increase and +5% PvP Damage Tolerance increase</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="summon-resurrection">
+  <img class="skill-icon" data-sk="summon-resurrection" src="../../assets/icons/cleric/summon-resurrection.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Summon Resurrection <span class="badge opt">Lv 5</span></div>
+    <div class="skill-desc">Keep it at 5 early; take it if your party keeps dying.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>-1s casting time</li>    </ul>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>-1s casting time</li>
+        <li class=""><span class="spec-lv">10</span>Invincible for 3s after resurrection</li>
+        <li class=""><span class="spec-lv">15</span>Restores 20% of Max HP</li>
+        <li class=""><span class="spec-lv">20</span>Invincible for 5s after resurrection</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="salvation">
+  <img class="skill-icon" data-sk="salvation" src="../../assets/icons/cleric/salvation.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Salvation <span class="badge skip">skip</span></div>
+    <div class="skill-desc">3s of invulnerability on a long cooldown — red attacks go through it anyway; dodge instead.</div>
+    <details class="spec-all">
+      <summary>All specializations</summary>
+      <ul>
+        <li class=""><span class="spec-lv">5</span>+100% Incoming Heal</li>
+        <li class=""><span class="spec-lv">10</span>Restores 20% of Max HP at the end of [Salvation]</li>
+        <li class=""><span class="spec-lv">15</span>Grants base effect of [Salvation] to the party member with the lowest HP</li>
+        <li class=""><span class="spec-lv">20</span>Triggers [Salvation] when afflicted with Impact-type status</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+  <p class="note">With a Chanter in the party: replace Light of Protection with any heal or Summon Resurrection. Voice of Doom (−15% crit resist on the boss at 15) is an option in sanctuaries with a second healer; Power Burst only when the party lacks stagger.</p>
+
+</section>
+<section id="macro" class="g-section" data-only="pve" aria-labelledby="h-macro">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro">Macro</h2></div>
+    <p>Kaeria uses only the in-game macro — no third-party software — so she can still press heals between macro steps.</p>
+  <ul class="presslist">
+    <li><span class="press-how">Hold</span><span class="press-what">The in-game macro on <span class="key">RMB</span> together with the key of your basic-attack line (she uses <span class="key">3</span>).</span></li>
+    <li><span class="press-how">Stagger</span><span class="press-what"><span class="sk" data-sk="lightning-strike-scattershot"><img src="../../assets/icons/cleric/lightning-strike-scattershot.webp" width="18" height="18" alt="" loading="lazy">Lightning Strike Scattershot</span> sits in the macro: when the boss is staggered, release the basic-attack key and hold only the macro.</span></li>
+    <li><span class="press-how">By hand</span><span class="press-what">Heals when someone just took a hit, <span class="sk" data-sk="bolt"><img src="../../assets/icons/cleric/bolt.webp" width="18" height="18" alt="" loading="lazy">Bolt</span> fully charged, <span class="sk" data-sk="prayer-of-amplification"><img src="../../assets/icons/cleric/prayer-of-amplification.webp" width="18" height="18" alt="" loading="lazy">Prayer of Amplification</span> on cooldown.</span></li>
+  </ul>
+  <p class="note">The exact hotbar lines are only shown on screen in the video. On global, with lower ping, you can weave a bit more Earth's Retribution.</p>
+
+</section>
+<section id="stats" class="g-section" data-only="pve" aria-labelledby="h-stats">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-stats">Stats, Daevanion, arcana</h2></div>
+    <div class="callout"><ul>
+    <li><strong>Gear lines:</strong> Might (attack and heal), Combat Speed, Damage Boost; Weapon Damage Boost and Precision are strong too. Skip status resists, evasion and defensive lines in PvE.</li>
+    <li><strong>Rings:</strong> craft them as soon as you can — crafted rings have one more line for active skills.</li>
+    <li><strong>Stats:</strong> Destruction, Wisdom (Double Chance), Illusion (cooldowns), Time (Combat Speed), Freedom (accuracy); Might, Precision, Constitution.</li>
+    <li><strong>Daevanion:</strong> orange Cooldown and Combat Speed nodes first, then Attack and Critical, then the blue skill nodes, then defense.</li>
+  </ul></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Arcana</th><th>Set / stat</th><th>Roll for</th></tr></thead>
+    <tbody>
+      <tr><td>Chalice</td><td>Vigor (Combat Speed)</td><td>Anything that takes your key skills to 16 → 20</td></tr>
+      <tr><td>Parchment</td><td>Destiny or Life</td><td>Condemnation, Radiant Recovery, Earth's Retribution, Bolt</td></tr>
+      <tr><td>Compass</td><td>Death or Freedom</td><td>Lightning Strike Scattershot, Healing Light, Divine Aura, Judgment Thunder</td></tr>
+      <tr><td>Bell</td><td>Destruction</td><td>Empyrean Lord's Grace (avoid Survival Willpower)</td></tr>
+      <tr><td>Mirror</td><td>Wisdom (damage) or Illusion (cooldowns)</td><td>Earth's Grace, Healing Enhancement</td></tr>
+    </tbody>
+  </table></div>
+
+</section>
+<section id="recap" class="g-section" data-only="pve" aria-labelledby="h-recap">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-recap">Recap</h2></div>
+    <div class="callout accent"><ul>
+    <li><strong>Skills:</strong> Condemnation, Divine Aura, Bolt 16 → 20; Judgment Thunder, Lightning Strike Scattershot, Healing Light, Radiant Recovery 16; the rest 12–14.</li>
+    <li><strong>Stigmas:</strong> Earth Punishment, Light of Protection, Prayer of Amplification, Noble Aura (swap Light of Protection with a Chanter).</li>
+    <li><strong>Play:</strong> deal damage for contribution; heal only the people who just got hit.</li>
+  </ul></div>
+
+</section>
+
+
 <section id="intro-lvl" class="g-section" data-only="lvl" aria-labelledby="h-intro-lvl">
   <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro-lvl">Overview</h2></div>
     <p>The Cleric is the healer, but while leveling it plays as a ranged damage dealer: <span class="sk" data-sk="chain-of-torment"><img src="../../assets/icons/cleric/chain-of-torment.webp" width="18" height="18" alt="" loading="lazy">Chain of Torment</span> marks the target, <span class="sk" data-sk="condemnation"><img src="../../assets/icons/cleric/condemnation.webp" width="18" height="18" alt="" loading="lazy">Condemnation</span> punishes it, and the passive <span class="sk" data-sk="radiant-benediction"><img src="../../assets/icons/cleric/radiant-benediction.webp" width="18" height="18" alt="" loading="lazy">Radiant Benediction</span> heals you and the party on every hit. Heal only when you need to.</p>
@@ -575,6 +1060,7 @@
 <section class="sources" aria-labelledby="h-sources">
   <h2 id="h-sources">Sources</h2>
   <ul>
+    <li><a href="https://www.youtube.com/watch?v=7LjTwlZ4v_s" target="_blank" rel="noopener">Kaeria — Cleric PvE guide (in Russian)</a> — the PvE mode: skill levels and specializations, stigmas, passives, stats, Daevanion, arcana</li>
     <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — the early-game macro slide (Cleric hotbar line and macro)</li>
     <li><a href="https://mmo-codex.com/articles/aion-2-cleric-guide/" target="_blank" rel="noopener">MMO Codex — Aion 2 Cleric guide</a> — skill order and specializations while leveling, stigmas at 22</li>
     <li><a href="https://questlog.gg/aion-2/en/db/skills/cleric" target="_blank" rel="noopener">questlog.gg</a> — skill data from the global client</li>
@@ -620,7 +1106,7 @@ Source or proof (link, screenshot):
     <ul class="search-res" role="listbox"></ul>
   </div>
 </dialog>
-<dialog class="whatsnew" data-id="2026-09-28-tools" aria-labelledby="wn-title">
+<dialog class="whatsnew" data-id="2026-09-29-templar-cleric" aria-labelledby="wn-title">
   <form method="dialog" class="wn-in">
     <div class="wn-head">
       <h2 id="wn-title">What&#39;s new</h2>
@@ -629,13 +1115,10 @@ Source or proof (link, screenshot):
       </button>
     </div>
     <section class="wn-entry">
-      <time class="wn-date" datetime="2026-09-28">Sep 28, 2026</time>
+      <time class="wn-date" datetime="2026-09-29">Sep 29, 2026</time>
       <ul>
-        <li><a href="../../en/cleric/"><strong>Cleric and Elementalist (WIP)</strong> — leveling guides with Grobs' early macros; PvE and PvP come once there is a real global source.</a></li>
-        <li><span><strong>Search</strong> — press Ctrl+K (or /) to find a class, skill, boss or guide section.</span></li>
-        <li><span><strong>Skill tooltips</strong> — hover any skill in a guide to see its description, cooldown and all specializations.</span></li>
-        <li><a href="../../en/weekly/"><strong>Notifications</strong> — the weekly tracker and the boss page can notify you when energy is full or a boss may be up (while the tab is open).</a></li>
-        <li><span><strong>Sources with dates and error reports</strong> — every guide mode shows where its info comes from and when it was checked; "Report a mistake" opens a GitHub issue.</span></li>
+        <li><a href="../../en/templar/"><strong>Templar rebuilt on SolAshur's global build</strong> — the Judgment / Punishment / Pummel trinity, stigmas per profile, macro, gear path, stats, pets, Pantheon and arcana. No longer WIP.</a></li>
+        <li><a href="../../en/cleric/"><strong>Cleric PvE (WIP)</strong> — from Kaeria's guide: a healer that deals damage, Earth Punishment + Condemnation, stigmas and arcana.</a></li>
       </ul>
     </section>
     <button class="btn btn-primary wn-ok" value="close">Got it</button>

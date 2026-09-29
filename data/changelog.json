@@ -2,6 +2,22 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-09-29-templar-cleric",
+      "date": "2026-09-29",
+      "items": [
+        {
+          "href": "templar/",
+          "en": "<strong>Templar rebuilt on SolAshur's global build</strong> — the Judgment / Punishment / Pummel trinity, stigmas per profile, macro, gear path, stats, pets, Pantheon and arcana. No longer WIP.",
+          "ru": "<strong>Страж переписан по глобальному билду SolAshur</strong> — «троица» Суд / Кровавая месть / Град ударов, стигмы по профилям, макрос, путь экипировки, статы, петы, Pantheon и арканы. Больше не WIP."
+        },
+        {
+          "href": "cleric/",
+          "en": "<strong>Cleric PvE (WIP)</strong> — from Kaeria's guide: a healer that deals damage, Earth Punishment + Condemnation, stigmas and arcana.",
+          "ru": "<strong>PvE Целителя (WIP)</strong> — по гайду Kaeria: хил, который наносит урон, Возмездие природы + Приговор, стигмы и арканы."
+        }
+      ]
+    },
+    {
       "id": "2026-09-28-tools",
       "date": "2026-09-28",
       "items": [

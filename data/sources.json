@@ -13,6 +13,59 @@
       },
       "items": [
         {
+          "name": "SolAshur",
+          "what": {
+            "en": "Templar player (Merks guild). His global-launch Templar build on solashur.com and the video walkthrough are the basis of the Templar PvE and PvP guide.",
+            "ru": "Игрок за Стража (гильдия Merks). Его глобальный билд Стража на solashur.com и видеоразбор — основа PvE и PvP гайда на Стража."
+          },
+          "used": [
+            "templar"
+          ],
+          "links": [
+            {
+              "type": "site",
+              "url": "https://solashur.com/builds/templar-global-build.html",
+              "label": {
+                "en": "Templar global build",
+                "ru": "Глобальный билд Стража"
+              }
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=ayyzLdGOaNc",
+              "label": {
+                "en": "Build video",
+                "ru": "Видео билда"
+              }
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/@SolAshur",
+              "label": "YouTube"
+            }
+          ]
+        },
+        {
+          "name": "Kaeria",
+          "what": {
+            "en": "Russian-speaking Cleric player (Taiwan client). Her long Cleric PvE guide is the basis of the Cleric PvE mode.",
+            "ru": "Русскоязычная игрок за Целителя (тайваньский клиент). Её большой PvE-гайд на Целителя — основа режима PvE Целителя."
+          },
+          "used": [
+            "cleric"
+          ],
+          "links": [
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=7LjTwlZ4v_s",
+              "label": {
+                "en": "Cleric PvE guide",
+                "ru": "PvE-гайд на Целителя"
+              }
+            }
+          ]
+        },
+        {
           "name": "Whelps",
           "what": {
             "en": "Ranger main (1M CP on KR, played the global test). His Ranger guide video and S1 endgame PvE build on questlog are the basis of the Ranger guide.",
@@ -168,6 +221,14 @@
               "type": "youtube",
               "url": "https://www.youtube.com/@grobsXO",
               "label": "YouTube"
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/watch?v=xRPr30JetyY",
+              "label": {
+                "en": "Gladiator PvE guide",
+                "ru": "PvE-гайд на Гладиатора"
+              }
             }
           ]
         },

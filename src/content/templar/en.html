@@ -3,50 +3,48 @@
 {# ============================== PvE ============================== #}
 {% call glance('pve') %}
   <h3>{{ t.core_skills }}</h3>
-  {{ core([('judgment', '20'), ('vicious-strike', '20'), ('pummel', '20'), ('punishment', '20')]) }}
+  {{ core([('judgment', '20'), ('punishment', '20'), ('pummel', '20'), ('annihilate', '16'), ('shield-smite', '16')]) }}
   <h3>{{ t.stigma_loadout }}</h3>
-  {{ loadout([('doom-shield', 20), ('battlefield-banner', 20), ('taunt', 15), ('shield-of-protection', 15)]) }}
+  {{ loadout([('empyrean-lords-punishment', 15), ('battlefield-banner', 15), ('doom-shield', 15), ('taunt', 5)]) }}
   <h3>{{ t.key_passives }}</h3>
-  {{ passives(['fury', 'insulting-roar', 'punishing-benediction', 'ironclad-defense']) }}
+  {{ passives(['fury', 'punishing-benediction', 'insulting-roar', 'ironclad-defense']) }}
 {% endcall %}
 
 {% call section('intro', 'Overview', 'pve') %}
-  <p>Templar is AION 2's main tank and the class hard raids are built around. It holds aggro, soaks tank busters and — through {{ s('fury') }} — turns every block into a damage buff for the whole party. It still deals respectable damage: Korean parties expect a geared Templar to do about <strong>20–23%</strong> of the group's damage.</p>
+  <p>Templar is AION 2's main tank, and it still deals real damage. Its whole build rests on a <strong>"holy trinity"</strong> of skills taken to 20 as fast as possible — {{ s('judgment') }}, {{ s('punishment') }} and {{ s('pummel') }} — that you use as often as you can. Survivability is not what limits a Templar; damage is.</p>
   <div class="callout accent">
     <h3>The build in one sentence</h3>
-    <p>Shield skills trigger {{ s('judgment') }}, so you press {{ s('shield-smite') }}, {{ s('warding-strike') }} and {{ s('doom-shield') }} to keep Judgment firing, fill the gaps with {{ s('vicious-strike') }} + {{ s('pummel') }} and block the big hits to keep Fury on the party.</p>
+    <p>Shield skills trigger {{ s('judgment') }}: spam the Judgment line on a side button, hold the macro for Pummel and its procs, charge {{ s('punishment') }} on cooldown, and block the big hits to keep {{ s('fury') }} on the party.</p>
   </div>
+  <p class="note">This guide follows SolAshur's global-launch Templar build (solashur.com, September 27) and his video walkthrough.</p>
 {% endcall %}
 
 {% call section('global', 'Global Season 1: what changes', 'pve pvp') %}
-  <p>Global servers open on <strong>October 5, 2026</strong> (Founder's early access from September 30), separate from the Korean/Taiwanese servers. What that means for Templar:</p>
+  <p>Global servers open on <strong>October 5, 2026</strong> (Founder's early access from September 30). What that means for Templar:</p>
   <div class="callout">
     <ul>
-      <li><strong>4 stigma slots</strong> instead of 6 — Korean tank sets run five or six, so something has to go (see Stigmas).</li>
-      <li><strong>Stigmas cap at level 20</strong> — no level-25 tier in the global client.</li>
-      <li><strong>No Heroic gear</strong> in Season 1: fewer bonus lines for Block and passives.</li>
-      <li><strong>Weaker Daevanion bonuses</strong>: bosses live longer, so keeping Fury and Battlefield Banner up matters more.</li>
-      <li><strong>5-player expeditions and 10-player sanctuaries</strong>: Fury and Warding Strike's party tolerance hit more people.</li>
-      <li data-only="pvp"><strong>PvP:</strong> everyone starts on the same limited gear and no meta has formed yet.</li>
+      <li><strong>4 stigmas at level 45.</strong> SolAshur's Taiwan loadouts had six; for global he drops two per profile (listed in Stigmas).</li>
+      <li><strong>Create three skill presets before launch</strong> — PvX, PvP and PvE — so switching content is one click.</li>
+      <li><strong>Collect Skill Point Shards early</strong>: they gate how fast the holy trinity reaches 20.</li>
+      <li><strong>Join a legion</strong> — solo Abyss farming is ineffective.</li>
+      <li>Check stigma names at launch: some may be renamed in the global client.</li>
     </ul>
   </div>
-  <p class="note">Active skills and passives are identical in the global and KR/TW data. Only stigmas lose their level-25 tier.</p>
 {% endcall %}
 
 {% call section('skills', 'Skills', 'pve') %}
-  <p>Four skills go high: <strong>Judgment → Vicious Strike → Pummel → Punishment</strong>. Skills reach <strong>10</strong> from skill points, <strong>14</strong> with Daevanion, <strong>16</strong> with two rings and <strong>20</strong> with arcana. Specializations unlock at 8, 12 and 16.</p>
+  <p>The holy trinity goes to <strong>20</strong> first. Skills reach 10 from skill points, 14 with Daevanion, then rings and arcana push the trinity further. Specializations below are SolAshur's.</p>
   <ul class="skill-grid">
-    {% call skill('judgment', 'must', '20', [2, 3, 4]) %}Your core damage. Shield Smite, Warding Strike, Shield Rush and Doom Shield trigger it; at 16 its cooldown disappears, so you can fire it two or more times per trigger.{% endcall %}
-    {% call skill('vicious-strike', 'must', '20', [1, 2, 4]) %}Basic attack that restores MP. Hold it together with the macro. While leveling take +20% MP restored instead of HP absorb.{% endcall %}
-    {% call skill('pummel', 'must', '16 → 20', [1, 2, 3]) %}Main filler and stagger. The level-12 pick shortens Punishment's cooldown every time Punishing Strike lands.{% endcall %}
-    {% call skill('punishment', 'must', '16 → 20', [2, 3, 4]) %}Charge to stage 3 and release: big burst plus Executor (+20% PvE damage, 20s). Use it first and on cooldown; at 16 it always crits and ignores Block.{% endcall %}
-    {% call skill('warding-strike', 'must', '16', [0, 1, 4]) %}Triggers Judgment, heals and gives Warding. The level-16 pick gives the party damage tolerance — mandatory in groups, 12 is enough solo.{% endcall %}
-    {% call skill('shield-smite', 'opt', '12–16', [2, 3]) %}Triggers Judgment and can proc Debilitating Smash. Take the MP pick instead while mana is short.{% endcall %}
-    {% call skill('annihilate', 'opt', '12', [2, 3]) %}Big proc on stunned or knocked-down targets; +100% damage to bosses that are immune to CC. Doom Shield resets it.{% endcall %}
-    {% call skill('debilitating-smash', 'opt', '12', [1, 3]) %}Proc after a block: −25% Defense on the target. Press it whenever it lights up.{% endcall %}
-    {% call skill('poach', 'opt', '12', [0, 2]) %}Pull. Against bosses the first pick turns it into a gap-closer.{% endcall %}
-    {% call skill('shield-rush', 'opt', '12', [1, 3]) %}Dodge → dash back in; also triggers Judgment.{% endcall %}
-    {% call skill('flash-rampage', 'skip', 'leftovers') %}Only hits Staggered targets — too rare to invest in.{% endcall %}
+    {% call skill('judgment', 'must', '20', [4, 3, 2]) %}Your core damage: Shield Smite, Warding Strike, Shield Rush and Doom Shield trigger it, and at 16 its cooldown disappears.{% endcall %}
+    {% call skill('punishment', 'must', '20', [1, 4, 2]) %}Charged burst — DoT, guaranteed crit through Block and +30% skill speed. Never take the mobile or HP-absorb picks: "bait" once you have enough attack speed.{% endcall %}
+    {% call skill('pummel', 'must', '20', [2, 4, 3]) %}Filler and stagger; every Punishing Strike shortens Punishment. Get it to 20 as soon as possible.{% endcall %}
+    {% call skill('annihilate', 'must', '16 → 20', [2, 3, 0]) %}+100% damage to CC-immune bosses, −10s cooldown. The alternate build takes it to 20 for the AoE knockdown pick.{% endcall %}
+    {% call skill('shield-smite', 'must', '16', [3, 2]) %}Triggers Judgment; −2s cooldown and a 50% chance to proc Debilitating Smash.{% endcall %}
+    {% call skill('debilitating-smash', 'opt', '12', [3, 0]) %}Proc after a block or Shield Smite; ignores Block and Evasion.{% endcall %}
+    {% call skill('warding-strike', 'opt', '12', [1, 3]) %}Triggers Judgment; Block and damage tolerance during Warding.{% endcall %}
+    {% call skill('flash-rampage', 'opt', '12', [4, 3]) %}Only on Staggered targets; −1s to all cooldowns per hit. In the PvE macro, but skip its Daevanion nodes — it falls off mid-game.{% endcall %}
+    {% call skill('shield-rush', 'opt', '12', [3, 1]) %}Dodge → dash, triggers Judgment; −10s cooldown and +10m range.{% endcall %}
+    {% call skill('vicious-strike', 'opt', '10', []) %}Basic attack on LMB; 10 from skill points is enough.{% endcall %}
   </ul>
 {% endcall %}
 
@@ -54,197 +52,165 @@
   <div class="table-wrap"><table>
     <thead><tr><th>#</th><th>Passive</th><th>Why</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td>{{ s('fury') }}</td><td>+PvE Damage Boost for you <em>and the party</em> for 20s after every block. The reason groups want a Templar.</td></tr>
-      <tr><td>2</td><td>{{ s('insulting-roar') }}</td><td>Double enmity plus an Attack buff on front attacks — aggro and damage in one.</td></tr>
-      <tr><td>3</td><td>{{ s('punishing-benediction') }}</td><td>Critical Hit and a 50% extra-damage proc on every hit.</td></tr>
-      <tr><td>4</td><td>{{ s('ironclad-defense') }} / {{ s('enhance-health') }}</td><td>Defense, Endurance, Max HP and incoming heals — safe to level early.</td></tr>
-      <tr><td>5</td><td>{{ s('block-pain') }}</td><td>Tolerance on the first hit every 20s, so you don't get deleted by an opener.</td></tr>
+      <tr><td>1</td><td>{{ s('fury') }}</td><td>+PvE Damage Boost for you <em>and the party</em> after every block — the reason groups want a Templar.</td></tr>
+      <tr><td>2</td><td>{{ s('punishing-benediction') }}</td><td>Critical Hit and an extra-damage proc on every hit; the Bell arcana rolls it.</td></tr>
+      <tr><td>3</td><td>{{ s('insulting-roar') }}</td><td>Enmity plus Attack on front attacks.</td></tr>
+      <tr><td>4</td><td>{{ s('ironclad-defense') }}</td><td>Defense and Endurance — the core of the endurance stat build.</td></tr>
     </tbody>
   </table></div>
-  <p class="note">{{ s('guarding-seal') }} works at low levels; {{ s('impact-hit') }} and {{ s('survival-willpower') }} are PvP passives.</p>
 {% endcall %}
 
-{% call section('gear', 'Gear & stats', 'pve') %}
+{% call section('gear', 'Gear path', 'pve') %}
+  <p>If you start on day one, this is the route:</p>
+  <ol>
+    <li><strong>Holy Spirit set</strong> — farm it in the lower Abyss (AP, pets and gold drops per kill, plus boss spawns) or anywhere in the open world. Aim for about <strong>1,600 combat power</strong>.</li>
+    <li><strong>Skip the first dungeon tier</strong>: go to Urugugu Canyon and Vakron Sky Island for the sword, the guard and the Vakron armor.</li>
+    <li>Use <strong>Transcendence</strong> to get ready for <strong>Fire Temple</strong> (Enraged Kromede weapon) and <strong>Ferocious Horn</strong> (Nuakum armor). Nuakum is the safer farm: nearly every piece is an upgrade, while the weapon chest can drop other classes' weapons.</li>
+    <li><strong>End goal</strong> — PvE: White Dragon Lord sword, guard and accessories with Nuakum armor (full White Dragon armor only adds PvE tolerance and is whale territory). PvX: Enraged Kromede sword with the White Dragon guard.</li>
+  </ol>
+  <p><strong>Wings:</strong> Dark Veil early (attack bonus, damage boost), Talisra late (attack, accuracy, cooldown reduction).</p>
+{% endcall %}
+
+{% call section('stats', 'Stats, soul binds, pets', 'pve pvp') %}
+  <p>Two stat builds, chosen by what the stats synergize with:</p>
   <div class="callout"><ul>
-    <li><strong>Block</strong> — every block is Fury for the party and a Debilitating Smash proc. Don't drop it for pure damage.</li>
-    <li><strong>Accuracy</strong> — a missed skill is lost aggro. Keep it high alongside defensive stats.</li>
-    <li><strong>Attack %, damage amplification, critical damage</strong> on the remaining lines: Korean builds put Attack % on shoulders and cloak, damage amplification on the chest, combat speed on gloves.</li>
-    <li><strong>HP and Defense</strong> matter more on the global servers early on, while the healer's gear is also weak.</li>
+    <li><strong>A · Block + Evasion + Dexterity</strong> — early and mid game, against opponents without much Accuracy. Dexterity feeds both Block and Evasion. SolAshur's pick for launch.</li>
+    <li><strong>B · Block + Endurance + Ironclad Defense</strong> — late game: at 100% Endurance a hit deals 50% less damage.</li>
   </ul></div>
-  <p><strong>Arcana:</strong> push Judgment to 20 first, then Vicious Strike, then Pummel and Punishment. Damage amplification, critical damage amplification, weapon damage and Attack are the stats to look for on unique cards.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Slot</th><th>Unique line</th><th>Then</th></tr></thead>
+    <tbody>
+      <tr><td>Weapon, guard</td><td>Combat Speed + Weapon Damage Boost</td><td>Might + Multi-Hit; Precision if under the accuracy cap</td></tr>
+      <tr><td>Helm</td><td>Incoming Healing</td><td>Attack, Might, Critical Hit, Precision</td></tr>
+      <tr><td>Shoulders</td><td>Critical Damage Boost</td><td>Attack, Might, Precision, Perfect Chance</td></tr>
+      <tr><td>Chest</td><td>Damage Boost</td><td>Attack, Might, Critical Hit, Constitution</td></tr>
+      <tr><td>Gloves</td><td>Combat Speed</td><td>Perfect Chance, Attack, Might, Multi-Hit</td></tr>
+      <tr><td>Legs</td><td>Perfect Chance</td><td>Damage Tolerance, Attack, Might, Constitution</td></tr>
+      <tr><td>Boots</td><td>Move Speed</td><td>Perfect Chance, Attack, Might, Dexterity</td></tr>
+      <tr><td>Cloak</td><td>Critical Damage Tolerance</td><td>Perfect Chance, Damage Tolerance, Attack</td></tr>
+      <tr><td>Rings / earrings / necklace</td><td colspan="2">Rings: your top 4 active skills · Earrings: top 4 passives · Necklace: 2 actives + Attack, Critical Hit, Weapon Damage Boost</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>Pets (Genus Insight)</strong> — don't skip them; in a couple of weeks they are the difference between hitting and missing. Non-special insight gives Attack and Accuracy, special insight Attack and Damage Boost. Lock slots in this order: <strong>4 → 7 → 2 and 8</strong> → the rest.</p>
+  <p><strong>Pantheon:</strong> Wisdom (Double Chance) first, Space (Block); then <span data-only="pve">Illusion (cooldown reduction) for PvE</span><span data-only="pvp">Time (attack speed) for PvP</span>.</p>
+{% endcall %}
+
+{% call section('arcana', 'Arcana', 'pve') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Card</th><th>Roll for</th></tr></thead>
+    <tbody>
+      <tr><td>Chalice (Grail)</td><td>{{ s('pummel') }}, {{ s('punishment') }}</td></tr>
+      <tr><td>Parchment</td><td>{{ s('judgment') }}, {{ s('punishment') }}</td></tr>
+      <tr><td>Compass</td><td>{{ s('pummel') }}, {{ s('shield-smite') }}</td></tr>
+      <tr><td>Bell</td><td>{{ s('fury') }}, {{ s('punishing-benediction') }}</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Go for damage set effects over survivability — Templar's survivability is already enough.</p>
 {% endcall %}
 
 {% call section('daevanion', 'Daevanion boards', 'pve pvp') %}
-  <p>Daevanion takes your skills from 10 to 14 and adds a pile of stats. Each blue node gives <strong>+1 level</strong> to its skill.</p>
-  <div class="table-wrap"><table>
-    <thead><tr><th>Board</th><th>Unlock</th><th>Focus</th></tr></thead>
-    <tbody>
-      <tr><td>Nezekan</td><td>Lv 12</td><td>Skill levels, base stats</td></tr>
-      <tr><td>Zikel</td><td>Lv 20</td><td>Evasion, damage boost / tolerance</td></tr>
-      <tr><td>Vaizel</td><td>Lv 30</td><td>Critical damage</td></tr>
-      <tr><td>Triniel</td><td>Lv 40</td><td>Multi-hit (mostly PvP)</td></tr>
-      <tr><td>Ariel</td><td>Lv 45</td><td>PvE damage &amp; resistance</td></tr>
-      <tr><td>Azphel</td><td>Lv 45</td><td>PvP damage &amp; resistance</td></tr>
-    </tbody>
-  </table></div>
-  <div class="callout">
-    <ul>
-      <li data-only="pve"><strong>Priority:</strong> blue nodes for {{ s('judgment') }}, {{ s('vicious-strike') }}, {{ s('pummel') }}, {{ s('punishment') }}, then orange nodes, then stats.</li>
-      <li data-only="pvp"><strong>Priority:</strong> blue nodes for {{ s('judgment') }}, {{ s('poach') }}, {{ s('shield-rush') }}, {{ s('defiance') }}, then orange nodes.</li>
-      <li data-only="pve"><strong>Ariel, not Azphel</strong> — same cost, and choosing wrong is the most expensive mistake in the system.</li>
-      <li data-only="pvp"><strong>Azphel, not Ariel</strong>, and take Triniel earlier.</li>
-      <li>Early on take the damage-boost side of each board over tolerance — gear will cover defense later.</li>
-    </ul>
-  </div>
-  <p class="note">Board layouts come from the KR/TW client, and global values are lower. Check the in-game board before committing a full route.</p>
+  <p>Daevanion takes your skills from 10 to 14 and adds stats. Each blue node gives <strong>+1 level</strong> to its skill.</p>
+  <div class="callout"><ul>
+    <li><strong>Priority:</strong> blue nodes for {{ s('judgment') }}, {{ s('punishment') }}, {{ s('pummel') }}, then {{ s('shield-smite') }} and {{ s('annihilate') }}; orange nodes next.</li>
+    <li><strong>Skip:</strong> MP nodes (put the points into Attack), {{ s('flash-rampage') }} nodes, and the green Warding Shield / Guardian Shield nodes unless you have spare points.</li>
+    <li data-only="pve"><strong>Ariel, not Azphel</strong> at 45.</li>
+    <li data-only="pvp"><strong>Azphel, not Ariel</strong> at 45.</li>
+  </ul></div>
 {% endcall %}
 
 {% call section('stigmas', 'Stigmas', 'pve') %}
-  <p>Korean tanks run Taunt, Shield of Protection, Doom Shield, Battlefield Banner, Empyrean Lord's Punishment and Noble Armor. Global gives you four slots, so the set below keeps aggro, the tank-buster block, the Judgment trigger and the damage buff.</p>
+  <p><strong>Breadth before depth:</strong> put 1 point into all four first, then push Empyrean Lord's Punishment and Battlefield Banner to 5, then chase the breakpoints — Empyrean Lord 10 → 15, Banner 10 → 15, Doom Shield 15.</p>
   <ul class="skill-grid">
-    {% call skill('doom-shield', 'must', 'Lv 20', upto=20) %}Gap-closer that triggers Judgment and resets Annihilate at level 5. The one stigma every Templar build keeps.{% endcall %}
-    {% call skill('battlefield-banner', 'must', 'Lv 20', upto=20) %}Attack based on your Defense. Level 20 cuts its cooldown by 30s — the biggest damage stigma you have.{% endcall %}
-    {% call skill('taunt', 'must', 'Lv 15', upto=15) %}Aggro plus Shrink (−10% Attack on the boss). Level 15 shortens its cooldown.{% endcall %}
-    {% call skill('shield-of-protection', 'must', 'Lv 15', upto=15) %}Guaranteed block for 3s — press it right before a tank buster. Every block also refreshes Fury.{% endcall %}
-    {% call skill('empyrean-lords-punishment', 'opt', 'solo', upto=10) %}Ranged AoE with big stagger damage. Swap it in for open-world farming and solo content.{% endcall %}
-    {% call skill('noble-armor', 'opt', 'alt.', upto=15) %}300s buff; at 10 and 15 it boosts Insulting Roar and Fury. Good once your aggro is safe.{% endcall %}
-    {% call skill('nezekans-shield', 'opt', 'raids', upto=10) %}Party shield for one raid-wide hit. Swap in only for a fight that needs it.{% endcall %}
+    {% call skill('empyrean-lords-punishment', 'must', 'Lv 15', upto=15) %}AoE damage with big stagger (+50 at 10); at 15 +10% PvE Damage Boost. Needed on bosses with stagger mechanics.{% endcall %}
+    {% call skill('battlefield-banner', 'must', 'Lv 15', upto=15) %}Your damage buff: Multi-Hit, Weapon Damage Boost and Attack from Defense. The level-10 and 15 tiers are the good ones.{% endcall %}
+    {% call skill('doom-shield', 'must', 'Lv 15', upto=15) %}Your main Judgment trigger. At 15 it resets on a kill — vital for PvX and pet farming.{% endcall %}
+    {% call skill('taunt', 'must', 'Lv 5', upto=5) %}Aggro in group content. Drop it for solo PvE.{% endcall %}
+    {% call skill('nezekans-shield', 'opt', 'alt.', upto=15) %}Survivability swap; not good before 15.{% endcall %}
+    {% call skill('comrade-in-arms', 'opt', 'group', upto=15) %}Survivability swap in groups. Drop it for solo PvE.{% endcall %}
   </ul>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Profile</th><th>4 stigmas</th><th>Alternates</th></tr></thead>
+    <tbody>
+      <tr><td>PvE</td><td>Empyrean Lord's Punishment, Battlefield Banner, Doom Shield, Taunt</td><td>Nezekan's Shield, Comrade in Arms</td></tr>
+      <tr><td>PvX (all-purpose)</td><td>Empyrean Lord's Punishment, Executing Blade, Battlefield Banner, Doom Shield</td><td>Nezekan's Shield, Comrade in Arms, Second Skin</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Every swap costs something: without Doom Shield you lose Judgment procs, without Empyrean Lord stagger, without the Banner damage. If you need survivability, Doom Shield is the one to drop when the fight doesn't need its mobility.</p>
 {% endcall %}
 
 {% call section('macro', 'Macro & rotation', 'pve') %}
-  <p>AION 2 has two separate tools, and the build uses both:</p>
+  <p>AION 2 has two separate tools:</p>
   <ul>
-    <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the highest-priority skill that's ready, and in AION 2 the <strong>bottom slot has the highest priority</strong>. The cards below show each line top to bottom as in the game, with the priority number on every skill.</li>
-    <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar lines in order and cancels animation tails. Skills on cooldown are skipped. Hold your basic attack (LMB) <em>together</em> with the macro key instead of putting it into the macro — the game weaves and cancels it better that way.</li>
+    <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the highest-priority skill that's ready, and in AION 2 the <strong>bottom slot has the highest priority</strong>. The cards show each line top to bottom as in the game.</li>
+    <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar lines in order and cancels animation tails. Skills on cooldown are skipped.</li>
   </ul>
-  <p>Templar's damage is a loop: <strong>shield skill → Judgment → procs → filler</strong>. The lines below are built so that Judgment and the procs always win when they light up.</p>
 
   <h3>1. Hotbar lines</h3>
   <div class="hotlines">
-    {% call hotline('RMB', 'Proc line', ['judgment', 'annihilate', 'debilitating-smash', 'doom-shield', 'pummel']) %}Judgment, Annihilate and Debilitating Smash can only be used after their trigger, so the line falls through to Pummel the rest of the time.{% endcall %}
-    {% call hotline('E', 'Trigger line', ['shield-smite', 'warding-strike']) %}Both trigger Judgment — together with Doom Shield they keep it firing.{% endcall %}
-    {% call hotline('R', 'Buff line', ['battlefield-banner'], ['noble-armor']) %}Banner on cooldown; add Noble Armor if you slot it.{% endcall %}
+    {% call hotline('RMB', 'Pummel line', ['annihilate', 'debilitating-smash', 'flash-rampage', 'pummel']) %}The in-game macro presses this line. Procs fire as soon as they light up; Pummel fills the rest. For PvX swap Flash Rampage for Doom Shield.{% endcall %}
+    {% call hotline('Side', 'Judgment line', ['judgment', 'shield-smite', 'warding-strike', 'doom-shield']) %}Spam it: every shield skill triggers Judgment, and Judgment always wins.{% endcall %}
   </div>
 
-  <h3>2. In-game macro</h3>
-  <p>Skill window → <strong>Macro</strong>. Put the three lines in this order and set every <strong>Delay to 10 ms</strong>. Bind the macro in Settings → Key Settings → General → Gameplay → <strong>Macro</strong> — a side mouse button works best.</p>
-  {{ macroseq([('Proc line', 'RMB · 10 ms'), ('Trigger line', 'E · 10 ms'), ('Buff line', 'R · 10 ms')]) }}
-
-  <p class="note">Season 1 tip (Grobs): cooldowns are slow at launch, so buffs are worth more when timed — you can take the buff line out of the macro and press it yourself right before a boss or a big pack.</p>
-
-  <h3>3. What you actually press</h3>
+  <h3>2. Keys</h3>
   <ul class="presslist">
-    <li><span class="press-how">Hold</span><span class="press-what">{{ s('vicious-strike') }} on <span class="key">LMB</span> <strong>and</strong> the <span class="key">Macro key</span> — Vicious Strike keeps your MP up between skills.</span></li>
-    <li><span class="press-how">Charge</span><span class="press-what">{{ s('punishment') }} to stage 3 by hand at the start of every window — charged skills fire at random stages inside a macro.</span></li>
-    <li><span class="press-how">By hand</span><span class="press-what">{{ s('taunt') }} and {{ s('poach') }} (aggro and pulls), {{ s('shield-of-protection') }} before tank busters, {{ s('shield-rush') }} after a dodge.</span></li>
+    <li><span class="press-how">LMB</span><span class="press-what">{{ s('vicious-strike') }} (quick slot 1).</span></li>
+    <li><span class="press-how">RMB</span><span class="press-what">The in-game macro (Pummel line), 10 ms.</span></li>
+    <li><span class="press-how">Side button</span><span class="press-what">The Judgment line. SolAshur binds it to <span class="key">R</span> and has his mouse repeat R about 10 times a second.</span></li>
+    <li><span class="press-how">By hand</span><span class="press-what">Charged {{ s('punishment') }} on cooldown, {{ s('battlefield-banner') }}, {{ s('empyrean-lords-punishment') }} for stagger, {{ s('taunt') }}.</span></li>
   </ul>
-  <div class="callout">
-    <h3>Tanking is not the macro's job</h3>
-    <p>Face the boss away from the party, block the telegraphed hits (every block is Fury for everyone) and keep Taunt's Shrink on the target. The macro only keeps your damage loop tight while you do that.</p>
-  </div>
-  <p class="note">The lines follow Korean Templar setups (Judgment / Banner / Doom Shield / Pummel on one key, Vicious Strike held on LMB) adapted to global's four stigmas. Test them on the training dummy once the global client is live.</p>
+  <p class="note">SolAshur covers his full hotkey setup in an earlier macro video; you will need to change a few in-game key bindings to match.</p>
 {% endcall %}
 
 {% call section('recap', 'Recap', 'pve') %}
   <div class="callout accent"><ul>
-    <li><strong>Skills:</strong> Judgment 20, Vicious Strike 20, Pummel and Punishment 16→20, Warding Strike 16; the rest 12.</li>
-    <li><strong>Stigmas:</strong> Doom Shield 20, Battlefield Banner 20, Taunt 15, Shield of Protection 15.</li>
-    <li><strong>Passives:</strong> Fury &gt; Insulting Roar &gt; Punishing Benediction &gt; Ironclad Defense / Enhance Health.</li>
-    <li><strong>Play:</strong> shield skill → Judgment, charged Punishment on cooldown, block the big hits.</li>
+    <li><strong>Skills:</strong> Judgment, Punishment, Pummel 20 first; Annihilate and Shield Smite 16; the rest 12.</li>
+    <li><strong>Stigmas:</strong> Empyrean Lord's Punishment, Battlefield Banner, Doom Shield, Taunt — 1 point in each, then the breakpoints.</li>
+    <li><strong>Stats:</strong> Block + Evasion + Dexterity early, Block + Endurance late; don't skip pets.</li>
+    <li><strong>Gear:</strong> Holy Spirit → Urugugu / Vakron → Fire Temple and Ferocious Horn → White Dragon weapon, guard and accessories.</li>
   </ul></div>
 {% endcall %}
 
 {# ============================== PvP ============================== #}
 {% call glance('pvp') %}
   <h3>{{ t.core_skills }}</h3>
-  {{ core([('judgment', '20'), ('poach', '16'), ('shield-rush', '20'), ('punishment', '16'), ('defiance', '16')]) }}
+  {{ core([('judgment', '20'), ('punishment', '20'), ('pummel', '20'), ('annihilate', '20')]) }}
   <h3>{{ t.stigma_loadout }}</h3>
-  {{ loadout([('empyrean-lords-punishment', 20), ('shield-of-protection', 20), ('doom-shield', 20), ('noble-armor', 15)]) }}
+  {{ loadout([('executing-blade', 10), ('empyrean-lords-punishment', 15), ('doom-shield', 15), ('nezekans-shield', 15)]) }}
   <h3>{{ t.key_passives }}</h3>
-  {{ passives(['survival-willpower', 'impact-hit', 'block-pain', 'ironclad-defense']) }}
+  {{ passives(['fury', 'punishing-benediction', 'ironclad-defense', 'survival-willpower']) }}
 {% endcall %}
 
 {% call section('intro-pvp', 'Overview', 'pvp') %}
-  <p>In PvP, Templar is a <strong>peeler and disruptor</strong>. It pulls targets out of position, stuns and knocks them down, cuts their healing and survives in the middle of a crowd as long as nobody gets behind it.</p>
-  <p>Priorities in order: <strong>control</strong> → <strong>staying alive</strong> → damage on whoever you just locked down.</p>
-  <p class="note">No global PvP meta exists yet. This mode combines Korean PvP builds with skill data from the global client — treat it as a starting point.</p>
+  <p>In PvP the Templar keeps the same holy trinity and the same Judgment loop; what changes is the stigmas. {{ s('executing-blade') }} gives you an edge in every duel, and {{ s('annihilate') }} at 20 turns into an AoE knockdown.</p>
+  <p>Melee gets kited — a strong weapon matters less when you can't reach the target, so play around your gap-closers and Doom Shield.</p>
 {% endcall %}
 
 {% call section('skills-pvp', 'Skills', 'pvp') %}
   <ul class="skill-grid">
-    {% call skill('poach', 'must', '16', [1, 3, 4]) %}Pull + root, and at 16 a 50% stun. Korean PvP guides call level 16 mandatory.{% endcall %}
-    {% call skill('shield-rush', 'must', '20', [1, 3, 4]) %}Dodge → dash with a stun chance that also triggers Judgment. Treated as near-mandatory at 20.{% endcall %}
-    {% call skill('judgment', 'must', '20', [1, 3, 4]) %}Still your damage — extra damage on stunned or knocked-down players.{% endcall %}
-    {% call skill('punishment', 'must', '16', [2, 3, 4]) %}Burst that ignores Block and Evasion; take the mobile pick so you can charge while chasing.{% endcall %}
-    {% call skill('debilitating-smash', 'must', '12', [2, 3]) %}−60% incoming healing on the target — your anti-heal.{% endcall %}
-    {% call skill('defiance', 'must', '16', [0, 3, 4]) %}Breaks every hard CC; the chain skill adds a grab of your own.{% endcall %}
-    {% call skill('warding-strike', 'opt', '12–16', [0, 1, 4]) %}Heal and tolerance in the middle of a fight; 16 for party PvP.{% endcall %}
-    {% call skill('shield-smite', 'opt', '12', [0, 3]) %}Stun, and at 16 an AoE stun.{% endcall %}
+    {% call skill('judgment', 'must', '20', [4, 3, 2]) %}Same loop as in PvE: shield skills trigger it.{% endcall %}
+    {% call skill('punishment', 'must', '20', [1, 4, 2]) %}Burst through Block and Evasion.{% endcall %}
+    {% call skill('pummel', 'must', '20', [2, 4, 3]) %}Filler; keeps Punishment's cooldown short.{% endcall %}
+    {% call skill('annihilate', 'must', '20', [2, 3, 4]) %}The alternate build: at 20 it hits up to four enemies that are stunned or knocked down, with a 30% knockdown chance — an AoE knockdown you can spam with the −10s pick.{% endcall %}
+    {% call skill('shield-smite', 'opt', '16', [3, 2]) %}Judgment trigger and stun source.{% endcall %}
   </ul>
-{% endcall %}
-
-{% call section('passives-pvp', 'Passives', 'pvp') %}
-  <div class="table-wrap"><table>
-    <thead><tr><th>Passive</th><th>PvP value</th></tr></thead>
-    <tbody>
-      <tr><td>{{ s('survival-willpower') }}</td><td>Status resist, plus tolerance while you're CC'd.</td></tr>
-      <tr><td>{{ s('impact-hit') }}</td><td>More stun and knockdown chance — your control lands more often.</td></tr>
-      <tr><td>{{ s('block-pain') }}</td><td>Tolerance on the first hit — the burst that opens a fight.</td></tr>
-      <tr><td>{{ s('ironclad-defense') }}</td><td>Defense and Endurance; the core stat Korean PvP Templars stack from every slot.</td></tr>
-      <tr><td>{{ s('fury') }}</td><td>Still a party buff in group PvP.</td></tr>
-    </tbody>
-  </table></div>
-{% endcall %}
-
-{% call section('gear-pvp', 'Gear & arcana', 'pvp') %}
-  <p>Korean PvP Templars pick one of three directions:</p>
-  <div class="callout"><ul>
-    <li><strong>Block-heavy</strong> — the current meta: survives several attackers as long as you don't expose your back. Weak against high-Accuracy builds.</li>
-    <li><strong>Accuracy-heavy</strong> — answers evasive and blocking opponents; weak until you hit a stat threshold.</li>
-    <li><strong>Damage</strong> — highest ceiling and best party contribution, but expensive and harder to control.</li>
-  </ul></div>
-  <p>In Season 1 keep your PvE gear, stack Defense-type stats on everything except the weapon, and change stigmas, passives and Daevanion.</p>
 {% endcall %}
 
 {% call section('stigmas-pvp', 'Stigmas', 'pvp') %}
   <ul class="skill-grid">
-    {% call skill('empyrean-lords-punishment', 'must', 'Lv 20', upto=20) %}Ranged AoE stun (level 20 raises the chance) — your harassment tool from range.{% endcall %}
-    {% call skill('shield-of-protection', 'must', 'Lv 20', upto=20) %}Blocks everything for 3s; at 20 it heals 10% on block.{% endcall %}
-    {% call skill('doom-shield', 'must', 'Lv 20', upto=20) %}Dash + 75% knockdown + shield. Korean players rate it above Executing Blade.{% endcall %}
-    {% call skill('noble-armor', 'must', 'Lv 15', upto=15) %}Max HP and Defense, and it boosts Fury. Pairs with Shield of Protection.{% endcall %}
-    {% call skill('comrade-in-arms', 'opt', 'party PvP', upto=15) %}Swap for Doom Shield in organized party fights: you take half of an ally's damage.{% endcall %}
-    {% call skill('grapple', 'opt', 'alt.', upto=15) %}AoE pull + root; with good timing it decides a fight.{% endcall %}
-    {% call skill('second-skin', 'opt', 'alt.', upto=20) %}Big tolerance for 10s; the level-20 tier is a large jump.{% endcall %}
+    {% call skill('executing-blade', 'must', 'Lv 10', upto=10) %}Best for 1v1: lowers the target's defense (Exposed at 10). The top 1v1 priority for your stigma points.{% endcall %}
+    {% call skill('empyrean-lords-punishment', 'must', 'Lv 15', upto=15) %}Straight CC and AoE damage.{% endcall %}
+    {% call skill('doom-shield', 'must', 'Lv 15', upto=15) %}Gap-closer, knockdown and Judgment trigger.{% endcall %}
+    {% call skill('nezekans-shield', 'must', 'Lv 15', upto=15) %}Against physical attackers. Not good before 15.{% endcall %}
+    {% call skill('second-skin', 'opt', 'vs magic', upto=10) %}Against magic damage — swap it in for Empyrean Lord's Punishment when you need to survive.{% endcall %}
+    {% call skill('comrade-in-arms', 'opt', 'group PvP', upto=20) %}In group PvP replace Nezekan's Shield with it; best at 20.{% endcall %}
   </ul>
-  <p class="note">Skip Nezekan's Shield (breaks too fast in PvP) and Armor of Balance (a whole slot for one resist).</p>
-{% endcall %}
-
-{% call section('combos-pvp', 'Combos & play', 'pvp') %}
-  <div class="callout">
-    <h3>Pick and punish</h3>
-    <div class="combo">{{ s('poach') }}<span class="arrow">→</span>{{ s('shield-smite') }}<span class="arrow">→</span>{{ s('judgment') }}<span class="arrow">→</span>{{ s('annihilate') }}<span class="arrow">→</span>charged {{ s('punishment') }}</div>
-  </div>
-  <div class="callout">
-    <h3>Engage</h3>
-    <div class="combo">dodge + {{ s('shield-rush') }}<span class="arrow">→</span>{{ s('doom-shield') }}<span class="arrow">→</span>{{ s('debilitating-smash') }} on the healer's target</div>
-  </div>
-  <div class="callout">
-    <h3>Staying alive</h3>
-    <ul>
-      <li>Keep your back to a wall — block works only from the front.</li>
-      <li>{{ s('shield-of-protection') }} goes up for their burst, not after it.</li>
-      <li>{{ s('defiance') }} for the first hard CC; Survival Willpower covers the next one.</li>
-    </ul>
-  </div>
 {% endcall %}
 
 {% call section('recap-pvp', 'Recap', 'pvp') %}
   <div class="callout accent"><ul>
-    <li><strong>Skills:</strong> Judgment 20, Shield Rush 20, Poach 16, Punishment 16, Defiance 16, Debilitating Smash 12.</li>
-    <li><strong>Stigmas:</strong> Empyrean Lord's Punishment, Shield of Protection, Doom Shield, Noble Armor (Comrade in Arms for party fights).</li>
-    <li><strong>Daevanion:</strong> Azphel over Ariel, Triniel earlier.</li>
-    <li><strong>Play:</strong> pull, stun, anti-heal; block their burst and never show your back.</li>
+    <li><strong>Skills:</strong> the same trinity at 20, plus Annihilate 20 for the AoE knockdown.</li>
+    <li><strong>Stigmas:</strong> Executing Blade, Empyrean Lord's Punishment, Doom Shield, Nezekan's Shield (Second Skin vs magic, Comrade in Arms for groups).</li>
+    <li><strong>Pantheon:</strong> Time (attack speed) instead of Illusion.</li>
   </ul></div>
 {% endcall %}
 
@@ -272,6 +238,7 @@
 <section class="sources" aria-labelledby="h-sources">
   <h2 id="h-sources">{{ t.sources }}</h2>
   <ul>
+    <li><a href="https://solashur.com/builds/templar-global-build.html" target="_blank" rel="noopener">SolAshur — AION 2 Templar global build</a> and <a href="https://www.youtube.com/watch?v=ayyzLdGOaNc" target="_blank" rel="noopener">his video walkthrough</a> — the build this guide follows (skills, stigmas by profile, macro, gear path, stats, pets, Pantheon, arcana); specializations from <a href="https://questlog.gg/aion-2/en/character-builder/QuickCobraLifeBanish" target="_blank" rel="noopener">his questlog builds</a></li>
     <li><a href="https://www.youtube.com/watch?v=JEWRiaOb9JY" target="_blank" rel="noopener">NoBS Game Guides — Aion 2 Templar Guide: Skills Introduction + Early Game Macro</a> (base of the skill overview and leveling macro)</li>
     <li><a href="https://questlog.gg/aion-2/en/db/skills/templar" target="_blank" rel="noopener">questlog.gg</a> — skill &amp; stigma data from the global client</li>
     <li><a href="https://www.inven.co.kr/board/aion2/6438/12803" target="_blank" rel="noopener">Inven</a> — Korean Templar skill specializations, stigmas and macro setup</li>
