@@ -38,7 +38,7 @@
     else if (modes.indexOf(r.dataset.mode) < 0) r.dataset.mode = modes[0];
   })(document.documentElement);
 </script>
-<link rel="stylesheet" href="{{ root }}assets/css/site.css">
+<link rel="stylesheet" href="{{ root }}assets/css/site.css?v={{ ASSET_V }}">
 </head>
 <body class="{% block body_class %}{% endblock %}">
 <a class="skip-link" href="#main">{{ t.skip }}</a>
@@ -151,7 +151,15 @@
   </form>
 </dialog>
 {% endif %}
-<script src="{{ root }}assets/js/site.js" defer></script>
-<script src="{{ root }}assets/js/fx.js" defer></script>
+<script src="{{ root }}assets/js/site.js?v={{ ASSET_V }}" defer></script>
+<script src="{{ root }}assets/js/fx.js?v={{ ASSET_V }}" defer></script>
+{% for ev in SITE.events if ev.get('celebrate') and ev.at %}
+<div class="cel-banner" role="status" hidden data-at="{{ ev.at }}" data-id="{{ ev.id }}">
+  <span class="cel-ico" aria-hidden="true">✦</span>
+  <div><p class="cel-h">{{ t.cel_title }}</p><p class="cel-p">{{ t.cel_text }}</p></div>
+  <button type="button" class="cel-x" aria-label="{{ t.cel_close }}">×</button>
+</div>
+<script src="{{ root }}assets/js/celebrate.js?v={{ ASSET_V }}" defer></script>
+{% endfor %}
 </body>
 </html>

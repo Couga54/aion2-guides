@@ -365,7 +365,9 @@ p{margin:0 0 12px;}
 .core-row{display:flex;flex-wrap:wrap;gap:14px;}
 .core-row li{position:relative;width:88px;text-align:center;}
 .core-row img{width:52px;height:52px;border-radius:12px;border:1px solid var(--border-2);display:block;margin:0 auto;}
-.core-lv{position:absolute;top:-6px;left:calc(50% + 14px);font:700 .68rem var(--font-mono);background:var(--accent);color:var(--on-accent);border-radius:999px;padding:1px 7px;}
+.core-lv{position:absolute;top:-6px;left:calc(50% + 14px);font:700 .68rem var(--font-mono);background:var(--accent);color:var(--on-accent);border-radius:999px;padding:1px 7px;white-space:nowrap;}
+.core-lv.is-range{left:auto;right:-6px;}
+.core-lv .arr{display:inline-block;width:.85em;height:.65em;margin:0 .1em;vertical-align:0;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
 .core-name{display:block;font-size:.74rem;color:var(--text-dim);margin-top:6px;line-height:1.25;}
 .loadout{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;counter-reset:slot;}
 .slot{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 6px 10px;border-radius:12px;background:var(--bg-2);border:1px solid var(--border-2);text-align:center;counter-increment:slot;}
@@ -815,3 +817,33 @@ details.spec-all[open] > *:not(summary),.wk-group,.bs-group{animation:fade-in .3
 .report-box .note{margin:0;font-size:.76rem;}
 /* "16 → 20" badges: the arrow glyph came from a fallback font and sat low; an SVG arrow centred on the digits (their middle is ~.36em above the baseline) */
 .badge .arr{display:inline-block;width:.95em;height:.7em;margin:0 .15em;vertical-align:0;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+
+/* ---- Founder's Early Access celebration (assets/js/celebrate.js) ---- */
+.cel-canvas{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:95;}
+.cel-banner{position:fixed;left:50%;top:calc(var(--topbar-h) + 12px);z-index:96;transform:translate(-50%,calc(-100% - var(--topbar-h) - 40px));transition:transform .7s cubic-bezier(.2,1.3,.3,1);
+  display:flex;align-items:center;gap:14px;width:max-content;max-width:calc(100vw - 24px);padding:14px 16px 14px 14px;border-radius:16px;
+  background:linear-gradient(135deg,#2a2112,#141925);border:1px solid rgba(217,179,108,.7);color:#e9e6df;
+  box-shadow:0 20px 60px -10px rgba(0,0,0,.8),0 0 40px -10px rgba(217,179,108,.6);}
+.cel-banner.is-on{transform:translate(-50%,0);}
+.cel-banner[hidden]{display:none;}
+.cel-ico{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:1.5rem;color:#f3d48a;background:radial-gradient(circle,rgba(217,179,108,.45),transparent 70%);}
+.cel-h{margin:0;font:400 1.2rem var(--font-display);color:#f3d48a;}
+.cel-p{margin:2px 0 0;font-size:.84rem;color:#b9b6ae;}
+.cel-x{flex:none;background:none;border:0;color:#8d8a83;font-size:1.3rem;cursor:pointer;padding:4px 6px;}
+.cel-x:hover{color:#fff;}
+.cel-ribbon{position:fixed;left:-10%;right:-10%;top:50%;z-index:94;overflow:hidden;transform:translateY(-50%) rotate(-2deg) translateX(-115%);transition:transform 1s cubic-bezier(.2,.8,.2,1);pointer-events:none;
+  background:linear-gradient(90deg,#8a6a2c,#f3d48a,#c99a45,#f3d48a,#8a6a2c);color:#1a1409;padding:8px 0;font:700 .86rem var(--font-mono);letter-spacing:.3em;text-transform:uppercase;box-shadow:0 8px 30px -8px rgba(0,0,0,.7);}
+.cel-ribbon.is-on{transform:translateY(-50%) rotate(-2deg) translateX(0);}
+.cel-ribbon span{display:inline-block;white-space:nowrap;animation:cel-marquee 22s linear infinite;}
+@keyframes cel-marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.home-hero h1.cel-glow{animation:cel-tglow 2.4s ease-in-out infinite;}
+@keyframes cel-tglow{0%,100%{text-shadow:0 0 0 rgba(255,220,150,0);}50%{text-shadow:0 0 28px rgba(255,220,150,.75);}}
+/* the Early Access card in the launch panel once the servers are open */
+.ev-open-msg{display:none;}
+.ev.is-open{opacity:1;overflow:hidden;background:linear-gradient(135deg,rgba(217,179,108,.22),rgba(217,179,108,.06));border-color:rgba(217,179,108,.55);}
+.ev.is-open .ev-timer,.ev.is-open .ev-done{display:none;}
+.ev.is-open .ev-open-msg{display:block;font:400 1.25rem var(--font-display);color:var(--gold-2);margin:4px 0 2px;}
+.ev.is-open::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 30%,rgba(255,240,200,.3) 50%,transparent 70%);transform:translateX(-100%);animation:cel-shine 3.2s ease-in-out infinite;}
+@keyframes cel-shine{60%,100%{transform:translateX(100%);}}
+@media (prefers-reduced-motion: reduce){
+    .cel-banner,}

@@ -176,6 +176,11 @@ Requirements from the user (in their words, translated):
   button Judgment line; WIP removed. Cleric PvE enabled (WIP) from Kaeria's Russian video 7LjTwlZ4v_s (TW client).
   Grobs' Gladiator PvE video xRPr30JetyY confirms our Gladiator guide — user chose to change nothing, only listed it
   in sources. questlog character API: `characterBuilder.getCharacter` with {"slug": <character url>}.
+- Founder's launch easter egg (Sep 29): `events[].celebrate` (Early Access) → assets/js/celebrate.js: at the event
+  time (or within 24 h after it) once per visitor (localStorage `celebrated-early`): banner, confetti, fireworks,
+  falling feathers; on home also wings of light behind the title and a gold ribbon; the Early Access card in the launch
+  panel turns into "Servers are open" for good. Reduced motion → banner only. Preview any page with `?celebrate=1`.
+  What's new doesn't pop up while it runs. CSS/JS URLs carry `?v=<hash>` (build.py `asset_version`) against stale caches.
 - Done (was planned from the other PC): task — **Cleric and Elementalist as WIP guides, Leveling mode only**
   for now (no PvE/PvP content yet) — use `modes_off: ["pve", "pvp"]` + `wip: true` in site.json
   (the head script and site.js then open the Leveling mode). Plan: fetch skills (`fetch_skills.py cleric elementalist` — questlog

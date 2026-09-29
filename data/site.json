@@ -9,10 +9,10 @@
   "_art": "art_pos: where the figure stands in its render (x y, CSS object-position); x also centres the pop-out figure on home cards. art_up: lift the pop-out figure (share of the image height).",
   "_src": "classes[].src: per guide mode, [who the info comes from, date it was checked]; shown in the class hero.",
   "repo": "https://github.com/Couga54/aion2-guides",
-  "_events": "Home timers. at=null -> 'date TBA'. confirmed=false -> date is official, hour is not.",
+  "_events": "Home timers. at=null -> 'date TBA'. confirmed=false -> date is official, hour is not. celebrate=true -> the site celebrates when it starts (assets/js/celebrate.js, once per visitor within 24 h; ?celebrate=1 previews it).",
   "events": [
     {"id": "pre_founder", "access": "founder", "at": "2026-09-28T13:00:00Z", "confirmed": true},
-    {"id": "early", "access": "founder", "at": "2026-09-30T13:00:00Z", "confirmed": true},
+    {"id": "early", "access": "founder", "at": "2026-09-30T13:00:00Z", "confirmed": true, "celebrate": true},
     {"id": "launch", "access": "all", "at": "2026-10-05T13:00:00Z", "confirmed": true}
   ],
   "updated": "2026-09-27",

@@ -53,7 +53,7 @@
   {% for slug, lvl in items %}
   <li data-sk="{{ slug }}">
     <img src="{{ icon_url(slug) }}" width="52" height="52" alt="{{ skill_data(slug)[lang].name }}" loading="lazy">
-    <span class="core-lv">{{ lvl }}</span>
+    <span class="core-lv{{ ' is-range' if '→' in lvl }}">{% for part in lvl.split('→') %}{{ part|trim }}{% if not loop.last %}<svg class="arr" viewBox="0 0 12 8" aria-label="→"><path d="M1 4h9M7 1l3 3-3 3"/></svg>{% endif %}{% endfor %}</span>
     <span class="core-name">{{ skill_data(slug)[lang].name }}</span>
   </li>
   {% endfor %}

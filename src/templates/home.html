@@ -3,6 +3,9 @@
 {% block main %}
 <main id="main">
   <section class="home-hero" data-fx="aether">
+    {% if SITE.events|selectattr('celebrate', 'defined')|list %}
+    <div class="cel-ribbon" aria-hidden="true"><span>{{ t.cel_ribbon }} · {{ t.cel_ribbon }} · {{ t.cel_ribbon }} · {{ t.cel_ribbon }} · </span></div>
+    {% endif %}
     <div class="home-hero-art" aria-hidden="true">
       <img src="{{ root }}assets/art/home-bg.webp" width="1920" height="1103" alt="" fetchpriority="high">
     </div>
@@ -21,7 +24,7 @@
         <h2 id="h-events" class="events-title">{{ t.events_title }}</h2>
         <ol class="ev-list">
           {% for ev in SITE.events %}
-          <li class="ev ev-{{ ev.access }}"{% if ev.at %} data-at="{{ ev.at }}"{% endif %}>
+          <li class="ev ev-{{ ev.access }}"{% if ev.at %} data-at="{{ ev.at }}"{% endif %}{% if ev.get('celebrate') %} data-celebrate{% endif %}>
             <div class="ev-head">
               <span class="ev-name">{{ t['ev_' ~ ev.id] }}</span>
               <span class="ev-acc">{{ t['acc_' ~ ev.access] }}</span>
@@ -29,6 +32,7 @@
             {% if ev.at %}
             <div class="ev-timer" aria-hidden="true">{% for u in t.units %}<span><b>--</b><i>{{ u }}</i></span>{% endfor %}</div>
             <div class="ev-done">{{ t.ev_done }}</div>
+            {% if ev.get('celebrate') %}<div class="ev-open-msg">{{ t.cel_open }}</div>{% endif %}
             <p class="ev-when">
               <time datetime="{{ ev.at }}">{{ fmt_utc(ev.at, lang) }}</time>
               <span class="ev-local"></span>

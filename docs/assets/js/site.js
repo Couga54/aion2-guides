@@ -54,7 +54,11 @@
     wn.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', seen); });
     // Click on the backdrop closes it.
     wn.addEventListener('click', function (ev) { if (ev.target === wn) wn.close(); });
-    if (!clPage && store('whatsnew-seen') !== latest) setTimeout(function () { if (!wn.open) wn.showModal(); }, 600);
+    // The launch celebration (celebrate.js) takes the stage first; What's new waits for the next visit.
+    if (!clPage && store('whatsnew-seen') !== latest) setTimeout(function () {
+      var party = document.querySelector('.cel-banner:not([hidden])');
+      if (!wn.open && !party) wn.showModal();
+    }, 600);
   }
   markDot();
 

@@ -8,7 +8,9 @@ Work top to bottom, then rebuild (`.venv/Scripts/python tools/build.py`), check 
 - [ ] **Weekly reset** — `weekly_reset.anchor`: set the real reset time (UTC, ISO) of any past or upcoming reset,
       then `weekly_reset.confirmed: true`. This drives the reset timer on /weekly/ and /week-1/ and the
       automatic clearing of the weekly checklist. When confirmed, the "not announced yet" note disappears.
-- [ ] **Launch schedule** — `events`: after the launch the home panel shows them as finished; remove events that
+- [ ] **Launch schedule** — `events`: the Early Access event has `celebrate: true` (the launch party); after
+      the first day remove the flag or keep it for the "Servers are open" card.
+      Also after the launch the home panel shows them as finished; remove events that
       are no longer useful or add new ones (next patch, season events).
 - [ ] **`updated`** — site-wide date shown in the footer.
 - [ ] Footer text "before the global launch" — `footer_before_launch` in `data/i18n.json` (EN + RU): drop or reword.

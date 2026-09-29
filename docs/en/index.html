@@ -37,7 +37,7 @@
     else if (modes.indexOf(r.dataset.mode) < 0) r.dataset.mode = modes[0];
   })(document.documentElement);
 </script>
-<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/site.css?v=07c4b8f4">
 </head>
 <body class="page-home">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -114,6 +114,7 @@
 
 <main id="main">
   <section class="home-hero" data-fx="aether">
+    <div class="cel-ribbon" aria-hidden="true"><span>Early Access is open · Founder&#39;s Pack · Welcome to Atreia · Early Access is open · Founder&#39;s Pack · Welcome to Atreia · Early Access is open · Founder&#39;s Pack · Welcome to Atreia · Early Access is open · Founder&#39;s Pack · Welcome to Atreia · </span></div>
     <div class="home-hero-art" aria-hidden="true">
       <img src="../assets/art/home-bg.webp" width="1920" height="1103" alt="" fetchpriority="high">
     </div>
@@ -143,14 +144,14 @@
               <span class="ev-local"></span>
             </p>
           </li>
-          <li class="ev ev-founder" data-at="2026-09-30T13:00:00Z">
+          <li class="ev ev-founder" data-at="2026-09-30T13:00:00Z" data-celebrate>
             <div class="ev-head">
               <span class="ev-name">Early Access</span>
               <span class="ev-acc">Founder&#39;s Pack</span>
             </div>
             <div class="ev-timer" aria-hidden="true"><span><b>--</b><i>d</i></span><span><b>--</b><i>h</i></span><span><b>--</b><i>m</i></span><span><b>--</b><i>s</i></span></div>
             <div class="ev-done">Started</div>
-            <p class="ev-when">
+<div class="ev-open-msg">Servers are open</div>            <p class="ev-when">
               <time datetime="2026-09-30T13:00:00Z">Sep 30 · 13:00 UTC</time>
               <span class="ev-local"></span>
             </p>
@@ -357,7 +358,13 @@ Source or proof (link, screenshot):
     <p class="wn-all"><a href="../en/changelog/">Full changelog →</a></p>
   </form>
 </dialog>
-<script src="../assets/js/site.js" defer></script>
-<script src="../assets/js/fx.js" defer></script>
+<script src="../assets/js/site.js?v=07c4b8f4" defer></script>
+<script src="../assets/js/fx.js?v=07c4b8f4" defer></script>
+<div class="cel-banner" role="status" hidden data-at="2026-09-30T13:00:00Z" data-id="early">
+  <span class="cel-ico" aria-hidden="true">✦</span>
+  <div><p class="cel-h">Early Access is open!</p><p class="cel-p">Founder&#39;s Pack servers are live — good luck on day one. Your class guides are ready.</p></div>
+  <button type="button" class="cel-x" aria-label="Close">×</button>
+</div>
+<script src="../assets/js/celebrate.js?v=07c4b8f4" defer></script>
 </body>
 </html>

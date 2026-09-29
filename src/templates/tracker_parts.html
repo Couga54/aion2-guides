@@ -50,7 +50,7 @@
     "energy_next": t.energy_next, "energy_full": t.energy_full, "energy_at_cap": t.energy_at_cap, "notify_energy": t.notify_energy
   }
 }|tojson }}</script>
-<script src="{{ root }}assets/js/tracker.js" defer></script>
+<script src="{{ root }}assets/js/tracker.js?v={{ ASSET_V }}" defer></script>
 {%- endmacro %}
 
 {% macro notify_toggle() -%}
@@ -62,5 +62,5 @@
   </button>
   <span class="notify-note">{{ t.notify_note }}</span>
 </div>
-<script src="{{ root }}assets/js/notify.js" defer></script>
+<script src="{{ root }}assets/js/notify.js?v={{ ASSET_V }}" defer></script>
 {%- endmacro %}

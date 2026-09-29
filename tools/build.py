@@ -55,6 +55,15 @@ def s(ctx, slug, icon=True):
     return Markup(f'<span class="sk" data-sk="{slug}"><img src="{src}" width="18" height="18" alt="" loading="lazy">{name}</span>')
 
 
+def asset_version():
+    """Short hash of the CSS/JS files: added to their URLs so browsers pick up a new build instead of a cached one."""
+    import hashlib
+    h = hashlib.sha1()
+    for f in sorted((SRC / "assets").glob("*/*.[cj]s")):
+        h.update(f.read_bytes())
+    return h.hexdigest()[:8]
+
+
 def clean_desc(text):
     """Skill descriptions carry damage placeholders like {se_dmg:...}-{se_dmg:...}; show them as X."""
     import re
@@ -152,7 +161,7 @@ def env():
         lstrip_blocks=True,
         extensions=["jinja2.ext.do"],
     )
-    e.globals.update(tooltip_json=tooltip_json, CHANGELOG=CHANGELOG, fmt_utc=fmt_utc, fmt_day=fmt_day, s=s, sp=sp, skill_data=skill_data, icon_url=icon_url, SITE=SITE)
+    e.globals.update(ASSET_V=asset_version(), tooltip_json=tooltip_json, CHANGELOG=CHANGELOG, fmt_utc=fmt_utc, fmt_day=fmt_day, s=s, sp=sp, skill_data=skill_data, icon_url=icon_url, SITE=SITE)
     return e
 
 
