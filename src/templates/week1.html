@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% from "tracker_parts.html" import reset_box, charbar, tracker_config with context %}
+{% block og %}week-1{% endblock %}
 {% block title %}{{ t.w1_title }} — {{ t.site_name }}{% endblock %}
 {% block desc %}{{ t.w1_desc }}{% endblock %}
 {% block body_class %}page-tracker page-week1{% endblock %}

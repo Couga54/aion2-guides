@@ -102,10 +102,11 @@ def items_tip_json(lang):
 
 
 def asset_version():
-    """Short hash of the CSS/JS files: added to their URLs so browsers pick up a new build instead of a cached one."""
+    """Short hash of the CSS/JS files and preview images: added to their URLs so browsers and chat apps
+    pick up a new build instead of a cached one."""
     import hashlib
     h = hashlib.sha1()
-    for f in sorted((SRC / "assets").glob("*/*.[cj]s")):
+    for f in sorted([*(SRC / "assets").glob("*/*.[cj]s"), *(SRC / "assets" / "og").glob("*.jpg")]):
         h.update(f.read_bytes())
     return h.hexdigest()[:8]
 

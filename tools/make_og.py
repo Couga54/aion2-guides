@@ -2,7 +2,7 @@
 
   python tools/make_og.py
 
-One image for the home page and one per ready class, in every language.
+One image for the home page, one per ready class and one per standalone page (with its header art), in every language.
 Needs Pillow and fonts with Cyrillic (Georgia / Segoe UI on Windows, DejaVu elsewhere).
 """
 import json
@@ -92,10 +92,13 @@ def render_home(lang):
     img = base((160, 130, 70))
     d = ImageDraw.Draw(img)
     d.text((80, 90), t["home_kicker"].upper(), font=font(MONO, 26), fill=GOLD)
+    size = 78                            # shrink until the headline fits in two lines
+    while len(wrap(d, t["home_h1"], font(SERIF, size), 1040)) > 2:
+        size -= 4
     y = 135
-    for line in wrap(d, t["home_h1"], font(SERIF, 78), 1040)[:2]:
-        d.text((76, y), line, font=font(SERIF, 78), fill=(245, 240, 230))
-        y += 92
+    for line in wrap(d, t["home_h1"], font(SERIF, size), 1040):
+        d.text((76, y), line, font=font(SERIF, size), fill=(245, 240, 230))
+        y += int(size * 1.18)
     x = 80
     for c in SITE["classes"]:
         emblem(img, c["slug"], x, 400, 104)
@@ -107,10 +110,48 @@ def render_home(lang):
     return img
 
 
+# Standalone pages: slug -> (title key, lead key, focal point of the header art, 0..1 from the top)
+PAGES = {"week-1": ("w1_h1", "w1_lead", .40), "progression": ("pg_h1", "pg_lead", .60), "weekly": ("wk_h1", "wk_lead", .45),
+         "bosses": ("bs_h1", "bs_lead", .68), "sources": ("src_h1", "src_lead", .62), "changelog": ("wn_history", "cl_lead", .45)}
+
+
+def render_page(slug, lang):
+    t = I18N[lang]
+    title_key, lead_key, focus = PAGES[slug]
+    art = Image.open(ROOT / "src" / "assets" / "art" / f"hero-{slug}.webp").convert("RGB")
+    s = max(W / art.width, H / art.height)
+    art = art.resize((round(art.width * s), round(art.height * s)), Image.LANCZOS)
+    top = round((art.height - H) * focus)
+    left = art.width - W
+    img = art.crop((left, top, left + W, top + H))
+    # darken the left side for the text, like the page header
+    shade = Image.new("L", (W, H))
+    ImageDraw.Draw(shade).rectangle((0, 0, W, H), fill=0)
+    for x in range(W):
+        a = 235 if x < 380 else max(40, int(235 - (x - 380) * 0.33))
+        ImageDraw.Draw(shade).line((x, 0, x, H), fill=a)
+    img = Image.composite(Image.new("RGB", (W, H), BG), img, shade)
+    d = ImageDraw.Draw(img)
+    d.text((80, 90), t["home_kicker"].upper(), font=font(MONO, 26), fill=GOLD)
+    d.text((76, 130), t[title_key], font=font(SERIF, 84), fill=(245, 240, 230))
+    y = 260
+    lines = wrap(d, t[lead_key], font(SANS, 34), 700)
+    if len(lines) > 4:                   # long leads: cut at a sentence end if possible, else with an ellipsis
+        first = t[lead_key].split(". ")[0].rstrip(".") + "."
+        lines = wrap(d, first, font(SANS, 34), 700) if len(wrap(d, first, font(SANS, 34), 700)) <= 4 else lines[:3] + [lines[3].rstrip(",;—- ") + "…"]
+    for line in lines:
+        d.text((80, y), line, font=font(SANS, 34), fill=(210, 214, 222))
+        y += 46
+    d.text((80, 545), t["site_name"], font=font(SERIF, 34), fill=GOLD)
+    return img
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     for lang in SITE["langs"]:
         render_home(lang).save(OUT / f"home-{lang}.jpg", quality=86, optimize=True, progressive=True)
+        for slug in PAGES:
+            render_page(slug, lang).save(OUT / f"{slug}-{lang}.jpg", quality=86, optimize=True, progressive=True)
         for c in SITE["classes"]:
             if c["status"] == "ready":
                 render_class(c, lang).save(OUT / f'{c["slug"]}-{lang}.jpg', quality=86, optimize=True, progressive=True)
