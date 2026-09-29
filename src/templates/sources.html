@@ -35,12 +35,12 @@
     <section class="src-group" id="{{ g.id }}" aria-labelledby="h-{{ g.id }}">
       <h2 id="h-{{ g.id }}" class="section-title">{{ g.title[lang] }}</h2>
       {% if g.get('lead') %}<p class="src-lead">{{ g.lead[lang] }}</p>{% endif %}
-      <ul class="src-grid{% if g.id == 'creators' %} src-grid-creators{% endif %}">
+      <ul class="src-grid{% if g.id in ('creators', 'watch') %} src-grid-creators{% endif %}">
         {% for it in g['items'] %}
         <li class="src-card">
           <h3>{{ it.name[lang] if it.name is mapping else it.name }}</h3>
           <p>{{ it.what[lang] }}</p>
-          <p class="src-used"><span>{{ t.src_used }}:</span>
+          <p class="src-used"><span>{{ t.src_class if g.id == 'watch' else t.src_used }}:</span>
             {% for u in it.used %}
             {% if u == 'site' %}<span class="chip">{{ t.src_site }}</span>
             {% else %}{% for c in classes if c.slug == u %}<a class="chip accent-{{ c.accent }}" href="{{ root }}{{ lang }}/{{ c.slug }}/">{{ c.name[lang] }}</a>{% endfor %}{% endif %}

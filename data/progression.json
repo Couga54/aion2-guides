@@ -1,6 +1,13 @@
 {
-  "_note": "Progression page (/<lang>/progression/): the item level route after 45. Source: Sanya Jacuzzi's video a8zVweGN--4 (RU, global datamine the day before launch) — facts read from the video frames (timestamps in 'at'). Text may reference items as {i:key}; the keys are listed in 'items' and fetched by tools/fetch_items.py into data/items.json + assets/icons/items/. Blocks: p (text), list (items), table (head + rows), tip (callout).",
-  "source": {"name": "Sanya Jacuzzi — Они всё изменили! Мой новый план прокачки после 45 уровня", "url": "https://www.youtube.com/watch?v=a8zVweGN--4", "channel": "https://www.youtube.com/@Sanya_Jacuzzi"},
+  "_note": "Progression page (/<lang>/progression/): the item level route after 45. Source: Sanya Jacuzzi's video a8zVweGN--4 (RU, global datamine the day before launch) — facts read from the video frames (timestamps in 'at'). Sections/blocks may set 'src' (a key of 'sources'; default: the page 'src'); 'at' = timestamp in a video source. Text may reference items as {i:key}; the keys are listed in 'items' and fetched by tools/fetch_items.py into data/items.json + assets/icons/items/. Blocks: p (text), list (items), table (head + rows), tip (callout).",
+  "meta": {"title": "pg_title", "h1": "pg_h1", "lead": "pg_lead", "desc": "pg_desc", "note": "pg_note", "nav": "nav_progression",
+           "hero": "hero-progression", "pos": "50% 60%", "og": "progression",
+           "tag": "w1_datamine", "back": {"path": "week-1/", "label": "pg_open_week1"}},
+  "sources": {
+    "sanya": {"name": "Sanya Jacuzzi — Они всё изменили! Мой новый план прокачки после 45 уровня", "url": "https://www.youtube.com/watch?v=a8zVweGN--4", "video": true},
+    "titan": {"name": "TitanTheF — AION 2 progression sheet", "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml#gid=53494555"}
+  },
+  "src": "sanya",
   "items": {
     "wings": "Ultimate Daeva Wings (Bound)",
     "bracelet": "Ascension Bracelet",
@@ -26,7 +33,11 @@
     "chalice_grey": {"name": "Chalice of Magic", "grade": 11},
     "mirror_gold": {"name": "Mirror of Vigor", "grade": 41},
     "transfer_w": "Transfer Stone: Weapon (Unique) (Bound)",
-    "transfer_a": "Transfer Stone: Armor (Unique) (Bound)"
+    "transfer_a": "Transfer Stone: Armor (Unique) (Bound)",
+    "stigmashard": "Stigma Shard (Bound)",
+    "amplify": "Amplify Stone (Unique) (Bound)",
+    "amplify_frag": "Amplify Stone Fragment (Unique) (Bound)",
+    "sync": "Sync Stone (Unique) (Bound)"
   },
   "sections": [
     {"id": "global", "title": {"en": "What changes on global", "ru": "Что меняется на глобалке"},
@@ -152,6 +163,82 @@
           "ru": "Без твинков это долго: 3–4 дополнительных персонажа приносят дополнительные камни заточки."}
        ]}
      ]},
+    {"id": "titan", "src": "titan", "title": {"en": "TitanTheF's route: Abyss farm and a crafted weapon", "ru": "Путь TitanTheF: фарм Бездны и крафтовое оружие"},
+     "lead": {"en": "Another route from TitanTheF's progression sheet (Taiwan experience): less waiting for dungeons, more Abyss and crafting. Needs a lot of play time.", "ru": "Другой маршрут из таблицы прогрессии TitanTheF (опыт Тайваня): меньше ожидания данжей, больше Бездны и крафта. Нужно много игрового времени."},
+     "blocks": [
+       {"type": "h", "text": {"en": "Right after 45", "ru": "Сразу после 45"}},
+       {"type": "list", "items": [
+         {"en": "<strong>Every Shugo Festival.</strong> Only at level 45 do you get the full rewards — including gold gear and craft materials; global also added {i:stigmashard}. Chests and jumping games; skip the tiles — newcomers ruin them.",
+          "ru": "<strong>Все Шуго-фестивали.</strong> Только на 45 уровне дают полные награды — включая золотую экипировку и крафтовые ресурсы; на глобалке туда добавили {i:stigmashard}. Сундуки и прыжки; плитки пропускай — новички их руинят."},
+         {"en": "<strong>Clear the map</strong>: every ? and campfire, the green side quests, and pick up hidden cubes and feathers on the way. After that you should have about <strong>420 of 570</strong> Daevanion points; the rest come from Shugo and Nightmare. Feathers take the altar to level 30 and give a title.",
+          "ru": "<strong>Закрой карту</strong>: все знаки вопроса и костры, зелёные сайд-квесты, по пути собирай скрытые кубы и перья. После этого должно быть около <strong>420 из 570</strong> очков Daevanion, остальные дадут Шуго и Кошмар. Перья поднимают алтарь до 30 уровня и дают титул."},
+         {"en": "Then one of three: kill mobs until every pet is level 3 (all pets together give 55k combat power), go to the Abyss (the same pets plus wings), or get a party for <strong>3–4 runs of Draupnir</strong>. TitanTheF picks Draupnir — first gear, kina and enhancement.",
+          "ru": "Дальше одно из трёх: бей мобов, пока все питомцы не станут 3 уровня (все вместе дают 55 тыс. боевой мощи), иди в Бездну (те же питомцы плюс крылья) или собери группу на <strong>3–4 забега в Друпнир</strong>. TitanTheF выбирает Друпнир — первая экипировка, кина и заточка."},
+         {"en": "Spend the daily Nightmare entry. One run of the first Transcendence for white arcana is enough — you only need to open floor 2. Watch the market for T1 dungeon materials and pick up everything for the season shop.",
+          "ru": "Трать ежедневную попытку Кошмара. Одного забега в первую Трансцендентность за белыми арканами хватит — нужно только открыть 2 этаж. Следи за рынком на ресурсы T1-данжей и забирай всё для сезонного магазина."},
+         {"en": "The goal of the first days: currency for a <strong>crafted T1 weapon</strong> — it is the one you will enhance and roll stats on.",
+          "ru": "Цель первых дней — валюта на <strong>крафтовое T1-оружие</strong>: именно его ты будешь точить и на нём роллить статы."}
+       ]},
+       {"type": "h", "text": {"en": "Farming the Abyss", "ru": "Фарм Бездны"}},
+       {"type": "list", "items": [
+         {"en": "At launch you won't just stand on a spot. Buy the quest scrolls from the NPC at the Abyss base — all of them, white to gold (about 1.4 million kina) — and do the white, green and blue ones.",
+          "ru": "На старте просто встать на спот не получится. Купи свитки заданий у НПС на базе Бездны — все, от белых до золотых (около 1,4 млн кины) — и выполняй белые, зелёные и синие."},
+         {"en": "Tag along with players doing the same quests and skip the fights — they pay less. Reroll quests towards gold materials or PvP boards, but watch the currency. Then the gold quests in the centre, then a side island to farm.",
+          "ru": "Прибивайся к игрокам, которые делают те же задания, и пропускай драки — за них дают меньше. Перекидывай задания на золотые ресурсы или PvP-плитки, но следи за валютой. Потом золотые задания в центре, потом боковой остров на фарм."},
+         {"en": "Go in pairs: two players get more AP and materials, then split the gold gear. If farming is impossible, do the same quests in the world — there is a merchant in every big city. And don't forget Shugo.",
+          "ru": "Ходи вдвоём: в паре больше AP и ресурсов, золотую экипировку потом делите. Если фармить невозможно — делай такие же задания в мире, торговцы есть в каждом крупном городе. И не забывай про Шуго."},
+         {"en": "Kill every <strong>world boss</strong> once — a chance at a drop plus a participation title. The timers are on the map; there is one in almost every zone.",
+          "ru": "Убей каждого <strong>мирового босса</strong> по разу — шанс на дроп и титул за участие. Таймеры есть на карте, боссы почти в каждой локации."}
+       ]},
+       {"type": "h", "text": {"en": "The crafted weapon and after", "ru": "Крафтовое оружие и дальше"}},
+       {"type": "list", "items": [
+         {"en": "As soon as your item level allows, clear floor 2 of Transcendence as well (different arcana). Then Vakron and Urugugu (T2 dungeons) — watch your energy, sell what you don't need and buy T1 materials.",
+          "ru": "Как только позволит уровень предметов — закрой и 2 этаж Трансцендентности (другие арканы). Дальше Вакрон и Урогугу (T2-данжи): следи за энергией, продавай ненужное и скупай T1-ресурсы."},
+         {"en": "With enough T1 materials, level your crafting (about 2 million kina, see <a href=\"../crafting/\">Gathering and crafting</a>). Craft at least one gold level 60 blank — don't wear or enhance it. Then the T1 weapon: in the first days it should come out at no more than about 30 million kina.",
+          "ru": "Когда наберёшь T1-ресурсов — качай крафт (около 2 млн кины, смотри <a href=\"../crafting/\">Сбор и крафт</a>). Скрафти хотя бы одну золотую болванку 60 уровня — не надевай и не точи. Потом T1-оружие: в первые дни оно должно выйти не дороже примерно 30 млн кины."},
+         {"en": "Don't take the weapon above +10 yet — next are the rings (three times cheaper than weapons). Try ★3 Transcendence if energy and gear allow, otherwise kill more mobs. The solo dungeon with enhancement stones: go only for the stones, and only after raising your item level — more mobs killed, bigger reward.",
+          "ru": "Не точи оружие выше +10 — следующие кольца (в три раза дешевле оружия). Пробуй Трансцендентность ★3, если хватает энергии и экипировки, иначе добивай мобов. Соло-данж с заточкой: иди только за камнями и только подняв уровень предметов — чем больше мобов, тем больше награда."},
+         {"en": "Back to the Abyss: not the centre — a corner with a small pack of mobs. 8–10 hours of this gives a pile of AP, kina, gear and materials; nothing pays better in the first days.",
+          "ru": "Снова в Бездну: не в центр, а в угол с небольшим паком мобов. 8–10 часов такого фарма дают кучу AP, кины, экипировки и ресурсов — в первые дни выгоднее ничего нет."},
+         {"en": "Finish the ring, then arcana; with blue arcana and enhanced gear try the T3 dungeons. <strong>Roll stats only on T3 dungeon gear.</strong> When the energy runs out, roll the genus (about 10 million kina for all of it): don't lock stats before level 10; hidden cubes give 1,000 crystals — enough for level 10.",
+          "ru": "Докрафти кольцо, потом арканы; с синими арканами и заточенной экипировкой пробуй T3-данжи. <strong>Статы роллить только на экипировке из T3-данжей.</strong> Когда кончится энергия — роллим генусы (около 10 млн кины на всё): не лочь статы до 10 уровня; за скрытые кубы дают по 1 000 кристаллов — на 10 уровень хватит."},
+         {"en": "Don't spend unbound kina on enhancement — only on buying materials.",
+          "ru": "Не сливай непривязанную кину на заточку — только на докупку ресурсов."},
+         {"en": "Later: energy into T3 dungeons, ★4 Transcendence with a good party, arcana up to level 20. After 2–3 days Abyss kills pay well; buying the necklace for Abyss points and enhancing it is fine, but not the whole Abyss set at the start — the first AP go into stigmas. Don't skip Abyss activities, weekly bosses and artifact battles — they give medals for the PvP set. Earrings can come from Kromede; the next upgrade is a crafted guard.",
+          "ru": "Дальше: энергия в T3-данжи, Трансцендентность ★4 с хорошей группой, арканы до 20 уровня. Через 2–3 дня за убийства в Бездне начнут нормально давать; купить ожерелье за очки Бездны и точить его — не ошибка, но весь сет Бездны на старте не нужен: первые AP — в стигмы. Не пропускай активности Бездны, недельных боссов и битвы за артефакты — за них дают медали для PvP-сета. Серьги можно с Кромеды, следующий апгрейд — крафтовые наручи."}
+       ]},
+       {"type": "h", "text": {"en": "The economic route", "ru": "Экономический путь"}},
+       {"type": "p", "text": {
+         "en": "For those who can play 10 hours a day: Shugo as usual, the rest of the time gathering. Priority — Odyle and wood, also sapphires, rubies and diamonds; level gathering fast and forget your item level. People who know the game buy gold materials and materials in general, and crafting gets easier for you too. You can also buy kuna for kina on the auction house and flip paintings, materials and leather (cheap now, ten times more a week later). Bots are a risk here.",
+         "ru": "Для тех, кто может играть по 10 часов в день: Шуго как обычно, остальное время — сбор. Приоритет — одилия и дерево, ещё сапфиры, рубины и алмазы; быстро качай сбор и забей на уровень предметов. Знающие игроки скупают золотые ресурсы и ресурсы вообще, да и самому крафтить станет проще. Ещё можно скупать куну за кину на аукционе и флипать картины, ресурсы и кожу (сейчас копейки, через неделю в десять раз дороже). Риск тут — боты."}},
+       {"type": "h", "text": {"en": "Alts", "ru": "Твинки"}},
+       {"type": "p", "text": {
+         "en": "With 10–16 hours at launch, put the time into your main and start alts after 1–2 days, when the starting zones are emptier. With less time, take 4 characters to level 22 first and only then finish the main — by then the alts' energy is full.",
+         "ru": "Если на старте есть 10–16 часов — вкладывай их в мейна, а твинками занимайся через 1–2 дня, когда начальные локации освободятся. Если времени меньше — сначала качни 4 персонажей до 22 и только потом докачивай мейна: к тому моменту у твинков будет полная энергия."}}
+     ]},
+    {"id": "enhance", "src": "titan", "title": {"en": "How gear upgrades work", "ru": "Как работает улучшение"},
+     "lead": {"en": "The five Enhancement tabs in short: Enhance, Manastone, Theostone, Soul Binding and Transfer.", "ru": "Пять вкладок улучшения коротко: заточка, манастоуны, Теостоуны, наследие (Soul Binding) и перенос."},
+     "blocks": [
+       {"type": "table",
+        "head": {"en": ["Gear grade", "Max enhancement"], "ru": ["Качество", "Максимальная заточка"]},
+        "rows": [{"en": ["Blue", "+15"], "ru": ["Синее", "+15"]}, {"en": ["Gold", "+20"], "ru": ["Золотое", "+20"]}, {"en": ["Orange", "+25"], "ru": ["Оранжевое", "+25"]}]},
+       {"type": "list", "items": [
+         {"en": "<strong>Enhance.</strong> Gold gear has a 100% chance up to +10, after that it drops. A fail never breaks the item — only the materials and kina are spent. Above +15 you also need {i:amplify}, made in Substance Morph from {i:amplify_frag} and {i:enhance}.",
+          "ru": "<strong>Заточка.</strong> Золотая экипировка до +10 точится со 100% шансом, дальше шанс падает. При неудаче вещь не ломается — тратятся только ресурсы и кина. Выше +15 нужен ещё {i:amplify}, он делается в Substance Morph из {i:amplify_frag} и {i:enhance}."},
+         {"en": "<strong>Manastones.</strong> The number of slots depends on the rarity: white 1, green 2 and so on. There are two kinds — for weapons and armor, and for accessories — each in a normal and a PvP version ({i:mana_sup}).",
+          "ru": "<strong>Манастоуны.</strong> Число слотов зависит от редкости: белая — 1, зелёная — 2 и так далее. Бывают двух видов — для оружия и брони и для бижутерии — и каждый в обычной и PvP-версии ({i:mana_sup})."},
+         {"en": "<strong>Theostones</strong> go into the weapon and the guard: damage, damage over time or control. They trigger with a chance on attack — the higher your combat speed, the more often ({i:theostone}).",
+          "ru": "<strong>Теостоуны</strong> вставляются в оружие и наручи: урон, урон со временем или контроль. Срабатывают с шансом при атаке — чем выше скорость боя, тем чаще ({i:theostone})."},
+         {"en": "<strong>Soul Binding.</strong> Tab 1 raises the quality of the stats, tab 2 rerolls them — with any unneeded gold gear or reroll items — tab 3 uses books. {i:sync} comes from the battle pass, hard dungeons and dungeons from 2,800.",
+          "ru": "<strong>Наследие (Soul Binding).</strong> Первая вкладка отвечает за качество статов, вторая их перекидывает — любой ненужной золотой экипировкой или предметами для ролла, третья — книгами. {i:sync} берётся из боевого пропуска, хард-данжей и данжей от 2 800."},
+         {"en": "<strong>Transfer</strong> moves enhancement and stats to another item — see the hardcore route above.",
+          "ru": "<strong>Перенос</strong> переносит заточку и статы на другую вещь — смотри хардкорный путь выше."},
+         {"en": "<strong>Titles</strong> each give passive stats; the title info shows how to get one.",
+          "ru": "<strong>Титулы</strong> — каждый даёт пассивные статы; как получить, видно в информации о титуле."},
+         {"en": "<strong>The season</strong> lasts 2–3 months. Season points buy crafting materials in the season shop.",
+          "ru": "<strong>Сезон</strong> длится 2–3 месяца. За сезонные очки в сезонном магазине покупаются материалы для крафта."}
+       ]}
+     ]},
     {"id": "all", "title": {"en": "Tips for everyone", "ru": "Советы для всех"},
      "blocks": [
        {"type": "p", "at": "14:18", "text": {
@@ -162,6 +249,9 @@
          {"en": "No key: short on enhancement stones — the one with the most stones; otherwise the one with the most rainbow and other pet stones.", "ru": "Ключа нет: не хватает камней заточки — бери с наибольшим числом камней; иначе — с наибольшим числом радужных и других камней питомцев."},
          {"en": "A gold item or resource at the end of the list is almost always a trap — skip those.", "ru": "Золотая вещь или ресурс в конце списка — почти всегда обман, пропускай."}
        ]},
+       {"type": "tip", "src": "titan", "text": {
+         "en": "<strong>Hidden cubes</strong> give 1,000 crystals each — pick up every one you pass. <strong>Unbound kina</strong> is for buying materials, not for enhancement.",
+         "ru": "<strong>Скрытые кубы</strong> дают по 1 000 кристаллов — забирай каждый по пути. <strong>Непривязанная кина</strong> — на докупку ресурсов, не на заточку."}},
        {"type": "tip", "at": "15:21", "text": {
          "en": "<strong>Daily Dungeon and the trials:</strong> don't touch them and don't open their pass boxes if they are handed out at launch. They are being reworked, rewards depend on your score (kill speed), and they refresh only at the end of the week — go then, at your strongest. Weekly world and Abyss rewards are being reworked too; wait for the live numbers.",
          "ru": "<strong>Daily Dungeon и испытания:</strong> не трогай и не открывай коробки с проходками, если их раздадут на старте. Их переделывают, награда зависит от очков (скорости убийства мобов), а обновляются они только в конце недели — иди туда тогда, на пике силы. Недельные награды в мире и Бездне тоже переделывают — жди живых цифр."}}

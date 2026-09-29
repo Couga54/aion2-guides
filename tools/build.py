@@ -36,6 +36,7 @@ CHANGELOG = load(DATA / "changelog.json")["entries"]
 WEEK1 = load(DATA / "week1.json")
 BOSSES = load(DATA / "bosses.json")
 PROGRESSION = load(DATA / "progression.json")
+CRAFTING = load(DATA / "crafting.json")
 ITEMS = load(DATA / "items.json")
 SKILLS = {p.stem: load(p) for p in (DATA / "skills").glob("*.json") if not p.stem.startswith("_")}
 for _cls, _fixes in load(DATA / "skills" / "_overrides.json").items():
@@ -268,7 +269,7 @@ def page_entries(lang):
     """Search entries for the standalone pages and the world bosses."""
     t = I18N[lang]
     out = [{"k": "page", "t": t[key], "s": "", "u": path} for path, key in (
-        ("week-1/", "w1_title"), ("progression/", "pg_title"), ("weekly/", "wk_title"), ("bosses/", "bs_title"),
+        ("week-1/", "w1_title"), ("progression/", "pg_title"), ("crafting/", "cr_title"), ("weekly/", "wk_title"), ("bosses/", "bs_title"),
         ("sources/", "src_title"), ("changelog/", "wn_history"))]
     for g in BOSSES["groups"]:
         for b in g["bosses"]:
@@ -302,7 +303,7 @@ def build():
             write(f'{lang}/{path}index.html', html)
             urls.append(path)
             index += search_entries(cls, lang, html)
-        for path, tpl, key, data in (("week-1/", "week1.html", "week1", WEEK1), ("progression/", "progression.html", "prog", PROGRESSION), ("weekly/", "weekly.html", "weekly", WEEKLY), ("bosses/", "bosses.html", "bosses", BOSSES), ("changelog/", "changelog.html", "changelog", CHANGELOG)):
+        for path, tpl, key, data in (("week-1/", "week1.html", "week1", WEEK1), ("progression/", "guide_page.html", "prog", PROGRESSION), ("crafting/", "guide_page.html", "prog", CRAFTING), ("weekly/", "weekly.html", "weekly", WEEKLY), ("bosses/", "bosses.html", "bosses", BOSSES), ("changelog/", "changelog.html", "changelog", CHANGELOG)):
             ctx = page_ctx(lang, path, "../../")
             ctx[key] = data
             write(f"{lang}/{path}index.html", e.get_template(tpl).render(ctx))

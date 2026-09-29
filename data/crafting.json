@@ -1,0 +1,67 @@
+{
+  "_note": "Gathering and crafting page (/<lang>/crafting/), from TitanTheF's progression sheet (tab 'Прокачка крафта', Taiwan experience). Same format as progression.json; items are fetched by tools/fetch_items.py.",
+  "meta": {"title": "cr_title", "h1": "cr_h1", "lead": "cr_lead", "desc": "cr_desc", "note": "cr_note", "nav": "nav_crafting",
+           "hero": "hero-crafting", "pos": "50% 45%", "og": "crafting",
+           "back": {"path": "progression/", "label": "cr_open_prog"}},
+  "sources": {
+    "titan": {"name": "TitanTheF — AION 2 progression sheet", "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml#gid=683322434"}
+  },
+  "src": "titan",
+  "items": {
+    "sapphire": "Sapphire Gemstone (Bound)",
+    "ruby": "Ruby Gemstone (Bound)",
+    "odyle": "Odyle",
+    "log": "Yggdrasil Log (Bound)",
+    "odyle_energy": "Odyle Energy (Bound)"
+  },
+  "sections": [
+    {"id": "basics", "title": {"en": "Choose a profession", "ru": "Выбери профессию"},
+     "blocks": [
+       {"type": "list", "items": [
+         {"en": "Gathering is open from level 1 on global. First decide what you want to gather and craft first.",
+          "ru": "Сбор на глобалке доступен с 1 уровня. Сначала реши, что будешь собирать и крафтить первым."},
+         {"en": "Example for a Ranger: <strong>Handicrafting</strong> makes both bows and staves and accessories — the obvious pick. Choose the profession that crafts your main weapon.",
+          "ru": "Пример для Лучника: <strong>Ремесло (Handicrafting)</strong> делает и луки с посохами, и бижутерию — очевидный выбор. Бери профессию, которая крафтит твоё основное оружие."},
+         {"en": "Gathering and crafting both have two tiers — <strong>Novice → Professional</strong> — of 50 levels each.",
+          "ru": "И у сбора, и у крафта две ступени — <strong>Novice → Professional</strong>, по 50 уровней."}
+       ]}
+     ]},
+    {"id": "ore", "title": {"en": "Level up on ore and Odyle", "ru": "Качайся на руде и одилии"},
+     "blocks": [
+       {"type": "list", "items": [
+         {"en": "The easiest way to level both gathering and crafting is ore. Start with {i:sapphire} in a high-level zone: 40–60 veins take you to level 50.",
+          "ru": "Проще всего качать и сбор, и крафт через руду. Начинай с {i:sapphire} в высокоуровневой локации: 40–60 жил — и у тебя 50 уровень."},
+         {"en": "Then go back to the quest NPC in the main city and take the green quest: gather a small perfect ruby. Mine {i:ruby} until it procs — usually 2–3 veins; there are some in the pit near the city.",
+          "ru": "Потом возвращайся в главный город к НПС и бери зелёное задание: собрать маленький идеальный рубин. Копай {i:ruby}, пока не выпадет — обычно 2–3 жилы, есть в провале у города."},
+         {"en": "Crafting needs {i:odyle}: it is gathered in the air, in every zone. A secluded zone where it spawns along a cliff is ideal — ride the air currents to save wing stamina.",
+          "ru": "Для крафта нужна {i:odyle}: она собирается в воздухе, во всех локациях. Идеальна уединённая локация, где она спавнится вдоль обрыва, — пользуйся воздушными потоками, чтобы экономить выносливость крыльев."},
+         {"en": "Back in the city: recraft all sapphires, then craft rings. At level 50 take the next green quest from the city NPC — craft a quest item from starting materials. These quests also give the first Pantheon frames.",
+          "ru": "В городе: перекрафти все сапфиры, потом крафти кольца. На 50 уровне возьми у НПС в городе следующее зелёное задание — скрафтить квестовый предмет из начальных ресурсов. За эти задания ещё дают стартовые рамки в Пантеон."},
+         {"en": "Time: about 40 minutes to Novice 50 (on Taiwan, with bots around); Odyle takes over an hour. Short on white Odyle — break green ones down in Substance Morph. Odyle also crafts {i:odyle_energy}.",
+          "ru": "Время: около 40 минут до 50 Novice (на Тайване, с учётом ботов); одилия — больше часа. Не хватает белой одилии — разбери зелёную в Substance Morph. Из одилии также крафтится {i:odyle_energy}."}
+       ]}
+     ]},
+    {"id": "wood", "title": {"en": "Wood, bows and gold blanks", "ru": "Древесина, луки и золотые болванки"},
+     "blocks": [
+       {"type": "list", "items": [
+         {"en": "{i:log} — a through-zone is best, and you can farm pets on the way. Be patient: many players pass there and the resource is worth more.",
+          "ru": "{i:log} — лучше всего проходная локация, по пути можно фармить питомцев. Наберись терпения: там много игроков, а ресурс ценнее."},
+         {"en": "<strong>Gold level 60 blanks</strong> come from crafting blue bows with a crit — a 25% chance, pure luck. Crafting orbs drop everywhere: mobs in the world, the Abyss, dungeons. Rings work the same way.",
+          "ru": "<strong>Золотые болванки 60 уровня</strong> получаются из синих луков при крите — шанс 25%, чистый рандом. Шары для крафта падают отовсюду: мобы в мире, Бездна, данжи. С кольцами так же."},
+         {"en": "For the whole leveling collect about <strong>300 sapphire veins</strong> and about <strong>140 trees</strong>. Got gold materials? Don't rush to sell them — you will need both Odyle and wood.",
+          "ru": "На всю прокачку собери около <strong>300 жил сапфира</strong> и около <strong>140 деревьев</strong>. Выпали золотые ресурсы — не спеши продавать, понадобятся и одилия, и дерево."},
+         {"en": "Sell only crit bows and rings (white and green); craft the non-crit ones into the next tier. Start crafting once you have the materials, level gathering while you kill mobs, and don't forget the gathering skill tab — for example, move the points to Odyle before gathering it.",
+          "ru": "Продавай только критовые луки и кольца (белые и зелёные), некритовые крафти в тир выше. Крафтить начинай, когда соберёшь ресурсы, сбор качай попутно с мобами и не забывай вкладку навыков сбора — например, перекинь очки на одилию перед её сбором."}
+       ]}
+     ]},
+    {"id": "market", "title": {"en": "Buy or morph", "ru": "Докупить или сморфить"},
+     "blocks": [
+       {"type": "list", "items": [
+         {"en": "Every material for a gold weapon or ring can be bought on the market, and Substance Morph turns {i:odyle} into any material. Don't rush: check the prices first — usually it's better to sell Odyle and buy two materials for one Odyle, but there have been times when it was the other way round.",
+          "ru": "Каждый ресурс для золотого оружия или кольца можно докупить на рынке, а Substance Morph превращает {i:odyle} в любой ресурс. Не торопись: сначала проверь цены — обычно выгоднее продать одилию и купить два ресурса за одну, но бывало и наоборот."},
+         {"en": "Where each material spawns: <a href=\"https://aion2t.com/map?zone=World_D_A\" target=\"_blank\" rel=\"noopener\">aion2t.com resource map</a>.",
+          "ru": "Где что растёт: <a href=\"https://aion2t.com/map?zone=World_D_A\" target=\"_blank\" rel=\"noopener\">карта ресурсов aion2t.com</a>."}
+       ]}
+     ]}
+  ]
+}

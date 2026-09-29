@@ -730,5 +730,185 @@
       "stats": [],
       "set": null
     }
+  },
+  "stigmashard": {
+    "id": "531900010",
+    "grade": 71,
+    "cat": "getpoint",
+    "icon": "stigmashard.webp",
+    "en": "Stigma Shard (Bound)",
+    "tip_en": {
+      "desc": "A fragment sealed with the Essence of Experience.\nGrants 1 Stigma Shard Point when obtained.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Обломок стигмы (привяз.)",
+    "tip_ru": {
+      "desc": "Осколок с запечатанной эссенцией опыта.\nДает 1 очко обломка стигмы.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "amplify": {
+    "id": "536530001",
+    "grade": 41,
+    "cat": "usable",
+    "icon": "amplify.webp",
+    "en": "Amplify Stone (Unique) (Bound)",
+    "tip_en": {
+      "desc": "A mystical gemstone that awakens the unique power of gear.\nUsed to amplify Unique Gear that has reached its maximum enhancement level.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Камень прорыва (уникальный) (привяз.)",
+    "tip_ru": {
+      "desc": "Таинственный самородок, раскрывающий уникальные способности снаряжения. Используется как материал для прорыва снаряжения уникального ранга, достигшего максимального этапа усиления.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "amplify_frag": {
+    "id": "631800004",
+    "grade": 41,
+    "cat": "material",
+    "icon": "amplify_frag.webp",
+    "en": "Amplify Stone Fragment (Unique) (Bound)",
+    "tip_en": {
+      "desc": "A piece of an Amplify Stone used to awaken the unique power of the gear.\nCan be converted into an Amplify Stone through Substance Morph.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Фрагмент камня прорыва (уникальный) (привяз.)",
+    "tip_ru": {
+      "desc": "Осколок камня прорыва, использованного для пробуждения уникальных способностей снаряжения.\nС помощью преобразования веществ его можно преобразовать в камень прорыва.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "sync": {
+    "id": "536630001",
+    "grade": 41,
+    "cat": "usable",
+    "icon": "sync.webp",
+    "en": "Sync Stone (Unique) (Bound)",
+    "tip_en": {
+      "desc": "A stone that harmonizes the energies within gear to awaken new possibilities.\nWhen used in [Enhancement - Soul Binding - Sync], it allows you to adjust the properties of gear.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Камень налаживания (уникальный) (привяз.)",
+    "tip_ru": {
+      "desc": "Камень налаживания, пробуждающий новые свойства снаряжения путем преобразования его внутренней силы.\nВ меню [Усиление — Привязка души — Налаживание] можно наладить опции.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "sapphire": {
+    "id": "630660001",
+    "grade": 11,
+    "cat": "gatherresource",
+    "icon": "sapphire.webp",
+    "en": "Sapphire Gemstone (Bound)",
+    "tip_en": {
+      "desc": "A gemstone infused with valuable gems. Used as a material for handicrafting accessories.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Самородок сапфира (привяз.)",
+    "tip_ru": {
+      "desc": "Самородок, содержащий частицы ценных самоцветов. Материал для ювелирного создания аксессуаров.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "ruby": {
+    "id": "630660003",
+    "grade": 11,
+    "cat": "gatherresource",
+    "icon": "ruby.webp",
+    "en": "Ruby Gemstone (Bound)",
+    "tip_en": {
+      "desc": "A gemstone infused with valuable gems. Used as a material for handicrafting accessories.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Самородок рубина (привяз.)",
+    "tip_ru": {
+      "desc": "Самородок, содержащий частицы ценных самоцветов. Материал для ювелирного создания аксессуаров.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "odyle": {
+    "id": "610610013",
+    "grade": 11,
+    "cat": "gatherresource",
+    "icon": "odyle.webp",
+    "en": "Odyle",
+    "tip_en": {
+      "desc": "Used to imbue an item with the power of Odyle. Used as a material for Crafting and Substance Morph.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Эфир",
+    "tip_ru": {
+      "desc": "Используется для наполнения предметов силой эфира. Материал, используемый для создания предметов и преобразования веществ.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "log": {
+    "id": "630650001",
+    "grade": 11,
+    "cat": "gatherresource",
+    "icon": "log.webp",
+    "en": "Yggdrasil Log (Bound)",
+    "tip_en": {
+      "desc": "A magic-imbued log. Used for making wooden weapons in Handicrafting.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Древесина Иггдрасиля (привяз.)",
+    "tip_ru": {
+      "desc": "Древесина, наделенная магической силой. Материал, используемый для ювелирного создания деревянного оружия.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "odyle_energy": {
+    "id": "532000014",
+    "grade": 71,
+    "cat": "addcontentsticketcount",
+    "icon": "odyle_energy.webp",
+    "en": "Odyle Energy (Bound)",
+    "tip_en": {
+      "desc": "Recharges 40 Odyle Energy.\nOdyle Energy can be used to activate the Odyle Energy Cube that appears when you clear an Expedition, Transcendence, or Sanctuary.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Эфирная энергия (привяз.)",
+    "tip_ru": {
+      "desc": "Пополняет 40 ед. эфирной энергии.\nЭфирную энергию можно использовать для активации куба эфирной энергии, появляющегося при успешном прохождении испытаний (экспедиции, Возвышение и Священные земли).",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
   }
 }

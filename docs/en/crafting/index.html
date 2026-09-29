@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en" data-mode="pve">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gathering and crafting: how to level professions — AION 2 Guides</title>
+<meta name="description" content="AION 2 gathering and crafting: which profession to pick, leveling on sapphires and Odyle, gold level 60 blanks, how many materials you need and when to buy instead.">
+<link rel="canonical" href="https://couga54.github.io/aion2-guides/en/crafting/">
+<link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/crafting/">
+<link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/crafting/">
+<link rel="alternate" hreflang="x-default" href="https://couga54.github.io/aion2-guides/en/crafting/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Guides">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Gathering and crafting: how to level professions — AION 2 Guides">
+<meta property="og:description" content="AION 2 gathering and crafting: which profession to pick, leveling on sapphires and Odyle, gold level 60 blanks, how many materials you need and when to buy instead.">
+<meta property="og:url" content="https://couga54.github.io/aion2-guides/en/crafting/">
+<meta property="og:image" content="https://couga54.github.io/aion2-guides/assets/og/crafting-en.jpg?v=50f3008b">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var off = (r.getAttribute('data-off') || '').split(' ');
+    var modes = ['pve', 'pvp', 'lvl'].filter(function (x) { return off.indexOf(x) < 0; });
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+    else if (modes.indexOf(r.dataset.mode) < 0) r.dataset.mode = modes[0];
+  })(document.documentElement);
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=50f3008b">
+</head>
+<body class="page-guide page-crafting">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../en/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
+      <span>AION 2 Guides</span>
+    </a>
+    <details class="class-menu">
+      <summary class="class-menu-btn">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg><span>Classes</span>        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="Classes">
+        <a href="../../en/gladiator/" class="cm-item accent-crimson">
+          <img src="../../assets/classes/gladiator.webp" width="44" height="44" alt=""><span class="cm-name">Gladiator</span><span class="cm-role">Melee DPS · bruiser</span>
+        </a>
+        <a href="../../en/ranger/" class="cm-item accent-emerald">
+          <img src="../../assets/classes/ranger.webp" width="44" height="44" alt=""><span class="cm-name">Ranger</span><span class="cm-role">Ranged DPS · kiter</span>
+        </a>
+        <a href="../../en/templar/" class="cm-item accent-sapphire">
+          <img src="../../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Templar</span><span class="cm-role">Tank · party buffer</span>
+        </a>
+        <a href="../../en/assassin/" class="cm-item accent-violet">
+          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Assassin</span><span class="cm-role">Melee DPS · burst</span>
+        </a>
+        <a href="../../en/sorcerer/" class="cm-item accent-frost">
+          <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Sorcerer <span class="wip-tag">WIP</span></span><span class="cm-role">Ranged magic DPS</span>
+        </a>
+        <a href="../../en/elementalist/" class="cm-item accent-spirit">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Elementalist <span class="wip-tag">WIP</span></span><span class="cm-role">Summoner · magic DPS</span>
+        </a>
+        <a href="../../en/cleric/" class="cm-item accent-sunlight">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Cleric <span class="wip-tag">WIP</span></span><span class="cm-role">Healer · earth and lightning damage</span>
+        </a>
+        <a href="../../en/chanter/" class="cm-item accent-amber">
+          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Chanter</span><span class="cm-role">Melee support · buffer</span>
+        </a>
+      </nav>
+    </details>
+    <div class="topbar-tools">
+      <a class="src-nav" href="../../en/week-1/" title="First week: what to finish before the reset">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+        <span>Week 1</span>
+      </a>
+      <a class="src-nav src-nav-extra" href="../../en/progression/" title="After level 45: gear route to the first raid">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h4v-6H3zM10 20h4V9h-4zM17 20h4V4h-4z"/></svg>
+        <span>After 45</span>
+      </a>
+      <a class="src-nav src-nav-extra" href="../../en/crafting/" aria-current="page" title="Gathering and crafting: how to level professions">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 1.3-1.3a4 4 0 0 0-5-5L3 10l3-3 3 3 1.3-1.3a4 4 0 0 1 4.4-2.4z"/></svg>
+        <span>Crafting</span>
+      </a>
+      <a class="src-nav" href="../../en/weekly/" title="Weekly tracker">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+        <span>Weekly</span>
+      </a>
+      <a class="src-nav" href="../../en/bosses/" title="World bosses">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
+        <span>Bosses</span>
+      </a>
+      <a class="src-nav src-nav-sources" href="../../en/sources/" title="Sources &amp; credits">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+        <span>Sources</span>
+      </a>
+      <a class="lang-switch" href="../../ru/crafting/" hreflang="ru" lang="ru" data-keep-query>
+        <span aria-hidden="true">RU</span><span class="sr-only">Русский</span>
+      </a>
+      <button class="icon-btn search-open" type="button" aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+<a class="icon-btn wn-top" href="../../en/changelog/" aria-label="Changelog" title="Changelog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </a>      <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero has-art" style="--hero-art:url('../../assets/art/hero-crafting.webp');--hero-pos:50% 45%">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../../en/">All classes</a><span aria-hidden="true">/</span><span>Crafting</span></nav>
+      <h1>Gathering and crafting</h1>
+      <p class="lead">Which profession to pick, the fastest way to level it and how to get gold blanks for your crafted weapon.</p>
+    </div>
+  </section>
+
+  <div class="wrap pg-page">
+    <p class="pg-note">From TitanTheF&#39;s progression sheet (Taiwan experience) — times and amounts may differ on global.
+<a class="w1-src" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml#gid=683322434" target="_blank" rel="noopener" title="TitanTheF — AION 2 progression sheet">TitanTheF</a></p>
+
+    <ol class="pg-toc" aria-label="Steps">
+      <li><a href="#basics"><span>Choose a profession</span></a></li>
+      <li><a href="#ore"><span>Level up on ore and Odyle</span></a></li>
+      <li><a href="#wood"><span>Wood, bows and gold blanks</span></a></li>
+      <li><a href="#market"><span>Buy or morph</span></a></li>
+    </ol>
+
+    <section class="pg-sec" id="basics" aria-labelledby="h-basics">
+      <h2 id="h-basics" class="section-title">Choose a profession</h2>
+      <ul class="pg-list">
+<li>Gathering is open from level 1 on global. First decide what you want to gather and craft first.</li><li>Example for a Ranger: <strong>Handicrafting</strong> makes both bows and staves and accessories — the obvious pick. Choose the profession that crafts your main weapon.</li><li>Gathering and crafting both have two tiers — <strong>Novice → Professional</strong> — of 50 levels each.</li>      </ul>
+    </section>
+    <section class="pg-sec" id="ore" aria-labelledby="h-ore">
+      <h2 id="h-ore" class="section-title">Level up on ore and Odyle</h2>
+      <ul class="pg-list">
+<li>The easiest way to level both gathering and crafting is ore. Start with <span class="it g11" data-sk="i:sapphire"><img src="../../assets/icons/items/sapphire.webp" width="20" height="20" alt="" loading="lazy">Sapphire Gemstone</span> in a high-level zone: 40–60 veins take you to level 50.</li><li>Then go back to the quest NPC in the main city and take the green quest: gather a small perfect ruby. Mine <span class="it g11" data-sk="i:ruby"><img src="../../assets/icons/items/ruby.webp" width="20" height="20" alt="" loading="lazy">Ruby Gemstone</span> until it procs — usually 2–3 veins; there are some in the pit near the city.</li><li>Crafting needs <span class="it g11" data-sk="i:odyle"><img src="../../assets/icons/items/odyle.webp" width="20" height="20" alt="" loading="lazy">Odyle</span>: it is gathered in the air, in every zone. A secluded zone where it spawns along a cliff is ideal — ride the air currents to save wing stamina.</li><li>Back in the city: recraft all sapphires, then craft rings. At level 50 take the next green quest from the city NPC — craft a quest item from starting materials. These quests also give the first Pantheon frames.</li><li>Time: about 40 minutes to Novice 50 (on Taiwan, with bots around); Odyle takes over an hour. Short on white Odyle — break green ones down in Substance Morph. Odyle also crafts <span class="it g71" data-sk="i:odyle_energy"><img src="../../assets/icons/items/odyle_energy.webp" width="20" height="20" alt="" loading="lazy">Odyle Energy</span>.</li>      </ul>
+    </section>
+    <section class="pg-sec" id="wood" aria-labelledby="h-wood">
+      <h2 id="h-wood" class="section-title">Wood, bows and gold blanks</h2>
+      <ul class="pg-list">
+<li><span class="it g11" data-sk="i:log"><img src="../../assets/icons/items/log.webp" width="20" height="20" alt="" loading="lazy">Yggdrasil Log</span> — a through-zone is best, and you can farm pets on the way. Be patient: many players pass there and the resource is worth more.</li><li><strong>Gold level 60 blanks</strong> come from crafting blue bows with a crit — a 25% chance, pure luck. Crafting orbs drop everywhere: mobs in the world, the Abyss, dungeons. Rings work the same way.</li><li>For the whole leveling collect about <strong>300 sapphire veins</strong> and about <strong>140 trees</strong>. Got gold materials? Don't rush to sell them — you will need both Odyle and wood.</li><li>Sell only crit bows and rings (white and green); craft the non-crit ones into the next tier. Start crafting once you have the materials, level gathering while you kill mobs, and don't forget the gathering skill tab — for example, move the points to Odyle before gathering it.</li>      </ul>
+    </section>
+    <section class="pg-sec" id="market" aria-labelledby="h-market">
+      <h2 id="h-market" class="section-title">Buy or morph</h2>
+      <ul class="pg-list">
+<li>Every material for a gold weapon or ring can be bought on the market, and Substance Morph turns <span class="it g11" data-sk="i:odyle"><img src="../../assets/icons/items/odyle.webp" width="20" height="20" alt="" loading="lazy">Odyle</span> into any material. Don't rush: check the prices first — usually it's better to sell Odyle and buy two materials for one Odyle, but there have been times when it was the other way round.</li><li>Where each material spawns: <a href="https://aion2t.com/map?zone=World_D_A" target="_blank" rel="noopener">aion2t.com resource map</a>.</li>      </ul>
+    </section>
+
+    <script type="application/json" id="sk-data">{"i:wings":{"n":"Ultimate Daeva Wings (Bound)","m":"","g":41,"d":"Grants [Ultimate Daeva Wings (Bound)].\n\n[Equipped Effect]\nHP: 500\nMP: 250\nPenetration: 500\nCritical Hit: 35\n[Owned Effect]\nFlight Power: 500\nPenetration: 100\nAccuracy Bonus: 20\nAttack Bonus: 10","sp":[]},"i:bracelet":{"n":"Ascension Bracelet","m":"Item level 51","g":41,"d":"Defense: 156\nAttack: 65","sp":[]},"i:trace":{"n":"Empyrean Trace: Altgard (Bound)","m":"","g":71,"d":"A trace faintly imbued with the strength of the Empyrean Lords who protect Altgard. Can be resonated with Altgard Monolith.","sp":[]},"i:dcrystal":{"n":"Daevanion Crystal (Bound)","m":"","g":71,"d":"Use to obtain 1 Daevanion Point.","sp":[]},"i:dcrystal_ariel":{"n":"Daevanion Crystal: Ariel (Bound)","m":"","g":71,"d":"Use to obtain 1 Ariel Daevanion Point.","sp":[]},"i:dcrystal_azphel":{"n":"Daevanion Crystal: Azphel (Bound)","m":"","g":71,"d":"Use to obtain 1 Azphel Daevanion Point.","sp":[]},"i:wisdom":{"n":"Wisdom Stone (Bound)","m":"","g":71,"d":"A mysterious stone imbued with memories of battle.\nUse to obtain 1 Skill Point.","sp":[]},"i:clashrune":{"n":"Clash Rune Chest (Bound)","m":"","g":71,"d":"A rune that can be earned only by those who have overcome a nightmare.\nUse to obtain a Clash Rune (Bound) and Rune Enhance Scrolls (Bound).","sp":[]},"i:beltscroll":{"n":"Noble Belt Enhance Scroll (Bound)","m":"","g":11,"d":"An Enhance Scroll containing an ancient power.\nUse to enhance Noble Belt.","sp":[]},"i:shugokey":{"n":"Shugo Festival Reward Key (Bound)","m":"","g":71,"d":"Recharges 1 Shugo Festival Reward Key count.","sp":[]},"i:bakarma":{"n":"Bakarma Breastplate","m":"Item level 54","g":41,"d":"HP: 216\nDefense: 397","sp":[]},"i:voucher":{"n":"Gear Change Voucher: Vakron Sky Island (Bound)","m":"","g":41,"d":"A reward obtained by defeating Vakron.\nWhen used as a Substance Morph material, it can be transformed into a Unique Guard or Unique Gear Selection Chest.","sp":[]},"i:vakronguard":{"n":"Vakron Guard","m":"Item level 70","g":41,"d":"Critical Hit: 50\nAccuracy: 50\nAttack: 144","sp":[]},"i:mana_sup":{"n":"Superior Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:mana_int":{"n":"Intermediate Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:mana_less":{"n":"Lesser Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:theostone":{"n":"Theostone: Jumentis's Dexterity (Bound)","m":"","g":31,"d":"Grants [Theostone: Jumentis's Dexterity].\nThe obtained Theostone can be found in the Enhancement menu.\nHas a 20% chance to deal 250 AoE Wind damage to up to 4 targets on attack\nEffect Activation Cooldown: 1s\nOnly one Theostone's effect applies when identical Theostones are engraved.","sp":[]},"i:enhance":{"n":"Enhance Stone","m":"","g":11,"d":"Used to awaken hidden potential of gear.","sp":[]},"i:bell_green":{"n":"Bell of Vigor","m":"Item level 40 · Set: Primal Vigor","g":21,"d":"Justice [Nezekan]: 12","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:mirror_green":{"n":"Mirror of Magic","m":"Item level 40 · Set: Magic Armor","g":21,"d":"Wisdom [Lumiel]: 12","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:compass_grey":{"n":"Compass of Magic","m":"Item level 20 · Set: Magic Armor","g":11,"d":"Death [Triniel]: 8","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:chalice_grey":{"n":"Chalice of Magic","m":"Item level 20 · Set: Magic Armor","g":11,"d":"Space [Israphel]: 8","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:mirror_gold":{"n":"Mirror of Vigor","m":"Item level 80 · Set: Primal Vigor","g":41,"d":"Illusion [Kaisinel]: 20","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:transfer_w":{"n":"Transfer Stone: Weapon (Unique) (Bound)","m":"","g":41,"d":"A formidable gemstone that transfers the boundless power of the gear to another.\nCan be used on the Unique Weapon.","sp":[]},"i:transfer_a":{"n":"Transfer Stone: Armor (Unique) (Bound)","m":"","g":41,"d":"A formidable gemstone that transfers the boundless power of the gear to another.\nCan be used on the Unique Armor.","sp":[]},"i:stigmashard":{"n":"Stigma Shard (Bound)","m":"","g":71,"d":"A fragment sealed with the Essence of Experience.\nGrants 1 Stigma Shard Point when obtained.","sp":[]},"i:amplify":{"n":"Amplify Stone (Unique) (Bound)","m":"","g":41,"d":"A mystical gemstone that awakens the unique power of gear.\nUsed to amplify Unique Gear that has reached its maximum enhancement level.","sp":[]},"i:amplify_frag":{"n":"Amplify Stone Fragment (Unique) (Bound)","m":"","g":41,"d":"A piece of an Amplify Stone used to awaken the unique power of the gear.\nCan be converted into an Amplify Stone through Substance Morph.","sp":[]},"i:sync":{"n":"Sync Stone (Unique) (Bound)","m":"","g":41,"d":"A stone that harmonizes the energies within gear to awaken new possibilities.\nWhen used in [Enhancement - Soul Binding - Sync], it allows you to adjust the properties of gear.","sp":[]},"i:sapphire":{"n":"Sapphire Gemstone (Bound)","m":"","g":11,"d":"A gemstone infused with valuable gems. Used as a material for handicrafting accessories.","sp":[]},"i:ruby":{"n":"Ruby Gemstone (Bound)","m":"","g":11,"d":"A gemstone infused with valuable gems. Used as a material for handicrafting accessories.","sp":[]},"i:odyle":{"n":"Odyle","m":"","g":11,"d":"Used to imbue an item with the power of Odyle. Used as a material for Crafting and Substance Morph.","sp":[]},"i:log":{"n":"Yggdrasil Log (Bound)","m":"","g":11,"d":"A magic-imbued log. Used for making wooden weapons in Handicrafting.","sp":[]},"i:odyle_energy":{"n":"Odyle Energy (Bound)","m":"","g":71,"d":"Recharges 40 Odyle Energy.\nOdyle Energy can be used to activate the Odyle Energy Cube that appears when you clear an Expedition, Transcendence, or Sanctuary.","sp":[]}}</script>
+<p class="w1-cta"><a class="btn btn-primary" href="../../en/progression/">Open the route after 45 →</a></p>  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../en/">AION 2 Guides</a>
+      <p>Unofficial fan site, not affiliated with NCSOFT. AION 2 and its skill icons are © NCSOFT.</p>
+      <p>Last checked: 2026-09-27 (before the global launch).</p>
+      <p><a href="../../en/sources/">All sources and creators</a> · <a href="../../en/changelog/">Changelog</a> · <a class="report-link" href="https://github.com/Couga54/aion2-guides/issues/new" target="_blank" rel="noopener" title="Opens a GitHub issue for this page" data-body="Page: {url}
+Mode: {mode}
+
+What is wrong / outdated:
+
+Source or proof (link, screenshot):
+" data-page="en/crafting/">Report a mistake</a></p>
+    </div>
+  </div>
+</footer>
+<dialog class="search-dlg" aria-label="Search" data-index="../../en/search.json" data-base="../../en/" data-empty="Nothing found"
+  data-kinds="{&#34;boss&#34;: &#34;Boss&#34;, &#34;class&#34;: &#34;Class&#34;, &#34;page&#34;: &#34;Page&#34;, &#34;section&#34;: &#34;Section&#34;, &#34;skill&#34;: &#34;Skill&#34;}" data-root="../../">
+  <div class="search-in">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-q" placeholder="Class, skill, boss, section…" aria-label="Search" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-res" role="listbox"></ul>
+  </div>
+</dialog>
+<dialog class="whatsnew" data-id="2026-09-29-titan" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title">What&#39;s new</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="Got it">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <section class="wn-entry">
+      <time class="wn-date" datetime="2026-09-29">Sep 29, 2026</time>
+      <ul>
+        <li><a href="../../en/progression/#titan"><strong>After level 45: TitanTheF's route</strong> — Abyss farm, a crafted T1 weapon, the economic route and alts; plus <strong>how gear upgrades work</strong> (enhancement limits, manastones, Theostones, Soul Binding, titles, season).</a></li>
+        <li><a href="../../en/crafting/"><strong>New page: Gathering and crafting</strong> — which profession to pick, leveling on sapphires and Odyle, gold blanks and how much you need.</a></li>
+        <li><a href="../../en/week-1/"><strong>First week</strong>: Shugo at 45, world bosses once each, alts advice. <strong>Sources</strong>: who to watch per class.</a></li>
+      </ul>
+    </section>
+    <button class="btn btn-primary wn-ok" value="close">Got it</button>
+    <p class="wn-all"><a href="../../en/changelog/">Full changelog →</a></p>
+  </form>
+</dialog>
+<script src="../../assets/js/site.js?v=50f3008b" defer></script>
+<script src="../../assets/js/fx.js?v=50f3008b" defer></script>
+<div class="cel-banner" role="status" hidden data-at="2026-09-30T13:00:00Z" data-id="early">
+  <span class="cel-ico" aria-hidden="true">✦</span>
+  <div><p class="cel-h">Early Access is open!</p><p class="cel-p">Founder&#39;s Pack servers are live — good luck on day one. Your class guides are ready.</p></div>
+  <button type="button" class="cel-x" aria-label="Close">×</button>
+</div>
+<script src="../../assets/js/celebrate.js?v=50f3008b" defer></script>
+</body>
+</html>

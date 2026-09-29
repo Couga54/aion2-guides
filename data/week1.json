@@ -1,14 +1,14 @@
 {
-  "_note": "First-week page (/<lang>/week-1/). 'reset' = weekly caps that are lost for good if missed before the first reset; 'goals' = one-time things not to miss. src: spid = Spid '14 Tips I Wish I Knew', lfg = LittleFattyGG 'Don't waste your first week'. sanya = Sanya Jacuzzi 'New plan after level 45' (RU, from the global datamine the day before launch, unconfirmed). The item level route after 45 lives on its own page (data/progression.json).",
+  "_note": "First-week page (/<lang>/week-1/). 'reset' = weekly caps that are lost for good if missed before the first reset; 'goals' = one-time things not to miss. src: spid = Spid '14 Tips I Wish I Knew', lfg = LittleFattyGG 'Don't waste your first week'. sanya = Sanya Jacuzzi 'New plan after level 45' (RU, from the global datamine the day before launch, unconfirmed). The item level route after 45 lives on its own page (data/progression.json). titan = TitanTheF's progression sheet (Taiwan experience).",
   "groups": [
     {"id": "reset",
      "title": {"en": "Before the first weekly reset", "ru": "До первого недельного сброса"},
      "lead": {"en": "These are weekly caps: whatever you don't use before the reset is gone for good. If you start on October 5 you only have about two days until the first reset.",
               "ru": "Это недельные лимиты: всё, что не использовал до сброса, сгорает навсегда. Если начинаешь 5 октября, до первого сброса остаётся всего около двух дней."},
      "items": [
-       {"id": "alts-22", "src": "spid",
-        "text": {"en": "<strong>Level your alts to 22 early.</strong> Odyle energy only starts regenerating at 22 — every offline hour after that is free energy.",
-                 "ru": "<strong>Качни альтов до 22 пораньше.</strong> Энергия Odyle начинает копиться только с 22 уровня — каждый час офлайна после этого даёт бесплатную энергию."}},
+       {"id": "alts-22", "src": "spid titan",
+        "text": {"en": "<strong>Level your alts to 22 early.</strong> Odyle energy only starts regenerating at 22 — every offline hour after that is free energy. With 10–16 hours at launch, play the main first and start alts after 1–2 days, when the starting zones are emptier; with less time, take 4 characters to 22 first.",
+                 "ru": "<strong>Качни альтов до 22 пораньше.</strong> Энергия Odyle начинает копиться только с 22 уровня — каждый час офлайна после этого даёт бесплатную энергию. Если на старте есть 10–16 часов — сначала мейн, а твинки через 1–2 дня, когда начальные локации освободятся; если времени меньше — сначала 4 персонажа до 22."}},
        {"id": "energy-cap", "src": "lfg",
         "text": {"en": "<strong>Never sit at the energy cap.</strong> Craft all 7 weekly Odyle energies (Substance Morph) and pick up the green Odium in the world and after dungeons.",
                  "ru": "<strong>Не упирайся в лимит энергии.</strong> Скрафти все 7 недельных энергий Odyle (Substance Morph) и собирай зелёный Odium в мире и после подземелий."}},
@@ -63,6 +63,9 @@
        {"id": "shops", "src": "spid lfg",
         "text": {"en": "<strong>Season shop: don't buy blind.</strong> Season coins are scarce; wait until it's clear what's worth it. Skip the early Kanis PvP gear and don't enhance the Fierce Battle amulet — spend Abyss points on Daevanion crystals and stigma shards.",
                  "ru": "<strong>Сезонный магазин: не покупай наугад.</strong> Сезонных монет мало; подожди, пока станет ясно, что стоит брать. Не бери ранний PvP-сет Kanis и не точи амулет Fierce Battle — трать очки Бездны на кристаллы Daevanion и осколки стигм."}},
+       {"id": "shugo-45", "src": "titan",
+        "text": {"en": "<strong>Shugo Festival at 45.</strong> Only at level 45 do you get the full rewards — gold gear and craft materials (global also added stigma shards). Go to every one.",
+                 "ru": "<strong>Шуго-фестиваль на 45.</strong> Только на 45 уровне дают полные награды — золотую экипировку и крафтовые ресурсы (на глобалке добавили ещё осколки стигм). Ходи на каждый."}},
        {"id": "shugo-500", "src": "lfg",
         "text": {"en": "<strong>Shugo Festa “Not This Tile”:</strong> one runner collects orbs, everyone else stops at 500 points and steps off the board — the whole group gets top-tier rewards.",
                  "ru": "<strong>Shugo Festa «Not This Tile»:</strong> один игрок собирает шары, остальные останавливаются на 500 очках и уходят с поля — вся группа получает максимальные награды."}},
@@ -80,12 +83,16 @@
                  "ru": "<strong>Ежедневные контракты: смотри на первые слоты.</strong> Гарантирована только первая награда, остальные — шанс, который падает к концу списка. Бери с ключом в слотах 1–4, иначе — с наибольшим числом радужных и камней питомцев; золотая вещь в конце почти всегда обман."}},
        {"id": "pass-boxes", "src": "sanya",
         "text": {"en": "<strong>Keep Daily Dungeon and trial pass boxes closed</strong> if they are handed out at launch. These modes are being reworked and are best run at the end of the week, at your strongest — rewards depend on your kill speed.",
-                 "ru": "<strong>Не открывай коробки с проходками в Daily Dungeon и испытания</strong>, если их раздадут на старте. Эти режимы переделывают, и выгоднее всего идти туда в конце недели на пике силы — награда зависит от скорости убийства мобов."}}
+                 "ru": "<strong>Не открывай коробки с проходками в Daily Dungeon и испытания</strong>, если их раздадут на старте. Эти режимы переделывают, и выгоднее всего идти туда в конце недели на пике силы — награда зависит от скорости убийства мобов."}},
+       {"id": "world-bosses", "src": "titan",
+        "text": {"en": "<strong>Kill every world boss once</strong> — a chance at a drop and a participation title. Timers are on the map and on the <a href=\"../bosses/\">World bosses</a> page.",
+                 "ru": "<strong>Убей каждого мирового босса по разу</strong> — шанс на дроп и титул за участие. Таймеры — на карте и на странице <a href=\"../bosses/\">Мировые боссы</a>."}}
      ]}
   ],
   "sources": {
     "spid": {"name": "Spid — 14 Tips I Wish I Knew Before Starting", "url": "https://www.youtube.com/watch?v=gwMMpH-OY9c"},
     "lfg": {"name": "LittleFattyGG — Don't Waste Your First Week", "url": "https://youtu.be/DVQWMJa7jq0"},
-    "sanya": {"name": "Sanya Jacuzzi — New leveling plan after 45 (datamine)", "url": "https://www.youtube.com/watch?v=a8zVweGN--4"}
+    "sanya": {"name": "Sanya Jacuzzi — New leveling plan after 45 (datamine)", "url": "https://www.youtube.com/watch?v=a8zVweGN--4"},
+    "titan": {"name": "TitanTheF — AION 2 progression sheet", "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml#gid=53494555"}
   }
 }

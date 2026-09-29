@@ -1,0 +1,76 @@
+{#- Data-driven guide page (/progression/, /crafting/): `prog` = data/<page>.json, its "meta" names the i18n keys and the header art. -#}
+{% extends "base.html" %}
+{% set M = prog.meta %}
+{% block og %}{{ M.og }}{% endblock %}
+{% block title %}{{ t[M.title] }} — {{ t.site_name }}{% endblock %}
+{% block desc %}{{ t[M.desc] }}{% endblock %}
+{% block body_class %}page-guide page-{{ M.og }}{% endblock %}
+{#- Timestamp in a video source, or a chip that names the source. -#}
+{% macro src_link(key, at=None) -%}
+{% set S = prog.sources[key] %}
+{%- if at and S.get('video') -%}
+{% set p = at.split(':') %}<a class="pg-at" href="{{ S.url }}&t={{ p[0]|int * 60 + p[1]|int }}s" target="_blank" rel="noopener" title="{{ t.pg_watch }}">▶ {{ at }}</a>
+{%- else -%}
+<a class="pg-at" href="{{ S.url }}" target="_blank" rel="noopener" title="{{ S.name }}">{{ S.name.split(' — ')[0] }}</a>
+{%- endif -%}
+{%- endmacro %}
+{#- A block shows its timestamp, or its source when it differs from the section's. -#}
+{% macro block_src(b, sec_src) -%}
+{%- if b.get('at') %} {{ src_link(b.get('src', sec_src), b.at) }}{% elif b.get('src') and b.src != sec_src %} {{ src_link(b.src) }}{% endif -%}
+{%- endmacro %}
+{% block main %}
+<main id="main">
+  <section class="page-hero has-art" style="--hero-art:url('{{ root }}assets/art/{{ M.hero }}.webp');--hero-pos:{{ M.pos }}">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ root }}{{ lang }}/">{{ t.back_home }}</a><span aria-hidden="true">/</span><span>{{ t[M.nav] }}</span></nav>
+      <h1>{{ t[M.h1] }}</h1>
+      <p class="lead">{{ t[M.lead] }}</p>
+    </div>
+  </section>
+
+  <div class="wrap pg-page">
+    <p class="pg-note">{% if M.get('tag') %}<span class="wip-tag">{{ t[M.tag] }}</span> {% endif %}{{ t[M.note] }}
+      {% for key, S in prog.sources.items() %}<a class="w1-src" href="{{ S.url }}" target="_blank" rel="noopener" title="{{ S.name }}">{{ S.name.split(' — ')[0] }}</a>{% endfor %}</p>
+
+    <ol class="pg-toc" aria-label="{{ t.pg_toc }}">
+      {% for sec in prog.sections %}
+      <li><a href="#{{ sec.id }}">{% if sec.get('gs') %}<b>{{ sec.gs }}</b>{% endif %}<span>{{ sec.title[lang] }}</span></a></li>
+      {% endfor %}
+    </ol>
+
+    {% for sec in prog.sections %}
+    {% set ssrc = sec.get('src', prog.src) %}
+    <section class="pg-sec{% if sec.get('gs') %} has-gs{% endif %}" id="{{ sec.id }}" aria-labelledby="h-{{ sec.id }}">
+      {% if sec.get('gs') %}<span class="pg-gs" aria-hidden="true">{{ sec.gs }}</span>{% endif %}
+      <h2 id="h-{{ sec.id }}" class="section-title">{{ sec.title[lang] }}</h2>
+      {% if ssrc != prog.src %}<p class="pg-sec-src">{{ t.guide_src }}: {{ src_link(ssrc) }}</p>{% endif %}
+      {% if sec.get('lead') %}<p class="pg-lead">{{ it(sec.lead[lang]) }}</p>{% endif %}
+      {% for b in sec.blocks %}
+        {% if b.type == 'h' %}
+      <h3 class="pg-h">{{ b.text[lang] }}</h3>
+        {% elif b.type == 'p' %}
+      <p class="pg-p">{{ it(b.text[lang]) }}{{ block_src(b, ssrc) }}</p>
+        {% elif b.type == 'tip' %}
+      <div class="callout pg-tip" role="note"><p>{{ it(b.text[lang]) }}{{ block_src(b, ssrc) }}</p></div>
+        {% elif b.type == 'list' %}
+      <ul class="pg-list">
+        {% for x in b['items'] %}<li>{{ it(x[lang]) }}{% if loop.first %}{{ block_src(b, ssrc) }}{% endif %}</li>{% endfor %}
+      </ul>
+        {% elif b.type == 'table' %}
+      <div class="pg-table-wrap">
+        <table class="pg-table">
+          <thead><tr>{% for h in b.head[lang] %}<th scope="col">{{ h }}</th>{% endfor %}</tr></thead>
+          <tbody>{% for r in b.rows %}<tr>{% for c in r[lang] %}{% if loop.first %}<th scope="row">{{ it(c) }}</th>{% else %}<td>{{ it(c) }}</td>{% endif %}{% endfor %}</tr>{% endfor %}</tbody>
+        </table>
+        {% if b.get('at') or b.get('src') %}<p class="pg-table-at">{{ block_src(b, ssrc) }}</p>{% endif %}
+      </div>
+        {% endif %}
+      {% endfor %}
+    </section>
+    {% endfor %}
+
+    <script type="application/json" id="sk-data">{{ items_tip_json(lang) }}</script>
+    {% if M.get('back') %}<p class="w1-cta"><a class="btn btn-primary" href="{{ root }}{{ lang }}/{{ M.back.path }}">{{ t[M.back.label] }} →</a></p>{% endif %}
+  </div>
+</main>
+{% endblock %}

@@ -2,6 +2,27 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-09-29-titan",
+      "date": "2026-09-29",
+      "items": [
+        {
+          "href": "progression/#titan",
+          "en": "<strong>After level 45: TitanTheF's route</strong> — Abyss farm, a crafted T1 weapon, the economic route and alts; plus <strong>how gear upgrades work</strong> (enhancement limits, manastones, Theostones, Soul Binding, titles, season).",
+          "ru": "<strong>После 45: путь TitanTheF</strong> — фарм Бездны, крафтовое T1-оружие, экономический путь и твинки; плюс <strong>как работает улучшение</strong> (пределы заточки, манастоуны, Теостоуны, наследие, титулы, сезон)."
+        },
+        {
+          "href": "crafting/",
+          "en": "<strong>New page: Gathering and crafting</strong> — which profession to pick, leveling on sapphires and Odyle, gold blanks and how much you need.",
+          "ru": "<strong>Новая страница: Сбор и крафт</strong> — какую профессию выбрать, прокачка на сапфирах и одилии, золотые болванки и сколько всего нужно."
+        },
+        {
+          "href": "week-1/",
+          "en": "<strong>First week</strong>: Shugo at 45, world bosses once each, alts advice. <strong>Sources</strong>: who to watch per class.",
+          "ru": "<strong>Первая неделя</strong>: Шуго на 45, мировые боссы по разу, совет по твинкам. <strong>Источники</strong>: кого смотреть по классам."
+        }
+      ]
+    },
+    {
       "id": "2026-09-29-progression",
       "date": "2026-09-29",
       "items": [

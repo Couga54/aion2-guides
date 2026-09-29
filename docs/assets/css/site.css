@@ -892,6 +892,7 @@ details.spec-all[open] > *:not(summary),.wk-group,.bs-group{animation:fade-in .3
 .pg-sec.has-gs::before{content:"";position:absolute;left:29px;top:62px;bottom:-26px;width:2px;background:linear-gradient(var(--gold),color-mix(in srgb,var(--gold) 10%,transparent));}
 .pg-gs{position:absolute;left:0;top:30px;width:60px;height:30px;display:grid;place-items:center;border-radius:999px;border:1px solid var(--gold);background:var(--surface);color:var(--gold);font:700 .8rem var(--font-mono);}
 .pg-lead{color:var(--text-dim);margin:0 0 12px;}
+.pg-sec-src{margin:-4px 0 10px;font-size:.8rem;color:var(--text-faint);}
 .pg-h{font-size:1.02rem;margin:20px 0 8px;color:var(--text);}
 .pg-p{margin:0 0 12px;color:var(--text-dim);line-height:1.65;}
 .pg-p strong,.pg-list strong,.pg-tip strong{color:var(--text);}

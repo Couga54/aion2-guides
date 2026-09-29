@@ -1,6 +1,6 @@
 """Download the items used on the progression page (EN + RU names, grade, icon) from questlog.gg.
 
-  python tools/fetch_items.py            fetch everything listed in data/progression.json -> "items"
+  python tools/fetch_items.py            fetch everything listed in "items" of data/progression.json and data/crafting.json
                                          (a key is "Exact Name" or {"name": ..., "grade": ...})
   python tools/fetch_items.py --find X   print questlog search results for X (to pick the exact name)
 
@@ -22,6 +22,7 @@ from fetch_skills import CDN, get, trpc  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 ICONS = ROOT / "src" / "assets" / "icons" / "items"
+PAGES = ("progression.json", "crafting.json")   # guide pages whose "items" are fetched
 
 
 def search(term):
@@ -33,7 +34,9 @@ def main():
         for it in search(" ".join(sys.argv[2:])):
             print(it["id"], it["grade"], it.get("mainCategory"), it.get("subCategory"), it["name"])
         return
-    wanted = json.loads((DATA / "progression.json").read_text(encoding="utf-8"))["items"]
+    wanted = {}
+    for page in PAGES:
+        wanted.update(json.loads((DATA / page).read_text(encoding="utf-8"))["items"])
     ICONS.mkdir(parents=True, exist_ok=True)
     out = {}
     for key, spec in wanted.items():

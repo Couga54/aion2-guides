@@ -34,6 +34,9 @@ Work top to bottom, then rebuild (`.venv/Scripts/python tools/build.py`), check 
       and stronghold rewards, Shugo shop steps, Nightmare shop prices, the Draupnir guarantee (14 chests, 7 with premium),
       Vakron guard (2 vouchers + 1.5M kina) and the transfer stones. When confirmed, reword `pg_note` in `data/i18n.json`
       (drop the "Datamine" tag). New items: add to `items` and run `tools/fetch_items.py`.
+- [ ] **TitanTheF's parts** (`src: "titan"` in `data/progression.json`, `data/crafting.json`, `data/week1.json`) come from
+      Taiwan: full Shugo rewards only at 45, ~420/570 Daevanion points after the map, 55k combat power from pets, Abyss
+      scroll prices, crafting times and amounts (300 sapphire veins, 140 trees, 25% gold blank chance). Check on global.
 - [ ] Counters seen in that video differ from `data/weekly.json` / `data/week1.json`: Daily Dungeon 14 entries a week
       (site: 7), Shugo Festival keys 7 + 1 a day, up to 30 stored (site: "keys stop at 14"). Check which is right.
 

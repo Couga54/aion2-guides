@@ -126,15 +126,16 @@
         {
           "name": "TitanTheF",
           "what": {
-            "en": "Author of the leveling route table and the AION 2 progression sheet: global builds (start 1–45 and 45+) for Ranger, Assassin and Chanter, hotbar and macro setups, farming and progression notes.",
-            "ru": "Автор таблицы маршрута прокачки и таблицы прогрессии AION 2: глобальные билды (старт 1–45 и 45+) для Лучника, Убийцы и Чародея, раскладка панели и макросы, фарм и прогрессия."
+            "en": "Author of the leveling route table and the AION 2 progression sheet: global builds (start 1–45 and 45+) for Ranger, Assassin and Chanter, hotbar and macro setups, the route after 45, gear upgrades, gathering and crafting.",
+            "ru": "Автор таблицы маршрута прокачки и таблицы прогрессии AION 2: глобальные билды (старт 1–45 и 45+) для Лучника, Убийцы и Чародея, раскладка панели и макросы, маршрут после 45, улучшение экипировки, сбор и крафт."
           },
           "used": [
             "gladiator",
             "ranger",
             "templar",
             "assassin",
-            "chanter"
+            "chanter",
+            "site"
           ],
           "links": [
             {
@@ -328,6 +329,138 @@
               "type": "github",
               "url": "https://github.com/nemobek",
               "label": "GitHub"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "watch",
+      "title": {
+        "en": "Who to watch",
+        "ru": "Кого смотреть"
+      },
+      "lead": {
+        "en": "Streamers with Taiwan or EU experience, per class — TitanTheF's list for learning a class after leveling.",
+        "ru": "Стримеры с опытом Тайваня или EU по классам — список TitanTheF, у кого учиться классу после прокачки."
+      },
+      "items": [
+        {
+          "name": "mahsepp1",
+          "what": {
+            "en": "Gladiator, good player with Taiwan experience.",
+            "ru": "Гладиатор, хороший игрок с опытом Тайваня."
+          },
+          "used": [
+            "gladiator"
+          ],
+          "links": [
+            {
+              "type": "twitch",
+              "url": "https://www.twitch.tv/mahsepp1",
+              "label": "Twitch"
+            }
+          ]
+        },
+        {
+          "name": "consul",
+          "what": {
+            "en": "Sorcerer with Taiwan experience.",
+            "ru": "Волшебник с опытом Тайваня."
+          },
+          "used": [
+            "sorcerer"
+          ],
+          "links": [
+            {
+              "type": "twitch",
+              "url": "https://www.twitch.tv/consul",
+              "label": "Twitch"
+            }
+          ]
+        },
+        {
+          "name": "pushmybutton",
+          "what": {
+            "en": "Sorcerer, also experienced.",
+            "ru": "Волшебник, тоже с опытом."
+          },
+          "used": [
+            "sorcerer"
+          ],
+          "links": [
+            {
+              "type": "twitch",
+              "url": "https://www.twitch.tv/pushmybutton",
+              "label": "Twitch"
+            }
+          ]
+        },
+        {
+          "name": "krixew",
+          "what": {
+            "en": "Assassin with Taiwan experience (EU).",
+            "ru": "Убийца с опытом Тайваня (EU)."
+          },
+          "used": [
+            "assassin"
+          ],
+          "links": [
+            {
+              "type": "twitch",
+              "url": "https://www.twitch.tv/krixew",
+              "label": "Twitch"
+            }
+          ]
+        },
+        {
+          "name": "norganbm",
+          "what": {
+            "en": "Chanter with Taiwan experience.",
+            "ru": "Чародей с опытом Тайваня."
+          },
+          "used": [
+            "chanter"
+          ],
+          "links": [
+            {
+              "type": "twitch",
+              "url": "https://www.twitch.tv/norganbm",
+              "label": "Twitch"
+            }
+          ]
+        },
+        {
+          "name": "yuga",
+          "what": {
+            "en": "Templar (tank).",
+            "ru": "Страж (танк)."
+          },
+          "used": [
+            "templar"
+          ],
+          "links": [
+            {
+              "type": "twitch",
+              "url": "https://www.twitch.tv/yuga",
+              "label": "Twitch"
+            }
+          ]
+        },
+        {
+          "name": "youmadsin",
+          "what": {
+            "en": "Cleric with experience (EU).",
+            "ru": "Целитель с опытом (EU)."
+          },
+          "used": [
+            "cleric"
+          ],
+          "links": [
+            {
+              "type": "twitch",
+              "url": "https://www.twitch.tv/youmadsin",
+              "label": "Twitch"
             }
           ]
         }
