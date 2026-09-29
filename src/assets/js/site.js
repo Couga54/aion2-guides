@@ -19,10 +19,9 @@
     store('theme', root.dataset.theme);
   });
 
-  // ---- class picker: close on outside click and Escape --------------------
-  var cmenu = document.querySelector('.class-menu');
+  // ---- class picker and pages menu: close on outside click and Escape, one open at a time ----
   var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (cmenu) {
+  [].forEach.call(document.querySelectorAll('details.class-menu'), function (cmenu, i, all) {
     // <details> closes instantly, so play the closing animation first.
     var closeMenu = function () {
       if (!cmenu.open || cmenu.classList.contains('is-closing')) return;
@@ -33,11 +32,14 @@
     cmenu.querySelector('summary').addEventListener('click', function (ev) {
       if (cmenu.open) { ev.preventDefault(); closeMenu(); }
     });
+    cmenu.addEventListener('toggle', function () {
+      if (cmenu.open) [].forEach.call(all, function (other) { if (other !== cmenu) other.open = false; });
+    });
     document.addEventListener('click', function (ev) { if (cmenu.open && !cmenu.contains(ev.target)) closeMenu(); });
     document.addEventListener('keydown', function (ev) {
       if (ev.key === 'Escape' && cmenu.open) { closeMenu(); cmenu.querySelector('summary').focus(); }
     });
-  }
+  });
 
   // ---- what's new: the latest entry pops up once; the "?" button leads to the changelog page ----
   var wn = document.querySelector('.whatsnew');

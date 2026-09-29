@@ -102,6 +102,32 @@ def items_tip_json(lang):
     return Markup(json.dumps(out, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"))
 
 
+WATCH_FILL = {"ru": "en"}   # RU pages fill free places with the English-speaking authors of the guide
+
+
+def watch_for(cls, lang, limit=3):
+    """'Who to watch' on a class page: players of this class among the guide's source authors (the names in
+    site.json classes[].src whose sources.json 'plays' lists the class) who make content in the page language,
+    then the streamers from the Sources page 'watch' group, then (RU pages only) the English-speaking ones."""
+    src_text = " ".join(v[0] for v in (cls.get("src") or {}).values())
+    authors, streamers, fill = [], [], []
+    for g in SOURCES["groups"]:
+        for item in g["items"]:
+            langs = item.get("lang", [])
+            if lang not in langs and WATCH_FILL.get(lang) not in langs:
+                continue
+            links = {l["type"]: l["url"] for l in item["links"]}
+            channel = ("twitch", links["twitch"]) if "twitch" in links else ("youtube", links["youtube"]) if "youtube" in links else None
+            if not channel:
+                continue
+            entry = {"name": item["name"], "type": channel[0], "url": channel[1], "title": item["what"][lang]}
+            if g["id"] == "creators" and item["name"] in src_text and cls["slug"] in item.get("plays", []):
+                (authors if lang in langs else fill).append(entry)
+            elif g["id"] == "watch" and cls["slug"] in item["used"] and lang in langs:
+                streamers.append(entry)
+    return (authors + streamers + fill)[:limit]
+
+
 def asset_version():
     """Short hash of the CSS/JS files and preview images: added to their URLs so browsers and chat apps
     pick up a new build instead of a cached one."""
@@ -209,7 +235,7 @@ def env():
         lstrip_blocks=True,
         extensions=["jinja2.ext.do"],
     )
-    e.globals.update(ASSET_V=asset_version(), tooltip_json=tooltip_json, CHANGELOG=CHANGELOG, fmt_utc=fmt_utc, fmt_day=fmt_day, s=s, sp=sp, skill_data=skill_data, icon_url=icon_url, it=it, items_tip_json=items_tip_json, SITE=SITE)
+    e.globals.update(ASSET_V=asset_version(), tooltip_json=tooltip_json, CHANGELOG=CHANGELOG, fmt_utc=fmt_utc, fmt_day=fmt_day, s=s, sp=sp, skill_data=skill_data, icon_url=icon_url, it=it, items_tip_json=items_tip_json, SITE=SITE, watch_for=watch_for)
     return e
 
 

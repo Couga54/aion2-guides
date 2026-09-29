@@ -70,30 +70,49 @@
       </nav>
     </details>
     <div class="topbar-tools">
-      <a class="src-nav" href="{{ root }}{{ lang }}/week-1/"{% if path == 'week-1/' %} aria-current="page"{% endif %} title="{{ t.w1_title }}">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
-        <span>{{ t.nav_week1 }}</span>
-      </a>
-      <a class="src-nav src-nav-extra" href="{{ root }}{{ lang }}/progression/"{% if path == 'progression/' %} aria-current="page"{% endif %} title="{{ t.pg_title }}">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h4v-6H3zM10 20h4V9h-4zM17 20h4V4h-4z"/></svg>
-        <span>{{ t.nav_progression }}</span>
-      </a>
-      <a class="src-nav src-nav-extra" href="{{ root }}{{ lang }}/crafting/"{% if path == 'crafting/' %} aria-current="page"{% endif %} title="{{ t.cr_title }}">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 1.3-1.3a4 4 0 0 0-5-5L3 10l3-3 3 3 1.3-1.3a4 4 0 0 1 4.4-2.4z"/></svg>
-        <span>{{ t.nav_crafting }}</span>
-      </a>
-      <a class="src-nav" href="{{ root }}{{ lang }}/weekly/"{% if path == 'weekly/' %} aria-current="page"{% endif %} title="{{ t.wk_title }}">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
-        <span>{{ t.nav_weekly }}</span>
-      </a>
-      <a class="src-nav" href="{{ root }}{{ lang }}/bosses/"{% if path == 'bosses/' %} aria-current="page"{% endif %} title="{{ t.bs_title }}">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
-        <span>{{ t.nav_bosses }}</span>
-      </a>
-      <a class="src-nav src-nav-sources" href="{{ root }}{{ lang }}/sources/"{% if path == 'sources/' %} aria-current="page"{% endif %} title="{{ t.src_title }}">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
-        <span>{{ t.sources }}</span>
-      </a>
+      {#- Site pages menu, right-aligned so the class name length never moves it; the current page is highlighted inside. -#}
+      {% set NAV = [('week-1/', 'nav_week1'), ('progression/', 'nav_progression'), ('crafting/', 'nav_crafting'), ('weekly/', 'nav_weekly'), ('bosses/', 'nav_bosses'), ('sources/', 'sources')] %}
+      {% set here = NAV|selectattr(0, 'equalto', path)|list %}
+      <details class="class-menu nav-menu">
+        <summary class="class-menu-btn{% if here %} is-here{% endif %}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>{{ t.nav_guides }}</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <nav class="nav-menu-panel" aria-label="{{ t.nav_guides }}">
+          <div class="nm-col">
+            <p class="nm-group">{{ t.nav_group_progress }}</p>
+            <a href="{{ root }}{{ lang }}/week-1/" class="nm-item"{% if path == 'week-1/' %} aria-current="page"{% endif %}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+              <span class="nm-name">{{ t.nav_week1 }}</span><span class="nm-desc">{{ t.nd_week1 }}</span>
+            </a>
+            <a href="{{ root }}{{ lang }}/progression/" class="nm-item"{% if path == 'progression/' %} aria-current="page"{% endif %}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h4v-6H3zM10 20h4V9h-4zM17 20h4V4h-4z"/></svg>
+              <span class="nm-name">{{ t.nav_progression }}</span><span class="nm-desc">{{ t.nd_progression }}</span>
+            </a>
+            <a href="{{ root }}{{ lang }}/crafting/" class="nm-item"{% if path == 'crafting/' %} aria-current="page"{% endif %}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 1.3-1.3a4 4 0 0 0-5-5L3 10l3-3 3 3 1.3-1.3a4 4 0 0 1 4.4-2.4z"/></svg>
+              <span class="nm-name">{{ t.cr_h1 }}</span><span class="nm-desc">{{ t.nd_crafting }}</span>
+            </a>
+          </div>
+          <div class="nm-col">
+            <p class="nm-group">{{ t.nav_group_trackers }}</p>
+            <a href="{{ root }}{{ lang }}/weekly/" class="nm-item"{% if path == 'weekly/' %} aria-current="page"{% endif %}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+              <span class="nm-name">{{ t.nav_weekly }}</span><span class="nm-desc">{{ t.nd_weekly }}</span>
+            </a>
+            <a href="{{ root }}{{ lang }}/bosses/" class="nm-item"{% if path == 'bosses/' %} aria-current="page"{% endif %}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
+              <span class="nm-name">{{ t.nav_bosses }}</span><span class="nm-desc">{{ t.nd_bosses }}</span>
+            </a>
+          </div>
+          <div class="nm-foot">
+            <a href="{{ root }}{{ lang }}/sources/" class="nm-item"{% if path == 'sources/' %} aria-current="page"{% endif %}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+              <span class="nm-name">{{ t.src_h1 }}</span><span class="nm-desc">{{ t.nd_sources }}</span>
+            </a>
+          </div>
+        </nav>
+      </details>
       <a class="lang-switch" href="{{ root }}{{ other_lang }}/{{ path }}" hreflang="{{ other_lang }}" lang="{{ other_lang }}" data-keep-query>
         <span aria-hidden="true">{{ other_lang|upper }}</span><span class="sr-only">{{ t.switch_lang }}</span>
       </a>

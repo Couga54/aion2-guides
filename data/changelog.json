@@ -2,6 +2,20 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-09-30-menu",
+      "date": "2026-09-30",
+      "items": [
+        {
+          "en": "<strong>New top menu</strong> — all pages are now in the <strong>Guides</strong> menu on the right; the class picker shows the full class name.",
+          "ru": "<strong>Новое верхнее меню</strong> — все страницы теперь в меню <strong>Гайды</strong> справа; в выборе класса название видно полностью."
+        },
+        {
+          "en": "<strong>Who to watch</strong> on class pages — players of that class from the guide's sources and streamers, in your language.",
+          "ru": "<strong>Кого смотреть</strong> на страницах классов — игроки этого класса из источников гайда и стримеры, на твоём языке."
+        }
+      ]
+    },
+    {
       "id": "2026-09-29-titan",
       "date": "2026-09-29",
       "items": [

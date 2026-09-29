@@ -1,5 +1,5 @@
 {
-  "_doc": "Sources page (/<lang>/sources/). Groups in display order. used = class slugs or 'site'. link types: youtube, twitch, discord, telegram, github, video, site.",
+  "_doc": "Sources page (/<lang>/sources/). Groups in display order. used = class slugs or 'site'. link types: youtube, twitch, discord, telegram, github, video, site. lang = the language the creator makes content in; plays = classes they actually play (only those appear in 'who to watch' on class pages — general guide channels get []).",
   "groups": [
     {
       "id": "creators",
@@ -43,6 +43,12 @@
               "url": "https://www.youtube.com/@SolAshur",
               "label": "YouTube"
             }
+          ],
+          "lang": [
+            "en"
+          ],
+          "plays": [
+            "templar"
           ]
         },
         {
@@ -63,6 +69,12 @@
                 "ru": "PvE-гайд на Целителя"
               }
             }
+          ],
+          "lang": [
+            "ru"
+          ],
+          "plays": [
+            "cleric"
           ]
         },
         {
@@ -91,6 +103,12 @@
                 "ru": "Билд на questlog"
               }
             }
+          ],
+          "lang": [
+            "en"
+          ],
+          "plays": [
+            "ranger"
           ]
         },
         {
@@ -121,6 +139,12 @@
               "url": "https://www.twitch.tv/arthars",
               "label": "Twitch"
             }
+          ],
+          "lang": [
+            "en"
+          ],
+          "plays": [
+            "gladiator"
           ]
         },
         {
@@ -166,6 +190,14 @@
               "url": "https://t.me/titanforeve",
               "label": "Telegram"
             }
+          ],
+          "lang": [
+            "ru"
+          ],
+          "plays": [
+            "ranger",
+            "assassin",
+            "chanter"
           ]
         },
         {
@@ -191,7 +223,11 @@
               "url": "https://www.youtube.com/@NoBSGameGuides",
               "label": "YouTube"
             }
-          ]
+          ],
+          "lang": [
+            "en"
+          ],
+          "plays": []
         },
         {
           "name": "Grobs",
@@ -231,7 +267,11 @@
                 "ru": "PvE-гайд на Гладиатора"
               }
             }
-          ]
+          ],
+          "lang": [
+            "en"
+          ],
+          "plays": []
         },
         {
           "name": "Spid",
@@ -256,7 +296,11 @@
               "url": "https://www.youtube.com/@SpidMMO",
               "label": "YouTube"
             }
-          ]
+          ],
+          "lang": [
+            "en"
+          ],
+          "plays": []
         },
         {
           "name": "LittleFattyGG",
@@ -281,7 +325,11 @@
               "url": "https://www.youtube.com/@LittleFattyGaming",
               "label": "YouTube"
             }
-          ]
+          ],
+          "lang": [
+            "en"
+          ],
+          "plays": []
         },
         {
           "name": "Sanya Jacuzzi",
@@ -306,7 +354,11 @@
               "url": "https://www.youtube.com/@Sanya_Jacuzzi",
               "label": "YouTube"
             }
-          ]
+          ],
+          "lang": [
+            "ru"
+          ],
+          "plays": []
         },
         {
           "name": "nemobek",
@@ -360,6 +412,9 @@
               "url": "https://www.twitch.tv/mahsepp1",
               "label": "Twitch"
             }
+          ],
+          "lang": [
+            "ru"
           ]
         },
         {
@@ -377,6 +432,9 @@
               "url": "https://www.twitch.tv/consul",
               "label": "Twitch"
             }
+          ],
+          "lang": [
+            "ru"
           ]
         },
         {
@@ -394,6 +452,9 @@
               "url": "https://www.twitch.tv/pushmybutton",
               "label": "Twitch"
             }
+          ],
+          "lang": [
+            "ru"
           ]
         },
         {
@@ -411,6 +472,9 @@
               "url": "https://www.twitch.tv/krixew",
               "label": "Twitch"
             }
+          ],
+          "lang": [
+            "ru"
           ]
         },
         {
@@ -428,6 +492,9 @@
               "url": "https://www.twitch.tv/norganbm",
               "label": "Twitch"
             }
+          ],
+          "lang": [
+            "ru"
           ]
         },
         {
@@ -445,6 +512,9 @@
               "url": "https://www.twitch.tv/yuga",
               "label": "Twitch"
             }
+          ],
+          "lang": [
+            "ru"
           ]
         },
         {
@@ -462,6 +532,9 @@
               "url": "https://www.twitch.tv/youmadsin",
               "label": "Twitch"
             }
+          ],
+          "lang": [
+            "ru"
           ]
         }
       ]
