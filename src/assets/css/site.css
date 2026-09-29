@@ -594,6 +594,14 @@ td:first-child{font-weight:600;color:var(--text);white-space:nowrap;}
 .w1-src{display:inline-block;margin-left:6px;font:600 .66rem var(--font-mono);padding:1px 7px;border-radius:999px;border:1px solid var(--border-2);color:var(--text-faint);text-decoration:none;vertical-align:1px;}
 .w1-src:hover{color:var(--text);border-color:var(--gold);}
 .w1-cta{margin-top:28px;}
+.w1-route-note{font-size:.84rem;color:var(--text-faint);margin:0 0 18px;max-width:70ch;}
+.w1-route-note .wip-tag{margin-right:4px;}
+.w1-route-list{list-style:none;margin:0;padding:0;position:relative;display:flex;flex-direction:column;gap:16px;}
+.w1-route-list::before{content:"";position:absolute;left:29px;top:14px;bottom:14px;width:2px;background:linear-gradient(var(--gold),color-mix(in srgb,var(--gold) 12%,transparent));}
+.w1-route-step{position:relative;display:grid;grid-template-columns:60px minmax(0,1fr);gap:14px;align-items:start;}
+.w1-route-at{position:relative;z-index:1;display:grid;place-items:center;height:30px;border-radius:999px;background:var(--surface);border:1px solid var(--gold);color:var(--gold);font:700 .8rem var(--font-mono);}
+.w1-route-step h3{margin:5px 0 4px;font-size:1rem;}
+.w1-route-step p{margin:0;color:var(--text-dim);font-size:.9rem;max-width:72ch;}
 .w1-list .step label{grid-template-columns:22px minmax(0,1fr);}
 .energy-bar{flex:none;width:100%;}
 .wk-auto{color:var(--text-faint);}
@@ -694,7 +702,13 @@ a.cm-item[aria-current="page"]{background:var(--accent-soft);border-color:color-
 .bs-status{font:600 .76rem var(--font-mono);color:var(--text-dim);}
 .bs-status:empty{display:none;}
 .bs-ctrl{flex:none;display:flex;gap:6px;}
-@media (max-width: 560px){ .bs-item{flex-wrap:wrap;} .bs-ctrl{width:100%;} .bs-ctrl .btn{flex:1;} }
+.bs-bell{padding-inline:8px;}
+.bs-bell svg{width:16px;height:16px;display:block;}
+.bs-bell[aria-pressed="true"] .off,.bs-bell[aria-pressed="false"] .on{display:none;}
+.bs-bell[aria-pressed="true"]{color:var(--gold);border-color:color-mix(in srgb,var(--gold) 55%,var(--border));}
+.bs-bell[aria-pressed="false"]{color:var(--text-faint);}
+.bs-bell.is-idle{color:var(--text-faint);border-color:var(--border);opacity:.7;}
+@media (max-width: 560px){ .bs-item{flex-wrap:wrap;} .bs-ctrl{width:100%;} .bs-ctrl .btn{flex:1;} .bs-ctrl .bs-bell{flex:none;} }
 
 /* ---- home: on hover the class figure rises out of its card (ready classes, mouse only) ---- */
 .pop-art{display:none;}

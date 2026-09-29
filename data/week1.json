@@ -1,5 +1,5 @@
 {
-  "_note": "First-week page (/<lang>/week-1/). 'reset' = weekly caps that are lost for good if missed before the first reset; 'goals' = one-time things not to miss. src: spid = Spid '14 Tips I Wish I Knew', lfg = LittleFattyGG 'Don't waste your first week'.",
+  "_note": "First-week page (/<lang>/week-1/). 'reset' = weekly caps that are lost for good if missed before the first reset; 'goals' = one-time things not to miss. src: spid = Spid '14 Tips I Wish I Knew', lfg = LittleFattyGG 'Don't waste your first week'. sanya = Sanya Jacuzzi 'New plan after level 45' (RU, from the global datamine the day before launch, unconfirmed). roadmap = the item-level route after 45 (shown as a timeline, not a checklist).",
   "groups": [
     {"id": "reset",
      "title": {"en": "Before the first weekly reset", "ru": "До первого недельного сброса"},
@@ -42,15 +42,15 @@
        {"id": "no-chests", "src": "spid",
         "text": {"en": "<strong>Don't open expedition chests while leveling.</strong> Finish the runs but save the energy for Vakron Sky Island (1,600 item level) — the end of the main story hands you yellow weapons anyway.",
                  "ru": "<strong>Не открывай сундуки экспедиций на прокачке.</strong> Проходи забеги, но копи энергию для Vakron Sky Island (1600 уровня предметов) — в конце сюжета всё равно выдают жёлтое оружие."}},
-       {"id": "feathers", "src": "lfg spid",
-        "text": {"en": "<strong>Feathers → Monolith.</strong> They give stats, amulet upgrade scrolls, a costume and a title with PvE damage tolerance. Use an interactive map.",
-                 "ru": "<strong>Перья → Монолит.</strong> Дают статы, свитки улучшения амулета, костюм и титул со стойкостью к урону в PvE. Пользуйся интерактивной картой."}},
+       {"id": "feathers", "src": "lfg spid sanya",
+        "text": {"en": "<strong>Feathers → Monolith, but last.</strong> Nerfed on global, so collect them after everything else. 95+ feathers take the Monolith to level 11 (stones for the green amulet); it also gives stats, a costume and a title. Use an interactive map.",
+                 "ru": "<strong>Перья → Монолит, но в последнюю очередь.</strong> На глобалке их понерфили — собирай после всего остального. 95+ перьев поднимают Монолит до 11 уровня (камни для зелёного амулета); ещё он даёт статы, костюм и титул. Пользуйся интерактивной картой."}},
        {"id": "sealed", "src": "lfg spid",
         "text": {"en": "<strong>Sealed dungeons and strongholds</strong> on your route — Daevanion crystals, and strongholds are the only way to upgrade the Noble belt.",
                  "ru": "<strong>Запечатанные подземелья и крепости</strong> по пути — кристаллы Daevanion, а крепости — единственный способ улучшить благородный пояс."}},
-       {"id": "rift", "src": "lfg",
-        "text": {"en": "<strong>Rift every 3 hours:</strong> PvP rift quests and the sealed dungeons on the enemy side — but weekly caps come first.",
-                 "ru": "<strong>Разлом каждые 3 часа:</strong> PvP-квесты разлома и запечатанные подземелья на стороне врага — но недельные лимиты важнее."}},
+       {"id": "rift", "src": "lfg sanya",
+        "text": {"en": "<strong>Enemy-side rifts are no longer a priority.</strong> Per the global datamine, enemy-side ? marks and sealed dungeons give 1,000 AP and 2–5k enhancement stones instead of Daevanion nodes — do them at your own pace, weekly caps come first.",
+                 "ru": "<strong>Разломы на стороне врага больше не приоритет.</strong> По датамайну глобалки знаки вопроса и запечатанные подземелья врага дают 1 000 AP и 2–5 тыс. камней заточки вместо узлов Daevanion — закрывай в своём темпе, недельные лимиты важнее."}},
        {"id": "amulet-belt", "src": "spid",
         "text": {"en": "<strong>Amulet and belt to +10</strong>, then Substance Morph them to the next colour. Unequip first, or the morph won't work.",
                  "ru": "<strong>Амулет и пояс до +10</strong>, затем Substance Morph в следующий цвет. Сначала сними предмет, иначе не сработает."}},
@@ -68,11 +68,51 @@
                  "ru": "<strong>Shugo Festa «Not This Tile»:</strong> один игрок собирает шары, остальные останавливаются на 500 очках и уходят с поля — вся группа получает максимальные награды."}},
        {"id": "macros", "src": "spid",
         "text": {"en": "<strong>Set up your macro.</strong> Combat speed outgrows your fingers fast — see the Macro section of your class guide.",
-                 "ru": "<strong>Настрой макрос.</strong> Скорость боя быстро обгоняет пальцы — смотри раздел «Макрос» в гайде своего класса."}}
+                 "ru": "<strong>Настрой макрос.</strong> Скорость боя быстро обгоняет пальцы — смотри раздел «Макрос» в гайде своего класса."}},
+       {"id": "shugo-currency", "src": "sanya",
+        "text": {"en": "<strong>Shugo currency → Daevanion nodes first.</strong> With the enemy ? marks nerfed, the Shugo shop is the main early source of Daevanion nodes. Boss rifts give the same rewards: 100 contribution points = 3 reward cards — invite Chanters, Clerics and Templars for their buffs.",
+                 "ru": "<strong>Шуго-валюта → узлы Daevanion в первую очередь.</strong> После нерфа вражеских знаков вопроса магазин Шуго — главный ранний источник узлов Daevanion. Босс-разломы дают те же награды: 100 очков вклада = 3 карточки — зови Чародеев, Целителей и Стражей ради их баффов."}},
+       {"id": "nightmare-45", "src": "sanya",
+        "text": {"en": "<strong>Nightmare from 45.</strong> Charges only start piling up at 45 — reach it before the first reset. Every boss has 10 difficulties and an entry is spent only on a kill, so you can leave and come back stronger. Greys first, then greens, then the Last Boss.",
+                 "ru": "<strong>Кошмар с 45.</strong> Заряды начинают копиться только с 45 — успей до первого сброса. У каждого босса 10 сложностей, а заряд тратится только за убийство — можно уйти и вернуться сильнее. Сначала серые, потом зелёные, затем Last Boss."}},
+       {"id": "contracts", "src": "sanya",
+        "text": {"en": "<strong>Daily contracts: judge by the first slots.</strong> Only the first reward is guaranteed; the rest are a chance that drops the further along the list they are. Take the ones with a key in slots 1–4, otherwise the most rainbow and pet stones; a gold item at the end is almost always a trap.",
+                 "ru": "<strong>Ежедневные контракты: смотри на первые слоты.</strong> Гарантирована только первая награда, остальные — шанс, который падает к концу списка. Бери с ключом в слотах 1–4, иначе — с наибольшим числом радужных и камней питомцев; золотая вещь в конце почти всегда обман."}},
+       {"id": "pass-boxes", "src": "sanya",
+        "text": {"en": "<strong>Keep Daily Dungeon and trial pass boxes closed</strong> if they are handed out at launch. These modes are being reworked and are best run at the end of the week, at your strongest — rewards depend on your kill speed.",
+                 "ru": "<strong>Не открывай коробки с проходками в Daily Dungeon и испытания</strong>, если их раздадут на старте. Эти режимы переделывают, и выгоднее всего идти туда в конце недели на пике силы — награда зависит от скорости убийства мобов."}}
      ]}
   ],
+  "roadmap": {
+    "title": {"en": "After 45: the item level route", "ru": "После 45: маршрут по уровню предметов"},
+    "lead": {"en": "The order to gear up in until the first raid. Numbers are the item level you leave each step with.",
+             "ru": "В каком порядке одеваться до первого рейда. Числа — уровень предметов, с которым выходишь из шага."},
+    "note": {"en": "From the global datamine a day before launch — not confirmed on live servers yet.",
+             "ru": "По датамайну глобалки за день до запуска — на живых серверах ещё не подтверждено."},
+    "src": "sanya",
+    "steps": [
+      {"at": "45", "title": {"en": "Story and your own map", "ru": "Сюжет и своя карта"},
+       "text": {"en": "Finish the main story — it hands out a gold weapon, a bracelet and wings. Then the regional quests: 2 rings, 2 earrings, a necklace (blue) and 2 PvE runes. Enhance a little, set up your PvE macro and clear every ? on your side of the map; after that the remaining regional quests and the feathers.",
+                "ru": "Добей сюжет — он даёт золотое оружие, браслет и крылья. Затем региональные квесты: 2 кольца, 2 серьги, ожерелье (синие) и 2 PvE-руны. Немного заточись, настрой PvE-макрос и закрой все знаки вопроса на своей стороне карты; после этого — оставшиеся региональные квесты и перья."}},
+      {"at": "1400", "title": {"en": "Shugo, Nightmare, Drupnir", "ru": "Шуго, Кошмар, Друпнир"},
+       "text": {"en": "Shugo Festa and boss rifts for Shugo currency, Nightmare for its currency — spend both on Daevanion nodes. Then Expedition: Conquest in Drupnir up to the guarantee (14 chest openings, 7 with premium): two gold items from drops, the third from the guarantee. One superior stone into the gold weapon and bracelet, intermediate stones into the Drupnir gold pieces, the cheapest stones into the blues, a green Theostone into the weapon. Still short? Three runs of Exploration: Drupnir guarantee another gold piece.",
+                "ru": "Шуго-фесты и босс-разломы ради шуго-валюты, Кошмар ради его валюты — всё в узлы Daevanion. Затем Экспедиция: Завоевание в Друпнире до гаранта (14 открытий сундука, с премиумом 7): две золотые вещи из дропа, третья с гаранта. По одному улучшенному камню в золотое оружие и браслет, средние камни в золото Друпнира, самые дешёвые в синие вещи, зелёный Теостоун в оружие. Не хватает — три Исследования Друпнира дают гарантом ещё одну золотую вещь."}},
+      {"at": "1900", "title": {"en": "Vakron", "ru": "Вакрон"},
+       "text": {"en": "Farm Vakron Sky Island until you have almost the whole set — it is the only early source of a guard (or buy it for 2 tickets: one per 21st chest). Weapon and accessories are best crafted later. Take the set to +10. Still short? One run on each boss of Transcendence T1 — grey arcana add about 40.",
+                "ru": "Фарми Vakron Sky Island, пока не соберёшь почти весь сет — это единственный ранний источник щита (или купи его за 2 билета: по одному за каждый 21-й сундук). Оружие и бижутерию потом лучше крафтить. Заточи сет на +10. Не хватает — по разу на каждого босса Трансцендентности T1: серые арканы дают ещё около 40."}},
+      {"at": "2100", "title": {"en": "Transcendence T2", "ru": "Трансцендентность T2"},
+       "text": {"en": "Run T2 until you get the two green slots — bell and mirror; fill the rest with grey arcana. Bonuses don't matter yet, only item level.",
+                "ru": "Ходи в T2, пока не выбьешь два зелёных слота — колокол и зеркало; остальные слоты забей серыми арканами. Бонусы пока неважны, важен только уровень предметов."}},
+      {"at": "2500", "title": {"en": "Next armor set", "ru": "Следующий сет брони"},
+       "text": {"en": "Go straight to the next dungeon (“the Dog” in the RU community) and stay until you have most of its armor set; transfer your Vakron enhancement into it.",
+                "ru": "Сразу иди в следующее подземелье («Собака») и сиди там, пока не соберёшь почти весь сет брони; перенеси в него заточку с вещей Вакрона."}},
+      {"at": "2800", "title": {"en": "Gold arcana and the raid", "ru": "Золотые арканы и рейд"},
+       "text": {"en": "Farm gold arcana in Transcendence T4 and roll the skills you need for your PvE and PvP setups. At 2,800 the 10-player dragon raid opens — the hardest PvE of Season 1.",
+                "ru": "Фарми золотые арканы в Трансцендентности T4 и выкатывай нужные скиллы под PvE- и PvP-сетапы. На 2 800 открывается рейд на дракона на 10 человек — самый сложный PvE-контент 1 сезона."}}
+    ]},
   "sources": {
     "spid": {"name": "Spid — 14 Tips I Wish I Knew Before Starting", "url": "https://www.youtube.com/watch?v=gwMMpH-OY9c"},
-    "lfg": {"name": "LittleFattyGG — Don't Waste Your First Week", "url": "https://youtu.be/DVQWMJa7jq0"}
+    "lfg": {"name": "LittleFattyGG — Don't Waste Your First Week", "url": "https://youtu.be/DVQWMJa7jq0"},
+    "sanya": {"name": "Sanya Jacuzzi — New leveling plan after 45 (datamine)", "url": "https://www.youtube.com/watch?v=a8zVweGN--4"}
   }
 }

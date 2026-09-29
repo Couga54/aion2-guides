@@ -283,6 +283,31 @@
           ]
         },
         {
+          "name": "Sanya Jacuzzi",
+          "what": {
+            "en": "“New leveling plan after 45” (RU) — the global datamine a day before launch: what changed and the item level route to the first raid.",
+            "ru": "«Они всё изменили! Мой новый план прокачки после 45 уровня» — датамайн глобалки за день до запуска: что изменилось и маршрут по уровню предметов до первого рейда."
+          },
+          "used": [
+            "site"
+          ],
+          "links": [
+            {
+              "type": "video",
+              "url": "https://www.youtube.com/watch?v=a8zVweGN--4",
+              "label": {
+                "en": "Plan after 45",
+                "ru": "План после 45"
+              }
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/@Sanya_Jacuzzi",
+              "label": "YouTube"
+            }
+          ]
+        },
+        {
           "name": "nemobek",
           "what": {
             "en": "Interactive version of TitanTheF’s table — the idea behind our leveling checklist with progress.",

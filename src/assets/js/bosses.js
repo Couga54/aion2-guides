@@ -8,6 +8,11 @@
   var kills = {};
   try { kills = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { kills = {}; }
   var save = function () { try { localStorage.setItem(KEY, JSON.stringify(kills)); } catch (e) {} };
+  // Per-boss notification switch: every boss is on by default, `muted` keeps the ones switched off.
+  var MUTE = 'aion2-bosses-muted-v1';
+  var muted = {};
+  try { muted = JSON.parse(localStorage.getItem(MUTE) || '{}') || {}; } catch (e) { muted = {}; }
+  var saveMuted = function () { try { localStorage.setItem(MUTE, JSON.stringify(muted)); } catch (e) {} };
 
   var locale = page.dataset.lang === 'ru' ? 'ru-RU' : 'en-GB';
   var time = new Intl.DateTimeFormat(locale, { weekday: 'short', hour: '2-digit', minute: '2-digit' });
@@ -20,7 +25,11 @@
   var items = [].slice.call(page.querySelectorAll('.bs-item'));
   function render() {
     var now = Date.now();
+    var global = !!(window.A2Notify && window.A2Notify.enabled());
     items.forEach(function (li) {
+      var bell = li.querySelector('.bs-bell');
+      bell.setAttribute('aria-pressed', String(!muted[li.dataset.id]));
+      bell.classList.toggle('is-idle', !global);
       var at = kills[li.dataset.id];
       var status = li.querySelector('.bs-status');
       li.querySelector('.bs-undo').hidden = !at;
@@ -30,7 +39,8 @@
       var respawn = +li.dataset.respawn || 0;
       if (respawn) {
         var next = at + respawn * 6e4;
-        if (window.A2Notify) {
+        if (window.A2Notify && muted[li.dataset.id]) window.A2Notify.cancel('boss-' + li.dataset.id);
+        else if (window.A2Notify) {
           window.A2Notify.schedule('boss-' + li.dataset.id, next,
             page.dataset.tNotify.replace('{name}', li.querySelector('.bs-name').textContent),
             li.querySelector('.bs-zone').textContent);
@@ -44,6 +54,18 @@
   items.forEach(function (li) {
     li.querySelector('.bs-kill').addEventListener('click', function () { kills[li.dataset.id] = Date.now(); save(); render(); });
     li.querySelector('.bs-undo').addEventListener('click', function () { delete kills[li.dataset.id]; save(); render(); });
+    li.querySelector('.bs-bell').addEventListener('click', function () {
+      var id = li.dataset.id;
+      // With notifications off for the whole page, the bell turns this boss on and asks for them.
+      if (window.A2Notify && !window.A2Notify.enabled()) {
+        delete muted[id]; saveMuted(); render();
+        var all = page.querySelector('.notify-toggle');
+        if (all && !all.disabled) all.click();
+        return;
+      }
+      if (muted[id]) delete muted[id]; else muted[id] = 1;
+      saveMuted(); render();
+    });
   });
   render();
   setInterval(render, 30000);

@@ -25,6 +25,13 @@ Work top to bottom, then rebuild (`.venv/Scripts/python tools/build.py`), check 
 - [ ] Weekly entry limits (`max`) — taken from KR/TW and the EU test. Check each against the global client.
 - [ ] After checking, reword or remove `wk_limits` in `data/i18n.json` (the "limits come from Korean servers" note).
 - [ ] First-week goals — still valid for global? Remove or add goals.
+- [ ] Items from Sanya Jacuzzi's datamine video (`src: sanya` in `data/week1.json`), check in game:
+      enemy-side ? marks / sealed dungeons give 1,000 AP + 2–5k stones instead of Daevanion nodes (`rift`);
+      feathers nerfed, 95 for Monolith level 11 (`feathers`); Nightmare charges start at 45 (`nightmare-45`);
+      Daily Dungeon / trial pass boxes (`pass-boxes`).
+- [ ] **Item level route** (`roadmap` in `data/week1.json`, "After 45" on /week-1/): the thresholds 1,400 / 1,900 /
+      2,100 / 2,500 / 2,800, the Drupnir guarantee (14 chests, 7 with premium), the Vakron guard tickets and the real
+      name of "the Dog" dungeon. When confirmed, drop `note` (the "Datamine" tag) or reword it.
 
 ## 4. World bosses (`data/bosses.json`)
 
