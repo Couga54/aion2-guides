@@ -469,6 +469,21 @@ td:first-child{font-weight:600;color:var(--text);white-space:nowrap;}
 .page-hero{border-bottom:1px solid var(--border);background:radial-gradient(800px 320px at 90% -20%,rgba(217,179,108,.14),transparent 65%),var(--bg-2);padding-block:22px 34px;}
 .page-hero h1{font:400 clamp(2rem,5vw,3rem)/1.1 var(--font-display);}
 .page-hero .lead{color:var(--text-dim);max-width:62ch;margin:12px 0 0;}
+/* page header with a world image (official AION 2 wallpapers, assets/art/hero-*.webp): the image sits on the right and fades into the header */
+.page-hero.has-art{position:relative;isolation:isolate;overflow:hidden;background:var(--bg-2);padding-block:28px 36px;
+  min-height:330px;display:flex;align-items:center;}  /* same height as a class guide header */
+@media (max-width: 760px){ .page-hero.has-art{min-height:0;} }
+.page-hero.has-art > .wrap{width:100%;}
+.page-hero.has-art::before{content:"";position:absolute;inset:0 0 0 28%;z-index:-2;background:var(--hero-art) var(--hero-pos,50% 50%)/cover no-repeat;opacity:.9;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 35%);mask-image:linear-gradient(90deg,transparent,#000 35%);animation:hero-art-in 1.2s ease both;}
+.page-hero.has-art::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(180deg,transparent 65%,var(--bg-2)),linear-gradient(90deg,var(--bg-2) 22%,color-mix(in srgb,var(--bg-2) 45%,transparent) 45%,transparent 65%);}
+.page-hero.has-art h1{text-shadow:0 2px 18px color-mix(in srgb,var(--bg-2) 80%,transparent);}
+@keyframes hero-art-in{from{opacity:0;transform:scale(1.04);}}
+:root[data-theme="light"] .page-hero.has-art::before{opacity:.55;}
+@media (prefers-color-scheme: light){ :root:not([data-theme="dark"]) .page-hero.has-art::before{opacity:.55;} }
+@media (max-width: 760px){ .page-hero.has-art::before{inset:0;opacity:.4;} .page-hero.has-art::after{background:linear-gradient(180deg,color-mix(in srgb,var(--bg-2) 40%,transparent),var(--bg-2));} }
+@media (prefers-reduced-motion: reduce){ .page-hero.has-art::before{animation:none;} }
 .src-page{padding-bottom:48px;}
 .src-group .section-title{margin-top:40px;}
 .src-lead{color:var(--text-dim);margin:-8px 0 16px;max-width:70ch;}

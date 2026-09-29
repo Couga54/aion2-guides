@@ -5,7 +5,7 @@
 {% block body_class %}page-tracker page-weekly{% endblock %}
 {% block main %}
 <main id="main">
-  <section class="page-hero tracker-hero">
+  <section class="page-hero tracker-hero has-art" style="--hero-art:url('{{ root }}assets/art/hero-weekly.webp');--hero-pos:50% 45%">
     <div class="wrap tracker-hero-in">
       <div>
         <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ root }}{{ lang }}/">{{ t.back_home }}</a><span aria-hidden="true">/</span><span>{{ t.nav_weekly }}</span></nav>

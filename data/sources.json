@@ -721,8 +721,8 @@
             "ru": "Фон главной страницы"
           },
           "what": {
-            "en": "AION 2 in-game screenshot shared on Reddit; the original poster isn't known. AION 2 © NCSOFT.",
-            "ru": "Скриншот AION 2, опубликованный на Reddit; автор публикации неизвестен. AION 2 © NCSOFT."
+            "en": "Official AION 2 wallpaper from the global teaser site (the same scene as the Reddit screenshot used before, in full quality). AION 2 © NCSOFT.",
+            "ru": "Официальные обои AION 2 с глобального тизер-сайта (та же сцена, что и прежний скриншот с Reddit, в полном качестве). AION 2 © NCSOFT."
           },
           "used": [
             "site"
@@ -730,8 +730,28 @@
           "links": [
             {
               "type": "site",
-              "url": "https://i.redd.it/270q6wexjekf1.jpg",
-              "label": "i.redd.it"
+              "url": "https://aion2.plaync.com/en-us/conts/teaser",
+              "label": "aion2.plaync.com"
+            }
+          ]
+        },
+        {
+          "name": {
+            "en": "Page header images",
+            "ru": "Изображения в шапках страниц"
+          },
+          "what": {
+            "en": "Week 1, Weekly, World bosses, Sources and Changelog headers: official wallpapers from the AION 2 global teaser site. AION 2 © NCSOFT.",
+            "ru": "Шапки страниц «Первая неделя», «Неделя», «Мировые боссы», «Источники» и «История изменений»: официальные обои с глобального тизер-сайта AION 2. AION 2 © NCSOFT."
+          },
+          "used": [
+            "site"
+          ],
+          "links": [
+            {
+              "type": "site",
+              "url": "https://aion2.plaync.com/en-us/conts/teaser",
+              "label": "aion2.plaync.com"
             }
           ]
         },

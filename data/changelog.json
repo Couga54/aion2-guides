@@ -2,6 +2,27 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-09-29-route-bosses",
+      "date": "2026-09-29",
+      "items": [
+        {
+          "href": "week-1/#h-w1-route",
+          "en": "<strong>After 45: the item level route</strong> — on the first-week page, from 45 to the 2,800 raid step by step (Shugo, Nightmare, Drupnir, Vakron, Transcendence). Based on the global datamine, so it is marked until confirmed.",
+          "ru": "<strong>После 45: маршрут по уровню предметов</strong> — на странице первой недели, от 45 до рейда на 2 800 по шагам (Шуго, Кошмар, Друпнир, Вакрон, Трансцендентность). По датамайну глобалки, поэтому с пометкой до подтверждения."
+        },
+        {
+          "href": "week-1/",
+          "en": "<strong>First week updated</strong> — enemy-side rifts and feathers are no longer a priority on global; new tips on Shugo currency, Nightmare, daily contracts and pass boxes.",
+          "ru": "<strong>Первая неделя обновлена</strong> — разломы на стороне врага и перья на глобалке больше не приоритет; новые советы про шуго-валюту, Кошмар, ежедневные контракты и коробки с проходками."
+        },
+        {
+          "href": "bosses/",
+          "en": "<strong>Notifications per boss</strong> — a bell next to each world boss turns its alerts on or off.",
+          "ru": "<strong>Уведомления по каждому боссу</strong> — колокольчик рядом с каждым мировым боссом включает или выключает его оповещения."
+        }
+      ]
+    },
+    {
       "id": "2026-09-29-templar-cleric",
       "date": "2026-09-29",
       "items": [

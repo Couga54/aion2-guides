@@ -4,7 +4,7 @@
 {% block body_class %}page-changelog{% endblock %}
 {% block main %}
 <main id="main" data-changelog-seen="{{ changelog[0].id }}">
-  <section class="page-hero">
+  <section class="page-hero has-art" style="--hero-art:url('{{ root }}assets/art/hero-changelog.webp');--hero-pos:50% 45%">
     <div class="wrap">
       <nav class="crumbs" aria-label="Breadcrumb"><a href="{{ root }}{{ lang }}/">{{ t.back_home }}</a><span aria-hidden="true">/</span><span>{{ t.wn_history }}</span></nav>
       <h1>{{ t.wn_history }}</h1>
