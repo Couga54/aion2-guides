@@ -9,6 +9,9 @@
   "_art": "art_pos: where the figure stands in its render (x y, CSS object-position); x also centres the pop-out figure on home cards. art_up: lift the pop-out figure (share of the image height).",
   "_src": "classes[].src: per guide mode, [who the info comes from, date it was checked]; shown in the class hero.",
   "repo": "https://github.com/Couga54/aion2-guides",
+  "discord": "couga.ua",
+  "discord_name": "Couga",
+  "discord_id": "173817336384585729",
   "_events": "Home timers. at=null -> 'date TBA'. confirmed=false -> date is official, hour is not. celebrate=true -> the site celebrates when it starts (assets/js/celebrate.js, once per visitor within 24 h; ?celebrate=1 previews it).",
   "events": [
     {"id": "pre_founder", "access": "founder", "at": "2026-09-28T13:00:00Z", "confirmed": true},
@@ -66,7 +69,7 @@
      "difficulty": 2,
      "pitch": {"en": "The healer who levels by hitting: Chain of Torment marks the target, Condemnation punishes it, and every hit heals the party.",
                "ru": "Лекарь, который качается уроном: Цепь боли метит цель, Приговор добивает её, а каждый удар лечит группу."}},
-    {"slug": "chanter", "status": "ready", "src": {"pve": ["TitanTheF", "2026-09-27"], "lvl": ["TitanTheF · Grobs", "2026-09-27"]}, "modes_off": ["pvp"], "updated": "2026-09-30", "patch": null, "accent": "amber", "art_up": "8%",
+    {"slug": "chanter", "status": "ready", "src": {"pve": ["Arthars Gaming (TW client)", "2026-09-30"], "lvl": ["TitanTheF · Grobs", "2026-09-27"]}, "modes_off": ["pvp"], "updated": "2026-09-30", "patch": null, "accent": "amber", "art_up": "8%",
      "name": {"en": "Chanter", "ru": "Чародей"},
      "role": {"en": "Melee support · buffer", "ru": "Поддержка ближнего боя · баффер"},
      "weapon": {"en": "Staff", "ru": "Посох"},

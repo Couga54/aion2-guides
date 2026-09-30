@@ -2,6 +2,26 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-09-30-chanter",
+      "date": "2026-09-30",
+      "items": [
+        {
+          "href": "chanter/",
+          "en": "<strong>Chanter PvE rebuilt on Arthars Gaming's video guide</strong> — how Dark Crush opens, a new hotbar line and a two-step macro, skill levels and specializations, stigmas for four slots (Marchutan's Wrath 1, Focused Defense 5), passive priority.",
+          "ru": "<strong>PvE Чародея перестроен по видеогайду Arthars Gaming</strong> — как открывается Удар скалы, новая линия на кнопке и макрос из двух шагов, уровни и специализации скиллов, стигмы под четыре слота (Ярость Маркутана 1, Концентрация на защите 5), приоритет пассивок."
+        },
+        {
+          "href": "chanter/",
+          "en": "<strong>Chanter: arcana</strong> — a new section: which stat, set and skills to look for on each of the five cards.",
+          "ru": "<strong>Чародей: арканы</strong> — новый раздел: какой стат, сет и скиллы искать на каждой из пяти карт."
+        },
+        {
+          "en": "<strong>Contact</strong> — besides a GitHub issue, there is now a <strong>Contact on Discord</strong> button next to it and in the footer.",
+          "ru": "<strong>Связь</strong> — рядом с issue на GitHub и в подвале теперь есть кнопка <strong>«Связаться в Discord»</strong>."
+        }
+      ]
+    },
+    {
       "id": "2026-09-30-cleric",
       "date": "2026-09-30",
       "items": [

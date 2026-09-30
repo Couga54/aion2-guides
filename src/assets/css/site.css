@@ -869,7 +869,14 @@ details.spec-all[open] > *:not(summary),.wk-group,.bs-group{animation:fade-in .3
 .guide-watch a.guide-watch-all{font-weight:500;color:var(--text-faint);}
 .report-box{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:28px 0 0;}
 .report-box .btn svg{width:15px;height:15px;}
+.report-box .btn{min-height:34px;}
+
 .report-box .note{margin:0;font-size:.76rem;}
+.discord-btn{display:inline-flex;align-items:center;gap:6px;cursor:pointer;}
+.discord-btn svg{width:17px;height:17px;flex:none;color:#7c89f5;}
+.discord-btn.is-done{color:var(--gold);border-color:var(--gold);}
+.discord-btn.footer-discord{font:inherit;padding:0;border:0;background:none;color:inherit;text-decoration:underline;text-underline-offset:3px;vertical-align:baseline;}
+.discord-btn.footer-discord:hover{color:var(--text);}
 /* "16 → 20" badges: the arrow glyph came from a fallback font and sat low; an SVG arrow centred on the digits (their middle is ~.36em above the baseline) */
 .badge .arr{display:inline-block;width:.95em;height:.7em;margin:0 .15em;vertical-align:0;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
 

@@ -149,6 +149,26 @@
     });
   }
 
+  // ---- Discord contact: copy the nick (there is no profile link without the numeric id) ----
+  document.querySelectorAll('.discord-btn[data-copy]').forEach(function (b) {
+    var label = b.querySelector('span'), html = label.innerHTML, timer;
+    b.addEventListener('click', function () {
+      var done = function () {
+        label.textContent = b.dataset.done;
+        b.classList.add('is-done');
+        clearTimeout(timer);
+        timer = setTimeout(function () { label.innerHTML = html; b.classList.remove('is-done'); }, 3500);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(b.dataset.copy).then(done, done);
+      else {
+        var ta = document.createElement('textarea');
+        ta.value = b.dataset.copy; document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        ta.remove(); done();
+      }
+    });
+  });
+
   // ---- "Report a mistake": prefill a GitHub issue with this page and mode ----
   document.querySelectorAll('.report-link').forEach(function (a) {
     a.addEventListener('click', function () {

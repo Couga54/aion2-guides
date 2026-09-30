@@ -114,13 +114,22 @@
         {
           "name": "Arthars Gaming",
           "what": {
-            "en": "“The ULTIMATE AION 2 Gladiator Starter Guide!” — the base of the Gladiator PvE guide (played on the Taiwanese server).",
-            "ru": "«The ULTIMATE AION 2 Gladiator Starter Guide!» — основа PvE-гайда по Гладиатору (опыт с тайваньского сервера)."
+            "en": "Starter guides for the global launch, recorded on the Taiwanese server: the Gladiator guide is the base of the Gladiator PvE mode, the Chanter guide — of the Chanter PvE mode. Plays Gladiator on global.",
+            "ru": "Стартовые гайды к глобальному запуску, записанные на тайваньском сервере: гайд по Гладиатору — основа PvE-режима Гладиатора, гайд по Чародею — PvE-режима Чародея. На глобале играет Гладиатором."
           },
           "used": [
-            "gladiator"
+            "gladiator",
+            "chanter"
           ],
           "links": [
+            {
+              "type": "video",
+              "url": "https://www.youtube.com/watch?v=7qMgsnSsmIU",
+              "label": {
+                "en": "Chanter guide",
+                "ru": "Гайд по Чародею"
+              }
+            },
             {
               "type": "video",
               "url": "https://www.youtube.com/watch?v=tYTZ8VucMXw",

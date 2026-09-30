@@ -18,7 +18,7 @@
     "pvp": {"4": {"special": true}, "*": {"skills": ["shadowstrike", "flash-slice", "defiance"], "special": true}}
   },
   "chanter": {
-    "pve": {"4": null, "*": {"skills": ["onslaught", "dark-crush", "spinning-strike"], "special": true}},
+    "pve": {"4": null, "*": {"skills": ["dark-crush", "onslaught", "spinning-strike", "incandescent-blow"], "special": true}},
     "pvp": {"4": {"special": true}, "*": {"skills": ["impactful-crush", "wave-blow", "defiance"], "special": true}}
   },
   "sorcerer": {
