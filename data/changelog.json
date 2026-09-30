@@ -2,6 +2,36 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-09-30-cleric",
+      "date": "2026-09-30",
+      "items": [
+        {
+          "href": "cleric/",
+          "en": "<strong>Cleric PvE: the macro in full</strong> — the three hotbar lines and the in-game macro steps read from Kaeria's video frame by frame, with the keys to hold and what to do on stagger. The guide is no longer marked as work in progress.",
+          "ru": "<strong>Целитель, PvE: макрос целиком</strong> — три линии на кнопках и шаги встроенного макроса, прочитанные по кадрам видео Kaeria, какие клавиши держать и что делать при ошеломлении. С гайда снята пометка «в работе»."
+        },
+        {
+          "href": "cleric/",
+          "en": "<strong>Cleric: Daevanion and arcana</strong> — the board route now skips the orange nodes that do nothing in PvE, set bonuses for arcana, Death as an extra stat, Benevolence as a healing swap, Voice of Doom corrected.",
+          "ru": "<strong>Целитель: Daevanion и арканы</strong> — маршрут на досках больше не берёт оранжевые узлы, бесполезные в PvE; бонусы сетов аркан, Death как дополнительный стат, Целительная сила как замена на лечение, исправлен Крик смерти."
+        }
+      ]
+    },
+    {
+      "id": "2026-09-30-boards-all",
+      "date": "2026-09-30",
+      "items": [
+        {
+          "en": "<strong>Daevanion boards in five more guides</strong> — Ranger, Assassin, Chanter, Sorcerer and Cleric now show the real global boards with the route to the nodes the guide takes and a tooltip on every node.",
+          "ru": "<strong>Доски Daevanion ещё в пяти гайдах</strong> — у Лучника, Убийцы, Чародея, Волшебника и Целителя теперь настоящие доски глобала с маршрутом к узлам, которые берёт гайд, и подсказкой на каждом узле."
+        },
+        {
+          "en": "<strong>PvP guides in the same order as PvE</strong> — Gladiator and Templar PvP now start with the build at a glance, and the Daevanion boards sit between gear and stigmas.",
+          "ru": "<strong>PvP-гайды в том же порядке, что и PvE</strong> — PvP Гладиатора и Стража теперь начинается с блока «Билд коротко», а доски Daevanion стоят между экипировкой и стигмами."
+        }
+      ]
+    },
+    {
       "id": "2026-09-30-templar",
       "date": "2026-09-30",
       "items": [

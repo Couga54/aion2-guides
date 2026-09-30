@@ -1,6 +1,6 @@
 {% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
 
-{# ============================== PvE ============================== #}
+{# ===== PvE and PvP: each PvP block follows its PvE counterpart, so both modes read in the same order; shared sections are 'pve pvp' ===== #}
 {% call glance('pve') %}
   <h3>{{ t.core_skills }}</h3>
   {{ core([('judgment', '20'), ('punishment', '20'), ('pummel', '20'), ('annihilate', '16'), ('shield-smite', '16')]) }}
@@ -10,6 +10,15 @@
   {{ passives(['fury', 'punishing-benediction', 'insulting-roar', 'ironclad-defense']) }}
 {% endcall %}
 
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('judgment', '20'), ('punishment', '20'), ('pummel', '20'), ('annihilate', '20')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('executing-blade', 10), ('empyrean-lords-punishment', 15), ('doom-shield', 15), ('nezekans-shield', 15)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['fury', 'punishing-benediction', 'ironclad-defense', 'survival-willpower']) }}
+{% endcall %}
+
 {% call section('intro', 'Overview', 'pve') %}
   <p>Templar is AION 2's main tank, and it still deals real damage. Its whole build rests on a <strong>"holy trinity"</strong> of skills taken to 20 as fast as possible — {{ s('judgment') }}, {{ s('punishment') }} and {{ s('pummel') }} — that you use as often as you can. Survivability is not what limits a Templar; damage is.</p>
   <div class="callout accent">
@@ -17,6 +26,12 @@
     <p>Shield skills trigger {{ s('judgment') }}: spam the Judgment line on a side button, hold the macro for Pummel and its procs, charge {{ s('punishment') }} on cooldown, and block the big hits to keep {{ s('fury') }} on the party.</p>
   </div>
   <p class="note">This guide follows SolAshur's global-launch Templar build (solashur.com, September 27) and his video walkthrough of it (September 29), re-checked against the video frames on September 30.</p>
+{% endcall %}
+
+{% call section('intro-pvp', 'Overview', 'pvp') %}
+  <p>In PvP the Templar keeps the same holy trinity and the same Judgment loop; what changes is the stigmas. {{ s('executing-blade') }} gives you an edge in every duel, and {{ s('annihilate') }} at 20 turns into an AoE knockdown.</p>
+  <p>Melee gets kited — a strong weapon matters less when you can't reach the target, so play around your gap-closers and Doom Shield.</p>
+  <p class="note">Dedicated PvP gear sets from KR/TW are not confirmed for global, so the PvX gear from the PvE tab is the plan. If PvP gear does appear: level your PvP stigmas first, and only then spend on a PvP weapon or armor.</p>
 {% endcall %}
 
 {% call section('global', 'Global Season 1: what changes', 'pve pvp') %}
@@ -45,6 +60,16 @@
     {% call skill('flash-rampage', 'opt', '12', [4, 3]) %}Only on Staggered targets; −1s to all cooldowns per hit. In the PvE macro, but skip its Daevanion nodes — it falls off mid-game.{% endcall %}
     {% call skill('shield-rush', 'opt', '12', [3, 1]) %}Dodge → dash, triggers Judgment; −10s cooldown and +10m range.{% endcall %}
     {% call skill('vicious-strike', 'opt', '10', []) %}Basic attack on LMB; 10 from skill points is enough.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('skills-pvp', 'Skills', 'pvp') %}
+  <ul class="skill-grid">
+    {% call skill('judgment', 'must', '20', [4, 3, 2]) %}Same loop as in PvE: shield skills trigger it.{% endcall %}
+    {% call skill('punishment', 'must', '20', [1, 4, 2]) %}Burst through Block and Evasion.{% endcall %}
+    {% call skill('pummel', 'must', '20', [1, 2, 4]) %}Filler between Judgment procs; Punishing Strike heals you and fires a second time.{% endcall %}
+    {% call skill('annihilate', 'must', '20', [2, 3, 4]) %}The alternate build: at 20 it hits up to four enemies that are stunned or knocked down, with a 30% knockdown chance — an AoE knockdown you can spam with the −10s pick.{% endcall %}
+    {% call skill('shield-smite', 'opt', '16', [3, 2]) %}Judgment trigger and stun source.{% endcall %}
   </ul>
 {% endcall %}
 
@@ -165,6 +190,18 @@
   <p class="note">Every swap costs something: without Doom Shield you lose Judgment procs, without Empyrean Lord stagger, without the Banner damage. If you need survivability, Doom Shield is the one to drop when the fight doesn't need its mobility.</p>
 {% endcall %}
 
+{% call section('stigmas-pvp', 'Stigmas', 'pvp') %}
+  <ul class="skill-grid">
+    {% call skill('executing-blade', 'must', 'Lv 10', upto=10) %}Best for 1v1: lowers the target's defense (Exposed at 10). The top 1v1 priority for your stigma points.{% endcall %}
+    {% call skill('empyrean-lords-punishment', 'must', 'Lv 15', upto=15) %}Straight CC and AoE damage.{% endcall %}
+    {% call skill('doom-shield', 'must', 'Lv 15', upto=15) %}Gap-closer, knockdown and Judgment trigger.{% endcall %}
+    {% call skill('nezekans-shield', 'must', 'Lv 15', upto=15) %}Against physical attackers. Not good before 15.{% endcall %}
+    {% call skill('second-skin', 'opt', 'vs magic', upto=10) %}Against magic damage — swap it in for Empyrean Lord's Punishment when you need to survive.{% endcall %}
+    {% call skill('comrade-in-arms', 'opt', 'group PvP', upto=20) %}In group PvP replace Nezekan's Shield with it; best at 20.{% endcall %}
+    {% call skill('assault-fury', 'opt', 'late game') %}A late-game swap once your gear is deep: a ranged AoE hit with a stun chance. Put it in place of your weakest slot.{% endcall %}
+  </ul>
+{% endcall %}
+
 {% call section('macro', 'Macro & rotation', 'pve') %}
   <p>AION 2 has two separate tools:</p>
   <ul>
@@ -195,44 +232,6 @@
     <li><strong>Stats:</strong> Block + Evasion + Dexterity early, Block + Endurance late; don't skip pets.</li>
     <li><strong>Gear:</strong> Holy Spirit → Urugugu / Vakron → Fire Temple and Ferocious Horn → White Dragon weapon, guard and accessories.</li>
   </ul></div>
-{% endcall %}
-
-{# ============================== PvP ============================== #}
-{% call glance('pvp') %}
-  <h3>{{ t.core_skills }}</h3>
-  {{ core([('judgment', '20'), ('punishment', '20'), ('pummel', '20'), ('annihilate', '20')]) }}
-  <h3>{{ t.stigma_loadout }}</h3>
-  {{ loadout([('executing-blade', 10), ('empyrean-lords-punishment', 15), ('doom-shield', 15), ('nezekans-shield', 15)]) }}
-  <h3>{{ t.key_passives }}</h3>
-  {{ passives(['fury', 'punishing-benediction', 'ironclad-defense', 'survival-willpower']) }}
-{% endcall %}
-
-{% call section('intro-pvp', 'Overview', 'pvp') %}
-  <p>In PvP the Templar keeps the same holy trinity and the same Judgment loop; what changes is the stigmas. {{ s('executing-blade') }} gives you an edge in every duel, and {{ s('annihilate') }} at 20 turns into an AoE knockdown.</p>
-  <p>Melee gets kited — a strong weapon matters less when you can't reach the target, so play around your gap-closers and Doom Shield.</p>
-  <p class="note">Dedicated PvP gear sets from KR/TW are not confirmed for global, so the PvX gear from the PvE tab is the plan. If PvP gear does appear: level your PvP stigmas first, and only then spend on a PvP weapon or armor.</p>
-{% endcall %}
-
-{% call section('skills-pvp', 'Skills', 'pvp') %}
-  <ul class="skill-grid">
-    {% call skill('judgment', 'must', '20', [4, 3, 2]) %}Same loop as in PvE: shield skills trigger it.{% endcall %}
-    {% call skill('punishment', 'must', '20', [1, 4, 2]) %}Burst through Block and Evasion.{% endcall %}
-    {% call skill('pummel', 'must', '20', [1, 2, 4]) %}Filler between Judgment procs; Punishing Strike heals you and fires a second time.{% endcall %}
-    {% call skill('annihilate', 'must', '20', [2, 3, 4]) %}The alternate build: at 20 it hits up to four enemies that are stunned or knocked down, with a 30% knockdown chance — an AoE knockdown you can spam with the −10s pick.{% endcall %}
-    {% call skill('shield-smite', 'opt', '16', [3, 2]) %}Judgment trigger and stun source.{% endcall %}
-  </ul>
-{% endcall %}
-
-{% call section('stigmas-pvp', 'Stigmas', 'pvp') %}
-  <ul class="skill-grid">
-    {% call skill('executing-blade', 'must', 'Lv 10', upto=10) %}Best for 1v1: lowers the target's defense (Exposed at 10). The top 1v1 priority for your stigma points.{% endcall %}
-    {% call skill('empyrean-lords-punishment', 'must', 'Lv 15', upto=15) %}Straight CC and AoE damage.{% endcall %}
-    {% call skill('doom-shield', 'must', 'Lv 15', upto=15) %}Gap-closer, knockdown and Judgment trigger.{% endcall %}
-    {% call skill('nezekans-shield', 'must', 'Lv 15', upto=15) %}Against physical attackers. Not good before 15.{% endcall %}
-    {% call skill('second-skin', 'opt', 'vs magic', upto=10) %}Against magic damage — swap it in for Empyrean Lord's Punishment when you need to survive.{% endcall %}
-    {% call skill('comrade-in-arms', 'opt', 'group PvP', upto=20) %}In group PvP replace Nezekan's Shield with it; best at 20.{% endcall %}
-    {% call skill('assault-fury', 'opt', 'late game') %}A late-game swap once your gear is deep: a ranged AoE hit with a stun chance. Put it in place of your weakest slot.{% endcall %}
-  </ul>
 {% endcall %}
 
 {% call section('recap-pvp', 'Recap', 'pvp') %}

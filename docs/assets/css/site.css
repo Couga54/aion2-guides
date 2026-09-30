@@ -974,6 +974,10 @@ details.spec-all[open] > *:not(summary),.wk-group,.bs-group{animation:fade-in .3
 .dvb-n.g31{color:#5aa2ff;border-color:#3d70b8;width:7.2%;}
 .dvb-n.g41{color:#f0a24a;border-color:#b8752c;width:5.2%;transform:translate(-50%,-50%) rotate(45deg);}
 .dvb-n.on.g11{background:#c9ccd2;border-color:#e3e5e9;} .dvb-n.on.g21{border-color:#7fe39c;} .dvb-n.on.g31{border-color:#9cc8ff;} .dvb-n.on.g41{background:#f0a24a;border-color:#ffd08a;}
+/* green / blue stat nodes (the Azphel board has no skill nodes): round with a dot, so they don't read as skills without an icon */
+.dvb-n.st.g21,.dvb-n.st.g31{border-radius:50%;background:radial-gradient(circle,currentColor 0 26%,#151a24 30%);}
+.dvb-n.st.g21{width:4.6%;} .dvb-n.st.g31{width:5.4%;}
+.dvb-n.on.st.g21{background:#56c878;} .dvb-n.on.st.g31{background:#5aa2ff;}
 .dvb-n.start{width:7.6%;border-radius:50%;border-color:var(--gold);background:radial-gradient(circle,#ffe2a3,var(--gold) 45%,#6d5424);opacity:1;box-shadow:0 0 18px rgba(217,179,108,.6);}
 .dvb-sum{border-top:1px solid var(--border);font-size:.86rem;color:var(--text-dim);}
 .dvb-sum summary{list-style:none;cursor:pointer;padding:10px 14px;display:flex;align-items:baseline;gap:6px;}
@@ -991,4 +995,5 @@ details.spec-all[open] > *:not(summary),.wk-group,.bs-group{animation:fade-in .3
 .dvb-legend{margin:0;padding:8px 14px 12px;border-top:1px solid var(--border);font-size:.72rem;color:var(--text-faint);display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;}
 .dvb-key{display:inline-block;width:10px;height:10px;border-radius:3px;border:1.5px solid;margin-left:6px;}
 .dvb-key.g11{border-color:#9aa0ab;border-radius:50%;} .dvb-key.g21{border-color:#56c878;} .dvb-key.g31{border-color:#5aa2ff;} .dvb-key.g41{border-color:#f0a24a;transform:rotate(45deg);}
+.dvb-key.st{border-radius:50%;background:radial-gradient(circle,currentColor 0 30%,transparent 36%);} .dvb-key.st.g21{color:#56c878;} .dvb-key.st.g31{color:#5aa2ff;margin-left:3px;}
 .dvb-key.on{border:0;height:3px;width:16px;border-radius:2px;background:var(--gold);}

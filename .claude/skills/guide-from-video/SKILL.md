@@ -29,7 +29,8 @@ It runs three tools; each can also be run on its own:
   4 s for longer. Override with `--every N` (e.g. `--every 1` for a fast video full of build screens).
   Frames that look the same as the previous kept one are dropped.
 - Everything for a video lives in `frames/<id>/`, which is git-ignored: the video, the transcript and the frames
-  stay local and are never committed. `video.*` can be deleted once the analysis is done; keep the rest for re-checks.
+  stay local and are never committed. The same goes for any screenshot or file saved from a creator's guide:
+  put it in `frames/<id>/`, never under `data/`, `src/` or `docs/`. `video.*` can be deleted once the analysis is done; keep the rest for re-checks.
 - If the download fails, update yt-dlp first (`.venv/Scripts/python -m pip install -U yt-dlp`). If it still
   fails, or the video has no transcript, tell the user: they can put their own file through
   `tools/storyboard.py <file> <id>`.
@@ -84,8 +85,8 @@ Write the text in our own words - facts and numbers from the video, never its se
 - [ ] `data/site.json`, the class: `updated` = today; `src.<mode>` = `["<authors>", "<today>"]` for every
       mode that was re-checked against the video (add the author's name if new); site-wide `updated` = today.
 - [ ] `data/sources.json`, group `creators`: the author with `name` exactly as written in `classes[].src`,
-      `lang`, `plays` (only classes they really main - `[]` for general channels such as Grobs, so they do
-      not get into "Who to watch"), channel links, `used` classes; the video itself among the sources.
+      `lang`, `plays` (the one class they main - a creator is shown in "Who to watch" for a single class even
+      if they make guides for several; `[]` for general channels such as Grobs), channel links, `used` classes; the video itself among the sources.
 - [ ] `wip` / `wip_modes` / `modes_off` in `site.json` if the video makes a mode solid (or opens a new one).
 - [ ] `data/changelog.json`: a What's new entry (EN + RU) with a new id - what changed for the reader.
 - [ ] `LAUNCH.md`: every value taken on trust that must be checked on the live servers.

@@ -59,7 +59,7 @@
      "difficulty": 3,
      "pitch": {"en": "The only summoner: spirits of fire, water, earth and wind fight for you, every spirit skill charges Elemental Fusion, and curses tick on the target.",
                "ru": "Единственный призыватель: духи огня, воды, земли и воздуха сражаются за тебя, каждый их скилл заряжает Синтез элементов, а проклятия тикают на цели."}},
-    {"slug": "cleric", "status": "ready", "wip": true, "modes_off": ["pvp"], "src": {"pve": ["Kaeria (TW client)", "2026-09-29"], "lvl": ["Grobs · MMO Codex · Kaeria", "2026-09-29"]}, "updated": "2026-09-29", "patch": null, "accent": "sunlight", "art_pos": "37% 8%",
+    {"slug": "cleric", "status": "ready", "modes_off": ["pvp"], "src": {"pve": ["Kaeria (TW client)", "2026-09-30"], "lvl": ["Grobs · MMO Codex · Kaeria", "2026-09-29"]}, "updated": "2026-09-30", "patch": null, "accent": "sunlight", "art_pos": "37% 8%",
      "name": {"en": "Cleric", "ru": "Целитель"},
      "role": {"en": "Healer · earth and lightning damage", "ru": "Лекарь · урон землёй и молнией"},
      "weapon": {"en": "Mace", "ru": "Булава"},

@@ -194,11 +194,7 @@
           "lang": [
             "ru"
           ],
-          "plays": [
-            "ranger",
-            "assassin",
-            "chanter"
-          ]
+          "plays": ["ranger"]
         },
         {
           "name": "NoBS Game Guides",

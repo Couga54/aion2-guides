@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
 
 {# ============================== PvE ============================== #}
 {% call glance('pve') %}
@@ -107,6 +107,21 @@
     <li data-only="pve"><strong>В глобале нет Ariel:</strong> досок пять, и доска 45 уровня, Azphel, даёт только урон и стойкость в PvP — в PvE закрывай первые четыре.</li>
     <li data-only="pvp"><strong>Azphel</strong> (45 уровень) — сплошь урон и стойкость в PvP: бери его, а Triniel пораньше.</li>
   </ul></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Доска</th><th>Открытие</th><th>Оранжевые узлы</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Ур. 12</td><td>Скорость боя, сокращение перезарядки</td></tr>
+      <tr><td>Zikel</td><td>Ур. 20</td><td>Увеличение урона, стойкость к урону</td></tr>
+      <tr><td>Vaizel</td><td>Ур. 30</td><td>Увеличение крит. урона и стойкость к нему</td></tr>
+      <tr><td>Triniel</td><td>Ур. 40</td><td>Шанс мультиудара и сопротивление ему</td></tr>
+      <tr><td>Azphel</td><td>Ур. 45</td><td>Урон и стойкость в PvP — узлов скиллов нет</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Маршрут на досках</h3>
+  <p>Настоящие доски глобала из данных игры. Золотом отмечен самый дешёвый путь от старта к узлам, которые берёт этот гайд, — синим узлам приоритетных скиллов и оранжевым узлам; наведи на любой узел, чтобы увидеть, что он даёт.</p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Доски и стоимость узлов — из данных глобального клиента (questlog.gg); путь рассчитан, а не взят из видео. Значения характеристик на запуске могут измениться — сверься с доской в игре, прежде чем вкладывать весь маршрут.</p>
 {% endcall %}
 
 {% call section('stigmas', 'Стигмы', 'pve') %}

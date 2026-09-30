@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
 
 {# ============================== PvE ============================== #}
 {% call glance('pve') %}
@@ -79,6 +79,21 @@
     <li data-only="pve"><strong>No Ariel on global:</strong> there are five boards, and the level-45 one, Azphel, gives only PvP Damage Boost and Tolerance — in PvE finish the first four.</li>
     <li data-only="pvp"><strong>Azphel</strong> (level 45) is all PvP Damage Boost and Tolerance — take it, and Triniel earlier.</li>
   </ul></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Board</th><th>Unlock</th><th>Orange nodes</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Lv 12</td><td>Combat Speed, Cooldown Reduction</td></tr>
+      <tr><td>Zikel</td><td>Lv 20</td><td>Damage Boost, Damage Tolerance</td></tr>
+      <tr><td>Vaizel</td><td>Lv 30</td><td>Critical Damage Boost and Tolerance</td></tr>
+      <tr><td>Triniel</td><td>Lv 40</td><td>Multi-Hit Chance and Resist</td></tr>
+      <tr><td>Azphel</td><td>Lv 45</td><td>PvP Damage Boost and Tolerance — no skill nodes</td></tr>
+    </tbody>
+  </table></div>
+  <h3>The route on the boards</h3>
+  <p>The real global boards from the game data. Gold marks the cheapest path from Start to the nodes this guide takes — the blue nodes of the priority skills and the orange nodes; hover any node to see what it gives.</p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Boards and costs come from the global client data (questlog.gg); the path is calculated, not taken from a video. Stat values may still change at launch — check the in-game board before committing a full route.</p>
   <p><a href="https://aion2.app/daevanion?job=9&amp;b=bZyJJq" target="_blank" rel="noopener">Starting Daevanion route (aion2.app) →</a></p>
 {% endcall %}
 

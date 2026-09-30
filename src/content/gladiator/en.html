@@ -1,6 +1,6 @@
 {% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
 
-{# ============================== PvE ============================== #}
+{# ===== PvE and PvP: each PvP block follows its PvE counterpart, so both modes read in the same order; shared sections are 'pve pvp' ===== #}
 {% call glance('pve') %}
   <h3>{{ t.core_skills }}</h3>
   {{ core([('overhead-slam', '20'), ('rending-blow', '20'), ('ruinous-blow', '16')]) }}
@@ -10,12 +10,27 @@
   {{ passives(['attack-preparation', 'experienced-counterstrike', 'murderous-burst', 'impact-hit']) }}
 {% endcall %}
 
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('overhead-slam', '20'), ('mocking-blade', '16'), ('defiance', '16'), ('aerial-snare', '16')]) }}
+  <h3>{{ t.stigma_loadout }} · Abyss</h3>
+  {{ loadout([('lunge-stance', 20), ('armor-of-balance', 5), ('tenaciousness', 10), ('blade-toss', 5)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['attack-preparation', 'survival-willpower', 'survival-stance', 'impact-hit']) }}
+{% endcall %}
+
 {% call section('intro', 'Overview', 'pve') %}
   <p>Gladiator is NCSoft's flagship class and has stayed S-tier on the Korean and Taiwanese servers. It buffs the party, pseudo-tanks and deals huge damage with fewer decisions to make than other classes. Sorcerer and Assassin edge it out on a static dummy, but Gladiator is close behind and far simpler to play.</p>
   <div class="callout accent">
     <h3>The build in one sentence</h3>
     <p>{{ s('overhead-slam') }} at 16–20, {{ s('lunge-stance') }} at stigma level 20 and {{ s('rage-burst') }} to trigger Overhead Slam. Everything else is support.</p>
   </div>
+{% endcall %}
+
+{% call section('intro-pvp', 'Overview', 'pvp') %}
+  <p>In PvP, Gladiator is a <strong>durable diver</strong>: it closes distance, knocks the target down and punishes the knockdown with Overhead Slam. It has enough HP, block and self-heal to survive in the middle of the fight. It's one of the most popular PvP classes, so expect mirror matches.</p>
+  <p>Priorities in order: <strong>anti-control</strong> → <strong>stickiness</strong> → <strong>burst</strong> when their defensives are down.</p>
+  <p class="note">No global PvP meta exists yet. This mode combines Korean/Taiwanese PvP builds with skill data from the global client — treat it as a starting point.</p>
 {% endcall %}
 
 {% call section('global', 'Global Season 1: what changes', 'pve pvp') %}
@@ -51,6 +66,25 @@
   </ul>
 {% endcall %}
 
+{% call section('skills-pvp', 'Skills', 'pvp') %}
+  <div class="callout accent">
+    <h3>The one mechanic that matters: Knockdown</h3>
+    <p>{{ s('overhead-slam') }} and {{ s('aerial-snare') }} only hit a target afflicted with <strong>Knockdown</strong> (bosses are an exception, which is why PvE never cares). Every burst window starts with a knockdown: Mocking Blade (guaranteed), Rush Strike after a dodge, Ankle Slice. The exception is {{ s('rage-burst') }}, which enables Overhead Slam on its target for 10s.</p>
+  </div>
+  <ul class="skill-grid">
+    {% call skill('overhead-slam', 'must', '16 → 20', [2, 4, 3]) %}Your punish on knocked-down targets. Korean PvP guides call the level-20 guaranteed crit essential.{% endcall %}
+    {% call skill('mocking-blade', 'must', '16', [2, 3, 4]) %}Guaranteed 3s Knockdown — your main opener.{% endcall %}
+    {% call skill('defiance', 'must', '16', [2, 3, 4]) %}Breaks Stun, Knockdown, Airborne, Grab, Frost and Fear. Mandatory.{% endcall %}
+    {% call skill('aerial-snare', 'must', '16', [1, 3, 4]) %}Follow-up that launches a knocked-down target. Useless in PvE, core here.{% endcall %}
+    {% call skill('rush-strike', 'opt', '12–16', [1, 3, 4]) %}Dodge → dash with a Knockdown chance.{% endcall %}
+    {% call skill('rending-blow', 'opt', '16', [2, 4]) %}Still your filler and mana engine.{% endcall %}
+    {% call skill('ruinous-blow', 'opt', '12–16', [1, 4]) %}A third gap-closer; ignoring Block/Evasion is strong against Templars.{% endcall %}
+    {% call skill('crushing-wave', 'opt', '16', [3, 4]) %}The pull drags a healer or caster out of their backline.{% endcall %}
+    {% call skill('ankle-slice', 'opt', '12', [2, 0]) %}Another way into the knockdown window.{% endcall %}
+    {% call skill('leaping-slam', 'opt', '12', [1, 3]) %}20m leap that survives landing in a group.{% endcall %}
+  </ul>
+{% endcall %}
+
 {% call section('passives', 'Passives', 'pve') %}
   <p>Passive points are plentiful — most passives max out without any thought. Two traps:</p>
   <div class="callout">
@@ -60,6 +94,19 @@
     </ul>
   </div>
   <p>{{ s('blood-absorption') }} needs no investment: a 50% chance to heal on every hit, plus a big instant heal when you drop to 50% HP. It's why Gladiator gets by without a healer.</p>
+{% endcall %}
+
+{% call section('passives-pvp', 'Passives', 'pvp') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Passive</th><th>PvP value</th></tr></thead>
+    <tbody>
+      <tr><td>{{ s('attack-preparation') }}</td><td>Still #1: PvP Damage Boost, Defense, Accuracy.</td></tr>
+      <tr><td>{{ s('survival-willpower') }}</td><td>Status resist plus tolerance while you're CC'd. Dead weight in PvE, great here.</td></tr>
+      <tr><td>{{ s('survival-stance') }}</td><td>HP and PvP Damage Tolerance.</td></tr>
+      <tr><td>{{ s('impact-hit') }}</td><td>More Impact chance — your knockdowns land more often.</td></tr>
+      <tr><td>{{ s('destructive-impulse') }}</td><td>Bonus damage on knocked-down targets — the PvE trap becomes useful.</td></tr>
+    </tbody>
+  </table></div>
 {% endcall %}
 
 {% call section('gear', 'Gear & soulbind', 'pve') %}
@@ -73,6 +120,16 @@
     </tbody>
   </table></div>
   <p>Weapon and front/back damage boosts are the strongest types, and Gladiator always fights from the front. Don't chase perfect manastone rolls in Season 1 — rerolls cost roughly 200–300k each on TW.</p>
+{% endcall %}
+
+{% call section('gear-pvp', 'Gear & arcana', 'pvp') %}
+  <p>With Season 1's limited gear, don't build a separate PvP set yet — keep your PvE gear and change passives, stigmas and Daevanion.</p>
+  <div class="callout"><ul>
+    <li><strong>Accuracy</strong> — players Block and Evade far more than bosses.</li>
+    <li><strong>Critical Hit and Combat Speed</strong> — crits drive Lunge Stance's cooldown procs.</li>
+    <li><strong>PvP Damage Boost / Tolerance</strong> over the PvE versions wherever a slot offers them.</li>
+    <li><strong>Arcana:</strong> Overhead Slam to 20 first, then Mocking Blade, Defiance and Aerial Snare to 16.</li>
+  </ul></div>
 {% endcall %}
 
 {% call section('arcana', 'Arcana', 'pve') %}
@@ -133,6 +190,26 @@
   <p>Stigma sources: Nightmare shop, Shugo Festa shop and the tiered Abyss shop. Gladiator needs so few that it's set up within the first days.</p>
 {% endcall %}
 
+{% call section('stigmas-pvp', 'Stigmas', 'pvp') %}
+  <p>Korean PvP builds run exactly four stigmas, so they fit global's slots as-is.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Mode</th><th>Stigmas</th></tr></thead>
+    <tbody>
+      <tr><td>Abyss</td><td>Lunge Stance, Armor of Balance, Blade Toss, Tenaciousness</td></tr>
+      <tr><td>Arena</td><td>Lunge Stance, Armor of Balance, Tenaciousness, Focused Block</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="skill-grid">
+    {% call skill('lunge-stance', 'must', 'Lv 20', upto=20) %}Crit cooldown procs also bring Tenaciousness and Defiance back faster.{% endcall %}
+    {% call skill('armor-of-balance', 'must', 'Lv 5+', upto=5) %}Hard to knock down for 10s. Pop it <em>before</em> diving into a CC-heavy group.{% endcall %}
+    {% call skill('tenaciousness', 'must', 'Lv 10+', upto=10) %}3s immunity to damage and status effects, then a heal. At 20 it triggers itself on Impact CC.{% endcall %}
+    {% call skill('blade-toss', 'opt', 'Abyss', upto=5) %}20m throw: −30% Defense and −50% healing received for 10s. Your answer to healers and runners.{% endcall %}
+    {% call skill('focused-block', 'opt', 'Arena', upto=5) %}Block their big damage skills in 1v1. Don't waste it on CC.{% endcall %}
+    {% call skill('forced-restraint', 'opt', 'alt.', upto=5) %}Seal (silence) to lock a target during the Overhead Slam window.{% endcall %}
+    {% call skill('rage-burst', 'opt', 'alt.', upto=5) %}Enables Overhead Slam without a knockdown for 10s.{% endcall %}
+  </ul>
+{% endcall %}
+
 {% call section('macro', 'Macro & rotation', 'pve') %}
   <p>AION 2 has two separate tools, and the build uses both:</p>
   <ul>
@@ -179,93 +256,6 @@
   <p class="note">Keys are Arthars' action-mode layout (RMB / E); on tab-target use any two keys you can spam. The macro slot order follows the same line-by-line scheme Korean builds use.</p>
 {% endcall %}
 
-{% call section('recap', 'Recap', 'pve') %}
-  <div class="callout accent"><ul>
-    <li><strong>Skills:</strong> Overhead Slam 20, Rending Blow 16→20, Ruinous Blow 16; everything else 12 or less.</li>
-    <li><strong>Levels from:</strong> Daevanion (+4) → rings (+2) → arcana (+4).</li>
-    <li><strong>Stigmas:</strong> Lunge Stance 20, Focused Block 5, Rage Burst 5, Zikel's Blessing 10 (or Lifestealing Blade 20).</li>
-    <li><strong>Passives:</strong> Attack Preparation &gt; Experienced Counterstrike &gt; Murderous Burst / Impact Hit.</li>
-  </ul></div>
-{% endcall %}
-
-{# ============================== PvP ============================== #}
-{% call glance('pvp') %}
-  <h3>{{ t.core_skills }}</h3>
-  {{ core([('overhead-slam', '20'), ('mocking-blade', '16'), ('defiance', '16'), ('aerial-snare', '16')]) }}
-  <h3>{{ t.stigma_loadout }} · Abyss</h3>
-  {{ loadout([('lunge-stance', 20), ('armor-of-balance', 5), ('tenaciousness', 10), ('blade-toss', 5)]) }}
-  <h3>{{ t.key_passives }}</h3>
-  {{ passives(['attack-preparation', 'survival-willpower', 'survival-stance', 'impact-hit']) }}
-{% endcall %}
-
-{% call section('intro-pvp', 'Overview', 'pvp') %}
-  <p>In PvP, Gladiator is a <strong>durable diver</strong>: it closes distance, knocks the target down and punishes the knockdown with Overhead Slam. It has enough HP, block and self-heal to survive in the middle of the fight. It's one of the most popular PvP classes, so expect mirror matches.</p>
-  <p>Priorities in order: <strong>anti-control</strong> → <strong>stickiness</strong> → <strong>burst</strong> when their defensives are down.</p>
-  <p class="note">No global PvP meta exists yet. This mode combines Korean/Taiwanese PvP builds with skill data from the global client — treat it as a starting point.</p>
-{% endcall %}
-
-{% call section('skills-pvp', 'Skills', 'pvp') %}
-  <div class="callout accent">
-    <h3>The one mechanic that matters: Knockdown</h3>
-    <p>{{ s('overhead-slam') }} and {{ s('aerial-snare') }} only hit a target afflicted with <strong>Knockdown</strong> (bosses are an exception, which is why PvE never cares). Every burst window starts with a knockdown: Mocking Blade (guaranteed), Rush Strike after a dodge, Ankle Slice. The exception is {{ s('rage-burst') }}, which enables Overhead Slam on its target for 10s.</p>
-  </div>
-  <ul class="skill-grid">
-    {% call skill('overhead-slam', 'must', '16 → 20', [2, 4, 3]) %}Your punish on knocked-down targets. Korean PvP guides call the level-20 guaranteed crit essential.{% endcall %}
-    {% call skill('mocking-blade', 'must', '16', [2, 3, 4]) %}Guaranteed 3s Knockdown — your main opener.{% endcall %}
-    {% call skill('defiance', 'must', '16', [2, 3, 4]) %}Breaks Stun, Knockdown, Airborne, Grab, Frost and Fear. Mandatory.{% endcall %}
-    {% call skill('aerial-snare', 'must', '16', [1, 3, 4]) %}Follow-up that launches a knocked-down target. Useless in PvE, core here.{% endcall %}
-    {% call skill('rush-strike', 'opt', '12–16', [1, 3, 4]) %}Dodge → dash with a Knockdown chance.{% endcall %}
-    {% call skill('rending-blow', 'opt', '16', [2, 4]) %}Still your filler and mana engine.{% endcall %}
-    {% call skill('ruinous-blow', 'opt', '12–16', [1, 4]) %}A third gap-closer; ignoring Block/Evasion is strong against Templars.{% endcall %}
-    {% call skill('crushing-wave', 'opt', '16', [3, 4]) %}The pull drags a healer or caster out of their backline.{% endcall %}
-    {% call skill('ankle-slice', 'opt', '12', [2, 0]) %}Another way into the knockdown window.{% endcall %}
-    {% call skill('leaping-slam', 'opt', '12', [1, 3]) %}20m leap that survives landing in a group.{% endcall %}
-  </ul>
-{% endcall %}
-
-{% call section('passives-pvp', 'Passives', 'pvp') %}
-  <div class="table-wrap"><table>
-    <thead><tr><th>Passive</th><th>PvP value</th></tr></thead>
-    <tbody>
-      <tr><td>{{ s('attack-preparation') }}</td><td>Still #1: PvP Damage Boost, Defense, Accuracy.</td></tr>
-      <tr><td>{{ s('survival-willpower') }}</td><td>Status resist plus tolerance while you're CC'd. Dead weight in PvE, great here.</td></tr>
-      <tr><td>{{ s('survival-stance') }}</td><td>HP and PvP Damage Tolerance.</td></tr>
-      <tr><td>{{ s('impact-hit') }}</td><td>More Impact chance — your knockdowns land more often.</td></tr>
-      <tr><td>{{ s('destructive-impulse') }}</td><td>Bonus damage on knocked-down targets — the PvE trap becomes useful.</td></tr>
-    </tbody>
-  </table></div>
-{% endcall %}
-
-{% call section('gear-pvp', 'Gear & arcana', 'pvp') %}
-  <p>With Season 1's limited gear, don't build a separate PvP set yet — keep your PvE gear and change passives, stigmas and Daevanion.</p>
-  <div class="callout"><ul>
-    <li><strong>Accuracy</strong> — players Block and Evade far more than bosses.</li>
-    <li><strong>Critical Hit and Combat Speed</strong> — crits drive Lunge Stance's cooldown procs.</li>
-    <li><strong>PvP Damage Boost / Tolerance</strong> over the PvE versions wherever a slot offers them.</li>
-    <li><strong>Arcana:</strong> Overhead Slam to 20 first, then Mocking Blade, Defiance and Aerial Snare to 16.</li>
-  </ul></div>
-{% endcall %}
-
-{% call section('stigmas-pvp', 'Stigmas', 'pvp') %}
-  <p>Korean PvP builds run exactly four stigmas, so they fit global's slots as-is.</p>
-  <div class="table-wrap"><table>
-    <thead><tr><th>Mode</th><th>Stigmas</th></tr></thead>
-    <tbody>
-      <tr><td>Abyss</td><td>Lunge Stance, Armor of Balance, Blade Toss, Tenaciousness</td></tr>
-      <tr><td>Arena</td><td>Lunge Stance, Armor of Balance, Tenaciousness, Focused Block</td></tr>
-    </tbody>
-  </table></div>
-  <ul class="skill-grid">
-    {% call skill('lunge-stance', 'must', 'Lv 20', upto=20) %}Crit cooldown procs also bring Tenaciousness and Defiance back faster.{% endcall %}
-    {% call skill('armor-of-balance', 'must', 'Lv 5+', upto=5) %}Hard to knock down for 10s. Pop it <em>before</em> diving into a CC-heavy group.{% endcall %}
-    {% call skill('tenaciousness', 'must', 'Lv 10+', upto=10) %}3s immunity to damage and status effects, then a heal. At 20 it triggers itself on Impact CC.{% endcall %}
-    {% call skill('blade-toss', 'opt', 'Abyss', upto=5) %}20m throw: −30% Defense and −50% healing received for 10s. Your answer to healers and runners.{% endcall %}
-    {% call skill('focused-block', 'opt', 'Arena', upto=5) %}Block their big damage skills in 1v1. Don't waste it on CC.{% endcall %}
-    {% call skill('forced-restraint', 'opt', 'alt.', upto=5) %}Seal (silence) to lock a target during the Overhead Slam window.{% endcall %}
-    {% call skill('rage-burst', 'opt', 'alt.', upto=5) %}Enables Overhead Slam without a knockdown for 10s.{% endcall %}
-  </ul>
-{% endcall %}
-
 {% call section('combos-pvp', 'Combos & play', 'pvp') %}
   <div class="callout">
     <h3>Knockdown punish</h3>
@@ -284,6 +274,15 @@
       <li>Against healers: Blade Toss first, then the Crushing Wave pull.</li>
     </ul>
   </div>
+{% endcall %}
+
+{% call section('recap', 'Recap', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Skills:</strong> Overhead Slam 20, Rending Blow 16→20, Ruinous Blow 16; everything else 12 or less.</li>
+    <li><strong>Levels from:</strong> Daevanion (+4) → rings (+2) → arcana (+4).</li>
+    <li><strong>Stigmas:</strong> Lunge Stance 20, Focused Block 5, Rage Burst 5, Zikel's Blessing 10 (or Lifestealing Blade 20).</li>
+    <li><strong>Passives:</strong> Attack Preparation &gt; Experienced Counterstrike &gt; Murderous Burst / Impact Hit.</li>
+  </ul></div>
 {% endcall %}
 
 {% call section('recap-pvp', 'Recap', 'pvp') %}

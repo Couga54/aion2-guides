@@ -56,7 +56,7 @@ Work top to bottom, then rebuild (`.venv/Scripts/python tools/build.py`), check 
 - [ ] **All guides**, section "Global Season 1: what changes": replace "expected / not confirmed" statements with facts.
 - [ ] **PvP** — Ranger, Assassin, Chanter, Sorcerer have PvP switched off (`modes_off` in `data/site.json`).
       Turn it back on only with a real global source; write the PvP text from that source.
-- [ ] **WIP marks** — `wip` (whole guide: Sorcerer, Cleric, Elementalist) and `wip_modes` (Gladiator PvP,
+- [ ] **WIP marks** — `wip` (whole guide: Sorcerer, Elementalist) and `wip_modes` (Gladiator PvP,
       Templar PvE/PvP): remove when a solid global source is used.
 - [ ] **Sources** — after re-checking a mode, update its date in `classes[].src` (shown in the guide header)
       and `classes[].updated`.
@@ -66,6 +66,9 @@ Work top to bottom, then rebuild (`.venv/Scripts/python tools/build.py`), check 
 - [ ] **Templar, Pummel specializations** — the guide follows SolAshur's video (Punishing Strike heal, +12% on fewer targets,
       extra Punishing Strike) instead of his older questlog build (−1s Punishment). Check what Templars run on live.
       Also unclear in his video: which four stigmas the PvX page keeps on global (the page says to drop Second Skin and Executing Blade).
+- [ ] **Cleric (Kaeria, Taiwan client)** — Radiant Recovery: her client shows a "+1 consecutive use" specialization, the global
+      data has "+20% Skill Speed" in its place; the guide follows the global data. Her macro was tuned for a high ping —
+      check the step order on live. The Daevanion route is calculated on the global boards (hers are the Taiwan ones).
 - [ ] **Board node values** — the node tooltips show the orange (4-point) stats as percents: the data stores 150, shown as
       +1.5% (`BOARD_PCT_STATS` in `tools/build.py`). Compare with a node in the game (e.g. Nezekan → Combat Speed).
 

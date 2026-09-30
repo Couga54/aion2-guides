@@ -8,5 +8,5 @@ Thumbs.db
 desktop.ini
 .claude/settings.local.json
 
-# video storyboards (tools/storyboard.py), local only
+# source material (guide videos, transcripts, frames, screenshots): local only, never committed
 frames/

@@ -165,7 +165,7 @@ Requirements from the user (in their words, translated):
   parked until the user generates one locally (SwarmUI, Wan 2.1 FLF2V 14B GGUF with the same start/end frame).
 - Session 7 (Sep 28): all 8 classes have pages. Cleric and Elementalist are WIP, Leveling only
   (`modes_off: ["pve","pvp"]`; accents `sunlight` / `spirit`), from Grobs' early-macro slide
-  (data/sources/grobs-early-game-macros.webp — decoded: Cleric line Chain of Torment ← Debilitating Mark ←
+  (frames/HMod6Z4GrE0/grobs-early-game-macros.webp, local — decoded: Cleric line Chain of Torment ← Debilitating Mark ←
   Condemnation ← Judgment Thunder, LMB Earth's Retribution; Elementalist lines Water Spirit ← Jointstrike: Corrode ←
   Earth ← Fire Spirit and Elemental Fusion ← Dimensional Control ← Jointstrike: Curse ← Combustion, LMB Cold Shock)
   and MMO Codex leveling order. New site features: skill tooltips (`data-sk` on every skill mention, JSON in
@@ -192,7 +192,7 @@ Requirements from the user (in their words, translated):
   `src/content/<class>/en.html` + `ru.html`, changelog entry. Skill-point order: search the web if there is
   no solid data.
   Macro source: Grobs' "early game macros" slide from his macro video (HMod6Z4GrE0, transcript in
-  frames/<id>/transcript.json) — saved as `data/sources/grobs-early-game-macros.webp` (all 8 classes; the transcript
+  frames/<id>/transcript.json) — saved locally as `frames/HMod6Z4GrE0/grobs-early-game-macros.webp` (all 8 classes; the transcript
   itself has no per-class layouts). Read from the slide: Cleric macro = 1 slot (≈ "Chain of Torment");
   Elementalist ("Spiritmaster") macro = 2 slots: "Summon: Water Spirit", "Elemental Fusion". The hotbar
   lines are icons only — identify them against the fetched icons.

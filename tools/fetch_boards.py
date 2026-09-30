@@ -1,11 +1,14 @@
 """Download Daevanion boards (node grid, costs, effects) for the given classes from questlog.gg.
 
   python tools/fetch_boards.py gladiator [ranger ...]
+  python tools/fetch_boards.py --relink            re-link the saved boards to data/skills (no download)
 
 Writes data/boards/<class>.json:
   {"boards": [{"id", "name": {en, ru}, "needLevel", "order", "rows", "cols",
                "nodes": [{"id", "row", "col", "type", "grade", "cost", "auto", "name": {en, ru}, "skill", "effect": {en, ru}}]}]}
 Node ids are <board id><4-digit cell number> (board 11 -> 110001, 110002, ...), one per grid cell.
+A skill node's "skill" is the slug from data/skills/<class>.json, matched by skill id: the node text sometimes
+uses another name for the same skill (Sorcerer "Flame Explosion" = Blaze).
 """
 import json
 import sys
@@ -38,6 +41,36 @@ def effect_text(node):
     return "; ".join(parts) or (node.get("description") or "")
 
 
+def skill_slug(cls, node_name, raw):
+    """Slug of the skill a 'Skill Level Up' node raises: by skill id from data/skills, else from the node name."""
+    global _IDS
+    if cls not in _IDS:
+        p = ROOT / "data" / "skills" / f"{cls}.json"
+        _IDS[cls] = {v["id"]: k for k, v in json.loads(p.read_text(encoding="utf-8")).items()} if p.exists() else {}
+    for e in raw or []:
+        if e.get("type") == "skill_level" and str(e.get("skillId")) in _IDS[cls]:
+            return _IDS[cls][str(e["skillId"])]
+    return slugify(node_name.split(" - ", 1)[1]) if " - " in node_name else None
+
+
+_IDS = {}
+
+
+def relink():
+    for f in sorted(OUT.glob("*.json")):
+        if f.stem == "presets":
+            continue
+        data, n = json.loads(f.read_text(encoding="utf-8")), 0
+        for b in data["boards"]:
+            for node in b["nodes"]:
+                if node["cat"] == "skilllevel":
+                    slug = skill_slug(f.stem, node["name"]["en"], node["raw"])
+                    n += slug != node["skill"]
+                    node["skill"] = slug
+        f.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        print(f"{f.stem}: {n} nodes re-linked")
+
+
 def main(classes):
     OUT.mkdir(parents=True, exist_ok=True)
     boards = [b for b in all_pages("getDaevanionBoards", {"language": "en"}) if b.get("mainCategory") in classes]
@@ -60,9 +93,7 @@ def main(classes):
                 if en.get("boardId") != b["id"] or en.get("name") == nid:
                     continue
                 ru = trpc("getDaevanionNode", {"language": "ru", "id": nid})
-                skill = None
-                if en.get("mainCategory") == "skilllevel" and " - " in en["name"]:
-                    skill = slugify(en["name"].split(" - ", 1)[1])
+                skill = skill_slug(cls, en["name"], en.get("effect")) if en.get("mainCategory") == "skilllevel" else None
                 items.append({"id": nid, "row": en["row"], "col": en["col"], "type": en.get("nodeType") or en.get("mainCategory"),
                               "cat": en.get("mainCategory"), "grade": en.get("grade"), "cost": en.get("costDaevanionPoint"),
                               "auto": bool(en.get("isAutoLearn")), "name": {"en": en["name"], "ru": ru.get("name") or en["name"]},
@@ -76,4 +107,4 @@ def main(classes):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    relink() if sys.argv[1:] == ["--relink"] else main(sys.argv[1:])

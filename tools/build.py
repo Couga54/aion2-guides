@@ -210,7 +210,9 @@ def board_view(ctx, cls_slug, mode):
         targets = []
         if rule:
             focus.update(rule.get("skills", []))
-            targets = [n["id"] for n in b["nodes"] if (n["skill"] in rule.get("skills", [])) or (rule.get("special") and n["grade"] == 41)]
+            sp = rule.get("special")          # true = every orange node, or a list of stat ids
+            targets = [n["id"] for n in b["nodes"] if n["skill"] in rule.get("skills", []) or (
+                sp and n["grade"] == 41 and (sp is True or any(e.get("statName") in sp for e in n["raw"] or [])))]
         if not rule and preset.get("_hide_empty"):
             continue
         taken = board_route(b, targets)
@@ -238,7 +240,8 @@ def board_view(ctx, cls_slug, mode):
     key = sorted((s for s in levels if s in focus), key=lambda s: -levels[s])
     other = sorted((s for s in levels if s not in focus), key=lambda s: -levels[s])
     name = lambda s: skills[s][lang]["name"]
-    return {"boards": out, "total": total, "key": [(s, name(s), levels[s]) for s in key], "other": [(s, name(s), levels[s]) for s in other]}
+    big = any(n["g"] in (21, 31) and not n["icon"] for b in out for n in b["nodes"])   # green / blue stat nodes (Azphel)
+    return {"boards": out, "total": total, "big_stats": big, "key": [(s, name(s), levels[s]) for s in key], "other": [(s, name(s), levels[s]) for s in other]}
 
 
 def asset_version():
@@ -246,7 +249,7 @@ def asset_version():
     pick up a new build instead of a cached one."""
     import hashlib
     h = hashlib.sha1()
-    for f in sorted([*(SRC / "assets").glob("*/*.[cj]s"), *(SRC / "assets" / "og").glob("*.jpg")]):
+    for f in sorted([*(SRC / "assets").glob("*/*.css"), *(SRC / "assets").glob("*/*.js"), *(SRC / "assets" / "og").glob("*.jpg")]):
         h.update(f.read_bytes())
     return h.hexdigest()[:8]
 
