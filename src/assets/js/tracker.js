@@ -42,8 +42,24 @@
   function active() { return charById(state.active); }
 
   // ---- time --------------------------------------------------------------------
-  function weekIndex(now) { return Math.floor((now - ANCHOR) / WEEK); }
-  function nextReset(now) { return now < ANCHOR ? ANCHOR : ANCHOR + (weekIndex(now) + 1) * WEEK; }
+  // Resets keep the local hour of the anchor in CFG.reset.tz (e.g. 10:00 Kyiv time), also after a daylight saving change.
+  var TZ = CFG.reset.tz, tzFmt = null;
+  try { if (TZ) tzFmt = new Intl.DateTimeFormat('en-US', { timeZone: TZ, hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' }); } catch (e) {}
+  function tzOffset(t) {
+    if (!tzFmt) return 0;
+    var p = {};
+    tzFmt.formatToParts(new Date(t)).forEach(function (x) { p[x.type] = +x.value; });
+    return Date.UTC(p.year, p.month - 1, p.day, p.hour % 24, p.minute, p.second) - Math.floor(t / 1000) * 1000;
+  }
+  var ANCHOR_OFF = tzOffset(ANCHOR);
+  function resetAt(k) { var t = ANCHOR + k * WEEK; return t + ANCHOR_OFF - tzOffset(t); }
+  function weekIndex(now) {
+    var k = Math.floor((now - ANCHOR) / WEEK);
+    if (now >= resetAt(k + 1)) k++;
+    else if (now < resetAt(k)) k--;
+    return k;
+  }
+  function nextReset(now) { return now < ANCHOR ? ANCHOR : resetAt(weekIndex(now) + 1); }
   function pad(n) { return (n < 10 ? '0' : '') + n; }
   function split(ms) {
     ms = Math.max(0, ms);

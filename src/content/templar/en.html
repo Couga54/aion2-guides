@@ -211,8 +211,9 @@
 
   <h3>1. Hotbar lines</h3>
   <div class="hotlines">
-    {% call hotline('RMB', 'Pummel line', ['annihilate', 'debilitating-smash', 'flash-rampage', 'pummel']) %}The in-game macro presses this line. Procs fire as soon as they light up; Pummel fills the rest. For PvX swap Flash Rampage for Doom Shield.{% endcall %}
+    {% call hotline('RMB', 'Pummel line', ['annihilate', 'debilitating-smash', 'flash-rampage', 'pummel']) %}The in-game macro presses this line. Procs fire as soon as they light up; Pummel fills the rest. {{ s('flash-rampage') }} only hits a Staggered target — the rest of the time the macro skips it, and in stagger windows every hit takes 1s off all cooldowns.{% endcall %}
     {% call hotline('Side', 'Judgment line', ['judgment', 'shield-smite', 'warding-strike', 'doom-shield']) %}Spam it: every shield skill triggers Judgment, and Judgment always wins.{% endcall %}
+    {% call hotline('RMB · PvX', 'Pummel line for PvX', ['doom-shield', 'annihilate', 'debilitating-smash', 'pummel']) %}The same button with the PvX preset: {{ s('flash-rampage') }} goes, {{ s('doom-shield') }} takes the top priority and the rest move down. It sits in the Judgment line too on purpose: here it opens the fight — a rush and a guaranteed knockdown on NPCs that unlocks {{ s('annihilate') }} — and at level 15 it resets on a kill, the key to PvX and pet farming.{% endcall %}
   </div>
 
   <h3>2. Keys</h3>

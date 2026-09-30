@@ -5,7 +5,7 @@ Work top to bottom, then rebuild (`.venv/Scripts/python tools/build.py`), check 
 
 ## 1. Timers (`data/site.json`)
 
-- [ ] **Weekly reset** — `weekly_reset.anchor`: set the real reset time (UTC, ISO) of any past or upcoming reset,
+- [x] **Weekly reset** — done Oct 1: Wednesday 10:00 Kyiv time (`anchor` + `tz`). Was: `weekly_reset.anchor`: set the real reset time (UTC, ISO) of any past or upcoming reset,
       then `weekly_reset.confirmed: true`. This drives the reset timer on /weekly/ and /week-1/ and the
       automatic clearing of the weekly checklist. When confirmed, the "not announced yet" note disappears.
 - [ ] **Launch schedule** — `events`: the Early Access event has `celebrate: true` (the launch party); after

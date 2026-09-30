@@ -74,7 +74,8 @@ Requirements from the user (in their words, translated):
   is our pick: Doom Shield, Battlefield Banner, Taunt, Shield of Protection (PvP: Empyrean Lord's
   Punishment, Shield of Protection, Doom Shield, Noble Armor). The macro lines are adapted from KR, untested.
   RU client names Shield Rush and Shield Smite both "Удар щитом" — data/skills/_overrides.json fixes the display.
-- Weekly reset: NOT announced. `site.json → weekly_reset.anchor` = Early Access start (Wed Sep 30 13:00 UTC),
+- Weekly reset: **Wednesday 10:00 Kyiv time** (from the user, Oct 1) — `site.json → weekly_reset` (anchor 2026-09-30T07:00Z, tz Europe/Kyiv). Before that it was a guess:
+  `weekly_reset.anchor` = Early Access start (Wed Sep 30 13:00 UTC),
   repeating every 7 days; the user will give the real time at launch. Odyle energy (EU test client):
   +15 every 3 h, base cap 840, chest 40, 7 weekly crafts × 40 — in `site.json → energy`.
   Weekly entry limits in data/weekly.json come from KR/TW/EU-test sites and need checking at launch.
