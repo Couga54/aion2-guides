@@ -1009,6 +1009,7 @@ details.spec-all[open] > *:not(summary),.wk-group,.bs-group{animation:fade-in .3
 .st-row:first-child{border-top:0;}
 .st-row p{margin:0;}
 .st-name{font-weight:600;font-size:.92rem;line-height:1.45;color:var(--text);padding-top:1px;}
+.st-en{display:block;margin-top:2px;font:500 .74rem var(--font);color:var(--text-faint);}
 .st-val{font-size:.86rem;line-height:1.7;color:var(--text);}
 .st-why{margin-top:4px !important;font-size:.86rem;line-height:1.6;color:var(--text-dim);}
 .st-why strong{color:var(--text);}

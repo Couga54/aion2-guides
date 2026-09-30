@@ -347,7 +347,11 @@ def leveling_steps(cls_slug, lang):
 
 def chips(html):
     """Setting values on the settings page: <strong> becomes a chip, ON / OFF get their own colour."""
-    h = str(html).replace("<strong>ON</strong>", '<b class="sv sv-on">ON</b>').replace("<strong>OFF</strong>", '<b class="sv sv-off">OFF</b>')
+    h = str(html)
+    for on in ("ON", "Вкл"):
+        h = h.replace(f"<strong>{on}</strong>", f'<b class="sv sv-on">{on}</b>')
+    for off in ("OFF", "Выкл"):
+        h = h.replace(f"<strong>{off}</strong>", f'<b class="sv sv-off">{off}</b>')
     return Markup(h.replace("<strong>", '<b class="sv">').replace("</strong>", "</b>"))
 
 
