@@ -167,6 +167,37 @@ def board_route(board, targets):
     return taken
 
 
+# Board stats stored in 1/100 of a percent (150 -> 1.5%); the rest are flat values.
+BOARD_PCT_STATS = {"combatspeed", "cooltimedecrease", "amplifyalldamage", "amplifycriticaldamage", "decreasedamage",
+                   "decreasecriticaldamage", "additionalhitrate", "additionalhitresistrate", "pvpamplifydamage", "pvpdecreasedamage"}
+
+
+def board_tip_key(n):
+    """Tooltip key of a non-skill board node: the same stats at the same cost share one tooltip."""
+    return "dv:" + "+".join(e["statName"] for e in n["raw"] or [] if e["type"] == "stat") + f':{n["cost"] or 0}:{n["id"] if n["auto"] else ""}'
+
+
+def board_tips(cls_slug, lang):
+    """Tooltips for the stat nodes of the Daevanion boards, in the skill tooltip shape (see items_tip)."""
+    t, out, names = I18N[lang], {}, {}
+    nodes = [n for b in BOARDS.get(cls_slug, {"boards": []})["boards"] for n in b["nodes"] if not n["skill"]]
+    for n in nodes:                                   # stat id -> its name, from the one-stat nodes
+        stats = [e for e in n["raw"] or [] if e["type"] == "stat"]
+        if len(stats) == 1:
+            names[stats[0]["statName"]] = n["name"][lang]
+    for n in nodes:
+        lines = []
+        for e in n["raw"] or []:
+            if e["type"] != "stat":
+                continue
+            v = e["statValue"]
+            val = f"{v / 100:g}%".replace(".", "," if lang == "ru" else ".") if e["statName"] in BOARD_PCT_STATS else str(v)
+            lines.append(f'{names.get(e["statName"], e["statName"])} +{val}')
+        meta = "" if n["auto"] else f'{t["dv_k_special"] if n["grade"] == 41 else t["dv_k_stat"]} · {n["cost"] or 0} {t["dv_pts"]}'
+        out[board_tip_key(n)] = {"n": n["name"][lang], "m": meta, "g": n["grade"], "d": "\n".join(lines), "sp": []}
+    return out
+
+
 @pass_context
 def board_view(ctx, cls_slug, mode):
     """One Daevanion route (data/boards/presets.json -> mode) on every board of the class, for the static board macro."""
@@ -194,7 +225,7 @@ def board_view(ctx, cls_slug, mode):
             if on and sk:
                 levels[sk] = levels.get(sk, 0) + 1
             nodes.append({"x": (n["col"] - c0 + 0.5) / cols * 100, "y": (n["row"] - r0 + 0.5) / rows * 100, "g": n["grade"], "on": on,
-                          "start": n["auto"], "skill": sk, "icon": f'assets/icons/{cls_slug}/{skills[sk]["icon"]}' if sk else None,
+                          "start": n["auto"], "skill": sk, "tip": sk or board_tip_key(n), "icon": f'assets/icons/{cls_slug}/{skills[sk]["icon"]}' if sk else None,
                           "name": skills[sk][lang]["name"] if sk else n["name"][lang], "cost": n["cost"] or 0})
             for d in ((0, 1), (1, 0)):
                 m = pos.get((n["row"] + d[0], n["col"] + d[1]))
@@ -235,6 +266,7 @@ def tooltip_json(cls_slug, lang):
         out[slug] = {"n": L["name"], "c": sk.get("category"), "cd": round((sk.get("cooldown") or 0) / 1000),
                      "d": clean_desc(L.get("desc", "")), "sp": [[x["level"], x["text"]] for x in L.get("specs", [])]}
     out.update(items_tip(lang))   # item chips inside the guide text: {{ it('{i:key}') }}
+    out.update(board_tips(cls_slug, lang))   # stat nodes of the Daevanion boards
     return Markup(json.dumps(out, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"))
 
 

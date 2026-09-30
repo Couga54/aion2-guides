@@ -140,7 +140,7 @@
   <div class="dvb-panel" role="tabpanel" id="dvp-{{ mode }}-{{ b.id }}" aria-labelledby="dvt-{{ mode }}-{{ b.id }}"{% if not loop.first %} hidden{% endif %}>
     <div class="dvb-frame"><div class="dvb-stage" style="aspect-ratio:{{ b.cols }} / {{ b.rows }}">
       <svg class="dvb-svg" viewBox="0 0 {{ b.cols }} {{ b.rows }}" preserveAspectRatio="none" aria-hidden="true">{% for l in b.lines %}<line x1="{{ l.x1 }}" y1="{{ l.y1 }}" x2="{{ l.x2 }}" y2="{{ l.y2 }}"{% if l.on %} class="on"{% endif %}/>{% endfor %}</svg>
-      {% for n in b.nodes %}<span class="dvb-n g{{ n.g }}{% if n.on %} on{% endif %}{% if n.start %} start{% endif %}" style="left:{{ '%.2f'|format(n.x) }}%;top:{{ '%.2f'|format(n.y) }}%"{% if n.skill %} data-sk="{{ n.skill }}"{% else %} title="{{ n.name }}{% if n.cost %} · {{ n.cost }} {{ t.dv_pts }}{% endif %}"{% endif %}>{% if n.icon %}<img src="{{ root }}{{ n.icon }}" alt="{{ n.name }}" loading="lazy">{% endif %}</span>{% endfor %}
+      {% for n in b.nodes %}<span class="dvb-n g{{ n.g }}{% if n.on %} on{% endif %}{% if n.start %} start{% endif %}" style="left:{{ '%.2f'|format(n.x) }}%;top:{{ '%.2f'|format(n.y) }}%" data-sk="{{ n.tip }}">{% if n.icon %}<img src="{{ root }}{{ n.icon }}" alt="{{ n.name }}" loading="lazy">{% endif %}</span>{% endfor %}
     </div></div>
   </div>
   {% endfor %}

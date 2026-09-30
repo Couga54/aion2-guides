@@ -63,6 +63,8 @@ Work top to bottom, then rebuild (`.venv/Scripts/python tools/build.py`), check 
 
 - [ ] **Daevanion boards** — re-run `tools/fetch_boards.py` for every class with a board; the global data had no
       Ariel (PvE, lv 45) board before launch, only Azphel (PvP). If Ariel appears, update the Daevanion text in the guides.
+- [ ] **Board node values** — the node tooltips show the orange (4-point) stats as percents: the data stores 150, shown as
+      +1.5% (`BOARD_PCT_STATS` in `tools/build.py`). Compare with a node in the game (e.g. Nezekan → Combat Speed).
 
 ## 6. Publish
 

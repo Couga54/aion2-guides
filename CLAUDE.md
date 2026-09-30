@@ -18,6 +18,8 @@ Read `CONTEXT.md` first — it has the user's requirements, verified game facts 
 - Launch day (Oct 5): work through `LAUNCH.md` — every value that must be checked against the live servers.
 - Do not push without the user's explicit go-ahead; they check locally first.
 - Every guide text exists in both `src/content/<class>/en.html` and `ru.html` — change both.
+- Changed a class guide → set that class's `updated` in `data/site.json` to today (the "Updated" date in the guide header and on the
+  home card), the date in `classes[].src.<mode>` for every mode whose source was re-checked, and the site-wide `updated` (footer, sitemap).
 - New or updated guide source → also update its creator in `data/sources.json` (group `creators`): `name` exactly as it is written in
   `site.json → classes[].src`, `lang` (the language they make content in: `en` / `ru`), `plays` (classes they actually play — `[]` for general
   guide channels like Grobs), channel links (`twitch` / `youtube`) and `used` classes. The "Who to watch" line on class pages is built from this (`watch_for` in `tools/build.py`): same-language guide authors who play the class,

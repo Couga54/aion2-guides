@@ -15,9 +15,9 @@
     {"id": "early", "access": "founder", "at": "2026-09-30T13:00:00Z", "confirmed": true, "celebrate": true},
     {"id": "launch", "access": "all", "at": "2026-10-05T13:00:00Z", "confirmed": true}
   ],
-  "updated": "2026-09-27",
+  "updated": "2026-09-30",
   "classes": [
-    {"slug": "gladiator", "status": "ready", "src": {"pve": ["Arthars Gaming", "2026-09-27"], "pvp": ["Vortex Gaming (KR)", "2026-09-27"], "lvl": ["TitanTheF · Grobs", "2026-09-27"]}, "wip_modes": ["pvp"], "updated": "2026-09-27", "patch": null, "accent": "crimson", "art_pos": "40% 8%",
+    {"slug": "gladiator", "status": "ready", "src": {"pve": ["Arthars Gaming", "2026-09-30"], "pvp": ["Vortex Gaming (KR)", "2026-09-27"], "lvl": ["TitanTheF · Grobs", "2026-09-30"]}, "wip_modes": ["pvp"], "updated": "2026-09-30", "patch": null, "accent": "crimson", "art_pos": "40% 8%",
      "name": {"en": "Gladiator", "ru": "Гладиатор"},
      "role": {"en": "Melee DPS · bruiser", "ru": "Ближний бой · брузер"},
      "weapon": {"en": "Greatsword", "ru": "Двуручный меч"},
