@@ -867,6 +867,8 @@ details.spec-all[open] > *:not(summary),.wk-group,.bs-group{animation:fade-in .3
 .guide-watch svg{width:13px;height:13px;}
 .guide-watch .gw-twitch svg{color:#a970ff;} .guide-watch .gw-youtube svg{color:#ff4e45;}
 .guide-watch a.guide-watch-all{font-weight:500;color:var(--text-faint);}
+.guide-origin{margin:14px 0 0;padding:8px 12px;border-left:2px solid var(--border-2);font-size:.8rem;line-height:1.45;color:var(--text-dim);}
+.guide-origin b{color:var(--text);}
 .report-box{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:28px 0 0;}
 .report-box .btn svg{width:15px;height:15px;}
 .report-box .btn{min-height:34px;}

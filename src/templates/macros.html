@@ -8,6 +8,7 @@
 <section id="{{ id }}" class="g-section" data-only="{{ modes }}" aria-labelledby="h-{{ id }}">
   <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-{{ id }}">{{ title }}</h2></div>
   {{ caller() }}
+  {% if id.startswith('intro') %}<p class="guide-origin"><b>{{ t.guide_patch }} TW.</b> {{ t.guide_origin }}</p>{% endif %}
 </section>
 {%- endmacro %}
 

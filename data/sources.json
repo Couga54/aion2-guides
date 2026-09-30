@@ -215,6 +215,35 @@
           "plays": ["ranger"]
         },
         {
+          "name": "aLuckyRO",
+          "what": {
+            "en": "“AION 2 Sorcerer Guide For Skills & Stigmas | Macros & Daevanion Setup” — the early setup of the Sorcerer PvE guide: first specializations, hotbar lines, macro and mana management (a fresh character on the Taiwanese server).",
+            "ru": "«AION 2 Sorcerer Guide For Skills & Stigmas | Macros & Daevanion Setup» — стартовая настройка в PvE-гайде по Волшебнику: первые специализации, линии на кнопках, макрос и контроль маны (свежий персонаж на тайваньском сервере)."
+          },
+          "used": [
+            "sorcerer"
+          ],
+          "links": [
+            {
+              "type": "video",
+              "url": "https://www.youtube.com/watch?v=s-pYR_fmMDk",
+              "label": {
+                "en": "Sorcerer guide",
+                "ru": "Гайд по Волшебнику"
+              }
+            },
+            {
+              "type": "youtube",
+              "url": "https://www.youtube.com/channel/UCzFejNwhycRms9Zboth11Qg",
+              "label": "YouTube"
+            }
+          ],
+          "lang": [
+            "en"
+          ],
+          "plays": []
+        },
+        {
           "name": "NoBS Game Guides",
           "what": {
             "en": "“Aion 2 Templar Guide: Skills Introduction + Early Game Macro” — the base of the Templar skill overview and leveling macro.",

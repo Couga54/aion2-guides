@@ -22,7 +22,7 @@
     "pvp": {"4": {"special": true}, "*": {"skills": ["impactful-crush", "wave-blow", "defiance"], "special": true}}
   },
   "sorcerer": {
-    "pve": {"4": null, "*": {"skills": ["blaze", "bittercold-wind", "ice-chain"], "special": true}},
+    "pve": {"4": null, "*": {"skills": ["blaze", "bittercold-wind", "ice-chain", "hellfire", "robe-of-earth"], "special": ["combatspeed", "cooltimedecrease", "amplifyalldamage", "amplifycriticaldamage"]}},
     "pvp": {"4": {"special": true}, "*": {"skills": ["frost", "winters-shackles", "firestorm"], "special": true}}
   },
   "cleric": {

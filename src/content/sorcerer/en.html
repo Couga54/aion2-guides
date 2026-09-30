@@ -5,47 +5,51 @@
   <h3>{{ t.core_skills }}</h3>
   {{ core([('blaze', '16'), ('bittercold-wind', '16'), ('ice-chain', '16'), ('flame-arrow', '16'), ('wish-of-concentration', '16')]) }}
   <h3>{{ t.stigma_loadout }}</h3>
-  {{ loadout([('element-enhancement', 20), ('fire-wall', 10), ('cold-storm', 10), ('delayed-explosion', 10)]) }}
+  {{ loadout([('element-enhancement', 20), ('cold-storm', 10), ('fire-wall', 10), ('delayed-explosion', 10)]) }}
   <h3>{{ t.key_passives }}</h3>
-  {{ passives(['robe-of-flame', 'grace-of-enhancement', 'fire-mark', 'robe-of-earth']) }}
+  {{ passives(['robe-of-flame', 'fire-mark', 'robe-of-earth', 'grace-of-enhancement']) }}
 {% endcall %}
 
 {% call section('intro', 'Overview', 'pve') %}
-  <p>The Sorcerer is a ranged glass cannon that casts both fire and ice. Fire does the damage — {{ s('fire-mark') }} marks the target and {{ s('blaze') }} cashes it in — while ice slows, roots and freezes so nothing reaches you. Most of the burst sits in a 10-second window behind {{ s('element-enhancement') }}.</p>
+  <p>The Sorcerer is a ranged glass cannon that casts both fire and ice. Fire does the damage — {{ s('fire-mark') }} marks the target and {{ s('blaze') }} cashes it in — while ice slows, roots and freezes so nothing reaches you. Half of your damage bonuses depend on mana: above 50% MP you crit more, above 25% you deal 20% more damage.</p>
   <div class="callout accent">
     <h3>The build in one sentence</h3>
-    <p>Open with {{ s('delayed-explosion') }} and {{ s('element-enhancement') }}, drop {{ s('fire-wall') }} and {{ s('cold-storm') }}, then loop the Fire line and the Ice line with {{ s('flame-arrow') }} keeping your MP above 50%.</p>
+    <p>Hold one macro that keeps {{ s('element-enhancement') }} and {{ s('wish-of-concentration') }} running and alternates {{ s('flame-arrow') }} with your fire and ice lines so MP stays above half; cast {{ s('hellfire') }} by hand.</p>
   </div>
-  <p class="note">Built from Korean guides (Vortex Gaming's post-balance PvE guide, MMO Codex) and translated to global skill names from questlog. There is no global Sorcerer build from a trusted player yet.</p>
+  <div class="callout"><ul>
+    <li><strong>Play in target mode.</strong> With a locked target the basic attack {{ s('flame-arrow') }} keeps firing by itself after every skill and restores MP. In action mode it stops after each skill and you have to click again.</li>
+    <li><strong>Two stages.</strong> In the first days at 45 your skills sit at 8–10 with one specialization each — take the mana and speed picks named in the cards. The card levels and the two highlighted picks are the later target (16), from Korean guides.</li>
+  </ul></div>
+  <p class="note">The early setup and the macro follow aLuckyRO's Sorcerer beginner guide (video, September 15, a fresh level-45 character on the Taiwan client), read frame by frame; the level-16 targets follow Vortex Gaming's and MMO Codex's Korean guides. Skill names and data are from the global client.</p>
 {% endcall %}
 
 {% call section('global', 'Global Season 1: what changes', 'pve pvp') %}
   <p>Global servers open on <strong>October 5, 2026</strong> (Founder's early access from September 30). What that means for the Sorcerer:</p>
   <div class="callout">
     <ul>
-      <li><strong>4 stigma slots, capped at 20.</strong> Korean builds run Element Enhancement, Fire Wall, Delayed Explosion and Cold Storm all at 20 — on global only one of them reaches 20 at first.</li>
-      <li><strong>Skills at 16, not 20.</strong> Arcana and rings are what push skills past 16, and they come slowly — the picks below are chosen for 16.</li>
-      <li><strong>No combat speed at the start.</strong> Long casts hurt; take the Skill Speed specializations where offered.</li>
+      <li><strong>4 stigma slots, capped at 20.</strong> Taiwan and Korea play six; the four kept here are the ones both sources level first.</li>
+      <li><strong>Skills at 16, not 20.</strong> Arcana and rings are what push skills past 16, and they come slowly.</li>
+      <li><strong>Mana is tight at the start.</strong> About 3,000 MP and no cooldown reduction: the early picks are about MP and Skill Speed, not damage.</li>
       <li data-only="pvp"><strong>PvP:</strong> everyone starts on the same limited gear and no meta has formed yet.</li>
     </ul>
   </div>
 {% endcall %}
 
 {% call section('skills', 'Skills', 'pve') %}
-  <p>Six skills go to <strong>16</strong>, the rest stay at <strong>12</strong>. Korean players later push Blaze, Ice Chain and Bittercold Wind to 20.</p>
+  <p>Later six skills go to <strong>16</strong> and the rest stay at <strong>12</strong>. Each card says which single pick to take while the skill is still at 8–10.</p>
   <ul class="skill-grid">
-    {% call skill('blaze', 'must', '16', [3, 4]) %}Main damage on a Fire-Marked target; restores MP. At 16 every hit shortens Wish of Concentration. The delayed damage is the third slot, at 20.{% endcall %}
-    {% call skill('flame-arrow', 'must', '16', [3, 4]) %}Filler that restores MP. At 12 it applies Fire Mark itself, at 16 it resets Blaze. +20% MP is the third slot, at 20.{% endcall %}
-    {% call skill('bittercold-wind', 'must', '16', [3, 4]) %}Root field that lands as a guaranteed crit at 12; at 16 it shortens Frost. The mobile pick is the third slot, at 20.{% endcall %}
-    {% call skill('ice-chain', 'must', '16', [3, 4]) %}No-cooldown water filler that slows (Cold Snap procs on slowed targets). +20% Skill Speed is the third slot, at 20.{% endcall %}
-    {% call skill('winters-shackles', 'must', '16', [2, 4]) %}+20% PvE Damage Boost for 5s on landing — cast it inside your burst. With −15s cooldown at 16; the Winter's Illusion chain is the third slot, at 20.{% endcall %}
-    {% call skill('wish-of-concentration', 'must', '16', [1, 4]) %}+Attack and Accuracy for 10s; at 16 it cuts all cooldowns by 10s. +10% Combat Speed is the third slot, at 20.{% endcall %}
-    {% call skill('hellfire', 'opt', '12', [1, 3]) %}AoE charged up to 3 levels — the pack clear. Korean veterans take it to 20.{% endcall %}
-    {% call skill('firestorm', 'opt', '12', [1, 3]) %}Every fireball shortens Hellfire's cooldown.{% endcall %}
-    {% call skill('frost', 'opt', '12', [1, 2]) %}AoE Frost; landing it resets Frost Burst.{% endcall %}
-    {% call skill('frost-burst', 'opt', '12', [1, 3]) %}Only on Frozen targets; crits at 12.{% endcall %}
-    {% call skill('flame-scattershot', 'opt', '12', [1, 3]) %}Only on Staggered targets.{% endcall %}
-    {% call skill('defiance', 'opt', '12', [2, 3]) %}CC break with a heal.{% endcall %}
+    {% call skill('flame-arrow', 'must', '16', [3, 4]) %}Basic attack and your mana engine. First days: +20% MP restored. At 12 it applies Fire Mark itself, at 16 it resets Blaze.{% endcall %}
+    {% call skill('blaze', 'must', '16', [3, 4]) %}Main damage on a Fire-Marked target; restores MP. First days: the HP absorb — you are fragile and it saves potions. At 16 every hit shortens Wish of Concentration.{% endcall %}
+    {% call skill('ice-chain', 'must', '16', [3, 4]) %}No-cooldown water filler that slows (Cold Snap procs on slowed targets). First days: +20% Skill Speed — the cast is slow; switch to −20% MP once you have casting speed from gear.{% endcall %}
+    {% call skill('bittercold-wind', 'must', '16', [3, 4]) %}Root field; a guaranteed crit at 12, and at 16 it shortens Frost. First days: +1s duration.{% endcall %}
+    {% call skill('winters-shackles', 'must', '16', [2, 4]) %}+20% PvE Damage Boost for 5s on landing — the reason to level it. With −15s cooldown at 16.{% endcall %}
+    {% call skill('wish-of-concentration', 'must', '16', [1, 4]) %}+Attack and Accuracy; with +10% additional Attack that is 20% Attack for about 14 seconds. At 16 it cuts all cooldowns by 10s.{% endcall %}
+    {% call skill('hellfire', 'opt', '12', [0, 3]) %}Your biggest hit, charged and cast by hand. +30% Skill Speed for clearing; swap it for the damage over time on a final boss.{% endcall %}
+    {% call skill('firestorm', 'opt', '12', [0, 3]) %}5-second cooldown and a big mana drain — take −50% MP Cost first; at 12 every fireball shortens Hellfire's cooldown.{% endcall %}
+    {% call skill('frost', 'opt', '12', [0, 2]) %}AoE Frost. Restores 200 MP — close to mandatory while mana is short; landing it resets Frost Burst.{% endcall %}
+    {% call skill('frost-burst', 'opt', '12', [1, 3]) %}Only on Frozen targets; crits at 12. The lowest priority for skill points.{% endcall %}
+    {% call skill('flame-scattershot', 'opt', '12', [2, 3]) %}Only on Staggered targets, so it can sit in the macro. Take the mobile pick.{% endcall %}
+    {% call skill('defiance', 'opt', '12', [2, 3]) %}CC break; 20% HP back when you break free.{% endcall %}
   </ul>
 {% endcall %}
 
@@ -53,14 +57,16 @@
   <div class="table-wrap"><table>
     <thead><tr><th>Passive</th><th>Why</th></tr></thead>
     <tbody>
-      <tr><td>{{ s('robe-of-flame') }}</td><td>Accuracy and PvE Damage Boost — the first passive to level.</td></tr>
-      <tr><td>{{ s('grace-of-enhancement') }}</td><td>+20% PvE Damage Boost while MP is 25%+ and extra hits.</td></tr>
-      <tr><td>{{ s('fire-mark') }}</td><td>Applies Fire Mark, which Blaze needs.</td></tr>
-      <tr><td>{{ s('robe-of-earth') }}</td><td>Max MP and Critical Hit while MP is 50%+.</td></tr>
+      <tr><td>{{ s('robe-of-flame') }}</td><td>Accuracy, PvE Damage Boost and Double Chance — the first passive to max.</td></tr>
+      <tr><td>{{ s('fire-mark') }}</td><td>Applies Fire Mark, which Blaze needs, and burns the target. Max it.</td></tr>
+      <tr><td>{{ s('robe-of-earth') }}</td><td>Max MP and Critical Hit while MP is 50% or more. Max it.</td></tr>
+      <tr><td>{{ s('grace-of-enhancement') }}</td><td>+20% PvE Damage Boost while MP is 25% or more, and extra hits.</td></tr>
+      <tr><td>{{ s('vitality-evaporation') }}</td><td>Extra damage while the target is above 70% HP — strong early, when fights are short.</td></tr>
+      <tr><td>{{ s('cold-snap') }}</td><td>Extra damage on slowed targets — Ice Chain keeps them slowed.</td></tr>
       <tr><td>{{ s('robe-of-cold') }}</td><td>Defense and a slow on attackers — raids.</td></tr>
     </tbody>
   </table></div>
-  <p class="note">Four passives key off your MP (Grace of Enhancement, Robe of Earth, Arctic Armor, Absorb Essence) — never let mana drop.</p>
+  <p class="note">Robe of Earth and Grace of Enhancement switch off when your mana runs low — never play at 10–20% MP.</p>
 {% endcall %}
 
 {% call section('gear', 'Gear & stats', 'pve') %}
@@ -74,7 +80,8 @@
 {% call section('daevanion', 'Daevanion boards', 'pve pvp') %}
   <p>Daevanion takes your skills from 10 to 14 and adds stats. Each blue node gives <strong>+1 level</strong> to its skill.</p>
   <div class="callout"><ul>
-    <li data-only="pve"><strong>Priority:</strong> blue nodes for {{ s('blaze') }}, {{ s('bittercold-wind') }}, {{ s('ice-chain') }}, then orange nodes.</li>
+    <li data-only="pve"><strong>Priority:</strong> orange Combat Speed and Cooldown Reduction, then Attack and Damage Boost, then Critical Damage Boost; after that the blue nodes of {{ s('blaze') }}, {{ s('bittercold-wind') }}, {{ s('ice-chain') }}, {{ s('hellfire') }} and the green {{ s('robe-of-earth') }}.</li>
+    <li data-only="pve"><strong>Skip</strong> Multi-Hit and the defensive orange nodes — a Sorcerer wants flat damage; pick up Accuracy later.</li>
     <li data-only="pvp"><strong>Priority:</strong> blue nodes for {{ s('frost') }}, {{ s('winters-shackles') }}, {{ s('firestorm') }}.</li>
     <li data-only="pve"><strong>No Ariel on global:</strong> there are five boards, and the level-45 one, Azphel, gives only PvP Damage Boost and Tolerance — in PvE finish the first four.</li>
     <li data-only="pvp"><strong>Azphel</strong> (level 45) is all PvP Damage Boost and Tolerance — take it.</li>
@@ -90,21 +97,24 @@
     </tbody>
   </table></div>
   <h3>The route on the boards</h3>
-  <p>The real global boards from the game data. Gold marks the cheapest path from Start to the nodes this guide takes — the blue nodes of the priority skills and the orange nodes; hover any node to see what it gives.</p>
+  <p>The real global boards from the game data. Gold marks the cheapest path from Start to the nodes this guide takes — the blue nodes of the priority skills and the offensive orange nodes (no Multi-Hit, no tolerance); hover any node to see what it gives.</p>
   <div data-only="pve">{{ dv_board('pve') }}</div>
   <div data-only="pvp">{{ dv_board('pvp') }}</div>
   <p class="note">Boards and costs come from the global client data (questlog.gg); the path is calculated, not taken from a video. Stat values may still change at launch — check the in-game board before committing a full route.</p>
 {% endcall %}
 
 {% call section('stigmas', 'Stigmas', 'pve') %}
+  <p>Leveling order: Element Enhancement → Cold Storm → Fire Wall → Delayed Explosion. On a fresh character they start at about 5 / 5 / 5 / 1.</p>
   <ul class="skill-grid">
-    {% call skill('element-enhancement', 'must', 'Lv 20', upto=20) %}+20% Fire and Water Attack for 10s (+10% more at 20) — the burst window. Max it first.{% endcall %}
-    {% call skill('fire-wall', 'must', 'Lv 10', upto=10) %}Fire DoT field; Embers stacks extra damage on each hit.{% endcall %}
-    {% call skill('cold-storm', 'must', 'Lv 10', upto=10) %}Water DoT field with Frostbite and a root chance.{% endcall %}
-    {% call skill('delayed-explosion', 'must', 'Lv 10', upto=10) %}The target takes +15% damage from you for 4s; level 10 cuts its cooldown to 20s.{% endcall %}
+    {% call skill('element-enhancement', 'must', 'Lv 20', upto=20) %}+20% Fire and Water Attack (+10% more at 20) — your main buff, used every time it is ready. Max it first.{% endcall %}
+    {% call skill('cold-storm', 'must', 'Lv 10', upto=10) %}Water DoT field with Frostbite: extra damage on every hit you land inside it.{% endcall %}
+    {% call skill('fire-wall', 'must', 'Lv 10', upto=10) %}Fire DoT field; Embers adds extra damage on each hit. Best when the boss stands still or the pack walks through it.{% endcall %}
+    {% call skill('delayed-explosion', 'must', 'Lv 10', upto=10) %}The target takes +15% damage from you for 4s; level 10 cuts its cooldown. One point is enough at first.{% endcall %}
+    {% call skill('glacial-smite', 'opt', 'alt.', upto=10) %}Big instant AoE hit, stronger on packs; the swap for Cold Storm on short fights and farming.{% endcall %}
+    {% call skill('divine-burst', 'opt', 'alt.', upto=10) %}Hit that throws you back from the target, with an HP absorb at 10 — a safety tool once you have spare shards.{% endcall %}
     {% call skill('steel-barrier', 'opt', 'leveling', upto=10) %}Shield worth 16% of Max HP — keep it while leveling solo.{% endcall %}
-    {% call skill('glacial-smite', 'opt', 'alt.', upto=10) %}AoE burst with a Frost chance; the swap for Cold Storm on short fights.{% endcall %}
   </ul>
+  <p class="note">aLuckyRO's Taiwan setup runs six stigmas: these four plus Glacial Smite and Divine Burst. Global has four slots.</p>
 {% endcall %}
 
 {% call section('macro', 'Macro & rotation', 'pve') %}
@@ -116,16 +126,32 @@
 
   <h3>1. Hotbar lines</h3>
   <div class="hotlines">
-    {% call hotline('MB5', 'Fire line', ['flame-scattershot', 'blaze', 'firestorm', 'flame-arrow']) %}Blaze only lights up on a Fire-Marked target, so it sits near the bottom; Flame Arrow fills the gaps and applies the next mark.{% endcall %}
-    {% call hotline('RMB', 'Ice line', ['frost-burst', 'frost', 'ice-chain']) %}Frost Burst fires as soon as Frost lands; Ice Chain is the filler.{% endcall %}
+    {% call hotline('4', 'Buff line', ['element-enhancement', 'bittercold-wind', 'delayed-explosion', 'frost-burst']) %}Element Enhancement goes off whenever it is ready; then the root field and the +15% damage debuff.{% endcall %}
+    {% call hotline('5', 'Concentration line', ['wish-of-concentration', 'cold-storm', 'fire-wall']) %}The second buff first, then both fields under the target.{% endcall %}
+    {% call hotline('1', 'Fire line', ['blaze', 'firestorm']) %}Blaze whenever the target carries a Fire Mark, Firestorm on its 5-second cooldown.{% endcall %}
+    {% call hotline('T', 'Ice line', ['winters-shackles', 'frost', 'ice-chain']) %}Winter's Shackles for the damage buff, Frost for mana, Ice Chain fills the rest.{% endcall %}
   </div>
+  <p>{{ s('flame-arrow') }} sits alone on <span class="key">R</span>, {{ s('hellfire') }} on <span class="key">2</span>, {{ s('flame-scattershot') }} on <span class="key">3</span>.</p>
 
   <h3>2. In-game macro</h3>
-  <p>Bind it to the middle mouse button. Delay <strong>10 ms</strong> on every slot (40–50 ms with high ping):</p>
-  {{ macroseq([('Fire line', '10 ms'), (skill_data('delayed-explosion')[lang].name, '10 ms'), (skill_data('bittercold-wind')[lang].name, '10 ms'), ('Ice line', '10 ms')]) }}
-  <p class="note">Hellfire is a charged skill and Element Enhancement is a buff for your burst window — keep both out of the macro.</p>
+  <p>Bind a macro key in Settings → Key settings → Gameplay → Macro. Every step with the same delay:</p>
+  {{ macroseq([('Buff line', '4'), ('Concentration line', '5'), (skill_data('flame-arrow')[lang].name, 'R'), ('Fire line', '1'), (skill_data('flame-arrow')[lang].name, 'R'), ('Ice line', 'T'), (skill_data('flame-scattershot')[lang].name, '3')]) }}
+  <ul>
+    <li><strong>Delay:</strong> 10 ms with a ping under 50; 40–50 ms with a ping of 80–100 and more.</li>
+    <li><strong>How to check it:</strong> watch your character while the macro runs. Afterimages ("shadows") behind it mean animations are being cancelled and the delay is fine.</li>
+    <li><strong>Why two Flame Arrows:</strong> they refill mana between the expensive skills, so MP stays above 50% and both mana passives stay on.</li>
+  </ul>
+  <p class="note">The first six steps are read from the macro window in the video. Flame Scattershot as the seventh follows what aLuckyRO says (it fires by itself on a staggered boss); that step is not visible on screen.</p>
 
-  <h3>3. Burst opener</h3>
+  <h3>3. What you actually press</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Hold</span><span class="press-what">The macro key — nothing else.</span></li>
+    <li><span class="press-how">By hand</span><span class="press-what">{{ s('hellfire') }}: stop, charge it fully, go back to the macro.</span></li>
+    <li><span class="press-how">Low mana</span><span class="press-what">If MP still drops, let go of the macro, fire a few {{ s('flame-arrow') }}s and continue.</span></li>
+  </ul>
+
+  <h3>4. Later: burst by hand</h3>
+  <p>Once your gear carries cooldown reduction, Korean players take the buffs out of the macro and open a burst window by hand:</p>
   <ol>
     <li>{{ s('delayed-explosion') }} just before the tank pulls.</li>
     <li>{{ s('element-enhancement') }} and {{ s('wish-of-concentration') }}.</li>
@@ -133,20 +159,14 @@
     <li>{{ s('bittercold-wind') }}, then {{ s('winters-shackles') }} for the +20% damage boost.</li>
     <li>{{ s('hellfire') }} charged to 3, then the macro.</li>
   </ol>
-
-  <h3>4. What you actually press</h3>
-  <ul class="presslist">
-    <li><span class="press-how">Hold</span><span class="press-what">Basic attack on <span class="key">LMB</span>, the Ice line on <span class="key">RMB</span>, the macro on <span class="key">MMB</span>.</span></li>
-    <li><span class="press-how">By hand</span><span class="press-what">The burst opener every time {{ s('element-enhancement') }} is back, {{ s('hellfire') }}, {{ s('defiance') }}.</span></li>
-  </ul>
 {% endcall %}
 
 {% call section('recap', 'Recap', 'pve') %}
   <div class="callout accent"><ul>
-    <li><strong>Skills:</strong> Blaze, Flame Arrow, Bittercold Wind, Ice Chain, Winter's Shackles, Wish of Concentration 16; the rest 12.</li>
-    <li><strong>Stigmas:</strong> Element Enhancement 20, Fire Wall 10, Cold Storm 10, Delayed Explosion 10.</li>
-    <li><strong>Passives:</strong> Robe of Flame, Grace of Enhancement, Fire Mark, Robe of Earth.</li>
-    <li><strong>Mana:</strong> keep it above 50% — Flame Arrow and Blaze restore MP.</li>
+    <li><strong>First days:</strong> skills at 8–10 with the mana and speed picks; one macro with the buffs inside; target mode.</li>
+    <li><strong>Later:</strong> Blaze, Flame Arrow, Bittercold Wind, Ice Chain, Winter's Shackles, Wish of Concentration 16; the rest 12.</li>
+    <li><strong>Stigmas:</strong> Element Enhancement 20, Cold Storm 10, Fire Wall 10, Delayed Explosion 10.</li>
+    <li><strong>Mana:</strong> keep it above 50% — that is damage, not comfort.</li>
   </ul></div>
 {% endcall %}
 
@@ -172,6 +192,7 @@
 <section class="sources" aria-labelledby="h-sources">
   <h2 id="h-sources">{{ t.sources }}</h2>
   <ul>
+    <li><a href="https://www.youtube.com/watch?v=s-pYR_fmMDk" target="_blank" rel="noopener">aLuckyRO — AION 2 Sorcerer Guide For Skills &amp; Stigmas | Macros &amp; Daevanion Setup</a> — the early setup at 45: first specializations, hotbar lines and the macro, mana management, targeting mode, Daevanion order</li>
     <li><a href="https://vortexgaming.io/en/postdetail/724101" target="_blank" rel="noopener">Vortex Gaming — Sorcerer PvE guide after the balance patch</a> — skill levels, specializations, stigmas, opener and macro (Korean servers)</li>
     <li><a href="https://mmo-codex.com/articles/aion-2-sorcerer-guide/" target="_blank" rel="noopener">MMO Codex — Aion 2 Sorcerer guide</a> — stigma priority, macro order, leveling in target mode</li>
     <li><a href="https://questlog.gg/aion-2/en/db/skills/sorcerer" target="_blank" rel="noopener">questlog.gg</a> — skill data and names from the global client</li>

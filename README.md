@@ -8,14 +8,14 @@ Class guides and trackers for **AION 2 global Season 1** in English and Russian.
 
 | Class | PvE | PvP | Leveling | Daevanion boards |
 |---|---|---|---|---|
-| Gladiator | ✅ | 🚧 in progress | ✅ | PvE, PvP, leveling |
+| Gladiator | ✅ | ✅ | ✅ | PvE, PvP, leveling |
 | Templar | ✅ | ✅ | ✅ | PvE, PvP |
 | Ranger | ✅ | — | ✅ | PvE |
 | Assassin | ✅ | — | ✅ | PvE |
 | Chanter | ✅ | — | ✅ | PvE |
 | Cleric | ✅ | — | ✅ | PvE |
-| Sorcerer | 🚧 in progress | — | ✅ | PvE |
-| Elementalist | — | — | 🚧 in progress | — |
+| Sorcerer | ✅ | — | ✅ | PvE |
+| Elementalist | — | — | ✅ | — |
 
 A PvP mode is switched on only when there is a real source for it.
 

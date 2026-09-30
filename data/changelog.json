@@ -2,6 +2,21 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-09-30-sorcerer",
+      "date": "2026-09-30",
+      "items": [
+        {
+          "href": "sorcerer/",
+          "en": "<strong>Sorcerer PvE rewritten</strong> — a setup for the first days at 45 from aLuckyRO's video: which specialization to take at skill level 8–10, four hotbar lines and one macro that keeps mana above 50%, target mode, Daevanion order. The guide is no longer marked as work in progress.",
+          "ru": "<strong>PvE Волшебника переписан</strong> — настройка на первые дни на 45 по видео aLuckyRO: какую специализацию брать на 8–10 уровне скилла, четыре линии на кнопках и один макрос, который держит ману выше 50%, режим таргета, порядок Daevanion. С гайда снята пометка «в работе»."
+        },
+        {
+          "en": "<strong>Where the builds come from</strong> — the Overview of every class guide now says it plainly: the guides are based on creators' videos from the Taiwanese servers (patch: TW), cut down to global Season 1. The “work in progress” marks are gone from all guides.",
+          "ru": "<strong>Откуда билды</strong> — в «Обзоре» каждого гайда теперь прямо сказано: гайды основаны на видео авторов с тайваньских серверов (патч: TW) и урезаны под глобальный 1 сезон. Пометки «в работе» сняты со всех гайдов."
+        }
+      ]
+    },
+    {
       "id": "2026-09-30-assassin",
       "date": "2026-09-30",
       "items": [

@@ -56,8 +56,8 @@ Work top to bottom, then rebuild (`.venv/Scripts/python tools/build.py`), check 
 - [ ] **All guides**, section "Global Season 1: what changes": replace "expected / not confirmed" statements with facts.
 - [ ] **PvP** — Ranger, Assassin, Chanter, Sorcerer have PvP switched off (`modes_off` in `data/site.json`).
       Turn it back on only with a real global source; write the PvP text from that source.
-- [ ] **WIP marks** — `wip` (whole guide: Sorcerer, Elementalist) and `wip_modes` (Gladiator PvP,
-      Templar PvE/PvP): remove when a solid global source is used.
+- [ ] **Patch** — every class has `patch: "TW"` in `data/site.json` (the builds come from Taiwan-server videos; the WIP marks were
+      removed on Sep 30). When a guide is re-checked on the live global servers, set its `patch` to the global patch.
 - [ ] **Sources** — after re-checking a mode, update its date in `classes[].src` (shown in the guide header)
       and `classes[].updated`.
 
@@ -75,6 +75,8 @@ Work top to bottom, then rebuild (`.venv/Scripts/python tools/build.py`), check 
 - [ ] **Assassin (Arthars Gaming, Taiwan client)** — check on live: Illusive Clone at 20 lasts 20s on a 1 min 30 s cooldown; the macro
       (damage line → Quick Slice) is our reading of his hotbar, the macro window is not in the video; arcana sets and card skills.
       The video has no captions — its text came from speech recognition, names and numbers were checked against the frames.
+- [ ] **Sorcerer (aLuckyRO, Taiwan client, six stigmas)** — the hotbar lines were read from small icons and cut down to the four
+      global stigmas; the 7th macro step (Flame Scattershot) is from his words, not the screen. Check the macro on live.
 - [ ] **Specialization slots** — the guide cards assume 2 slots from skill level 12 and the 3rd at 20 (from two creators' videos on
       the Taiwan client). Confirm on global; which pick the third slot takes on each card is our own choice where the source didn't say.
 - [ ] **Board node values** — the node tooltips show the orange (4-point) stats as percents: the data stores 150, shown as
