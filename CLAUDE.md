@@ -16,7 +16,8 @@ Read `CONTEXT.md` first — it has the user's requirements, verified game facts 
   `.venv/Scripts/python tools/video_guide.py <youtube url or id>` = `fetch_video.py` (Full HD, no sound → `frames/<id>/video.*`,
   git-ignored) + `fetch_transcript.py` (→ `frames/<id>/transcript.json`) + `storyboard.py <id>` (frames + contact sheets with the transcript line; a frame every
   1–4 s depending on the length, `--every N` to override). Full-size frames: `tools/storyboard.py <id> --at 7:45 465`.
-  A video file of your own: `tools/storyboard.py <file.mp4> <youtube id>`.
+  A video file of your own: `tools/storyboard.py <file.mp4> <youtube id>`. No captions on YouTube: `tools/transcribe.py <id> --lang en`
+  (local speech recognition, needs `pip install faster-whisper`), then `tools/storyboard.py <id>` again.
 - Refresh item icons/names for the guide pages (progression, crafting): `.venv/Scripts/python tools/fetch_items.py` (search: `--find <name>`)
 - **Source material stays local, never in git:** creators' guides, videos, transcripts, frames and screenshots live in
   `frames/<youtube id>/` (git-ignored). Do not save them under `data/`, `src/` or `docs/`, and do not publish them on the site —
@@ -25,6 +26,9 @@ Read `CONTEXT.md` first — it has the user's requirements, verified game facts 
 - Launch day (Oct 5): work through `LAUNCH.md` — every value that must be checked against the live servers.
 - Do not push without the user's explicit go-ahead; they check locally first.
 - Every guide text exists in both `src/content/<class>/en.html` and `ru.html` — change both.
+- Skill cards (`{% call skill('slug', kind, 'level', [picks]) %}`): a skill has 1 specialization slot from level 8, 2 from 12 and 3 only
+  at 20, and options 4 / 5 unlock at 12 / 16 — never list more picks than the level allows; for "16 → 20" list the two picks for 16
+  and say in the text what the third slot takes at 20.
 - Changed a class guide → set that class's `updated` in `data/site.json` to today (the "Updated" date in the guide header and on the
   home card), the date in `classes[].src.<mode>` for every mode whose source was re-checked, and the site-wide `updated` (footer, sitemap).
 - New or updated guide source → also update its creator in `data/sources.json` (group `creators`): `name` exactly as it is written in

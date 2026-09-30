@@ -114,14 +114,23 @@
         {
           "name": "Arthars Gaming",
           "what": {
-            "en": "Starter guides for the global launch, recorded on the Taiwanese server: the Gladiator guide is the base of the Gladiator PvE mode, the Chanter guide — of the Chanter PvE mode. Plays Gladiator on global.",
-            "ru": "Стартовые гайды к глобальному запуску, записанные на тайваньском сервере: гайд по Гладиатору — основа PvE-режима Гладиатора, гайд по Чародею — PvE-режима Чародея. На глобале играет Гладиатором."
+            "en": "Starter guides for the global launch, recorded on the Taiwanese server: the Gladiator guide is the base of the Gladiator PvE mode, the Chanter and Assassin guides — of the Chanter and Assassin PvE modes. Plays Gladiator on global.",
+            "ru": "Стартовые гайды к глобальному запуску, записанные на тайваньском сервере: гайд по Гладиатору — основа PvE-режима Гладиатора, гайды по Чародею и Убийце — PvE-режимов Чародея и Убийцы. На глобале играет Гладиатором."
           },
           "used": [
             "gladiator",
-            "chanter"
+            "chanter",
+            "assassin"
           ],
           "links": [
+            {
+              "type": "video",
+              "url": "https://www.youtube.com/watch?v=UpvUVK1vnt8",
+              "label": {
+                "en": "Assassin guide",
+                "ru": "Гайд по Убийце"
+              }
+            },
             {
               "type": "video",
               "url": "https://www.youtube.com/watch?v=7qMgsnSsmIU",

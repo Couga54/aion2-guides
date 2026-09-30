@@ -41,7 +41,7 @@
      "difficulty": 2,
      "pitch": {"en": "The main tank: blocks buff the whole party, Judgment turns every shield skill into damage, and more crowd control than anyone in PvP.",
                "ru": "Главный танк: блоки баффают всю группу, Суд превращает каждый удар щитом в урон, а контроля в PvP больше, чем у всех."}},
-    {"slug": "assassin", "status": "ready", "src": {"pve": ["TitanTheF", "2026-09-27"], "lvl": ["TitanTheF · Grobs", "2026-09-27"]}, "modes_off": ["pvp"], "updated": "2026-09-30", "patch": null, "accent": "violet",
+    {"slug": "assassin", "status": "ready", "src": {"pve": ["Arthars Gaming (TW client)", "2026-09-30"], "lvl": ["TitanTheF · Grobs", "2026-09-27"]}, "modes_off": ["pvp"], "updated": "2026-09-30", "patch": null, "accent": "violet",
      "name": {"en": "Assassin", "ru": "Убийца"},
      "role": {"en": "Melee DPS · burst", "ru": "Ближний бой · бурст"},
      "weapon": {"en": "Daggers", "ru": "Кинжалы"},

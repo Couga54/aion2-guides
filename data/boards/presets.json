@@ -14,7 +14,7 @@
     "pvp": {"4": {"special": true}, "*": {"skills": ["deadshot", "snare-shot", "suppressing-arrow", "marking-shot", "defiance"], "special": true}}
   },
   "assassin": {
-    "pve": {"4": null, "*": {"skills": ["savage-roar", "heart-gore", "insignia-explosion"], "special": true}},
+    "pve": {"4": null, "*": {"skills": ["heart-gore", "insignia-explosion", "quick-slice", "ambush", "storm-rampage"], "special": true}},
     "pvp": {"4": {"special": true}, "*": {"skills": ["shadowstrike", "flash-slice", "defiance"], "special": true}}
   },
   "chanter": {

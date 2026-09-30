@@ -34,12 +34,12 @@
 {% call section('skills', 'Skills', 'pve') %}
   <p>Six skills go to <strong>16</strong>, the rest stay at <strong>12</strong>. Korean players later push Blaze, Ice Chain and Bittercold Wind to 20.</p>
   <ul class="skill-grid">
-    {% call skill('blaze', 'must', '16', [2, 3, 4]) %}Main damage on a Fire-Marked target; restores MP. At 16 every hit shortens Wish of Concentration.{% endcall %}
-    {% call skill('flame-arrow', 'must', '16', [0, 3, 4]) %}Filler that restores MP. At 12 it applies Fire Mark itself, at 16 it resets Blaze.{% endcall %}
-    {% call skill('bittercold-wind', 'must', '16', [1, 3, 4]) %}Root field that lands as a guaranteed crit at 12; at 16 it shortens Frost.{% endcall %}
-    {% call skill('ice-chain', 'must', '16', [1, 3, 4]) %}No-cooldown water filler that slows (Cold Snap procs on slowed targets).{% endcall %}
-    {% call skill('winters-shackles', 'must', '16', [2, 3, 4]) %}+20% PvE Damage Boost for 5s on landing — cast it inside your burst.{% endcall %}
-    {% call skill('wish-of-concentration', 'must', '16', [1, 3, 4]) %}+Attack and Accuracy for 10s; at 16 it cuts all cooldowns by 10s.{% endcall %}
+    {% call skill('blaze', 'must', '16', [3, 4]) %}Main damage on a Fire-Marked target; restores MP. At 16 every hit shortens Wish of Concentration. The delayed damage is the third slot, at 20.{% endcall %}
+    {% call skill('flame-arrow', 'must', '16', [3, 4]) %}Filler that restores MP. At 12 it applies Fire Mark itself, at 16 it resets Blaze. +20% MP is the third slot, at 20.{% endcall %}
+    {% call skill('bittercold-wind', 'must', '16', [3, 4]) %}Root field that lands as a guaranteed crit at 12; at 16 it shortens Frost. The mobile pick is the third slot, at 20.{% endcall %}
+    {% call skill('ice-chain', 'must', '16', [3, 4]) %}No-cooldown water filler that slows (Cold Snap procs on slowed targets). +20% Skill Speed is the third slot, at 20.{% endcall %}
+    {% call skill('winters-shackles', 'must', '16', [2, 4]) %}+20% PvE Damage Boost for 5s on landing — cast it inside your burst. With −15s cooldown at 16; the Winter's Illusion chain is the third slot, at 20.{% endcall %}
+    {% call skill('wish-of-concentration', 'must', '16', [1, 4]) %}+Attack and Accuracy for 10s; at 16 it cuts all cooldowns by 10s. +10% Combat Speed is the third slot, at 20.{% endcall %}
     {% call skill('hellfire', 'opt', '12', [1, 3]) %}AoE charged up to 3 levels — the pack clear. Korean veterans take it to 20.{% endcall %}
     {% call skill('firestorm', 'opt', '12', [1, 3]) %}Every fireball shortens Hellfire's cooldown.{% endcall %}
     {% call skill('frost', 'opt', '12', [1, 2]) %}AoE Frost; landing it resets Frost Burst.{% endcall %}

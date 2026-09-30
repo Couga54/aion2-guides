@@ -72,8 +72,11 @@ Work top to bottom, then rebuild (`.venv/Scripts/python tools/build.py`), check 
 - [ ] **Chanter (Arthars Gaming, Taiwan client)** — check on live: Dark Crush opens for 2s after Spinning Strike / Impactful Crush
       and 3s after Marchutan's Wrath; the stigma four (Undefeated Mantra 20, Marchutan's Wrath 1, Focused Defense 5, Sprint Mantra 10);
       the arcana sets available in Season 1 (Primal Vigor, Magic Armor) and the skills each card can roll.
-- [ ] **Specialization slots** — the videos show 2 slots from skill level 12 and the 3rd at 20 (16 only unlocks the fifth option).
-      Some older guide cards list three picks at 16 — check in game and fix the cards.
+- [ ] **Assassin (Arthars Gaming, Taiwan client)** — check on live: Illusive Clone at 20 lasts 20s on a 1 min 30 s cooldown; the macro
+      (damage line → Quick Slice) is our reading of his hotbar, the macro window is not in the video; arcana sets and card skills.
+      The video has no captions — its text came from speech recognition, names and numbers were checked against the frames.
+- [ ] **Specialization slots** — the guide cards assume 2 slots from skill level 12 and the 3rd at 20 (from two creators' videos on
+      the Taiwan client). Confirm on global; which pick the third slot takes on each card is our own choice where the source didn't say.
 - [ ] **Board node values** — the node tooltips show the orange (4-point) stats as percents: the data stores 150, shown as
       +1.5% (`BOARD_PCT_STATS` in `tools/build.py`). Compare with a node in the game (e.g. Nezekan → Combat Speed).
 

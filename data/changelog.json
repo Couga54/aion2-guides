@@ -2,6 +2,32 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-09-30-assassin",
+      "date": "2026-09-30",
+      "items": [
+        {
+          "href": "assassin/",
+          "en": "<strong>Assassin PvE rebuilt on Arthars Gaming's video</strong> — what to expect from the class in Season 1, new skill levels (Storm Rampage 16, Savage Roar only a filler), stigmas all in buffs (Illusive Clone, Swift Contract, Savage Fang, Triniel's Dagger), one damage line and the burst order.",
+          "ru": "<strong>PvE Убийцы перестроен по видео Arthars Gaming</strong> — чего ждать от класса в 1 сезоне, новые уровни скиллов (Неистовый шквал 16, Рёв зверя только филлер), все стигмы в баффы (Иллюзорный двойник, Обет ускорения, Клык хищника, Кинжал Триниэля), одна линия урона и порядок бурста."
+        },
+        {
+          "href": "assassin/",
+          "en": "<strong>Assassin: arcana and passives</strong> — a new arcana section (Illusion on the Mirror is a must) and passive priority for gear.",
+          "ru": "<strong>Убийца: арканы и пассивки</strong> — новый раздел про арканы (Illusion на Зеркале обязателен) и приоритет пассивок для экипировки."
+        }
+      ]
+    },
+    {
+      "id": "2026-09-30-spec-slots",
+      "date": "2026-09-30",
+      "items": [
+        {
+          "en": "<strong>Specialization slots fixed</strong> — a skill has two slots from level 12 and the third only at 20. Gladiator, Templar, Sorcerer and Cleric cards no longer show three picks at level 16; each card says what the third slot takes at 20.",
+          "ru": "<strong>Исправлены слоты специализаций</strong> — у скилла два слота с 12 уровня, третий только на 20. В карточках Гладиатора, Стража, Волшебника и Целителя больше нет трёх специализаций на 16 уровне; в каждой написано, что занимает третий слот на 20."
+        }
+      ]
+    },
+    {
       "id": "2026-09-30-chanter",
       "date": "2026-09-30",
       "items": [

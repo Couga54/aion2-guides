@@ -28,7 +28,7 @@ def prepare(v, every=None, height=1080):
         try:
             fetch_transcript.main([vid])
         except Exception as e:                      # no captions, or YouTube refused: the storyboard still works
-            print(f"{vid}: NO TRANSCRIPT ({type(e).__name__}: {str(e).strip().splitlines()[0][:120]})")
+            print(f"{vid}: NO TRANSCRIPT ({type(e).__name__}) - make one with: python tools/transcribe.py {vid} --lang en")
     storyboard.storyboard(video_file(vid), vid, every)
     out = ROOT / "frames" / vid
     idx = json.loads((out / "index.json").read_text(encoding="utf-8"))

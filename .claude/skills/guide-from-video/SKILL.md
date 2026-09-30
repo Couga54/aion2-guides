@@ -34,8 +34,11 @@ It runs three tools; each can also be run on its own:
 - If the download fails, update yt-dlp first (`.venv/Scripts/python -m pip install -U yt-dlp`). If it still
   fails, or the video has no transcript, tell the user: they can put their own file through
   `tools/storyboard.py <file> <id>`.
-- No transcript: the storyboard still works, the sheets just have no caption lines. Say so in the analysis -
-  the conclusions then rest on the picture only.
+- No transcript on YouTube (fresh upload, captions switched off): make one locally with
+  `.venv/Scripts/python tools/transcribe.py <id> --lang en` (needs `pip install faster-whisper`; about 10 minutes per hour of
+  video on the CPU), then run `tools/storyboard.py <id>` again to put the lines on the sheets. Speech recognition mishears
+  game terms ("hug off" = Heart Gore) - take every skill name and number from the frames, and say in the analysis that the
+  transcript is machine-made.
 
 ## 4. Analyse transcript + frames
 
@@ -79,7 +82,8 @@ Then stop and wait. Nothing is edited before the user agrees; they may accept on
 
 Write the text in our own words - facts and numbers from the video, never its sentences.
 
-- [ ] Guide text in **both** `src/content/<class>/en.html` and `ru.html`.
+- [ ] Guide text in **both** `src/content/<class>/en.html` and `ru.html`. Skill cards: at most 2 specialization picks below
+      skill level 20 (1 below 12), and no pick that unlocks above the card's level.
 - [ ] Data the text leans on: `data/boards/presets.json`, `data/class_items.json` + `tools/fetch_items.py`,
       `data/progression.json` / `data/crafting.json` (their `sources` with `video` and timestamps in `at`).
 - [ ] `data/site.json`, the class: `updated` = today; `src.<mode>` = `["<authors>", "<today>"]` for every

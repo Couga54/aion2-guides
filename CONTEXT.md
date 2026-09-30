@@ -42,7 +42,10 @@ Requirements from the user (in their words, translated):
   expeditions 5 players, sanctuaries 10; cross-faction dungeons; Daevanion bonuses weaker.
   Level cap for global not announced (KR/TW went 45 → 50 in July 2026).
 - Skill levels: 10 from skill points, +4 Daevanion (→14), +1 per ring, +arcana (→20).
-  Specializations unlock at skill levels 8 / 12 / 16 (more picks as level rises).
+  Specialization options unlock at skill levels 8 / 8 / 8 / 12 / 16. Slots: 1 from level 8, 2 from 12, the 3rd only
+  at 20 (seen in Arthars' and Kaeria's videos: a skill at 14–16 shows two slots and a locked third). A skill card must
+  not show more picks than its level has slots, nor a pick that unlocks later — for "16 → 20" show the two picks for 16
+  and name the third in the text.
   Stigmas unlock around character Lv 22–23 (after Ascension). Daevanion boards:
   Nezekan 12 (Combat Speed, Cooldown Reduction), Zikel 20 (Damage Boost / Tolerance), Vaizel 30 (Critical Damage
   Boost / Tolerance), Triniel 40 (Multi-Hit Chance / Resist), Azphel 45 (PvP Damage Boost / Tolerance). Global has
