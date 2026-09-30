@@ -63,6 +63,9 @@ Work top to bottom, then rebuild (`.venv/Scripts/python tools/build.py`), check 
 
 - [ ] **Daevanion boards** — re-run `tools/fetch_boards.py` for every class with a board; the global data had no
       Ariel (PvE, lv 45) board before launch, only Azphel (PvP). If Ariel appears, update the Daevanion text in the guides.
+- [ ] **Templar, Pummel specializations** — the guide follows SolAshur's video (Punishing Strike heal, +12% on fewer targets,
+      extra Punishing Strike) instead of his older questlog build (−1s Punishment). Check what Templars run on live.
+      Also unclear in his video: which four stigmas the PvX page keeps on global (the page says to drop Second Skin and Executing Blade).
 - [ ] **Board node values** — the node tooltips show the orange (4-point) stats as percents: the data stores 150, shown as
       +1.5% (`BOARD_PCT_STATS` in `tools/build.py`). Compare with a node in the game (e.g. Nezekan → Combat Speed).
 

@@ -2,6 +2,31 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-09-30-templar",
+      "date": "2026-09-30",
+      "items": [
+        {
+          "href": "templar/",
+          "en": "<strong>Templar guide re-checked against SolAshur's video, frame by frame</strong> — Pummel specializations corrected, stigma sets for solo PvE and for dungeons, Assault Fury as a late PvP swap.",
+          "ru": "<strong>Гайд на Стража сверен с видео SolAshur по кадрам</strong> — исправлены специализации Града ударов, добавлены наборы стигм для соло-PvE и подземелий, Яростный натиск как поздняя замена в PvP."
+        },
+        {
+          "href": "templar/",
+          "en": "<strong>Templar: pets and gear</strong> — what to look for in each of the nine pet slots, item levels and attack of the weapons on the gear path, wing numbers, a note on PvP gear.",
+          "ru": "<strong>Страж: петы и экипировка</strong> — что искать в каждом из девяти слотов петов, уровни предметов и атака оружия на пути экипировки, цифры крыльев, заметка про PvP-экипировку."
+        },
+        {
+          "href": "templar/",
+          "en": "<strong>Templar: Daevanion boards</strong> — the real global boards with the route for PvE and PvP, and a tooltip on every node.",
+          "ru": "<strong>Страж: доски Daevanion</strong> — настоящие доски глобала с маршрутом для PvE и PvP и подсказкой на каждом узле."
+        },
+        {
+          "en": "<strong>Daevanion in all guides</strong> — corrected for global: five boards, no Ariel; the level-45 board Azphel gives only PvP Damage Boost and Tolerance.",
+          "ru": "<strong>Daevanion во всех гайдах</strong> — исправлено под глобал: досок пять, Ariel нет; доска 45 уровня Azphel даёт только урон и стойкость в PvP."
+        }
+      ]
+    },
+    {
       "id": "2026-09-30-gladiator-boards",
       "date": "2026-09-30",
       "items": [

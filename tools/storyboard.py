@@ -1,14 +1,18 @@
 """Storyboard a guide video to read what it shows on screen (builds, stigmas, stats) next to its transcript.
 
-  python tools/storyboard.py <video file> <youtube id> [--every 4]   frames + contact sheets
-  python tools/storyboard.py <video file> <youtube id> --at 93 7:45     full-resolution frames at these moments
+  python tools/storyboard.py <youtube id> [--every 2]                frames + contact sheets
+  python tools/storyboard.py <youtube id> --at 93 7:45               full-resolution frames at these moments
+  python tools/storyboard.py <video file> <youtube id> ...           the same for a video file of your own
+
+Without a file the video is frames/<youtube id>/video.* (tools/fetch_video.py). Without --every the step depends
+on the length: a frame every second up to 8 minutes, every 2 s up to 16, every 3 s up to 30, every 4 s for longer.
 
 Writes frames/<youtube id>/ (git-ignored, reusable later):
   f/<seconds>.jpg      small frames, only the ones that differ from the previous kept frame
   sheets/sheetNN.jpg   5x6 contact sheets with timestamps and the transcript line spoken at that moment
   hd/t<seconds>.jpg    full-resolution frames (--at)
   index.json           {video, file, every, duration, frames: [seconds]}
-Transcript: data/transcripts/<youtube id>.json (tools/fetch_transcript.py).
+Transcript: frames/<youtube id>/transcript.json (tools/fetch_transcript.py).
 """
 import json
 import subprocess
@@ -31,7 +35,7 @@ def secs(v):
 
 
 def transcript_at(vid):
-    p = ROOT / "data" / "transcripts" / f"{vid}.json"
+    p = ROOT / "frames" / vid / "transcript.json"
     rows = json.loads(p.read_text(encoding="utf-8"))["rows"] if p.exists() else []
     def line(t):
         cur = ""
@@ -52,14 +56,30 @@ def font(size):
     return ImageFont.load_default()
 
 
-def storyboard(video, vid, every):
+def duration(video):
+    """(seconds, 'hh:mm:ss.xx') of a video file."""
+    err = subprocess.run([FF, "-i", str(video)], capture_output=True, text=True, encoding="utf-8", errors="replace").stderr
+    if "Duration: " not in err:
+        return 0, None
+    txt = err.split("Duration: ")[1].split(",")[0]
+    h, m, s = txt.split(":")
+    return int(h) * 3600 + int(m) * 60 + float(s), txt
+
+
+def auto_every(seconds):
+    return 1 if seconds <= 8 * 60 else 2 if seconds <= 16 * 60 else 3 if seconds <= 30 * 60 else 4
+
+
+def storyboard(video, vid, every=None):
+    dur_s, dur = duration(video)
+    every = every or auto_every(dur_s)
     out = ROOT / "frames" / vid
     raw = out / "raw"
     for d in (raw, out / "f", out / "sheets"):
         d.mkdir(parents=True, exist_ok=True)
-    for f in raw.glob("*.jpg"):
+    for f in [*raw.glob("*.jpg"), *(out / "f").glob("*.jpg"), *(out / "sheets").glob("*.jpg")]:
         f.unlink()
-    subprocess.run([FF, "-hide_banner", "-loglevel", "error", "-i", video, "-vf", f"fps=1/{every},scale=480:-1",
+    subprocess.run([FF, "-hide_banner", "-loglevel", "error", "-i", str(video), "-vf", f"fps=1/{every},scale=480:-1",
                     "-q:v", "4", str(raw / "r%05d.jpg")], check=True)
     kept, last = [], None
     for i, f in enumerate(sorted(raw.glob("r*.jpg"))):
@@ -86,11 +106,9 @@ def storyboard(video, vid, every):
             d.text((x + 4, y + TH + 2), f"{t // 60}:{t % 60:02d}", font=fnt, fill=(255, 220, 90))
             d.text((x + 52, y + TH + 4), line(t)[:58], font=small, fill=(200, 200, 200))
         sheet.save(out / "sheets" / f"sheet{s // per:02d}.jpg", quality=80)
-    dur = subprocess.run([FF, "-i", video], capture_output=True, text=True).stderr
-    (out / "index.json").write_text(json.dumps({"video": vid, "file": str(video), "every": every,
-                                                "duration": dur.split("Duration: ")[1].split(",")[0] if "Duration: " in dur else None,
+    (out / "index.json").write_text(json.dumps({"video": vid, "file": str(video), "every": every, "duration": dur,
                                                 "frames": kept}, indent=1), encoding="utf-8")
-    print(f"{vid}: {len(kept)} frames kept, {(len(kept) + per - 1) // per} sheets -> {out}")
+    print(f"{vid}: a frame every {every} s, {len(kept)} frames kept, {(len(kept) + per - 1) // per} sheets -> {out}")
 
 
 def hd(video, vid, moments):
@@ -100,14 +118,21 @@ def hd(video, vid, moments):
         t = secs(m)
         p = out / f"t{t:05d}.jpg"
         if not p.exists():
-            subprocess.run([FF, "-hide_banner", "-loglevel", "error", "-ss", str(t), "-i", video, "-frames:v", "1", "-q:v", "2", str(p)], check=True)
+            subprocess.run([FF, "-hide_banner", "-loglevel", "error", "-ss", str(t), "-i", str(video), "-frames:v", "1", "-q:v", "2", str(p)], check=True)
         print(p)
 
 
 if __name__ == "__main__":
     args = sys.argv[1:]
-    video, vid = args[0], args[1]
+    if len(args) > 1 and not args[1].startswith("--"):
+        video, vid = args[0], args[1]
+    else:
+        from fetch_video import video_file
+        vid = args[0]
+        video = video_file(vid)
+        if not video:
+            sys.exit(f"no video in frames/{vid}/ - run tools/fetch_video.py {vid} first")
     if "--at" in args:
         hd(video, vid, args[args.index("--at") + 1:])
     else:
-        storyboard(video, vid, int(args[args.index("--every") + 1]) if "--every" in args else 4)
+        storyboard(video, vid, int(args[args.index("--every") + 1]) if "--every" in args else None)

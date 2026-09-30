@@ -9,12 +9,17 @@ Read `CONTEXT.md` first — it has the user's requirements, verified game facts 
 - Refresh skill data/icons: `.venv/Scripts/python tools/fetch_skills.py gladiator ranger templar assassin chanter sorcerer cleric elementalist`
 - Refresh class art: `.venv/Scripts/python tools/fetch_art.py`
 - Social previews (og images) after changing a title, lead or header art: `.venv/Scripts/python tools/make_og.py`, then build
-- Daevanion boards (interactive board on class pages): `.venv/Scripts/python tools/fetch_boards.py gladiator` → `data/boards/<class>.json`;
+- Daevanion boards (static route board on class pages; done for gladiator and templar): `.venv/Scripts/python tools/fetch_boards.py <class>` → `data/boards/<class>.json` (takes a few minutes);
   presets (which skills each mode takes) are in `data/boards/presets.json`; show it in a guide with `{{ dv_board('pve') }}`.
-- Storyboard a guide video (frames + contact sheets with the transcript line, local `frames/<id>/`, git-ignored):
-  `.venv/Scripts/python tools/storyboard.py <file.mp4> <youtube id>`; full-size frames: `... --at 7:45 465`.
+- Update a guide from a YouTube video: follow the `guide-from-video` skill (`.claude/skills/guide-from-video/SKILL.md`) —
+  prepare, analyse, compare with the guide, propose, and edit only after the user agrees. Prepare in one command:
+  `.venv/Scripts/python tools/video_guide.py <youtube url or id>` = `fetch_video.py` (Full HD, no sound → `frames/<id>/video.*`,
+  git-ignored) + `fetch_transcript.py` (→ `frames/<id>/transcript.json`) + `storyboard.py <id>` (frames + contact sheets with the transcript line; a frame every
+  1–4 s depending on the length, `--every N` to override). Full-size frames: `tools/storyboard.py <id> --at 7:45 465`.
+  A video file of your own: `tools/storyboard.py <file.mp4> <youtube id>`.
 - Refresh item icons/names for the guide pages (progression, crafting): `.venv/Scripts/python tools/fetch_items.py` (search: `--find <name>`)
-- Save a video transcript: `.venv/Scripts/python tools/fetch_transcript.py <video id>` → `data/transcripts/`
+- Videos, transcripts and frames are local working files in `frames/<youtube id>/` (git-ignored) — never commit them.
+  Transcript only: `.venv/Scripts/python tools/fetch_transcript.py <video id>` → `frames/<id>/transcript.json`.
 - Launch day (Oct 5): work through `LAUNCH.md` — every value that must be checked against the live servers.
 - Do not push without the user's explicit go-ahead; they check locally first.
 - Every guide text exists in both `src/content/<class>/en.html` and `ru.html` — change both.

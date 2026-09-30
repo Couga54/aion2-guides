@@ -44,7 +44,9 @@ Requirements from the user (in their words, translated):
 - Skill levels: 10 from skill points, +4 Daevanion (→14), +1 per ring, +arcana (→20).
   Specializations unlock at skill levels 8 / 12 / 16 (more picks as level rises).
   Stigmas unlock around character Lv 22–23 (after Ascension). Daevanion boards:
-  Nezekan 12, Zikel 20, Vaizel 30, Triniel 40, Ariel/Azphel 45 (PvE/PvP).
+  Nezekan 12 (Combat Speed, Cooldown Reduction), Zikel 20 (Damage Boost / Tolerance), Vaizel 30 (Critical Damage
+  Boost / Tolerance), Triniel 40 (Multi-Hit Chance / Resist), Azphel 45 (PvP Damage Boost / Tolerance). Global has
+  these five only — no Ariel (the PvE board of KR/TW).
 - Launch schedule (checked Sep 27, 2026; stored in `data/site.json` → `events`):
   Founder's pre-download **Sep 28, 13:00 UTC** (NC on the official YouTube channel: "9/28 at 6:00AM PDT");
   Early Access **Sep 30, 13:00 UTC** (NC: 16:00 Kyiv time, confirmed by the user);
@@ -64,7 +66,7 @@ Requirements from the user (in their words, translated):
   skills, toggles/auras and gap closers out. Guides render lines with `hotline()` and slots with `macroseq()`.
   Gladiator lines come from Arthars' video (RMB: Overhead Slam → Rending Blow → Rage Burst; E: Ruinous Blow;
   buffs: Lunge Stance + Zikel's); the macro slot order is our inference. Ranger lines from 7MMO.
-- Templar (Sep 27): from NoBS Game Guides' video (transcript in data/transcripts/JEWRiaOb9JY.json)
+- Templar (Sep 27): from NoBS Game Guides' video (transcript in frames/JEWRiaOb9JY/transcript.json, local)
   + Korean posts (Inven, Vortex, FM Korea) + MMO Codex. Korean tanks run 5–6 stigmas; the global set of 4
   is our pick: Doom Shield, Battlefield Banner, Taunt, Shield of Protection (PvP: Empyrean Lord's
   Punishment, Shield of Protection, Doom Shield, Noble Armor). The macro lines are adapted from KR, untested.
@@ -100,7 +102,8 @@ Requirements from the user (in their words, translated):
   (/<lang>/changelog/, templates/changelog.html). The "?" button and the footer link to that page; visiting it
   marks the latest entry as seen.
   Add an entry with a new id for every release.
-- `data/transcripts/` — YouTube transcripts guides are based on (`tools/fetch_transcript.py`).
+- `frames/<youtube id>/` — local, git-ignored working files per guide video: `video.*`, `transcript.json`
+  (`tools/fetch_transcript.py`), frames and contact sheets (`tools/video_guide.py`).
 - `data/sources.json` — Sources & credits page (`/<lang>/sources/`): creators with YouTube/Twitch links,
   guides/databases, launch info. Add a source here whenever a guide starts relying on it —
   and credit the author by name even when there is no link to give (`"links": []`).
@@ -189,7 +192,7 @@ Requirements from the user (in their words, translated):
   `src/content/<class>/en.html` + `ru.html`, changelog entry. Skill-point order: search the web if there is
   no solid data.
   Macro source: Grobs' "early game macros" slide from his macro video (HMod6Z4GrE0, transcript in
-  data/transcripts/) — saved as `data/sources/grobs-early-game-macros.webp` (all 8 classes; the transcript
+  frames/<id>/transcript.json) — saved as `data/sources/grobs-early-game-macros.webp` (all 8 classes; the transcript
   itself has no per-class layouts). Read from the slide: Cleric macro = 1 slot (≈ "Chain of Torment");
   Elementalist ("Spiritmaster") macro = 2 slots: "Summon: Water Spirit", "Elemental Fusion". The hotbar
   lines are icons only — identify them against the fetched icons.

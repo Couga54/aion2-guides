@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
 
 {# ============================== PvE ============================== #}
 {% call glance('pve') %}
@@ -16,7 +16,7 @@
     <h3>The build in one sentence</h3>
     <p>Shield skills trigger {{ s('judgment') }}: spam the Judgment line on a side button, hold the macro for Pummel and its procs, charge {{ s('punishment') }} on cooldown, and block the big hits to keep {{ s('fury') }} on the party.</p>
   </div>
-  <p class="note">This guide follows SolAshur's global-launch Templar build (solashur.com, September 27) and his video walkthrough.</p>
+  <p class="note">This guide follows SolAshur's global-launch Templar build (solashur.com, September 27) and his video walkthrough of it (September 29), re-checked against the video frames on September 30.</p>
 {% endcall %}
 
 {% call section('global', 'Global Season 1: what changes', 'pve pvp') %}
@@ -37,7 +37,7 @@
   <ul class="skill-grid">
     {% call skill('judgment', 'must', '20', [4, 3, 2]) %}Your core damage: Shield Smite, Warding Strike, Shield Rush and Doom Shield trigger it, and at 16 its cooldown disappears.{% endcall %}
     {% call skill('punishment', 'must', '20', [1, 4, 2]) %}Charged burst — DoT, guaranteed crit through Block and +30% skill speed. Never take the mobile or HP-absorb picks: "bait" once you have enough attack speed.{% endcall %}
-    {% call skill('pummel', 'must', '20', [2, 4, 3]) %}Filler and stagger; every Punishing Strike shortens Punishment. Get it to 20 as soon as possible.{% endcall %}
+    {% call skill('pummel', 'must', '20', [1, 2, 4]) %}Filler and stagger. SolAshur's picks all go into Punishing Strike — it heals you and fires a second time; he skips the −1s Punishment pick. Get it to 20 as soon as possible.{% endcall %}
     {% call skill('annihilate', 'must', '16 → 20', [2, 3, 0]) %}+100% damage to CC-immune bosses, −10s cooldown. The alternate build takes it to 20 for the AoE knockdown pick.{% endcall %}
     {% call skill('shield-smite', 'must', '16', [3, 2]) %}Triggers Judgment; −2s cooldown and a 50% chance to proc Debilitating Smash.{% endcall %}
     {% call skill('debilitating-smash', 'opt', '12', [3, 0]) %}Proc after a block or Shield Smite; ignores Block and Evasion.{% endcall %}
@@ -55,7 +55,7 @@
       <tr><td>1</td><td>{{ s('fury') }}</td><td>+PvE Damage Boost for you <em>and the party</em> after every block — the reason groups want a Templar.</td></tr>
       <tr><td>2</td><td>{{ s('punishing-benediction') }}</td><td>Critical Hit and an extra-damage proc on every hit; the Bell arcana rolls it.</td></tr>
       <tr><td>3</td><td>{{ s('insulting-roar') }}</td><td>Enmity plus Attack on front attacks.</td></tr>
-      <tr><td>4</td><td>{{ s('ironclad-defense') }}</td><td>Defense and Endurance — the core of the endurance stat build.</td></tr>
+      <tr><td>4</td><td>{{ s('ironclad-defense') }}</td><td>Defense and Endurance — the core of the endurance stat build. On SolAshur's character (+6 levels) it gives +37% Defense and +16% Endurance.</td></tr>
     </tbody>
   </table></div>
 {% endcall %}
@@ -64,11 +64,11 @@
   <p>If you start on day one, this is the route:</p>
   <ol>
     <li><strong>Holy Spirit set</strong> — farm it in the lower Abyss (AP, pets and gold drops per kill, plus boss spawns) or anywhere in the open world. Aim for about <strong>1,600 combat power</strong>.</li>
-    <li><strong>Skip the first dungeon tier</strong>: go to Urugugu Canyon and Vakron Sky Island for the sword, the guard and the Vakron armor.</li>
-    <li>Use <strong>Transcendence</strong> to get ready for <strong>Fire Temple</strong> (Enraged Kromede weapon) and <strong>Ferocious Horn</strong> (Nuakum armor). Nuakum is the safer farm: nearly every piece is an upgrade, while the weapon chest can drop other classes' weapons.</li>
-    <li><strong>End goal</strong> — PvE: White Dragon Lord sword, guard and accessories with Nuakum armor (full White Dragon armor only adds PvE tolerance and is whale territory). PvX: Enraged Kromede sword with the White Dragon guard.</li>
+    <li><strong>Skip the first dungeon tier</strong>: <strong>Urugugu Canyon</strong> for the Aulamus Longsword (item level 76, attack 308–385, binds on pickup) and <strong>Vakron Sky Island</strong> for the Vakron Guard (item level 76) and the Vakron armor. Keep upgrading the Vakron pieces until Fire Temple is doable.</li>
+    <li>Use <strong>Transcendence</strong> to get ready for <strong>Fire Temple</strong> — the Enraged Kromede Sword (item level 84, attack 340–425, extended range) — and <strong>Ferocious Horn</strong> (Nuakum armor). Nuakum is the safer farm: nearly every piece is an upgrade, while the weapon chest can drop other classes' weapons.</li>
+    <li><strong>End goal</strong> — PvE: White Dragon Lord sword, then the guard, then the accessories, with Nuakum armor (full White Dragon armor only adds PvE tolerance and is whale territory). PvX, the setup for most players: Enraged Kromede sword, White Dragon guard, Nuakum armor, White Dragon accessories.</li>
   </ol>
-  <p><strong>Wings:</strong> Dark Veil early (attack bonus, damage boost), Talisra late (attack, accuracy, cooldown reduction).</p>
+  <p><strong>Wings:</strong> Dark Veil early (attack bonus, damage boost), Talisra late — Attack 60, Defense 400, Accuracy 35 and 4% cooldown reduction. Stack cooldown reduction as early as you can: shorter shield-skill cooldowns mean more Judgment procs. Collect every other wing too — their "owned" effects and flight power help with Abyss farming.</p>
 {% endcall %}
 
 {% call section('stats', 'Stats, soul binds, pets', 'pve pvp') %}
@@ -91,8 +91,18 @@
       <tr><td>Rings / earrings / necklace</td><td colspan="2">Rings: your top 4 active skills · Earrings: top 4 passives · Necklace: 2 actives + Attack, Critical Hit, Weapon Damage Boost</td></tr>
     </tbody>
   </table></div>
-  <p><strong>Pets (Genus Insight)</strong> — don't skip them; in a couple of weeks they are the difference between hitting and missing. Non-special insight gives Attack and Accuracy, special insight Attack and Damage Boost. Lock slots in this order: <strong>4 → 7 → 2 and 8</strong> → the rest.</p>
-  <p><strong>Pantheon:</strong> Wisdom (Double Chance) first, Space (Block); then <span data-only="pve">Illusion (cooldown reduction) for PvE</span><span data-only="pvp">Time (attack speed) for PvP</span>.</p>
+  <p><strong>Pets (Genus Insight)</strong> — don't skip them; in a couple of weeks they are the difference between hitting and missing. Non-special insight gives Attack and Accuracy, special insight Attack and Damage Boost. Level the Genus to <strong>10</strong> as soon as you can for better values. Locking is your first big kinah sink: lock only the important stats that rolled their unique 50% maximum, never filler. Lock slots in this order: <strong>4 → 7 → 2 and 8</strong> → the rest (Attack, Accuracy, Critical Hit).</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Slot</th><th>Non-special insight</th><th>Special insight</th></tr></thead>
+    <tbody>
+      <tr><td>1, 4, 7</td><td>Critical Hit, Accuracy, Block (or Evasion)</td><td>Max Attack, Attack Bonus</td></tr>
+      <tr><td>2, 5, 8</td><td>Max Attack, Attack Bonus</td><td>Max Attack, Attack Bonus</td></tr>
+      <tr><td>3</td><td colspan="2">Damage Boost, Weapon Damage Boost, Double Chance or Perfect Chance</td></tr>
+      <tr><td>6</td><td>Critical Hit, Accuracy, Damage Tolerance</td><td>Damage Tolerance, Weapon Damage Tolerance</td></tr>
+      <tr><td>9</td><td>Damage Boost, Weapon Damage Boost, Double Chance or Perfect Chance</td><td>Damage Boost or Perfect Chance</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>Pantheon:</strong> Wisdom (Double Chance) first, Space (Block); then <span data-only="pve">Illusion (cooldown reduction) for PvE</span><span data-only="pvp">Time (attack speed) for PvP</span>. Don't spend resources forcing portraits early — they unlock as you play.</p>
 {% endcall %}
 
 {% call section('arcana', 'Arcana', 'pve') %}
@@ -113,9 +123,24 @@
   <div class="callout"><ul>
     <li><strong>Priority:</strong> blue nodes for {{ s('judgment') }}, {{ s('punishment') }}, {{ s('pummel') }}, then {{ s('shield-smite') }} and {{ s('annihilate') }}; orange nodes next.</li>
     <li><strong>Skip:</strong> MP nodes (put the points into Attack), {{ s('flash-rampage') }} nodes, and the green Warding Shield / Guardian Shield nodes unless you have spare points.</li>
-    <li data-only="pve"><strong>Ariel, not Azphel</strong> at 45.</li>
-    <li data-only="pvp"><strong>Azphel, not Ariel</strong> at 45.</li>
+    <li data-only="pve"><strong>No Ariel on global:</strong> there are five boards, and the level-45 one, Azphel, gives only PvP Damage Boost and Tolerance — in PvE finish the first four.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (level 45) is all PvP Damage Boost and Tolerance — take it.</li>
   </ul></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Board</th><th>Unlock</th><th>Orange nodes</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Lv 12</td><td>Combat Speed, Cooldown Reduction</td></tr>
+      <tr><td>Zikel</td><td>Lv 20</td><td>Damage Boost, Damage Tolerance</td></tr>
+      <tr><td>Vaizel</td><td>Lv 30</td><td>Critical Damage Boost and Tolerance</td></tr>
+      <tr><td>Triniel</td><td>Lv 40</td><td>Multi-Hit Chance and Resist</td></tr>
+      <tr><td>Azphel</td><td>Lv 45</td><td>PvP Damage Boost and Tolerance — no skill nodes</td></tr>
+    </tbody>
+  </table></div>
+  <h3>The route on the boards</h3>
+  <p>The real global boards from the game data. Gold marks the cheapest path from Start to the nodes this guide takes — the blue nodes of the five priority skills and the orange nodes; hover any node to see what it gives.</p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Boards and costs come from the global client data (questlog.gg); the path is calculated, not taken from a video. Stat values may still change at launch — check the in-game board before committing a full route.</p>
 {% endcall %}
 
 {% call section('stigmas', 'Stigmas', 'pve') %}
@@ -124,14 +149,16 @@
     {% call skill('empyrean-lords-punishment', 'must', 'Lv 15', upto=15) %}AoE damage with big stagger (+50 at 10); at 15 +10% PvE Damage Boost. Needed on bosses with stagger mechanics.{% endcall %}
     {% call skill('battlefield-banner', 'must', 'Lv 15', upto=15) %}Your damage buff: Multi-Hit, Weapon Damage Boost and Attack from Defense. The level-10 and 15 tiers are the good ones.{% endcall %}
     {% call skill('doom-shield', 'must', 'Lv 15', upto=15) %}Your main Judgment trigger. At 15 it resets on a kill — vital for PvX and pet farming.{% endcall %}
-    {% call skill('taunt', 'must', 'Lv 5', upto=5) %}Aggro in group content. Drop it for solo PvE.{% endcall %}
+    {% call skill('taunt', 'must', 'Lv 5', upto=5) %}Aggro in group content. Solo, take Nezekan's Shield instead.{% endcall %}
     {% call skill('nezekans-shield', 'opt', 'alt.', upto=15) %}Survivability swap; not good before 15.{% endcall %}
-    {% call skill('comrade-in-arms', 'opt', 'group', upto=15) %}Survivability swap in groups. Drop it for solo PvE.{% endcall %}
+    {% call skill('comrade-in-arms', 'opt', 'group', upto=15) %}Survivability swap in dungeons, in place of Doom Shield. No use solo.{% endcall %}
   </ul>
   <div class="table-wrap"><table>
     <thead><tr><th>Profile</th><th>4 stigmas</th><th>Alternates</th></tr></thead>
     <tbody>
       <tr><td>PvE</td><td>Empyrean Lord's Punishment, Battlefield Banner, Doom Shield, Taunt</td><td>Nezekan's Shield, Comrade in Arms</td></tr>
+      <tr><td>PvE, solo</td><td>Empyrean Lord's Punishment, Battlefield Banner, Doom Shield, Nezekan's Shield</td><td>No aggro or team tools needed alone</td></tr>
+      <tr><td>PvE, dungeon with more survivability</td><td>Empyrean Lord's Punishment, Battlefield Banner, Taunt, Comrade in Arms</td><td>Costs Doom Shield's Judgment procs</td></tr>
       <tr><td>PvX (all-purpose)</td><td>Empyrean Lord's Punishment, Executing Blade, Battlefield Banner, Doom Shield</td><td>Nezekan's Shield, Comrade in Arms, Second Skin</td></tr>
     </tbody>
   </table></div>
@@ -183,13 +210,14 @@
 {% call section('intro-pvp', 'Overview', 'pvp') %}
   <p>In PvP the Templar keeps the same holy trinity and the same Judgment loop; what changes is the stigmas. {{ s('executing-blade') }} gives you an edge in every duel, and {{ s('annihilate') }} at 20 turns into an AoE knockdown.</p>
   <p>Melee gets kited — a strong weapon matters less when you can't reach the target, so play around your gap-closers and Doom Shield.</p>
+  <p class="note">Dedicated PvP gear sets from KR/TW are not confirmed for global, so the PvX gear from the PvE tab is the plan. If PvP gear does appear: level your PvP stigmas first, and only then spend on a PvP weapon or armor.</p>
 {% endcall %}
 
 {% call section('skills-pvp', 'Skills', 'pvp') %}
   <ul class="skill-grid">
     {% call skill('judgment', 'must', '20', [4, 3, 2]) %}Same loop as in PvE: shield skills trigger it.{% endcall %}
     {% call skill('punishment', 'must', '20', [1, 4, 2]) %}Burst through Block and Evasion.{% endcall %}
-    {% call skill('pummel', 'must', '20', [2, 4, 3]) %}Filler; keeps Punishment's cooldown short.{% endcall %}
+    {% call skill('pummel', 'must', '20', [1, 2, 4]) %}Filler between Judgment procs; Punishing Strike heals you and fires a second time.{% endcall %}
     {% call skill('annihilate', 'must', '20', [2, 3, 4]) %}The alternate build: at 20 it hits up to four enemies that are stunned or knocked down, with a 30% knockdown chance — an AoE knockdown you can spam with the −10s pick.{% endcall %}
     {% call skill('shield-smite', 'opt', '16', [3, 2]) %}Judgment trigger and stun source.{% endcall %}
   </ul>
@@ -203,6 +231,7 @@
     {% call skill('nezekans-shield', 'must', 'Lv 15', upto=15) %}Against physical attackers. Not good before 15.{% endcall %}
     {% call skill('second-skin', 'opt', 'vs magic', upto=10) %}Against magic damage — swap it in for Empyrean Lord's Punishment when you need to survive.{% endcall %}
     {% call skill('comrade-in-arms', 'opt', 'group PvP', upto=20) %}In group PvP replace Nezekan's Shield with it; best at 20.{% endcall %}
+    {% call skill('assault-fury', 'opt', 'late game') %}A late-game swap once your gear is deep: a ranged AoE hit with a stun chance. Put it in place of your weakest slot.{% endcall %}
   </ul>
 {% endcall %}
 
