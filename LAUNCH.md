@@ -56,7 +56,7 @@ Work top to bottom, then rebuild (`.venv/Scripts/python tools/build.py`), check 
 - [ ] **All guides**, section "Global Season 1: what changes": replace "expected / not confirmed" statements with facts.
 - [ ] **PvP** — Ranger, Assassin, Chanter, Sorcerer have PvP switched off (`modes_off` in `data/site.json`).
       Turn it back on only with a real global source; write the PvP text from that source.
-- [ ] **Patch** — every class has `patch: "TW"` in `data/site.json` (the builds come from Taiwan-server videos; the WIP marks were
+- [ ] **Patch** — every class has `patch: "TW"` (Gladiator and Sorcerer `"TW/KR"` — Korean text guides are part of their base) in `data/site.json` (the builds come from Taiwan-server videos; the WIP marks were
       removed on Sep 30). When a guide is re-checked on the live global servers, set its `patch` to the global patch.
 - [ ] **Sources** — after re-checking a mode, update its date in `classes[].src` (shown in the guide header)
       and `classes[].updated`.

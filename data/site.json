@@ -20,7 +20,7 @@
   ],
   "updated": "2026-09-30",
   "classes": [
-    {"slug": "gladiator", "status": "ready", "src": {"pve": ["Arthars Gaming", "2026-09-30"], "pvp": ["Vortex Gaming (KR)", "2026-09-27"], "lvl": ["TitanTheF · Grobs", "2026-09-30"]}, "updated": "2026-09-30", "patch": "TW", "accent": "crimson", "art_pos": "40% 8%",
+    {"slug": "gladiator", "status": "ready", "src": {"pve": ["Arthars Gaming", "2026-09-30"], "pvp": ["Vortex Gaming (KR)", "2026-09-27"], "lvl": ["TitanTheF · Grobs", "2026-09-30"]}, "updated": "2026-09-30", "patch": "TW/KR", "accent": "crimson", "art_pos": "40% 8%",
      "name": {"en": "Gladiator", "ru": "Гладиатор"},
      "role": {"en": "Melee DPS · bruiser", "ru": "Ближний бой · брузер"},
      "weapon": {"en": "Greatsword", "ru": "Двуручный меч"},
@@ -48,7 +48,7 @@
      "difficulty": 3,
      "pitch": {"en": "Insignia stacks, crits that fire Heart Gore and a clone that removes its cooldown — the highest burst in melee, if you stay behind the target.",
                "ru": "Стаки эмблем, криты, запускающие Пронзание сердца, и двойник, который снимает с него перезарядку — самый сильный бурст в ближнем бою, если держишься за спиной цели."}},
-    {"slug": "sorcerer", "status": "ready", "src": {"pve": ["aLuckyRO (TW client) · Vortex Gaming (KR)", "2026-09-30"], "lvl": ["MMO Codex · Grobs", "2026-09-28"]}, "modes_off": ["pvp"], "updated": "2026-09-30", "patch": "TW", "accent": "frost",
+    {"slug": "sorcerer", "status": "ready", "src": {"pve": ["aLuckyRO (TW client) · Vortex Gaming (KR)", "2026-09-30"], "lvl": ["MMO Codex · Grobs", "2026-09-28"]}, "modes_off": ["pvp"], "updated": "2026-09-30", "patch": "TW/KR", "accent": "frost",
      "name": {"en": "Sorcerer", "ru": "Волшебник"},
      "role": {"en": "Ranged magic DPS", "ru": "Магический урон издалека"},
      "weapon": {"en": "Spellbook", "ru": "Гримуар"},
