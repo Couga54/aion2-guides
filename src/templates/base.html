@@ -171,7 +171,7 @@
       <a class="brand brand-sm" href="{{ root }}{{ lang }}/">{{ t.site_name }}</a>
       <p>{{ t.footer_disclaimer }}</p>
       <p>{{ t.footer_updated }}: {{ updated }} ({{ t.footer_before_launch }}).</p>
-      <p><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }}</a> · <a href="{{ root }}{{ lang }}/changelog/">{{ t.wn_history }}</a> · <a class="report-link" href="{{ SITE.repo }}/issues/new" target="_blank" rel="noopener" title="{{ t.report_hint }}" data-body="{{ t.report_body }}" data-page="{{ lang }}/{{ path }}">{{ t.report }}</a>{% if SITE.discord %} · {{ discord_btn('footer-discord') }}{% endif %}</p>
+      <p><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }}</a> · <a href="{{ root }}{{ lang }}/changelog/">{{ t.wn_history }}</a> · {% if SITE.get('feedback_url') %}<button type="button" class="link-btn report-open">{{ t.report }}</button>{% else %}<a class="report-link" href="{{ SITE.repo }}/issues/new" target="_blank" rel="noopener" title="{{ t.report_hint }}" data-body="{{ t.report_body }}" data-page="{{ lang }}/{{ path }}">{{ t.report }}</a>{% endif %}{% if SITE.discord %} · {{ discord_btn('footer-discord') }}{% endif %}</p>
     </div>
     {% block footer_extra %}{% endblock %}
   </div>
@@ -208,6 +208,31 @@
     {% endfor %}
     <button class="btn btn-primary wn-ok" value="close">{{ t.wn_close }}</button>
     <p class="wn-all"><a href="{{ root }}{{ lang }}/changelog/">{{ t.wn_all }} →</a></p>
+  </form>
+</dialog>
+{% endif %}
+{% if SITE.get('feedback_url') %}
+{#- Report form: sent to the owner's Telegram through the Worker in site.json "feedback_url". -#}
+<dialog class="whatsnew feedback" aria-labelledby="fb-title" data-url="{{ SITE.feedback_url }}" data-page="{{ lang }}/{{ path }}" data-lang="{{ lang }}">
+  <form class="wn-in fb-form" novalidate>
+    <div class="wn-head">
+      <h2 id="fb-title">{{ t.report }}</h2>
+      <button type="button" class="icon-btn fb-x" aria-label="{{ t.wn_close }}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <p class="fb-hint">{{ t.fb_hint }}</p>
+    <label class="fb-label" for="fb-text">{{ t.fb_text }}</label>
+    <textarea id="fb-text" class="fb-text" name="text" rows="6" maxlength="2000" required placeholder="{{ t.fb_ph }}"></textarea>
+    <label class="fb-label" for="fb-contact">{{ t.fb_contact }}</label>
+    <input id="fb-contact" class="fb-contact" name="contact" type="text" maxlength="100" autocomplete="off" placeholder="{{ t.fb_contact_ph }}">
+    <input class="fb-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="fb-meta">{{ t.fb_meta }} <b class="fb-where"></b></p>
+    <p class="fb-status" role="status" data-sending="{{ t.fb_sending }}" data-ok="{{ t.fb_ok }}" data-err="{{ t.fb_err }}" data-rate="{{ t.fb_rate }}" data-short="{{ t.fb_short }}"></p>
+    <div class="fb-actions">
+      <button type="submit" class="btn btn-primary fb-send">{{ t.fb_send }}</button>
+      <button type="button" class="btn btn-ghost fb-cancel">{{ t.fb_cancel }}</button>
+    </div>
   </form>
 </dialog>
 {% endif %}

@@ -675,6 +675,23 @@ td:first-child{font-weight:600;color:var(--text);white-space:nowrap;}
 .wn-entry li a:hover{border-color:var(--gold);color:var(--text);}
 .wn-entry li strong{color:var(--text);}
 .wn-ok{margin-top:10px;width:100%;justify-content:center;}
+/* report form (same shell as What's new) */
+.fb-hint{margin:0 0 14px;font-size:.9rem;color:var(--text-dim);}
+.fb-label{display:block;margin:0 0 5px;font:700 .66rem var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint);}
+.fb-text,.fb-contact{display:block;width:100%;margin:0 0 14px;padding:10px 12px;border-radius:10px;border:1px solid var(--border-2);background:var(--bg-2);color:var(--text);font:inherit;font-size:.92rem;line-height:1.5;}
+.fb-text{resize:vertical;min-height:120px;}
+.fb-text:focus,.fb-contact:focus{outline:none;border-color:var(--gold);}
+.fb-text::placeholder,.fb-contact::placeholder{color:var(--text-faint);}
+.fb-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;}
+.fb-meta{margin:0 0 10px;font-size:.76rem;color:var(--text-faint);}
+.fb-meta b{font:600 .74rem var(--font-mono);color:var(--text-dim);}
+.fb-status{min-height:1.4em;margin:0 0 8px;font-size:.86rem;color:var(--text-dim);}
+.fb-status.is-ok{color:var(--good);}
+.fb-status.is-err{color:var(--warn);}
+.fb-actions{display:flex;gap:8px;}
+.fb-actions .btn{justify-content:center;}
+.fb-send{flex:1;}
+.fb-send:disabled{opacity:.55;cursor:default;}
 .link-btn{background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer;}
 .wn-top{position:relative;}
 .wn-top svg{width:18px;height:18px;}

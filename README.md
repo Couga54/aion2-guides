@@ -112,6 +112,8 @@ This downloads the video (Full HD, no sound), saves its transcript and cuts it i
 
 Push to `main`; GitHub Pages serves the `docs/` folder (**Settings → Pages → Deploy from a branch**, branch `main`, folder `/docs`).
 
+Report form: the "Report a mistake" buttons open a form that is sent to the owner's Telegram through a small Cloudflare Worker — its code is in `tools/feedback-worker/worker.js` (secrets `BOT_TOKEN` and `CHAT_ID` are set in the Worker, never in the repo), its address is `feedback_url` in `data/site.json` (empty string = the buttons open a GitHub issue instead).
+
 Google Analytics: the measurement ID is `ga` in `data/site.json` (empty string turns it off); the tag is not loaded on localhost.
 
 `LAUNCH.md` lists every value that has to be re-checked against the live servers; `CONTEXT.md` holds the project requirements and verified game facts.

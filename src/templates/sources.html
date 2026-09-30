@@ -62,7 +62,7 @@
     <section class="src-about" aria-labelledby="h-about">
       <h2 id="h-about">{{ t.src_ai_title }}</h2>
       <p>{{ t.src_ai }}</p>
-      <p><a href="https://github.com/Couga54/aion2-guides/issues" target="_blank" rel="noopener">{{ t.src_ai_fix }}</a></p>
+      <p>{% if SITE.get('feedback_url') %}<button type="button" class="link-btn report-open">{{ t.src_ai_fix }}</button>{% else %}<a href="{{ SITE.repo }}/issues" target="_blank" rel="noopener">{{ t.src_ai_fix }}</a>{% endif %}</p>
     </section>
   </div>
 </main>

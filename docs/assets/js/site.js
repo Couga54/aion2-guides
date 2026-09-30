@@ -42,7 +42,7 @@
   });
 
   // ---- what's new: the latest entry pops up once; the "?" button leads to the changelog page ----
-  var wn = document.querySelector('.whatsnew');
+  var wn = document.querySelector('.whatsnew:not(.feedback)');
   var top = document.querySelector('.wn-top');
   var latest = wn ? wn.dataset.id : null;
   // Opening the changelog page counts as having seen the latest entry.
@@ -169,7 +169,39 @@
     });
   });
 
-  // ---- "Report a mistake": prefill a GitHub issue with this page and mode ----
+  // ---- "Report a mistake": a form sent to the site owner (Telegram, through the Worker in site.json) ----
+  var fb = document.querySelector('.feedback');
+  if (fb && typeof fb.showModal === 'function') {
+    var fbForm = fb.querySelector('.fb-form'), fbText = fb.querySelector('.fb-text'), fbStatus = fb.querySelector('.fb-status'), fbSend = fb.querySelector('.fb-send');
+    var fbMode = function () { return document.querySelector('.guide') ? root.dataset.mode : ''; };
+    var fbSay = function (key, kind) { fbStatus.textContent = key ? fbStatus.dataset[key] : ''; fbStatus.className = 'fb-status' + (kind ? ' is-' + kind : ''); };
+    document.querySelectorAll('.report-open').forEach(function (b) {
+      b.addEventListener('click', function () {
+        fb.querySelector('.fb-where').textContent = fb.dataset.page + (fbMode() ? ' · ' + fbMode().toUpperCase() : '');
+        fbSay(''); fbSend.disabled = false;
+        fb.showModal(); fbText.focus();
+      });
+    });
+    fb.addEventListener('click', function (ev) { if (ev.target === fb) fb.close(); });
+    fb.querySelectorAll('.fb-x, .fb-cancel').forEach(function (b) { b.addEventListener('click', function () { fb.close(); }); });
+    fbForm.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      if (fbText.value.trim().length < 5) { fbSay('short', 'err'); fbText.focus(); return; }
+      fbSend.disabled = true; fbSay('sending');
+      fetch(fb.dataset.url, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: fbText.value, contact: fb.querySelector('.fb-contact').value, hp: fb.querySelector('.fb-hp').value,
+          page: fb.dataset.page + location.hash, lang: fb.dataset.lang, mode: fbMode() })
+      }).then(function (r) { return r.json().then(function (j) { return { s: r.status, j: j }; }); }).then(function (r) {
+        if (r.j && r.j.ok) {
+          fbSay('ok', 'ok'); fbText.value = '';
+          setTimeout(function () { if (fb.open) fb.close(); }, 1800);
+        } else { fbSay(r.s === 429 ? 'rate' : 'err', 'err'); fbSend.disabled = false; }
+      }).catch(function () { fbSay('err', 'err'); fbSend.disabled = false; });
+    });
+  }
+
+  // ---- fallback without the form: prefill a GitHub issue with this page and mode ----
   document.querySelectorAll('.report-link').forEach(function (a) {
     a.addEventListener('click', function () {
       var mode = document.querySelector('.guide') ? root.dataset.mode : '-';
