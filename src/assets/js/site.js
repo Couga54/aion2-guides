@@ -188,6 +188,49 @@
     });
   });
 
+  // ---- countdown to the next launch event in the top bar (every page) ------
+  var topTimer = document.querySelector('.top-timer');
+  if (topTimer) {
+    var ttList = [];
+    try { ttList = JSON.parse(topTimer.dataset.events).map(function (e) { return { at: Date.parse(e.at), n: e.n, o: e.o }; }); } catch (err) {}
+    var ttName = topTimer.querySelector('.tt-name'), ttTime = topTimer.querySelector('.tt-time');
+    var p2 = function (n) { return (n < 10 ? '0' : '') + n; };
+    var ttTick = function () {
+      var now = Date.now(), next = null, live = null;
+      ttList.forEach(function (e) {
+        if (!next && e.at > now) next = e;
+        if (e.o && e.at <= now && now < e.at + 864e5) live = e;   // open for less than a day
+      });
+      topTimer.classList.toggle('is-live', !!live);
+      if (live) {
+        ttName.textContent = live.o;
+        ttTime.innerHTML = '<span class="tt-short">' + topTimer.dataset.open + '</span>';
+        setTimeout(ttTick, 30000);
+        return;
+      }
+      if (!next) { topTimer.hidden = true; return; }
+      var ms = next.at - now, d = Math.floor(ms / 864e5), h = Math.floor(ms / 36e5) % 24, m = Math.floor(ms / 6e4) % 60, sec = Math.floor(ms / 1e3) % 60;
+      var U = topTimer.dataset.units.split(',');
+      ttName.textContent = next.n;
+      // full form for wide screens, a short one (two units) for phones
+      ttTime.innerHTML = '<span class="tt-full">' + (d ? d + U[0] + ' ' : '') + p2(h) + ':' + p2(m) + ':' + p2(sec) + '</span>' +
+        '<span class="tt-short">' + (d ? d + U[0] + ' ' + h + U[1] : h ? p2(h) + ':' + p2(m) : p2(m) + ':' + p2(sec)) + '</span>';
+      setTimeout(ttTick, 1000 - (Date.now() % 1000));
+    };
+    ttTick();
+    // Home: the schedule panel already shows the timers, so the chip appears only when the panel scrolls away.
+    var ttPanel = document.querySelector('.events');
+    if (ttPanel && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        var on = entries[0].isIntersecting;
+        topTimer.classList.toggle('is-away', on);
+        root.classList.toggle('tt-panel', on);
+      }, { rootMargin: '-56px 0px 0px 0px' }).observe(ttPanel);
+    } else {
+      topTimer.classList.remove('is-away');
+    }
+  }
+
   // ---- launch schedule timers (home) ---------------------------------------
   var evBox = document.querySelector('.events');
   if (evBox) {

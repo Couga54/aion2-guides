@@ -104,6 +104,42 @@ p{margin:0 0 12px;}
 .topbar-tools{margin-left:auto;display:flex;align-items:center;gap:6px;}
 .lang-switch{font:700 .75rem var(--font-mono);color:var(--text-dim);text-decoration:none;border:1px solid var(--border-2);border-radius:999px;padding:6px 10px;}
 .lang-switch:hover{color:var(--text);border-color:var(--gold);}
+/* countdown chip in the top bar */
+.top-timer{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 13px;border-radius:999px;border:1px solid color-mix(in srgb,var(--gold) 40%,var(--border-2));background:var(--accent-soft);color:var(--text);text-decoration:none;white-space:nowrap;font-size:.8rem;transition:opacity .3s,transform .3s,border-color .2s;}
+.top-timer:hover{border-color:var(--gold);}
+.top-timer[hidden]{display:none;}
+.top-timer.is-away{opacity:0;transform:translateY(-8px);pointer-events:none;visibility:hidden;transition:opacity .3s,transform .3s,visibility 0s .3s;}
+.tt-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:tt-pulse 2s ease-in-out infinite;}
+.tt-name{font-weight:600;color:var(--text-dim);}
+.tt-time{font:700 .8rem var(--font-mono);font-variant-numeric:tabular-nums;color:var(--gold);}
+@keyframes tt-pulse{50%{opacity:.35;}}
+@media (max-width: 900px){ .tt-name{display:none;} }
+.top-timer.is-live{border-color:color-mix(in srgb,var(--good) 45%,var(--border-2));background:var(--good-bg);}
+.is-live .tt-dot{background:var(--good);}
+.is-live .tt-name{color:var(--good);}
+.is-live .tt-time{color:var(--good);}
+.tt-short{display:none;}
+@media (max-width: 900px){ .is-live .tt-name{display:inline;} }
+@media (max-width: 480px){
+  .top-timer{height:32px;padding:0 7px;gap:0;}
+  .tt-dot,.tt-full{display:none;}
+  .tt-short{display:inline;}
+  .top-timer.is-live{padding:0 5px;}
+  .is-live .tt-name{display:none;}
+  .tt-time{font-size:.7rem;}
+  /* room for the chip on a phone: the What's new button goes (it is also in the footer), the bar tightens a little */
+  .topbar:has(.top-timer:not([hidden])) .wn-top{display:none;}
+  .topbar:has(.top-timer:not([hidden])) .topbar-in{gap:6px;padding-inline:12px;}
+  .topbar:has(.top-timer:not([hidden])) .topbar-tools{gap:3px;}
+}
+/* moving between pages: the home timer card and the chip are one element for the browser's page transition */
+@media (prefers-reduced-motion: no-preference){
+  @view-transition{navigation:auto;}
+  .top-timer:not(.is-away){view-transition-name:launch-timer;}
+  .tt-panel .ev.is-next{view-transition-name:launch-timer;}
+}
+@media (prefers-reduced-motion: reduce){ .tt-dot{animation:none;} .top-timer{transition:none;} }
+@media print{ .top-timer{display:none;} }
 .icon-btn{width:36px;height:36px;display:grid;place-items:center;border-radius:999px;border:1px solid var(--border-2);background:none;color:var(--text-dim);cursor:pointer;padding:0;}
 .icon-btn:hover{color:var(--text);border-color:var(--gold);}
 .icon-btn svg{width:18px;height:18px;}
