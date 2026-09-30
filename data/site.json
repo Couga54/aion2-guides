@@ -52,7 +52,7 @@
      "name": {"en": "Sorcerer", "ru": "Волшебник"},
      "role": {"en": "Ranged magic DPS", "ru": "Магический урон издалека"},
      "weapon": {"en": "Spellbook", "ru": "Гримуар"},
-     "difficulty": 3,
+     "difficulty": 2,
      "pitch": {"en": "A glass-cannon caster that mixes fire and ice: Fire Mark and Blaze for damage, Frost and roots for control, and huge burst behind Element Enhancement.",
                "ru": "Хрупкий кастер огня и льда: Огненная метка и Зарево на урон, Заморозка и корни на контроль и огромный бурст под Усилением стихий."}},
     {"slug": "elementalist", "status": "ready", "modes_off": ["pve", "pvp"], "src": {"lvl": ["Grobs · MMO Codex", "2026-09-28"]}, "updated": "2026-09-28", "patch": "TW", "accent": "spirit",
