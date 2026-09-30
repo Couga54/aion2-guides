@@ -37,6 +37,7 @@ WEEK1 = load(DATA / "week1.json")
 BOSSES = load(DATA / "bosses.json")
 PROGRESSION = load(DATA / "progression.json")
 CRAFTING = load(DATA / "crafting.json")
+SETTINGS = load(DATA / "settings.json")
 BOARDS = {p.stem: load(p) for p in (DATA / "boards").glob("*.json") if p.stem != "presets"}
 BOARD_PRESETS = load(DATA / "boards" / "presets.json")
 ITEMS = load(DATA / "items.json")
@@ -344,6 +345,12 @@ def leveling_steps(cls_slug, lang):
     return sorted(out, key=lambda x: x["order"])
 
 
+def chips(html):
+    """Setting values on the settings page: <strong> becomes a chip, ON / OFF get their own colour."""
+    h = str(html).replace("<strong>ON</strong>", '<b class="sv sv-on">ON</b>').replace("<strong>OFF</strong>", '<b class="sv sv-off">OFF</b>')
+    return Markup(h.replace("<strong>", '<b class="sv">').replace("</strong>", "</b>"))
+
+
 def env():
     e = Environment(
         loader=FileSystemLoader([SRC / "templates", SRC / "content"]),
@@ -353,7 +360,7 @@ def env():
         lstrip_blocks=True,
         extensions=["jinja2.ext.do"],
     )
-    e.globals.update(ASSET_V=asset_version(), tooltip_json=tooltip_json, CHANGELOG=CHANGELOG, fmt_utc=fmt_utc, fmt_day=fmt_day, s=s, sp=sp, skill_data=skill_data, icon_url=icon_url, it=it, items_tip_json=items_tip_json, board_view=board_view, BOARDS=BOARDS, SITE=SITE, watch_for=watch_for)
+    e.globals.update(chips=chips, ASSET_V=asset_version(), tooltip_json=tooltip_json, CHANGELOG=CHANGELOG, fmt_utc=fmt_utc, fmt_day=fmt_day, s=s, sp=sp, skill_data=skill_data, icon_url=icon_url, it=it, items_tip_json=items_tip_json, board_view=board_view, BOARDS=BOARDS, SITE=SITE, watch_for=watch_for)
     return e
 
 
@@ -413,7 +420,7 @@ def page_entries(lang):
     """Search entries for the standalone pages and the world bosses."""
     t = I18N[lang]
     out = [{"k": "page", "t": t[key], "s": "", "u": path} for path, key in (
-        ("week-1/", "w1_title"), ("progression/", "pg_title"), ("crafting/", "cr_title"), ("weekly/", "wk_title"), ("bosses/", "bs_title"),
+        ("week-1/", "w1_title"), ("progression/", "pg_title"), ("crafting/", "cr_title"), ("settings/", "st_title"), ("weekly/", "wk_title"), ("bosses/", "bs_title"),
         ("sources/", "src_title"), ("changelog/", "wn_history"))]
     for g in BOSSES["groups"]:
         for b in g["bosses"]:
@@ -447,7 +454,7 @@ def build():
             write(f'{lang}/{path}index.html', html)
             urls.append(path)
             index += search_entries(cls, lang, html)
-        for path, tpl, key, data in (("week-1/", "week1.html", "week1", WEEK1), ("progression/", "guide_page.html", "prog", PROGRESSION), ("crafting/", "guide_page.html", "prog", CRAFTING), ("weekly/", "weekly.html", "weekly", WEEKLY), ("bosses/", "bosses.html", "bosses", BOSSES), ("changelog/", "changelog.html", "changelog", CHANGELOG)):
+        for path, tpl, key, data in (("week-1/", "week1.html", "week1", WEEK1), ("progression/", "guide_page.html", "prog", PROGRESSION), ("crafting/", "guide_page.html", "prog", CRAFTING), ("settings/", "guide_page.html", "prog", SETTINGS), ("weekly/", "weekly.html", "weekly", WEEKLY), ("bosses/", "bosses.html", "bosses", BOSSES), ("changelog/", "changelog.html", "changelog", CHANGELOG)):
             ctx = page_ctx(lang, path, "../../")
             ctx[key] = data
             write(f"{lang}/{path}index.html", e.get_template(tpl).render(ctx))

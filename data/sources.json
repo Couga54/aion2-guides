@@ -80,11 +80,12 @@
         {
           "name": "Whelps",
           "what": {
-            "en": "Ranger main (1M CP on KR, played the global test). His Ranger guide video and S1 endgame PvE build on questlog are the basis of the Ranger guide.",
-            "ru": "Мейн Лучника (1 млн CP в Корее, играл на глобальном тесте). Его видеогайд и PvE-билд на эндгейм 1 сезона на questlog — основа гайда на Лучника."
+            "en": "Ranger main (1M CP on KR, played the global test). His Ranger guide video and S1 endgame PvE build on questlog are the basis of the Ranger guide; his settings video — of the Game settings page.",
+            "ru": "Мейн Лучника (1 млн CP в Корее, играл на глобальном тесте). Его видеогайд и PvE-билд на эндгейм 1 сезона на questlog — основа гайда на Лучника; его видео о настройках — страницы «Настройки игры»."
           },
           "used": [
-            "ranger"
+            "ranger",
+            "site"
           ],
           "links": [
             {
@@ -93,6 +94,14 @@
               "label": {
                 "en": "Ranger guide",
                 "ru": "Гайд на Лучника"
+              }
+            },
+            {
+              "type": "video",
+              "url": "https://www.youtube.com/watch?v=M5IeDf9CczU",
+              "label": {
+                "en": "Settings",
+                "ru": "Настройки"
               }
             },
             {
@@ -275,8 +284,8 @@
         {
           "name": "Grobs",
           "what": {
-            "en": "“AION 2 Macro Guide: Best Early-Game Setups & Mouse Macro Tutorial” — how lines and the in-game macro work (bottom slot = highest priority, hold LMB next to the macro, buffs by hand in Season 1) and the early-game macro setups in the Leveling tabs.",
-            "ru": "«AION 2 Macro Guide: Best Early-Game Setups & Mouse Macro Tutorial» — как работают линии и встроенный макрос (нижний слот = высший приоритет, ЛКМ держать рядом с макросом, баффы в 1 сезоне вручную) и ранние макросы во вкладках «Прокачка»."
+            "en": "“AION 2 Macro Guide: Best Early-Game Setups & Mouse Macro Tutorial” — how lines and the in-game macro work (bottom slot = highest priority, hold LMB next to the macro, buffs by hand in Season 1) and the early-game macro setups in the Leveling tabs. “12 Settings You Should Change in AION 2” — the second source of the Game settings page.",
+            "ru": "«AION 2 Macro Guide: Best Early-Game Setups & Mouse Macro Tutorial» — как работают линии и встроенный макрос (нижний слот = высший приоритет, ЛКМ держать рядом с макросом, баффы в 1 сезоне вручную) и ранние макросы во вкладках «Прокачка». «12 Settings You Should Change in AION 2» — второй источник страницы «Настройки игры»."
           },
           "used": [
             "gladiator",
@@ -286,9 +295,18 @@
             "chanter",
             "sorcerer",
             "cleric",
-            "elementalist"
+            "elementalist",
+            "site"
           ],
           "links": [
+            {
+              "type": "video",
+              "url": "https://www.youtube.com/watch?v=5BoGBzDZdZI",
+              "label": {
+                "en": "12 settings",
+                "ru": "12 настроек"
+              }
+            },
             {
               "type": "video",
               "url": "https://www.youtube.com/watch?v=HMod6Z4GrE0",

@@ -294,6 +294,20 @@
     });
   });
 
+  // ---- guide pages: highlight the current section in the left menu ----------
+  var pgLinks = document.querySelectorAll('.pg-side .toc-list a');
+  if (pgLinks.length && 'IntersectionObserver' in window) {
+    var pgObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        pgLinks.forEach(function (a) {
+          if (a.hash === '#' + e.target.id) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+        });
+      });
+    }, { rootMargin: '-25% 0px -70% 0px' });
+    document.querySelectorAll('.pg-sec').forEach(function (s) { pgObserver.observe(s); });
+  }
+
   // Everything below is for class pages.
   if (!document.querySelector('.guide')) return;
 

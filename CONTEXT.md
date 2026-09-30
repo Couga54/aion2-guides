@@ -52,7 +52,7 @@ Requirements from the user (in their words, translated):
   these five only — no Ariel (the PvE board of KR/TW).
 - Launch schedule (checked Sep 27, 2026; stored in `data/site.json` → `events`):
   Founder's pre-download **Sep 28, 13:00 UTC** (NC on the official YouTube channel: "9/28 at 6:00AM PDT");
-  Early Access **Sep 30, 13:00 UTC** (NC: 16:00 Kyiv time, confirmed by the user);
+  Early Access **Sep 30, 13:30 UTC** (moved by NC on the day from 13:00 UTC to 16:30 Kyiv time, from the user);
   pre-download for free players — **not announced** (shown as "date not announced");
   global launch **Oct 5, 13:00 UTC**. Update `events` when NC announces more.
 - Class emblems (src/assets/classes/): the real silver class insignias, 150px, from the Fextralife wiki

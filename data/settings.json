@@ -1,0 +1,246 @@
+{
+  "_note": "Game settings page (/<lang>/settings/). Sources: Whelps' video M5IeDf9CczU and Grobs' video 5BoGBzDZdZI (EN) — values read from the video frames (timestamps in 'at'; a table may add moments of another source in 'also': [{src, at}]), reasons from what they say. Defaults are the ones seen on Grobs' fresh client. Setting names are written as in the English client in both languages. Same format as progression.json (blocks: p, list, tip, h and opts — setting rows [name, value, why] with an optional group 'label'; <strong> in a value is drawn as a chip).",
+  "meta": {"title": "st_title", "h1": "st_h1", "lead": "st_lead", "desc": "st_desc", "note": "st_note", "nav": "nav_settings",
+           "hero": "hero-sources", "pos": "50% 30%", "og": "settings"},
+  "sources": {
+    "whelps": {"name": "Whelps — My Settings & Recommendations | Aion 2", "url": "https://www.youtube.com/watch?v=M5IeDf9CczU", "video": true},
+    "grobs": {"name": "Grobs — 12 Settings You Should Change in AION 2", "url": "https://www.youtube.com/watch?v=5BoGBzDZdZI", "video": true}
+  },
+  "src": "whelps",
+  "sections": [
+    {"id": "first", "title": {"en": "Change these first", "ru": "Что поменять в первую очередь"},
+     "lead": {"en": "If you only have two minutes — these are the settings that change the most. Details and the reasons are in the sections below.",
+              "ru": "Если есть только две минуты — вот настройки, которые дают больше всего. Подробности и причины — в разделах ниже."},
+     "blocks": [
+       {"type": "opts", "label": {"en": "Key Settings → General", "ru": "Key Settings → General"},
+        "rows": [
+          {"en": ["Macro", "<strong>bind a key</strong> — usually the right mouse button", "It has no key by default, and without one the in-game macro simply does not work."],
+           "ru": ["Macro", "<strong>назначь клавишу</strong> — обычно правая кнопка мыши", "По умолчанию клавиши нет, а без неё встроенный макрос просто не работает."]},
+          {"en": ["Separate Defiance Hotkey", "<strong>ON</strong> + its own key", "On Space, Defiance shares a key with jump and glide — mash it under control and you take off gliding."],
+           "ru": ["Separate Defiance Hotkey", "<strong>ON</strong> + своя клавиша", "На пробеле Снятие шока делит клавишу с прыжком и планированием — будешь долбить её в контроле и улетишь планировать."]},
+          {"en": ["Fly Up, Fly Down", "<strong>comfortable keys</strong>", "The defaults are Ctrl+R and Ctrl+F, and you need both all the time."],
+           "ru": ["Fly Up, Fly Down", "<strong>удобные клавиши</strong>", "По умолчанию это Ctrl+R и Ctrl+F, а нужны обе постоянно."]},
+          {"en": ["Interact", "<strong>a second key</strong>: <kbd>F</kbd> + <kbd>Z</kbd>", "Tap the two in turn — quest dialogues skip much faster."],
+           "ru": ["Interact", "<strong>вторая клавиша</strong>: <kbd>F</kbd> + <kbd>Z</kbd>", "Жмёшь их по очереди — диалоги квестов пропускаются намного быстрее."]}
+        ]},
+       {"type": "opts", "label": {"en": "Combat", "ru": "Combat"},
+        "rows": [
+          {"en": ["Auto-use → Buff Auto-use Conditions", "<strong>In Combat</strong>", "Buff scrolls stop burning while you run around town."],
+           "ru": ["Auto-use → Buff Auto-use Conditions", "<strong>In Combat</strong>", "Свитки баффов перестают сгорать, пока ты бегаешь по городу."]},
+          {"en": ["Controls → Skill Queue", "<strong>ON</strong>", "The macro works best with it."],
+           "ru": ["Controls → Skill Queue", "<strong>ON</strong>", "С ним макрос работает лучше всего."]},
+          {"en": ["Target Scanning → Preferred Search Direction", "<strong>Front of Camera</strong>", "Tab takes the target you are looking at."],
+           "ru": ["Target Scanning → Preferred Search Direction", "<strong>Front of Camera</strong>", "Tab берёт цель, на которую ты смотришь."]},
+          {"en": ["Target Scanning → Detailed Settings", "<strong>Priority Ranking</strong>, Hostile Players first", "For PvP: Tab takes players before mobs."],
+           "ru": ["Target Scanning → Detailed Settings", "<strong>Priority Ranking</strong>, Hostile Players первым", "Для PvP: Tab берёт игроков раньше мобов."]}
+        ]},
+       {"type": "opts", "label": {"en": "Info Display → Combat", "ru": "Info Display → Combat"},
+        "rows": [
+          {"en": ["Aggro Range Display", "<strong>ON</strong>", "You see where a mob will aggro."],
+           "ru": ["Aggro Range Display", "<strong>ON</strong>", "Видно, где моб сагрится."]},
+          {"en": ["Display Boss Orientation Indicator", "<strong>ALL</strong>", "You see where the boss's back is."],
+           "ru": ["Display Boss Orientation Indicator", "<strong>ALL</strong>", "Видно, где у босса спина."]}
+        ]},
+       {"type": "opts", "label": {"en": "Graphics → Optimize", "ru": "Graphics → Optimize"},
+        "rows": [
+          {"en": ["Effect Quality", "<strong>Very Low</strong>", "The biggest FPS gain and far less flashing on screen."],
+           "ru": ["Effect Quality", "<strong>Very Low</strong>", "Самый большой прирост FPS и гораздо меньше мельтешения на экране."]},
+          {"en": ["Player Particle Effect Display", "<strong>Self Only</strong>", "Hides everyone else's skill effects."],
+           "ru": ["Player Particle Effect Display", "<strong>Self Only</strong>", "Скрывает эффекты чужих скиллов."]},
+          {"en": ["Identical Player Appearance, [Abyss] Display as Tier Icon", "<strong>ON</strong>", "A must for mass PvP."],
+           "ru": ["Identical Player Appearance, [Abyss] Display as Tier Icon", "<strong>ON</strong>", "Обязательно для массового PvP."]}
+        ]},
+       {"type": "opts", "label": {"en": "Graphics → Camera / Direction", "ru": "Graphics → Camera / Direction"},
+        "rows": [
+          {"en": ["Teleport Effect Color", "<strong>Dark</strong>", "No white flash on every teleport."],
+           "ru": ["Teleport Effect Color", "<strong>Dark</strong>", "Без белой вспышки при каждом телепорте."]},
+          {"en": ["Camera Shake Effect During Combat", "<strong>OFF</strong>", "No shaking in combat."],
+           "ru": ["Camera Shake Effect During Combat", "<strong>OFF</strong>", "Без тряски в бою."]},
+          {"en": ["World Map Transition Animation", "<strong>OFF</strong>", "No animation every time you open the map."],
+           "ru": ["World Map Transition Animation", "<strong>OFF</strong>", "Без анимации при каждом открытии карты."]}
+        ]}
+     ]},
+
+    {"id": "controls", "title": {"en": "Combat → Controls", "ru": "Combat → Controls: управление"},
+     "blocks": [
+       {"type": "p", "at": "0:08", "text": {
+         "en": "<strong>Control Mode: AION 2 or AION 1?</strong> AION 2 is the action mode: the aim sits in the middle of the screen and the camera follows the mouse. AION 1 is the classic one: a free cursor, the camera turns while you hold the right mouse button. It is a matter of taste, but AION 2 is friendlier to the macro — in AION 1 mode the left and right mouse buttons cannot be rebound.",
+         "ru": "<strong>Control Mode: AION 2 или AION 1?</strong> AION 2 — экшен-режим: прицел в центре экрана, камера следует за мышью. AION 1 — классика: свободный курсор, камера крутится с зажатой правой кнопкой мыши. Это дело вкуса, но AION 2 удобнее для макроса — в режиме AION 1 левую и правую кнопки мыши нельзя переназначить."}},
+       {"type": "opts", "at": "0:50", "also": [{"src": "grobs", "at": "1:40"}],
+        "rows": [
+          {"en": ["Control Mode", "<strong>AION 2</strong>", "Better for the macro on a mouse button; see above."],
+           "ru": ["Control Mode", "<strong>AION 2</strong>", "Удобнее для макроса на кнопке мыши; см. выше."]},
+          {"en": ["Display Distance to Aimed Target", "<strong>ON</strong>", "Shows the distance to the target above its nameplate."],
+           "ru": ["Display Distance to Aimed Target", "<strong>ON</strong>", "Показывает расстояние до цели над её табличкой."]},
+          {"en": ["Adjust Aim Position", "to taste", "Moves the aim up or down on the screen (188px in the video)."],
+           "ru": ["Adjust Aim Position", "по вкусу", "Сдвигает прицел выше или ниже на экране (в видео — 188px)."]},
+          {"en": ["Select Aimable Target", "<strong>Hostile Target</strong>", "Otherwise the aim also picks allies. You rarely need to target an ally — it is better to stay on the one you are attacking."],
+           "ru": ["Select Aimable Target", "<strong>Hostile Target</strong>", "Иначе прицел цепляет и союзников. Брать союзника в цель почти не нужно — лучше не слетать с того, кого бьёшь."]},
+          {"en": ["Pursue Targets with Skill Activation", "<strong>OFF</strong> for ranged, optional for melee", "When ON, pressing a skill out of range makes the character walk to the target and then use it. OFF gives more control."],
+           "ru": ["Pursue Targets with Skill Activation", "<strong>OFF</strong> дальним, мили — по желанию", "Если включено, при нажатии скилла вне дистанции персонаж сам подходит к цели и применяет его. С OFF контроля больше."]},
+          {"en": ["Auto Target Upon Skill Use", "<strong>ON</strong> for open-world farming (default: OFF)", "With no target selected, a skill picks the nearest one: run around holding the macro and it goes from mob to mob. Grobs always turns it on for farming, above all on ranged classes; Whelps keeps it off outside farming."],
+           "ru": ["Auto Target Upon Skill Use", "<strong>ON</strong> на фарме в открытом мире (по умолчанию OFF)", "Без выбранной цели скилл сам берёт ближайшую: бегаешь с зажатым макросом, и он идёт от моба к мобу. Grobs всегда включает это на фарме, прежде всего дальним классам; Whelps вне фарма держит выключенным."]},
+          {"en": ["Set Main Target Upon Attack", "two ways, see below (default: ON, both clicks ON)", "Whether an attack locks the target. Whelps: ON with left click ON and right click OFF. Grobs: OFF on melee."],
+           "ru": ["Set Main Target Upon Attack", "два варианта, см. ниже (по умолчанию ON, оба клика ON)", "Закрепляет ли атака цель. Whelps: ON, левый клик ON, правый OFF. Grobs: OFF на мили."]},
+          {"en": ["Skill Queue", "<strong>ON</strong>", "A skill pressed during another one is queued. Gives the best result with the macro."],
+           "ru": ["Skill Queue", "<strong>ON</strong>", "Скилл, нажатый во время другого, встаёт в очередь. С макросом даёт лучший результат."]}
+        ]},
+       {"type": "h", "text": {"en": "Soft lock and hard lock", "ru": "Мягкий и жёсткий захват цели"}},
+       {"type": "p", "src": "grobs", "at": "0:39", "text": {
+         "en": "Aim at an enemy and a white circle appears around it — a <strong>soft lock</strong>: skills go there, but the target changes as soon as you aim elsewhere. Two arrows on its HP bar mean a <strong>hard lock</strong>: the target stays until you change it. By default any attack hard-locks; <kbd>Tab</kbd> always does.",
+         "ru": "Наводишь прицел на врага — вокруг него появляется белый круг, это <strong>мягкий захват</strong>: скиллы летят туда, но цель сменится, как только наведёшься на другого. Две стрелки у полосы HP — <strong>жёсткий захват</strong>: цель остаётся, пока сам её не сменишь. По умолчанию любая атака захватывает жёстко; <kbd>Tab</kbd> — всегда."}},
+       {"type": "list", "items": [
+         {"en": "<strong>Set Main Target Upon Attack → OFF</strong> (Grobs, melee): attacks no longer lock, so you jump from target to target without stopping — good for packs of mobs. On a boss lock it with <kbd>Tab</kbd>.",
+          "ru": "<strong>Set Main Target Upon Attack → OFF</strong> (Grobs, мили): атаки больше не закрепляют цель, и ты перескакиваешь с одной на другую без остановки — удобно на пачках мобов. На боссе закрепи цель через <kbd>Tab</kbd>."},
+         {"en": "<strong>ON, left click ON, right click OFF</strong> (Whelps, Ranger): the left button picks and locks the target, the right one — where his macro sits — never switches it by accident.",
+          "ru": "<strong>ON, левый клик ON, правый OFF</strong> (Whelps, Лучник): левая кнопка выбирает и закрепляет цель, а правая — на ней у него макрос — никогда не переключает её случайно."}
+       ]}
+     ]},
+
+    {"id": "targeting", "title": {"en": "Combat → Target Scanning", "ru": "Combat → Target Scanning: выбор цели по Tab"},
+     "blocks": [
+       {"type": "opts", "at": "2:16", "also": [{"src": "grobs", "at": "2:13"}],
+        "rows": [
+          {"en": ["Preferred Search Direction", "<strong>Front of Camera</strong> (default: None)", "Tab looks for targets where the camera points, so you control what it picks."],
+           "ru": ["Preferred Search Direction", "<strong>Front of Camera</strong> (по умолчанию None)", "Tab ищет цели там, куда смотрит камера — ты управляешь тем, что он выберет."]},
+          {"en": ["Target Scanning Detailed Settings", "<strong>Priority Ranking</strong> (default: Closest First)", "If you PvP: targets are picked by your own priority list instead of by distance. In the Abyss there are mobs and players side by side — Tab must take the player."],
+           "ru": ["Target Scanning Detailed Settings", "<strong>Priority Ranking</strong> (по умолчанию Closest First)", "Если ходишь в PvP: цели выбираются по твоему списку приоритетов, а не по расстоянию. В Бездне мобы и игроки стоят вперемешку — Tab должен брать игрока."]}
+        ]},
+       {"type": "h", "text": {"en": "Priority order for PvP", "ru": "Порядок приоритетов для PvP"}},
+       {"type": "list", "at": "2:34", "items": [
+         {"en": "<strong>1–2.</strong> Hostile Players, then Players Attacking Me. Moving Hostile Players to the first place is the minimum — Grobs changes nothing else.", "ru": "<strong>1–2.</strong> Hostile Players, затем Players Attacking Me. Поднять Hostile Players на первое место — это минимум; Grobs больше ничего не меняет."},
+         {"en": "<strong>3–8.</strong> Targets you already hit, then monsters and NPCs in the default order.", "ru": "<strong>3–8.</strong> Цели, которые ты уже бил, затем монстры и NPC в порядке по умолчанию."},
+         {"en": "<strong>9–10.</strong> Hostile Player Spirits and Player Spirits Attacking Me — at the very bottom: these are the Elementalist's spirits, you do not want Tab to land on them in PvP.", "ru": "<strong>9–10.</strong> Hostile Player Spirits и Player Spirits Attacking Me — в самый низ: это духи Заклинателя, в PvP не нужно, чтобы Tab попадал на них."}
+       ]},
+       {"type": "tip", "text": {
+         "en": "Both authors set these two the same way. Only do PvE? Closest First is fine — Tab simply takes the nearest target; Front of Camera is still worth it.",
+         "ru": "Оба автора ставят эти две настройки одинаково. Играешь только PvE? Closest First подойдёт — Tab просто берёт ближайшую цель; Front of Camera стоит включить всё равно."}}
+     ]},
+
+    {"id": "autouse", "title": {"en": "Combat → Looting and Auto-use", "ru": "Combat → Looting и Auto-use: лут и автоиспользование"},
+     "blocks": [
+       {"type": "opts", "at": "2:47",
+        "rows": [
+          {"en": ["Looting → Obtaining Gear / Obtaining Item", "All, or filter", "You can stop picking up a gear grade (Common, Rare …) or an item type (potions, shards, crafting materials) — useful when the bag fills up on a farm."],
+           "ru": ["Looting → Obtaining Gear / Obtaining Item", "All или фильтр", "Можно не подбирать снаряжение определённого грейда (Common, Rare …) или тип предметов (зелья, осколки, материалы) — полезно, когда на фарме забивается сумка."]},
+          {"en": ["Auto-use → Buff Auto-use Conditions", "<strong>In Combat</strong>", "Buff scrolls usually sit on auto-use. With the «in motion» option they are used the moment you move, with «always» — all the time. Both waste scrolls."],
+           "ru": ["Auto-use → Buff Auto-use Conditions", "<strong>In Combat</strong>", "Свитки баффов обычно стоят на автоиспользовании. С вариантом «в движении» они тратятся, стоит сдвинуться с места, с «всегда» — постоянно. И то и другое — свитки на ветер."]},
+          {"en": ["Auto-use → Life Potion", "<strong>ON</strong>, 83% in the video", "Potions are drunk automatically below the chosen HP."],
+           "ru": ["Auto-use → Life Potion", "<strong>ON</strong>, в видео 83%", "Зелья пьются автоматически ниже выбранного порога HP."]}
+        ]},
+       {"type": "tip", "text": {
+         "en": "<strong>Melee, careful:</strong> a melee class can swing without a target, and one left click in town already counts as combat — the scrolls get used. A Ranger needs a target to auto-attack, so it does not happen to them.",
+         "ru": "<strong>Мили, осторожно:</strong> ближний бой может бить без цели, и один левый клик в городе уже считается боем — свитки потратятся. Лучнику для автоатаки нужна цель, у него такого не случается."}}
+     ]},
+
+    {"id": "keys", "title": {"en": "Key Settings: keys worth binding", "ru": "Key Settings: клавиши, которые стоит назначить"},
+     "lead": {"en": "The keys are his — pick your own. What matters is that these actions have a key at all.",
+              "ru": "Клавиши — его, выбери свои. Важно, чтобы у этих действий вообще была клавиша."},
+     "blocks": [
+       {"type": "opts", "at": "3:30", "also": [{"src": "grobs", "at": "5:52"}],
+        "rows": [
+          {"en": ["General → Separate Defiance Hotkey + Set Defiance Hotkey", "<strong>ON</strong>, key <kbd>`</kbd> (left of <kbd>1</kbd>); default: OFF", "By default Defiance (breaks control) is on <kbd>Space</kbd> together with jump and glide. Spam Space under control — and you start gliding, which ruins your next move: a boss mechanic or a PvP fight is lost."],
+           "ru": ["General → Separate Defiance Hotkey + Set Defiance Hotkey", "<strong>ON</strong>, клавиша <kbd>`</kbd> (слева от <kbd>1</kbd>); по умолчанию OFF", "По умолчанию Снятие шока (выход из контроля) — на <kbd>Space</kbd> вместе с прыжком и планированием. Долбишь пробел в контроле — и начинаешь планировать, следующее движение сорвано: механика босса или PvP-драка проиграны."]},
+          {"en": ["General → Fly Up, Fly Down", "side mouse button for Fly Up; defaults: <kbd>Ctrl</kbd>+<kbd>R</kbd> and <kbd>Ctrl</kbd>+<kbd>F</kbd>", "Flies straight up or down without tilting the camera — in PvP the camera stays on the target. You need both all the time, and nobody presses Ctrl+R for that: rebind them on the first login and get used to them."],
+           "ru": ["General → Fly Up, Fly Down", "Fly Up на боковой кнопке мыши; по умолчанию <kbd>Ctrl</kbd>+<kbd>R</kbd> и <kbd>Ctrl</kbd>+<kbd>F</kbd>", "Взлёт и снижение строго по вертикали без наклона камеры — в PvP камера остаётся на цели. Нужны постоянно, а Ctrl+R для этого никто жать не будет: переназначь при первом входе и привыкай."]},
+          {"en": ["General → Macro", "right mouse button; default: <strong>no key</strong>", "Without a key the macro does not work at all. It is held down all fight, so it goes on the most comfortable button — for most players the right click."],
+           "ru": ["General → Macro", "правая кнопка мыши; по умолчанию <strong>клавиши нет</strong>", "Без клавиши макрос вообще не работает. Он зажат весь бой, поэтому стоит на самой удобной кнопке — у большинства это правый клик."]},
+          {"en": ["General → Target Hostile Players", "<kbd>Caps</kbd> (Whelps); e.g. the middle mouse button (Grobs)", "Targets enemy players only. In the Abyss Tab keeps landing on mobs — this key does not. Grobs does not use it himself: for him Priority Ranking is enough."],
+           "ru": ["General → Target Hostile Players", "<kbd>Caps</kbd> (Whelps); например, средняя кнопка мыши (Grobs)", "Берёт в цель только вражеских игроков. В Бездне Tab то и дело попадает на мобов — эта клавиша нет. Сам Grobs ей не пользуется: ему хватает Priority Ranking."]},
+          {"en": ["General → Switch Control Mode", "<kbd>/</kbd>", "Switches between the AION 2 and AION 1 modes on the fly."],
+           "ru": ["General → Switch Control Mode", "<kbd>/</kbd>", "Переключает режимы AION 2 и AION 1 на лету."]},
+          {"en": ["General → Combat Analysis", "<kbd>Ctrl</kbd>+<kbd>X</kbd>", "Opens the built-in damage meter."],
+           "ru": ["General → Combat Analysis", "<kbd>Ctrl</kbd>+<kbd>X</kbd>", "Открывает встроенный счётчик урона."]},
+          {"en": ["Menu → Display Cursor", "<kbd>Alt</kbd> (hold)", "In AION 2 mode: hold it to get the cursor and click the interface."],
+           "ru": ["Menu → Display Cursor", "<kbd>Alt</kbd> (удерживать)", "В режиме AION 2: зажми, чтобы появился курсор и можно было кликать по интерфейсу."]},
+          {"en": ["Quickslot", "two keys per slot", "Every hotbar slot takes a main and a second key."],
+           "ru": ["Quickslot", "две клавиши на слот", "У каждого слота панели есть основная и вторая клавиша."]},
+          {"en": ["Marker", "numpad sets a marker, <kbd>Ctrl</kbd>+<kbd>1</kbd> selects marker 1", "For group PvP with voice chat: the leader marks a target, everyone selects it with one key."],
+           "ru": ["Marker", "цифровой блок ставит метку, <kbd>Ctrl</kbd>+<kbd>1</kbd> выбирает метку 1", "Для группового PvP с голосовой связью: лидер ставит метку, все берут эту цель одной клавишей."]}
+        ]},
+       {"type": "h", "text": {"en": "Skipping dialogues faster", "ru": "Быстрый пропуск диалогов"}},
+       {"type": "tip", "text": {
+         "en": "Every action in Key Settings has <strong>two key fields</strong>. Give <strong>Interact</strong> (<kbd>F</kbd> by default) a second key next to it — for example <kbd>Z</kbd> — and tap the two in turn: quest dialogues fly by about twice as fast as with one finger on <kbd>F</kbd>. There is a lot of dialogue on the way to 45, so it adds up.",
+         "ru": "У каждого действия в Key Settings есть <strong>два поля для клавиш</strong>. Назначь <strong>Interact</strong> (по умолчанию <kbd>F</kbd>) вторую клавишу рядом — например <kbd>Z</kbd> — и жми их по очереди: диалоги квестов пролетают примерно вдвое быстрее, чем одним пальцем по <kbd>F</kbd>. До 45 уровня диалогов много, так что экономия набегает."}}
+     ]},
+
+    {"id": "display", "title": {"en": "Info Display: what is shown on screen", "ru": "Info Display: что показывать на экране"},
+     "blocks": [
+       {"type": "opts", "at": "5:45", "also": [{"src": "grobs", "at": "3:24"}],
+        "rows": [
+          {"en": ["Combat → Aggro Range Display", "<strong>ON</strong>", "Select a monster and you see a blue circle — step inside and it attacks."],
+           "ru": ["Combat → Aggro Range Display", "<strong>ON</strong>", "Выбираешь монстра — видишь синий круг: зайдёшь внутрь, и он нападёт."]},
+          {"en": ["Combat → Display Boss Orientation Indicator", "<strong>ALL</strong>", "An arc around the boss: the blue part is its front, the yellow one its back. Helps to stand behind it."],
+           "ru": ["Combat → Display Boss Orientation Indicator", "<strong>ALL</strong>", "Дуга вокруг босса: синяя часть — перед, жёлтая — спина. Помогает вставать за спину."]},
+          {"en": ["Combat → Display Skill Range", "<strong>ON</strong>", "Shows the range of your skills."],
+           "ru": ["Combat → Display Skill Range", "<strong>ON</strong>", "Показывает дальность твоих скиллов."]},
+          {"en": ["Common → Performance → Display Network Status", "<strong>ON</strong>", "A ping indicator in the corner of the screen."],
+           "ru": ["Common → Performance → Display Network Status", "<strong>ON</strong>", "Индикатор пинга в углу экрана."]},
+          {"en": ["Common → Pets → Display Other Players' Pets", "<strong>OFF</strong>", "Your own pet stays, everyone else's disappear — they only cost performance."],
+           "ru": ["Common → Pets → Display Other Players' Pets", "<strong>OFF</strong>", "Свой питомец остаётся, чужие пропадают — они только едят производительность."]},
+          {"en": ["Common → Nameplate", "to taste", "Hide the nameplates of other players, their spirits and monsters to clear the screen. Your own nameplate cannot be hidden."],
+           "ru": ["Common → Nameplate", "по вкусу", "Можно скрыть таблички других игроков, их духов и монстров, чтобы разгрузить экран. Свою табличку скрыть нельзя."]},
+          {"en": ["Floater → Combat Floater Display", "ON, with a smaller UI", "The flying damage and healing numbers. They can be turned off, all or one by one (damage on me, heal on me, damage on target …), but then hits feel empty. Grobs keeps them and makes them smaller with <strong>UI Proportion</strong> — see Graphics."],
+           "ru": ["Floater → Combat Floater Display", "ON, с уменьшенным интерфейсом", "Вылетающие цифры урона и лечения. Их можно выключить, все или по отдельности (урон по мне, лечение меня, урон по цели …), но тогда удары ощущаются пустыми. Grobs оставляет их и уменьшает через <strong>UI Proportion</strong> — см. Graphics."]}
+        ]}
+     ]},
+
+    {"id": "graphics", "title": {"en": "Graphics → Optimize: FPS and mass PvP", "ru": "Graphics → Optimize: FPS и массовое PvP"},
+     "lead": {"en": "Quality presets depend on your PC — these are the settings that matter regardless.",
+              "ru": "Пресеты качества зависят от твоего ПК — здесь те настройки, которые важны в любом случае."},
+     "blocks": [
+       {"type": "opts", "at": "6:50", "also": [{"src": "grobs", "at": "3:53"}],
+        "rows": [
+          {"en": ["UI Proportion", "<strong>Small</strong> (default: Medium)", "Scales the interface and the damage numbers together: a smaller UI means smaller numbers, so they stop covering the fight."],
+           "ru": ["UI Proportion", "<strong>Small</strong> (по умолчанию Medium)", "Масштабирует интерфейс вместе с цифрами урона: меньше интерфейс — меньше цифры, и они перестают закрывать бой."]},
+          {"en": ["Effect Quality", "<strong>Very Low</strong>", "Hits FPS harder than anything else (Whelps keeps the rest on Very High) and removes a lot of particles — much easier on the eyes over long sessions."],
+           "ru": ["Effect Quality", "<strong>Very Low</strong>", "Сильнее всего бьёт по FPS (остальное у Whelps на Very High) и убирает массу частиц — глазам намного легче на долгих сессиях."]},
+          {"en": ["Upscaler", "<strong>DLSS</strong>", "On an NVIDIA card."],
+           "ru": ["Upscaler", "<strong>DLSS</strong>", "На видеокарте NVIDIA."]},
+          {"en": ["Frame Generator", "<strong>off in PvE</strong>, on for mass PvP", "Frame generation adds input lag, and input lag is lost damage. In big fights smoothness matters more."],
+           "ru": ["Frame Generator", "<strong>выключен в PvE</strong>, включён в массовом PvP", "Генерация кадров добавляет задержку ввода, а задержка — это потерянный урон. В больших замесах плавность важнее."]},
+          {"en": ["Player Particle Effect Display", "<strong>Self Only</strong> (Grobs); Self and Party (Whelps)", "Self Only hides the skill effects of everyone else, teammates included: less clutter and a clear FPS gain. You will notice it is missing now and then — worth it."],
+           "ru": ["Player Particle Effect Display", "<strong>Self Only</strong> (Grobs); Self and Party (Whelps)", "Self Only скрывает эффекты скиллов всех остальных, включая союзников: меньше мельтешения и заметный прирост FPS. Иногда этого будет не хватать — оно того стоит."]},
+          {"en": ["NVIDIA Reflex", "<strong>BOOST</strong>", "Lower input delay."],
+           "ru": ["NVIDIA Reflex", "<strong>BOOST</strong>", "Меньше задержка ввода."]},
+          {"en": ["Volumetric Light Scattering, Volumetric Fog", "OFF in the video", "Set on his screen; he does not comment on them."],
+           "ru": ["Volumetric Light Scattering, Volumetric Fog", "в видео OFF", "Так стоит у него на экране; отдельно он их не комментирует."]},
+          {"en": ["[Abyss] Display as Tier Icon", "<strong>ON</strong>", "Enemy nameplates in the Abyss turn into small rank icons — far fewer labels on screen."],
+           "ru": ["[Abyss] Display as Tier Icon", "<strong>ON</strong>", "Таблички врагов в Бездне превращаются в маленькие значки ранга — надписей на экране гораздо меньше."]},
+          {"en": ["Identical Player Appearance", "<strong>ON</strong>", "All other players get the same simple look; applies at once. The game is not optimized for sieges and other large-scale fights — without this they are close to unplayable on any PC."],
+           "ru": ["Identical Player Appearance", "<strong>ON</strong>", "Все чужие игроки выглядят одинаково и просто; применяется сразу. Игра не оптимизирована под осады и другие массовые бои — без этой настройки они почти неиграбельны на любом ПК."]}
+        ]},
+       {"type": "tip", "text": {
+         "en": "Next to it there is <strong>[Domination] Display as Tier Icon</strong> — the same switch for Domination; it is OFF in the video.",
+         "ru": "Рядом есть <strong>[Domination] Display as Tier Icon</strong> — такой же переключатель для режима Domination; в видео он выключен."}}
+     ]},
+
+    {"id": "camera", "title": {"en": "Graphics → Camera / Direction", "ru": "Graphics → Camera / Direction: камера и эффекты"},
+     "blocks": [
+       {"type": "opts", "at": "7:54", "also": [{"src": "grobs", "at": "6:29"}],
+        "rows": [
+          {"en": ["World Map Transition Animation", "<strong>OFF</strong>", "Otherwise an animation plays every time you open the map — it gets dizzying."],
+           "ru": ["World Map Transition Animation", "<strong>OFF</strong>", "Иначе при каждом открытии карты проигрывается анимация — от неё начинает мутить."]},
+          {"en": ["Teleport Effect Color", "<strong>Dark</strong> (default: Bright)", "The bright version is a white screen in your face on every teleport."],
+           "ru": ["Teleport Effect Color", "<strong>Dark</strong> (по умолчанию Bright)", "Светлый вариант — белый экран в лицо при каждом телепорте."]},
+          {"en": ["Camera Perspective", "Default, or over the shoulder", "The second option puts the character slightly left of the centre."],
+           "ru": ["Camera Perspective", "Default или из-за плеча", "Второй вариант ставит персонажа чуть левее центра."]},
+          {"en": ["Camera Shake Effect During Combat", "<strong>OFF</strong>", "Both authors turn it off. A matter of taste — some like the shaking."],
+           "ru": ["Camera Shake Effect During Combat", "<strong>OFF</strong>", "Оба автора её выключают. Дело вкуса — кому-то тряска нравится."]},
+          {"en": ["Display Weapon Outside of Combat", "<strong>ON</strong> (default: OFF)", "Purely for looks: the weapon stays visible instead of disappearing outside combat."],
+           "ru": ["Display Weapon Outside of Combat", "<strong>ON</strong> (по умолчанию OFF)", "Чисто для красоты: оружие остаётся на виду, а не исчезает вне боя."]},
+          {"en": ["Display Equipped Title Effects on Nameplate", "to taste", "The frames of special titles around names. OFF removes them; there is also «on my nameplate only»."],
+           "ru": ["Display Equipped Title Effects on Nameplate", "по вкусу", "Рамки особых титулов вокруг имён. OFF убирает их; есть и вариант «только на моей табличке»."]}
+        ]}
+     ]},
+
+    {"id": "other", "title": {"en": "The other tabs", "ru": "Остальные вкладки"},
+     "blocks": [
+       {"type": "list", "at": "8:43", "items": [
+         {"en": "<strong>Accessibility</strong> — font size and chat colours, subtitles.", "ru": "<strong>Accessibility</strong> — размер шрифта и цвета чата, субтитры."},
+         {"en": "<strong>Notification</strong> — game alerts and requests; invites can be declined automatically. He left everything at the defaults.", "ru": "<strong>Notification</strong> — игровые оповещения и запросы; приглашения можно отклонять автоматически. У него всё по умолчанию."},
+         {"en": "<strong>Miscellaneous</strong> — interface and voice language; under <em>Account</em> — the field for coupon codes.", "ru": "<strong>Miscellaneous</strong> — язык интерфейса и озвучки; в разделе <em>Account</em> — поле для купонов."}
+       ]}
+     ]}
+  ]
+}

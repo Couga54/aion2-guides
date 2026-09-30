@@ -110,15 +110,15 @@ def render_home(lang):
     return img
 
 
-# Standalone pages: slug -> (title key, lead key, focal point of the header art, 0..1 from the top)
-PAGES = {"week-1": ("w1_h1", "w1_lead", .40), "progression": ("pg_h1", "pg_lead", .60), "crafting": ("cr_h1", "cr_lead", .50), "weekly": ("wk_h1", "wk_lead", .45),
+# Standalone pages: slug -> (title key, lead key, focal point of the header art, 0..1 from the top[, slug of the page whose art it borrows])
+PAGES = {"week-1": ("w1_h1", "w1_lead", .40), "progression": ("pg_h1", "pg_lead", .60), "crafting": ("cr_h1", "cr_lead", .50), "settings": ("st_h1", "st_lead", .30, "sources"), "weekly": ("wk_h1", "wk_lead", .45),
          "bosses": ("bs_h1", "bs_lead", .68), "sources": ("src_h1", "src_lead", .62), "changelog": ("wn_history", "cl_lead", .45)}
 
 
 def render_page(slug, lang):
     t = I18N[lang]
-    title_key, lead_key, focus = PAGES[slug]
-    art = Image.open(ROOT / "src" / "assets" / "art" / f"hero-{slug}.webp").convert("RGB")
+    title_key, lead_key, focus, *art_slug = PAGES[slug]
+    art = Image.open(ROOT / "src" / "assets" / "art" / f"hero-{(art_slug or [slug])[0]}.webp").convert("RGB")
     s = max(W / art.width, H / art.height)
     art = art.resize((round(art.width * s), round(art.height * s)), Image.LANCZOS)
     top = round((art.height - H) * focus)

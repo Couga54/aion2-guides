@@ -37,6 +37,7 @@
               <time datetime="{{ ev.at }}">{{ fmt_utc(ev.at, lang) }}</time>
               <span class="ev-local"></span>
               {% if not ev.confirmed %}<span class="ev-note">{{ t.ev_unconfirmed }}</span>{% endif %}
+              {% if ev.get('delayed') %}<span class="ev-note ev-delayed">{{ t.ev_delayed }}</span>{% endif %}
             </p>
             {% else %}
             <p class="ev-tba">{{ t.ev_tba }}</p>

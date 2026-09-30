@@ -6,10 +6,14 @@
 {% block desc %}{{ t[M.desc] }}{% endblock %}
 {% block body_class %}page-guide page-{{ M.og }}{% endblock %}
 {#- Timestamp in a video source, or a chip that names the source. -#}
+{#- Text with "→": the glyph comes from a fallback font and sits low in the heading and mono fonts, so it is drawn as an SVG. -#}
+{% macro arr(text) -%}
+{% for part in text.split('→') %}{{ part|trim }}{% if not loop.last %} <svg class="arr" viewBox="0 0 12 8" aria-label="→"><path d="M1 4h9M7 1l3 3-3 3"/></svg> {% endif %}{% endfor %}
+{%- endmacro %}
 {% macro src_link(key, at=None) -%}
 {% set S = prog.sources[key] %}
 {%- if at and S.get('video') -%}
-{% set p = at.split(':') %}<a class="pg-at" href="{{ S.url }}&t={{ p[0]|int * 60 + p[1]|int }}s" target="_blank" rel="noopener" title="{{ t.pg_watch }}">▶ {{ at }}</a>
+{% set p = at.split(':') %}<a class="pg-at" href="{{ S.url }}&t={{ p[0]|int * 60 + p[1]|int }}s" target="_blank" rel="noopener" title="{{ t.pg_watch }}">▶ {% if key != prog.src %}{{ S.name.split(' — ')[0] }} {% endif %}{{ at }}</a>
 {%- else -%}
 <a class="pg-at" href="{{ S.url }}" target="_blank" rel="noopener" title="{{ S.name }}">{{ S.name.split(' — ')[0] }}</a>
 {%- endif -%}
@@ -28,7 +32,15 @@
     </div>
   </section>
 
-  <div class="wrap pg-page">
+  <div class="wrap guide-layout pg-layout">
+  {#- Section menu on the left, like on class pages; below 960px it hides and the chips above the text take over. -#}
+  <aside class="toc-side pg-side" aria-label="{{ t.on_this_page }}">
+    <p class="toc-title">{{ t.on_this_page }}</p>
+    <nav class="toc-list">
+      {% for sec in prog.sections %}<a href="#{{ sec.id }}">{% if sec.get('gs') %}<b>{{ sec.gs }}</b>{% endif %}{{ sec.title[lang] }}</a>{% endfor %}
+    </nav>
+  </aside>
+  <div class="pg-page">
     <p class="pg-note">{% if M.get('tag') %}<span class="wip-tag">{{ t[M.tag] }}</span> {% endif %}{{ t[M.note] }}
       {% for key, S in prog.sources.items() %}<a class="w1-src" href="{{ S.url }}" target="_blank" rel="noopener" title="{{ S.name }}">{{ S.name.split(' — ')[0] }}</a>{% endfor %}</p>
 
@@ -42,7 +54,7 @@
     {% set ssrc = sec.get('src', prog.src) %}
     <section class="pg-sec{% if sec.get('gs') %} has-gs{% endif %}" id="{{ sec.id }}" aria-labelledby="h-{{ sec.id }}">
       {% if sec.get('gs') %}<span class="pg-gs" aria-hidden="true">{{ sec.gs }}</span>{% endif %}
-      <h2 id="h-{{ sec.id }}" class="section-title">{{ sec.title[lang] }}</h2>
+      <h2 id="h-{{ sec.id }}" class="section-title">{{ arr(sec.title[lang]) }}</h2>
       {% if ssrc != prog.src %}<p class="pg-sec-src">{{ t.guide_src }}: {{ src_link(ssrc) }}</p>{% endif %}
       {% if sec.get('lead') %}<p class="pg-lead">{{ it(sec.lead[lang]) }}</p>{% endif %}
       {% for b in sec.blocks %}
@@ -56,6 +68,14 @@
       <ul class="pg-list">
         {% for x in b['items'] %}<li>{{ it(x[lang]) }}{% if loop.first %}{{ block_src(b, ssrc) }}{% endif %}</li>{% endfor %}
       </ul>
+        {% elif b.type == 'opts' %}
+      {% if b.get('label') %}<p class="st-label">{{ arr(b.label[lang]) }}</p>{% endif %}
+      <div class="st-opts">
+        {% for r in b.rows %}{% set c = r[lang] %}
+        <div class="st-row"><p class="st-name">{{ it(c[0]) }}</p><div class="st-body"><p class="st-val">{{ chips(it(c[1])) }}</p><p class="st-why">{{ it(c[2]) }}</p></div></div>
+        {% endfor %}
+      </div>
+      {% if b.get('at') %}<p class="pg-table-at">{{ block_src(b, ssrc) }}{% for a in b.get('also', []) %} {{ src_link(a.src, a.at) }}{% endfor %}</p>{% endif %}
         {% elif b.type == 'table' %}
       <div class="pg-table-wrap">
         <table class="pg-table">
@@ -71,6 +91,7 @@
 
     <script type="application/json" id="sk-data">{{ items_tip_json(lang) }}</script>
     {% if M.get('back') %}<p class="w1-cta"><a class="btn btn-primary" href="{{ root }}{{ lang }}/{{ M.back.path }}">{{ t[M.back.label] }} →</a></p>{% endif %}
+  </div>
   </div>
 </main>
 {% endblock %}

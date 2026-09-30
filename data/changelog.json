@@ -2,6 +2,17 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-09-30-settings",
+      "date": "2026-09-30",
+      "items": [
+        {
+          "href": "settings/",
+          "en": "<strong>New page: Game settings</strong> — what to change on day one, from Whelps' and Grobs' videos: control mode and targeting, the macro key (it has none by default), a separate key for Defiance, buff scrolls only in combat, boss orientation and aggro range, FPS and the options for mass PvP. In the Guides menu.",
+          "ru": "<strong>Новая страница: Настройки игры</strong> — что поменять в первый день, по видео Whelps и Grobs: режим управления и выбор цели, клавиша макроса (по умолчанию её нет), отдельная клавиша для Снятия шока, свитки баффов только в бою, направление босса и радиус агра, FPS и опции для массового PvP. В меню «Гайды»."
+        }
+      ]
+    },
+    {
       "id": "2026-09-30-sorcerer",
       "date": "2026-09-30",
       "items": [

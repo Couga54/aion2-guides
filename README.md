@@ -22,6 +22,7 @@ A PvP mode is switched on only when there is a real source for it.
 Besides the class guides:
 
 - **After 45** (progression) and **Gathering and crafting** — what to do at the level cap, gear upgrade basics, professions.
+- **Game settings** — controls, targeting, keys, on-screen info, FPS and mass PvP options worth changing on day one.
 - **First week** — a day-by-day plan for the launch week.
 - **Weekly tracker** and **Bosses** — checklists and respawn timers kept in the browser, with optional notifications.
 - **Sources** — every creator and site the guides are built on, and who to watch for each class.
@@ -43,7 +44,7 @@ data/
   items.json              item names, icons, tooltips (generated)
   class_items.json        item keys used inside class guides
   leveling/*.json         leveling checklist: shared route + per-class steps
-  progression.json, crafting.json, week1.json, weekly.json, bosses.json   the other pages
+  progression.json, crafting.json, settings.json, week1.json, weekly.json, bosses.json   the other pages
   sources.json            creators and sites, "who to watch"
   changelog.json          What's new
 src/

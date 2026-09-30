@@ -77,6 +77,8 @@ Work top to bottom, then rebuild (`.venv/Scripts/python tools/build.py`), check 
       The video has no captions — its text came from speech recognition, names and numbers were checked against the frames.
 - [ ] **Sorcerer (aLuckyRO, Taiwan client, six stigmas)** — the hotbar lines were read from small icons and cut down to the four
       global stigmas; the 7th macro step (Flame Scattershot) is from his words, not the screen. Check the macro on live.
+- [ ] **Game settings page** (`data/settings.json`, from Whelps' and Grobs' videos on pre-launch clients with the English interface) — check the
+      setting names and tabs on the live client, which values are defaults, and add the Russian client's names if they differ.
 - [ ] **Specialization slots** — the guide cards assume 2 slots from skill level 12 and the 3rd at 20 (from two creators' videos on
       the Taiwan client). Confirm on global; which pick the third slot takes on each card is our own choice where the source didn't say.
 - [ ] **Board node values** — the node tooltips show the orange (4-point) stats as percents: the data stores 150, shown as

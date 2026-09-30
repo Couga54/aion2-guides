@@ -71,7 +71,7 @@
     </details>
     <div class="topbar-tools">
       {#- Site pages menu, right-aligned so the class name length never moves it; the current page is highlighted inside. -#}
-      {% set NAV = [('week-1/', 'nav_week1'), ('progression/', 'nav_progression'), ('crafting/', 'nav_crafting'), ('weekly/', 'nav_weekly'), ('bosses/', 'nav_bosses'), ('sources/', 'sources')] %}
+      {% set NAV = [('week-1/', 'nav_week1'), ('progression/', 'nav_progression'), ('crafting/', 'nav_crafting'), ('settings/', 'nav_settings'), ('weekly/', 'nav_weekly'), ('bosses/', 'nav_bosses'), ('sources/', 'sources')] %}
       {% set here = NAV|selectattr(0, 'equalto', path)|list %}
       <details class="class-menu nav-menu">
         <summary class="class-menu-btn{% if here %} is-here{% endif %}">
@@ -92,6 +92,10 @@
             <a href="{{ root }}{{ lang }}/crafting/" class="nm-item"{% if path == 'crafting/' %} aria-current="page"{% endif %}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 1.3-1.3a4 4 0 0 0-5-5L3 10l3-3 3 3 1.3-1.3a4 4 0 0 1 4.4-2.4z"/></svg>
               <span class="nm-name">{{ t.cr_h1 }}</span><span class="nm-desc">{{ t.nd_crafting }}</span>
+            </a>
+            <a href="{{ root }}{{ lang }}/settings/" class="nm-item"{% if path == 'settings/' %} aria-current="page"{% endif %}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+              <span class="nm-name">{{ t.st_h1 }}</span><span class="nm-desc">{{ t.nd_settings }}</span>
             </a>
           </div>
           <div class="nm-col">
