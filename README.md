@@ -112,6 +112,8 @@ This downloads the video (Full HD, no sound), saves its transcript and cuts it i
 
 Push to `main`; GitHub Pages serves the `docs/` folder (**Settings → Pages → Deploy from a branch**, branch `main`, folder `/docs`).
 
+Google Analytics: the measurement ID is `ga` in `data/site.json` (empty string turns it off); the tag is not loaded on localhost.
+
 `LAUNCH.md` lists every value that has to be re-checked against the live servers; `CONTEXT.md` holds the project requirements and verified game facts.
 
 ## Credits

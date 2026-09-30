@@ -9,6 +9,8 @@
   "_art": "art_pos: where the figure stands in its render (x y, CSS object-position); x also centres the pop-out figure on home cards. art_up: lift the pop-out figure (share of the image height).",
   "_src": "classes[].src: per guide mode, [who the info comes from, date it was checked]; shown in the class hero.",
   "repo": "https://github.com/Couga54/aion2-guides",
+  "_ga": "Google Analytics 4 measurement ID; the tag is added to every page by base.html (not loaded on localhost). Empty string = analytics off.",
+  "ga": "G-6WYEWLG4B5",
   "discord": "couga.ua",
   "discord_name": "Couga",
   "discord_id": "173817336384585729",

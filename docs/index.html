@@ -19,6 +19,8 @@
       var nav = (navigator.languages || [navigator.language || 'en']).join(',').toLowerCase();
       lang = /(^|,)(ru|uk|be)/.test(nav) ? 'ru' : 'en';
     }
+    // keep where the visitor came from for the analytics on the language page (base.html)
+    try { if (document.referrer) sessionStorage.setItem('ref', document.referrer); } catch (e) {}
     location.replace(lang + '/' + location.search + location.hash);
   })();
 </script>
