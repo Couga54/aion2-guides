@@ -8,7 +8,8 @@
   var banner = document.querySelector('.cel-banner');
   if (!banner) return;
   var AT = Date.parse(banner.dataset.at);
-  var KEY = 'celebrated-' + banner.dataset.id;
+  // the start time is part of the key: if the event is moved, those who saw the party at the old time see it again at the real one
+  var KEY = 'celebrated-' + banner.dataset.id + '-' + banner.dataset.at;
   var WINDOW = 24 * 36e5;
   var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var force = /[?&]celebrate=1\b/.test(location.search);

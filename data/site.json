@@ -15,7 +15,7 @@
   "_events": "Home timers. at=null -> 'date TBA'. confirmed=false -> date is official, hour is not. delayed=true -> a small 'delayed' mark next to the time. celebrate=true -> the site celebrates when it starts (assets/js/celebrate.js, once per visitor within 24 h; ?celebrate=1 previews it).",
   "events": [
     {"id": "pre_founder", "access": "founder", "at": "2026-09-28T13:00:00Z", "confirmed": true},
-    {"id": "early", "access": "founder", "at": "2026-09-30T13:30:00Z", "confirmed": true, "celebrate": true, "delayed": true},
+    {"id": "early", "access": "founder", "at": "2026-09-30T14:00:00Z", "confirmed": true, "celebrate": true, "delayed": true},
     {"id": "launch", "access": "all", "at": "2026-10-05T13:00:00Z", "confirmed": true}
   ],
   "updated": "2026-09-30",
