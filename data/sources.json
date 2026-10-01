@@ -5,18 +5,18 @@
       "id": "creators",
       "title": {
         "en": "Creators",
-        "ru": "Авторы"
+        "ru": "Авторы", "uk": "Автори"
       },
       "lead": {
         "en": "People whose videos and guides this site builds on. Go watch them — they do the real testing.",
-        "ru": "Люди, на чьих видео и гайдах построен сайт. Загляните к ним — основную проверку делают они."
+        "ru": "Люди, на чьих видео и гайдах построен сайт. Загляните к ним — основную проверку делают они.", "uk": "Люди, на чиїх відео й гайдах побудовано сайт. Зазирніть до них — основну перевірку роблять вони."
       },
       "items": [
         {
           "name": "SolAshur",
           "what": {
             "en": "Templar player (Merks guild). His global-launch Templar build on solashur.com and the video walkthrough are the basis of the Templar PvE and PvP guide.",
-            "ru": "Игрок за Стража (гильдия Merks). Его глобальный билд Стража на solashur.com и видеоразбор — основа PvE и PvP гайда на Стража."
+            "ru": "Игрок за Стража (гильдия Merks). Его глобальный билд Стража на solashur.com и видеоразбор — основа PvE и PvP гайда на Стража.", "uk": "Гравець за Стража (гільдія Merks). Його глобальний білд Стража на solashur.com і відеорозбір — основа PvE і PvP гайда на Стража."
           },
           "used": [
             "templar"
@@ -27,7 +27,7 @@
               "url": "https://solashur.com/builds/templar-global-build.html",
               "label": {
                 "en": "Templar global build",
-                "ru": "Глобальный билд Стража"
+                "ru": "Глобальный билд Стража", "uk": "Глобальний білд Стража"
               }
             },
             {
@@ -35,7 +35,7 @@
               "url": "https://www.youtube.com/watch?v=ayyzLdGOaNc",
               "label": {
                 "en": "Build video",
-                "ru": "Видео билда"
+                "ru": "Видео билда", "uk": "Відео білда"
               }
             },
             {
@@ -55,7 +55,7 @@
           "name": "Kaeria",
           "what": {
             "en": "Russian-speaking Cleric player (Taiwan client). Her long Cleric PvE guide is the basis of the Cleric PvE mode.",
-            "ru": "Русскоязычная игрок за Целителя (тайваньский клиент). Её большой PvE-гайд на Целителя — основа режима PvE Целителя."
+            "ru": "Русскоязычная игрок за Целителя (тайваньский клиент). Её большой PvE-гайд на Целителя — основа режима PvE Целителя.", "uk": "Російськомовна гравчиня за Цілителя (тайванський клієнт). Її великий PvE-гайд на Цілителя — основа режиму PvE Цілителя."
           },
           "used": [
             "cleric"
@@ -66,7 +66,7 @@
               "url": "https://www.youtube.com/watch?v=7LjTwlZ4v_s",
               "label": {
                 "en": "Cleric PvE guide",
-                "ru": "PvE-гайд на Целителя"
+                "ru": "PvE-гайд на Целителя", "uk": "PvE-гайд на Цілителя"
               }
             }
           ],
@@ -81,7 +81,7 @@
           "name": "Whelps",
           "what": {
             "en": "Ranger main (1M CP on KR, played the global test). His Ranger guide video and S1 endgame PvE build on questlog are the basis of the Ranger guide; his settings video — of the Game settings page.",
-            "ru": "Мейн Лучника (1 млн CP в Корее, играл на глобальном тесте). Его видеогайд и PvE-билд на эндгейм 1 сезона на questlog — основа гайда на Лучника; его видео о настройках — страницы «Настройки игры»."
+            "ru": "Мейн Лучника (1 млн CP в Корее, играл на глобальном тесте). Его видеогайд и PvE-билд на эндгейм 1 сезона на questlog — основа гайда на Лучника; его видео о настройках — страницы «Настройки игры».", "uk": "Мейн Лучника (1 млн CP у Кореї, грав на глобальному тесті). Його відеогайд і PvE-білд на ендгейм 1 сезону на questlog — основа гайда на Лучника; його відео про налаштування — сторінки «Налаштування гри»."
           },
           "used": [
             "ranger",
@@ -93,7 +93,7 @@
               "url": "https://www.youtube.com/watch?v=wKOm6yKuu_I",
               "label": {
                 "en": "Ranger guide",
-                "ru": "Гайд на Лучника"
+                "ru": "Гайд на Лучника", "uk": "Гайд на Лучника"
               }
             },
             {
@@ -101,7 +101,7 @@
               "url": "https://www.youtube.com/watch?v=M5IeDf9CczU",
               "label": {
                 "en": "Settings",
-                "ru": "Настройки"
+                "ru": "Настройки", "uk": "Налаштування"
               }
             },
             {
@@ -109,7 +109,7 @@
               "url": "https://questlog.gg/aion-2/en/character-builder/AelonCommandAndTheSharpMerchant?build-id=8655",
               "label": {
                 "en": "questlog build",
-                "ru": "Билд на questlog"
+                "ru": "Билд на questlog", "uk": "Білд на questlog"
               }
             }
           ],
@@ -124,7 +124,7 @@
           "name": "Arthars Gaming",
           "what": {
             "en": "Starter guides for the global launch, recorded on the Taiwanese server: the Gladiator guide is the base of the Gladiator PvE mode, the Chanter and Assassin guides — of the Chanter and Assassin PvE modes. Plays Gladiator on global.",
-            "ru": "Стартовые гайды к глобальному запуску, записанные на тайваньском сервере: гайд по Гладиатору — основа PvE-режима Гладиатора, гайды по Чародею и Убийце — PvE-режимов Чародея и Убийцы. На глобале играет Гладиатором."
+            "ru": "Стартовые гайды к глобальному запуску, записанные на тайваньском сервере: гайд по Гладиатору — основа PvE-режима Гладиатора, гайды по Чародею и Убийце — PvE-режимов Чародея и Убийцы. На глобале играет Гладиатором.", "uk": "Стартові гайди до глобального запуску, записані на тайванському сервері: гайд по Гладіатору — основа PvE-режиму Гладіатора, гайди по Чародію і Вбивці — PvE-режимів Чародія і Вбивці. На глобалі грає Гладіатором."
           },
           "used": [
             "gladiator",
@@ -137,7 +137,7 @@
               "url": "https://www.youtube.com/watch?v=UpvUVK1vnt8",
               "label": {
                 "en": "Assassin guide",
-                "ru": "Гайд по Убийце"
+                "ru": "Гайд по Убийце", "uk": "Гайд по Вбивці"
               }
             },
             {
@@ -145,7 +145,7 @@
               "url": "https://www.youtube.com/watch?v=7qMgsnSsmIU",
               "label": {
                 "en": "Chanter guide",
-                "ru": "Гайд по Чародею"
+                "ru": "Гайд по Чародею", "uk": "Гайд по Чародію"
               }
             },
             {
@@ -153,7 +153,7 @@
               "url": "https://www.youtube.com/watch?v=tYTZ8VucMXw",
               "label": {
                 "en": "Gladiator guide",
-                "ru": "Гайд по Гладиатору"
+                "ru": "Гайд по Гладиатору", "uk": "Гайд по Гладіатору"
               }
             },
             {
@@ -178,7 +178,7 @@
           "name": "TitanTheF",
           "what": {
             "en": "Author of the leveling route table and the AION 2 progression sheet: global builds (start 1–45 and 45+) for Ranger, Assassin and Chanter, hotbar and macro setups, the route after 45, gear upgrades, gathering and crafting.",
-            "ru": "Автор таблицы маршрута прокачки и таблицы прогрессии AION 2: глобальные билды (старт 1–45 и 45+) для Лучника, Убийцы и Чародея, раскладка панели и макросы, маршрут после 45, улучшение экипировки, сбор и крафт."
+            "ru": "Автор таблицы маршрута прокачки и таблицы прогрессии AION 2: глобальные билды (старт 1–45 и 45+) для Лучника, Убийцы и Чародея, раскладка панели и макросы, маршрут после 45, улучшение экипировки, сбор и крафт.", "uk": "Автор таблиці маршруту прокачки й таблиці прогресії AION 2: глобальні білди (старт 1–45 і 45+) для Лучника, Вбивці й Чародія, розкладка панелі й макроси, маршрут після 45, покращення екіпірування, збір і крафт."
           },
           "used": [
             "gladiator",
@@ -194,7 +194,7 @@
               "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml",
               "label": {
                 "en": "Progression sheet",
-                "ru": "Таблица прогрессии"
+                "ru": "Таблица прогрессии", "uk": "Таблиця прогресії"
               }
             },
             {
@@ -227,7 +227,7 @@
           "name": "aLuckyRO",
           "what": {
             "en": "“AION 2 Sorcerer Guide For Skills & Stigmas | Macros & Daevanion Setup” — the early setup of the Sorcerer PvE guide: first specializations, hotbar lines, macro and mana management (a fresh character on the Taiwanese server).",
-            "ru": "«AION 2 Sorcerer Guide For Skills & Stigmas | Macros & Daevanion Setup» — стартовая настройка в PvE-гайде по Волшебнику: первые специализации, линии на кнопках, макрос и контроль маны (свежий персонаж на тайваньском сервере)."
+            "ru": "«AION 2 Sorcerer Guide For Skills & Stigmas | Macros & Daevanion Setup» — стартовая настройка в PvE-гайде по Волшебнику: первые специализации, линии на кнопках, макрос и контроль маны (свежий персонаж на тайваньском сервере).", "uk": "«AION 2 Sorcerer Guide For Skills & Stigmas | Macros & Daevanion Setup» — стартове налаштування в PvE-гайді по Чарівнику: перші спеціалізації, лінії на кнопках, макрос і контроль мани (свіжий персонаж на тайванському сервері)."
           },
           "used": [
             "sorcerer"
@@ -238,7 +238,7 @@
               "url": "https://www.youtube.com/watch?v=s-pYR_fmMDk",
               "label": {
                 "en": "Sorcerer guide",
-                "ru": "Гайд по Волшебнику"
+                "ru": "Гайд по Волшебнику", "uk": "Гайд по Чарівнику"
               }
             },
             {
@@ -256,7 +256,7 @@
           "name": "NoBS Game Guides",
           "what": {
             "en": "“Aion 2 Templar Guide: Skills Introduction + Early Game Macro” — the base of the Templar skill overview and leveling macro.",
-            "ru": "«Aion 2 Templar Guide: Skills Introduction + Early Game Macro» — основа обзора скиллов Стража и макроса на прокачке."
+            "ru": "«Aion 2 Templar Guide: Skills Introduction + Early Game Macro» — основа обзора скиллов Стража и макроса на прокачке.", "uk": "«Aion 2 Templar Guide: Skills Introduction + Early Game Macro» — основа огляду скілів Стража й макросу на прокачці."
           },
           "used": [
             "templar"
@@ -267,7 +267,7 @@
               "url": "https://www.youtube.com/watch?v=JEWRiaOb9JY",
               "label": {
                 "en": "Templar guide",
-                "ru": "Гайд по Стражу"
+                "ru": "Гайд по Стражу", "uk": "Гайд по Стражу"
               }
             },
             {
@@ -285,7 +285,7 @@
           "name": "Grobs",
           "what": {
             "en": "“AION 2 Macro Guide: Best Early-Game Setups & Mouse Macro Tutorial” — how lines and the in-game macro work (bottom slot = highest priority, hold LMB next to the macro, buffs by hand in Season 1) and the early-game macro setups in the Leveling tabs. “12 Settings You Should Change in AION 2” — the second source of the Game settings page.",
-            "ru": "«AION 2 Macro Guide: Best Early-Game Setups & Mouse Macro Tutorial» — как работают линии и встроенный макрос (нижний слот = высший приоритет, ЛКМ держать рядом с макросом, баффы в 1 сезоне вручную) и ранние макросы во вкладках «Прокачка». «12 Settings You Should Change in AION 2» — второй источник страницы «Настройки игры»."
+            "ru": "«AION 2 Macro Guide: Best Early-Game Setups & Mouse Macro Tutorial» — как работают линии и встроенный макрос (нижний слот = высший приоритет, ЛКМ держать рядом с макросом, баффы в 1 сезоне вручную) и ранние макросы во вкладках «Прокачка». «12 Settings You Should Change in AION 2» — второй источник страницы «Настройки игры».", "uk": "«AION 2 Macro Guide: Best Early-Game Setups & Mouse Macro Tutorial» — як працюють лінії і вбудований макрос (нижній слот = найвищий пріоритет, ЛКМ тримати поруч із макросом, бафи в 1 сезоні вручну) і ранні макроси у вкладках «Прокачка». «12 Settings You Should Change in AION 2» — друге джерело сторінки «Налаштування гри»."
           },
           "used": [
             "gladiator",
@@ -304,7 +304,7 @@
               "url": "https://www.youtube.com/watch?v=5BoGBzDZdZI",
               "label": {
                 "en": "12 settings",
-                "ru": "12 настроек"
+                "ru": "12 настроек", "uk": "12 налаштувань"
               }
             },
             {
@@ -312,7 +312,7 @@
               "url": "https://www.youtube.com/watch?v=HMod6Z4GrE0",
               "label": {
                 "en": "Macro guide",
-                "ru": "Гайд по макросам"
+                "ru": "Гайд по макросам", "uk": "Гайд по макросах"
               }
             },
             {
@@ -325,7 +325,7 @@
               "url": "https://www.youtube.com/watch?v=xRPr30JetyY",
               "label": {
                 "en": "Gladiator PvE guide",
-                "ru": "PvE-гайд на Гладиатора"
+                "ru": "PvE-гайд на Гладиатора", "uk": "PvE-гайд на Гладіатора"
               }
             }
           ],
@@ -338,7 +338,7 @@
           "name": "Spid",
           "what": {
             "en": "“AION 2: 14 Tips I Wish I Knew Before Starting” — first-week goals and weekly caps.",
-            "ru": "«AION 2: 14 Tips I Wish I Knew Before Starting» — цели первой недели и недельные лимиты."
+            "ru": "«AION 2: 14 Tips I Wish I Knew Before Starting» — цели первой недели и недельные лимиты.", "uk": "«AION 2: 14 Tips I Wish I Knew Before Starting» — цілі першого тижня й тижневі ліміти."
           },
           "used": [
             "site"
@@ -349,7 +349,7 @@
               "url": "https://www.youtube.com/watch?v=gwMMpH-OY9c",
               "label": {
                 "en": "14 tips",
-                "ru": "14 советов"
+                "ru": "14 советов", "uk": "14 порад"
               }
             },
             {
@@ -367,7 +367,7 @@
           "name": "LittleFattyGG",
           "what": {
             "en": "“AION 2 Global Beginner Guide — Don't Waste Your First Week” — what to finish before the first reset.",
-            "ru": "«AION 2 Global Beginner Guide — Don't Waste Your First Week» — что успеть до первого сброса."
+            "ru": "«AION 2 Global Beginner Guide — Don't Waste Your First Week» — что успеть до первого сброса.", "uk": "«AION 2 Global Beginner Guide — Don't Waste Your First Week» — що встигнути до першого скидання."
           },
           "used": [
             "site"
@@ -378,7 +378,7 @@
               "url": "https://youtu.be/DVQWMJa7jq0",
               "label": {
                 "en": "First week",
-                "ru": "Первая неделя"
+                "ru": "Первая неделя", "uk": "Перший тиждень"
               }
             },
             {
@@ -396,7 +396,7 @@
           "name": "Sanya Jacuzzi",
           "what": {
             "en": "“New leveling plan after 45” (RU) — the global datamine a day before launch: what changed and the item level route to the first raid.",
-            "ru": "«Они всё изменили! Мой новый план прокачки после 45 уровня» — датамайн глобалки за день до запуска: что изменилось и маршрут по уровню предметов до первого рейда."
+            "ru": "«Они всё изменили! Мой новый план прокачки после 45 уровня» — датамайн глобалки за день до запуска: что изменилось и маршрут по уровню предметов до первого рейда.", "uk": "«Вони все змінили! Мій новий план прокачки після 45 рівня» (російською) — датамайн глобалу за день до запуску: що змінилося і маршрут за рівнем предметів до першого рейду."
           },
           "used": [
             "site"
@@ -407,7 +407,7 @@
               "url": "https://www.youtube.com/watch?v=a8zVweGN--4",
               "label": {
                 "en": "Plan after 45",
-                "ru": "План после 45"
+                "ru": "План после 45", "uk": "План після 45"
               }
             },
             {
@@ -425,7 +425,7 @@
           "name": "nemobek",
           "what": {
             "en": "Interactive version of TitanTheF’s table — the idea behind our leveling checklist with progress.",
-            "ru": "Интерактивная версия таблицы TitanTheF — идея нашего чек-листа прокачки с прогрессом."
+            "ru": "Интерактивная версия таблицы TitanTheF — идея нашего чек-листа прокачки с прогрессом.", "uk": "Інтерактивна версія таблиці TitanTheF — ідея нашого чек-листа прокачки з прогресом."
           },
           "used": [
             "gladiator",
@@ -451,18 +451,18 @@
       "id": "watch",
       "title": {
         "en": "Who to watch",
-        "ru": "Кого смотреть"
+        "ru": "Кого смотреть", "uk": "Кого дивитися"
       },
       "lead": {
         "en": "Streamers with Taiwan or EU experience, per class — TitanTheF's list for learning a class after leveling.",
-        "ru": "Стримеры с опытом Тайваня или EU по классам — список TitanTheF, у кого учиться классу после прокачки."
+        "ru": "Стримеры с опытом Тайваня или EU по классам — список TitanTheF, у кого учиться классу после прокачки.", "uk": "Стримери з досвідом Тайваню чи EU по класах — список TitanTheF, у кого вчитися класу після прокачки."
       },
       "items": [
         {
           "name": "mahsepp1",
           "what": {
             "en": "Gladiator, good player with Taiwan experience.",
-            "ru": "Гладиатор, хороший игрок с опытом Тайваня."
+            "ru": "Гладиатор, хороший игрок с опытом Тайваня.", "uk": "Гладіатор, хороший гравець із досвідом Тайваню."
           },
           "used": [
             "gladiator"
@@ -482,7 +482,7 @@
           "name": "consul",
           "what": {
             "en": "Sorcerer with Taiwan experience.",
-            "ru": "Волшебник с опытом Тайваня."
+            "ru": "Волшебник с опытом Тайваня.", "uk": "Чарівник із досвідом Тайваню."
           },
           "used": [
             "sorcerer"
@@ -502,7 +502,7 @@
           "name": "pushmybutton",
           "what": {
             "en": "Sorcerer, also experienced.",
-            "ru": "Волшебник, тоже с опытом."
+            "ru": "Волшебник, тоже с опытом.", "uk": "Чарівник, теж із досвідом."
           },
           "used": [
             "sorcerer"
@@ -522,7 +522,7 @@
           "name": "krixew",
           "what": {
             "en": "Assassin with Taiwan experience (EU).",
-            "ru": "Убийца с опытом Тайваня (EU)."
+            "ru": "Убийца с опытом Тайваня (EU).", "uk": "Вбивця з досвідом Тайваню (EU)."
           },
           "used": [
             "assassin"
@@ -542,7 +542,7 @@
           "name": "norganbm",
           "what": {
             "en": "Chanter with Taiwan experience.",
-            "ru": "Чародей с опытом Тайваня."
+            "ru": "Чародей с опытом Тайваня.", "uk": "Чародій із досвідом Тайваню."
           },
           "used": [
             "chanter"
@@ -562,7 +562,7 @@
           "name": "yuga",
           "what": {
             "en": "Templar (tank).",
-            "ru": "Страж (танк)."
+            "ru": "Страж (танк).", "uk": "Страж (танк)."
           },
           "used": [
             "templar"
@@ -582,7 +582,7 @@
           "name": "youmadsin",
           "what": {
             "en": "Cleric with experience (EU).",
-            "ru": "Целитель с опытом (EU)."
+            "ru": "Целитель с опытом (EU).", "uk": "Цілитель із досвідом (EU)."
           },
           "used": [
             "cleric"
@@ -604,14 +604,14 @@
       "id": "guides",
       "title": {
         "en": "Guides & databases",
-        "ru": "Гайды и базы данных"
+        "ru": "Гайды и базы данных", "uk": "Гайди та бази даних"
       },
       "items": [
         {
           "name": "questlog.gg",
           "what": {
             "en": "Skill, specialization and stigma data from the global client (EN and RU), and all skill icons.",
-            "ru": "Данные скиллов, специализаций и стигм из глобального клиента (EN и RU) и все иконки скиллов."
+            "ru": "Данные скиллов, специализаций и стигм из глобального клиента (EN и RU) и все иконки скиллов.", "uk": "Дані скілів, спеціалізацій і стигм із глобального клієнта (EN і RU) та всі іконки скілів. Української в базі немає — тому на українських сторінках назви скілів англійською."
           },
           "used": [
             "gladiator",
@@ -629,7 +629,7 @@
               "url": "https://questlog.gg/aion-2/en/db/skills/gladiator",
               "label": {
                 "en": "Gladiator skills",
-                "ru": "Скиллы Гладиатора"
+                "ru": "Скиллы Гладиатора", "uk": "Скіли Гладіатора"
               }
             },
             {
@@ -637,7 +637,7 @@
               "url": "https://questlog.gg/aion-2/en/db/skills/ranger",
               "label": {
                 "en": "Ranger skills",
-                "ru": "Скиллы Лучника"
+                "ru": "Скиллы Лучника", "uk": "Скіли Лучника"
               }
             },
             {
@@ -645,7 +645,7 @@
               "url": "https://questlog.gg/aion-2/en/db/skills/templar",
               "label": {
                 "en": "Templar skills",
-                "ru": "Скиллы Стража"
+                "ru": "Скиллы Стража", "uk": "Скіли Стража"
               }
             },
             {
@@ -653,7 +653,7 @@
               "url": "https://questlog.gg/aion-2/en/db/skills/assassin",
               "label": {
                 "en": "Assassin skills",
-                "ru": "Скиллы Убийцы"
+                "ru": "Скиллы Убийцы", "uk": "Скіли Вбивці"
               }
             },
             {
@@ -661,7 +661,7 @@
               "url": "https://questlog.gg/aion-2/en/db/skills/chanter",
               "label": {
                 "en": "Chanter skills",
-                "ru": "Скиллы Чародея"
+                "ru": "Скиллы Чародея", "uk": "Скіли Чародія"
               }
             },
             {
@@ -669,7 +669,7 @@
               "url": "https://questlog.gg/aion-2/en/db/skills/sorcerer",
               "label": {
                 "en": "Sorcerer skills",
-                "ru": "Скиллы Волшебника"
+                "ru": "Скиллы Волшебника", "uk": "Скіли Чарівника"
               }
             },
             {
@@ -677,7 +677,7 @@
               "url": "https://questlog.gg/aion-2/en/db/skills/cleric",
               "label": {
                 "en": "Cleric skills",
-                "ru": "Скиллы Целителя"
+                "ru": "Скиллы Целителя", "uk": "Скіли Цілителя"
               }
             },
             {
@@ -685,7 +685,7 @@
               "url": "https://questlog.gg/aion-2/en/db/skills/elementalist",
               "label": {
                 "en": "Elementalist skills",
-                "ru": "Скиллы Заклинателя"
+                "ru": "Скиллы Заклинателя", "uk": "Скіли Заклинача"
               }
             }
           ]
@@ -694,7 +694,7 @@
           "name": "aion2t.com",
           "what": {
             "en": "Build planner hosting TitanTheF's builds — skill levels, specializations, stigmas and passives are read from it.",
-            "ru": "Планировщик билдов, где лежат билды TitanTheF — уровни скиллов, специализации, стигмы и пассивки взяты оттуда."
+            "ru": "Планировщик билдов, где лежат билды TitanTheF — уровни скиллов, специализации, стигмы и пассивки взяты оттуда.", "uk": "Планувальник білдів, де лежать білди TitanTheF — рівні скілів, спеціалізації, стигми й пасивки взято звідти."
           },
           "used": [
             "ranger",
@@ -713,7 +713,7 @@
           "name": "Vortex Gaming",
           "what": {
             "en": "Korean builds: Gladiator PvP (Abyss / Arena), the post-patch Ranger stigma setup and Templar PvE/PvP setups.",
-            "ru": "Корейские сборки: PvP Гладиатора (Бездна / Арена), стигмы Лучника после патча и сборки Стража для PvE/PvP."
+            "ru": "Корейские сборки: PvP Гладиатора (Бездна / Арена), стигмы Лучника после патча и сборки Стража для PvE/PvP.", "uk": "Корейські збірки: PvP Гладіатора (Безодня / Арена), стигми Лучника після патча і збірки Стража для PvE/PvP."
           },
           "used": [
             "gladiator",
@@ -727,7 +727,7 @@
               "url": "https://vortexgaming.io/en/postdetail/611533",
               "label": {
                 "en": "Gladiator PvP",
-                "ru": "PvP Гладиатора"
+                "ru": "PvP Гладиатора", "uk": "PvP Гладіатора"
               }
             },
             {
@@ -735,7 +735,7 @@
               "url": "https://vortexgaming.io/postdetail/722757",
               "label": {
                 "en": "Ranger stigmas",
-                "ru": "Стигмы Лучника"
+                "ru": "Стигмы Лучника", "uk": "Стигми Лучника"
               }
             },
             {
@@ -743,7 +743,7 @@
               "url": "https://vortexgaming.io/postdetail/977999",
               "label": {
                 "en": "Templar PvE",
-                "ru": "Страж PvE"
+                "ru": "Страж PvE", "uk": "Страж PvE"
               }
             }
           ]
@@ -752,7 +752,7 @@
           "name": "7MMO",
           "what": {
             "en": "Full Korean Ranger PvE build: skills, stigmas, the three macro lines and what to press by hand.",
-            "ru": "Полный корейский PvE-билд Лучника: скиллы, стигмы, три линии макроса и что жать вручную."
+            "ru": "Полный корейский PvE-билд Лучника: скиллы, стигмы, три линии макроса и что жать вручную.", "uk": "Повний корейський PvE-білд Лучника: скіли, стигми, три лінії макросу і що тиснути вручну."
           },
           "used": [
             "ranger"
@@ -769,7 +769,7 @@
           "name": "Game8",
           "what": {
             "en": "Ranger skill unlock levels and rotation basics.",
-            "ru": "Уровни открытия скиллов Лучника и основы ротации."
+            "ru": "Уровни открытия скиллов Лучника и основы ротации.", "uk": "Рівні відкриття скілів Лучника й основи ротації."
           },
           "used": [
             "ranger"
@@ -786,7 +786,7 @@
           "name": "Gamers Together",
           "what": {
             "en": "Ranger PvP approach.",
-            "ru": "Подход к PvP за Лучника."
+            "ru": "Подход к PvP за Лучника.", "uk": "Підхід до PvP за Лучника."
           },
           "used": [
             "ranger"
@@ -803,7 +803,7 @@
           "name": "Gamers Together · allthings.how",
           "what": {
             "en": "How the in-game macro works: hotbar buttons in order, 10 ms delay, cooldowns skipped, what not to put in it.",
-            "ru": "Как работает встроенный макрос: кнопки панели по порядку, задержка 10 мс, пропуск перезарядок, что туда не ставить."
+            "ru": "Как работает встроенный макрос: кнопки панели по порядку, задержка 10 мс, пропуск перезарядок, что туда не ставить.", "uk": "Як працює вбудований макрос: кнопки панелі по черзі, затримка 10 мс, пропуск перезарядок, що туди не ставити."
           },
           "used": [
             "gladiator",
@@ -815,7 +815,7 @@
               "url": "https://gamerstogether.cz/en/aion-2-macros/",
               "label": {
                 "en": "Macro guide",
-                "ru": "Гайд по макросам"
+                "ru": "Гайд по макросам", "uk": "Гайд по макросах"
               }
             },
             {
@@ -829,7 +829,7 @@
           "name": "DCInside · AION 2 gallery",
           "what": {
             "en": "Korean player posts on current Ranger meta and stigma choices. Anonymous community authors — no single link to credit.",
-            "ru": "Посты корейских игроков о текущей мете Лучника и выборе стигм. Анонимные авторы сообщества — отдельной ссылки нет."
+            "ru": "Посты корейских игроков о текущей мете Лучника и выборе стигм. Анонимные авторы сообщества — отдельной ссылки нет.", "uk": "Пости корейських гравців про поточну мету Лучника й вибір стигм. Анонімні автори спільноти — окремого посилання немає."
           },
           "used": [
             "ranger"
@@ -840,7 +840,7 @@
           "name": "Inven · FM Korea",
           "what": {
             "en": "Korean Templar posts: skill specializations, stigma sets and the macro layout; PvP stigma choices.",
-            "ru": "Корейские посты о Страже: специализации, наборы стигм и раскладка макроса; выбор PvP-стигм."
+            "ru": "Корейские посты о Страже: специализации, наборы стигм и раскладка макроса; выбор PvP-стигм.", "uk": "Корейські пости про Стража: спеціалізації, набори стигм і розкладка макросу; вибір PvP-стигм."
           },
           "used": [
             "templar"
@@ -851,7 +851,7 @@
               "url": "https://www.inven.co.kr/board/aion2/6438/12803",
               "label": {
                 "en": "Skills & macro",
-                "ru": "Скиллы и макрос"
+                "ru": "Скиллы и макрос", "uk": "Скіли й макрос"
               }
             },
             {
@@ -859,7 +859,7 @@
               "url": "https://www.inven.co.kr/board/aion2/6438/7621",
               "label": {
                 "en": "Stigma guide",
-                "ru": "Гайд по стигмам"
+                "ru": "Гайд по стигмам", "uk": "Гайд по стигмах"
               }
             },
             {
@@ -873,7 +873,7 @@
           "name": "MMO Codex",
           "what": {
             "en": "Templar skill order while leveling and passive priority.",
-            "ru": "Порядок скиллов Стража на прокачке и приоритет пассивок."
+            "ru": "Порядок скиллов Стража на прокачке и приоритет пассивок.", "uk": "Порядок скілів Стража на прокачці й пріоритет пасивок."
           },
           "used": [
             "templar",
@@ -893,7 +893,7 @@
           "name": "Aion 2 Kodex",
           "what": {
             "en": "Odyle energy numbers for the global client (+15 every 3 h, cap 840, 7 weekly crafts) used by the weekly tracker.",
-            "ru": "Цифры энергии Odyle для глобального клиента (+15 каждые 3 ч, лимит 840, 7 недельных крафтов) для недельного трекера."
+            "ru": "Цифры энергии Odyle для глобального клиента (+15 каждые 3 ч, лимит 840, 7 недельных крафтов) для недельного трекера.", "uk": "Цифри енергії Odyle для глобального клієнта (+15 кожні 3 год, ліміт 840, 7 тижневих крафтів) для тижневого трекера."
           },
           "used": [
             "site"
@@ -910,7 +910,7 @@
           "name": "IGGM",
           "what": {
             "en": "Global Season 1 changes vs Korea/Taiwan (stigma slots, expeditions, gear).",
-            "ru": "Отличия глобального 1 сезона от Кореи/Тайваня (слоты стигм, экспедиции, снаряжение)."
+            "ru": "Отличия глобального 1 сезона от Кореи/Тайваня (слоты стигм, экспедиции, снаряжение).", "uk": "Відмінності глобального 1 сезону від Кореї/Тайваню (слоти стигм, експедиції, спорядження)."
           },
           "used": [
             "gladiator",
@@ -930,14 +930,14 @@
       "id": "launch",
       "title": {
         "en": "Launch dates & art",
-        "ru": "Даты запуска и арты"
+        "ru": "Даты запуска и арты", "uk": "Дати запуску й арти"
       },
       "items": [
         {
           "name": "AION 2 (NCSOFT)",
           "what": {
             "en": "Official dates (pre-download announced on the official YouTube channel) and the class artwork used on this site. AION 2 art © NCSOFT.",
-            "ru": "Официальные даты (предзагрузку объявили на официальном YouTube-канале) и арты классов на этом сайте. Арты AION 2 © NCSOFT."
+            "ru": "Официальные даты (предзагрузку объявили на официальном YouTube-канале) и арты классов на этом сайте. Арты AION 2 © NCSOFT.", "uk": "Офіційні дати (попереднє завантаження оголосили на офіційному YouTube-каналі) та арти класів на цьому сайті. Арти AION 2 © NCSOFT."
           },
           "used": [
             "site"
@@ -969,7 +969,7 @@
           "name": "Fextralife AION 2 Wiki",
           "what": {
             "en": "Class emblems (the official site only shows them small, inside its class nameplates). AION 2 © NCSOFT.",
-            "ru": "Эмблемы классов (на официальном сайте они есть только мелкими, внутри табличек с названием класса). AION 2 © NCSOFT."
+            "ru": "Эмблемы классов (на официальном сайте они есть только мелкими, внутри табличек с названием класса). AION 2 © NCSOFT.", "uk": "Емблеми класів (на офіційному сайті вони є лише дрібними, всередині табличок із назвою класу). AION 2 © NCSOFT."
           },
           "used": [
             "site"
@@ -985,11 +985,11 @@
         {
           "name": {
             "en": "Home page background",
-            "ru": "Фон главной страницы"
+            "ru": "Фон главной страницы", "uk": "Фон головної сторінки"
           },
           "what": {
             "en": "Official AION 2 wallpaper from the global teaser site (the same scene as the Reddit screenshot used before, in full quality). AION 2 © NCSOFT.",
-            "ru": "Официальные обои AION 2 с глобального тизер-сайта (та же сцена, что и прежний скриншот с Reddit, в полном качестве). AION 2 © NCSOFT."
+            "ru": "Официальные обои AION 2 с глобального тизер-сайта (та же сцена, что и прежний скриншот с Reddit, в полном качестве). AION 2 © NCSOFT.", "uk": "Офіційні шпалери AION 2 з глобального тизер-сайту (та сама сцена, що й попередній скриншот із Reddit, у повній якості). AION 2 © NCSOFT."
           },
           "used": [
             "site"
@@ -1005,11 +1005,11 @@
         {
           "name": {
             "en": "Page header images",
-            "ru": "Изображения в шапках страниц"
+            "ru": "Изображения в шапках страниц", "uk": "Зображення в шапках сторінок"
           },
           "what": {
             "en": "Week 1, Weekly, World bosses, Sources and Changelog headers: official wallpapers from the AION 2 global teaser site. AION 2 © NCSOFT.",
-            "ru": "Шапки страниц «Первая неделя», «Неделя», «Мировые боссы», «Источники» и «История изменений»: официальные обои с глобального тизер-сайта AION 2. AION 2 © NCSOFT."
+            "ru": "Шапки страниц «Первая неделя», «Неделя», «Мировые боссы», «Источники» и «История изменений»: официальные обои с глобального тизер-сайта AION 2. AION 2 © NCSOFT.", "uk": "Шапки сторінок «Перший тиждень», «Тиждень», «Світові боси», «Джерела» та «Історія змін»: офіційні шпалери з глобального тизер-сайту AION 2. AION 2 © NCSOFT."
           },
           "used": [
             "site"
@@ -1026,7 +1026,7 @@
           "name": "timesaver.gg · aion2guide.org",
           "what": {
             "en": "Launch schedule cross-checks: what NC has confirmed and what it hasn't.",
-            "ru": "Сверка расписания запуска: что NC подтвердили, а что нет."
+            "ru": "Сверка расписания запуска: что NC подтвердили, а что нет.", "uk": "Звірка розкладу запуску: що NC підтвердили, а що ні."
           },
           "used": [
             "site"

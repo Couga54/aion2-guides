@@ -1,6 +1,6 @@
 # AION 2 Guides
 
-Static multi-class guide site (EN/RU) for AION 2 global Season 1, built with Python + Jinja2 into `docs/` for GitHub Pages.
+Static multi-class guide site (EN/RU/UK) for AION 2 global Season 1, built with Python + Jinja2 into `docs/` for GitHub Pages.
 
 Read `CONTEXT.md` first — it has the user's requirements, verified game facts and the site architecture.
 
@@ -25,7 +25,10 @@ Read `CONTEXT.md` first — it has the user's requirements, verified game facts 
   Transcript only: `.venv/Scripts/python tools/fetch_transcript.py <video id>` → `frames/<id>/transcript.json`.
 - Launch day (Oct 5): work through `LAUNCH.md` — every value that must be checked against the live servers.
 - Do not push without the user's explicit go-ahead; they check locally first.
-- Every guide text exists in both `src/content/<class>/en.html` and `ru.html` — change both.
+- Every guide text exists in `src/content/<class>/en.html`, `ru.html` and `uk.html` — change all three; every `{"en", "ru"}` string in
+  `data/` has a `"uk"` too, and `data/i18n.json` has a `uk` block. Ukrainian pages use **English** names for everything from the game data (skills, items, sets, bosses, zones, boards, stats in tooltips) —
+  questlog.gg has no Ukrainian; the build copies the English game data under `uk` (`DATA_LANG` in `tools/build.py`). In `uk.html` and in `"uk"` data
+  strings write skill and game names in English (as the EN text does), the rest in Ukrainian.
 - Skill cards (`{% call skill('slug', kind, 'level', [picks]) %}`): a skill has 1 specialization slot from level 8, 2 from 12 and 3 only
   at 20, and options 4 / 5 unlock at 12 / 16 — never list more picks than the level allows; for "16 → 20" list the two picks for 16
   and say in the text what the third slot takes at 20.

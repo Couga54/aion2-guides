@@ -1,6 +1,6 @@
 # AION 2 Guides
 
-Class guides and trackers for **AION 2 global Season 1** in English and Russian. Skill, item and Daevanion board data come from the global client (via questlog.gg); the builds come from creators' guides, which every page lists as its sources.
+Class guides and trackers for **AION 2 global Season 1** in English, Russian and Ukrainian. Skill, item and Daevanion board data come from the global client (via questlog.gg); the builds come from creators' guides, which every page lists as its sources.
 
 **Live site:** https://couga54.github.io/aion2-guides/
 
@@ -37,7 +37,7 @@ A small Python static-site generator (Jinja2) renders everything into `docs/`, w
 ```
 data/
   site.json               classes (modes, sources and dates, status), languages, launch events
-  i18n.json               UI strings (EN / RU)
+  i18n.json               UI strings (EN / RU / UK)
   skills/<class>.json     skill names, descriptions, specializations (generated)
   boards/<class>.json     Daevanion boards: nodes, costs, effects (generated)
   boards/presets.json     which nodes each guide mode takes; the route is calculated at build time
@@ -49,7 +49,7 @@ data/
   changelog.json          What's new
 src/
   templates/              base, home, class page, guide pages, trackers, macros
-  content/<class>/        en.html and ru.html — the guide text
+  content/<class>/        en.html, ru.html and uk.html — the guide text
   assets/                 css, js, icons, class art, social preview images
 tools/
   build.py                data + templates → docs/
@@ -93,7 +93,7 @@ This downloads the video (Full HD, no sound), saves its transcript and cuts it i
 
 ## Editing a class guide
 
-- The text is in `src/content/<class>/en.html` and `ru.html` — always change both.
+- The text is in `src/content/<class>/en.html`, `ru.html` and `uk.html` — always change all three. Ukrainian pages show skill, item and other game names in English (there is no Ukrainian game data), so `uk.html` writes them in English too.
 - `{{ s('skill-slug') }}` renders a skill with its icon and name in the page language; `{{ it('{i:item_key}') }}` does the same for an item.
 - `{% call skill('slug', 'must', '16', [1, 3]) %}…{% endcall %}` is a skill card with the chosen specializations; `hotline(...)` and `macroseq(...)` draw hotbar lines and macro steps; `{{ dv_board('pve') }}` shows the Daevanion boards with that mode's route.
 - Sections are tagged with the modes they belong to (`'pve'`, `'pvp'`, `'pve pvp'`, `'lvl'`). Each PvP block sits right after its PvE counterpart, so both modes read in the same order.
@@ -103,7 +103,7 @@ This downloads the video (Full HD, no sound), saves its transcript and cuts it i
 ## Adding a class
 
 1. Fetch its data: `tools/fetch_skills.py <class>` and `tools/fetch_boards.py <class>`.
-2. Write `src/content/<class>/en.html` and `ru.html` (copy an existing class as a template).
+2. Write `src/content/<class>/en.html`, `ru.html` and `uk.html` (copy an existing class as a template).
 3. Add class steps to `data/leveling/<class>.json` and, for the boards, the class's presets to `data/boards/presets.json`.
 4. Set `"status": "ready"` (plus `accent`, `weapon`, `difficulty`, `pitch`, `src`) for the class in `data/site.json`.
 5. Run `tools/make_og.py`, then `tools/build.py`.

@@ -99,7 +99,7 @@ Requirements from the user (in their words, translated):
 ## Architecture
 
 - `data/site.json` — classes (status ready/soon, names/roles in EN+RU), base URL, launch date.
-- `data/i18n.json` — UI strings EN/RU.
+- `data/i18n.json` — UI strings EN/RU/UK. Ukrainian (added Oct 1): our own text in Ukrainian, game data (skills, items, boards, bosses) in English.
 - `data/weekly.json`, `data/week1.json` — tracker items and first-week goals (EN+RU).
 - `data/changelog.json` — "What's new" modal (base.html). Shown once per new top entry id
   (localStorage `whatsnew-seen`) and only that entry, with a link to the full changelog page

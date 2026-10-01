@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="uk" data-mode="pve">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Після 45 рівня: шлях екіпірування до першого рейду — AION 2 Гайди</title>
+<meta name="description" content="Прогрес у глобальній AION 2 після 45 рівня: маршрут за рівнем предметів від 1 279 до 2 800 — Shugo Festival, Nightmare, Draupnir, Vakron, Transcendence, Ferocious Horn Den і рейд на дракона.">
+<link rel="canonical" href="https://couga54.github.io/aion2-guides/uk/progression/">
+<link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/progression/">
+<link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/progression/">
+<link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/progression/">
+<link rel="alternate" hreflang="x-default" href="https://couga54.github.io/aion2-guides/en/progression/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Гайди">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:title" content="Після 45 рівня: шлях екіпірування до першого рейду — AION 2 Гайди">
+<meta property="og:description" content="Прогрес у глобальній AION 2 після 45 рівня: маршрут за рівнем предметів від 1 279 до 2 800 — Shugo Festival, Nightmare, Draupnir, Vakron, Transcendence, Ferocious Horn Den і рейд на дракона.">
+<meta property="og:url" content="https://couga54.github.io/aion2-guides/uk/progression/">
+<meta property="og:image" content="https://couga54.github.io/aion2-guides/assets/og/progression-uk.jpg?v=3461c782">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var off = (r.getAttribute('data-off') || '').split(' ');
+    var modes = ['pve', 'pvp', 'lvl'].filter(function (x) { return off.indexOf(x) < 0; });
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+    else if (modes.indexOf(r.dataset.mode) < 0) r.dataset.mode = modes[0];
+  })(document.documentElement);
+</script>
+<script>
+  // Google Analytics (site.json "ga"). Not loaded on local previews. A visitor who came through the root
+  // language redirect keeps the site they came from (root.html saves it in sessionStorage).
+  if (!/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+    (function () {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-6WYEWLG4B5';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      var ref = null;
+      try { ref = sessionStorage.getItem('ref'); sessionStorage.removeItem('ref'); } catch (e) {}
+      gtag('js', new Date());
+      gtag('config', 'G-6WYEWLG4B5', ref ? { page_referrer: ref } : {});
+    })();
+  }
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=3461c782">
+</head>
+<body class="page-guide page-progression">
+<a class="skip-link" href="#main">Перейти до вмісту</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../uk/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
+      <span>AION 2 Гайди</span>
+    </a>
+    <details class="class-menu">
+      <summary class="class-menu-btn">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg><span>Класи</span>        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="Класи">
+        <a href="../../uk/gladiator/" class="cm-item accent-crimson">
+          <img src="../../assets/classes/gladiator.webp" width="44" height="44" alt=""><span class="cm-name">Гладіатор</span><span class="cm-role">Ближній бій · брузер</span>
+        </a>
+        <a href="../../uk/ranger/" class="cm-item accent-emerald">
+          <img src="../../assets/classes/ranger.webp" width="44" height="44" alt=""><span class="cm-name">Лучник</span><span class="cm-role">Дальній бій · кайт</span>
+        </a>
+        <a href="../../uk/templar/" class="cm-item accent-sapphire">
+          <img src="../../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Страж</span><span class="cm-role">Танк · бафер групи</span>
+        </a>
+        <a href="../../uk/assassin/" class="cm-item accent-violet">
+          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Вбивця</span><span class="cm-role">Ближній бій · берст</span>
+        </a>
+        <a href="../../uk/sorcerer/" class="cm-item accent-frost">
+          <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Чарівник</span><span class="cm-role">Магічна шкода здалеку</span>
+        </a>
+        <a href="../../uk/elementalist/" class="cm-item accent-spirit">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Заклинач</span><span class="cm-role">Призивач · магічна шкода</span>
+        </a>
+        <a href="../../uk/cleric/" class="cm-item accent-sunlight">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Цілитель</span><span class="cm-role">Лікар · шкода землею й блискавкою</span>
+        </a>
+        <a href="../../uk/chanter/" class="cm-item accent-amber">
+          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Чародій</span><span class="cm-role">Підтримка ближнього бою · бафер</span>
+        </a>
+      </nav>
+    </details>
+    <div class="topbar-tools">      <a class="top-timer" href="../../uk/" title="Розклад запуску" data-events='[{"at": "2026-09-28T13:00:00Z", "n": "\u041f\u043e\u043f\u0435\u0440\u0435\u0434\u043d\u0454 \u0437\u0430\u0432\u0430\u043d\u0442\u0430\u0436\u0435\u043d\u043d\u044f", "o": ""}, {"at": "2026-09-30T14:00:00Z", "n": "\u0420\u0430\u043d\u043d\u0456\u0439 \u0434\u043e\u0441\u0442\u0443\u043f", "o": "\u0420\u0430\u043d\u043d\u0456\u0439 \u0434\u043e\u0441\u0442\u0443\u043f \u0432\u0456\u0434\u043a\u0440\u0438\u0442\u043e"}, {"at": "2026-10-05T13:00:00Z", "n": "\u0413\u043b\u043e\u0431\u0430\u043b\u044c\u043d\u0438\u0439 \u0437\u0430\u043f\u0443\u0441\u043a", "o": "\u0421\u0435\u0440\u0432\u0435\u0440\u0438 \u0432\u0456\u0434\u043a\u0440\u0438\u0442\u043e"}]' data-units="д,г,хв,с" data-open="відкрито">
+        <span class="tt-dot" aria-hidden="true"></span><span class="tt-name"></span><b class="tt-time">--:--:--</b>
+      </a>
+      <details class="class-menu nav-menu">
+        <summary class="class-menu-btn is-here">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Гайди</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <nav class="nav-menu-panel" aria-label="Гайди">
+          <div class="nm-col">
+            <p class="nm-group">Прогрес</p>
+            <a href="../../uk/week-1/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+              <span class="nm-name">Перший тиждень</span><span class="nm-desc">Що встигнути до першого скидання</span>
+            </a>
+            <a href="../../uk/progression/" class="nm-item" aria-current="page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h4v-6H3zM10 20h4V9h-4zM17 20h4V4h-4z"/></svg>
+              <span class="nm-name">Після 45</span><span class="nm-desc">Маршрут за рівнем предметів до рейду</span>
+            </a>
+            <a href="../../uk/crafting/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 1.3-1.3a4 4 0 0 0-5-5L3 10l3-3 3 3 1.3-1.3a4 4 0 0 1 4.4-2.4z"/></svg>
+              <span class="nm-name">Збір і крафт</span><span class="nm-desc">Професії та золоті заготовки</span>
+            </a>
+            <a href="../../uk/settings/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+              <span class="nm-name">Налаштування гри</span><span class="nm-desc">Керування, клавіші, FPS і масове PvP</span>
+            </a>
+          </div>
+          <div class="nm-col">
+            <p class="nm-group">Трекери</p>
+            <a href="../../uk/weekly/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+              <span class="nm-name">Тиждень</span><span class="nm-desc">Тижневі входи й енергія</span>
+            </a>
+            <a href="../../uk/bosses/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
+              <span class="nm-name">Боси</span><span class="nm-desc">Трекер убивств і таймери</span>
+            </a>
+          </div>
+          <div class="nm-foot">
+            <a href="../../uk/sources/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+              <span class="nm-name">Джерела й автори</span><span class="nm-desc">На кому побудовано сайт</span>
+            </a>
+          </div>
+        </nav>
+      </details>      <details class="lang-menu">
+        <summary class="lang-switch" title="Мова"><span aria-hidden="true">UA</span><span class="sr-only">Мова</span></summary>
+        <nav class="lang-panel" aria-label="Мова">
+<a href="../../en/progression/" hreflang="en" lang="en" data-keep-query><b>EN</b>English</a><a href="../../ru/progression/" hreflang="ru" lang="ru" data-keep-query><b>RU</b>Русский</a><a href="../../uk/progression/" hreflang="uk" lang="uk" aria-current="true" data-keep-query><b>UA</b>Українська</a>        </nav>
+      </details>
+      <button class="icon-btn search-open" type="button" aria-label="Пошук (Ctrl+K)" title="Пошук (Ctrl+K)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+<a class="icon-btn wn-top" href="../../uk/changelog/" aria-label="Історія змін" title="Історія змін">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </a>      <button class="icon-btn theme-toggle" type="button" aria-label="Перемкнути темну тему" title="Перемкнути темну тему">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero has-art" style="--hero-art:url('../../assets/art/hero-progression.webp');--hero-pos:50% 60%">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../../uk/">Усі класи</a><span aria-hidden="true">/</span><span>Після 45</span></nav>
+      <h1>Після 45 рівня</h1>
+      <p class="lead">У якому порядку одягатися від 45 рівня до рейду на дракона на 10 людей. Числа — рівень предметів.</p>
+    </div>
+  </section>
+
+  <div class="wrap guide-layout pg-layout"><aside class="toc-side pg-side" aria-label="На сторінці">
+    <p class="toc-title">На сторінці</p>
+    <nav class="toc-list">
+<a href="#global">Що змінюється на глобалі</a><a href="#s45"><b>45</b>Сюжет, регіональні квести й своя мапа</a><a href="#s1400"><b>1400</b>До 1 400: Shugo, Nightmare, Draupnir</a><a href="#s1900"><b>1900</b>До 1 900: Vakron</a><a href="#s2100"><b>2100</b>До 2 100: Transcendence ★2</a><a href="#s2500"><b>2500</b>До 2 500: Ferocious Horn Den</a><a href="#s2800"><b>2800</b>До 2 800: золоті аркани й рейд</a><a href="#hardcore">Хардкорний шлях: точи дешеву заготовку, потім переноси</a><a href="#titan">Шлях TitanTheF: фарм Безодні й крафтова зброя</a><a href="#enhance">Як працює покращення</a><a href="#all">Поради для всіх</a>    </nav>
+  </aside>
+  <div class="pg-page">
+    <p class="pg-note"><span class="wip-tag">Датамайн</span> За датамайном глобалу за день до запуску (Sanya Jacuzzi) і таблицею прогресії TitanTheF (досвід Тайваню) — звіряй із живими серверами. У блоків із відео є посилання на момент.
+<a class="w1-src" href="https://www.youtube.com/watch?v=a8zVweGN--4" target="_blank" rel="noopener" title="Sanya Jacuzzi — Они всё изменили! Мой новый план прокачки после 45 уровня">Sanya Jacuzzi</a><a class="w1-src" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml#gid=53494555" target="_blank" rel="noopener" title="TitanTheF — AION 2 progression sheet">TitanTheF</a></p>
+
+    <ol class="pg-toc" aria-label="Кроки">
+      <li><a href="#global"><span>Що змінюється на глобалі</span></a></li>
+      <li><a href="#s45"><b>45</b><span>Сюжет, регіональні квести й своя мапа</span></a></li>
+      <li><a href="#s1400"><b>1400</b><span>До 1 400: Shugo, Nightmare, Draupnir</span></a></li>
+      <li><a href="#s1900"><b>1900</b><span>До 1 900: Vakron</span></a></li>
+      <li><a href="#s2100"><b>2100</b><span>До 2 100: Transcendence ★2</span></a></li>
+      <li><a href="#s2500"><b>2500</b><span>До 2 500: Ferocious Horn Den</span></a></li>
+      <li><a href="#s2800"><b>2800</b><span>До 2 800: золоті аркани й рейд</span></a></li>
+      <li><a href="#hardcore"><span>Хардкорний шлях: точи дешеву заготовку, потім переноси</span></a></li>
+      <li><a href="#titan"><span>Шлях TitanTheF: фарм Безодні й крафтова зброя</span></a></li>
+      <li><a href="#enhance"><span>Як працює покращення</span></a></li>
+      <li><a href="#all"><span>Поради для всіх</span></a></li>
+    </ol>
+
+    <section class="pg-sec" id="global" aria-labelledby="h-global">
+      <h2 id="h-global" class="section-title">Що змінюється на глобалі</h2>
+<p class="pg-lead">За датамайном глобального клієнта. Через це корейський маршрут більше не працює як є.</p>      <div class="pg-table-wrap">
+        <table class="pg-table">
+          <thead><tr><th scope="col">Точка на мапі</th><th scope="col">На своїй мапі</th><th scope="col">На ворожій мапі</th></tr></thead>
+          <tbody><tr><th scope="row">Запечатане підземелля (?)</th><td><span class="it g71" data-sk="i:dcrystal"><img src="../../assets/icons/items/dcrystal.webp" width="20" height="20" alt="" loading="lazy">Daevanion Crystal</span> ×2, 2 очки навичок, матеріал для крил / статуї</td><td>Кіна, 1 000 AP, 2 500 <span class="it g11" data-sk="i:enhance"><img src="../../assets/icons/items/enhance.webp" width="20" height="20" alt="" loading="lazy">Enhance Stone</span></td></tr><tr><th scope="row">Фортеця</th><td><span class="it g11" data-sk="i:beltscroll"><img src="../../assets/icons/items/beltscroll.webp" width="20" height="20" alt="" loading="lazy">Noble Belt Enhance Scroll</span> ×2</td><td>AP</td></tr></tbody>
+        </table>
+<p class="pg-table-at"> <a class="pg-at" href="https://www.youtube.com/watch?v=a8zVweGN--4&t=222s" target="_blank" rel="noopener" title="Дивитися цей момент у відео">▶ 3:42</a></p>      </div>
+      <ul class="pg-list">
+<li><strong>Ворожі знаки питання втратили кристали Daevanion</strong> — раніше це була ціль номер один на старті, тепер закривай у своєму темпі.</li><li><strong>Пір'я (<span class="it g71" data-sk="i:trace"><img src="../../assets/icons/items/trace.webp" width="20" height="20" alt="" loading="lazy">Empyrean Trace: Altgard</span>) понерфили</strong> — збирай усе, але в останню чергу.</li><li><strong>В екіпірування на глобалі нижчий рівень предмета</strong> (наприклад, True Dragon Lord Greatsword: 70 на KR/TW, 62 на глобалі) — чим нижчий рівень, тим дешевша заточка.</li>      </ul>
+    </section>
+    <section class="pg-sec has-gs" id="s45" aria-labelledby="h-s45">
+<span class="pg-gs" aria-hidden="true">45</span>      <h2 id="h-s45" class="section-title">Сюжет, регіональні квести й своя мапа</h2>
+      <ul class="pg-list">
+<li><strong>Спершу добий сюжет.</strong> Він дає золоту зброю твого класу, <span class="it g41" data-sk="i:bracelet"><img src="../../assets/icons/items/bracelet.webp" width="20" height="20" alt="" loading="lazy">Ascension Bracelet</span> і <span class="it g41" data-sk="i:wings"><img src="../../assets/icons/items/wings.webp" width="20" height="20" alt="" loading="lazy">Ultimate Daeva Wings</span> (одягнені: HP 500, MP 250, пробиття 500, крит 35; у володінні: пробиття 100, точність +20, атака +10). <a class="pg-at" href="https://www.youtube.com/watch?v=a8zVweGN--4&t=87s" target="_blank" rel="noopener" title="Дивитися цей момент у відео">▶ 1:27</a></li><li><strong>Регіональні квести</strong> (Journal → Regional): два кільця, дві сережки й намисто (сині), плюс дві PvE-руни. Ще дають титули та скрині з Theostone.</li><li>Трохи заточись, налаштуй PvE-макрос і закрий <strong>усі знаки питання на своїй мапі</strong>: кожне запечатане підземелля дає <span class="it g71" data-sk="i:dcrystal"><img src="../../assets/icons/items/dcrystal.webp" width="20" height="20" alt="" loading="lazy">Daevanion Crystal</span> ×2 і 2 очки навичок, кожна фортеця — <span class="it g11" data-sk="i:beltscroll"><img src="../../assets/icons/items/beltscroll.webp" width="20" height="20" alt="" loading="lazy">Noble Belt Enhance Scroll</span> ×2.</li><li>Потім решта регіональних квестів і пір'я: <strong>мінімум 95 <span class="it g71" data-sk="i:trace"><img src="../../assets/icons/items/trace.webp" width="20" height="20" alt="" loading="lazy">Empyrean Trace: Altgard</span></strong> піднімають Monolith до 11 рівня — це покращує амулет із зеленого до синього.</li>      </ul>
+    </section>
+    <section class="pg-sec has-gs" id="s1400" aria-labelledby="h-s1400">
+<span class="pg-gs" aria-hidden="true">1400</span>      <h2 id="h-s1400" class="section-title">До 1 400: Shugo, Nightmare, Draupnir</h2>
+<p class="pg-lead">Без ворожих знаків питання виходить близько 1 279 — приблизно на 121 менше, ніж потрібно для підземель другого тіру (1 400). Ось чим закрити різницю.</p>      <h3 class="pg-h">Shugo Festival і бос-розломи</h3>
+      <p class="pg-p">Міні-ігри з карткою нагород наприкінці. Від місця залежить, скільки карток відкриєш. Якщо посів погане місце, від нагороди можна відмовитися — <span class="it g71" data-sk="i:shugokey"><img src="../../assets/icons/items/shugokey.webp" width="20" height="20" alt="" loading="lazy">Shugo Festival Reward Key</span> витрачається лише тоді, коли забираєш. Ключі: 7 за замовчуванням, +1 на день, ще до 30 у запасі — не впирайся в ліміт. <a class="pg-at" href="https://www.youtube.com/watch?v=a8zVweGN--4&t=306s" target="_blank" rel="noopener" title="Дивитися цей момент у відео">▶ 5:06</a></p>
+      <div class="pg-table-wrap">
+        <table class="pg-table">
+          <thead><tr><th scope="col">Місце</th><th scope="col">Карток</th></tr></thead>
+          <tbody><tr><th scope="row">1-ше, 2-ге</th><td>3</td></tr><tr><th scope="row">3-тє й нижче</th><td>2</td></tr></tbody>
+        </table>
+<p class="pg-table-at"> <a class="pg-at" href="https://www.youtube.com/watch?v=a8zVweGN--4&t=324s" target="_blank" rel="noopener" title="Дивитися цей момент у відео">▶ 5:24</a></p>      </div>
+      <p class="pg-p"><strong>Бос-розломи</strong> (наприклад, Beritra Air Raid): відбиваєшся від хвиль, потім б'єш міні-боса. <strong>100 очок внеску = 3 картки</strong>, нагороди ті самі, що в Shugo. Клич Чародіїв, Цілителів і Стражів просто біля порталу — з їхніми груповими бафами 100 очок набираються легко. <a class="pg-at" href="https://www.youtube.com/watch?v=a8zVweGN--4&t=354s" target="_blank" rel="noopener" title="Дивитися цей момент у відео">▶ 5:54</a></p>
+      <div class="callout pg-tip" role="note"><p>Головне — валюта Shugo: витрачай її всю на <span class="it g71" data-sk="i:dcrystal"><img src="../../assets/icons/items/dcrystal.webp" width="20" height="20" alt="" loading="lazy">Daevanion Crystal</span> у магазині фестивалю — на персонажа, ціна зростає сходинками: 50 (×10), 100 (×10), 200 (×15), потім 4-та сходинка (×15). <a class="pg-at" href="https://www.youtube.com/watch?v=a8zVweGN--4&t=396s" target="_blank" rel="noopener" title="Дивитися цей момент у відео">▶ 6:36</a></p></div>
+      <h3 class="pg-h">Nightmare</h3>
+      <ul class="pg-list">
+<li>Соло-підземелля з босом. 14 спроб, +2 на день, ще до 30 у запасі; заряди починають накопичуватися <strong>з 45 рівня</strong> — встигни до першого скидання. <a class="pg-at" href="https://www.youtube.com/watch?v=a8zVweGN--4&t=426s" target="_blank" rel="noopener" title="Дивитися цей момент у відео">▶ 7:06</a></li><li>У кожного боса 10 рівнів складності — убий кожного на всіх. Спроба витрачається лише за вбивство, тож можна піти й повернутися сильнішим. Спершу сірі, потім зелені, далі Last Boss.</li><li>Перше вбивство — 500 валюти Nightmare, повторні — 100. Магазин: <span class="it g71" data-sk="i:dcrystal_ariel"><img src="../../assets/icons/items/dcrystal_ariel.webp" width="20" height="20" alt="" loading="lazy">Daevanion Crystal: Ariel</span> за 800 (×10 на персонажа), <span class="it g71" data-sk="i:wisdom"><img src="../../assets/icons/items/wisdom.webp" width="20" height="20" alt="" loading="lazy">Wisdom Stone</span> за 700 (×5), <span class="it g71" data-sk="i:clashrune"><img src="../../assets/icons/items/clashrune.webp" width="20" height="20" alt="" loading="lazy">Clash Rune Chest</span> за 500. Залиш 14 000 на статую.</li>      </ul>
+      <h3 class="pg-h">Експедиція: Conquest — Draupnir</h3>
+      <ul class="pg-list">
+<li>Ходи до <strong>гаранту: 14 відкриттів скрині</strong> (7 з преміумом), по 40 енергії Odyle. Мета — дві золоті речі з дропу й третя з гаранту: частину сету Bakarma обираєш сам (<span class="it g41" data-sk="i:bakarma"><img src="../../assets/icons/items/bakarma.webp" width="20" height="20" alt="" loading="lazy">Bakarma Breastplate</span>, шолом, наплічники, рукавиці, поножі, чоботи). <a class="pg-at" href="https://www.youtube.com/watch?v=a8zVweGN--4&t=465s" target="_blank" rel="noopener" title="Дивитися цей момент у відео">▶ 7:45</a></li><li>Збери всі <span class="it g71" data-sk="i:trace"><img src="../../assets/icons/items/trace.webp" width="20" height="20" alt="" loading="lazy">Empyrean Trace: Altgard</span> у Chaotic Lower Reshanta: рівні резонансу Monolith дають кристали Daevanion, наприклад <span class="it g71" data-sk="i:dcrystal_azphel"><img src="../../assets/icons/items/dcrystal_azphel.webp" width="20" height="20" alt="" loading="lazy">Daevanion Crystal: Azphel</span>.</li><li>Не вистачає — три <strong>Exploration: Draupnir</strong> дають гарантом ще одну золоту річ: бери будь-яку, якої немає, і встав у неї <span class="it g11" data-sk="i:mana_int"><img src="../../assets/icons/items/mana_int.webp" width="20" height="20" alt="" loading="lazy">Intermediate Manastone</span>.</li>      </ul>
+      <h3 class="pg-h">Заточка на 1 400</h3>
+      <div class="pg-table-wrap">
+        <table class="pg-table">
+          <thead><tr><th scope="col">Слот</th><th scope="col">Заточка</th><th scope="col">Манастоун</th></tr></thead>
+          <tbody><tr><th scope="row">Золота зброя й браслети</th><td>+10</td><td><span class="it g11" data-sk="i:mana_sup"><img src="../../assets/icons/items/mana_sup.webp" width="20" height="20" alt="" loading="lazy">Superior Manastone</span> ×1</td></tr><tr><th scope="row">Золота броня з Draupnir</th><td>+10</td><td><span class="it g11" data-sk="i:mana_int"><img src="../../assets/icons/items/mana_int.webp" width="20" height="20" alt="" loading="lazy">Intermediate Manastone</span> ×1</td></tr><tr><th scope="row">Синя броня, сережки, намисто, кільця</th><td>+5</td><td><span class="it g11" data-sk="i:mana_less"><img src="../../assets/icons/items/mana_less.webp" width="20" height="20" alt="" loading="lazy">Lesser Manastone</span></td></tr><tr><th scope="row">Пояс, амулет</th><td>+3</td><td>—</td></tr></tbody>
+        </table>
+<p class="pg-table-at"> <a class="pg-at" href="https://www.youtube.com/watch?v=a8zVweGN--4&t=489s" target="_blank" rel="noopener" title="Дивитися цей момент у відео">▶ 8:09</a></p>      </div>
+      <p class="pg-p">Плюс зелений Theostone у зброю (наприклад, <span class="it g31" data-sk="i:theostone"><img src="../../assets/icons/items/theostone.webp" width="20" height="20" alt="" loading="lazy">Theostone: Jumentis&#39;s Dexterity</span>) — його дають регіональні квести. Якщо все зроблено правильно, виходить рівно 1 400. <a class="pg-at" href="https://www.youtube.com/watch?v=a8zVweGN--4&t=507s" target="_blank" rel="noopener" title="Дивитися цей момент у відео">▶ 8:27</a></p>
+    </section>
+    <section class="pg-sec has-gs" id="s1900" aria-labelledby="h-s1900">
+<span class="pg-gs" aria-hidden="true">1900</span>      <h2 id="h-s1900" class="section-title">До 1 900: Vakron</h2>
+      <ul class="pg-list">
+<li>Фарми <strong>Vakron Sky Island</strong> (2–5 гравців, 40 енергії за скриню), поки не збереш майже весь сет броні. Зброю й біжутерію краще потім скрафтити, тож Urugugu Canyon (зброя, біжутерія) зачекає. <a class="pg-at" href="https://www.youtube.com/watch?v=a8zVweGN--4&t=546s" target="_blank" rel="noopener" title="Дивитися цей момент у відео">▶ 9:06</a></li><li>Альтернатив <span class="it g41" data-sk="i:vakronguard"><img src="../../assets/icons/items/vakronguard.webp" width="20" height="20" alt="" loading="lazy">Vakron Guard</span> на старті немає. Якщо не випав: кожна 21-ша скриня дає <span class="it g41" data-sk="i:voucher"><img src="../../assets/icons/items/voucher.webp" width="20" height="20" alt="" loading="lazy">Gear Change Voucher: Vakron Sky Island</span>; два такі + 1 500 000 кіни — і наручі робляться в Substance Morph.</li><li>Заточи сет на +10. Якщо викупав усі кристали Daevanion, вийде близько 1 900. Не вистачає — манастоуни або по разу на кожного боса Transcendence ★1: сірі аркани дають ще близько 40.</li>      </ul>
+    </section>
+    <section class="pg-sec has-gs" id="s2100" aria-labelledby="h-s2100">
+<span class="pg-gs" aria-hidden="true">2100</span>      <h2 id="h-s2100" class="section-title">До 2 100: Transcendence ★2</h2>
+      <p class="pg-p">Ходи в Transcendence ★2, поки не виб'єш два зелені слоти — дзвін і дзеркало (<span class="it g21" data-sk="i:bell_green"><img src="../../assets/icons/items/bell_green.webp" width="20" height="20" alt="" loading="lazy">Bell of Vigor</span>, <span class="it g21" data-sk="i:mirror_green"><img src="../../assets/icons/items/mirror_green.webp" width="20" height="20" alt="" loading="lazy">Mirror of Magic</span>, по 40 рівня предмета). Решту слотів забий сірими арканами (<span class="it g11" data-sk="i:compass_grey"><img src="../../assets/icons/items/compass_grey.webp" width="20" height="20" alt="" loading="lazy">Compass of Magic</span>, <span class="it g11" data-sk="i:chalice_grey"><img src="../../assets/icons/items/chalice_grey.webp" width="20" height="20" alt="" loading="lazy">Chalice of Magic</span> — по 20). Бонуси поки неважливі, важливий лише рівень предметів. <a class="pg-at" href="https://www.youtube.com/watch?v=a8zVweGN--4&t=597s" target="_blank" rel="noopener" title="Дивитися цей момент у відео">▶ 9:57</a></p>
+    </section>
+    <section class="pg-sec has-gs" id="s2500" aria-labelledby="h-s2500">
+<span class="pg-gs" aria-hidden="true">2500</span>      <h2 id="h-s2500" class="section-title">До 2 500: Ferocious Horn Den</h2>
+      <p class="pg-p">Одразу йди в <strong>Ferocious Horn Den</strong> (російськомовна спільнота кличе його «Собака») і сиди там, поки не збереш майже весь сет броні. Заточку з речей Vakron перенеси на нові через перенесення екіпірування. <a class="pg-at" href="https://www.youtube.com/watch?v=a8zVweGN--4&t=618s" target="_blank" rel="noopener" title="Дивитися цей момент у відео">▶ 10:18</a></p>
+    </section>
+    <section class="pg-sec has-gs" id="s2800" aria-labelledby="h-s2800">
+<span class="pg-gs" aria-hidden="true">2800</span>      <h2 id="h-s2800" class="section-title">До 2 800: золоті аркани й рейд</h2>
+      <p class="pg-p">Фарми золоті аркани в Transcendence ★4 і викочуй потрібні скіли під PvE- і PvP-сетапи (наприклад, <span class="it g41" data-sk="i:mirror_gold"><img src="../../assets/icons/items/mirror_gold.webp" width="20" height="20" alt="" loading="lazy">Mirror of Vigor</span> +5 із сетом Primal Vigor). На 2 800 відкривається <strong>рейд на дракона на 10 людей</strong> — найскладніше PvE 1 сезону й джерело ресурсів на наступне оновлення. <a class="pg-at" href="https://www.youtube.com/watch?v=a8zVweGN--4&t=630s" target="_blank" rel="noopener" title="Дивитися цей момент у відео">▶ 10:30</a></p>
+    </section>
+    <section class="pg-sec" id="hardcore" aria-labelledby="h-hardcore">
+      <h2 id="h-hardcore" class="section-title">Хардкорний шлях: точи дешеву заготовку, потім переноси</h2>
+<p class="pg-lead">Ті самі кроки, але з економією кожного каменя заточки й кіни. Тримається на датамайні — якщо на старті перенесення обмежать, пропусти.</p>      <ul class="pg-list">
+<li>Ціна заточки росте з рівнем предмета (Vakron Cloak, 76: 380 каменів і 9 500 кіни за спробу; Abyssal Bracelet, 84: 420 і 10 500). Після +10 шанс падає (+13 → +14: 25%, +5% після кожної невдачі), а спроба на верхніх рівнях коштує близько 2 млн кіни. <a class="pg-at" href="https://www.youtube.com/watch?v=a8zVweGN--4&t=708s" target="_blank" rel="noopener" title="Дивитися цей момент у відео">▶ 11:48</a></li><li>Камінь перенесення (<span class="it g41" data-sk="i:transfer_w"><img src="../../assets/icons/items/transfer_w.webp" width="20" height="20" alt="" loading="lazy">Transfer Stone: Weapon (Unique)</span>, <span class="it g41" data-sk="i:transfer_a"><img src="../../assets/icons/items/transfer_a.webp" width="20" height="20" alt="" loading="lazy">Transfer Stone: Armor (Unique)</span>) переносить рівень заточки й статі, що випали, на будь-яку річ — навіть із найдешевшої золотої на топову. Робиться в Substance Morph із золотої екіпіровки.</li><li>План: ходи в найнижчорівневій золотій екіпіровці й не точи новий дроп. Коли випала річ надовго — точи дешеву заготовку цього слота до +15 і переноси. Працює для зброї, броні й наручів, але не для біжутерії (немає дешевих джерел).</li><li>Без твінків це довго: 3–4 додаткові персонажі приносять додаткові камені заточки.</li>      </ul>
+    </section>
+    <section class="pg-sec" id="titan" aria-labelledby="h-titan">
+      <h2 id="h-titan" class="section-title">Шлях TitanTheF: фарм Безодні й крафтова зброя</h2>
+<p class="pg-sec-src">Джерело: <a class="pg-at" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml#gid=53494555" target="_blank" rel="noopener" title="TitanTheF — AION 2 progression sheet">TitanTheF</a></p><p class="pg-lead">Інший маршрут із таблиці прогресії TitanTheF (досвід Тайваню): менше очікування данжів, більше Безодні й крафту. Потрібно багато ігрового часу.</p>      <h3 class="pg-h">Одразу після 45</h3>
+      <ul class="pg-list">
+<li><strong>Усі Shugo Festival.</strong> Лише на 45 рівні дають повні нагороди — зокрема золоту екіпіровку й крафтові ресурси; на глобалі туди додали <span class="it g71" data-sk="i:stigmashard"><img src="../../assets/icons/items/stigmashard.webp" width="20" height="20" alt="" loading="lazy">Stigma Shard</span>. Скрині та стрибки; плитки пропускай — новачки їх руйнують.</li><li><strong>Закрий мапу</strong>: усі знаки питання й вогнища, зелені сайд-квести, дорогою збирай приховані куби й пір'я. Після цього має бути близько <strong>420 із 570</strong> очок Daevanion, решту дадуть Shugo і Nightmare. Пір'я піднімає вівтар до 30 рівня й дає титул.</li><li>Далі одне з трьох: бий мобів, поки всі пети не стануть 3 рівня (усі разом дають 55 тис. бойової могутності), іди в Безодню (ті самі пети плюс крила) або збери групу на <strong>3–4 забіги в Draupnir</strong>. TitanTheF обирає Draupnir — перша екіпіровка, кіна й заточка.</li><li>Витрачай щоденну спробу Nightmare. Одного забігу в першу Transcendence за білими арканами вистачить — потрібно лише відкрити 2 поверх. Стеж за ринком на ресурси T1-данжів і забирай усе для сезонного магазину.</li><li>Мета перших днів — валюта на <strong>крафтову T1-зброю</strong>: саме її ти точитимеш і на ній ролитимеш статі.</li>      </ul>
+      <h3 class="pg-h">Фарм Безодні</h3>
+      <ul class="pg-list">
+<li>На старті просто стати на спот не вийде. Купи сувої завдань у NPC на базі Безодні — усі, від білих до золотих (близько 1,4 млн кіни) — і виконуй білі, зелені та сині.</li><li>Прибивайся до гравців, які роблять ті самі завдання, і пропускай бійки — за них дають менше. Перекидай завдання на золоті ресурси чи PvP-плитки, але стеж за валютою. Потім золоті завдання в центрі, потім боковий острів на фарм.</li><li>Ходи вдвох: у парі більше AP і ресурсів, золоту екіпіровку потім ділите. Якщо фармити неможливо — роби такі самі завдання у світі, торговці є в кожному великому місті. І не забувай про Shugo.</li><li>Убий кожного <strong>світового боса</strong> по разу — шанс на дроп і титул за участь. Таймери є на мапі, боси майже в кожній локації.</li>      </ul>
+      <h3 class="pg-h">Крафтова зброя й далі</h3>
+      <ul class="pg-list">
+<li>Щойно дозволить рівень предметів — закрий і 2 поверх Transcendence (інші аркани). Далі Vakron і Urugugu (T2-данжі): стеж за енергією, продавай непотрібне й скуповуй T1-ресурси.</li><li>Коли набереш T1-ресурсів — качай крафт (близько 2 млн кіни, дивись <a href="../crafting/">Збір і крафт</a>). Скрафти хоча б одну золоту заготовку 60 рівня — не одягай і не точи. Потім T1-зброю: у перші дні вона має вийти не дорожче приблизно 30 млн кіни.</li><li>Не точи зброю вище +10 — далі кільця (утричі дешевші за зброю). Пробуй Transcendence ★3, якщо вистачає енергії й екіпіровки, інакше добивай мобів. Соло-данж із заточкою: іди лише за каменями й лише піднявши рівень предметів — чим більше мобів, тим більша нагорода.</li><li>Знову в Безодню: не в центр, а в кут із невеликим паком мобів. 8–10 годин такого фарму дають купу AP, кіни, екіпіровки й ресурсів — у перші дні вигіднішого немає.</li><li>Докрафти кільце, потім аркани; із синіми арканами й заточеною екіпіровкою пробуй T3-данжі. <strong>Статі ролити лише на екіпіровці з T3-данжів.</strong> Коли скінчиться енергія — ролимо генуси (близько 10 млн кіни на все): не лочи статі до 10 рівня; за приховані куби дають по 1 000 кристалів — на 10 рівень вистачить.</li><li>Не зливай неприв'язану кіну на заточку — лише на докупівлю ресурсів.</li><li>Далі: енергія в T3-данжі, Transcendence ★4 із хорошою групою, аркани до 20 рівня. За 2–3 дні за вбивства в Безодні почнуть нормально давати; купити намисто за очки Безодні й точити його — не помилка, але весь сет Безодні на старті не потрібен: перші AP — у стигми. Не пропускай активності Безодні, тижневих босів і битви за артефакти — за них дають медалі для PvP-сету. Сережки можна з Kromede, наступний апгрейд — крафтові наручі.</li>      </ul>
+      <h3 class="pg-h">Економічний шлях</h3>
+      <p class="pg-p">Для тих, хто може грати по 10 годин на день: Shugo як зазвичай, решту часу — збір. Пріоритет — Odyle і дерево, ще сапфіри, рубіни й алмази; швидко качай збір і забий на рівень предметів. Досвідчені гравці скуповують золоті ресурси й ресурси взагалі, та й самому крафтити стане простіше. Ще можна скуповувати куну за кіну на аукціоні й фліпати картини, ресурси й шкіру (зараз копійки, за тиждень удесятеро дорожче). Ризик тут — боти.</p>
+      <h3 class="pg-h">Твінки</h3>
+      <p class="pg-p">Якщо на старті є 10–16 годин — вкладай їх у мейна, а твінками займайся через 1–2 дні, коли стартові локації звільняться. Якщо часу менше — спершу прокачай 4 персонажів до 22 і лише потім докачуй мейна: на той момент у твінків буде повна енергія.</p>
+    </section>
+    <section class="pg-sec" id="enhance" aria-labelledby="h-enhance">
+      <h2 id="h-enhance" class="section-title">Як працює покращення</h2>
+<p class="pg-sec-src">Джерело: <a class="pg-at" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml#gid=53494555" target="_blank" rel="noopener" title="TitanTheF — AION 2 progression sheet">TitanTheF</a></p><p class="pg-lead">П'ять вкладок покращення коротко: заточка, манастоуни, Theostone, спадок (Soul Binding) і перенесення.</p>      <div class="pg-table-wrap">
+        <table class="pg-table">
+          <thead><tr><th scope="col">Якість</th><th scope="col">Максимальна заточка</th></tr></thead>
+          <tbody><tr><th scope="row">Синя</th><td>+15</td></tr><tr><th scope="row">Золота</th><td>+20</td></tr><tr><th scope="row">Помаранчева</th><td>+25</td></tr></tbody>
+        </table>
+      </div>
+      <ul class="pg-list">
+<li><strong>Заточка.</strong> Золота екіпіровка до +10 точиться зі 100% шансом, далі шанс падає. При невдачі річ не ламається — витрачаються лише ресурси й кіна. Вище +15 потрібен ще <span class="it g41" data-sk="i:amplify"><img src="../../assets/icons/items/amplify.webp" width="20" height="20" alt="" loading="lazy">Amplify Stone (Unique)</span>, він робиться в Substance Morph із <span class="it g41" data-sk="i:amplify_frag"><img src="../../assets/icons/items/amplify_frag.webp" width="20" height="20" alt="" loading="lazy">Amplify Stone Fragment (Unique)</span> і <span class="it g11" data-sk="i:enhance"><img src="../../assets/icons/items/enhance.webp" width="20" height="20" alt="" loading="lazy">Enhance Stone</span>.</li><li><strong>Манастоуни.</strong> Кількість слотів залежить від рідкості: біла — 1, зелена — 2 і так далі. Бувають двох видів — для зброї й броні та для біжутерії — і кожен у звичайній і PvP-версії (<span class="it g11" data-sk="i:mana_sup"><img src="../../assets/icons/items/mana_sup.webp" width="20" height="20" alt="" loading="lazy">Superior Manastone</span>).</li><li><strong>Theostone</strong> вставляються у зброю й наручі: шкода, шкода з часом або контроль. Спрацьовують із шансом під час атаки — чим вища швидкість бою, тим частіше (<span class="it g31" data-sk="i:theostone"><img src="../../assets/icons/items/theostone.webp" width="20" height="20" alt="" loading="lazy">Theostone: Jumentis&#39;s Dexterity</span>).</li><li><strong>Спадок (Soul Binding).</strong> Перша вкладка відповідає за якість статів, друга їх перекидає — будь-якою непотрібною золотою екіпіровкою чи предметами для ролу, третя — книгами. <span class="it g41" data-sk="i:sync"><img src="../../assets/icons/items/sync.webp" width="20" height="20" alt="" loading="lazy">Sync Stone (Unique)</span> береться з бойового пропуску, хард-данжів і данжів від 2 800.</li><li><strong>Перенесення</strong> переносить заточку й статі на іншу річ — дивись хардкорний шлях вище.</li><li><strong>Титули</strong> — кожен дає пасивні статі; як отримати, видно в інформації про титул.</li><li><strong>Сезон</strong> триває 2–3 місяці. За сезонні очки в сезонному магазині купуються матеріали для крафту.</li>      </ul>
+    </section>
+    <section class="pg-sec" id="all" aria-labelledby="h-all">
+      <h2 id="h-all" class="section-title">Поради для всіх</h2>
+      <p class="pg-p"><strong>Щоденні контракти</strong> (Journal → Duty → Mission) оновлюються щодня. Гарантована лише перша випадкова нагорода, решта — шанс, що падає за списком: 100%, 50%, 33%, 25%, 10%. <a class="pg-at" href="https://www.youtube.com/watch?v=a8zVweGN--4&t=858s" target="_blank" rel="noopener" title="Дивитися цей момент у відео">▶ 14:18</a></p>
+      <ul class="pg-list">
+<li>Бери кожен контракт, де <strong>золотий ключ</strong> стоїть у слотах 1–4.</li><li>Ключа немає: бракує каменів заточки — бери з найбільшою кількістю каменів; інакше — з найбільшою кількістю райдужних та інших каменів петів.</li><li>Золота річ або ресурс наприкінці списку — майже завжди обман, пропускай.</li>      </ul>
+      <div class="callout pg-tip" role="note"><p><strong>Приховані куби</strong> дають по 1 000 кристалів — забирай кожен дорогою. <strong>Неприв'язана кіна</strong> — на докупівлю ресурсів, не на заточку. <a class="pg-at" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml#gid=53494555" target="_blank" rel="noopener" title="TitanTheF — AION 2 progression sheet">TitanTheF</a></p></div>
+      <div class="callout pg-tip" role="note"><p><strong>Daily Dungeon і випробування:</strong> не чіпай і не відкривай коробки з перепустками, якщо їх роздадуть на старті. Їх переробляють, нагорода залежить від очок (швидкості вбивства мобів), а оновлюються вони лише наприкінці тижня — іди туди тоді, на піку сили. Тижневі нагороди у світі й Безодні теж переробляють — чекай живих цифр. <a class="pg-at" href="https://www.youtube.com/watch?v=a8zVweGN--4&t=921s" target="_blank" rel="noopener" title="Дивитися цей момент у відео">▶ 15:21</a></p></div>
+    </section>
+
+    <script type="application/json" id="sk-data">{"i:wings":{"n":"Ultimate Daeva Wings (Bound)","m":"","g":41,"d":"Grants [Ultimate Daeva Wings (Bound)].\n\n[Equipped Effect]\nHP: 500\nMP: 250\nPenetration: 500\nCritical Hit: 35\n[Owned Effect]\nFlight Power: 500\nPenetration: 100\nAccuracy Bonus: 20\nAttack Bonus: 10","sp":[]},"i:bracelet":{"n":"Ascension Bracelet","m":"Рівень предмета 51","g":41,"d":"Defense: 156\nAttack: 65","sp":[]},"i:trace":{"n":"Empyrean Trace: Altgard (Bound)","m":"","g":71,"d":"A trace faintly imbued with the strength of the Empyrean Lords who protect Altgard. Can be resonated with Altgard Monolith.","sp":[]},"i:dcrystal":{"n":"Daevanion Crystal (Bound)","m":"","g":71,"d":"Use to obtain 1 Daevanion Point.","sp":[]},"i:dcrystal_ariel":{"n":"Daevanion Crystal: Ariel (Bound)","m":"","g":71,"d":"Use to obtain 1 Ariel Daevanion Point.","sp":[]},"i:dcrystal_azphel":{"n":"Daevanion Crystal: Azphel (Bound)","m":"","g":71,"d":"Use to obtain 1 Azphel Daevanion Point.","sp":[]},"i:wisdom":{"n":"Wisdom Stone (Bound)","m":"","g":71,"d":"A mysterious stone imbued with memories of battle.\nUse to obtain 1 Skill Point.","sp":[]},"i:clashrune":{"n":"Clash Rune Chest (Bound)","m":"","g":71,"d":"A rune that can be earned only by those who have overcome a nightmare.\nUse to obtain a Clash Rune (Bound) and Rune Enhance Scrolls (Bound).","sp":[]},"i:beltscroll":{"n":"Noble Belt Enhance Scroll (Bound)","m":"","g":11,"d":"An Enhance Scroll containing an ancient power.\nUse to enhance Noble Belt.","sp":[]},"i:shugokey":{"n":"Shugo Festival Reward Key (Bound)","m":"","g":71,"d":"Recharges 1 Shugo Festival Reward Key count.","sp":[]},"i:bakarma":{"n":"Bakarma Breastplate","m":"Рівень предмета 54","g":41,"d":"HP: 216\nDefense: 397","sp":[]},"i:voucher":{"n":"Gear Change Voucher: Vakron Sky Island (Bound)","m":"","g":41,"d":"A reward obtained by defeating Vakron.\nWhen used as a Substance Morph material, it can be transformed into a Unique Guard or Unique Gear Selection Chest.","sp":[]},"i:vakronguard":{"n":"Vakron Guard","m":"Рівень предмета 70","g":41,"d":"Critical Hit: 50\nAccuracy: 50\nAttack: 144","sp":[]},"i:mana_sup":{"n":"Superior Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:mana_int":{"n":"Intermediate Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:mana_less":{"n":"Lesser Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:theostone":{"n":"Theostone: Jumentis's Dexterity (Bound)","m":"","g":31,"d":"Grants [Theostone: Jumentis's Dexterity].\nThe obtained Theostone can be found in the Enhancement menu.\nHas a 20% chance to deal 250 AoE Wind damage to up to 4 targets on attack\nEffect Activation Cooldown: 1s\nOnly one Theostone's effect applies when identical Theostones are engraved.","sp":[]},"i:enhance":{"n":"Enhance Stone","m":"","g":11,"d":"Used to awaken hidden potential of gear.","sp":[]},"i:bell_green":{"n":"Bell of Vigor","m":"Рівень предмета 40 · Сет: Primal Vigor","g":21,"d":"Justice [Nezekan]: 12","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:mirror_green":{"n":"Mirror of Magic","m":"Рівень предмета 40 · Сет: Magic Armor","g":21,"d":"Wisdom [Lumiel]: 12","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:compass_grey":{"n":"Compass of Magic","m":"Рівень предмета 20 · Сет: Magic Armor","g":11,"d":"Death [Triniel]: 8","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:chalice_grey":{"n":"Chalice of Magic","m":"Рівень предмета 20 · Сет: Magic Armor","g":11,"d":"Space [Israphel]: 8","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:mirror_gold":{"n":"Mirror of Vigor","m":"Рівень предмета 80 · Сет: Primal Vigor","g":41,"d":"Illusion [Kaisinel]: 20","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:transfer_w":{"n":"Transfer Stone: Weapon (Unique) (Bound)","m":"","g":41,"d":"A formidable gemstone that transfers the boundless power of the gear to another.\nCan be used on the Unique Weapon.","sp":[]},"i:transfer_a":{"n":"Transfer Stone: Armor (Unique) (Bound)","m":"","g":41,"d":"A formidable gemstone that transfers the boundless power of the gear to another.\nCan be used on the Unique Armor.","sp":[]},"i:stigmashard":{"n":"Stigma Shard (Bound)","m":"","g":71,"d":"A fragment sealed with the Essence of Experience.\nGrants 1 Stigma Shard Point when obtained.","sp":[]},"i:amplify":{"n":"Amplify Stone (Unique) (Bound)","m":"","g":41,"d":"A mystical gemstone that awakens the unique power of gear.\nUsed to amplify Unique Gear that has reached its maximum enhancement level.","sp":[]},"i:amplify_frag":{"n":"Amplify Stone Fragment (Unique) (Bound)","m":"","g":41,"d":"A piece of an Amplify Stone used to awaken the unique power of the gear.\nCan be converted into an Amplify Stone through Substance Morph.","sp":[]},"i:sync":{"n":"Sync Stone (Unique) (Bound)","m":"","g":41,"d":"A stone that harmonizes the energies within gear to awaken new possibilities.\nWhen used in [Enhancement - Soul Binding - Sync], it allows you to adjust the properties of gear.","sp":[]},"i:sapphire":{"n":"Sapphire Gemstone (Bound)","m":"","g":11,"d":"A gemstone infused with valuable gems. Used as a material for handicrafting accessories.","sp":[]},"i:ruby":{"n":"Ruby Gemstone (Bound)","m":"","g":11,"d":"A gemstone infused with valuable gems. Used as a material for handicrafting accessories.","sp":[]},"i:odyle":{"n":"Odyle","m":"","g":11,"d":"Used to imbue an item with the power of Odyle. Used as a material for Crafting and Substance Morph.","sp":[]},"i:log":{"n":"Yggdrasil Log (Bound)","m":"","g":11,"d":"A magic-imbued log. Used for making wooden weapons in Handicrafting.","sp":[]},"i:odyle_energy":{"n":"Odyle Energy (Bound)","m":"","g":71,"d":"Recharges 40 Odyle Energy.\nOdyle Energy can be used to activate the Odyle Energy Cube that appears when you clear an Expedition, Transcendence, or Sanctuary.","sp":[]},"i:parchment_vigor":{"n":"Parchment of Vigor","m":"Рівень предмета 80 · Сет: Primal Vigor","g":41,"d":"Life [Yustiel]: 20","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:compass_vigor":{"n":"Compass of Vigor","m":"Рівень предмета 80 · Сет: Primal Vigor","g":41,"d":"","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:chalice_vigor":{"n":"Chalice of Vigor","m":"Рівень предмета 80 · Сет: Primal Vigor","g":41,"d":"","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:mirror_magic_gold":{"n":"Mirror of Magic","m":"Рівень предмета 80 · Сет: Magic Armor","g":41,"d":"Wisdom [Lumiel]: 20","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]}}</script>
+<p class="w1-cta"><a class="btn btn-primary" href="../../uk/week-1/">Назад до чек-листа першого тижня →</a></p>  </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../uk/">AION 2 Гайди</a>
+      <p>Неофіційний фанатський сайт, не пов&#39;язаний з NCSOFT. AION 2 та іконки скілів © NCSOFT.</p>
+      <p>Перевірено: 2026-10-01 (до глобального запуску).</p>
+      <p><a href="../../uk/sources/">Усі джерела й автори</a> · <a href="../../uk/changelog/">Історія змін</a> · <button type="button" class="link-btn report-open">Повідомити про помилку</button></p>
+    </div>
+  </div>
+</footer>
+<dialog class="search-dlg" aria-label="Пошук" data-index="../../uk/search.json" data-base="../../uk/" data-empty="Нічого не знайдено"
+  data-kinds="{&#34;boss&#34;: &#34;\u0411\u043e\u0441&#34;, &#34;class&#34;: &#34;\u041a\u043b\u0430\u0441&#34;, &#34;page&#34;: &#34;\u0421\u0442\u043e\u0440\u0456\u043d\u043a\u0430&#34;, &#34;section&#34;: &#34;\u0420\u043e\u0437\u0434\u0456\u043b&#34;, &#34;skill&#34;: &#34;\u0421\u043a\u0456\u043b&#34;}" data-root="../../">
+  <div class="search-in">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-q" placeholder="Клас, скіл, бос, розділ…" aria-label="Пошук" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-res" role="listbox"></ul>
+  </div>
+</dialog>
+<dialog class="whatsnew" data-id="2026-10-01-uk" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title">Що нового</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="Зрозуміло">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <section class="wn-entry">
+      <time class="wn-date" datetime="2026-10-01">1 жовтня 2026</time>
+      <ul>
+        <li><span><strong>Українська версія</strong> — увесь сайт тепер є й українською: гайди, сторінки й трекери. Назви скілів і предметів тут англійською — української локалізації ігрових даних немає. Мова перемикається кнопкою в шапці.</span></li>
+      </ul>
+    </section>
+    <button class="btn btn-primary wn-ok" value="close">Зрозуміло</button>
+    <p class="wn-all"><a href="../../uk/changelog/">Уся історія змін →</a></p>
+  </form>
+</dialog>
+<dialog class="whatsnew feedback" aria-labelledby="fb-title" data-url="https://aion2-feedback.couga-ua.workers.dev/" data-page="uk/progression/" data-lang="uk">
+  <form class="wn-in fb-form" novalidate>
+    <div class="wn-head">
+      <h2 id="fb-title">Повідомити про помилку</h2>
+      <button type="button" class="icon-btn fb-x" aria-label="Зрозуміло">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <p class="fb-hint">Що не так або застаріло? Посилання на джерело чи скриншот дуже допоможуть.</p>
+    <label class="fb-label" for="fb-text">Повідомлення</label>
+    <textarea id="fb-text" class="fb-text" name="text" rows="6" maxlength="2000" required placeholder="Наприклад: третя спеціалізація Blaze на глобалі інша…"></textarea>
+    <label class="fb-label" for="fb-contact">Контакт для відповіді (необов&#39;язково)</label>
+    <input id="fb-contact" class="fb-contact" name="contact" type="text" maxlength="100" autocomplete="off" placeholder="Discord або Telegram">
+    <input class="fb-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="fb-meta">Разом із повідомленням надішлеться: <b class="fb-where"></b></p>
+    <p class="fb-status" role="status" data-sending="Надсилаю…" data-ok="Надіслано — дякуємо!" data-err="Не вдалося надіслати. Спробуй ще раз пізніше." data-rate="Забагато повідомлень поспіль — спробуй за кілька хвилин." data-short="Спершу напиши кілька слів."></p>
+    <div class="fb-actions">
+      <button type="submit" class="btn btn-primary fb-send">Надіслати</button>
+      <button type="button" class="btn btn-ghost fb-cancel">Скасувати</button>
+    </div>
+  </form>
+</dialog>
+<script src="../../assets/js/site.js?v=3461c782" defer></script>
+<script src="../../assets/js/fx.js?v=3461c782" defer></script>
+<div class="cel-banner" role="status" hidden data-at="2026-09-30T14:00:00Z" data-id="early">
+  <span class="cel-ico" aria-hidden="true">✦</span>
+  <div><p class="cel-h">Ранній доступ відкрито!</p><p class="cel-p">Сервери Founder&#39;s Pack працюють — успіху на старті. Гайди по класах уже чекають.</p></div>
+  <button type="button" class="cel-x" aria-label="Закрити">×</button>
+</div>
+<script src="../../assets/js/celebrate.js?v=3461c782" defer></script>
+</body>
+</html>

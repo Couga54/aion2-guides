@@ -10,11 +10,11 @@
    ],
    "when": {
     "en": "Lv 1",
-    "ru": "Ур. 1"
+    "ru": "Ур. 1", "uk": "Рів. 1"
    },
    "text": {
     "en": "Level [[cold-shock]] (restores MP) and [[combustion]] first. Play in <strong>target mode</strong> so the basic attack keeps running — mana is the Elementalist's early problem.",
-    "ru": "Сначала качай [[cold-shock]] (восполняет ману) и [[combustion]]. Играй в <strong>режиме с таргетом</strong>, чтобы автоатака не прерывалась: мана — главная проблема Заклинателя на старте."
+    "ru": "Сначала качай [[cold-shock]] (восполняет ману) и [[combustion]]. Играй в <strong>режиме с таргетом</strong>, чтобы автоатака не прерывалась: мана — главная проблема Заклинателя на старте.", "uk": "Спершу качай [[cold-shock]] (поповнює ману) і [[combustion]]. Грай у <strong>режимі з таргетом</strong>, щоб автоатака не переривалася: мана — головна проблема Заклинача на старті."
    }
   },
   {
@@ -25,11 +25,11 @@
    ],
    "when": {
     "en": "Lv ~9",
-    "ru": "~Ур. 9"
+    "ru": "~Ур. 9", "uk": "~Рів. 9"
    },
    "text": {
     "en": "[[summon-water-spirit]] is your spirit for leveling: the best single-target damage and it feeds your mana. Other spirits stay at 1 for now.",
-    "ru": "[[summon-water-spirit]] — твой дух на прокачке: лучший урон по одной цели и подпитка маной. Остальных духов пока держи на 1."
+    "ru": "[[summon-water-spirit]] — твой дух на прокачке: лучший урон по одной цели и подпитка маной. Остальных духов пока держи на 1.", "uk": "[[summon-water-spirit]] — твій дух на прокачці: найкраща шкода по одній цілі й підживлення маною. Решту духів поки тримай на 1."
    }
   },
   {
@@ -42,11 +42,11 @@
    ],
    "when": {
     "en": "Lv 9–18",
-    "ru": "Ур. 9–18"
+    "ru": "Ур. 9–18", "uk": "Рів. 9–18"
    },
    "text": {
     "en": "Add [[jointstrike-curse]] (damage over time), [[dimensional-control]] (fires each time a spirit uses its skill) and [[rapid-scattershot]] (only on staggered targets).",
-    "ru": "Добавь [[jointstrike-curse]] (урон со временем), [[dimensional-control]] (срабатывает каждый раз, когда дух использует скилл) и [[rapid-scattershot]] (только по ошеломлённым)."
+    "ru": "Добавь [[jointstrike-curse]] (урон со временем), [[dimensional-control]] (срабатывает каждый раз, когда дух использует скилл) и [[rapid-scattershot]] (только по ошеломлённым).", "uk": "Додай [[jointstrike-curse]] (шкода з часом), [[dimensional-control]] (спрацьовує щоразу, коли дух використовує скіл) і [[rapid-scattershot]] (лише по оглушених)."
    }
   },
   {
@@ -59,11 +59,11 @@
    ],
    "when": {
     "en": "Lv 19",
-    "ru": "Ур. 19"
+    "ru": "Ур. 19", "uk": "Рів. 19"
    },
    "text": {
     "en": "First specializations: [[cold-shock#0]] and [[combustion#1]]. Water Spirit, Jointstrike: Curse and Rapid Scattershot to 8.",
-    "ru": "Первые специализации: [[cold-shock#0]] и [[combustion#1]]. Дух воды, Кооперация: Проклятие и Беспорядочный огонь — до 8."
+    "ru": "Первые специализации: [[cold-shock#0]] и [[combustion#1]]. Дух воды, Кооперация: Проклятие и Беспорядочный огонь — до 8.", "uk": "Перші спеціалізації: [[cold-shock#0]] і [[combustion#1]]. Water Spirit, Jointstrike: Curse і Rapid Scattershot — до 8."
    }
   },
   {
@@ -76,11 +76,11 @@
    ],
    "when": {
     "en": "Lv 22",
-    "ru": "Ур. 22"
+    "ru": "Ур. 22", "uk": "Рів. 22"
    },
    "text": {
     "en": "Stigmas: [[summon-ancient-spirit]] and [[enhance-spirits-benediction]] to 5 (buff first, then summon the Ancient Spirit); Grobs also runs [[jointstrike-corrode]]; [[flame-blessing]] if your accuracy allows.",
-    "ru": "Стигмы: [[summon-ancient-spirit]] и [[enhance-spirits-benediction]] до 5 (сначала бафф, потом призыв Древнего духа); Grobs ставит ещё [[jointstrike-corrode]]; [[flame-blessing]] — если позволяет точность."
+    "ru": "Стигмы: [[summon-ancient-spirit]] и [[enhance-spirits-benediction]] до 5 (сначала бафф, потом призыв Древнего духа); Grobs ставит ещё [[jointstrike-corrode]]; [[flame-blessing]] — если позволяет точность.", "uk": "Стигми: [[summon-ancient-spirit]] і [[enhance-spirits-benediction]] до 5 (спершу баф, потім виклик Ancient Spirit); Grobs ставить ще [[jointstrike-corrode]]; [[flame-blessing]] — якщо дозволяє точність."
    }
   },
   {
@@ -91,11 +91,11 @@
    ],
    "when": {
     "en": "Lv 26–37",
-    "ru": "Ур. 26–37"
+    "ru": "Ур. 26–37", "uk": "Рів. 26–37"
    },
    "text": {
     "en": "[[elemental-fusion]]: every spirit skill grants an element, at four you can cast it. Dimensional Control and Elemental Fusion to 8.",
-    "ru": "[[elemental-fusion]]: каждый скилл духа даёт элемент, на четырёх его можно кастовать. Повелитель пространства и Синтез элементов — до 8."
+    "ru": "[[elemental-fusion]]: каждый скилл духа даёт элемент, на четырёх его можно кастовать. Повелитель пространства и Синтез элементов — до 8.", "uk": "[[elemental-fusion]]: кожен скіл духа дає елемент, на чотирьох його можна кастувати. Dimensional Control і Elemental Fusion — до 8."
    }
   },
   {
@@ -108,11 +108,11 @@
    ],
    "when": {
     "en": "Cap",
-    "ru": "Кап"
+    "ru": "Кап", "uk": "Кап"
    },
    "text": {
     "en": "Elemental Fusion and all four spirits to 10. Skip [[souls-cry]] — it's for PvP.",
-    "ru": "Синтез элементов и всех четырёх духов — до 10. [[souls-cry]] не качай — он для PvP."
+    "ru": "Синтез элементов и всех четырёх духов — до 10. [[souls-cry]] не качай — он для PvP.", "uk": "Elemental Fusion і всіх чотирьох духів — до 10. [[souls-cry]] не качай — він для PvP."
    }
   }
  ]

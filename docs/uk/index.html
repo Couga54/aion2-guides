@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="uk" data-mode="pve">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Гайди по класах AION 2 — глобальний 1 сезон</title>
+<meta name="description" content="Короткі гайди по класах AION 2 до глобального запуску, зібрані з білдів різних авторів: білди для PvE і PvP, Daevanion, стигми, аркани, макроси та інтерактивний чек-лист прокачки.">
+<link rel="canonical" href="https://couga54.github.io/aion2-guides/uk/">
+<link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/">
+<link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/">
+<link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/">
+<link rel="alternate" hreflang="x-default" href="https://couga54.github.io/aion2-guides/en/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Гайди">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:title" content="Гайди по класах AION 2 — глобальний 1 сезон">
+<meta property="og:description" content="Короткі гайди по класах AION 2 до глобального запуску, зібрані з білдів різних авторів: білди для PvE і PvP, Daevanion, стигми, аркани, макроси та інтерактивний чек-лист прокачки.">
+<meta property="og:url" content="https://couga54.github.io/aion2-guides/uk/">
+<meta property="og:image" content="https://couga54.github.io/aion2-guides/assets/og/home-uk.jpg?v=3461c782">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var off = (r.getAttribute('data-off') || '').split(' ');
+    var modes = ['pve', 'pvp', 'lvl'].filter(function (x) { return off.indexOf(x) < 0; });
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+    else if (modes.indexOf(r.dataset.mode) < 0) r.dataset.mode = modes[0];
+  })(document.documentElement);
+</script>
+<script>
+  // Google Analytics (site.json "ga"). Not loaded on local previews. A visitor who came through the root
+  // language redirect keeps the site they came from (root.html saves it in sessionStorage).
+  if (!/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+    (function () {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-6WYEWLG4B5';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      var ref = null;
+      try { ref = sessionStorage.getItem('ref'); sessionStorage.removeItem('ref'); } catch (e) {}
+      gtag('js', new Date());
+      gtag('config', 'G-6WYEWLG4B5', ref ? { page_referrer: ref } : {});
+    })();
+  }
+</script>
+<link rel="stylesheet" href="../assets/css/site.css?v=3461c782">
+</head>
+<body class="page-home">
+<a class="skip-link" href="#main">Перейти до вмісту</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../uk/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
+      <span>AION 2 Гайди</span>
+    </a>
+    <details class="class-menu">
+      <summary class="class-menu-btn">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg><span>Класи</span>        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="Класи">
+        <a href="../uk/gladiator/" class="cm-item accent-crimson">
+          <img src="../assets/classes/gladiator.webp" width="44" height="44" alt=""><span class="cm-name">Гладіатор</span><span class="cm-role">Ближній бій · брузер</span>
+        </a>
+        <a href="../uk/ranger/" class="cm-item accent-emerald">
+          <img src="../assets/classes/ranger.webp" width="44" height="44" alt=""><span class="cm-name">Лучник</span><span class="cm-role">Дальній бій · кайт</span>
+        </a>
+        <a href="../uk/templar/" class="cm-item accent-sapphire">
+          <img src="../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Страж</span><span class="cm-role">Танк · бафер групи</span>
+        </a>
+        <a href="../uk/assassin/" class="cm-item accent-violet">
+          <img src="../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Вбивця</span><span class="cm-role">Ближній бій · берст</span>
+        </a>
+        <a href="../uk/sorcerer/" class="cm-item accent-frost">
+          <img src="../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Чарівник</span><span class="cm-role">Магічна шкода здалеку</span>
+        </a>
+        <a href="../uk/elementalist/" class="cm-item accent-spirit">
+          <img src="../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Заклинач</span><span class="cm-role">Призивач · магічна шкода</span>
+        </a>
+        <a href="../uk/cleric/" class="cm-item accent-sunlight">
+          <img src="../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Цілитель</span><span class="cm-role">Лікар · шкода землею й блискавкою</span>
+        </a>
+        <a href="../uk/chanter/" class="cm-item accent-amber">
+          <img src="../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Чародій</span><span class="cm-role">Підтримка ближнього бою · бафер</span>
+        </a>
+      </nav>
+    </details>
+    <div class="topbar-tools">      <a class="top-timer is-away" href="../uk/" title="Розклад запуску" data-events='[{"at": "2026-09-28T13:00:00Z", "n": "\u041f\u043e\u043f\u0435\u0440\u0435\u0434\u043d\u0454 \u0437\u0430\u0432\u0430\u043d\u0442\u0430\u0436\u0435\u043d\u043d\u044f", "o": ""}, {"at": "2026-09-30T14:00:00Z", "n": "\u0420\u0430\u043d\u043d\u0456\u0439 \u0434\u043e\u0441\u0442\u0443\u043f", "o": "\u0420\u0430\u043d\u043d\u0456\u0439 \u0434\u043e\u0441\u0442\u0443\u043f \u0432\u0456\u0434\u043a\u0440\u0438\u0442\u043e"}, {"at": "2026-10-05T13:00:00Z", "n": "\u0413\u043b\u043e\u0431\u0430\u043b\u044c\u043d\u0438\u0439 \u0437\u0430\u043f\u0443\u0441\u043a", "o": "\u0421\u0435\u0440\u0432\u0435\u0440\u0438 \u0432\u0456\u0434\u043a\u0440\u0438\u0442\u043e"}]' data-units="д,г,хв,с" data-open="відкрито">
+        <span class="tt-dot" aria-hidden="true"></span><span class="tt-name"></span><b class="tt-time">--:--:--</b>
+      </a>
+      <details class="class-menu nav-menu">
+        <summary class="class-menu-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Гайди</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <nav class="nav-menu-panel" aria-label="Гайди">
+          <div class="nm-col">
+            <p class="nm-group">Прогрес</p>
+            <a href="../uk/week-1/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+              <span class="nm-name">Перший тиждень</span><span class="nm-desc">Що встигнути до першого скидання</span>
+            </a>
+            <a href="../uk/progression/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h4v-6H3zM10 20h4V9h-4zM17 20h4V4h-4z"/></svg>
+              <span class="nm-name">Після 45</span><span class="nm-desc">Маршрут за рівнем предметів до рейду</span>
+            </a>
+            <a href="../uk/crafting/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 1.3-1.3a4 4 0 0 0-5-5L3 10l3-3 3 3 1.3-1.3a4 4 0 0 1 4.4-2.4z"/></svg>
+              <span class="nm-name">Збір і крафт</span><span class="nm-desc">Професії та золоті заготовки</span>
+            </a>
+            <a href="../uk/settings/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+              <span class="nm-name">Налаштування гри</span><span class="nm-desc">Керування, клавіші, FPS і масове PvP</span>
+            </a>
+          </div>
+          <div class="nm-col">
+            <p class="nm-group">Трекери</p>
+            <a href="../uk/weekly/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+              <span class="nm-name">Тиждень</span><span class="nm-desc">Тижневі входи й енергія</span>
+            </a>
+            <a href="../uk/bosses/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
+              <span class="nm-name">Боси</span><span class="nm-desc">Трекер убивств і таймери</span>
+            </a>
+          </div>
+          <div class="nm-foot">
+            <a href="../uk/sources/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+              <span class="nm-name">Джерела й автори</span><span class="nm-desc">На кому побудовано сайт</span>
+            </a>
+          </div>
+        </nav>
+      </details>      <details class="lang-menu">
+        <summary class="lang-switch" title="Мова"><span aria-hidden="true">UA</span><span class="sr-only">Мова</span></summary>
+        <nav class="lang-panel" aria-label="Мова">
+<a href="../en/" hreflang="en" lang="en" data-keep-query><b>EN</b>English</a><a href="../ru/" hreflang="ru" lang="ru" data-keep-query><b>RU</b>Русский</a><a href="../uk/" hreflang="uk" lang="uk" aria-current="true" data-keep-query><b>UA</b>Українська</a>        </nav>
+      </details>
+      <button class="icon-btn search-open" type="button" aria-label="Пошук (Ctrl+K)" title="Пошук (Ctrl+K)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+<a class="icon-btn wn-top" href="../uk/changelog/" aria-label="Історія змін" title="Історія змін">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </a>      <button class="icon-btn theme-toggle" type="button" aria-label="Перемкнути темну тему" title="Перемкнути темну тему">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="home-hero" data-fx="aether">
+    <div class="cel-ribbon" aria-hidden="true"><span>Ранній доступ відкрито · Founder&#39;s Pack · Ласкаво просимо в Атрею · Ранній доступ відкрито · Founder&#39;s Pack · Ласкаво просимо в Атрею · Ранній доступ відкрито · Founder&#39;s Pack · Ласкаво просимо в Атрею · Ранній доступ відкрито · Founder&#39;s Pack · Ласкаво просимо в Атрею · </span></div>
+    <div class="home-hero-art" aria-hidden="true">
+      <img src="../assets/art/home-bg.webp" width="1920" height="1080" alt="" fetchpriority="high">
+    </div>
+    <div class="wrap home-hero-in">
+      <div class="home-hero-text">
+        <p class="kicker">Глобальний 1 сезон</p>
+        <h1>Білди й гайди по класах, зібрані в одному місці</h1>
+        <p class="lead">Збірка білдів від різних авторів для PvE і PvP, а також чек-лист прокачки, який зручно тримати на другому моніторі. У кожному гайді вказано джерела; дані скілів узяті з глобального клієнта, і кожен гайд чесно позначає, де він ще спирається на досвід корейських і тайванських серверів. Назви скілів і предметів — англійською: української локалізації гри немає.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#classes">Обрати клас</a>
+          <a class="btn btn-ghost" href="../uk/week-1/">Твій перший тиждень →</a>
+        </div>
+      </div>
+
+      <aside class="events" aria-labelledby="h-events" data-units="д,г,хв,с" data-lang="uk">
+        <h2 id="h-events" class="events-title">Розклад запуску</h2>
+        <ol class="ev-list">
+          <li class="ev ev-founder" data-at="2026-09-28T13:00:00Z">
+            <div class="ev-head">
+              <span class="ev-name">Попереднє завантаження</span>
+              <span class="ev-acc">Founder&#39;s Pack</span>
+            </div>
+            <div class="ev-timer" aria-hidden="true"><span><b>--</b><i>д</i></span><span><b>--</b><i>г</i></span><span><b>--</b><i>хв</i></span><span><b>--</b><i>с</i></span></div>
+            <div class="ev-done">Почалося</div>
+            <p class="ev-when">
+              <time datetime="2026-09-28T13:00:00Z">28 вересня · 13:00 UTC</time>
+              <span class="ev-local"></span>
+            </p>
+          </li>
+          <li class="ev ev-founder" data-at="2026-09-30T14:00:00Z" data-celebrate>
+            <div class="ev-head">
+              <span class="ev-name">Ранній доступ</span>
+              <span class="ev-acc">Founder&#39;s Pack</span>
+            </div>
+            <div class="ev-timer" aria-hidden="true"><span><b>--</b><i>д</i></span><span><b>--</b><i>г</i></span><span><b>--</b><i>хв</i></span><span><b>--</b><i>с</i></span></div>
+            <div class="ev-done">Почалося</div>
+<div class="ev-open-msg">Сервери відкрито</div>            <p class="ev-when">
+              <time datetime="2026-09-30T14:00:00Z">30 вересня · 14:00 UTC</time>
+              <span class="ev-local"></span>
+<span class="ev-note ev-delayed">відкладено</span>            </p>
+          </li>
+          <li class="ev ev-all" data-at="2026-10-05T13:00:00Z">
+            <div class="ev-head">
+              <span class="ev-name">Глобальний запуск</span>
+              <span class="ev-acc">Безкоштовно · усі гравці</span>
+            </div>
+            <div class="ev-timer" aria-hidden="true"><span><b>--</b><i>д</i></span><span><b>--</b><i>г</i></span><span><b>--</b><i>хв</i></span><span><b>--</b><i>с</i></span></div>
+            <div class="ev-done">Почалося</div>
+            <p class="ev-when">
+              <time datetime="2026-10-05T13:00:00Z">5 жовтня · 13:00 UTC</time>
+              <span class="ev-local"></span>
+            </p>
+          </li>
+        </ol>
+      </aside>
+    </div>
+  </section>
+
+  <section class="wrap" id="classes" aria-labelledby="h-classes">
+    <h2 id="h-classes" class="section-title">Класи</h2>
+    <ul class="class-grid class-grid-ready">
+      <li class="class-card is-ready accent-crimson">
+<a class="class-card-link" href="gladiator/">          <img class="class-card-art" src="../assets/art/gladiator.webp" alt="" loading="lazy" style="object-position:40% 8%">
+          <img class="class-emblem" src="../assets/classes/gladiator.webp" width="72" height="72" alt="" loading="lazy">
+          <div class="class-card-body">
+<span class="class-status">Оновлено <time datetime="2026-09-30">30 вересня 2026</time></span>            <h3>Гладіатор</h3>
+            <p class="class-role">Ближній бій · брузер · Дворучний меч</p>
+<p class="class-pitch">Потужна фронтальна шкода, напівтанковий набір і майже вічні перезарядки від однієї стигми.</p>            <div class="class-meta">
+              <span class="chips"><span class="chip">PvE</span><span class="chip">PvP</span><span class="chip">Прокачка</span></span>
+              <span class="diff" title="Складність: Легкий">
+<i class="on"></i><i class=""></i><i class=""></i>                <span>Легкий</span>
+              </span>
+            </div>
+          </div>
+</a><div class="pop-art" aria-hidden="true"><img src="../assets/art/gladiator.webp" alt="" loading="lazy" style="--fx:40%;"></div>      </li>
+      <li class="class-card is-ready accent-emerald">
+<a class="class-card-link" href="ranger/">          <img class="class-card-art" src="../assets/art/ranger.webp" alt="" loading="lazy" style="object-position:28% 6%">
+          <img class="class-emblem" src="../assets/classes/ranger.webp" width="72" height="72" alt="" loading="lazy">
+          <div class="class-card-body">
+<span class="class-status">Оновлено <time datetime="2026-09-30">30 вересня 2026</time></span>            <h3>Лучник</h3>
+            <p class="class-role">Дальній бій · кайт · Лук</p>
+<p class="class-pitch">Шкода з 20 метрів на бафах, заряджених Deadshot і кровотечах — і найкращий контроль дистанції в PvP.</p>            <div class="class-meta">
+              <span class="chips"><span class="chip">PvE</span><span class="chip">Прокачка</span></span>
+              <span class="diff" title="Складність: Середній">
+<i class="on"></i><i class="on"></i><i class=""></i>                <span>Середній</span>
+              </span>
+            </div>
+          </div>
+</a><div class="pop-art" aria-hidden="true"><img src="../assets/art/ranger.webp" alt="" loading="lazy" style="--fx:28%;--fy:4%;"></div>      </li>
+      <li class="class-card is-ready accent-sapphire">
+<a class="class-card-link" href="templar/">          <img class="class-card-art" src="../assets/art/templar.webp" alt="" loading="lazy">
+          <img class="class-emblem" src="../assets/classes/templar.webp" width="72" height="72" alt="" loading="lazy">
+          <div class="class-card-body">
+<span class="class-status">Оновлено <time datetime="2026-09-30">30 вересня 2026</time></span>            <h3>Страж</h3>
+            <p class="class-role">Танк · бафер групи · Меч і щит</p>
+<p class="class-pitch">Головний танк: блоки бафають усю групу, Judgment перетворює кожен удар щитом на шкоду, а контролю в PvP більше, ніж у всіх.</p>            <div class="class-meta">
+              <span class="chips"><span class="chip">PvE</span><span class="chip">PvP</span><span class="chip">Прокачка</span></span>
+              <span class="diff" title="Складність: Середній">
+<i class="on"></i><i class="on"></i><i class=""></i>                <span>Середній</span>
+              </span>
+            </div>
+          </div>
+</a><div class="pop-art" aria-hidden="true"><img src="../assets/art/templar.webp" alt="" loading="lazy"></div>      </li>
+      <li class="class-card is-ready accent-violet">
+<a class="class-card-link" href="assassin/">          <img class="class-card-art" src="../assets/art/assassin.webp" alt="" loading="lazy">
+          <img class="class-emblem" src="../assets/classes/assassin.webp" width="72" height="72" alt="" loading="lazy">
+          <div class="class-card-body">
+<span class="class-status">Оновлено <time datetime="2026-09-30">30 вересня 2026</time></span>            <h3>Вбивця</h3>
+            <p class="class-role">Ближній бій · берст · Кинджали</p>
+<p class="class-pitch">Стаки емблем, крити, що запускають Heart Gore, і двійник, який знімає з нього перезарядку — найсильніший берст у ближньому бою, якщо тримаєшся за спиною цілі.</p>            <div class="class-meta">
+              <span class="chips"><span class="chip">PvE</span><span class="chip">Прокачка</span></span>
+              <span class="diff" title="Складність: Складний">
+<i class="on"></i><i class="on"></i><i class="on"></i>                <span>Складний</span>
+              </span>
+            </div>
+          </div>
+</a><div class="pop-art" aria-hidden="true"><img src="../assets/art/assassin.webp" alt="" loading="lazy"></div>      </li>
+      <li class="class-card is-ready accent-frost">
+<a class="class-card-link" href="sorcerer/">          <img class="class-card-art" src="../assets/art/sorcerer.webp" alt="" loading="lazy">
+          <img class="class-emblem" src="../assets/classes/sorcerer.webp" width="72" height="72" alt="" loading="lazy">
+          <div class="class-card-body">
+<span class="class-status">Оновлено <time datetime="2026-09-30">30 вересня 2026</time></span>            <h3>Чарівник</h3>
+            <p class="class-role">Магічна шкода здалеку · Гримуар</p>
+<p class="class-pitch">Крихкий кастер вогню й льоду: Fire Mark і Blaze на шкоду, Frost і корені на контроль і величезний берст під Element Enhancement.</p>            <div class="class-meta">
+              <span class="chips"><span class="chip">PvE</span><span class="chip">Прокачка</span></span>
+              <span class="diff" title="Складність: Середній">
+<i class="on"></i><i class="on"></i><i class=""></i>                <span>Середній</span>
+              </span>
+            </div>
+          </div>
+</a><div class="pop-art" aria-hidden="true"><img src="../assets/art/sorcerer.webp" alt="" loading="lazy"></div>      </li>
+      <li class="class-card is-ready accent-spirit">
+<a class="class-card-link" href="elementalist/">          <img class="class-card-art" src="../assets/art/elementalist.webp" alt="" loading="lazy">
+          <img class="class-emblem" src="../assets/classes/elementalist.webp" width="72" height="72" alt="" loading="lazy">
+          <div class="class-card-body">
+<span class="class-status">Оновлено <time datetime="2026-09-28">28 вересня 2026</time></span>            <h3>Заклинач</h3>
+            <p class="class-role">Призивач · магічна шкода · Сфера</p>
+<p class="class-pitch">Єдиний призивач: духи вогню, води, землі й повітря б&#39;ються за тебе, кожен їхній скіл заряджає Elemental Fusion, а прокляття тікають на цілі.</p>            <div class="class-meta">
+              <span class="chips"><span class="chip">Прокачка</span></span>
+              <span class="diff" title="Складність: Складний">
+<i class="on"></i><i class="on"></i><i class="on"></i>                <span>Складний</span>
+              </span>
+            </div>
+          </div>
+</a><div class="pop-art" aria-hidden="true"><img src="../assets/art/elementalist.webp" alt="" loading="lazy"></div>      </li>
+      <li class="class-card is-ready accent-sunlight">
+<a class="class-card-link" href="cleric/">          <img class="class-card-art" src="../assets/art/cleric.webp" alt="" loading="lazy" style="object-position:37% 8%">
+          <img class="class-emblem" src="../assets/classes/cleric.webp" width="72" height="72" alt="" loading="lazy">
+          <div class="class-card-body">
+<span class="class-status">Оновлено <time datetime="2026-09-30">30 вересня 2026</time></span>            <h3>Цілитель</h3>
+            <p class="class-role">Лікар · шкода землею й блискавкою · Булава</p>
+<p class="class-pitch">Лікар, який качається шкодою: Chain of Torment мітить ціль, Condemnation добиває її, а кожен удар лікує групу.</p>            <div class="class-meta">
+              <span class="chips"><span class="chip">PvE</span><span class="chip">Прокачка</span></span>
+              <span class="diff" title="Складність: Середній">
+<i class="on"></i><i class="on"></i><i class=""></i>                <span>Середній</span>
+              </span>
+            </div>
+          </div>
+</a><div class="pop-art" aria-hidden="true"><img src="../assets/art/cleric.webp" alt="" loading="lazy" style="--fx:37%;"></div>      </li>
+      <li class="class-card is-ready accent-amber">
+<a class="class-card-link" href="chanter/">          <img class="class-card-art" src="../assets/art/chanter.webp" alt="" loading="lazy">
+          <img class="class-emblem" src="../assets/classes/chanter.webp" width="72" height="72" alt="" loading="lazy">
+          <div class="class-card-body">
+<span class="class-status">Оновлено <time datetime="2026-09-30">30 вересня 2026</time></span>            <h3>Чародій</h3>
+            <p class="class-role">Підтримка ближнього бою · бафер · Посох</p>
+<p class="class-pitch">Боєць із посохом, який бафає всю групу: мантри на шкоду й швидкість, Power of the Storm на перезарядки і комбо Dark Crush, яке все одно б&#39;є боляче.</p>            <div class="class-meta">
+              <span class="chips"><span class="chip">PvE</span><span class="chip">Прокачка</span></span>
+              <span class="diff" title="Складність: Середній">
+<i class="on"></i><i class="on"></i><i class=""></i>                <span>Середній</span>
+              </span>
+            </div>
+          </div>
+</a><div class="pop-art" aria-hidden="true"><img src="../assets/art/chanter.webp" alt="" loading="lazy" style="--fy:8%;"></div>      </li>
+    </ul>
+    <ul class="class-grid class-grid-soon">
+    </ul>
+  </section>
+
+  <section class="wrap features" aria-labelledby="h-features">
+    <h2 id="h-features" class="section-title">Що є в кожному гайді</h2>
+    <div class="feature-grid">
+      <div class="feature">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+        <h3>PvE / PvP / Прокачка</h3><p>Один перемикач змінює всю сторінку: чистий PvE-білд, чистий PvP-білд або чек-лист прокачки.</p>
+      </div>
+      <div class="feature">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.4 8.3-8 9-4.6-.7-8-4-8-9V7z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5 4.5-5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        <h3>Дані глобального клієнта</h3><p>Назви скілів, спеціалізації та рівні стигм узяті з глобальної бази, а не з корейського клієнта.</p>
+      </div>
+      <div class="feature">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3" stroke="currentColor" stroke-width="2" fill="none"/><path d="M7 12l3 3 7-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+        <h3>Відстеження прогресу</h3><p>Відмічай кроки прокачки під час гри — прогрес зберігається в браузері окремо для кожного класу.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../uk/">AION 2 Гайди</a>
+      <p>Неофіційний фанатський сайт, не пов&#39;язаний з NCSOFT. AION 2 та іконки скілів © NCSOFT.</p>
+      <p>Перевірено: 2026-10-01 (до глобального запуску).</p>
+      <p><a href="../uk/sources/">Усі джерела й автори</a> · <a href="../uk/changelog/">Історія змін</a> · <button type="button" class="link-btn report-open">Повідомити про помилку</button></p>
+    </div>
+  </div>
+</footer>
+<dialog class="search-dlg" aria-label="Пошук" data-index="../uk/search.json" data-base="../uk/" data-empty="Нічого не знайдено"
+  data-kinds="{&#34;boss&#34;: &#34;\u0411\u043e\u0441&#34;, &#34;class&#34;: &#34;\u041a\u043b\u0430\u0441&#34;, &#34;page&#34;: &#34;\u0421\u0442\u043e\u0440\u0456\u043d\u043a\u0430&#34;, &#34;section&#34;: &#34;\u0420\u043e\u0437\u0434\u0456\u043b&#34;, &#34;skill&#34;: &#34;\u0421\u043a\u0456\u043b&#34;}" data-root="../">
+  <div class="search-in">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-q" placeholder="Клас, скіл, бос, розділ…" aria-label="Пошук" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-res" role="listbox"></ul>
+  </div>
+</dialog>
+<dialog class="whatsnew" data-id="2026-10-01-uk" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title">Що нового</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="Зрозуміло">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <section class="wn-entry">
+      <time class="wn-date" datetime="2026-10-01">1 жовтня 2026</time>
+      <ul>
+        <li><span><strong>Українська версія</strong> — увесь сайт тепер є й українською: гайди, сторінки й трекери. Назви скілів і предметів тут англійською — української локалізації ігрових даних немає. Мова перемикається кнопкою в шапці.</span></li>
+      </ul>
+    </section>
+    <button class="btn btn-primary wn-ok" value="close">Зрозуміло</button>
+    <p class="wn-all"><a href="../uk/changelog/">Уся історія змін →</a></p>
+  </form>
+</dialog>
+<dialog class="whatsnew feedback" aria-labelledby="fb-title" data-url="https://aion2-feedback.couga-ua.workers.dev/" data-page="uk/" data-lang="uk">
+  <form class="wn-in fb-form" novalidate>
+    <div class="wn-head">
+      <h2 id="fb-title">Повідомити про помилку</h2>
+      <button type="button" class="icon-btn fb-x" aria-label="Зрозуміло">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <p class="fb-hint">Що не так або застаріло? Посилання на джерело чи скриншот дуже допоможуть.</p>
+    <label class="fb-label" for="fb-text">Повідомлення</label>
+    <textarea id="fb-text" class="fb-text" name="text" rows="6" maxlength="2000" required placeholder="Наприклад: третя спеціалізація Blaze на глобалі інша…"></textarea>
+    <label class="fb-label" for="fb-contact">Контакт для відповіді (необов&#39;язково)</label>
+    <input id="fb-contact" class="fb-contact" name="contact" type="text" maxlength="100" autocomplete="off" placeholder="Discord або Telegram">
+    <input class="fb-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="fb-meta">Разом із повідомленням надішлеться: <b class="fb-where"></b></p>
+    <p class="fb-status" role="status" data-sending="Надсилаю…" data-ok="Надіслано — дякуємо!" data-err="Не вдалося надіслати. Спробуй ще раз пізніше." data-rate="Забагато повідомлень поспіль — спробуй за кілька хвилин." data-short="Спершу напиши кілька слів."></p>
+    <div class="fb-actions">
+      <button type="submit" class="btn btn-primary fb-send">Надіслати</button>
+      <button type="button" class="btn btn-ghost fb-cancel">Скасувати</button>
+    </div>
+  </form>
+</dialog>
+<script src="../assets/js/site.js?v=3461c782" defer></script>
+<script src="../assets/js/fx.js?v=3461c782" defer></script>
+<div class="cel-banner" role="status" hidden data-at="2026-09-30T14:00:00Z" data-id="early">
+  <span class="cel-ico" aria-hidden="true">✦</span>
+  <div><p class="cel-h">Ранній доступ відкрито!</p><p class="cel-p">Сервери Founder&#39;s Pack працюють — успіху на старті. Гайди по класах уже чекають.</p></div>
+  <button type="button" class="cel-x" aria-label="Закрити">×</button>
+</div>
+<script src="../assets/js/celebrate.js?v=3461c782" defer></script>
+</body>
+</html>

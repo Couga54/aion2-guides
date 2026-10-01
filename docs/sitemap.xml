@@ -1,139 +1,258 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://couga54.github.io/aion2-guides/en/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/en/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/ru/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/ru/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/en/gladiator/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/uk/</loc><lastmod>2026-10-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/"/>
+  </url>
+  <url><loc>https://couga54.github.io/aion2-guides/en/gladiator/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/gladiator/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/gladiator/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/gladiator/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/ru/gladiator/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/ru/gladiator/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/gladiator/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/gladiator/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/gladiator/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/en/ranger/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/uk/gladiator/</loc><lastmod>2026-10-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/gladiator/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/gladiator/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/gladiator/"/>
+  </url>
+  <url><loc>https://couga54.github.io/aion2-guides/en/ranger/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/ranger/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/ranger/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/ranger/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/ru/ranger/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/ru/ranger/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/ranger/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/ranger/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/ranger/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/en/templar/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/uk/ranger/</loc><lastmod>2026-10-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/ranger/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/ranger/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/ranger/"/>
+  </url>
+  <url><loc>https://couga54.github.io/aion2-guides/en/templar/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/templar/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/templar/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/templar/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/ru/templar/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/ru/templar/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/templar/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/templar/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/templar/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/en/assassin/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/uk/templar/</loc><lastmod>2026-10-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/templar/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/templar/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/templar/"/>
+  </url>
+  <url><loc>https://couga54.github.io/aion2-guides/en/assassin/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/assassin/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/assassin/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/assassin/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/ru/assassin/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/ru/assassin/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/assassin/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/assassin/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/assassin/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/en/sorcerer/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/uk/assassin/</loc><lastmod>2026-10-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/assassin/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/assassin/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/assassin/"/>
+  </url>
+  <url><loc>https://couga54.github.io/aion2-guides/en/sorcerer/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/sorcerer/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/sorcerer/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/sorcerer/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/ru/sorcerer/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/ru/sorcerer/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/sorcerer/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/sorcerer/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/sorcerer/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/en/elementalist/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/uk/sorcerer/</loc><lastmod>2026-10-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/sorcerer/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/sorcerer/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/sorcerer/"/>
+  </url>
+  <url><loc>https://couga54.github.io/aion2-guides/en/elementalist/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/elementalist/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/elementalist/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/elementalist/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/ru/elementalist/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/ru/elementalist/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/elementalist/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/elementalist/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/elementalist/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/en/cleric/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/uk/elementalist/</loc><lastmod>2026-10-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/elementalist/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/elementalist/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/elementalist/"/>
+  </url>
+  <url><loc>https://couga54.github.io/aion2-guides/en/cleric/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/cleric/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/cleric/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/cleric/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/ru/cleric/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/ru/cleric/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/cleric/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/cleric/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/cleric/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/en/chanter/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/uk/cleric/</loc><lastmod>2026-10-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/cleric/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/cleric/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/cleric/"/>
+  </url>
+  <url><loc>https://couga54.github.io/aion2-guides/en/chanter/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/chanter/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/chanter/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/chanter/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/ru/chanter/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/ru/chanter/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/chanter/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/chanter/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/chanter/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/en/week-1/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/uk/chanter/</loc><lastmod>2026-10-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/chanter/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/chanter/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/chanter/"/>
+  </url>
+  <url><loc>https://couga54.github.io/aion2-guides/en/week-1/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/week-1/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/week-1/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/week-1/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/ru/week-1/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/ru/week-1/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/week-1/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/week-1/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/week-1/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/en/progression/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/uk/week-1/</loc><lastmod>2026-10-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/week-1/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/week-1/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/week-1/"/>
+  </url>
+  <url><loc>https://couga54.github.io/aion2-guides/en/progression/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/progression/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/progression/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/progression/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/ru/progression/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/ru/progression/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/progression/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/progression/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/progression/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/en/crafting/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/uk/progression/</loc><lastmod>2026-10-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/progression/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/progression/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/progression/"/>
+  </url>
+  <url><loc>https://couga54.github.io/aion2-guides/en/crafting/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/crafting/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/crafting/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/crafting/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/ru/crafting/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/ru/crafting/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/crafting/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/crafting/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/crafting/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/en/settings/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/uk/crafting/</loc><lastmod>2026-10-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/crafting/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/crafting/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/crafting/"/>
+  </url>
+  <url><loc>https://couga54.github.io/aion2-guides/en/settings/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/settings/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/settings/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/settings/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/ru/settings/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/ru/settings/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/settings/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/settings/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/settings/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/en/weekly/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/uk/settings/</loc><lastmod>2026-10-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/settings/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/settings/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/settings/"/>
+  </url>
+  <url><loc>https://couga54.github.io/aion2-guides/en/weekly/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/weekly/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/weekly/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/weekly/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/ru/weekly/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/ru/weekly/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/weekly/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/weekly/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/weekly/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/en/bosses/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/uk/weekly/</loc><lastmod>2026-10-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/weekly/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/weekly/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/weekly/"/>
+  </url>
+  <url><loc>https://couga54.github.io/aion2-guides/en/bosses/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/bosses/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/bosses/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/bosses/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/ru/bosses/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/ru/bosses/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/bosses/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/bosses/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/bosses/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/en/changelog/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/uk/bosses/</loc><lastmod>2026-10-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/bosses/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/bosses/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/bosses/"/>
+  </url>
+  <url><loc>https://couga54.github.io/aion2-guides/en/changelog/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/changelog/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/changelog/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/ru/changelog/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/ru/changelog/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/changelog/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/changelog/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/en/sources/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/uk/changelog/</loc><lastmod>2026-10-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/changelog/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/changelog/"/>
+  </url>
+  <url><loc>https://couga54.github.io/aion2-guides/en/sources/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/sources/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/sources/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/sources/"/>
   </url>
-  <url><loc>https://couga54.github.io/aion2-guides/ru/sources/</loc><lastmod>2026-09-30</lastmod>
+  <url><loc>https://couga54.github.io/aion2-guides/ru/sources/</loc><lastmod>2026-10-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/sources/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/sources/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/sources/"/>
+  </url>
+  <url><loc>https://couga54.github.io/aion2-guides/uk/sources/</loc><lastmod>2026-10-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/sources/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/sources/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/sources/"/>
   </url>
 </urlset>

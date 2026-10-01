@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="uk" data-mode="pve">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Збір і крафт: як качати професії — AION 2 Гайди</title>
+<meta name="description" content="Збір і крафт в AION 2: яку професію обрати, прокачка на сапфірах і Odyle, золоті заготовки 60 рівня, скільки ресурсів потрібно і коли вигідніше докупити.">
+<link rel="canonical" href="https://couga54.github.io/aion2-guides/uk/crafting/">
+<link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/crafting/">
+<link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/crafting/">
+<link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/crafting/">
+<link rel="alternate" hreflang="x-default" href="https://couga54.github.io/aion2-guides/en/crafting/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Гайди">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:title" content="Збір і крафт: як качати професії — AION 2 Гайди">
+<meta property="og:description" content="Збір і крафт в AION 2: яку професію обрати, прокачка на сапфірах і Odyle, золоті заготовки 60 рівня, скільки ресурсів потрібно і коли вигідніше докупити.">
+<meta property="og:url" content="https://couga54.github.io/aion2-guides/uk/crafting/">
+<meta property="og:image" content="https://couga54.github.io/aion2-guides/assets/og/crafting-uk.jpg?v=3461c782">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var off = (r.getAttribute('data-off') || '').split(' ');
+    var modes = ['pve', 'pvp', 'lvl'].filter(function (x) { return off.indexOf(x) < 0; });
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+    else if (modes.indexOf(r.dataset.mode) < 0) r.dataset.mode = modes[0];
+  })(document.documentElement);
+</script>
+<script>
+  // Google Analytics (site.json "ga"). Not loaded on local previews. A visitor who came through the root
+  // language redirect keeps the site they came from (root.html saves it in sessionStorage).
+  if (!/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+    (function () {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-6WYEWLG4B5';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      var ref = null;
+      try { ref = sessionStorage.getItem('ref'); sessionStorage.removeItem('ref'); } catch (e) {}
+      gtag('js', new Date());
+      gtag('config', 'G-6WYEWLG4B5', ref ? { page_referrer: ref } : {});
+    })();
+  }
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=3461c782">
+</head>
+<body class="page-guide page-crafting">
+<a class="skip-link" href="#main">Перейти до вмісту</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../uk/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
+      <span>AION 2 Гайди</span>
+    </a>
+    <details class="class-menu">
+      <summary class="class-menu-btn">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg><span>Класи</span>        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="Класи">
+        <a href="../../uk/gladiator/" class="cm-item accent-crimson">
+          <img src="../../assets/classes/gladiator.webp" width="44" height="44" alt=""><span class="cm-name">Гладіатор</span><span class="cm-role">Ближній бій · брузер</span>
+        </a>
+        <a href="../../uk/ranger/" class="cm-item accent-emerald">
+          <img src="../../assets/classes/ranger.webp" width="44" height="44" alt=""><span class="cm-name">Лучник</span><span class="cm-role">Дальній бій · кайт</span>
+        </a>
+        <a href="../../uk/templar/" class="cm-item accent-sapphire">
+          <img src="../../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Страж</span><span class="cm-role">Танк · бафер групи</span>
+        </a>
+        <a href="../../uk/assassin/" class="cm-item accent-violet">
+          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Вбивця</span><span class="cm-role">Ближній бій · берст</span>
+        </a>
+        <a href="../../uk/sorcerer/" class="cm-item accent-frost">
+          <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Чарівник</span><span class="cm-role">Магічна шкода здалеку</span>
+        </a>
+        <a href="../../uk/elementalist/" class="cm-item accent-spirit">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Заклинач</span><span class="cm-role">Призивач · магічна шкода</span>
+        </a>
+        <a href="../../uk/cleric/" class="cm-item accent-sunlight">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Цілитель</span><span class="cm-role">Лікар · шкода землею й блискавкою</span>
+        </a>
+        <a href="../../uk/chanter/" class="cm-item accent-amber">
+          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Чародій</span><span class="cm-role">Підтримка ближнього бою · бафер</span>
+        </a>
+      </nav>
+    </details>
+    <div class="topbar-tools">      <a class="top-timer" href="../../uk/" title="Розклад запуску" data-events='[{"at": "2026-09-28T13:00:00Z", "n": "\u041f\u043e\u043f\u0435\u0440\u0435\u0434\u043d\u0454 \u0437\u0430\u0432\u0430\u043d\u0442\u0430\u0436\u0435\u043d\u043d\u044f", "o": ""}, {"at": "2026-09-30T14:00:00Z", "n": "\u0420\u0430\u043d\u043d\u0456\u0439 \u0434\u043e\u0441\u0442\u0443\u043f", "o": "\u0420\u0430\u043d\u043d\u0456\u0439 \u0434\u043e\u0441\u0442\u0443\u043f \u0432\u0456\u0434\u043a\u0440\u0438\u0442\u043e"}, {"at": "2026-10-05T13:00:00Z", "n": "\u0413\u043b\u043e\u0431\u0430\u043b\u044c\u043d\u0438\u0439 \u0437\u0430\u043f\u0443\u0441\u043a", "o": "\u0421\u0435\u0440\u0432\u0435\u0440\u0438 \u0432\u0456\u0434\u043a\u0440\u0438\u0442\u043e"}]' data-units="д,г,хв,с" data-open="відкрито">
+        <span class="tt-dot" aria-hidden="true"></span><span class="tt-name"></span><b class="tt-time">--:--:--</b>
+      </a>
+      <details class="class-menu nav-menu">
+        <summary class="class-menu-btn is-here">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Гайди</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <nav class="nav-menu-panel" aria-label="Гайди">
+          <div class="nm-col">
+            <p class="nm-group">Прогрес</p>
+            <a href="../../uk/week-1/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+              <span class="nm-name">Перший тиждень</span><span class="nm-desc">Що встигнути до першого скидання</span>
+            </a>
+            <a href="../../uk/progression/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h4v-6H3zM10 20h4V9h-4zM17 20h4V4h-4z"/></svg>
+              <span class="nm-name">Після 45</span><span class="nm-desc">Маршрут за рівнем предметів до рейду</span>
+            </a>
+            <a href="../../uk/crafting/" class="nm-item" aria-current="page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 1.3-1.3a4 4 0 0 0-5-5L3 10l3-3 3 3 1.3-1.3a4 4 0 0 1 4.4-2.4z"/></svg>
+              <span class="nm-name">Збір і крафт</span><span class="nm-desc">Професії та золоті заготовки</span>
+            </a>
+            <a href="../../uk/settings/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+              <span class="nm-name">Налаштування гри</span><span class="nm-desc">Керування, клавіші, FPS і масове PvP</span>
+            </a>
+          </div>
+          <div class="nm-col">
+            <p class="nm-group">Трекери</p>
+            <a href="../../uk/weekly/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+              <span class="nm-name">Тиждень</span><span class="nm-desc">Тижневі входи й енергія</span>
+            </a>
+            <a href="../../uk/bosses/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
+              <span class="nm-name">Боси</span><span class="nm-desc">Трекер убивств і таймери</span>
+            </a>
+          </div>
+          <div class="nm-foot">
+            <a href="../../uk/sources/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+              <span class="nm-name">Джерела й автори</span><span class="nm-desc">На кому побудовано сайт</span>
+            </a>
+          </div>
+        </nav>
+      </details>      <details class="lang-menu">
+        <summary class="lang-switch" title="Мова"><span aria-hidden="true">UA</span><span class="sr-only">Мова</span></summary>
+        <nav class="lang-panel" aria-label="Мова">
+<a href="../../en/crafting/" hreflang="en" lang="en" data-keep-query><b>EN</b>English</a><a href="../../ru/crafting/" hreflang="ru" lang="ru" data-keep-query><b>RU</b>Русский</a><a href="../../uk/crafting/" hreflang="uk" lang="uk" aria-current="true" data-keep-query><b>UA</b>Українська</a>        </nav>
+      </details>
+      <button class="icon-btn search-open" type="button" aria-label="Пошук (Ctrl+K)" title="Пошук (Ctrl+K)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+<a class="icon-btn wn-top" href="../../uk/changelog/" aria-label="Історія змін" title="Історія змін">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </a>      <button class="icon-btn theme-toggle" type="button" aria-label="Перемкнути темну тему" title="Перемкнути темну тему">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero has-art" style="--hero-art:url('../../assets/art/hero-crafting.webp');--hero-pos:50% 45%">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../../uk/">Усі класи</a><span aria-hidden="true">/</span><span>Крафт</span></nav>
+      <h1>Збір і крафт</h1>
+      <p class="lead">Яку професію обрати, як швидше її прокачати і як отримати золоті заготовки для крафтової зброї.</p>
+    </div>
+  </section>
+
+  <div class="wrap guide-layout pg-layout"><aside class="toc-side pg-side" aria-label="На сторінці">
+    <p class="toc-title">На сторінці</p>
+    <nav class="toc-list">
+<a href="#basics">Обери професію</a><a href="#ore">Качайся на руді й Odyle</a><a href="#wood">Деревина, луки й золоті заготовки</a><a href="#market">Докупити чи зморфити</a>    </nav>
+  </aside>
+  <div class="pg-page">
+    <p class="pg-note">За таблицею прогресії TitanTheF (досвід Тайваню) — час і кількість на глобалі можуть відрізнятися.
+<a class="w1-src" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml#gid=683322434" target="_blank" rel="noopener" title="TitanTheF — AION 2 progression sheet">TitanTheF</a></p>
+
+    <ol class="pg-toc" aria-label="Кроки">
+      <li><a href="#basics"><span>Обери професію</span></a></li>
+      <li><a href="#ore"><span>Качайся на руді й Odyle</span></a></li>
+      <li><a href="#wood"><span>Деревина, луки й золоті заготовки</span></a></li>
+      <li><a href="#market"><span>Докупити чи зморфити</span></a></li>
+    </ol>
+
+    <section class="pg-sec" id="basics" aria-labelledby="h-basics">
+      <h2 id="h-basics" class="section-title">Обери професію</h2>
+      <ul class="pg-list">
+<li>Збір на глобалі доступний з 1 рівня. Спершу виріши, що збиратимеш і крафтитимеш першим.</li><li>Приклад для Лучника: <strong>Handicrafting</strong> робить і луки з посохами, і біжутерію — очевидний вибір. Бери професію, яка крафтить твою основну зброю.</li><li>І в збору, і в крафту два ступені — <strong>Novice → Professional</strong>, по 50 рівнів.</li>      </ul>
+    </section>
+    <section class="pg-sec" id="ore" aria-labelledby="h-ore">
+      <h2 id="h-ore" class="section-title">Качайся на руді й Odyle</h2>
+      <ul class="pg-list">
+<li>Найпростіше качати і збір, і крафт через руду. Починай із <span class="it g11" data-sk="i:sapphire"><img src="../../assets/icons/items/sapphire.webp" width="20" height="20" alt="" loading="lazy">Sapphire Gemstone</span> у високорівневій локації: 40–60 жил — і в тебе 50 рівень.</li><li>Потім повертайся в головне місто до NPC і бери зелене завдання: зібрати маленький ідеальний рубін. Копай <span class="it g11" data-sk="i:ruby"><img src="../../assets/icons/items/ruby.webp" width="20" height="20" alt="" loading="lazy">Ruby Gemstone</span>, поки не випаде — зазвичай 2–3 жили, є в провалі біля міста.</li><li>Для крафту потрібна <span class="it g11" data-sk="i:odyle"><img src="../../assets/icons/items/odyle.webp" width="20" height="20" alt="" loading="lazy">Odyle</span>: вона збирається в повітрі, в усіх локаціях. Ідеальна відлюдна локація, де вона спавниться вздовж урвища, — користуйся повітряними потоками, щоб економити витривалість крил.</li><li>У місті: перекрафти всі сапфіри, потім крафти кільця. На 50 рівні візьми в NPC у місті наступне зелене завдання — скрафтити квестовий предмет із початкових ресурсів. За ці завдання ще дають стартові рамки в Пантеон.</li><li>Час: близько 40 хвилин до 50 Novice (на Тайвані, з урахуванням ботів); Odyle — понад годину. Бракує білої Odyle — розбери зелену в Substance Morph. З Odyle також крафтиться <span class="it g71" data-sk="i:odyle_energy"><img src="../../assets/icons/items/odyle_energy.webp" width="20" height="20" alt="" loading="lazy">Odyle Energy</span>.</li>      </ul>
+    </section>
+    <section class="pg-sec" id="wood" aria-labelledby="h-wood">
+      <h2 id="h-wood" class="section-title">Деревина, луки й золоті заготовки</h2>
+      <ul class="pg-list">
+<li><span class="it g11" data-sk="i:log"><img src="../../assets/icons/items/log.webp" width="20" height="20" alt="" loading="lazy">Yggdrasil Log</span> — найкраще прохідна локація, дорогою можна фармити петів. Наберися терпіння: там багато гравців, а ресурс цінніший.</li><li><strong>Золоті заготовки 60 рівня</strong> виходять із синіх луків при криті — шанс 25%, чистий рандом. Кулі для крафту падають звідусіль: моби у світі, Безодня, данжі. З кільцями так само.</li><li>На всю прокачку збери близько <strong>300 жил сапфіра</strong> і близько <strong>140 дерев</strong>. Випали золоті ресурси — не поспішай продавати, знадобляться і Odyle, і дерево.</li><li>Продавай лише критові луки й кільця (білі та зелені), некритові крафти в тір вище. Крафтити починай, коли збереш ресурси, збір качай попутно з мобами й не забувай вкладку навичок збору — наприклад, перекинь очки на Odyle перед її збором.</li>      </ul>
+    </section>
+    <section class="pg-sec" id="market" aria-labelledby="h-market">
+      <h2 id="h-market" class="section-title">Докупити чи зморфити</h2>
+      <ul class="pg-list">
+<li>Кожен ресурс для золотої зброї чи кільця можна докупити на ринку, а Substance Morph перетворює <span class="it g11" data-sk="i:odyle"><img src="../../assets/icons/items/odyle.webp" width="20" height="20" alt="" loading="lazy">Odyle</span> на будь-який ресурс. Не поспішай: спершу перевір ціни — зазвичай вигідніше продати Odyle і купити два ресурси за одну, але бувало й навпаки.</li><li>Де що росте: <a href="https://aion2t.com/map?zone=World_D_A" target="_blank" rel="noopener">мапа ресурсів aion2t.com</a>.</li>      </ul>
+    </section>
+
+    <script type="application/json" id="sk-data">{"i:wings":{"n":"Ultimate Daeva Wings (Bound)","m":"","g":41,"d":"Grants [Ultimate Daeva Wings (Bound)].\n\n[Equipped Effect]\nHP: 500\nMP: 250\nPenetration: 500\nCritical Hit: 35\n[Owned Effect]\nFlight Power: 500\nPenetration: 100\nAccuracy Bonus: 20\nAttack Bonus: 10","sp":[]},"i:bracelet":{"n":"Ascension Bracelet","m":"Рівень предмета 51","g":41,"d":"Defense: 156\nAttack: 65","sp":[]},"i:trace":{"n":"Empyrean Trace: Altgard (Bound)","m":"","g":71,"d":"A trace faintly imbued with the strength of the Empyrean Lords who protect Altgard. Can be resonated with Altgard Monolith.","sp":[]},"i:dcrystal":{"n":"Daevanion Crystal (Bound)","m":"","g":71,"d":"Use to obtain 1 Daevanion Point.","sp":[]},"i:dcrystal_ariel":{"n":"Daevanion Crystal: Ariel (Bound)","m":"","g":71,"d":"Use to obtain 1 Ariel Daevanion Point.","sp":[]},"i:dcrystal_azphel":{"n":"Daevanion Crystal: Azphel (Bound)","m":"","g":71,"d":"Use to obtain 1 Azphel Daevanion Point.","sp":[]},"i:wisdom":{"n":"Wisdom Stone (Bound)","m":"","g":71,"d":"A mysterious stone imbued with memories of battle.\nUse to obtain 1 Skill Point.","sp":[]},"i:clashrune":{"n":"Clash Rune Chest (Bound)","m":"","g":71,"d":"A rune that can be earned only by those who have overcome a nightmare.\nUse to obtain a Clash Rune (Bound) and Rune Enhance Scrolls (Bound).","sp":[]},"i:beltscroll":{"n":"Noble Belt Enhance Scroll (Bound)","m":"","g":11,"d":"An Enhance Scroll containing an ancient power.\nUse to enhance Noble Belt.","sp":[]},"i:shugokey":{"n":"Shugo Festival Reward Key (Bound)","m":"","g":71,"d":"Recharges 1 Shugo Festival Reward Key count.","sp":[]},"i:bakarma":{"n":"Bakarma Breastplate","m":"Рівень предмета 54","g":41,"d":"HP: 216\nDefense: 397","sp":[]},"i:voucher":{"n":"Gear Change Voucher: Vakron Sky Island (Bound)","m":"","g":41,"d":"A reward obtained by defeating Vakron.\nWhen used as a Substance Morph material, it can be transformed into a Unique Guard or Unique Gear Selection Chest.","sp":[]},"i:vakronguard":{"n":"Vakron Guard","m":"Рівень предмета 70","g":41,"d":"Critical Hit: 50\nAccuracy: 50\nAttack: 144","sp":[]},"i:mana_sup":{"n":"Superior Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:mana_int":{"n":"Intermediate Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:mana_less":{"n":"Lesser Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:theostone":{"n":"Theostone: Jumentis's Dexterity (Bound)","m":"","g":31,"d":"Grants [Theostone: Jumentis's Dexterity].\nThe obtained Theostone can be found in the Enhancement menu.\nHas a 20% chance to deal 250 AoE Wind damage to up to 4 targets on attack\nEffect Activation Cooldown: 1s\nOnly one Theostone's effect applies when identical Theostones are engraved.","sp":[]},"i:enhance":{"n":"Enhance Stone","m":"","g":11,"d":"Used to awaken hidden potential of gear.","sp":[]},"i:bell_green":{"n":"Bell of Vigor","m":"Рівень предмета 40 · Сет: Primal Vigor","g":21,"d":"Justice [Nezekan]: 12","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:mirror_green":{"n":"Mirror of Magic","m":"Рівень предмета 40 · Сет: Magic Armor","g":21,"d":"Wisdom [Lumiel]: 12","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:compass_grey":{"n":"Compass of Magic","m":"Рівень предмета 20 · Сет: Magic Armor","g":11,"d":"Death [Triniel]: 8","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:chalice_grey":{"n":"Chalice of Magic","m":"Рівень предмета 20 · Сет: Magic Armor","g":11,"d":"Space [Israphel]: 8","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:mirror_gold":{"n":"Mirror of Vigor","m":"Рівень предмета 80 · Сет: Primal Vigor","g":41,"d":"Illusion [Kaisinel]: 20","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:transfer_w":{"n":"Transfer Stone: Weapon (Unique) (Bound)","m":"","g":41,"d":"A formidable gemstone that transfers the boundless power of the gear to another.\nCan be used on the Unique Weapon.","sp":[]},"i:transfer_a":{"n":"Transfer Stone: Armor (Unique) (Bound)","m":"","g":41,"d":"A formidable gemstone that transfers the boundless power of the gear to another.\nCan be used on the Unique Armor.","sp":[]},"i:stigmashard":{"n":"Stigma Shard (Bound)","m":"","g":71,"d":"A fragment sealed with the Essence of Experience.\nGrants 1 Stigma Shard Point when obtained.","sp":[]},"i:amplify":{"n":"Amplify Stone (Unique) (Bound)","m":"","g":41,"d":"A mystical gemstone that awakens the unique power of gear.\nUsed to amplify Unique Gear that has reached its maximum enhancement level.","sp":[]},"i:amplify_frag":{"n":"Amplify Stone Fragment (Unique) (Bound)","m":"","g":41,"d":"A piece of an Amplify Stone used to awaken the unique power of the gear.\nCan be converted into an Amplify Stone through Substance Morph.","sp":[]},"i:sync":{"n":"Sync Stone (Unique) (Bound)","m":"","g":41,"d":"A stone that harmonizes the energies within gear to awaken new possibilities.\nWhen used in [Enhancement - Soul Binding - Sync], it allows you to adjust the properties of gear.","sp":[]},"i:sapphire":{"n":"Sapphire Gemstone (Bound)","m":"","g":11,"d":"A gemstone infused with valuable gems. Used as a material for handicrafting accessories.","sp":[]},"i:ruby":{"n":"Ruby Gemstone (Bound)","m":"","g":11,"d":"A gemstone infused with valuable gems. Used as a material for handicrafting accessories.","sp":[]},"i:odyle":{"n":"Odyle","m":"","g":11,"d":"Used to imbue an item with the power of Odyle. Used as a material for Crafting and Substance Morph.","sp":[]},"i:log":{"n":"Yggdrasil Log (Bound)","m":"","g":11,"d":"A magic-imbued log. Used for making wooden weapons in Handicrafting.","sp":[]},"i:odyle_energy":{"n":"Odyle Energy (Bound)","m":"","g":71,"d":"Recharges 40 Odyle Energy.\nOdyle Energy can be used to activate the Odyle Energy Cube that appears when you clear an Expedition, Transcendence, or Sanctuary.","sp":[]},"i:parchment_vigor":{"n":"Parchment of Vigor","m":"Рівень предмета 80 · Сет: Primal Vigor","g":41,"d":"Life [Yustiel]: 20","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:compass_vigor":{"n":"Compass of Vigor","m":"Рівень предмета 80 · Сет: Primal Vigor","g":41,"d":"","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:chalice_vigor":{"n":"Chalice of Vigor","m":"Рівень предмета 80 · Сет: Primal Vigor","g":41,"d":"","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:mirror_magic_gold":{"n":"Mirror of Magic","m":"Рівень предмета 80 · Сет: Magic Armor","g":41,"d":"Wisdom [Lumiel]: 20","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]}}</script>
+<p class="w1-cta"><a class="btn btn-primary" href="../../uk/progression/">Відкрити маршрут після 45 →</a></p>  </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../uk/">AION 2 Гайди</a>
+      <p>Неофіційний фанатський сайт, не пов&#39;язаний з NCSOFT. AION 2 та іконки скілів © NCSOFT.</p>
+      <p>Перевірено: 2026-10-01 (до глобального запуску).</p>
+      <p><a href="../../uk/sources/">Усі джерела й автори</a> · <a href="../../uk/changelog/">Історія змін</a> · <button type="button" class="link-btn report-open">Повідомити про помилку</button></p>
+    </div>
+  </div>
+</footer>
+<dialog class="search-dlg" aria-label="Пошук" data-index="../../uk/search.json" data-base="../../uk/" data-empty="Нічого не знайдено"
+  data-kinds="{&#34;boss&#34;: &#34;\u0411\u043e\u0441&#34;, &#34;class&#34;: &#34;\u041a\u043b\u0430\u0441&#34;, &#34;page&#34;: &#34;\u0421\u0442\u043e\u0440\u0456\u043d\u043a\u0430&#34;, &#34;section&#34;: &#34;\u0420\u043e\u0437\u0434\u0456\u043b&#34;, &#34;skill&#34;: &#34;\u0421\u043a\u0456\u043b&#34;}" data-root="../../">
+  <div class="search-in">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-q" placeholder="Клас, скіл, бос, розділ…" aria-label="Пошук" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-res" role="listbox"></ul>
+  </div>
+</dialog>
+<dialog class="whatsnew" data-id="2026-10-01-uk" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title">Що нового</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="Зрозуміло">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <section class="wn-entry">
+      <time class="wn-date" datetime="2026-10-01">1 жовтня 2026</time>
+      <ul>
+        <li><span><strong>Українська версія</strong> — увесь сайт тепер є й українською: гайди, сторінки й трекери. Назви скілів і предметів тут англійською — української локалізації ігрових даних немає. Мова перемикається кнопкою в шапці.</span></li>
+      </ul>
+    </section>
+    <button class="btn btn-primary wn-ok" value="close">Зрозуміло</button>
+    <p class="wn-all"><a href="../../uk/changelog/">Уся історія змін →</a></p>
+  </form>
+</dialog>
+<dialog class="whatsnew feedback" aria-labelledby="fb-title" data-url="https://aion2-feedback.couga-ua.workers.dev/" data-page="uk/crafting/" data-lang="uk">
+  <form class="wn-in fb-form" novalidate>
+    <div class="wn-head">
+      <h2 id="fb-title">Повідомити про помилку</h2>
+      <button type="button" class="icon-btn fb-x" aria-label="Зрозуміло">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <p class="fb-hint">Що не так або застаріло? Посилання на джерело чи скриншот дуже допоможуть.</p>
+    <label class="fb-label" for="fb-text">Повідомлення</label>
+    <textarea id="fb-text" class="fb-text" name="text" rows="6" maxlength="2000" required placeholder="Наприклад: третя спеціалізація Blaze на глобалі інша…"></textarea>
+    <label class="fb-label" for="fb-contact">Контакт для відповіді (необов&#39;язково)</label>
+    <input id="fb-contact" class="fb-contact" name="contact" type="text" maxlength="100" autocomplete="off" placeholder="Discord або Telegram">
+    <input class="fb-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="fb-meta">Разом із повідомленням надішлеться: <b class="fb-where"></b></p>
+    <p class="fb-status" role="status" data-sending="Надсилаю…" data-ok="Надіслано — дякуємо!" data-err="Не вдалося надіслати. Спробуй ще раз пізніше." data-rate="Забагато повідомлень поспіль — спробуй за кілька хвилин." data-short="Спершу напиши кілька слів."></p>
+    <div class="fb-actions">
+      <button type="submit" class="btn btn-primary fb-send">Надіслати</button>
+      <button type="button" class="btn btn-ghost fb-cancel">Скасувати</button>
+    </div>
+  </form>
+</dialog>
+<script src="../../assets/js/site.js?v=3461c782" defer></script>
+<script src="../../assets/js/fx.js?v=3461c782" defer></script>
+<div class="cel-banner" role="status" hidden data-at="2026-09-30T14:00:00Z" data-id="early">
+  <span class="cel-ico" aria-hidden="true">✦</span>
+  <div><p class="cel-h">Ранній доступ відкрито!</p><p class="cel-p">Сервери Founder&#39;s Pack працюють — успіху на старті. Гайди по класах уже чекають.</p></div>
+  <button type="button" class="cel-x" aria-label="Закрити">×</button>
+</div>
+<script src="../../assets/js/celebrate.js?v=3461c782" defer></script>
+</body>
+</html>

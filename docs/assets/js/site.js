@@ -19,9 +19,9 @@
     store('theme', root.dataset.theme);
   });
 
-  // ---- class picker and pages menu: close on outside click and Escape, one open at a time ----
+  // ---- class picker, pages menu and language menu: close on outside click and Escape, one open at a time ----
   var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  [].forEach.call(document.querySelectorAll('details.class-menu'), function (cmenu, i, all) {
+  [].forEach.call(document.querySelectorAll('details.class-menu, details.lang-menu'), function (cmenu, i, all) {
     // <details> closes instantly, so play the closing animation first.
     var closeMenu = function () {
       if (!cmenu.open || cmenu.classList.contains('is-closing')) return;
@@ -149,26 +149,6 @@
     });
   }
 
-  // ---- Discord contact: copy the nick (there is no profile link without the numeric id) ----
-  document.querySelectorAll('.discord-btn[data-copy]').forEach(function (b) {
-    var label = b.querySelector('span'), html = label.innerHTML, timer;
-    b.addEventListener('click', function () {
-      var done = function () {
-        label.textContent = b.dataset.done;
-        b.classList.add('is-done');
-        clearTimeout(timer);
-        timer = setTimeout(function () { label.innerHTML = html; b.classList.remove('is-done'); }, 3500);
-      };
-      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(b.dataset.copy).then(done, done);
-      else {
-        var ta = document.createElement('textarea');
-        ta.value = b.dataset.copy; document.body.appendChild(ta); ta.select();
-        try { document.execCommand('copy'); } catch (e) {}
-        ta.remove(); done();
-      }
-    });
-  });
-
   // ---- "Report a mistake": a form sent to the site owner (Telegram, through the Worker in site.json) ----
   var fb = document.querySelector('.feedback');
   if (fb && typeof fb.showModal === 'function') {
@@ -272,7 +252,7 @@
     var pad = function (n) { return (n < 10 ? '0' : '') + n; };
     // Main date = the visitor's own local time; the UTC text from the build moves to the note.
     try {
-      var fmt = new Intl.DateTimeFormat(evBox.dataset.lang === 'ru' ? 'ru-RU' : 'en-GB',
+      var fmt = new Intl.DateTimeFormat(({ ru: 'ru-RU', uk: 'uk-UA' })[evBox.dataset.lang] || 'en-GB',
         { weekday: 'short', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' });
       evs.forEach(function (e) {
         var t = e.li.querySelector('.ev-when time'), el = e.li.querySelector('.ev-local');

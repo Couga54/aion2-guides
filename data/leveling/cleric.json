@@ -10,11 +10,11 @@
    ],
    "when": {
     "en": "Lv 1",
-    "ru": "Ур. 1"
+    "ru": "Ур. 1", "uk": "Рів. 1"
    },
    "text": {
     "en": "Level your two no-cooldown attacks first: [[earths-retribution]] (restores MP) and [[judgment-thunder]]. Play in <strong>target mode</strong> — it keeps the basic attack going between skills, and that is your mana.",
-    "ru": "Сначала качай две атаки без перезарядки: [[earths-retribution]] (восполняет ману) и [[judgment-thunder]]. Играй в <strong>режиме с таргетом</strong> — так автоатака идёт между скиллами, а это твоя мана."
+    "ru": "Сначала качай две атаки без перезарядки: [[earths-retribution]] (восполняет ману) и [[judgment-thunder]]. Играй в <strong>режиме с таргетом</strong> — так автоатака идёт между скиллами, а это твоя мана.", "uk": "Спершу качай дві атаки без перезарядки: [[earths-retribution]] (поповнює ману) і [[judgment-thunder]]. Грай у <strong>режимі з таргетом</strong> — так автоатака йде між скілами, а це твоя мана."
    }
   },
   {
@@ -26,11 +26,11 @@
    ],
    "when": {
     "en": "Lv ~6",
-    "ru": "~Ур. 6"
+    "ru": "~Ур. 6", "uk": "~Рів. 6"
    },
    "text": {
     "en": "[[chain-of-torment]] marks the target; [[condemnation]] only hits a target under Chain of Torment — put both in one hotbar line with Chain at the bottom.",
-    "ru": "[[chain-of-torment]] метит цель, а [[condemnation]] бьёт только по цели под Цепью боли — поставь оба в одну линию, Цепь внизу."
+    "ru": "[[chain-of-torment]] метит цель, а [[condemnation]] бьёт только по цели под Цепью боли — поставь оба в одну линию, Цепь внизу.", "uk": "[[chain-of-torment]] мітить ціль, а [[condemnation]] б'є лише по цілі під Chain of Torment — постав обидва в одну лінію, Chain унизу."
    }
   },
   {
@@ -44,11 +44,11 @@
    ],
    "when": {
     "en": "Lv 8",
-    "ru": "Ур. 8"
+    "ru": "Ур. 8", "uk": "Рів. 8"
    },
    "text": {
     "en": "First specializations: [[earths-retribution#1]], [[judgment-thunder#1]], [[chain-of-torment#1]], [[debilitating-mark#1]].",
-    "ru": "Первые специализации: [[earths-retribution#1]], [[judgment-thunder#1]], [[chain-of-torment#1]], [[debilitating-mark#1]]."
+    "ru": "Первые специализации: [[earths-retribution#1]], [[judgment-thunder#1]], [[chain-of-torment#1]], [[debilitating-mark#1]].", "uk": "Перші спеціалізації: [[earths-retribution#1]], [[judgment-thunder#1]], [[chain-of-torment#1]], [[debilitating-mark#1]]."
    }
   },
   {
@@ -60,11 +60,11 @@
    ],
    "when": {
     "en": "Lv 9–18",
-    "ru": "Ур. 9–18"
+    "ru": "Ур. 9–18", "uk": "Рів. 9–18"
    },
    "text": {
     "en": "[[bolt]] for burst and stagger (take [[bolt#2]]); [[healing-light]] for yourself. Raise attack skills, not heals — a healing-focused Cleric levels slowly.",
-    "ru": "[[bolt]] для бурста и ошеломления (бери [[bolt#2]]); [[healing-light]] — для себя. Качай атакующие скиллы, а не лечение: Целитель-хилер качается медленно."
+    "ru": "[[bolt]] для бурста и ошеломления (бери [[bolt#2]]); [[healing-light]] — для себя. Качай атакующие скиллы, а не лечение: Целитель-хилер качается медленно.", "uk": "[[bolt]] для берсту й оглушення (бери [[bolt#2]]); [[healing-light]] — для себе. Качай атакувальні скіли, а не лікування: Цілитель-хілер качається повільно."
    }
   },
   {
@@ -75,11 +75,11 @@
    ],
    "when": {
     "en": "Lv 21",
-    "ru": "Ур. 21"
+    "ru": "Ур. 21", "uk": "Рів. 21"
    },
    "text": {
     "en": "Passive [[earths-grace]] (Critical Damage and Accuracy) — straight to 10 the moment you learn it.",
-    "ru": "Пассивку [[earths-grace]] (крит. урон и точность) — сразу до 10, как только выучишь."
+    "ru": "Пассивку [[earths-grace]] (крит. урон и точность) — сразу до 10, как только выучишь.", "uk": "Пасивку [[earths-grace]] (крит. шкода й точність) — одразу до 10, щойно вивчиш."
    }
   },
   {
@@ -93,11 +93,11 @@
    ],
    "when": {
     "en": "Lv 22",
-    "ru": "Ур. 22"
+    "ru": "Ур. 22", "uk": "Рів. 22"
    },
    "text": {
     "en": "Stigmas: one point into [[summon-resurrection]], then [[noble-aura]], [[earth-punishment]], [[benevolence]] and [[absolution]] to 5.",
-    "ru": "Стигмы: одно очко в [[summon-resurrection]], затем [[noble-aura]], [[earth-punishment]], [[benevolence]] и [[absolution]] до 5."
+    "ru": "Стигмы: одно очко в [[summon-resurrection]], затем [[noble-aura]], [[earth-punishment]], [[benevolence]] и [[absolution]] до 5.", "uk": "Стигми: одне очко в [[summon-resurrection]], потім [[noble-aura]], [[earth-punishment]], [[benevolence]] і [[absolution]] до 5."
    }
   },
   {
@@ -110,11 +110,11 @@
    ],
    "when": {
     "en": "Cap",
-    "ru": "Кап"
+    "ru": "Кап", "uk": "Кап"
    },
    "text": {
     "en": "Both clicks at 10 by level 25; then [[condemnation]], [[bolt]] and [[healing-light]]. Before group dungeons get Healing Light to 16.",
-    "ru": "Обе атаки на 10 к 25 уровню; дальше [[condemnation]], [[bolt]] и [[healing-light]]. Перед групповыми подземельями подними Целительный свет до 16."
+    "ru": "Обе атаки на 10 к 25 уровню; дальше [[condemnation]], [[bolt]] и [[healing-light]]. Перед групповыми подземельями подними Целительный свет до 16.", "uk": "Обидві атаки на 10 до 25 рівня; далі [[condemnation]], [[bolt]] і [[healing-light]]. Перед груповими підземеллями підніми Healing Light до 16."
    }
   }
  ]

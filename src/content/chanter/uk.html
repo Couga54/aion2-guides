@@ -1,0 +1,202 @@
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+
+{# ============================== PvE ============================== #}
+{% call glance('pve') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('dark-crush', '16 → 20'), ('onslaught', '16 → 20'), ('spinning-strike', '16 → 20'), ('incandescent-blow', '16'), ('recuperation', '16')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('undefeated-mantra', 20), ('marchutans-wrath', 1), ('focused-defense', 5), ('sprint-mantra', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['attack-preparation', 'winds-promise', 'impact-hit', 'protection-circle']) }}
+{% endcall %}
+
+{% call section('intro', 'Огляд', 'pve') %}
+  <p>Чародій б'ється в ближньому бою посохом і водночас робить сильнішою всю групу: бафер і запасний хілер, якого хоче кожна група. Топової шкоди не чекай — за однакового спорядження Чародій і Цілитель завдають найменше шкоди, — зате група б'є сильніше, рідше вмирає, а дебафи з неї знімаються.</p>
+  <div class="callout accent">
+    <h3>Білд одним реченням</h3>
+    <p>Тримай увімкненою {{ s('undefeated-mantra') }} і спам лінію, де {{ s('spinning-strike') }} і {{ s('impactful-crush') }} відкривають {{ s('dark-crush') }}, вплітаючи {{ s('onslaught') }} між кожним ударом і використовуючи {{ s('marchutans-wrath') }} вручну щоразу, коли Dark Crush недоступний.</p>
+  </div>
+  <p><strong>Як працює Dark Crush:</strong> його можна використати лише недовго після дальнього скіла — 2 секунди після {{ s('spinning-strike') }} чи {{ s('impactful-crush') }}, 3 секунди після {{ s('marchutans-wrath') }}. На 16 рівні скіла його власна перезарядка зникає, тож усередині цього вікна ти тиснеш його знову й знову. Увесь білд — про те, щоб тримати це вікно відкритим.</p>
+  <p class="note">Режим PvE — за стартовим гайдом Arthars Gaming по Чародію до глобального запуску (відео, 26 вересня; вісім місяців на класі на тайванському сервері), прочитаним кадр за кадром. Прокачка — за таблицею TitanTheF.</p>
+{% endcall %}
+
+{% call section('global', 'Глобальний 1 сезон: що змінюється', 'pve pvp') %}
+  <p>Глобальні сервери відкриваються <strong>5 жовтня 2026</strong> (ранній доступ Founder's — з 30 вересня). Що це означає для Чародія:</p>
+  <div class="callout">
+    <ul>
+      <li><strong>4 слоти стигм, максимум 20.</strong> У Чародія корисних стигм більше, ніж слотів, тож чотири, які береш, — справжній вибір (див. Стигми).</li>
+      <li><strong>На старті мало скорочення перезарядок і швидкості бою.</strong> Кожна спеціалізація, що скорочує перезарядку, варта більше, а бої тривають довше, ніж на Тайвані.</li>
+      <li><strong>20 рівень скіла в 1 сезоні важко досягти.</strong> Спершу плануй 16 на ключових скілах; 20 прийде пізніше з арканів.</li>
+      <li><strong>Більші групи</strong> (експедиції на 5, святилища на 10): із Цілителем у групі твоя мантра не складається з Light of Protection (на однаковому рівні перемагає твоя), а дебаф Wave Blow не складається з Debilitating Mark Цілителя.</li>
+      <li data-only="pvp"><strong>PvP:</strong> усі починають в однаковому обмеженому спорядженні, мета ще не склалася.</li>
+    </ul>
+  </div>
+  <p class="note">Активні скіли й пасивки в глобальних і KR/TW даних однакові; стигми втрачають рівень 25.</p>
+{% endcall %}
+
+{% call section('skills', 'Скіли', 'pve') %}
+  <p>Важливі лише три рівні скілів: <strong>12, 16 і 20</strong> — саме там відкривається нова спеціалізація чи слот; рівень між ними майже нічого не додає. Очки навичок дають 10, Daevanion +4, два кільця +2, аркани решту. Спершу доведи ключові скіли до <strong>16</strong>.</p>
+  <ul class="skill-grid">
+    {% call skill('dark-crush', 'must', '16 → 20', [3, 4]) %}Твоя головна шкода й перший скіл, який треба довести до 16: без зняття перезарядки клас не працює. На 20 додай гарантований крит — тоді кожен Dark Crush отримує повний бонус Wind's Promise.{% endcall %}
+    {% call skill('onslaught', 'must', '16 → 20', [3, 4]) %}Базова атака, яку вплітаєш між усім: відновлює MP, скорочує перезарядку Spinning Strike, а на 16 додає Storm Chain. Третя спеціалізація на 20 — на твій вибір: шкода чи поглинання HP.{% endcall %}
+    {% call skill('spinning-strike', 'must', '16 → 20', [0, 2]) %}Один із твоїх найсильніших ударів: +15% крит. шкоди, що складається, на 30 с, і відкриває Dark Crush. На 20 додай спеціалізацію, що ігнорує блок і ухилення та завжди критує. Посилення лікування пропусти — ти не головний хілер.{% endcall %}
+    {% call skill('incandescent-blow', 'must', '16', [2, 4]) %}Філер, поки Dark Crush закритий: +12% по одній цілі й мультиудар. Доброї третьої спеціалізації немає, тож 16 вистачить.{% endcall %}
+    {% call skill('recuperation', 'must', '16 → 20', [1, 3]) %}Твоє єдине лікування поза стигмами і твоє зняття дебафів. +5% HP обов'язково (базове лікування — фіксоване число); далі два дебафи чи додаткове використання. Доводь до 20, якщо ти єдиний хілер.{% endcall %}
+    {% call skill('defiance', 'must', '16', [3, 4]) %}Зняття контролю: +2 с Tenacity з 50% стійкості до шкоди на весь час — сім секунд, коли можна стояти в механіках.{% endcall %}
+    {% call skill('impactful-crush', 'opt', '12', [2, 3]) %}Дальній скіл, що відкриває Dark Crush; рухливий і швидший. 12 вистачить — спеціалізація на 16 для PvP.{% endcall %}
+    {% call skill('wave-blow', 'opt', '12', [1, 3]) %}−15% шкоди боса на 10 с і дальність 10 м. Його анімація погано вплітається: тисни лише в паузі, ніколи замість Dark Crush.{% endcall %}
+    {% call skill('rushing-smash', 'opt', '12', [2, 3]) %}Ривок, що скидається при вбивстві, — стрибай від пачки до пачки. Ніколи не бери спеціалізацію на заряд: заряджені скіли — втрата шкоди.{% endcall %}
+    {% call skill('tremor-crush', 'opt', '12', [0, 1]) %}Ухилення, що повертає витривалість, і ривок на 20 м.{% endcall %}
+    {% call skill('heat-wave-blow', 'opt', '12', [2, 3]) %}Б'є сильно, але в PvE тепер рідко є для нього момент, бо ротацію тягне Dark Crush.{% endcall %}
+    {% call skill('gust-rampage', 'skip', '0–8') %}Лише по оглушених цілях, а бос оглушений два-три рази за бій — у 1 сезоні не вартий очок.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('passives', 'Пасивки', 'pve') %}
+  <p>Очок навичок вистачає, щоб довести до максимуму майже всі пасивки. Рядків на спорядженні мало, тож віддавай їх першим трьом.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Пасивка</th><th>Пріоритет</th><th>Навіщо</th></tr></thead>
+    <tbody>
+      <tr><td>{{ s('attack-preparation') }}</td><td>1 · макс</td><td>Чистий бонус до шкоди в PvE, захист і точність — працює завжди.</td></tr>
+      <tr><td>{{ s('winds-promise') }}</td><td>2 · макс</td><td>Бонус до крит. шкоди й додаткова шкода; у парі з гарантованим критом Dark Crush.</td></tr>
+      <tr><td>{{ s('impact-hit') }}</td><td>3 · макс</td><td>Шанс подвійного удару — пряме збільшення шкоди.</td></tr>
+      <tr><td>{{ s('protection-circle') }}</td><td>макс</td><td>Великий щит, коли HP падає нижче половини, і маленький на групу з кожного удару — ось чому Чародій рідко вмирає.</td></tr>
+      <tr><td>{{ s('earths-promise') }}</td><td>4</td><td>−стійкість до шкоди в PvE на цілі, але висить приблизно половину часу й перекривається з Chain of Torment Цілителя.</td></tr>
+      <tr><td>{{ s('inspiring-spell') }}, {{ s('blessing-of-life') }}, {{ s('survival-willpower') }}</td><td>лише очки</td><td>Безкоштовно доводяться очками навичок; не витрачай на них рядки спорядження.</td></tr>
+      <tr><td>{{ s('crossguard') }}, {{ s('raging-spell') }}</td><td>пропустити</td><td>У PvE майже нічого не дають — перекидай їх зі спорядження.</td></tr>
+    </tbody>
+  </table></div>
+{% endcall %}
+
+{% call section('gear', 'Спорядження й статі', 'pve') %}
+  <div class="callout"><ul>
+    <li><strong>Кільця:</strong> єдине місце для активних скілів — чотири-п'ять рядків (у крафтових кілець на один більше), що піднімають ключові скіли з 14 до 16.</li>
+    <li><strong>Зброя й наручі:</strong> ніколи не став туди скіли — їхні рядки шкоди варті більше.</li>
+    <li><strong>Пасивки</strong> беруться з інших речей. На глобальному спорядженні там також випадають Might, Precision і швидкість бою, тож рядків пасивок буде менше, ніж на Тайвані.</li>
+    <li><strong>Точності</strong> на старті бракує: без неї доводиться бити босів зі спини й ловити парирування.</li>
+    <li><strong>Манастоуни:</strong> атака, крит, точність. <strong>Наручі</strong> (друга рука) — до +10.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('arcana', 'Аркани', 'pve') %}
+  <p>У 1 сезоні п'ять карт і два сети. Вибір Arthars — три карти Primal Vigor плюс Bell і Mirror із Magic Armor; чотири карти Primal Vigor (+150 атаки в PvE) теж працюють.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Карта</th><th>Стат</th><th>Сет</th><th>Що ролити</th></tr></thead>
+    <tbody>
+      <tr><td>Chalice</td><td>Time (швидкість бою)</td><td>Primal Vigor</td><td>Будь-який ключовий скіл, якому ще бракує до 20</td></tr>
+      <tr><td>Parchment</td><td>Life</td><td>Primal Vigor</td><td>{{ s('dark-crush') }}, {{ s('onslaught') }}, {{ s('spinning-strike') }}</td></tr>
+      <tr><td>Compass</td><td>Freedom (точність)</td><td>Primal Vigor</td><td>{{ s('incandescent-blow') }}, {{ s('recuperation') }}; {{ s('defiance') }} теж підійде</td></tr>
+      <tr><td>Bell</td><td>Destruction (атака)</td><td>Magic Armor</td><td>{{ s('attack-preparation') }}</td></tr>
+      <tr><td>Mirror</td><td>Wisdom (шанс подвійного удару)</td><td>Magic Armor</td><td>{{ s('impact-hit') }}, {{ s('winds-promise') }}</td></tr>
+    </tbody>
+  </table></div>
+  <p>Прокачка карти додає до +4 її скілам випадково — розраховуй приблизно на <strong>+2</strong>. Цього вистачить: 10 з очок, 4 з Daevanion і 2 з карти дають 16, а рядки кілець ідуть на інші скіли.</p>
+  <p class="note">Не переплачуй за ці карти: їх замінять, щойно 2 сезон принесе нові. Illusion (перезарядки) на Mirror — альтернатива Wisdom для повного саппорта.</p>
+{% endcall %}
+
+{% call section('daevanion', 'Дошки Daevanion', 'pve pvp') %}
+  <p>Daevanion піднімає твої скіли з 10 до 14 і додає статі. Кожен синій вузол дає <strong>+1 рівень</strong> своєму скілу.</p>
+  <div class="callout"><ul>
+    <li data-only="pve"><strong>Пріоритет:</strong> сині вузли {{ s('dark-crush') }}, {{ s('onslaught') }}, {{ s('spinning-strike') }} і {{ s('incandescent-blow') }}, потім помаранчеві вузли.</li>
+    <li data-only="pvp"><strong>Пріоритет:</strong> сині вузли {{ s('impactful-crush') }}, {{ s('wave-blow') }}, {{ s('defiance') }}.</li>
+    <li data-only="pve"><strong>На глобалі немає Ariel:</strong> дошок п'ять, і дошка 45 рівня, Azphel, дає лише шкоду й стійкість у PvP — у PvE закривай перші чотири.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (45 рівень) — суцільно шкода й стійкість у PvP: бери його, а раніше — Triniel.</li>
+  </ul></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Дошка</th><th>Відкривається</th><th>Помаранчеві вузли</th></tr></thead>
+    <tbody>
+      <tr><td>Nezekan</td><td>Рів. 12</td><td>Швидкість бою, скорочення перезарядок</td></tr>
+      <tr><td>Zikel</td><td>Рів. 20</td><td>Бонус до шкоди, стійкість до шкоди</td></tr>
+      <tr><td>Vaizel</td><td>Рів. 30</td><td>Бонус і стійкість до крит. шкоди</td></tr>
+      <tr><td>Triniel</td><td>Рів. 40</td><td>Шанс мультиудару й опір йому</td></tr>
+      <tr><td>Azphel</td><td>Рів. 45</td><td>Шкода й стійкість у PvP — вузлів скілів немає</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Маршрут на дошках</h3>
+  <p>Справжні глобальні дошки з даних гри. Золотом позначено найдешевший шлях від Start до вузлів, які бере цей гайд, — сині вузли пріоритетних скілів і помаранчеві; наведи на будь-який вузол, щоб побачити, що він дає.</p>
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
+  <p class="note">Дошки й вартість — із даних глобального клієнта (questlog.gg); шлях розраховано, а не взято з відео. Значення статів ще можуть змінитися на запуску — перевір дошку в грі, перш ніж вкладати повний маршрут.</p>
+{% endcall %}
+
+{% call section('stigmas', 'Стигми', 'pve') %}
+  <p>Три стигми фіксовані; четверта — вибір. Качай у такому порядку — Undefeated Mantra до 20 іде перед усім.</p>
+  <ul class="skill-grid">
+    {% call skill('undefeated-mantra', 'must', 'Рів. 20', upto=20) %}Причина, з якої група бере Чародія: шкода й стійкість у PvE, крит, точність, крит. шкода й шанс подвійного удару для всіх. Першою до 20, і з панелі вона не зникає ніколи.{% endcall %}
+    {% call skill('marchutans-wrath', 'must', 'Рів. 1', upto=1) %}Третій дальній скіл, що відкриває Dark Crush на 3 секунди — майже подвоює час Dark Crush. Вистачить одного очка: вищі рівні — для PvP.{% endcall %}
+    {% call skill('focused-defense', 'must', 'Рів. 5', upto=5) %}Блок із двома зарядами на 5 рівні. Недооцінений: дає мілі стояти на босі під більшістю атак, а не вибігати.{% endcall %}
+    {% call skill('sprint-mantra', 'must', 'Рів. 10', upto=10) %}Дешевий четвертий слот на старт: швидкість руху, +10% вхідного лікування й регенерація витривалості, тож група може ухилятися майже без обмежень. Її лікування мізерне — не качай вище 10.{% endcall %}
+    {% call skill('power-of-the-storm', 'opt', 'пізніше · Рів. 20', upto=20) %}Швидкість бою й скорочення перезарядок для групи — дуже сильно, поки всім бракує скорочення перезарядок, але розкривається лише на 20 (бонус атаки), а це багато уламків стигм. Займає четвертий слот, коли Undefeated Mantra на 20.{% endcall %}
+    {% call skill('healing-touch', 'opt', 'без Цілителя', upto=15) %}Сильне екстрене лікування: більше на низькому HP, а на 15 знімає п'ять дебафів. Бери, коли ти єдиний хілер чи бій насичений дебафами.{% endcall %}
+    {% call skill('impeding-authority', 'opt', 'освоєння', upto=15) %}Щит на групу — більше ефективного HP, поки група ще вчить бій.{% endcall %}
+    {% call skill('guardian-blessing', 'opt', 'немає слота', upto=15) %}×1,5 Wind's Promise на 15 — реальний приріст шкоди, але з чотирма слотами в 1 сезоні для неї немає місця.{% endcall %}
+    {% call skill('obliterate', 'opt', 'прокачка', upto=5) %}АоЕ-збивання для пачок на прокачці; на капі прибирай.{% endcall %}
+  </ul>
+  <p class="note">Мантри — перемикачі: увімкни їх один раз і не став у жоден макрос — друге натискання їх вимикає. {{ s('barrier-spell') }}, {{ s('ensnaring-mark') }}, {{ s('fracturing-blow') }} і {{ s('assault-shock') }} у PvE не потрібні.</p>
+{% endcall %}
+
+{% call section('macro', 'Макрос і ротація', 'pve') %}
+  <p>В AION 2 є два окремі інструменти:</p>
+  <ul>
+    <li><strong>Лінія на кнопці</strong> — кілька скілів на <em>одній</em> кнопці панелі. Натискання кастує готовий скіл із найвищим пріоритетом, і в AION 2 <strong>найвищий пріоритет у нижнього слота</strong>. Картки показують лінії згори донизу, як у грі.</li>
+    <li><strong>Вбудований макрос</strong> — поки тримаєш його клавішу, він по черзі натискає кнопки панелі й скасовує хвости анімацій. Скіли на перезарядці пропускаються.</li>
+  </ul>
+
+  <h3>1. Лінія на кнопці</h3>
+  <div class="hotlines">
+    {% call hotline('E', 'Лінія Dark Crush', ['dark-crush', 'spinning-strike', 'impactful-crush', 'incandescent-blow']) %}Dark Crush спрацьовує щоразу, коли його вікно відкрите. Коли воно закривається, Spinning Strike відкриває його знову, потім Impactful Crush; Incandescent Blow заповнює, коли обидва на перезарядці.{% endcall %}
+  </div>
+  <p class="note">Тримай {{ s('marchutans-wrath') }} <strong>поза</strong> цією лінією. На власній клавіші він твій резерв: спосіб відкрити Dark Crush, коли обидва дальні скіли на перезарядці або одразу після того, як довелося відійти від боса. У лінії він виштовхнув би Incandescent Blow із ротації.</p>
+
+  <h3>2. Вбудований макрос</h3>
+  <p>Два кроки, по <strong>10 мс</strong>, на клавіші, яку можна тримати весь час (більшість використовує <span class="key">ПКМ</span>):</p>
+  {{ macroseq([('Лінія Dark Crush', '10 мс'), (skill_data('onslaught')[lang].name, '10 мс')]) }}
+
+  <h3>3. Що ти насправді тиснеш</h3>
+  <ul class="presslist">
+    <li><span class="press-how">Тримати</span><span class="press-what">Клавішу макросу.</span></li>
+    <li><span class="press-how">Спам</span><span class="press-what">{{ s('onslaught') }} на <span class="key">ЛКМ</span> і саму лінію Dark Crush — одного макросу мало, твої власні натискання потрапляють між його кроками. Спамити за тебе може макрос клавіатури чи миші.</span></li>
+    <li><span class="press-how">Вручну</span><span class="press-what">{{ s('marchutans-wrath') }}, коли Dark Crush закритий, {{ s('focused-defense') }} на великих ударах, {{ s('recuperation') }}, щоб зняти дебаф чи підлікувати, {{ s('wave-blow') }} лише в паузі, ривки.</span></li>
+  </ul>
+  <p class="note">Звідки шкода в тесті Arthars: Dark Crush і його продовження Piercing Strike — близько 40%, далі Bursting Blow, Storm Chain, Incandescent Blow і Spinning Strike — приблизно по 10%. Тому Dark Crush першим іде до 16, а Onslaught потрібен Storm Chain.</p>
+{% endcall %}
+
+{% call section('recap', 'Підсумок', 'pve') %}
+  <div class="callout accent"><ul>
+    <li><strong>Скіли:</strong> Dark Crush, Onslaught, Spinning Strike 16 → 20; Incandescent Blow, Recuperation, Defiance 16; решта 12.</li>
+    <li><strong>Стигми:</strong> Undefeated Mantra 20, Marchutan's Wrath 1, Focused Defense 5, Sprint Mantra 10; Power of the Storm пізніше, на 20.</li>
+    <li><strong>Пасивки:</strong> Attack Preparation, Wind's Promise, Impact Hit на спорядженні; Protection Circle на максимум.</li>
+    <li><strong>Макрос:</strong> лінія Dark Crush → Onslaught; Marchutan's Wrath вручну.</li>
+  </ul></div>
+{% endcall %}
+
+{# ============================ Leveling ============================ #}
+{% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <div class="callout"><ul>
+    <li><strong>Пачки:</strong> {{ s('rushing-smash') }} усередину (скидається при вбивстві) → {{ s('obliterate') }} → лінія Crush + {{ s('onslaught') }}.</li>
+    <li><strong>Елітки:</strong> {{ s('impactful-crush') }} (оглушення) → {{ s('dark-crush') }} → {{ s('wave-blow') }} → {{ s('spinning-strike') }} → знову Dark Crush.</li>
+    <li><strong>Мана:</strong> Onslaught відновлює MP з кожним ударом — ніколи не переставай його вплітати.</li>
+    <li><strong>Мало HP:</strong> {{ s('recuperation') }}, а Sprint Mantra лікує з ударів.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('macro-lvl', 'Макрос на прокачці', 'lvl') %}
+  <p>На прокачці, поки Dark Crush не дійшов до 16, з 1 рівня працює простіше налаштування TitanTheF: лінія Crush на ПКМ, Onslaught на ЛКМ і вбудований макрос (Power of the Storm → Onslaught → лінія Wave → Onslaught) на середній кнопці миші. Ранній білд на 1–45: Onslaught, Incandescent Blow, Spinning Strike і Rushing Smash до 12, решта до 8.</p>
+  <div class="hotlines">
+    {{ hotline('ПКМ', 'Лінія Crush', ['impactful-crush', 'dark-crush', 'spinning-strike', 'incandescent-blow']) }}
+  </div>
+  <p><a href="https://aion2t.com/ru/simulator?job=9&amp;b=S5RCtE" target="_blank" rel="noopener">Стартовий білд 1–45 (aion2t) →</a> · <a href="https://aion2t.com/ru/simulator?job=9&amp;b=yDzsiQ" target="_blank" rel="noopener">Цільовий білд 45+ →</a></p>
+{% endcall %}
+
+{# ============================ Sources ============================ #}
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">{{ t.sources }}</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=7qMgsnSsmIU" target="_blank" rel="noopener">Arthars Gaming — The ULTIMATE AION 2 Chanter Starter Guide! (Global Launch)</a> — режим PvE: рівні скілів і спеціалізації, пасивки, аркани, стигми, лінія на кнопці й макрос</li>
+    <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener">TitanTheF — таблиця прогресії AION 2</a> (вкладка Чародія) — білд і макрос на прокачку, манастоуни</li>
+    <li><a href="https://aion2t.com/ru/simulator?job=9&amp;b=yDzsiQ" target="_blank" rel="noopener">aion2t.com</a> — стартовий і 45+ білди TitanTheF (рівні скілів, спеціалізації, стигми, пасивки)</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/chanter" target="_blank" rel="noopener">questlog.gg</a> — дані скілів із глобального клієнта</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — як працюють лінії на кнопках і вбудований макрос</li>
+  </ul>
+  <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
+</section>

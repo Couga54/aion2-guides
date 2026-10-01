@@ -47,6 +47,29 @@ for _cls, _fixes in load(DATA / "skills" / "_overrides.json").items():
         for _lang, _fields in _langs.items():
             SKILLS[_cls][_slug][_lang].update(_fields)
 
+# Game data (skills, items, Daevanion boards, world bosses) comes from questlog.gg, which has no Ukrainian:
+# Ukrainian pages show it in English. Only our own text (guides, UI) is translated.
+DATA_LANG = {"uk": "en"}
+
+
+def _game_lang(x):
+    """Copy the English game data under every language in DATA_LANG (nested dicts with an 'en' key)."""
+    if isinstance(x, dict):
+        for lang, src in DATA_LANG.items():
+            if src in x and lang not in x:
+                x[lang] = x[src]
+            if "tip_" + src in x and "tip_" + lang not in x:
+                x["tip_" + lang] = x["tip_" + src]
+        for v in list(x.values()):
+            _game_lang(v)
+    elif isinstance(x, list):
+        for v in x:
+            _game_lang(v)
+
+
+for _data in (SKILLS, ITEMS, BOARDS, BOSSES):
+    _game_lang(_data)
+
 
 # ---- helpers exposed to templates -------------------------------------------------
 
@@ -86,6 +109,7 @@ STAT_LABELS = {
            "death": "Смерть [Триниэль]", "space": "Пространство [Исфаэль]", "illusion": "Иллюзия [Кайсинель]",
            "destruction": "Разрушение [Зикель]", "life": "Жизнь [Юстиэль]", "destiny": "Судьба [Марчутан]"},
 }
+STAT_LABELS["uk"] = STAT_LABELS["en"]   # game stat names: English on Ukrainian pages, like the rest of the game data
 
 
 def items_tip_json(lang):
@@ -110,7 +134,7 @@ def items_tip(lang):
     return out
 
 
-WATCH_FILL = {"ru": "en"}   # RU pages fill free places with the English-speaking authors of the guide
+WATCH_FILL = {"ru": "en", "uk": "en"}   # RU / UK pages fill free places with the English-speaking authors of the guide
 
 
 def watch_for(cls, lang, limit=3):
@@ -192,7 +216,7 @@ def board_tips(cls_slug, lang):
             if e["type"] != "stat":
                 continue
             v = e["statValue"]
-            val = f"{v / 100:g}%".replace(".", "," if lang == "ru" else ".") if e["statName"] in BOARD_PCT_STATS else str(v)
+            val = f"{v / 100:g}%".replace(".", "," if lang in ("ru", "uk") else ".") if e["statName"] in BOARD_PCT_STATS else str(v)
             lines.append(f'{names.get(e["statName"], e["statName"])} +{val}')
         meta = "" if n["auto"] else f'{t["dv_k_special"] if n["grade"] == 41 else t["dv_k_stat"]} · {n["cost"] or 0} {t["dv_pts"]}'
         out[board_tip_key(n)] = {"n": n["name"][lang], "m": meta, "g": n["grade"], "d": "\n".join(lines), "sp": []}
@@ -308,6 +332,8 @@ MONTHS = {
     "en": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     "ru": ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа",
            "сентября", "октября", "ноября", "декабря"],
+    "uk": ["січня", "лютого", "березня", "квітня", "травня", "червня", "липня", "серпня",
+           "вересня", "жовтня", "листопада", "грудня"],
 }
 
 
@@ -371,12 +397,10 @@ def env():
 # ---- pages ------------------------------------------------------------------------
 
 def page_ctx(lang, path, root, cls=None):
-    other = [l for l in LANGS if l != lang][0]
     return {
         "lang": lang,
-        "other_lang": other,
+        "langs": LANGS,
         "t": I18N[lang],
-        "t_other": I18N[other],
         "root": root,
         "path": path,                       # path under /<lang>/, e.g. "gladiator/"
         "canonical": f'{SITE["base_url"]}{lang}/{path}',

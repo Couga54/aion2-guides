@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="uk" data-mode="pve" data-class="elementalist" data-off="pve pvp">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Заклинач — AION 2 Гайди (Прокачка)</title>
+<meta name="description" content="Єдиний призивач: духи вогню, води, землі й повітря б&#39;ються за тебе, кожен їхній скіл заряджає Elemental Fusion, а прокляття тікають на цілі.">
+<link rel="canonical" href="https://couga54.github.io/aion2-guides/uk/elementalist/">
+<link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/elementalist/">
+<link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/elementalist/">
+<link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/elementalist/">
+<link rel="alternate" hreflang="x-default" href="https://couga54.github.io/aion2-guides/en/elementalist/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Гайди">
+<meta property="og:locale" content="uk_UA">
+<meta property="og:title" content="Заклинач — AION 2 Гайди (Прокачка)">
+<meta property="og:description" content="Єдиний призивач: духи вогню, води, землі й повітря б&#39;ються за тебе, кожен їхній скіл заряджає Elemental Fusion, а прокляття тікають на цілі.">
+<meta property="og:url" content="https://couga54.github.io/aion2-guides/uk/elementalist/">
+<meta property="og:image" content="https://couga54.github.io/aion2-guides/assets/og/elementalist-uk.jpg?v=3461c782">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var off = (r.getAttribute('data-off') || '').split(' ');
+    var modes = ['pve', 'pvp', 'lvl'].filter(function (x) { return off.indexOf(x) < 0; });
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+    else if (modes.indexOf(r.dataset.mode) < 0) r.dataset.mode = modes[0];
+  })(document.documentElement);
+</script>
+<script>
+  // Google Analytics (site.json "ga"). Not loaded on local previews. A visitor who came through the root
+  // language redirect keeps the site they came from (root.html saves it in sessionStorage).
+  if (!/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+    (function () {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-6WYEWLG4B5';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      var ref = null;
+      try { ref = sessionStorage.getItem('ref'); sessionStorage.removeItem('ref'); } catch (e) {}
+      gtag('js', new Date());
+      gtag('config', 'G-6WYEWLG4B5', ref ? { page_referrer: ref } : {});
+    })();
+  }
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=3461c782">
+</head>
+<body class="page-class accent-spirit">
+<a class="skip-link" href="#main">Перейти до вмісту</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../uk/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
+      <span>AION 2 Гайди</span>
+    </a>
+    <details class="class-menu">
+      <summary class="class-menu-btn accent-spirit">
+<img src="../../assets/classes/elementalist.webp" width="24" height="24" alt=""><span>Заклинач</span>
+        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="Класи">
+        <a href="../../uk/gladiator/" class="cm-item accent-crimson">
+          <img src="../../assets/classes/gladiator.webp" width="44" height="44" alt=""><span class="cm-name">Гладіатор</span><span class="cm-role">Ближній бій · брузер</span>
+        </a>
+        <a href="../../uk/ranger/" class="cm-item accent-emerald">
+          <img src="../../assets/classes/ranger.webp" width="44" height="44" alt=""><span class="cm-name">Лучник</span><span class="cm-role">Дальній бій · кайт</span>
+        </a>
+        <a href="../../uk/templar/" class="cm-item accent-sapphire">
+          <img src="../../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Страж</span><span class="cm-role">Танк · бафер групи</span>
+        </a>
+        <a href="../../uk/assassin/" class="cm-item accent-violet">
+          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Вбивця</span><span class="cm-role">Ближній бій · берст</span>
+        </a>
+        <a href="../../uk/sorcerer/" class="cm-item accent-frost">
+          <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Чарівник</span><span class="cm-role">Магічна шкода здалеку</span>
+        </a>
+        <a href="../../uk/elementalist/" class="cm-item accent-spirit" aria-current="page">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Заклинач</span><span class="cm-role">Призивач · магічна шкода</span>
+        </a>
+        <a href="../../uk/cleric/" class="cm-item accent-sunlight">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Цілитель</span><span class="cm-role">Лікар · шкода землею й блискавкою</span>
+        </a>
+        <a href="../../uk/chanter/" class="cm-item accent-amber">
+          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Чародій</span><span class="cm-role">Підтримка ближнього бою · бафер</span>
+        </a>
+      </nav>
+    </details>
+    <div class="topbar-tools">      <a class="top-timer" href="../../uk/" title="Розклад запуску" data-events='[{"at": "2026-09-28T13:00:00Z", "n": "\u041f\u043e\u043f\u0435\u0440\u0435\u0434\u043d\u0454 \u0437\u0430\u0432\u0430\u043d\u0442\u0430\u0436\u0435\u043d\u043d\u044f", "o": ""}, {"at": "2026-09-30T14:00:00Z", "n": "\u0420\u0430\u043d\u043d\u0456\u0439 \u0434\u043e\u0441\u0442\u0443\u043f", "o": "\u0420\u0430\u043d\u043d\u0456\u0439 \u0434\u043e\u0441\u0442\u0443\u043f \u0432\u0456\u0434\u043a\u0440\u0438\u0442\u043e"}, {"at": "2026-10-05T13:00:00Z", "n": "\u0413\u043b\u043e\u0431\u0430\u043b\u044c\u043d\u0438\u0439 \u0437\u0430\u043f\u0443\u0441\u043a", "o": "\u0421\u0435\u0440\u0432\u0435\u0440\u0438 \u0432\u0456\u0434\u043a\u0440\u0438\u0442\u043e"}]' data-units="д,г,хв,с" data-open="відкрито">
+        <span class="tt-dot" aria-hidden="true"></span><span class="tt-name"></span><b class="tt-time">--:--:--</b>
+      </a>
+      <details class="class-menu nav-menu">
+        <summary class="class-menu-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Гайди</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <nav class="nav-menu-panel" aria-label="Гайди">
+          <div class="nm-col">
+            <p class="nm-group">Прогрес</p>
+            <a href="../../uk/week-1/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+              <span class="nm-name">Перший тиждень</span><span class="nm-desc">Що встигнути до першого скидання</span>
+            </a>
+            <a href="../../uk/progression/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h4v-6H3zM10 20h4V9h-4zM17 20h4V4h-4z"/></svg>
+              <span class="nm-name">Після 45</span><span class="nm-desc">Маршрут за рівнем предметів до рейду</span>
+            </a>
+            <a href="../../uk/crafting/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 1.3-1.3a4 4 0 0 0-5-5L3 10l3-3 3 3 1.3-1.3a4 4 0 0 1 4.4-2.4z"/></svg>
+              <span class="nm-name">Збір і крафт</span><span class="nm-desc">Професії та золоті заготовки</span>
+            </a>
+            <a href="../../uk/settings/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+              <span class="nm-name">Налаштування гри</span><span class="nm-desc">Керування, клавіші, FPS і масове PvP</span>
+            </a>
+          </div>
+          <div class="nm-col">
+            <p class="nm-group">Трекери</p>
+            <a href="../../uk/weekly/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+              <span class="nm-name">Тиждень</span><span class="nm-desc">Тижневі входи й енергія</span>
+            </a>
+            <a href="../../uk/bosses/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
+              <span class="nm-name">Боси</span><span class="nm-desc">Трекер убивств і таймери</span>
+            </a>
+          </div>
+          <div class="nm-foot">
+            <a href="../../uk/sources/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+              <span class="nm-name">Джерела й автори</span><span class="nm-desc">На кому побудовано сайт</span>
+            </a>
+          </div>
+        </nav>
+      </details>      <details class="lang-menu">
+        <summary class="lang-switch" title="Мова"><span aria-hidden="true">UA</span><span class="sr-only">Мова</span></summary>
+        <nav class="lang-panel" aria-label="Мова">
+<a href="../../en/elementalist/" hreflang="en" lang="en" data-keep-query><b>EN</b>English</a><a href="../../ru/elementalist/" hreflang="ru" lang="ru" data-keep-query><b>RU</b>Русский</a><a href="../../uk/elementalist/" hreflang="uk" lang="uk" aria-current="true" data-keep-query><b>UA</b>Українська</a>        </nav>
+      </details>
+      <button class="icon-btn search-open" type="button" aria-label="Пошук (Ctrl+K)" title="Пошук (Ctrl+K)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+<a class="icon-btn wn-top" href="../../uk/changelog/" aria-label="Історія змін" title="Історія змін">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </a>      <button class="icon-btn theme-toggle" type="button" aria-label="Перемкнути темну тему" title="Перемкнути темну тему">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="class-backdrop" aria-hidden="true" style="--art:url('../../assets/art/elementalist.webp')"></div>
+<section class="class-hero" data-fx="elementalist">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <img class="class-hero-art" src="../../assets/art/elementalist.webp" alt="" aria-hidden="true" fetchpriority="high">
+  <div class="wrap class-hero-in">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../../uk/">Усі класи</a><span aria-hidden="true">/</span><span>Заклинач</span></nav>
+    <div class="class-hero-main">
+      <img class="class-hero-emblem" src="../../assets/classes/elementalist.webp" width="96" height="96" alt="">
+      <div>
+        <p class="kicker"><span data-only="pve">PvE</span><span data-only="pvp">PvP</span><span data-only="lvl">Прокачка</span> · Глобальний 1 сезон</p>
+        <h1>Заклинач</h1>
+        <p class="class-hero-pitch">Єдиний призивач: духи вогню, води, землі й повітря б&#39;ються за тебе, кожен їхній скіл заряджає Elemental Fusion, а прокляття тікають на цілі.</p>
+        <p class="guide-ver"><span>Оновлено: <time datetime="2026-09-28">28 вересня 2026</time></span><span>Патч: <b>TW</b></span></p>
+<p class="guide-src"><span data-only="lvl">Джерело: <b>Grobs · MMO Codex</b> · звірено <time datetime="2026-09-28">28 вересня 2026</time></span></p>      </div>
+    </div>
+    <dl class="class-facts">
+      <div><dt>Роль</dt><dd>Призивач · магічна шкода</dd></div>
+      <div><dt>Зброя</dt><dd>Сфера</dd></div>
+      <div><dt>Складність</dt><dd class="diff"><i class="on"></i><i class="on"></i><i class="on"></i><span>Складний</span></dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="guidebar">
+  <div class="wrap guidebar-in">
+    <div class="mode-switch" role="radiogroup" aria-label="Режим гайда">
+      <button type="button" role="radio" data-set-mode="pve" aria-checked="false" class="is-off" aria-disabled="true" disabled>PvE</button>
+      <button type="button" role="radio" data-set-mode="pvp" aria-checked="false" class="is-off" aria-disabled="true" disabled>PvP</button>
+      <button type="button" role="radio" data-set-mode="lvl" aria-checked="false">Прокачка</button>
+    </div>
+    <nav class="toc-mobile" aria-label="На сторінці"></nav>
+  </div>
+</div>
+
+<div class="wrap guide-layout">
+  <aside class="toc-side" aria-label="На сторінці">
+    <p class="toc-title">На сторінці</p>
+    <nav class="toc-list"></nav>
+  </aside>
+
+  <main id="main" class="guide">
+    <section id="progress" class="g-section tracker" data-only="lvl" data-class="elementalist" aria-labelledby="h-progress">
+      <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-progress">Прогрес прокачки</h2></div>
+      <div class="tracker-bar">
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="23" aria-valuenow="0" aria-label="Прогрес прокачки"><span></span></div>
+        <span class="progress-text"><b class="progress-count">0</b>/23 готово</span>
+        <button type="button" class="btn btn-ghost btn-sm tracker-reset" data-confirm="Зняти всі позначки для цього класу?">Скинути прогрес</button>
+      </div>
+      <p class="note">Відмічай кроки під час гри. Прогрес зберігається в цьому браузері, окремо для кожного класу.</p>
+      <ol class="steps">
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-story">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Старт</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Іди <strong>лише за жовтими (сюжетними) квестами</strong>. Побічний контент підлаштовується під рівень, тому нічого не втрачаєш, якщо зробиш його пізніше.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="el-clicks">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Рів. 1</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+<img src="../../assets/icons/elementalist/cold-shock.webp" width="22" height="22" alt="" loading="lazy" data-sk="cold-shock"><img src="../../assets/icons/elementalist/combustion.webp" width="22" height="22" alt="" loading="lazy" data-sk="combustion">              Спершу качай <strong>Cold Shock</strong> (поповнює ману) і <strong>Combustion</strong>. Грай у <strong>режимі з таргетом</strong>, щоб автоатака не переривалася: мана — головна проблема Заклинача на старті.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-feathers">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Після прологу</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Збери <strong>40 пір'їн</strong> (120 уламків) для раннього посилення амулета.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="el-water">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">~Рів. 9</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+<img src="../../assets/icons/elementalist/summon-water-spirit.webp" width="22" height="22" alt="" loading="lazy" data-sk="summon-water-spirit">              <strong>Summon: Water Spirit</strong> — твій дух на прокачці: найкраща шкода по одній цілі й підживлення маною. Решту духів поки тримай на 1.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-daevanion">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Рів. 12</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Відкривається <strong>Daevanion</strong> (дошка Nezekan). Сині вузли дають +1 до рівня скіла — які брати, дивись у кроці класу нижче.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="el-curse">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Рів. 9–18</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+<img src="../../assets/icons/elementalist/jointstrike-curse.webp" width="22" height="22" alt="" loading="lazy" data-sk="jointstrike-curse"><img src="../../assets/icons/elementalist/dimensional-control.webp" width="22" height="22" alt="" loading="lazy" data-sk="dimensional-control"><img src="../../assets/icons/elementalist/rapid-scattershot.webp" width="22" height="22" alt="" loading="lazy" data-sk="rapid-scattershot">              Додай <strong>Jointstrike: Curse</strong> (шкода з часом), <strong>Dimensional Control</strong> (спрацьовує щоразу, коли дух використовує скіл) і <strong>Rapid Scattershot</strong> (лише по оглушених).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-hideouts">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Рів. 15 / 20 / 25</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Проходь сховища, які трапляються дорогою: перше проходження дає камені посилення й кристали Daevanion.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-amulet">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">~Рів. 17</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              <strong>Амулет +10</strong>, потім через Morph зроби його синім.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-weapon">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Принагідно</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Зброя до <strong>~+10</strong> — найбільший приріст шкоди на прокачці. Вище до капу не точи.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="el-spec">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Рів. 19</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+<img src="../../assets/icons/elementalist/cold-shock.webp" width="22" height="22" alt="" loading="lazy" data-sk="cold-shock"><img src="../../assets/icons/elementalist/combustion.webp" width="22" height="22" alt="" loading="lazy" data-sk="combustion"><img src="../../assets/icons/elementalist/summon-water-spirit.webp" width="22" height="22" alt="" loading="lazy" data-sk="summon-water-spirit">              Перші спеціалізації: <em>+20% MP restored</em> і <em>Deals up to 12% more damage when less targets are hit</em>. Water Spirit, Jointstrike: Curse і Rapid Scattershot — до 8.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-zikel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Рів. 20</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Відкривається дошка Zikel — пріоритет вузлів той самий.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-stigma">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">~Рів. 22</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Вознесіння → <strong>відкриваються стигми</strong> (4 слоти в 1 сезоні глобалу). Які брати — в кроці класу.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="el-stigmas">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Рів. 22</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+<img src="../../assets/icons/elementalist/summon-ancient-spirit.webp" width="22" height="22" alt="" loading="lazy" data-sk="summon-ancient-spirit"><img src="../../assets/icons/elementalist/enhance-spirits-benediction.webp" width="22" height="22" alt="" loading="lazy" data-sk="enhance-spirits-benediction"><img src="../../assets/icons/elementalist/jointstrike-corrode.webp" width="22" height="22" alt="" loading="lazy" data-sk="jointstrike-corrode">              Стигми: <strong>Summon: Ancient Spirit</strong> і <strong>Enhance: Spirit&#39;s Benediction</strong> до 5 (спершу баф, потім виклик Ancient Spirit); Grobs ставить ще <strong>Jointstrike: Corrode</strong>; <strong>Flame Blessing</strong> — якщо дозволяє точність.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-acts23">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Акти 2–3</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Лише сюжет — не відволікайся на мапу.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-vaizel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Рів. 30</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Відкривається дошка Vaizel (критична шкода).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="el-fusion">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Рів. 26–37</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+<img src="../../assets/icons/elementalist/elemental-fusion.webp" width="22" height="22" alt="" loading="lazy" data-sk="elemental-fusion">              <strong>Elemental Fusion</strong>: кожен скіл духа дає елемент, на чотирьох його можна кастувати. Dimensional Control і Elemental Fusion — до 8.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-act4">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Акт 4</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Тут знову варто робити побічні завдання й соло-підземелля.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-triniel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Рів. 40</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Відкривається дошка Triniel (мультиудар; здебільшого для PvP — може зачекати). Krao Cave вимагає близько 1000 GS.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-ariel">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Рів. 45</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              <strong>Відкривається дошка Azphel</strong> — лише шкода й стійкість у PvP, вузлів скілів немає. Для PvE продовжуй закривати перші чотири дошки; дошки Ariel на глобалі немає.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="el-cap">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Кап</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+<img src="../../assets/icons/elementalist/elemental-fusion.webp" width="22" height="22" alt="" loading="lazy" data-sk="elemental-fusion"><img src="../../assets/icons/elementalist/summon-fire-spirit.webp" width="22" height="22" alt="" loading="lazy" data-sk="summon-fire-spirit"><img src="../../assets/icons/elementalist/summon-earth-spirit.webp" width="22" height="22" alt="" loading="lazy" data-sk="summon-earth-spirit">              Elemental Fusion і всіх чотирьох духів — до 10. <strong>Soul&#39;s Cry</strong> не качай — він для PvP.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-shugo">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Кап</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Активності Shugo — повний набір нагород за кап (золоте спорядження, матеріали).
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-map">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Кап</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Зачисти мапу: знаки питання, вогнища, зелені завдання, приховані куби, пір'я. Здай пір'я — вівтар 30 рівня дає титул.
+            </span>
+          </label>
+        </li>
+        <li class="step step-route">
+          <label>
+            <input type="checkbox" data-step="route-cap-daily">
+            <span class="step-box" aria-hidden="true"></span>
+            <span class="step-when">Щодня</span>
+            <span class="step-text">
+              <span class="step-tag">Маршрут</span>
+              Вхід у Nightmare, поверхи Transformation в міру зростання GS, підземелля: спершу T2, потім T3 (стеж за енергією).
+            </span>
+          </label>
+        </li>
+      </ol>
+    </section>
+
+
+
+<section id="intro-lvl" class="g-section" data-only="lvl" aria-labelledby="h-intro-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-intro-lvl">Огляд</h2></div>
+    <p>Заклинач (Spiritmaster) — єдиний призивач: поруч із тобою б'ється дух, кожен його скіл дає елемент, а на чотирьох елементах готовий <span class="sk" data-sk="elemental-fusion"><img src="../../assets/icons/elementalist/elemental-fusion.webp" width="18" height="18" alt="" loading="lazy">Elemental Fusion</span>. <span class="sk" data-sk="dimensional-control"><img src="../../assets/icons/elementalist/dimensional-control.webp" width="18" height="18" alt="" loading="lazy">Dimensional Control</span> спрацьовує щоразу, коли дух використовує скіл, а прокляття продовжують тікати на цілі.</p>
+  <div class="callout accent">
+    <h3>Прокачка одним реченням</h3>
+    <p>Качайся з <span class="sk" data-sk="summon-water-spirit"><img src="../../assets/icons/elementalist/summon-water-spirit.webp" width="18" height="18" alt="" loading="lazy">Summon: Water Spirit</span> (шкода й мана), тримай <span class="sk" data-sk="cold-shock"><img src="../../assets/icons/elementalist/cold-shock.webp" width="18" height="18" alt="" loading="lazy">Cold Shock</span> заради мани, а вбудований макрос нехай крутить лінію духів і лінію Fusion.</p>
+  </div>
+
+<p class="guide-origin"><b>Патч TW.</b> Білд узято з відео з тайванських серверів і урізано під глобал: 4 стигми, максимум 20.</p></section>
+<section id="fight-lvl" class="g-section" data-only="lvl" aria-labelledby="h-fight-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-fight-lvl">Як битися під час прокачки</h2></div>
+    <div class="callout"><ul>
+    <li><strong>Дух:</strong> <span class="sk" data-sk="summon-water-spirit"><img src="../../assets/icons/elementalist/summon-water-spirit.webp" width="18" height="18" alt="" loading="lazy">Summon: Water Spirit</span> до самого капу — найкраща шкода по одній цілі й підживлення маною. Решта на прокачці тримаються на 1 рівні.</li>
+    <li><strong>Пачки:</strong> <span class="sk" data-sk="jointstrike-curse"><img src="../../assets/icons/elementalist/jointstrike-curse.webp" width="18" height="18" alt="" loading="lazy">Jointstrike: Curse</span> (б'є до 4 цілей) → <span class="sk" data-sk="combustion"><img src="../../assets/icons/elementalist/combustion.webp" width="18" height="18" alt="" loading="lazy">Combustion</span> → <span class="sk" data-sk="elemental-fusion"><img src="../../assets/icons/elementalist/elemental-fusion.webp" width="18" height="18" alt="" loading="lazy">Elemental Fusion</span> зі спеціалізацією на АоЕ, коли він готовий.</li>
+    <li><strong>Мана:</strong> головна проблема на старті — режим із таргетом, <span class="sk" data-sk="cold-shock"><img src="../../assets/icons/elementalist/cold-shock.webp" width="18" height="18" alt="" loading="lazy">Cold Shock</span> між скілами й ротація духів, що закінчується на Water Spirit.</li>
+    <li><strong>Оглушені цілі:</strong> <span class="sk" data-sk="rapid-scattershot"><img src="../../assets/icons/elementalist/rapid-scattershot.webp" width="18" height="18" alt="" loading="lazy">Rapid Scattershot</span>.</li>
+    <li><span class="sk" data-sk="souls-cry"><img src="../../assets/icons/elementalist/souls-cry.webp" width="18" height="18" alt="" loading="lazy">Soul&#39;s Cry</span> не качай — це PvP-скіл.</li>
+  </ul></div>
+
+</section>
+<section id="macro-lvl" class="g-section" data-only="lvl" aria-labelledby="h-macro-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-macro-lvl">Макрос на прокачці</h2></div>
+    <p>Стартове налаштування Grobs: дві лінії на кнопках і вбудований макрос із двох слотів. В AION 2 <strong>найвищий пріоритет у нижнього слота лінії</strong> — картки показують лінії згори донизу, як у грі.</p>
+  <div class="hotlines">
+<div class="hotline">
+  <div class="hotline-head"><span class="key">1</span><span class="hotline-name">Лінія духів</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="" data-sk="summon-fire-spirit">
+      <span class="hl-n">4</span>
+      <img src="../../assets/icons/elementalist/summon-fire-spirit.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Summon: Fire Spirit</span>
+    </li>
+    <li class="" data-sk="summon-earth-spirit">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/elementalist/summon-earth-spirit.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Summon: Earth Spirit</span>
+    </li>
+    <li class="" data-sk="jointstrike-corrode">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/elementalist/jointstrike-corrode.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Jointstrike: Corrode</span>
+    </li>
+    <li class=" is-first" data-sk="summon-water-spirit">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/elementalist/summon-water-spirit.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Summon: Water Spirit</span>
+    </li>
+  </ol>
+  <p class="hotline-order">Порядок як у грі, згори донизу. 1 = найвищий пріоритет — нижній слот.</p>
+<p class="hotline-note">Спершу Water Spirit; Jointstrike: Corrode (стигма) змушує ціль отримувати більше шкоди від духа.</p></div><div class="hotline">
+  <div class="hotline-head"><span class="key">2</span><span class="hotline-name">Лінія Fusion</span></div>
+  <ol class="hotline-skills" reversed>
+    <li class="" data-sk="combustion">
+      <span class="hl-n">4</span>
+      <img src="../../assets/icons/elementalist/combustion.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Combustion</span>
+    </li>
+    <li class="" data-sk="jointstrike-curse">
+      <span class="hl-n">3</span>
+      <img src="../../assets/icons/elementalist/jointstrike-curse.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Jointstrike: Curse</span>
+    </li>
+    <li class="" data-sk="dimensional-control">
+      <span class="hl-n">2</span>
+      <img src="../../assets/icons/elementalist/dimensional-control.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Dimensional Control</span>
+    </li>
+    <li class=" is-first" data-sk="elemental-fusion">
+      <span class="hl-n">1</span>
+      <img src="../../assets/icons/elementalist/elemental-fusion.webp" width="40" height="40" alt="" loading="lazy">
+      <span class="hl-name">Elemental Fusion</span>
+    </li>
+  </ol>
+  <p class="hotline-order">Порядок як у грі, згори донизу. 1 = найвищий пріоритет — нижній слот.</p>
+<p class="hotline-note">Elemental Fusion і Dimensional Control спрацьовують, щойно духи їх відкривають; Combustion заповнює паузи.</p></div>  </div>
+  <p>Вбудований макрос (вікно скілів → Macro), затримка <strong>10 мс</strong> у кожному слоті:</p>
+  <ol class="macroseq">
+  <li><span class="ms-n">1</span><span class="ms-label">Лінія духів</span><span class="ms-detail">1 · 10 мс</span></li>
+  <li><span class="ms-n">2</span><span class="ms-label">Лінія Fusion</span><span class="ms-detail">2 · 10 мс</span></li>
+</ol>
+  <ul class="presslist">
+    <li><span class="press-how">Тримати</span><span class="press-what"><span class="sk" data-sk="cold-shock"><img src="../../assets/icons/elementalist/cold-shock.webp" width="18" height="18" alt="" loading="lazy">Cold Shock</span> на <span class="key">ЛКМ</span> разом із кнопкою макросу.</span></li>
+    <li><span class="press-how">Вручну</span><span class="press-what"><span class="sk" data-sk="enhance-spirits-benediction"><img src="../../assets/icons/elementalist/enhance-spirits-benediction.webp" width="18" height="18" alt="" loading="lazy">Enhance: Spirit&#39;s Benediction</span>, потім <span class="sk" data-sk="summon-ancient-spirit"><img src="../../assets/icons/elementalist/summon-ancient-spirit.webp" width="18" height="18" alt="" loading="lazy">Summon: Ancient Spirit</span> (спершу баф — Ancient Spirit живе 30 с).</span></li>
+  </ul>
+
+</section>
+<section id="stigmas-lvl" class="g-section" data-only="lvl" aria-labelledby="h-stigmas-lvl">
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-stigmas-lvl">Стигми на прокачці</h2></div>
+    <p>Стигми відкриваються на 22 рівні.</p>
+  <ul class="skill-grid">
+<li class="skill" data-sk-card="summon-ancient-spirit">
+  <img class="skill-icon" data-sk="summon-ancient-spirit" src="../../assets/icons/elementalist/summon-ancient-spirit.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Summon: Ancient Spirit <span class="badge must">Рів. 5</span></div>
+    <div class="skill-desc">Додатковий дух на 30 с, який теж дає елементи для Elemental Fusion.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+10% Ancient Spirit Attack</li>    </ul>
+    <details class="spec-all">
+      <summary>Усі спеціалізації</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+10% Ancient Spirit Attack</li>
+        <li class=""><span class="spec-lv">10</span>x1.5 [Spirit&#39;s Descent] activation chance and damage for 30s</li>
+        <li class=""><span class="spec-lv">15</span>Ancient Spirit uses skill after 5 basic attacks</li>
+        <li class=""><span class="spec-lv">20</span>+20% Ancient Spirit Stats</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="enhance-spirits-benediction">
+  <img class="skill-icon" data-sk="enhance-spirits-benediction" src="../../assets/icons/elementalist/enhance-spirits-benediction.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Enhance: Spirit&#39;s Benediction <span class="badge must">Рів. 5</span></div>
+    <div class="skill-desc">+20% до шкоди й стійкості в PvE з лікуванням на 10 с — кастуй до Ancient Spirit.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>Restores 10% of Max HP on cast</li>    </ul>
+    <details class="spec-all">
+      <summary>Усі спеціалізації</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>Restores 10% of Max HP on cast</li>
+        <li class=""><span class="spec-lv">10</span>x1.5 [Spirit Strike] Damage Boost effect</li>
+        <li class=""><span class="spec-lv">15</span>x1.5 activation chance and amount healed from [Spirit Communion]</li>
+        <li class=""><span class="spec-lv">20</span>+25% PvE Damage Boost and Damage Tolerance, +12.5% PvP Damage Boost and Damage Tolerance for caster and Spirit</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="jointstrike-corrode">
+  <img class="skill-icon" data-sk="jointstrike-corrode" src="../../assets/icons/elementalist/jointstrike-corrode.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Jointstrike: Corrode <span class="badge must">Рів. 5</span></div>
+    <div class="skill-desc">У лінії духів у Grobs: ціль отримує більше шкоди від духа.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+15% extra damage taken from Spirit during Corrode</li>    </ul>
+    <details class="spec-all">
+      <summary>Усі спеціалізації</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+15% extra damage taken from Spirit during Corrode</li>
+        <li class=""><span class="spec-lv">10</span>-20% Combat Speed on hit for 10s</li>
+        <li class=""><span class="spec-lv">15</span>-70% Incoming Heal during Corrode</li>
+        <li class=""><span class="spec-lv">20</span>+10s Corrode effect duration</li>
+      </ul>
+    </details>
+  </div>
+</li><li class="skill" data-sk-card="flame-blessing">
+  <img class="skill-icon" data-sk="flame-blessing" src="../../assets/icons/elementalist/flame-blessing.webp" width="44" height="44" alt="" loading="lazy" decoding="async">
+  <div class="skill-body">
+    <div class="skill-name">Flame Blessing <span class="badge opt">Рів. 5</span></div>
+    <div class="skill-desc">Додаткова шкода при влучанні на 10 с — бери, коли вистачає точності.</div>
+    <ul class="spec-chips">
+<li><span class="spec-lv">5</span>+100 Accuracy</li>    </ul>
+    <details class="spec-all">
+      <summary>Усі спеціалізації</summary>
+      <ul>
+        <li class="on"><span class="spec-lv">5</span>+100 Accuracy</li>
+        <li class=""><span class="spec-lv">10</span>+100 Critical Hit</li>
+        <li class=""><span class="spec-lv">15</span>+10% Critical Damage Boost</li>
+        <li class=""><span class="spec-lv">20</span>-50% extra damage cooldown</li>
+      </ul>
+    </details>
+  </div>
+</li>  </ul>
+
+</section>
+<section class="sources" aria-labelledby="h-sources">
+  <h2 id="h-sources">Джерела</h2>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — слайд зі стартовими макросами (лінії й макрос Spiritmaster)</li>
+    <li><a href="https://mmo-codex.com/articles/aion-2-spiritmaster-guide/" target="_blank" rel="noopener">MMO Codex — білд Spiritmaster для Aion 2</a> — порядок скілів за рівнями, Water Spirit на прокачці, стигми</li>
+    <li><a href="https://questlog.gg/aion-2/en/db/skills/elementalist" target="_blank" rel="noopener">questlog.gg</a> — дані скілів із глобального клієнта</li>
+  </ul>
+  <p class="sources-all"><a href="../../uk/sources/">Усі джерела й автори →</a></p>
+</section>    <p class="report-box"><button type="button" class="btn btn-ghost btn-sm report-open" title="Відкриє коротку форму — повідомлення прийде автору сайту напряму">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+      Повідомити про помилку</button></p>
+    <script type="application/json" id="sk-data" data-cd="Перезарядка" data-s="с" data-active="Активний" data-stigma="Стигма" data-passive="Пасивний">{"command-proxy":{"n":"Command: Proxy","c":"stigma","cd":60,"d":"Increases the Spirit's PvE Damage Tolerance by 20% and PvP Damage Tolerance by 10% for 4s, and redirects damage taken each time the Spiritmaster is attacked, sharing 50% to the Spiritmaster and 50% to the Spirit.\nThis effect is applied to the summoned Spirit with the highest HP. If HP is equal, it will be applied to the closer target. Damage is only shared if the Spirit is within 25m.\n\nUnaffected by cooldown increase effects.","sp":[[5,"+2s Command: Proxy duration"],[10,"+10% PVP Damage Tolerance increase and +5% PvP Damage Tolerance increase to Spirit"],[15,"x1.5 [Spirit Protection] effect during Command: Proxy"],[20,"Restores 3% of Spirit's HP every 1s for Command: Proxy duration"]]},"cold-shock":{"n":"Cold Shock","c":"active","cd":0,"d":"Deals X Water damage to a target within 20m and restores 100 MP.","sp":[[8,"+20% MP restored"],[8,"Absorbs 1% HP"],[8,"+50% Multi-Hit on hit"],[12,"+2% Attack on landing [Earth Tremor] (Up to 5 stacks)"],[16,"10% chance to remove 1 buff on landing [Earth Tremor]"]]},"combustion":{"n":"Combustion","c":"active","cd":0,"d":"Selects a target within 20m and deals X Fire damage to up to 4 enemies within 4m of the target.\n\n3 Stagger Gauge Damage","sp":[[8,"-20% MP consumed"],[8,"Deals up to 12% more damage when less targets are hit"],[8,"+100 Skill Accuracy"],[12,"+20% Skill Speed"],[16,"Adds [Ashy Call] Chain Skill"]]},"siphon":{"n":"Siphon","c":"stigma","cd":30,"d":"Deals X damage and 300 MP damage to a target within 20m. Absorbs 10% HP and restores 300 MP.","sp":[[5,"+20% Skill Speed"],[10,"+5% HP absorbed"],[15,"30% of Max HP as Protective Shield for 30s on use"],[20,"Stun for 3s on hit"]]},"souls-cry":{"n":"Soul's Cry","c":"active","cd":45,"d":"Deals X damage to a target within 20m, with a 70% chance to inflict Fear for 5s.\n100% chance to inflict Fear on NPC targets. \n\n15 Stagger Gauge Damage","sp":[[8,"+50% Multi-Hit on hit"],[8,"Inflicts Root for 5s"],[8,"Changes to mobile skill"],[12,"-10s cooldown"],[16,"+2s Fear duration"]]},"cry-of-terror":{"n":"Cry of Terror","c":"stigma","cd":90,"d":"Selects a target within 20m and deals X damage to up to 4 enemies within 4m of the target, with a 50% chance to inflict Fear for 5s.\n100% chance to inflict Fear on NPC targets.","sp":[[5,"Root for 5s on hit"],[10,"Up to +20% damage when more targets hit"],[15,"+2s Fear duration"],[20,"+20% Fear Chance"]]},"summon-fire-spirit":{"n":"Summon: Fire Spirit","c":"active","cd":15,"d":"Summons a Fire Spirit.\nThe Fire Spirit rushes towards a target within 20m and uses a skill that deals X damage to up to 4 enemies within 5m.\nThe Fire Spirit fights alongside the caster using basic attacks, with a 15% chance to use its skill each time an attack lands. It is dismissed upon selecting the summon icon.\nEach skill level increases the Fire Spirit's Attack and Defense by 2%.\n\n7 Stagger Gauge Damage\nSpirit Skill Cooldown: 3s","sp":[[8,"-50% MP Cost"],[8,"+20% Fire Spirit Critical Hit damage"],[8,"10% chance to activate skill when Fire Spirit lands attack"],[12,"5% chance to inflict Knockdown for 3s on landing Fire Spirit attack"],[16,"+20% Fire Spirit Stats"]]},"summon-water-spirit":{"n":"Summon: Water Spirit","c":"active","cd":15,"d":"Summons a Water Spirit.\nThe Water Spirit uses a skill that deals X Water damage to a target within 20m.\nThe Water Spirit fights alongside the caster using basic attacks, with a 15% chance to use its skill and restoring 20 of the Spiritmaster's MP each time an attack lands. It is dismissed upon selecting the summon icon.\nEach skill level increases the Water Spirit's Attack and Critical Hit by 2%.\n\n7 Stagger Gauge Damage\nSpirit Skill Cooldown: 3s","sp":[[8,"-50% MP Cost"],[8,"+10% Water Spirit Attack"],[8,"10% chance to activate skill when Water Spirit lands attack"],[12,"5% chance to inflict Root for 2s on landing Water Spirit attack"],[16,"+20% Water Spirit Stats"]]},"summon-wind-spirit":{"n":"Summon: Wind Spirit","c":"active","cd":15,"d":"Summons a Wind Spirit.\nThe Wind Spirit selects a target within 20m and uses a skill that deals X Wind damage to up to 4 enemies within 5m of the target and restores 134-147 HP to the Spiritmaster.\nThe Wind Spirit fights alongside the caster using basic attacks, with a 10% chance to use its skill and restores 1.5% of the Spiritmaster's HP each time an attack lands. It is dismissed upon selecting the summon icon.\nEach skill level increases the Wind Spirit's Accuracy and Critical Hit by 2%.\n\n7 Stagger Gauge Damage\nSpirit Skill Cooldown: 3s","sp":[[8,"-50% MP Cost"],[8,"+20% Wind Spirit Critical Hit"],[8,"10% chance to activate skill when Wind Spirit lands attack"],[12,"5% chance to reduce enemy Attack Speed by 30% for 10s on landing Wind Spirit attack"],[16,"+20% Wind Spirit Stats"]]},"summon-earth-spirit":{"n":"Summon: Earth Spirit","c":"active","cd":15,"d":"Summons an Earth Spirit.\nThe Earth Spirit uses a skill that deals X Earth damage to a target within 20m and increases Enmity by 3750. Has a 30% chance to inflict Taunt for 2s if the target is a player.\nThe Earth Spirit fights alongside the caster using basic attacks, with a 10% chance to use its skill and increasing Enmity each time an attack lands. It is dismissed upon selecting the summon icon.\nEach skill level increases the Earth Spirit's Defense and HP by 2%.\n\n7 Stagger Gauge Damage\nSpirit Skill Cooldown: 3s","sp":[[8,"-50% MP Cost"],[8,"+20% PvE Damage Tolerance and +10 PvP Damage Tolerance to Earth Spirit"],[8,"10% chance to activate skill when Earth Spirit lands attack"],[12,"5% chance to restore 5% of Spirit HP when landing Earth Spirit attack"],[16,"+20% Earth Spirit Stats"]]},"jointstrike-curse":{"n":"Jointstrike: Curse","c":"active","cd":10,"d":"Selects a target within 20m and deals X damage to up to 4 enemies within 4m of the target, and inflicts Curse.\n\nCurse: Deals X Damage over Time every 1s and reduces damage dealt to the Spiritmaster by 10% for 5s.\n\nThe Spirit joins for a coordinated assault.\nFire: X AoE damage\nWater: X damage\nEarth: X damage and reduces Status Effect Resist by 10%\nWind: X AoE damage and X Damage over Time\nAncient: X AoE damage\n\n10 Stagger Gauge Damage","sp":[[8,"+2s Curse duration"],[8,"+50% Multi-Hit on hit"],[8,"Changes to mobile skill"],[12,"-2s cooldown"],[16,"[Jointstrike: Curse] ignores Block and Evasion and lands as a Critical Hit"]]},"jointstrike-corrode":{"n":"Jointstrike: Corrode","c":"stigma","cd":45,"d":"Selects a target within 20m and deals X damage to up to 4 enemies within 4m of the target, inflicting Corrode for 20s.\n\nCorrode: Increases damage taken from the Spirit by 10% and deals X Damage over Time every 1s\n\nThe Spirit joins for a coordinated assault.\nFire: X AoE damage and Knockdown\nWater: X damage and Slow\nEarth: X damage and Seal\nWind: X AoE damage and Stun\nAncient: X AoE damage and Knockdown\n\n10 Stagger Gauge Damage","sp":[[5,"+15% extra damage taken from Spirit during Corrode"],[10,"-20% Combat Speed on hit for 10s"],[15,"-70% Incoming Heal during Corrode"],[20,"+10s Corrode effect duration"]]},"enhance-spirits-benediction":{"n":"Enhance: Spirit's Benediction","c":"stigma","cd":60,"d":"Increases PvE Damage Boost by 20%, PvP Damage Boost by 10%, PvE Damage Tolerance by 20%, PvP Damage Tolerance by 10%, and restores X HP every 1s for 10s to the caster and Spirit.\n\nUnaffected by cooldown increase effects.","sp":[[5,"Restores 10% of Max HP on cast"],[10,"x1.5 [Spirit Strike] Damage Boost effect"],[15,"x1.5 activation chance and amount healed from [Spirit Communion]"],[20,"+25% PvE Damage Boost and Damage Tolerance, +12.5% PvP Damage Boost and Damage Tolerance for caster and Spirit"]]},"defiance":{"n":"Defiance","c":"active","cd":60,"d":"Removes Stun, Knockdown, Airborne, Grab, Frost, and Fear from the caster and grants Tenacity for 5s.\nTenacity: Grants Status Effect Immunity\n\nUnaffected by cooldown reduction effects.","sp":[[8,"Adds [Curse of Despair] Chain Skill"],[8,"Restores 1000 Stamina on using [Defiance]"],[8,"Restores 20% HP on using [Defiance]"],[12,"+2s Tenacity duration"],[16,"+50% PvE Damage Tolerance and +25% PvP Damage Tolerance for Tenacity duration"]]},"cursed-cloud":{"n":"Cursed Cloud","c":"stigma","cd":90,"d":"Selects a target within 20m and deals X damage to up to 4 enemies within 4m, and deals X Damage over Time every 1s for 10s.\n\n20 Stagger Gauge Damage","sp":[[5,"-1000 enemy Max Stamina during Damage over Time"],[10,"-20% Max HP of PC targets during Damage over Time"],[15,"+10s Damage over Time duration"],[20,"-30% Status Effect Resist during Damage over Time"]]},"seize-magic":{"n":"Seize Magic","c":"stigma","cd":90,"d":"Selects a target within 20m and deals X damage to up to 4 enemies within 4m of the target, removing up to 2 buffs.\n\nDeals X extra damage based on the number of buffs removed.\n\n20 Stagger Gauge Damage","sp":[[5,"Removes up to 3 buffs"],[10,"Inflicts Seal for 5s when removing 3 or more buffs"],[15,"Removes up to 5 buffs"],[20,"-30s cooldown"]]},"jointstrike-destructive-attack":{"n":"Jointstrike: Destructive Attack","c":"stigma","cd":60,"d":"Deals X damage to a target within 20m.\n\nThe Spirit joins you in a coordinated assault.\nFire: X AoE damage\nWater: X damage\nEarth: X damage\nWind: X AoE damage\nAncient: X AoE damage\n\n50 Stagger Gauge Damage","sp":[[5,"Changes to Charge Skill, dealing up to 200% more [Jointstrike: Destructive Attack] damage"],[10,"+30% Skill Speed"],[15,"Critical Hit on hit"],[20,"Reset [Jointstrike: Curse] and [Jointstrike: Corrode] cooldown on landing [Jointstrike: Destructive Attack] first hit"]]},"summon-ancient-spirit":{"n":"Summon: Ancient Spirit","c":"stigma","cd":90,"d":"Summons an Ancient Spirit for 30s and grants Four Elements status each time the Ancient Spirit uses its skill.\nThe Ancient Spirit uses a skill on a target within 20m, dealing X damage to up to 4 enemies within 4m.\nThe Ancient Spirit fights alongside the caster using basic attacks and reuses its skill after 7 basic attacks. It is dismissed upon selecting the summon icon.\nEach skill level increases the Ancient Spirit's Attack, Defense, Accuracy, and Critical Hit by 2%.\n\n20 Stagger Gauge Damage","sp":[[5,"+10% Ancient Spirit Attack"],[10,"x1.5 [Spirit's Descent] activation chance and damage for 30s"],[15,"Ancient Spirit uses skill after 5 basic attacks"],[20,"+20% Ancient Spirit Stats"]]},"magic-block":{"n":"Magic Block","c":"stigma","cd":60,"d":"Deals X damage to a target within 20m, with a 75% chance to inflict Seal for 5s.\n\n20 Stagger Gauge Damage","sp":[[5,"50% chance to inflict Root for 5s on hit"],[10,"-1000 enemy Max Stamina for 5s on hit"],[15,"+2s Seal duration"],[20,"+25% Seal chance"]]},"rapid-scattershot":{"n":"Rapid Scattershot","c":"active","cd":0,"d":"Deals X damage to a target afflicted with Stagger within 20m.","sp":[[8,"Absorbs 5% HP"],[8,"Restores 120 MP"],[8,"Changes to mobile skill"],[12,"Multi-Hit on hit"],[16,"-1s all skill cooldowns on hit"]]},"elemental-fusion":{"n":"Elemental Fusion","c":"active","cd":0,"d":"The Spiritmaster receives an element each time a Spirit uses its skill. Grants Four Elements status and the ability to use the [Elemental Fusion] skill upon reaching 4 stacks. [Elemental Fusion] can only be used when granted Four Elements, and using [Elemental Fusion] will immediately remove Four Elements. Cannot receive additional elements while in Four Elements status.\n\nDeals X damage to a target within 20m.\n\n10 Stagger Gauge Damage","sp":[[8,"Changes to AoE Skill"],[8,"Extra damage after 3s on hit"],[8,"+10 all Element Boost on hit"],[12,"Changes to Charge Skill, dealing up to 200% more damage"],[16,"25% chance to regain Four Elements"]]},"dimensional-control":{"n":"Dimensional Control","c":"active","cd":0,"d":"A skill that is triggered briefly each time a Spirit uses its skill.\nSelects a target within 20m and deals X damage to up to 4 enemies within 4m of the target and inflicts Slow, reducing Move Speed by 40% for 3s on hit. Restores 100 MP.\n\n5 Stagger Gauge Damage","sp":[[8,"+20% Slow effect"],[8,"Extra damage after 3s on hit"],[8,"+50% Multi-Hit chance on hit"],[12,"Pull in nearby targets"],[16,"30% chance to inflict Root for 3s on hit"]]},"kaisinels-power":{"n":"Kaisinel's Power","c":"stigma","cd":60,"d":"Increases Status Effect Chance by 20% and Status Effect Resist by 20% for the caster for 10s.","sp":[[5,"+150 Block and Evasion"],[10,"+15% Status Effect Resist"],[15,"+150 Accuracy"],[20,"+15% Status Effect Chance"]]},"flame-blessing":{"n":"Flame Blessing","c":"stigma","cd":60,"d":"Has a 50% chance to deal X extra damage to enemies on landing an attack for 10s.\n\nCooldown: 1s","sp":[[5,"+100 Accuracy"],[10,"+100 Critical Hit"],[15,"+10% Critical Damage Boost"],[20,"-50% extra damage cooldown"]]},"assault-terror":{"n":"Assault Terror","c":"stigma","cd":120,"d":"Selects a target within 20m and deals X damage to up to 4 enemies within 4m of the target, with a 30% chance to inflict Fear for 5s.\n100% chance to inflict Fear on NPC targets.\n\nIncreases Defense by up to 20% proportional to the number of targets hit.","sp":[[5,"+20% caster's Attack for 5s"],[10,"500 MP damage on hit"],[15,"+10m Range"],[20,"+20% Fear Chance"]]},"spirit-strike":{"n":"Spirit Strike","c":"passive","cd":0,"d":"Increases the caster's PvE Damage Boost by 6%, PvP Damage Boost by 3%, and Perfect Chance by 0.4%. Increases the Spirit's PvE Damage Boost by 6%, PvP Damage Boost by 3%, and Perfect Chance 0.4%.","sp":[]},"spirit-protection":{"n":"Spirit Protection","c":"passive","cd":0,"d":"Increases the caster's Defense by 2% and Spirit's Defense by 2%.","sp":[]},"spirits-descent":{"n":"Spirit's Descent","c":"passive","cd":0,"d":"Has a 50% chance to deal X extra damage whenever the Spiritmaster's attacks land within 10 seconds of summoning a Spirit. Duration is increased to 30s when an Ancient Spirit is summoned.\n\nCooldown: 1s","sp":[]},"corrode":{"n":"Corrode","c":"passive","cd":0,"d":"Increases the caster's Critical Hit by 100, with a 50% chance to deal X damage on landing a Critical Hit.\n\nCooldown: 1s","sp":[]},"spirit-revitalization":{"n":"Spirit Revitalization","c":"passive","cd":30,"d":"Has a 11% chance to reduce the cooldown of Spirit summon skills by 1s on hit. Immediately heals the Spirit for 12% of its Max HP when its HP is 50% or less.\n\nCooldown: 1s\nSpirit Healing Cooldown: 30s","sp":[]},"mental-focus":{"n":"Mental Focus","c":"passive","cd":0,"d":"Increases the caster's Mental-type Chance(s) by 11% and Double Chance by 0.3%.","sp":[]},"spirit-communion":{"n":"Spirit Communion","c":"passive","cd":0,"d":"Increases the caster's Accuracy by 100. Has a 10% chance to restore the caster's and Spirit's HP by 182-200 when landing an attack.\n\nCooldown: 1s","sp":[]},"element-unification":{"n":"Element Unification","c":"passive","cd":0,"d":"Increases Critical Damage Boost by 1.1% for the caster and Spirit for 10s upon landing a Spirit skill attack. Stacks up to 5 times.\n\nCooldown: 1s","sp":[]},"revitalization-contract":{"n":"Revitalization Contract","c":"passive","cd":0,"d":"Increases the caster's Status Effect Resist by 17%. Increases Status Effect Resist by 10% for 5s when hit while afflicted with Stun, Knockdown, Airborne, Frost, or Fear (up to 10 stacks).\nImmediately restores 35% Max HP when HP is 10% or less.\n\nHealing Cooldown: 60s\nStatus Effect Resist Cooldown: 1s","sp":[]},"consecutive-countercurrent":{"n":"Consecutive Countercurrent","c":"passive","cd":0,"d":"Has a 50% chance to deal X extra damage on landing an attack on a target that is taking Damage over Time.\n\nCooldown: 1s","sp":[]},"i:wings":{"n":"Ultimate Daeva Wings (Bound)","m":"","g":41,"d":"Grants [Ultimate Daeva Wings (Bound)].\n\n[Equipped Effect]\nHP: 500\nMP: 250\nPenetration: 500\nCritical Hit: 35\n[Owned Effect]\nFlight Power: 500\nPenetration: 100\nAccuracy Bonus: 20\nAttack Bonus: 10","sp":[]},"i:bracelet":{"n":"Ascension Bracelet","m":"Рівень предмета 51","g":41,"d":"Defense: 156\nAttack: 65","sp":[]},"i:trace":{"n":"Empyrean Trace: Altgard (Bound)","m":"","g":71,"d":"A trace faintly imbued with the strength of the Empyrean Lords who protect Altgard. Can be resonated with Altgard Monolith.","sp":[]},"i:dcrystal":{"n":"Daevanion Crystal (Bound)","m":"","g":71,"d":"Use to obtain 1 Daevanion Point.","sp":[]},"i:dcrystal_ariel":{"n":"Daevanion Crystal: Ariel (Bound)","m":"","g":71,"d":"Use to obtain 1 Ariel Daevanion Point.","sp":[]},"i:dcrystal_azphel":{"n":"Daevanion Crystal: Azphel (Bound)","m":"","g":71,"d":"Use to obtain 1 Azphel Daevanion Point.","sp":[]},"i:wisdom":{"n":"Wisdom Stone (Bound)","m":"","g":71,"d":"A mysterious stone imbued with memories of battle.\nUse to obtain 1 Skill Point.","sp":[]},"i:clashrune":{"n":"Clash Rune Chest (Bound)","m":"","g":71,"d":"A rune that can be earned only by those who have overcome a nightmare.\nUse to obtain a Clash Rune (Bound) and Rune Enhance Scrolls (Bound).","sp":[]},"i:beltscroll":{"n":"Noble Belt Enhance Scroll (Bound)","m":"","g":11,"d":"An Enhance Scroll containing an ancient power.\nUse to enhance Noble Belt.","sp":[]},"i:shugokey":{"n":"Shugo Festival Reward Key (Bound)","m":"","g":71,"d":"Recharges 1 Shugo Festival Reward Key count.","sp":[]},"i:bakarma":{"n":"Bakarma Breastplate","m":"Рівень предмета 54","g":41,"d":"HP: 216\nDefense: 397","sp":[]},"i:voucher":{"n":"Gear Change Voucher: Vakron Sky Island (Bound)","m":"","g":41,"d":"A reward obtained by defeating Vakron.\nWhen used as a Substance Morph material, it can be transformed into a Unique Guard or Unique Gear Selection Chest.","sp":[]},"i:vakronguard":{"n":"Vakron Guard","m":"Рівень предмета 70","g":41,"d":"Critical Hit: 50\nAccuracy: 50\nAttack: 144","sp":[]},"i:mana_sup":{"n":"Superior Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:mana_int":{"n":"Intermediate Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:mana_less":{"n":"Lesser Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:theostone":{"n":"Theostone: Jumentis's Dexterity (Bound)","m":"","g":31,"d":"Grants [Theostone: Jumentis's Dexterity].\nThe obtained Theostone can be found in the Enhancement menu.\nHas a 20% chance to deal 250 AoE Wind damage to up to 4 targets on attack\nEffect Activation Cooldown: 1s\nOnly one Theostone's effect applies when identical Theostones are engraved.","sp":[]},"i:enhance":{"n":"Enhance Stone","m":"","g":11,"d":"Used to awaken hidden potential of gear.","sp":[]},"i:bell_green":{"n":"Bell of Vigor","m":"Рівень предмета 40 · Сет: Primal Vigor","g":21,"d":"Justice [Nezekan]: 12","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:mirror_green":{"n":"Mirror of Magic","m":"Рівень предмета 40 · Сет: Magic Armor","g":21,"d":"Wisdom [Lumiel]: 12","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:compass_grey":{"n":"Compass of Magic","m":"Рівень предмета 20 · Сет: Magic Armor","g":11,"d":"Death [Triniel]: 8","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:chalice_grey":{"n":"Chalice of Magic","m":"Рівень предмета 20 · Сет: Magic Armor","g":11,"d":"Space [Israphel]: 8","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:mirror_gold":{"n":"Mirror of Vigor","m":"Рівень предмета 80 · Сет: Primal Vigor","g":41,"d":"Illusion [Kaisinel]: 20","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:transfer_w":{"n":"Transfer Stone: Weapon (Unique) (Bound)","m":"","g":41,"d":"A formidable gemstone that transfers the boundless power of the gear to another.\nCan be used on the Unique Weapon.","sp":[]},"i:transfer_a":{"n":"Transfer Stone: Armor (Unique) (Bound)","m":"","g":41,"d":"A formidable gemstone that transfers the boundless power of the gear to another.\nCan be used on the Unique Armor.","sp":[]},"i:stigmashard":{"n":"Stigma Shard (Bound)","m":"","g":71,"d":"A fragment sealed with the Essence of Experience.\nGrants 1 Stigma Shard Point when obtained.","sp":[]},"i:amplify":{"n":"Amplify Stone (Unique) (Bound)","m":"","g":41,"d":"A mystical gemstone that awakens the unique power of gear.\nUsed to amplify Unique Gear that has reached its maximum enhancement level.","sp":[]},"i:amplify_frag":{"n":"Amplify Stone Fragment (Unique) (Bound)","m":"","g":41,"d":"A piece of an Amplify Stone used to awaken the unique power of the gear.\nCan be converted into an Amplify Stone through Substance Morph.","sp":[]},"i:sync":{"n":"Sync Stone (Unique) (Bound)","m":"","g":41,"d":"A stone that harmonizes the energies within gear to awaken new possibilities.\nWhen used in [Enhancement - Soul Binding - Sync], it allows you to adjust the properties of gear.","sp":[]},"i:sapphire":{"n":"Sapphire Gemstone (Bound)","m":"","g":11,"d":"A gemstone infused with valuable gems. Used as a material for handicrafting accessories.","sp":[]},"i:ruby":{"n":"Ruby Gemstone (Bound)","m":"","g":11,"d":"A gemstone infused with valuable gems. Used as a material for handicrafting accessories.","sp":[]},"i:odyle":{"n":"Odyle","m":"","g":11,"d":"Used to imbue an item with the power of Odyle. Used as a material for Crafting and Substance Morph.","sp":[]},"i:log":{"n":"Yggdrasil Log (Bound)","m":"","g":11,"d":"A magic-imbued log. Used for making wooden weapons in Handicrafting.","sp":[]},"i:odyle_energy":{"n":"Odyle Energy (Bound)","m":"","g":71,"d":"Recharges 40 Odyle Energy.\nOdyle Energy can be used to activate the Odyle Energy Cube that appears when you clear an Expedition, Transcendence, or Sanctuary.","sp":[]},"i:parchment_vigor":{"n":"Parchment of Vigor","m":"Рівень предмета 80 · Сет: Primal Vigor","g":41,"d":"Life [Yustiel]: 20","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:compass_vigor":{"n":"Compass of Vigor","m":"Рівень предмета 80 · Сет: Primal Vigor","g":41,"d":"","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:chalice_vigor":{"n":"Chalice of Vigor","m":"Рівень предмета 80 · Сет: Primal Vigor","g":41,"d":"","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:mirror_magic_gold":{"n":"Mirror of Magic","m":"Рівень предмета 80 · Сет: Magic Armor","g":41,"d":"Wisdom [Lumiel]: 20","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"dv:combatspeed:4:":{"n":"Combat Speed","m":"особливий · 4 оч.","g":41,"d":"Combat Speed +1,5%","sp":[]},"dv:fixingdamage:1:":{"n":"Attack","m":"характеристика · 1 оч.","g":11,"d":"Attack +3","sp":[]},"dv:criticalresist:1:":{"n":"Critical Hit Resist","m":"характеристика · 1 оч.","g":11,"d":"Critical Hit Resist +5","sp":[]},"dv:critical:1:":{"n":"Critical Hit","m":"характеристика · 1 оч.","g":11,"d":"Critical Hit +5","sp":[]},"dv:cooltimedecrease:4:":{"n":"Cooldown Reduction","m":"особливий · 4 оч.","g":41,"d":"Cooldown Reduction +1,5%","sp":[]},"dv:mpmax:1:":{"n":"Max MP","m":"характеристика · 1 оч.","g":11,"d":"Max MP +50","sp":[]},"dv:defense:1:":{"n":"Defense","m":"характеристика · 1 оч.","g":11,"d":"Defense +30","sp":[]},"dv:hpmax:1:":{"n":"Max HP","m":"характеристика · 1 оч.","g":11,"d":"Max HP +100","sp":[]},"dv::0:510113":{"n":"Nezekan - Start","m":"","g":0,"d":"","sp":[]},"dv:decreasedamage:4:":{"n":"Damage Tolerance","m":"особливий · 4 оч.","g":41,"d":"Damage Tolerance +1,5%","sp":[]},"dv:amplifyalldamage:4:":{"n":"Damage Boost","m":"особливий · 4 оч.","g":41,"d":"Damage Boost +1,5%","sp":[]},"dv::0:520113":{"n":"Zikel - Start","m":"","g":0,"d":"","sp":[]},"dv:amplifycriticaldamage:4:":{"n":"Critical Damage Boost","m":"особливий · 4 оч.","g":41,"d":"Critical Damage Boost +1,5%","sp":[]},"dv:decreasecriticaldamage:4:":{"n":"Critical Damage Tolerance","m":"особливий · 4 оч.","g":41,"d":"Critical Damage Tolerance +1,5%","sp":[]},"dv::0:530113":{"n":"Vaizel - Start","m":"","g":0,"d":"","sp":[]},"dv:additionalhitresistrate:4:":{"n":"Multi-Hit Resist","m":"особливий · 4 оч.","g":41,"d":"Multi-Hit Resist +1,5%","sp":[]},"dv:additionalhitrate:4:":{"n":"Multi-Hit Chance","m":"особливий · 4 оч.","g":41,"d":"Multi-Hit Chance +1,5%","sp":[]},"dv::0:540113":{"n":"Triniel - Start","m":"","g":0,"d":"","sp":[]},"dv:pvpdecreasedamage:4:":{"n":"PvP Damage Tolerance","m":"особливий · 4 оч.","g":41,"d":"PvP Damage Tolerance +1,5%","sp":[]},"dv:pvpadddamage:1:":{"n":"PvP Attack","m":"характеристика · 1 оч.","g":11,"d":"PvP Attack +3","sp":[]},"dv:pvpdamagedefense:1:":{"n":"PvP Defense","m":"характеристика · 1 оч.","g":11,"d":"PvP Defense +30","sp":[]},"dv:abnormalaccuracy:3:":{"n":"Status Effect Chance","m":"характеристика · 3 оч.","g":31,"d":"Status Effect Chance +100","sp":[]},"dv:pvpcritical+pvpcriticalresist:2:":{"n":"PvP Critical Hit, PvP Critical Hit Resist","m":"характеристика · 2 оч.","g":21,"d":"PvP Critical Hit +5\nPvP Critical Hit Resist +5","sp":[]},"dv:pvpaccuracy:1:":{"n":"PvP Accuracy","m":"характеристика · 1 оч.","g":11,"d":"PvP Accuracy +5","sp":[]},"dv:pvpevasion:1:":{"n":"PvP Evasion","m":"характеристика · 1 оч.","g":11,"d":"PvP Evasion +3","sp":[]},"dv:abnormalresistance:3:":{"n":"Status Effect Resist","m":"характеристика · 3 оч.","g":31,"d":"Status Effect Resist +100","sp":[]},"dv:pvpcriticalresist:1:":{"n":"PvP Critical Hit Resist","m":"характеристика · 1 оч.","g":11,"d":"PvP Critical Hit Resist +5","sp":[]},"dv:pvpamplifydamage:4:":{"n":"PvP Damage Boost","m":"особливий · 4 оч.","g":41,"d":"PvP Damage Boost +1,5%","sp":[]},"dv:pvpcritical:1:":{"n":"PvP Critical Hit","m":"характеристика · 1 оч.","g":11,"d":"PvP Critical Hit +5","sp":[]},"dv:pvpaccuracy+pvpevasion:2:":{"n":"PvP Accuracy, PvP Evasion","m":"характеристика · 2 оч.","g":21,"d":"PvP Accuracy +5\nPvP Evasion +3","sp":[]},"dv:pvpadddamage+pvpdamagedefense:2:":{"n":"PvP Attack, PvP Defense","m":"характеристика · 2 оч.","g":21,"d":"PvP Attack +3\nPvP Defense +30","sp":[]},"dv::0:560113":{"n":"Azphel - Start","m":"","g":0,"d":"","sp":[]}}</script>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../uk/">AION 2 Гайди</a>
+      <p>Неофіційний фанатський сайт, не пов&#39;язаний з NCSOFT. AION 2 та іконки скілів © NCSOFT.</p>
+      <p>Перевірено: 2026-10-01 (до глобального запуску).</p>
+      <p><a href="../../uk/sources/">Усі джерела й автори</a> · <a href="../../uk/changelog/">Історія змін</a> · <button type="button" class="link-btn report-open">Повідомити про помилку</button></p>
+    </div>
+  </div>
+</footer>
+<dialog class="search-dlg" aria-label="Пошук" data-index="../../uk/search.json" data-base="../../uk/" data-empty="Нічого не знайдено"
+  data-kinds="{&#34;boss&#34;: &#34;\u0411\u043e\u0441&#34;, &#34;class&#34;: &#34;\u041a\u043b\u0430\u0441&#34;, &#34;page&#34;: &#34;\u0421\u0442\u043e\u0440\u0456\u043d\u043a\u0430&#34;, &#34;section&#34;: &#34;\u0420\u043e\u0437\u0434\u0456\u043b&#34;, &#34;skill&#34;: &#34;\u0421\u043a\u0456\u043b&#34;}" data-root="../../">
+  <div class="search-in">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-q" placeholder="Клас, скіл, бос, розділ…" aria-label="Пошук" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-res" role="listbox"></ul>
+  </div>
+</dialog>
+<dialog class="whatsnew" data-id="2026-10-01-uk" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title">Що нового</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="Зрозуміло">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <section class="wn-entry">
+      <time class="wn-date" datetime="2026-10-01">1 жовтня 2026</time>
+      <ul>
+        <li><span><strong>Українська версія</strong> — увесь сайт тепер є й українською: гайди, сторінки й трекери. Назви скілів і предметів тут англійською — української локалізації ігрових даних немає. Мова перемикається кнопкою в шапці.</span></li>
+      </ul>
+    </section>
+    <button class="btn btn-primary wn-ok" value="close">Зрозуміло</button>
+    <p class="wn-all"><a href="../../uk/changelog/">Уся історія змін →</a></p>
+  </form>
+</dialog>
+<dialog class="whatsnew feedback" aria-labelledby="fb-title" data-url="https://aion2-feedback.couga-ua.workers.dev/" data-page="uk/elementalist/" data-lang="uk">
+  <form class="wn-in fb-form" novalidate>
+    <div class="wn-head">
+      <h2 id="fb-title">Повідомити про помилку</h2>
+      <button type="button" class="icon-btn fb-x" aria-label="Зрозуміло">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <p class="fb-hint">Що не так або застаріло? Посилання на джерело чи скриншот дуже допоможуть.</p>
+    <label class="fb-label" for="fb-text">Повідомлення</label>
+    <textarea id="fb-text" class="fb-text" name="text" rows="6" maxlength="2000" required placeholder="Наприклад: третя спеціалізація Blaze на глобалі інша…"></textarea>
+    <label class="fb-label" for="fb-contact">Контакт для відповіді (необов&#39;язково)</label>
+    <input id="fb-contact" class="fb-contact" name="contact" type="text" maxlength="100" autocomplete="off" placeholder="Discord або Telegram">
+    <input class="fb-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="fb-meta">Разом із повідомленням надішлеться: <b class="fb-where"></b></p>
+    <p class="fb-status" role="status" data-sending="Надсилаю…" data-ok="Надіслано — дякуємо!" data-err="Не вдалося надіслати. Спробуй ще раз пізніше." data-rate="Забагато повідомлень поспіль — спробуй за кілька хвилин." data-short="Спершу напиши кілька слів."></p>
+    <div class="fb-actions">
+      <button type="submit" class="btn btn-primary fb-send">Надіслати</button>
+      <button type="button" class="btn btn-ghost fb-cancel">Скасувати</button>
+    </div>
+  </form>
+</dialog>
+<script src="../../assets/js/site.js?v=3461c782" defer></script>
+<script src="../../assets/js/fx.js?v=3461c782" defer></script>
+<div class="cel-banner" role="status" hidden data-at="2026-09-30T14:00:00Z" data-id="early">
+  <span class="cel-ico" aria-hidden="true">✦</span>
+  <div><p class="cel-h">Ранній доступ відкрито!</p><p class="cel-p">Сервери Founder&#39;s Pack працюють — успіху на старті. Гайди по класах уже чекають.</p></div>
+  <button type="button" class="cel-x" aria-label="Закрити">×</button>
+</div>
+<script src="../../assets/js/celebrate.js?v=3461c782" defer></script>
+</body>
+</html>

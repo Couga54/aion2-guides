@@ -61,8 +61,8 @@ Skill, item and stat names: use the official ones from `data/skills/<class>.json
 
 ## 5. Compare with the current guide
 
-Read `CONTEXT.md` (verified facts and rules), then the current text: `src/content/<class>/en.html` and
-`ru.html`, the class entry in `data/site.json`, `data/boards/presets.json` when the video shows Daevanion
+Read `CONTEXT.md` (verified facts and rules), then the current text: `src/content/<class>/en.html`,
+`ru.html` and `uk.html`, the class entry in `data/site.json`, `data/boards/presets.json` when the video shows Daevanion
 boards, and `data/progression.json` / `data/crafting.json` for general advice. Sort every finding:
 
 - **New** - the guide does not have it.
@@ -82,7 +82,7 @@ Then stop and wait. Nothing is edited before the user agrees; they may accept on
 
 Write the text in our own words - facts and numbers from the video, never its sentences.
 
-- [ ] Guide text in **both** `src/content/<class>/en.html` and `ru.html`. Skill cards: at most 2 specialization picks below
+- [ ] Guide text in **all three** `src/content/<class>/en.html`, `ru.html` and `uk.html` (UK: game names in English). Skill cards: at most 2 specialization picks below
       skill level 20 (1 below 12), and no pick that unlocks above the card's level.
 - [ ] Data the text leans on: `data/boards/presets.json`, `data/class_items.json` + `tools/fetch_items.py`,
       `data/progression.json` / `data/crafting.json` (their `sources` with `video` and timestamps in `at`).

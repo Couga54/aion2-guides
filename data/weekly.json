@@ -1,44 +1,44 @@
 {
   "_note": "Weekly tracker items (/<lang>/weekly/). max = entries per week; 1 = a single checkbox. Limits come from KR/TW and the EU test client — check the in-game counters at launch and update here.",
   "groups": [
-    {"id": "dungeons", "title": {"en": "Dungeons", "ru": "Подземелья"},
+    {"id": "dungeons", "title": {"en": "Dungeons", "ru": "Подземелья", "uk": "Підземелля"},
      "items": [
        {"id": "daily-dungeon", "max": 7,
-        "name": {"en": "Daily Dungeon", "ru": "Ежедневное подземелье (Daily Dungeon)"},
-        "note": {"en": "Weekly despite the name — all 7 can go on one day.", "ru": "Несмотря на название, лимит недельный — все 7 можно пройти за один день."}},
+        "name": {"en": "Daily Dungeon", "ru": "Ежедневное подземелье (Daily Dungeon)", "uk": "Daily Dungeon"},
+        "note": {"en": "Weekly despite the name — all 7 can go on one day.", "ru": "Несмотря на название, лимит недельный — все 7 можно пройти за один день.", "uk": "Попри назву, ліміт тижневий — усі 7 можна пройти за один день."}},
        {"id": "nightmare", "max": 14,
-        "name": {"en": "Nightmare", "ru": "Кошмар (Nightmare)"},
-        "note": {"en": "2 charges a day — spend them before they cap.", "ru": "2 заряда в день — трать, пока не упёрлись в лимит."}},
+        "name": {"en": "Nightmare", "ru": "Кошмар (Nightmare)", "uk": "Nightmare"},
+        "note": {"en": "2 charges a day — spend them before they cap.", "ru": "2 заряда в день — трать, пока не упёрлись в лимит.", "uk": "2 заряди на день — витрачай, поки не вперлися в ліміт."}},
        {"id": "transcendence", "max": 2,
-        "name": {"en": "Transcendence", "ru": "Трансцендентность (Transcendence)"},
-        "note": {"en": "Arcana source. Reward pool 2 (blue cards) needs ~1.8k item level.", "ru": "Источник аркан. Для пула наград 2 (синие карты) нужно ~1.8k уровня предметов."}},
+        "name": {"en": "Transcendence", "ru": "Трансцендентность (Transcendence)", "uk": "Transcendence"},
+        "note": {"en": "Arcana source. Reward pool 2 (blue cards) needs ~1.8k item level.", "ru": "Источник аркан. Для пула наград 2 (синие карты) нужно ~1.8k уровня предметов.", "uk": "Джерело аркан. Для пулу нагород 2 (сині карти) потрібно ~1.8k рівня предметів."}},
        {"id": "expedition-conquest", "max": 3,
-        "name": {"en": "Expedition: Conquest", "ru": "Экспедиция: Завоевание (Conquest)"},
-        "note": {"en": "Chests cost Odyle energy.", "ru": "Сундуки тратят энергию Odyle."}},
+        "name": {"en": "Expedition: Conquest", "ru": "Экспедиция: Завоевание (Conquest)", "uk": "Експедиція: Conquest"},
+        "note": {"en": "Chests cost Odyle energy.", "ru": "Сундуки тратят энергию Odyle.", "uk": "Скрині витрачають енергію Odyle."}},
        {"id": "sanctuary", "max": 1,
-        "name": {"en": "Sanctuary (raid)", "ru": "Святилище (рейд)"},
-        "note": {"en": "10-player raid.", "ru": "Рейд на 10 человек."}},
+        "name": {"en": "Sanctuary (raid)", "ru": "Святилище (рейд)", "uk": "Sanctuary (рейд)"},
+        "note": {"en": "10-player raid.", "ru": "Рейд на 10 человек.", "uk": "Рейд на 10 людей."}},
        {"id": "ascension-trial", "max": 3,
-        "name": {"en": "Ascension Trial", "ru": "Испытание восхождения (Ascension Trial)"},
-        "note": {"en": "Do it last, right before the reset, at your highest item level — first-clear rewards grow with difficulty.", "ru": "Проходи последним, прямо перед сбросом, на максимальном уровне предметов — награды за первое прохождение растут со сложностью."}}
+        "name": {"en": "Ascension Trial", "ru": "Испытание восхождения (Ascension Trial)", "uk": "Ascension Trial"},
+        "note": {"en": "Do it last, right before the reset, at your highest item level — first-clear rewards grow with difficulty.", "ru": "Проходи последним, прямо перед сбросом, на максимальном уровне предметов — награды за первое прохождение растут со сложностью.", "uk": "Проходь останнім, прямо перед скиданням, на максимальному рівні предметів — нагороди за перше проходження ростуть зі складністю."}}
      ]},
-    {"id": "resources", "title": {"en": "Energy & resources", "ru": "Энергия и ресурсы"},
+    {"id": "resources", "title": {"en": "Energy & resources", "ru": "Энергия и ресурсы", "uk": "Енергія й ресурси"},
      "items": [
        {"id": "odyle-craft", "max": 7,
-        "name": {"en": "Odyle energy craft (Substance Morph)", "ru": "Крафт энергии Odyle (Substance Morph)"},
-        "note": {"en": "7 a week, 40 energy each — the weekly cap is lost if you skip it.", "ru": "7 в неделю по 40 энергии — пропущенный лимит сгорает."}},
+        "name": {"en": "Odyle energy craft (Substance Morph)", "ru": "Крафт энергии Odyle (Substance Morph)", "uk": "Крафт енергії Odyle (Substance Morph)"},
+        "note": {"en": "7 a week, 40 energy each — the weekly cap is lost if you skip it.", "ru": "7 в неделю по 40 энергии — пропущенный лимит сгорает.", "uk": "7 на тиждень по 40 енергії — пропущений ліміт згорає."}},
        {"id": "shugo-festa", "max": 1,
-        "name": {"en": "Shugo Festa keys spent", "ru": "Ключи Shugo Festa потрачены"},
-        "note": {"en": "Keys stop at 14 — don't sit on a full stack.", "ru": "Ключи копятся до 14 — не держи полный запас."}}
+        "name": {"en": "Shugo Festa keys spent", "ru": "Ключи Shugo Festa потрачены", "uk": "Ключі Shugo Festa витрачено"},
+        "note": {"en": "Keys stop at 14 — don't sit on a full stack.", "ru": "Ключи копятся до 14 — не держи полный запас.", "uk": "Ключі накопичуються до 14 — не тримай повний запас."}}
      ]},
-    {"id": "quests", "title": {"en": "Quests & Abyss", "ru": "Квесты и Бездна"},
+    {"id": "quests", "title": {"en": "Quests & Abyss", "ru": "Квесты и Бездна", "uk": "Квести й Безодня"},
      "items": [
        {"id": "commander-scrolls", "max": 1,
-        "name": {"en": "Abyss commander scrolls", "ru": "Свитки командира Бездны"},
-        "note": {"en": "Pick them up and reroll for the rewards you need.", "ru": "Забери и перекинь награды на нужные."}},
+        "name": {"en": "Abyss commander scrolls", "ru": "Свитки командира Бездны", "uk": "Сувої командира Безодні"},
+        "note": {"en": "Pick them up and reroll for the rewards you need.", "ru": "Забери и перекинь награды на нужные.", "uk": "Забери й перекинь нагороди на потрібні."}},
        {"id": "duty-quests", "max": 1,
-        "name": {"en": "Duty quests", "ru": "Служебные задания (Duty quests)"},
-        "note": {"en": "Burn them in the pet dungeon (Odilium Repository).", "ru": "Сдавай их в питомнике (Odilium Repository)."}}
+        "name": {"en": "Duty quests", "ru": "Служебные задания (Duty quests)", "uk": "Службові завдання (Duty quests)"},
+        "note": {"en": "Burn them in the pet dungeon (Odilium Repository).", "ru": "Сдавай их в питомнике (Odilium Repository).", "uk": "Здавай їх у підземеллі петів (Odilium Repository)."}}
      ]}
   ]
 }

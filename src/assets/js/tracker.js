@@ -73,7 +73,7 @@
   }
   var dateFmt;
   try {
-    dateFmt = new Intl.DateTimeFormat(CFG.lang === 'ru' ? 'ru-RU' : 'en-GB',
+    dateFmt = new Intl.DateTimeFormat(({ ru: 'ru-RU', uk: 'uk-UA' })[CFG.lang] || 'en-GB',
       { weekday: 'short', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' });
   } catch (e) { dateFmt = null; }
   function fmtDate(ms) { return dateFmt ? dateFmt.format(ms) : new Date(ms).toUTCString(); }
