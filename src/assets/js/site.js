@@ -248,7 +248,8 @@
   var rift = document.querySelector('.rift-timer');
   if (rift) {
     var rtAnchor = Date.parse(rift.dataset.anchor), rtEvery = (+rift.dataset.every || 3) * 36e5;
-    var rtTime = rift.querySelector('.rt-time'), rtFmt = null;
+    var rtTime = rift.querySelector('.rt-time'), rtName = rift.querySelector('.rt-name'), rtFmt = null;
+    var rtOpen = (+rift.dataset.openMin || 0) * 6e4;
     try { rtFmt = new Intl.DateTimeFormat('en-US', { timeZone: rift.dataset.tz, hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' }); } catch (err) {}
     var rtOff = function (t) {   // the zone's UTC offset at moment t, in ms
       if (!rtFmt) return 0;
@@ -262,11 +263,16 @@
     var rtTick = function () {
       var now = Date.now(), k = Math.max(0, Math.floor((now - rtAnchor) / rtEvery) - 1), next;
       while ((next = rtAt(k)) <= now) k++;
+      // the entrance stays open a few minutes after each opening: count down to its closing instead
+      var shut = k > 0 ? rtAt(k - 1) + rtOpen : 0, open = now < shut;
+      rift.classList.toggle('is-open', open);
+      rtName.textContent = open ? rift.dataset.open : 'Rift';
+      if (open) next = shut;
       var ms = next - now, h = Math.floor(ms / 36e5), m = Math.floor(ms / 6e4) % 60, s = Math.floor(ms / 1e3) % 60;
       rtTime.textContent = (h ? h + ':' + r2(m) : m) + ':' + r2(s);
-      rift.classList.toggle('is-soon', ms < 6e5);   // last 10 minutes
+      rift.classList.toggle('is-soon', !open && ms < 6e5);   // last 10 minutes
       try {
-        rift.title = rift.dataset.title + ' · ' + new Intl.DateTimeFormat(document.documentElement.lang, { hour: '2-digit', minute: '2-digit' }).format(next);
+        rift.title = rift.dataset.title + ' · ' + new Intl.DateTimeFormat(document.documentElement.lang, { hour: '2-digit', minute: '2-digit' }).format(rtAt(k));
       } catch (err) {}
       setTimeout(rtTick, 1000 - (Date.now() % 1000));
     };

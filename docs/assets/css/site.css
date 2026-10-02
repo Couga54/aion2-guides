@@ -9,7 +9,7 @@
   --good:#6fd08c; --good-bg:rgba(111,208,140,.12);
   --warn:#e8b04a; --warn-bg:rgba(232,176,74,.12);
   --skip:#9aa3b2; --skip-bg:rgba(154,163,178,.12);
-  --pvp:#8b95ff; --lvl:#e0a33a;
+  --pvp:#8b95ff; --lvl:#e0a33a; --rift:#8b95ff;
   --radius:14px; --radius-sm:10px;
   --shadow:0 1px 0 rgba(255,255,255,.03) inset,0 10px 30px -18px rgba(0,0,0,.8);
   --topbar-h:56px; --guidebar-h:54px;
@@ -27,7 +27,7 @@
   --good:#2f7a45; --good-bg:rgba(47,122,69,.1);
   --warn:#8a5a00; --warn-bg:rgba(176,120,10,.12);
   --skip:#5f5a52; --skip-bg:rgba(95,90,82,.1);
-  --pvp:#3f4bc0; --lvl:#9a6512;
+  --pvp:#3f4bc0; --lvl:#9a6512; --rift:#3f4bc0;
   --shadow:0 1px 2px rgba(40,30,10,.05),0 10px 26px -16px rgba(40,30,10,.3);
   color-scheme:light;
 }
@@ -41,7 +41,7 @@
     --good:#2f7a45; --good-bg:rgba(47,122,69,.1);
     --warn:#8a5a00; --warn-bg:rgba(176,120,10,.12);
     --skip:#5f5a52; --skip-bg:rgba(95,90,82,.1);
-    --pvp:#3f4bc0; --lvl:#9a6512;
+    --pvp:#3f4bc0; --lvl:#9a6512; --rift:#3f4bc0;
     --shadow:0 1px 2px rgba(40,30,10,.05),0 10px 26px -16px rgba(40,30,10,.3);
     color-scheme:light;
   }
@@ -142,12 +142,15 @@ p{margin:0 0 12px;}
   .topbar:has(.top-timer:not([hidden])) .topbar-tools{gap:3px;}
 }
 /* Rift countdown chip: smaller and quieter than the launch timer, always shown */
-.rift-timer{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 10px;border-radius:999px;border:1px solid color-mix(in srgb,var(--pvp) 40%,var(--border-2));background:color-mix(in srgb,var(--pvp) 9%,transparent);white-space:nowrap;font-size:.75rem;cursor:default;}
-.rt-ico{width:14px;height:14px;color:var(--pvp);flex:none;}
+.rift-timer{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 10px;border-radius:999px;border:1px solid color-mix(in srgb,var(--rift) 40%,var(--border-2));background:color-mix(in srgb,var(--rift) 9%,transparent);white-space:nowrap;font-size:.75rem;cursor:default;}
+.rt-ico{width:14px;height:14px;color:var(--rift);flex:none;}
 .rt-name{font-weight:600;color:var(--text-dim);}
-.rt-time{font:700 .75rem var(--font-mono);font-variant-numeric:tabular-nums;color:var(--pvp);}
-.rift-timer.is-soon{border-color:var(--pvp);}
+.rt-time{font:700 .75rem var(--font-mono);font-variant-numeric:tabular-nums;color:var(--rift);}
+.rift-timer.is-soon{border-color:var(--rift);}
 .rift-timer.is-soon .rt-ico{animation:tt-pulse 1.2s ease-in-out infinite;}
+.rift-timer.is-open{border-color:color-mix(in srgb,var(--good) 45%,var(--border-2));background:var(--good-bg);}
+.is-open .rt-ico,.is-open .rt-time,.is-open .rt-name{color:var(--good);}
+.is-open .rt-ico{animation:tt-pulse 1.2s ease-in-out infinite;}
 @media (max-width: 900px){ .rt-name{display:none;} }
 @media (max-width: 480px){
   .rift-timer{height:28px;padding:0 7px;gap:0;}
@@ -160,7 +163,7 @@ p{margin:0 0 12px;}
 }
 /* the narrowest phones with both chips: the theme button goes until the launch chip is gone (the theme follows the system anyway) */
 @media (max-width: 400px){ .topbar:has(.rift-timer):has(.top-timer:not([hidden])) .theme-toggle{display:none;} }
-@media (prefers-reduced-motion: reduce){ .rift-timer.is-soon .rt-ico{animation:none;} }
+@media (prefers-reduced-motion: reduce){ .rift-timer .rt-ico{animation:none;} }
 @media print{ .rift-timer{display:none;} }
 /* moving between pages: the home timer card and the chip are one element for the browser's page transition */
 @media (prefers-reduced-motion: no-preference){

@@ -96,8 +96,8 @@
       {% for ev in SITE.events if ev.at %}{% do tt.list.append({'at': ev.at, 'n': t['ev_' ~ ev.id], 'o': t.get('tt_open_' ~ ev.id, '')}) %}{% endfor %}
       {#- Rift: a small always-on countdown to the next portal to the enemy zone (every few hours from an anchor). -#}
       {% if SITE.rift %}
-      <span class="rift-timer" data-anchor="{{ SITE.rift.anchor }}" data-every="{{ SITE.rift.every_h }}" data-tz="{{ SITE.rift.tz }}" title="{{ t.rift_title }}">
-        <svg class="rt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="6" ry="9"/><path d="M12 7c-2 2-2 8 0 10"/></svg><span class="rt-name">Rift</span><b class="rt-time">--:--</b>
+      <span class="rift-timer" data-anchor="{{ SITE.rift.anchor }}" data-every="{{ SITE.rift.every_h }}" data-tz="{{ SITE.rift.tz }}" data-open-min="{{ SITE.rift.open_min }}" data-open="{{ t.rift_open }}" title="{{ t.rift_title }}">
+        <svg class="rt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="7.5" ry="10.5"/><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/><g transform="rotate(180 12 12)"><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/></g></svg><span class="rt-name">Rift</span><b class="rt-time">--:--</b>
       </span>
       {% endif %}
       {% if tt.list %}
