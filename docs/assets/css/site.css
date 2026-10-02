@@ -141,6 +141,27 @@ p{margin:0 0 12px;}
   .topbar:has(.top-timer:not([hidden])) .topbar-in{gap:6px;padding-inline:12px;}
   .topbar:has(.top-timer:not([hidden])) .topbar-tools{gap:3px;}
 }
+/* Rift countdown chip: smaller and quieter than the launch timer, always shown */
+.rift-timer{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 10px;border-radius:999px;border:1px solid color-mix(in srgb,var(--pvp) 40%,var(--border-2));background:color-mix(in srgb,var(--pvp) 9%,transparent);white-space:nowrap;font-size:.75rem;cursor:default;}
+.rt-ico{width:14px;height:14px;color:var(--pvp);flex:none;}
+.rt-name{font-weight:600;color:var(--text-dim);}
+.rt-time{font:700 .75rem var(--font-mono);font-variant-numeric:tabular-nums;color:var(--pvp);}
+.rift-timer.is-soon{border-color:var(--pvp);}
+.rift-timer.is-soon .rt-ico{animation:tt-pulse 1.2s ease-in-out infinite;}
+@media (max-width: 900px){ .rt-name{display:none;} }
+@media (max-width: 480px){
+  .rift-timer{height:28px;padding:0 7px;gap:0;}
+  .rt-ico{display:none;}
+  .rt-time{font-size:.68rem;}
+  .topbar-in > .class-menu{flex:none;}
+  .topbar:has(.rift-timer) .wn-top{display:none;}
+  .topbar:has(.rift-timer) .topbar-in{gap:6px;padding-inline:12px;}
+  .topbar:has(.rift-timer) .topbar-tools{gap:3px;}
+}
+/* the narrowest phones with both chips: the theme button goes until the launch chip is gone (the theme follows the system anyway) */
+@media (max-width: 400px){ .topbar:has(.rift-timer):has(.top-timer:not([hidden])) .theme-toggle{display:none;} }
+@media (prefers-reduced-motion: reduce){ .rift-timer.is-soon .rt-ico{animation:none;} }
+@media print{ .rift-timer{display:none;} }
 /* moving between pages: the home timer card and the chip are one element for the browser's page transition */
 @media (prefers-reduced-motion: no-preference){
   @view-transition{navigation:auto;}

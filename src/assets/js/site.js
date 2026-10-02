@@ -243,6 +243,37 @@
     }
   }
 
+  // ---- Rift countdown in the top bar (every page): openings every N hours from the anchor, at the same
+  //      wall-clock hours in the server time zone across daylight saving (like the weekly reset) ----
+  var rift = document.querySelector('.rift-timer');
+  if (rift) {
+    var rtAnchor = Date.parse(rift.dataset.anchor), rtEvery = (+rift.dataset.every || 3) * 36e5;
+    var rtTime = rift.querySelector('.rt-time'), rtFmt = null;
+    try { rtFmt = new Intl.DateTimeFormat('en-US', { timeZone: rift.dataset.tz, hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' }); } catch (err) {}
+    var rtOff = function (t) {   // the zone's UTC offset at moment t, in ms
+      if (!rtFmt) return 0;
+      var p = {};
+      rtFmt.formatToParts(new Date(t)).forEach(function (x) { p[x.type] = +x.value; });
+      return Date.UTC(p.year, p.month - 1, p.day, p.hour % 24, p.minute, p.second) - Math.floor(t / 1000) * 1000;
+    };
+    var rtOff0 = rtOff(rtAnchor);
+    var rtAt = function (k) { var t = rtAnchor + k * rtEvery; return t + rtOff0 - rtOff(t); };
+    var r2 = function (n) { return (n < 10 ? '0' : '') + n; };
+    var rtTick = function () {
+      var now = Date.now(), k = Math.max(0, Math.floor((now - rtAnchor) / rtEvery) - 1), next;
+      while ((next = rtAt(k)) <= now) k++;
+      var ms = next - now, h = Math.floor(ms / 36e5), m = Math.floor(ms / 6e4) % 60, s = Math.floor(ms / 1e3) % 60;
+      rtTime.textContent = (h ? h + ':' + r2(m) : m) + ':' + r2(s);
+      rift.classList.toggle('is-soon', ms < 6e5);   // last 10 minutes
+      try {
+        rift.title = rift.dataset.title + ' · ' + new Intl.DateTimeFormat(document.documentElement.lang, { hour: '2-digit', minute: '2-digit' }).format(next);
+      } catch (err) {}
+      setTimeout(rtTick, 1000 - (Date.now() % 1000));
+    };
+    rift.dataset.title = rift.title;
+    rtTick();
+  }
+
   // ---- launch schedule timers (home) ---------------------------------------
   var evBox = document.querySelector('.events');
   if (evBox) {

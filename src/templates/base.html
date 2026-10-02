@@ -94,6 +94,12 @@
           On the home page it stays hidden while the schedule panel is on screen. -#}
       {% set tt = namespace(list=[]) %}
       {% for ev in SITE.events if ev.at %}{% do tt.list.append({'at': ev.at, 'n': t['ev_' ~ ev.id], 'o': t.get('tt_open_' ~ ev.id, '')}) %}{% endfor %}
+      {#- Rift: a small always-on countdown to the next portal to the enemy zone (every few hours from an anchor). -#}
+      {% if SITE.rift %}
+      <span class="rift-timer" data-anchor="{{ SITE.rift.anchor }}" data-every="{{ SITE.rift.every_h }}" data-tz="{{ SITE.rift.tz }}" title="{{ t.rift_title }}">
+        <svg class="rt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="6" ry="9"/><path d="M12 7c-2 2-2 8 0 10"/></svg><span class="rt-name">Rift</span><b class="rt-time">--:--</b>
+      </span>
+      {% endif %}
       {% if tt.list %}
       <a class="top-timer{% if path == '' %} is-away{% endif %}" href="{{ root }}{{ lang }}/" title="{{ t.events_title }}" data-events='{{ tt.list|tojson }}' data-units="{{ t.units|join(',') }}" data-open="{{ t.tt_open_short }}">
         <span class="tt-dot" aria-hidden="true"></span><span class="tt-name"></span><b class="tt-time">--:--:--</b>
