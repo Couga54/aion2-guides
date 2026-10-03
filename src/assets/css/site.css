@@ -257,6 +257,7 @@ p{margin:0 0 12px;}
 .ev-tba{margin:6px 0 0;font-size:.82rem;color:var(--text-dim);font-style:italic;}
 .ev-done{display:none;margin-top:6px;font:700 .8rem var(--font-mono);color:var(--good);}
 .ev.is-done{opacity:.6;}
+.ev.is-done.is-ongoing{opacity:1;}   /* started and still going (pre-download): not greyed out */
 .ev.is-done .ev-timer{display:none;}
 .ev.is-done .ev-done{display:block;}
 /* The next event gets the spotlight. */

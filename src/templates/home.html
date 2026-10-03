@@ -24,10 +24,10 @@
         <h2 id="h-events" class="events-title">{{ t.events_title }}</h2>
         <ol class="ev-list">
           {% for ev in SITE.events %}
-          <li class="ev ev-{{ ev.access }}"{% if ev.at %} data-at="{{ ev.at }}"{% endif %}{% if ev.get('celebrate') %} data-celebrate{% endif %}>
+          <li class="ev ev-{{ ev.access }}{% if ev.get('ongoing') %} is-ongoing{% endif %}"{% if ev.at %} data-at="{{ ev.at }}"{% endif %}{% if ev.get('celebrate') %} data-celebrate{% endif %}>
             <div class="ev-head">
               <span class="ev-name">{{ t['ev_' ~ ev.id] }}</span>
-              <span class="ev-acc">{{ t['acc_' ~ ev.access] }}</span>
+              {% if ev.get('acc_label', true) %}<span class="ev-acc">{{ t['acc_' ~ ev.access] }}</span>{% endif %}
             </div>
             {% if ev.at %}
             <div class="ev-timer" aria-hidden="true">{% for u in t.units %}<span><b>--</b><i>{{ u }}</i></span>{% endfor %}</div>
