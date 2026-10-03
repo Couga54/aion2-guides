@@ -1,67 +1,740 @@
 {
-  "_note": "Gathering and crafting page (/<lang>/crafting/), from TitanTheF's progression sheet (tab 'Прокачка крафта', Taiwan experience). Same format as progression.json; items are fetched by tools/fetch_items.py.",
-  "meta": {"title": "cr_title", "h1": "cr_h1", "lead": "cr_lead", "desc": "cr_desc", "note": "cr_note", "nav": "nav_crafting",
-           "hero": "hero-crafting", "pos": "50% 45%", "og": "crafting",
-           "back": {"path": "progression/", "label": "cr_open_prog"}},
-  "sources": {
-    "titan": {"name": "TitanTheF — AION 2 progression sheet", "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml#gid=683322434"}
+ "_note": "Gathering and crafting page (/<lang>/crafting/). Rewritten Oct 3: the gathering skill tree and the branch choice from the user's global game (Proficient Handling and Delicate Touch to 10, Lady Luck at most 5, then two branches: the weapon's resource and Odyle), checked against trueeevil, Silvias, TitanTheF and Aragon (videos of Oct 2-3); the leveling tips keep TitanTheF's sheet. Visual block types: tree, cards, chain, morph (templates/guide_page.html).",
+ "meta": {
+  "title": "cr_title",
+  "h1": "cr_h1",
+  "lead": "cr_lead",
+  "desc": "cr_desc",
+  "note": "cr_note",
+  "nav": "nav_crafting",
+  "hero": "hero-crafting",
+  "pos": "50% 45%",
+  "og": "crafting",
+  "back": {
+   "path": "progression/",
+   "label": "cr_open_prog"
+  }
+ },
+ "sources": {
+  "trueeevil": {
+   "name": "trueeevil — Beginner Aion 2 Crafting Guide",
+   "url": "https://www.youtube.com/watch?v=Iqi6pR8r6FY",
+   "video": true
   },
-  "src": "titan",
-  "items": {
-    "sapphire": "Sapphire Gemstone (Bound)",
-    "ruby": "Ruby Gemstone (Bound)",
-    "odyle": "Odyle",
-    "log": "Yggdrasil Log (Bound)",
-    "odyle_energy": "Odyle Energy (Bound)"
+  "silvias": {
+   "name": "Silvias — ГАЙД НА ПРОФЕССИИ",
+   "url": "https://www.youtube.com/watch?v=8T12po8Myqk",
+   "video": true
   },
-  "sections": [
-    {"id": "basics", "title": {"en": "Choose a profession", "ru": "Выбери профессию", "uk": "Обери професію"},
-     "blocks": [
-       {"type": "list", "items": [
-         {"en": "Gathering is open from level 1 on global. First decide what you want to gather and craft first.",
-          "ru": "Сбор на глобалке доступен с 1 уровня. Сначала реши, что будешь собирать и крафтить первым.", "uk": "Збір на глобалі доступний з 1 рівня. Спершу виріши, що збиратимеш і крафтитимеш першим."},
-         {"en": "Example for a Ranger: <strong>Handicrafting</strong> makes both bows and staves and accessories — the obvious pick. Choose the profession that crafts your main weapon.",
-          "ru": "Пример для Стрелка: <strong>Ремесло (Handicrafting)</strong> делает и луки с посохами, и бижутерию — очевидный выбор. Бери профессию, которая крафтит твоё основное оружие.", "uk": "Приклад для Ranger: <strong>Handicrafting</strong> робить і луки з посохами, і біжутерію — очевидний вибір. Бери професію, яка крафтить твою основну зброю."},
-         {"en": "Gathering and crafting both have two tiers — <strong>Novice → Professional</strong> — of 50 levels each.",
-          "ru": "И у сбора, и у крафта две ступени — <strong>Novice → Professional</strong>, по 50 уровней.", "uk": "І в збору, і в крафту два ступені — <strong>Novice → Professional</strong>, по 50 рівнів."}
-       ]}
-     ]},
-    {"id": "ore", "title": {"en": "Level up on ore and Odyle", "ru": "Качайся на руде и одилии", "uk": "Качайся на руді й Odyle"},
-     "blocks": [
-       {"type": "list", "items": [
-         {"en": "The easiest way to level both gathering and crafting is ore. Start with {i:sapphire} in a high-level zone: 40–60 veins take you to level 50.",
-          "ru": "Проще всего качать и сбор, и крафт через руду. Начинай с {i:sapphire} в высокоуровневой локации: 40–60 жил — и у тебя 50 уровень.", "uk": "Найпростіше качати і збір, і крафт через руду. Починай із {i:sapphire} у високорівневій локації: 40–60 жил — і в тебе 50 рівень."},
-         {"en": "Then go back to the quest NPC in the main city and take the green quest: gather a small perfect ruby. Mine {i:ruby} until it procs — usually 2–3 veins; there are some in the pit near the city.",
-          "ru": "Потом возвращайся в главный город к НПС и бери зелёное задание: собрать маленький идеальный рубин. Копай {i:ruby}, пока не выпадет — обычно 2–3 жилы, есть в провале у города.", "uk": "Потім повертайся в головне місто до NPC і бери зелене завдання: зібрати маленький ідеальний рубін. Копай {i:ruby}, поки не випаде — зазвичай 2–3 жили, є в провалі біля міста."},
-         {"en": "Crafting needs {i:odyle}: it is gathered in the air, in every zone. A secluded zone where it spawns along a cliff is ideal — ride the air currents to save wing stamina.",
-          "ru": "Для крафта нужна {i:odyle}: она собирается в воздухе, во всех локациях. Идеальна уединённая локация, где она спавнится вдоль обрыва, — пользуйся воздушными потоками, чтобы экономить выносливость крыльев.", "uk": "Для крафту потрібна {i:odyle}: вона збирається в повітрі, в усіх локаціях. Ідеальна відлюдна локація, де вона спавниться вздовж урвища, — користуйся повітряними потоками, щоб економити витривалість крил."},
-         {"en": "Back in the city: recraft all sapphires, then craft rings. At level 50 take the next green quest from the city NPC — craft a quest item from starting materials. These quests also give the first Pantheon frames.",
-          "ru": "В городе: перекрафти все сапфиры, потом крафти кольца. На 50 уровне возьми у НПС в городе следующее зелёное задание — скрафтить квестовый предмет из начальных ресурсов. За эти задания ещё дают стартовые рамки в Пантеон.", "uk": "У місті: перекрафти всі сапфіри, потім крафти кільця. На 50 рівні візьми в NPC у місті наступне зелене завдання — скрафтити квестовий предмет із початкових ресурсів. За ці завдання ще дають стартові рамки в Пантеон."},
-         {"en": "Time: about 40 minutes to Novice 50 (on Taiwan, with bots around); Odyle takes over an hour. Short on white Odyle — break green ones down in Substance Morph. Odyle also crafts {i:odyle_energy}.",
-          "ru": "Время: около 40 минут до 50 Novice (на Тайване, с учётом ботов); одилия — больше часа. Не хватает белой одилии — разбери зелёную в Substance Morph. Из одилии также крафтится {i:odyle_energy}.", "uk": "Час: близько 40 хвилин до 50 Novice (на Тайвані, з урахуванням ботів); Odyle — понад годину. Бракує білої Odyle — розбери зелену в Substance Morph. З Odyle також крафтиться {i:odyle_energy}."}
-       ]}
-     ]},
-    {"id": "wood", "title": {"en": "Wood, bows and gold blanks", "ru": "Древесина, луки и золотые болванки", "uk": "Деревина, луки й золоті заготовки"},
-     "blocks": [
-       {"type": "list", "items": [
-         {"en": "{i:log} — a through-zone is best, and you can farm pets on the way. Be patient: many players pass there and the resource is worth more.",
-          "ru": "{i:log} — лучше всего проходная локация, по пути можно фармить питомцев. Наберись терпения: там много игроков, а ресурс ценнее.", "uk": "{i:log} — найкраще прохідна локація, дорогою можна фармити петів. Наберися терпіння: там багато гравців, а ресурс цінніший."},
-         {"en": "<strong>Gold level 60 blanks</strong> come from crafting blue bows with a crit — a 25% chance, pure luck. Crafting orbs drop everywhere: mobs in the world, the Abyss, dungeons. Rings work the same way.",
-          "ru": "<strong>Золотые болванки 60 уровня</strong> получаются из синих луков при крите — шанс 25%, чистый рандом. Шары для крафта падают отовсюду: мобы в мире, Бездна, данжи. С кольцами так же.", "uk": "<strong>Золоті заготовки 60 рівня</strong> виходять із синіх луків при криті — шанс 25%, чистий рандом. Кулі для крафту падають звідусіль: моби у світі, Безодня, данжі. З кільцями так само."},
-         {"en": "For the whole leveling collect about <strong>300 sapphire veins</strong> and about <strong>140 trees</strong>. Got gold materials? Don't rush to sell them — you will need both Odyle and wood.",
-          "ru": "На всю прокачку собери около <strong>300 жил сапфира</strong> и около <strong>140 деревьев</strong>. Выпали золотые ресурсы — не спеши продавать, понадобятся и одилия, и дерево.", "uk": "На всю прокачку збери близько <strong>300 жил сапфіра</strong> і близько <strong>140 дерев</strong>. Випали золоті ресурси — не поспішай продавати, знадобляться і Odyle, і дерево."},
-         {"en": "Sell only crit bows and rings (white and green); craft the non-crit ones into the next tier. Start crafting once you have the materials, level gathering while you kill mobs, and don't forget the gathering skill tab — for example, move the points to Odyle before gathering it.",
-          "ru": "Продавай только критовые луки и кольца (белые и зелёные), некритовые крафти в тир выше. Крафтить начинай, когда соберёшь ресурсы, сбор качай попутно с мобами и не забывай вкладку навыков сбора — например, перекинь очки на одилию перед её сбором.", "uk": "Продавай лише критові луки й кільця (білі та зелені), некритові крафти в тір вище. Крафтити починай, коли збереш ресурси, збір качай попутно з мобами й не забувай вкладку навичок збору — наприклад, перекинь очки на Odyle перед її збором."}
-       ]}
-     ]},
-    {"id": "market", "title": {"en": "Buy or morph", "ru": "Докупить или сморфить", "uk": "Докупити чи зморфити"},
-     "blocks": [
-       {"type": "list", "items": [
-         {"en": "Every material for a gold weapon or ring can be bought on the market, and Substance Morph turns {i:odyle} into any material. Don't rush: check the prices first — usually it's better to sell Odyle and buy two materials for one Odyle, but there have been times when it was the other way round.",
-          "ru": "Каждый ресурс для золотого оружия или кольца можно докупить на рынке, а Substance Morph превращает {i:odyle} в любой ресурс. Не торопись: сначала проверь цены — обычно выгоднее продать одилию и купить два ресурса за одну, но бывало и наоборот.", "uk": "Кожен ресурс для золотої зброї чи кільця можна докупити на ринку, а Substance Morph перетворює {i:odyle} на будь-який ресурс. Не поспішай: спершу перевір ціни — зазвичай вигідніше продати Odyle і купити два ресурси за одну, але бувало й навпаки."},
-         {"en": "Where each material spawns: <a href=\"https://aion2t.com/map?zone=World_D_A\" target=\"_blank\" rel=\"noopener\">aion2t.com resource map</a>.",
-          "ru": "Где что растёт: <a href=\"https://aion2t.com/map?zone=World_D_A\" target=\"_blank\" rel=\"noopener\">карта ресурсов aion2t.com</a>.", "uk": "Де що росте: <a href=\"https://aion2t.com/map?zone=World_D_A\" target=\"_blank\" rel=\"noopener\">мапа ресурсів aion2t.com</a>."}
-       ]}
-     ]}
-  ]
+  "titanvid": {
+   "name": "TitanTheF (video) — Day 2: progression and why craft the weapon",
+   "url": "https://www.youtube.com/watch?v=hUk7jO3jUdw",
+   "video": true
+  },
+  "aragon": {
+   "name": "Aragon — Make MILLIONS Of Kina Without Energy",
+   "url": "https://www.youtube.com/watch?v=C70IXgdByFM",
+   "video": true
+  },
+  "titan": {
+   "name": "TitanTheF (sheet) — AION 2 progression sheet",
+   "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml#gid=683322434"
+  }
+ },
+ "src": "trueeevil",
+ "items": {
+  "sapphire": "Sapphire Gemstone (Bound)",
+  "ruby": "Ruby Gemstone (Bound)",
+  "odyle": "Odyle",
+  "log": "Yggdrasil Log (Bound)",
+  "odyle_energy": "Odyle Energy (Bound)",
+  "ore": "Orichalcum Ore",
+  "herb": "Calendula",
+  "ingredient": "Kukuru"
+ },
+ "sections": [
+  {
+   "id": "tree",
+   "title": {
+    "en": "Essence Extraction: where the points go",
+    "ru": "Извлечение эссенции: куда вкладывать очки",
+    "uk": "Essence Extraction: куди вкладати очки"
+   },
+   "lead": {
+    "en": "Gathering levels give two kinds of points: common skills on the left, branches on the right.",
+    "ru": "Уровни сбора дают очки двух видов: общие умения слева и ветки справа.",
+    "uk": "Рівні збору дають очки двох видів: загальні вміння зліва й гілки справа."
+   },
+   "blocks": [
+    {
+     "type": "tree",
+     "common": [
+      {
+       "lvl": "10",
+       "hi": true,
+       "name": {
+        "en": "Proficient Handling",
+        "ru": "Ловкость рук",
+        "uk": "Proficient Handling"
+       },
+       "note": {
+        "en": "faster success gauge — max it",
+        "ru": "быстрее растёт шкала успеха — до максимума",
+        "uk": "швидше росте шкала успіху — до максимуму"
+       },
+       "id": "proficient",
+       "tip": {
+        "en": "Common skill · max 10. Speeds up the Success Gauge while you gather, so a node fills before it fails. Max it together with Delicate Touch.",
+        "ru": "Общее умение · максимум 10. Ускоряет рост шкалы успеха при сборе — узел заполняется раньше, чем сорвётся. Качай до максимума вместе с Изящным касанием.",
+        "uk": "Загальне вміння · максимум 10. Пришвидшує ріст шкали успіху під час збору — вузол заповнюється раніше, ніж зірветься. Качай до максимуму разом із Delicate Touch."
+       }
+      },
+      {
+       "lvl": "10",
+       "hi": true,
+       "name": {
+        "en": "Delicate Touch",
+        "ru": "Изящное касание",
+        "uk": "Delicate Touch"
+       },
+       "note": {
+        "en": "fewer failures — max it, together with the first",
+        "ru": "меньше неудач — до максимума, вместе с первым",
+        "uk": "менше невдач — до максимуму, разом із першим"
+       },
+       "id": "delicate",
+       "tip": {
+        "en": "Common skill · max 10. Lowers the chance of a failed gathering attempt. Max it in parallel with Proficient Handling.",
+        "ru": "Общее умение · максимум 10. Снижает шанс неудачной попытки сбора. Качай параллельно с Ловкостью рук.",
+        "uk": "Загальне вміння · максимум 10. Знижує шанс невдалої спроби збору. Качай паралельно з Proficient Handling."
+       }
+      },
+      {
+       "lvl": "≤ 5",
+       "name": {
+        "en": "Lady Luck",
+        "ru": "Богиня удачи",
+        "uk": "Lady Luck"
+       },
+       "note": {
+        "en": "leftover points only",
+        "ru": "только остаток очков",
+        "uk": "лише залишок очок"
+       },
+       "id": "luck",
+       "tip": {
+        "en": "Common skill. Works only once the Failure Gauge is at 50% or more: then it has a chance to multiply the Success Gauge (24% for ×2.5 at level 5). Gathering only — it doesn't raise the grade and doesn't affect crafting. Leftover points, 5 at most.",
+        "ru": "Общее умение. Срабатывает только при шкале неудачи от 50%: тогда есть шанс умножить шкалу успеха (24% на ×2,5 на 5 уровне). Только сбор — не повышает качество и не влияет на крафт. Остаток очков, максимум 5.",
+        "uk": "Загальне вміння. Спрацьовує лише при шкалі невдачі від 50%: тоді є шанс помножити шкалу успіху (24% на ×2,5 на 5 рівні). Лише збір — не підвищує якість і не впливає на крафт. Залишок очок, максимум 5."
+       }
+      }
+     ],
+     "branches": [
+      {
+       "key": "ore",
+       "name": {
+        "en": "Ore",
+        "ru": "Руда",
+        "uk": "Ore"
+       },
+       "seeker": {
+        "en": "Ore Seeker",
+        "ru": "Поиск руды",
+        "uk": "Ore Seeker"
+       },
+       "appraiser": {
+        "en": "Ore Appraiser",
+        "ru": "Оценщик руды",
+        "uk": "Ore Appraiser"
+       }
+      },
+      {
+       "key": "sapphire",
+       "name": {
+        "en": "Gem",
+        "ru": "Самоцветы",
+        "uk": "Gem"
+       },
+       "seeker": {
+        "en": "Gem Seeker",
+        "ru": "Поиск самоцветов",
+        "uk": "Gem Seeker"
+       },
+       "appraiser": {
+        "en": "Gem Appraiser",
+        "ru": "Оценщик самоцветов",
+        "uk": "Gem Appraiser"
+       }
+      },
+      {
+       "key": "log",
+       "name": {
+        "en": "Log",
+        "ru": "Древесина",
+        "uk": "Log"
+       },
+       "seeker": {
+        "en": "Log Seeker",
+        "ru": "Поиск древесины",
+        "uk": "Log Seeker"
+       },
+       "appraiser": {
+        "en": "Log Appraiser",
+        "ru": "Оценщик древесины",
+        "uk": "Log Appraiser"
+       }
+      },
+      {
+       "key": "herb",
+       "name": {
+        "en": "Herb",
+        "ru": "Травы",
+        "uk": "Herb"
+       },
+       "seeker": {
+        "en": "Herb Seeker",
+        "ru": "Поиск трав",
+        "uk": "Herb Seeker"
+       },
+       "appraiser": {
+        "en": "Herb Appraiser",
+        "ru": "Оценщик трав",
+        "uk": "Herb Appraiser"
+       }
+      },
+      {
+       "key": "ingredient",
+       "name": {
+        "en": "Ingredient",
+        "ru": "Материалы кулинарии",
+        "uk": "Ingredient"
+       },
+       "seeker": {
+        "en": "Cooking Ingredient Seeker",
+        "ru": "Поиск материалов кулинарии",
+        "uk": "Cooking Ingredient Seeker"
+       },
+       "appraiser": {
+        "en": "Cooking Ingredient Appraiser",
+        "ru": "Оценщик материалов кулинарии",
+        "uk": "Cooking Ingredient Appraiser"
+       }
+      },
+      {
+       "key": "odyle",
+       "name": {
+        "en": "Odyle",
+        "ru": "Эфир",
+        "uk": "Odyle"
+       },
+       "mark": "odyle",
+       "seeker": {
+        "en": "Odyle Seeker",
+        "ru": "Поиск эфира",
+        "uk": "Odyle Seeker"
+       },
+       "appraiser": {
+        "en": "Odyle Appraiser",
+        "ru": "Оценщик эфира",
+        "uk": "Odyle Appraiser"
+       }
+      }
+     ],
+     "marks": {
+      "odyle": {
+       "en": "always max",
+       "ru": "всегда до максимума",
+       "uk": "завжди до максимуму"
+      }
+     },
+     "legend": {
+      "en": "Max two branches: Odyle and the resource of the item you craft first.",
+      "ru": "До максимума — две ветки: Эфир и ресурс предмета, который крафтишь первым.",
+      "uk": "До максимуму — дві гілки: Odyle і ресурс предмета, який крафтиш першим."
+     },
+     "nodes": [
+      {
+       "id": "seeker",
+       "pts": 1,
+       "name": {
+        "en": "Seeker",
+        "ru": "Поиск",
+        "uk": "Seeker"
+       },
+       "tip": {
+        "en": "1 point. Opens the branch and shows its resource nodes on the minimap.",
+        "ru": "1 очко. Открывает ветку и показывает её узлы на миникарте.",
+        "uk": "1 очко. Відкриває гілку й показує її вузли на мінікарті."
+       }
+      },
+      {
+       "id": "harvest",
+       "pts": 3,
+       "name": {
+        "en": "Plentiful Harvest",
+        "ru": "Богатый урожай",
+        "uk": "Plentiful Harvest"
+       },
+       "tip": {
+        "en": "3 points. A chance to gather twice as much (×2).",
+        "ru": "3 очка. Шанс собрать вдвое больше (×2).",
+        "uk": "3 очки. Шанс зібрати вдвічі більше (×2)."
+       }
+      },
+      {
+       "id": "appraiser",
+       "pts": 3,
+       "name": {
+        "en": "Appraiser",
+        "ru": "Оценщик",
+        "uk": "Appraiser"
+       },
+       "tip": {
+        "en": "3 points. A better chance to gather a higher-grade resource.",
+        "ru": "3 очка. Выше шанс собрать ресурс лучшего качества.",
+        "uk": "3 очки. Вищий шанс зібрати ресурс кращої якості."
+       }
+      }
+     ],
+     "harvest": {
+      "en": "Plentiful Harvest",
+      "ru": "Богатый урожай",
+      "uk": "Plentiful Harvest"
+     }
+    },
+    {
+     "type": "tip",
+     "src": "trueeevil",
+     "text": {
+      "en": "Lady Luck only helps when the failure gauge is already high, and it doesn't raise the grade. trueeevil saw it proc about once in 50 nodes at level 10. The first point of a branch also shows its nodes on the minimap.",
+      "ru": "Богиня удачи срабатывает только при высокой шкале неудачи и не повышает качество. У trueeevil на 10 уровне она сработала примерно раз на 50 узлов. Первое очко в ветке ещё и показывает её узлы на миникарте.",
+      "uk": "Lady Luck спрацьовує лише при високій шкалі невдачі й не підвищує якість. У trueeevil на 10 рівні вона спрацювала приблизно раз на 50 вузлів. Перше очко в гілці ще й показує її вузли на мінікарті."
+     }
+    }
+   ]
+  },
+  {
+   "id": "branches",
+   "title": {
+    "en": "Which second branch",
+    "ru": "Какая вторая ветка",
+    "uk": "Яка друга гілка"
+   },
+   "lead": {
+    "en": "The resource of the item you want to craft first — usually your weapon.",
+    "ru": "Ресурс предмета, который хочешь скрафтить первым, — обычно оружие.",
+    "uk": "Ресурс предмета, який хочеш скрафтити першим, — зазвичай зброю."
+   },
+   "blocks": [
+    {
+     "type": "cards",
+     "items": [
+      {
+       "icon": "ore",
+       "title": {
+        "en": "Ore",
+        "ru": "Руда",
+        "uk": "Ore"
+       },
+       "text": {
+        "en": "Armor, weapons and guards",
+        "ru": "Броня, оружие и щиты",
+        "uk": "Броня, зброя та щити"
+       }
+      },
+      {
+       "icon": "sapphire",
+       "title": {
+        "en": "Gem",
+        "ru": "Самоцветы",
+        "uk": "Gem"
+       },
+       "text": {
+        "en": "Accessories (Handicrafting)",
+        "ru": "Бижутерия (ремесло)",
+        "uk": "Біжутерія (ремесло)"
+       }
+      },
+      {
+       "icon": "log",
+       "title": {
+        "en": "Log",
+        "ru": "Древесина",
+        "uk": "Log"
+       },
+       "text": {
+        "en": "Bows and staves (Handicrafting)",
+        "ru": "Луки и посохи (ремесло)",
+        "uk": "Луки й посохи (ремесло)"
+       }
+      },
+      {
+       "icon": "herb",
+       "title": {
+        "en": "Herb",
+        "ru": "Травы",
+        "uk": "Herb"
+       },
+       "text": {
+        "en": "Alchemy: potions, orbs and spellbooks, manastones",
+        "ru": "Алхимия: зелья, сферы и гримуары, камни маны",
+        "uk": "Алхімія: зілля, сфери й гримуари, камені мани"
+       }
+      },
+      {
+       "icon": "ingredient",
+       "title": {
+        "en": "Ingredient",
+        "ru": "Материалы кулинарии",
+        "uk": "Ingredient"
+       },
+       "text": {
+        "en": "Cooking — can wait",
+        "ru": "Кулинария — может подождать",
+        "uk": "Кулінарія — може зачекати"
+       }
+      },
+      {
+       "icon": "odyle",
+       "hi": true,
+       "title": {
+        "en": "Odyle",
+        "ru": "Эфир",
+        "uk": "Odyle"
+       },
+       "text": {
+        "en": "Every craft, wings, Odyle Energy — and morphs into any other resource",
+        "ru": "Любой крафт, крылья, энергия эфира — и морфится в любой другой ресурс",
+        "uk": "Будь-який крафт, крила, Odyle Energy — і морфиться в будь-який інший ресурс"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "odyle",
+   "title": {
+    "en": "Odyle → any resource",
+    "ru": "Эфир → любой ресурс",
+    "uk": "Odyle → будь-який ресурс"
+   },
+   "blocks": [
+    {
+     "type": "morph",
+     "from": "odyle",
+     "to": [
+      "ore",
+      "sapphire",
+      "log",
+      "herb",
+      "ingredient"
+     ],
+     "from_label": {
+      "en": "Odyle",
+      "ru": "Эфир",
+      "uk": "Odyle"
+     },
+     "label": {
+      "en": "Substance Morph",
+      "ru": "Преобразование веществ",
+      "uk": "Substance Morph"
+     }
+    },
+    {
+     "type": "cards",
+     "cols": 3,
+     "items": [
+      {
+       "sym": "=",
+       "title": {
+        "en": "Same grade",
+        "ru": "То же качество",
+        "uk": "Та сама якість"
+       },
+       "text": {
+        "en": "White Odyle makes white resources, green makes green, up to gold.",
+        "ru": "Белый эфир даёт белые ресурсы, зелёный — зелёные, и так до золотого.",
+        "uk": "Білий Odyle дає білі ресурси, зелений — зелені, і так до золотого."
+       }
+      },
+      {
+       "sym": "₭",
+       "title": {
+        "en": "Compare prices",
+        "ru": "Сравни цены",
+        "uk": "Порівняй ціни"
+       },
+       "text": {
+        "en": "If Odyle is cheaper on the market than the resource, buy Odyle and morph it — TitanTheF paid half for his logs this way.",
+        "ru": "Если эфир на рынке дешевле ресурса, покупай эфир и морфь — TitanTheF так взял дерево вдвое дешевле.",
+        "uk": "Якщо Odyle на ринку дешевший за ресурс, купуй Odyle й морфь — TitanTheF так узяв деревину вдвічі дешевше."
+       }
+      },
+      {
+       "sym": "✦",
+       "title": {
+        "en": "Free Odyle",
+        "ru": "Бесплатный эфир",
+        "uk": "Безкоштовний Odyle"
+       },
+       "text": {
+        "en": "Conquest dungeons leave Odyle nodes after the last boss — another reason to max the branch first.",
+        "ru": "После последнего босса в подземельях завоевания стоят узлы эфира — ещё одна причина качать ветку первой.",
+        "uk": "Після останнього боса в conquest-підземеллях стоять вузли Odyle — ще одна причина качати гілку першою."
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "chain",
+   "title": {
+    "en": "The crafting chain",
+    "ru": "Цепочка крафта",
+    "uk": "Ланцюжок крафту"
+   },
+   "blocks": [
+    {
+     "type": "chain",
+     "steps": [
+      {
+       "g": 11,
+       "label": {
+        "en": "Grey",
+        "ru": "Серый",
+        "uk": "Сірий"
+       }
+      },
+      {
+       "g": 21,
+       "label": {
+        "en": "Green",
+        "ru": "Зелёный",
+        "uk": "Зелений"
+       }
+      },
+      {
+       "g": 31,
+       "label": {
+        "en": "Blue",
+        "ru": "Синий",
+        "uk": "Синій"
+       }
+      },
+      {
+       "g": 41,
+       "label": {
+        "en": "Gold blank",
+        "ru": "Золотая болванка",
+        "uk": "Золота заготовка"
+       }
+      },
+      {
+       "g": 41,
+       "label": {
+        "en": "Gold item",
+        "ru": "Золотой предмет",
+        "uk": "Золотий предмет"
+       }
+      }
+     ],
+     "arrows": [
+      {
+       "en": "25% proc",
+       "ru": "25% прок",
+       "uk": "25% прок"
+      },
+      {
+       "en": "25% proc",
+       "ru": "25% прок",
+       "uk": "25% прок"
+      },
+      {
+       "en": "25% proc",
+       "ru": "25% прок",
+       "uk": "25% прок"
+      },
+      {
+       "en": "+ dungeon mats",
+       "ru": "+ ресурсы с данжей",
+       "uk": "+ ресурси з данжів"
+      }
+     ],
+     "note": {
+      "en": "Each craft can fail and the item breaks — more often the higher the grade. A proc gives the item one grade higher, which you need for the next step.",
+      "ru": "Каждый крафт может сорваться, и предмет ломается — тем чаще, чем выше качество. Прок даёт предмет на качество выше — он нужен для следующего шага.",
+      "uk": "Кожен крафт може зірватися, і предмет ламається — тим частіше, чим вища якість. Прок дає предмет на якість вищий — він потрібен для наступного кроку."
+     }
+    },
+    {
+     "type": "cards",
+     "cols": 3,
+     "items": [
+      {
+       "sym": "5",
+       "title": {
+        "en": "5 stats, not 4",
+        "ru": "5 статов, а не 4",
+        "uk": "5 характеристик, а не 4"
+       },
+       "text": {
+        "en": "A crafted item rolls five stats, a dungeon item four; with a Philosopher's Stone — six against five.",
+        "ru": "Крафтовый предмет имеет пять статов, предмет из подземелья — четыре; с философским камнем — шесть против пяти.",
+        "uk": "Крафтовий предмет має п'ять характеристик, предмет із підземелля — чотири; з Philosopher's Stone — шість проти п'яти."
+       }
+      },
+      {
+       "sym": "↑",
+       "title": {
+        "en": "Inheritance 100%",
+        "ru": "Наследование 100%",
+        "uk": "Inheritance 100%"
+       },
+       "text": {
+        "en": "The next tier is made from your item with a guaranteed success; enhancement and stats carry over.",
+        "ru": "Следующий тир делается из твоего предмета с гарантированным успехом; заточка и статы переносятся.",
+        "uk": "Наступний тир робиться з твого предмета з гарантованим успіхом; заточка й характеристики переносяться."
+       }
+      },
+      {
+       "sym": "∞",
+       "title": {
+        "en": "Never replaced",
+        "ru": "Не меняется",
+        "uk": "Не міняється"
+       },
+       "text": {
+        "en": "Craft once, then upgrade the same item patch after patch.",
+        "ru": "Скрафтил один раз — дальше улучшаешь тот же предмет из патча в патч.",
+        "uk": "Скрафтив один раз — далі покращуєш той самий предмет з патча в патч."
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "before",
+   "title": {
+    "en": "Before you craft",
+    "ru": "Перед крафтом",
+    "uk": "Перед крафтом"
+   },
+   "blocks": [
+    {
+     "type": "cards",
+     "cols": 3,
+     "items": [
+      {
+       "sym": "30",
+       "title": {
+        "en": "Profession 30+",
+        "ru": "Профессия 30+",
+        "uk": "Професія 30+"
+       },
+       "text": {
+        "en": "Level the profession on cheap recipes before blue and gold crafts.",
+        "ru": "Прокачай профессию на дешёвых рецептах до синего и золотого крафта.",
+        "uk": "Прокачай професію на дешевих рецептах до синього й золотого крафту."
+       }
+      },
+      {
+       "sym": "%",
+       "title": {
+        "en": "Real odds",
+        "ru": "Настоящие шансы",
+        "uk": "Справжні шанси"
+       },
+       "text": {
+        "en": "The \"+90%\" in the craft window is about +9% on top of the base chance (TitanTheF).",
+        "ru": "«+90%» в окне крафта — это примерно +9% к базовому шансу (TitanTheF).",
+        "uk": "«+90%» у вікні крафту — це приблизно +9% до базового шансу (TitanTheF)."
+       }
+      },
+      {
+       "sym": "♻",
+       "title": {
+        "en": "Failed blanks",
+        "ru": "Неудачные болванки",
+        "uk": "Невдалі заготовки"
+       },
+       "text": {
+        "en": "Turn them in to supply orders for Abyss points, sell them or break them down.",
+        "ru": "Сдавай в поручения поставок за очки Бездны, продавай или распыляй.",
+        "uk": "Здавай у доручення поставок за очки Безодні, продавай або розбирай."
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "leveling",
+   "title": {
+    "en": "Level up fast",
+    "ru": "Быстрая прокачка",
+    "uk": "Швидка прокачка"
+   },
+   "blocks": [
+    {
+     "type": "list",
+     "items": [
+      {
+       "en": "Level gathering on {i:sapphire}: 40–60 veins take you to Novice 50, then the city NPC's green quest ({i:ruby}) opens Professional.",
+       "ru": "Качай сбор на {i:sapphire}: 40–60 жил — и ты Новичок 50, потом зелёный квест у NPC в городе ({i:ruby}) открывает Профессионала.",
+       "uk": "Качай збір на {i:sapphire}: 40–60 жил — і ти Новачок 50, потім зелений квест у NPC в місті ({i:ruby}) відкриває Професіонала."
+      },
+      {
+       "en": "Craft the cheapest grey items until about Novice 20, then start the chain.",
+       "ru": "Крафти самые дешёвые серые вещи примерно до Новичка 20, потом начинай цепочку.",
+       "uk": "Крафти найдешевші сірі речі приблизно до Новачка 20, потім починай ланцюжок."
+      },
+      {
+       "en": "Farm pets while you gather — they drop Refining Stones and crafting materials.",
+       "ru": "Фарми петов, пока собираешь, — с них падают камни очищения и материалы для крафта.",
+       "uk": "Фарми петів, поки збираєш, — з них падають Refining Stone і матеріали для крафту."
+      },
+      {
+       "en": "Answer the anti-bot check when it appears during long gathering sessions.",
+       "ru": "Отвечай на проверку от ботов, когда она появляется во время долгого сбора.",
+       "uk": "Відповідай на перевірку від ботів, коли вона з'являється під час довгого збору."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "money",
+   "title": {
+    "en": "Making kinah",
+    "ru": "Заработок",
+    "uk": "Заробіток"
+   },
+   "src": "aragon",
+   "blocks": [
+    {
+     "type": "list",
+     "items": [
+      {
+       "en": "Gems sell well while everyone levels Handicrafting: Aragon saw about 2,000 kinah each in the morning, and evening prices run higher.",
+       "ru": "Самоцветы хорошо продаются, пока все качают ремесло: Aragon видел около 2 000 кинара за штуку утром, а вечером цены выше.",
+       "uk": "Самоцвіти добре продаються, поки всі качають ремесло: Aragon бачив близько 2 000 кіни за штуку зранку, а ввечері ціни вищі."
+      },
+      {
+       "en": "For selling gems he maxes Lady Luck instead of Delicate Touch — a money build, not a crafting one.",
+       "ru": "Для продажи самоцветов он качает Богиню удачи вместо Изящного касания — это билд на деньги, а не на крафт.",
+       "uk": "Для продажу самоцвітів він качає Lady Luck замість Delicate Touch — це білд на гроші, а не на крафт."
+      },
+      {
+       "en": "Don't overpay for ready-made blanks: they still need the expensive materials.",
+       "ru": "Не переплачивай за готовые болванки: им всё равно нужны дорогие материалы.",
+       "uk": "Не переплачуй за готові заготовки: їм однаково потрібні дорогі матеріали."
+      }
+     ]
+    }
+   ]
+  }
+ ]
 }

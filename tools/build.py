@@ -112,9 +112,10 @@ STAT_LABELS = {
 STAT_LABELS["uk"] = STAT_LABELS["en"]   # game stat names: English on Ukrainian pages, like the rest of the game data
 
 
-def items_tip_json(lang):
-    """Hover tooltips for the item chips on the guide pages (embedded as JSON)."""
-    return Markup(json.dumps(items_tip(lang), ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"))
+def items_tip_json(lang, extra=None):
+    """Hover tooltips for the item chips on the guide pages (embedded as JSON); `extra` adds page-made tooltips
+    in the same shape (the gathering skill tree on the crafting page)."""
+    return Markup(json.dumps({**items_tip(lang), **(extra or {})}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"))
 
 
 def items_tip(lang):

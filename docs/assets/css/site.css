@@ -1061,6 +1061,65 @@ details.spec-all[open] > *:not(summary),.wk-group,.bs-group{animation:fade-in .3
 :root[data-theme="light"] .g11{--itc:#6d6a63;} :root[data-theme="light"] .g21{--itc:#2c8a47;} :root[data-theme="light"] .g31{--itc:#2463c4;} :root[data-theme="light"] .g41{--itc:#9a6d10;} :root[data-theme="light"] .g71{--itc:#1b8c80;}
 @media (prefers-color-scheme: light){ :root:not([data-theme="dark"]) .g11{--itc:#6d6a63;} :root:not([data-theme="dark"]) .g21{--itc:#2c8a47;} :root:not([data-theme="dark"]) .g31{--itc:#2463c4;} :root:not([data-theme="dark"]) .g41{--itc:#9a6d10;} :root:not([data-theme="dark"]) .g71{--itc:#1b8c80;} }
 
+/* ---- visual blocks of the guide pages (crafting): skill tree, cards, crafting chain, morph ---- */
+.ct-tree{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:20px;align-items:center;margin:6px 0 16px;padding:16px;border:1px solid var(--border-2);border-radius:var(--radius);background:var(--surface);}
+/* the three common skills in a triangle, as in the game: two on top, Lady Luck below, a faint ring behind */
+.ct-common{position:relative;display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"a b" "c c";row-gap:6px;column-gap:6px;padding:8px 0;}
+.ct-ring{position:absolute;left:50%;top:50%;width:150px;height:150px;transform:translate(-50%,-50%);border-radius:50%;border:1px solid color-mix(in srgb,var(--gold) 30%,transparent);box-shadow:inset 0 0 30px color-mix(in srgb,var(--gold) 8%,transparent);pointer-events:none;}
+.ct-s1{grid-area:a;} .ct-s2{grid-area:b;} .ct-s3{grid-area:c;}
+.ct-skill{position:relative;display:grid;justify-items:center;text-align:center;gap:3px;cursor:help;outline:none;}
+.ct-lvl{width:64px;height:64px;display:grid;place-items:center;border-radius:50%;border:2px solid var(--border-2);font:700 1.15rem var(--font-mono);color:var(--text-dim);background:radial-gradient(circle at 50% 35%,var(--surface-2),var(--bg-2));transition:transform .15s;}
+.ct-skill:hover .ct-lvl,.ct-skill:focus-visible .ct-lvl{transform:scale(1.06);}
+.ct-skill.is-hi .ct-lvl{border-color:var(--good);color:var(--good);background:radial-gradient(circle at 50% 35%,color-mix(in srgb,var(--good) 30%,var(--surface-2)),var(--bg-2));box-shadow:0 0 20px color-mix(in srgb,var(--good) 30%,transparent);}
+.ct-sname{font-weight:700;font-size:.84rem;color:var(--text);}
+.ct-skill.is-hi .ct-sname{color:var(--good);}
+.ct-snote{display:none;}   /* the note lives in the tooltip */
+.ct-branches{display:flex;flex-direction:column;gap:12px;min-width:0;}
+.ct-branch{min-width:0;}
+.ct-bname{margin:0 0 6px;font-weight:700;font-size:.82rem;color:var(--text-dim);}
+.ct-bname span{color:var(--text-faint);font-size:.7rem;}
+.ct-bname em{font:700 .6rem var(--font-mono);font-style:normal;letter-spacing:.06em;text-transform:uppercase;color:var(--good);margin-left:6px;}
+.is-on .ct-bname{color:var(--text);}
+.is-on .ct-bname span{color:var(--gold);}
+.ct-nodes{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));}
+.ct-nodes::before{content:"";position:absolute;left:16.6%;right:16.6%;top:22px;height:4px;border-radius:2px;background:var(--border-2);}
+.is-on .ct-nodes::before{background:linear-gradient(90deg,var(--gold-2,var(--gold)),var(--gold));box-shadow:0 0 8px color-mix(in srgb,var(--gold) 35%,transparent);}
+.ct-node{position:relative;display:grid;justify-items:center;gap:4px;text-align:center;cursor:help;}
+.ct-ico{position:relative;width:46px;height:46px;display:grid;place-items:center;border-radius:8px;border:1px solid var(--border-2);background:var(--bg-2);}
+.ct-ico img{width:36px;height:36px;border-radius:6px;filter:grayscale(1) brightness(.6);opacity:.7;}
+.ct-ico b{position:absolute;right:2px;bottom:1px;font:800 .72rem var(--font-mono);color:var(--text-faint);text-shadow:0 1px 2px #000;}
+.ct-ico i{position:absolute;left:-7px;bottom:-7px;width:20px;height:20px;display:grid;place-items:center;border-radius:50%;font:700 .64rem var(--font-mono);font-style:normal;color:var(--text-faint);background:var(--surface-2);border:1px solid var(--border-2);}
+.ct-nlabel{font-size:.72rem;line-height:1.25;color:var(--text-faint);}
+.is-on .ct-ico{border-color:var(--good);background:color-mix(in srgb,var(--good) 18%,var(--bg-2));box-shadow:0 0 14px color-mix(in srgb,var(--good) 30%,transparent);}
+.is-on .ct-ico img{filter:none;opacity:1;}
+.is-on .ct-ico b{color:#fff;}
+.is-on .ct-ico i{color:var(--text);border-color:var(--good);}
+.is-on .ct-node + .ct-node .ct-nlabel,.is-on .ct-nlabel{color:var(--good);}
+.ct-legend{margin:4px 0 0;font-size:.76rem;color:var(--text-faint);}
+.ct-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;margin:6px 0 16px;}
+.ct-cards.cols-3{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));}
+.ct-card{display:flex;gap:12px;align-items:flex-start;padding:12px;border:1px solid var(--border-2);border-radius:var(--radius-sm);background:var(--surface);}
+.ct-card.is-hi{border-color:color-mix(in srgb,var(--good) 45%,var(--border-2));background:var(--good-bg);}
+.ct-card img{flex:none;border-radius:8px;background:rgba(0,0,0,.35);}
+.ct-sym{flex:none;width:40px;height:40px;display:grid;place-items:center;border-radius:8px;border:1px solid var(--gold);color:var(--gold);font:700 1rem var(--font-mono);}
+.ct-ctitle{margin:0 0 3px;font-weight:700;font-size:.9rem;color:var(--text);}
+.ct-ctext{margin:0;font-size:.82rem;line-height:1.5;color:var(--text-dim);}
+.ct-chain,.ct-morph{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:6px 0 8px;padding:14px;border:1px solid var(--border-2);border-radius:var(--radius);background:var(--surface);}
+.ct-tile{min-width:70px;padding:11px 9px;border-radius:10px;text-align:center;font-weight:700;font-size:.8rem;line-height:1.3;color:var(--itc);border:1px solid color-mix(in srgb,var(--itc) 55%,transparent);background:color-mix(in srgb,var(--itc) 12%,transparent);}
+.ct-arrow{display:grid;justify-items:center;gap:2px;min-width:44px;}
+.ct-arrow span{font:700 .68rem var(--font-mono);color:var(--gold);white-space:nowrap;}
+.ct-arrow svg{width:30px;height:12px;fill:none;stroke:var(--text-faint);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.ct-cnote{margin:0 0 16px;font-size:.82rem;color:var(--text-faint);}
+.ct-from{display:grid;justify-items:center;gap:4px;font-weight:700;font-size:.82rem;color:var(--text);}
+.ct-from img,.ct-to img{border-radius:8px;background:rgba(0,0,0,.35);}
+.ct-to{display:flex;flex-wrap:wrap;gap:8px;}
+@media (max-width: 640px){
+  .ct-tree{grid-template-columns:1fr;}
+  .ct-common{max-width:300px;margin:0 auto;}
+  .ct-chain{justify-content:center;}
+  .ct-arrow{min-width:40px;}
+}
+
 /* ---- Daevanion board (dv_board macro): one route per guide mode ---- */
 .dvb{margin:14px 0 18px;border-radius:var(--radius);border:1px solid var(--border-2);background:var(--surface);overflow:hidden;}
 .dvb-tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:6px 6px 0;border-bottom:1px solid var(--border-2);background:color-mix(in srgb,var(--bg-2) 60%,transparent);}

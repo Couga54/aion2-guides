@@ -112,7 +112,7 @@
 {% call section('stigmas', 'Stigmas', 'pve') %}
   <ul class="skill-grid">
     {% call skill('earth-punishment', 'must', 'Lv 15 → 20', upto=20) %}Condemnation always crits (so it has no cooldown), and the party gets Defense, Attack and Double Chance. One of your most important skills.{% endcall %}
-    {% call skill('light-of-protection', 'must', 'Lv 20', upto=20) %}Your mantra: incoming heal, accuracy, +10% HP and Perfect Chance, no cooldown. Doesn't stack with a Chanter's mantra — with a Chanter in the party swap it out.{% endcall %}
+    {% call skill('light-of-protection', 'must', 'Lv 20', upto=20) %}Your mantra: incoming heal, accuracy, +10% HP and Perfect Chance, no cooldown. Doesn't stack with a Chanter's mantra — with a Chanter in the party swap it out. A toggle: switch it on once and keep it out of hotbar lines and the macro.{% endcall %}
     {% call skill('prayer-of-amplification', 'must', 'Lv 10+', upto=10) %}+20% Attack on cooldown, and it boosts Empyrean Lord's Grace and Earth's Grace. Without it a Cleric has no damage.{% endcall %}
     {% call skill('noble-aura', 'must', 'Lv 10+', upto=10) %}An orb that attacks alongside you — about double your damage; the higher the better.{% endcall %}
     {% call skill('absolution', 'opt', 'sanctuary', upto=15) %}Strongest heal stigma, but only good at 15+. Swap in only if the party lacks healing.{% endcall %}
@@ -129,7 +129,7 @@
 
   <h3>1. Hotbar lines</h3>
   <div class="hotlines">
-    {% call hotline('3', 'Condemnation line', ['earth-punishment', 'condemnation', 'chain-of-torment', 'light-of-protection']) %}Earth Punishment goes first so that Condemnation always crits and resets; Chain of Torment keeps the mark that Condemnation needs.{% endcall %}
+    {% call hotline('3', 'Condemnation line', ['earth-punishment', 'condemnation', 'chain-of-torment']) %}Earth Punishment goes first so that Condemnation always crits and resets; Chain of Torment keeps the mark that Condemnation needs. Keep {{ s('light-of-protection') }} out of the line: it is a toggle, and every second press would switch it off.{% endcall %}
     {% call hotline('2', 'Divine Aura line', ['divine-aura', 'debilitating-mark', 'light-of-regeneration', 'judgment-thunder']) %}The aura and the debuff whenever they are ready; Judgment Thunder fills the rest.{% endcall %}
     {% call hotline('1', 'Stagger', ['lightning-strike-scattershot']) %}Works only on a staggered boss, so most of the time this step is skipped.{% endcall %}
   </div>

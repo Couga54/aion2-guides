@@ -2,9 +2,14 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
-      "id": "2026-10-03",
+      "id": "2026-10-03-crafting",
       "date": "2026-10-03",
       "items": [
+        {
+          "en": "<strong>Gathering and crafting</strong> — the page is rewritten for global and made visual: the Essence Extraction skill tree (Proficient Handling and Delicate Touch to 10, Lady Luck at most 5, Odyle plus your weapon's resource), what each branch is for, Odyle morphing into any resource, and the crafting chain from grey to gold.",
+          "ru": "<strong>Сбор и крафт</strong> — страница переписана под глобал и стала наглядной: дерево извлечения эссенции (Ловкость рук и Изящное касание до 10, Богиня удачи максимум 5, Эфир плюс ресурс твоего оружия), для чего какая ветка, морф эфира в любой ресурс и цепочка крафта от серого до золотого.",
+          "uk": "<strong>Збір і крафт</strong> — сторінку переписано під глобал і зроблено наочною: дерево Essence Extraction (Proficient Handling і Delicate Touch до 10, Lady Luck максимум 5, Odyle плюс ресурс твоєї зброї), для чого яка гілка, морф Odyle в будь-який ресурс і ланцюжок крафту від сірого до золотого."
+        },
         {
           "en": "<strong>Elementalist: PvE and PvP</strong> — the class now has full PvE and PvP modes for Season 1, built on Evripides' global Spirit Master guide (aion2sm.com) and checked against DankRNG and aLuckyRO: skills and specializations, stigmas, passives, the buff-before-summon rule, rotation, macro, matchups and the Daevanion route.",
           "ru": "<strong>Заклинатель: PvE и PvP</strong> — у класса теперь полноценные режимы PvE и PvP для 1 сезона по глобальному гайду Evripides (aion2sm.com), сверенные с DankRNG и aLuckyRO: скиллы и специализации, стигмы, пассивки, правило «баффы до призыва», ротация, макрос, матчапы и маршрут Daevanion.",

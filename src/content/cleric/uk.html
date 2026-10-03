@@ -112,7 +112,7 @@
 {% call section('stigmas', 'Стигми', 'pve') %}
   <ul class="skill-grid">
     {% call skill('earth-punishment', 'must', 'Рів. 15 → 20', upto=20) %}Condemnation завжди критує (тож не має перезарядки), а група отримує захист, атаку й шанс подвійного удару. Один із твоїх найважливіших скілів.{% endcall %}
-    {% call skill('light-of-protection', 'must', 'Рів. 20', upto=20) %}Твоя мантра: вхідне лікування, точність, +10% HP і шанс ідеального удару, без перезарядки. Не складається з мантрою Chanter — з Chanter у групі прибирай.{% endcall %}
+    {% call skill('light-of-protection', 'must', 'Рів. 20', upto=20) %}Твоя мантра: вхідне лікування, точність, +10% HP і шанс ідеального удару, без перезарядки. Не складається з мантрою Chanter — з Chanter у групі прибирай. Це перемикач: увімкни один раз і не став у лінії й макрос.{% endcall %}
     {% call skill('prayer-of-amplification', 'must', 'Рів. 10+', upto=10) %}+20% атаки за відкатом і посилює Empyrean Lord's Grace та Earth's Grace. Без неї в Cleric немає шкоди.{% endcall %}
     {% call skill('noble-aura', 'must', 'Рів. 10+', upto=10) %}Сфера, що атакує разом із тобою — приблизно подвоює твою шкоду; що вище, то краще.{% endcall %}
     {% call skill('absolution', 'opt', 'святилище', upto=15) %}Найсильніша лікувальна стигма, але добра лише з 15+. Став, лише якщо групі бракує лікування.{% endcall %}
@@ -129,7 +129,7 @@
 
   <h3>1. Лінії на кнопках</h3>
   <div class="hotlines">
-    {% call hotline('3', 'Лінія Condemnation', ['earth-punishment', 'condemnation', 'chain-of-torment', 'light-of-protection']) %}Earth Punishment іде першою, щоб Condemnation завжди критував і скидався; Chain of Torment тримає мітку, потрібну Condemnation.{% endcall %}
+    {% call hotline('3', 'Лінія Condemnation', ['earth-punishment', 'condemnation', 'chain-of-torment']) %}Earth Punishment іде першою, щоб Condemnation завжди критував і скидався; Chain of Torment тримає мітку, потрібну Condemnation. {{ s('light-of-protection') }} у лінію не став: це перемикач, і кожне друге натискання його вимкне.{% endcall %}
     {% call hotline('2', 'Лінія Divine Aura', ['divine-aura', 'debilitating-mark', 'light-of-regeneration', 'judgment-thunder']) %}Аура й дебаф щоразу, коли готові; Judgment Thunder заповнює решту.{% endcall %}
     {% call hotline('1', 'Оглушення', ['lightning-strike-scattershot']) %}Працює лише на оглушеному босі, тож здебільшого цей крок пропускається.{% endcall %}
   </div>

@@ -911,6 +911,66 @@
       "set": null
     }
   },
+  "ore": {
+    "id": "610620013",
+    "grade": 11,
+    "cat": "gatherresource",
+    "icon": "ore.webp",
+    "en": "Orichalcum Ore",
+    "tip_en": {
+      "desc": "A hard ore. Used as a material for Blacksmithing and Armorsmithing.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Орихарконовая руда",
+    "tip_ru": {
+      "desc": "Прочная руда. Материал для кузнечного создания и создания доспехов.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "herb": {
+    "id": "610670044",
+    "grade": 11,
+    "cat": "gatherresource",
+    "icon": "herb.webp",
+    "en": "Calendula",
+    "tip_en": {
+      "desc": "An herb used to concoct a potion in Alchemy.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Календула",
+    "tip_ru": {
+      "desc": "Листья трав. Материал для создания зелий в алхимии.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "ingredient": {
+    "id": "610680044",
+    "grade": 11,
+    "cat": "gatherresource",
+    "icon": "ingredient.webp",
+    "en": "Kukuru",
+    "tip_en": {
+      "desc": "A cooking ingredient.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Кукур",
+    "tip_ru": {
+      "desc": "Материал, используемый для кулинарии.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
   "parchment_vigor": {
     "id": "810230001",
     "grade": 41,
