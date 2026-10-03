@@ -2,31 +2,19 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
-      "id": "2026-10-03-boss-timers",
-      "date": "2026-10-03",
-      "items": [
-        {
-          "en": "<strong>World bosses</strong> — all 48 field bosses of Verteron and Altgard with their respawn timers: mark a kill and the page shows when the boss is back (and notifies you, if notifications are on). Every boss now shows where it spawns.",
-          "ru": "<strong>Мировые боссы</strong> — все 48 полевых боссов Бертрона и Альтгарда с таймерами респауна: отметь убийство — и страница покажет, когда босс вернётся (и пришлёт уведомление, если они включены). У каждого босса теперь видно, где он появляется.",
-          "uk": "<strong>Світові боси</strong> — усі 48 польових босів Verteron і Altgard з таймерами респауну: відміть убивство — і сторінка покаже, коли бос повернеться (і надішле сповіщення, якщо вони ввімкнені). У кожного боса тепер видно, де він з'являється."
-        }
-      ]
-    },
-    {
-      "id": "2026-10-03-elementalist",
+      "id": "2026-10-03",
       "date": "2026-10-03",
       "items": [
         {
           "en": "<strong>Elementalist: PvE and PvP</strong> — the class now has full PvE and PvP modes for Season 1, built on Evripides' global Spirit Master guide (aion2sm.com) and checked against DankRNG and aLuckyRO: skills and specializations, stigmas, passives, the buff-before-summon rule, rotation, macro, matchups and the Daevanion route.",
           "ru": "<strong>Заклинатель: PvE и PvP</strong> — у класса теперь полноценные режимы PvE и PvP для 1 сезона по глобальному гайду Evripides (aion2sm.com), сверенные с DankRNG и aLuckyRO: скиллы и специализации, стигмы, пассивки, правило «баффы до призыва», ротация, макрос, матчапы и маршрут Daevanion.",
           "uk": "<strong>Elementalist: PvE і PvP</strong> — клас тепер має повноцінні режими PvE і PvP для 1 сезону за глобальним гайдом Evripides (aion2sm.com), звірені з DankRNG і aLuckyRO: скіли й спеціалізації, стигми, пасивки, правило «бафи до виклику», ротація, макрос, матчапи й маршрут Daevanion."
-        }
-      ]
-    },
-    {
-      "id": "2026-10-03-global-guides",
-      "date": "2026-10-03",
-      "items": [
+        },
+        {
+          "en": "<strong>World bosses</strong> — all 48 field bosses of Verteron and Altgard with their respawn timers: mark a kill and the page shows when the boss is back (and notifies you, if notifications are on). Every boss now shows where it spawns.",
+          "ru": "<strong>Мировые боссы</strong> — все 48 полевых боссов Бертрона и Альтгарда с таймерами респауна: отметь убийство — и страница покажет, когда босс вернётся (и пришлёт уведомление, если они включены). У каждого босса теперь видно, где он появляется.",
+          "uk": "<strong>Світові боси</strong> — усі 48 польових босів Verteron і Altgard з таймерами респауну: відміть убивство — і сторінка покаже, коли бос повернеться (і надішле сповіщення, якщо вони ввімкнені). У кожного боса тепер видно, де він з'являється."
+        },
         {
           "en": "<strong>Sorcerer</strong> — skill priority rebuilt on a global level-45 Sorcerer (EUTOPIA): Hellfire and Firestorm are now core, Ice Chain is optional, Frost and Frost Burst leave the bar.",
           "ru": "<strong>Волшебник</strong> — приоритет скиллов пересобран по Волшебнику 45 уровня на глобале (EUTOPIA): Адское пламя и Огненный гарпун теперь основа, Ледяная цепь — по желанию, Заморозка и Замораживающий взрыв уходят с панели.",
