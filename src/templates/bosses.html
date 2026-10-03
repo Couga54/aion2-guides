@@ -24,7 +24,7 @@
         <li class="bs-item" id="b-{{ b.id }}" data-id="{{ b.id }}"{% if b.respawn_min %} data-respawn="{{ b.respawn_min }}"{% endif %}>
           <div class="bs-main">
             <span class="bs-name">{{ b.name[lang] }}</span><span hidden class="bs-zone">{{ g.zone[lang] }}</span>
-            <span class="bs-meta">{% if b.level %}{{ t.bs_level }} {{ b.level }} · {% endif %}{{ t.bs_respawn }}: {% if b.respawn_min %}{{ b.respawn_min // 60 }} h{% if b.respawn_min % 60 %} {{ b.respawn_min % 60 }} min{% endif %}{% elif b.schedule %}{{ b.schedule }}{% else %}<i>{{ t.bs_tba }}</i>{% endif %}{% if b.kr %} · <span class="bs-kr">{{ t.bs_kr }}: {{ b.kr[lang] }}</span>{% endif %}</span>
+            <span class="bs-meta">{% if b.get('area') and b.area.get(lang) %}{{ b.area[lang] }} · {% endif %}{% if b.level %}{{ t.bs_level }} {{ b.level }} · {% endif %}{{ t.bs_respawn }}: {% if b.respawn_min %}{% if b.respawn_min >= 60 %}{{ b.respawn_min // 60 }} {{ t.units[1] }}{% endif %}{% if b.respawn_min % 60 %}{% if b.respawn_min >= 60 %} {% endif %}{{ b.respawn_min % 60 }} {{ t.units[2] }}{% endif %}{% elif b.schedule %}{{ b.schedule }}{% else %}<i>{{ t.bs_tba }}</i>{% endif %}{% if b.kr %} · <span class="bs-kr">{{ t.bs_kr }}: {{ b.kr[lang] }}</span>{% endif %}</span>
             <span class="bs-status" aria-live="polite"></span>
           </div>
           <div class="bs-ctrl">

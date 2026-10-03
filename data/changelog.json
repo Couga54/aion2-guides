@@ -2,6 +2,17 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-10-03-boss-timers",
+      "date": "2026-10-03",
+      "items": [
+        {
+          "en": "<strong>World bosses</strong> — all 48 field bosses of Verteron and Altgard with their respawn timers: mark a kill and the page shows when the boss is back (and notifies you, if notifications are on). Every boss now shows where it spawns.",
+          "ru": "<strong>Мировые боссы</strong> — все 48 полевых боссов Бертрона и Альтгарда с таймерами респауна: отметь убийство — и страница покажет, когда босс вернётся (и пришлёт уведомление, если они включены). У каждого босса теперь видно, где он появляется.",
+          "uk": "<strong>Світові боси</strong> — усі 48 польових босів Verteron і Altgard з таймерами респауну: відміть убивство — і сторінка покаже, коли бос повернеться (і надішле сповіщення, якщо вони ввімкнені). У кожного боса тепер видно, де він з'являється."
+        }
+      ]
+    },
+    {
       "id": "2026-10-03-elementalist",
       "date": "2026-10-03",
       "items": [
