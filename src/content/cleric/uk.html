@@ -13,21 +13,21 @@
 {% endcall %}
 
 {% call section('intro', 'Огляд', 'pve') %}
-  <p>У підземеллях AION 2 Цілитель — хілер, який <strong>мусить завдавати шкоди</strong>: нагороди залежать від твого внеску, і Цілитель, що лише лікує, може піти ні з чим. У групи вистачає власних ухилень і невразливостей — підліковуй людей після ударів, а все інше вкладай у шкоду.</p>
+  <p>У підземеллях AION 2 Cleric — хілер, який <strong>мусить завдавати шкоди</strong>: нагороди залежать від твого внеску, і Cleric, що лише лікує, може піти ні з чим. У групи вистачає власних ухилень і невразливостей — підліковуй людей після ударів, а все інше вкладай у шкоду.</p>
   <div class="callout accent">
     <h3>Білд одним реченням</h3>
     <p>{{ s('earth-punishment') }} робить так, що {{ s('condemnation') }} завжди критує, а крит скидає Condemnation — тож він б'є без перезарядки, а {{ s('divine-aura') }}, {{ s('bolt') }} і {{ s('noble-aura') }} додають шкоди зверху.</p>
   </div>
-  <p class="note">Цей режим — за PvE-відеогайдом Kaeria по Цілителю (російською, записано на тайванському клієнті 28 вересня; за її словами, підходить і для глобалу), звіреним із кадрами відео 30 вересня. Вибір скілів можна безкоштовно переробити — ресурси коштують лише аркани.</p>
+  <p class="note">Цей режим — за PvE-відеогайдом Kaeria по Cleric (російською, записано на тайванському клієнті 28 вересня; за її словами, підходить і для глобалу), звіреним із кадрами відео 30 вересня. Вибір скілів можна безкоштовно переробити — ресурси коштують лише аркани.</p>
 {% endcall %}
 
 {% call section('global', 'Глобальний 1 сезон: що змінюється', 'pve pvp') %}
-  <p>Глобальні сервери відкриваються <strong>5 жовтня 2026</strong> (ранній доступ Founder's — з 30 вересня). Що це означає для Цілителя:</p>
+  <p>Глобальні сервери відкриваються <strong>5 жовтня 2026</strong> (ранній доступ Founder's — з 30 вересня). Що це означає для Cleric:</p>
   <div class="callout">
     <ul>
       <li><strong>4 слоти стигм, максимум 20.</strong> На тайванській панелі Kaeria їх більше; чотири в цьому гайді — її вибір для глобалу. Рівнів 25 (як-от шанс подвійного удару на Light of Protection) тут немає.</li>
-      <li><strong>Тобі платять за шкоду.</strong> Нагороди в підземеллях залежать від внеску, тож Цілитель, що лише лікує, може піти ні з чим — увесь цей білд про те, щоб завдавати шкоди й лікувати принагідно.</li>
-      <li><strong>Більші групи</strong> (експедиції на 5, святилища на 10): із Чародієм у групі твоя мантра не складається з його — прибирай Light of Protection.</li>
+      <li><strong>Тобі платять за шкоду.</strong> Нагороди в підземеллях залежать від внеску, тож Cleric, що лише лікує, може піти ні з чим — увесь цей білд про те, щоб завдавати шкоди й лікувати принагідно.</li>
+      <li><strong>Більші групи</strong> (експедиції на 5, святилища на 10): із Chanter у групі твоя мантра не складається з його — прибирай Light of Protection.</li>
       <li><strong>Пінг нижчий, ніж на Тайвані:</strong> анімації скасовуються краще, тож макрос може вплітати більше базових атак.</li>
     </ul>
   </div>
@@ -38,7 +38,7 @@
   <p>Майже все йде в шкоду. Лікуванням, яким це важливо, потрібно 16: Healing Light і Radiant Recovery.</p>
   <ul class="skill-grid">
     {% call skill('condemnation', 'must', '16 → 20', [1, 3]) %}Найважливіший скіл на панелі: +12% по одній цілі й скидання перезарядки на криті. На 20 додай MP, якщо бракує мани, мультиудар — якщо ні.{% endcall %}
-    {% call skill('divine-aura', 'must', '16 → 20', [3, 4]) %}Недооцінений: завдає шкоди паралельно з тобою, тож що довше висить, то краще — на 16 бери +3 с і −10 с перезарядки, на 20 додай швидкість атаки аури.{% endcall %}
+    {% call skill('divine-aura', 'must', '16 → 20', [3, 4]) %}Недооцінений: завдає шкоди паралельно з тобою, тож що довше висить, то краще — на 16 бери +3 с і −10 с перезарядки, на 20 додай швидкість атаки аури. На фармі aLuckyRO бере АоЕ-спеціалізацію (до чотирьох мобів) замість +3 с.{% endcall %}
     {% call skill('bolt', 'must', '16 → 20', [2, 3]) %}Твій найсильніший удар. Заряджай повністю. +30% швидкості скілів, +20% шкоди по одній цілі; на 20 додай гарантований крит.{% endcall %}
     {% call skill('judgment-thunder', 'must', '16', [1, 4]) %}Постійна шкода й скасування анімацій; спеціалізація Divine Punishment приблизно подвоює її. На 20 додай −20% MP.{% endcall %}
     {% call skill('lightning-strike-scattershot', 'must', '16', [3, 4]) %}Лише під час оглушення, але кожен удар скорочує всі твої перезарядки на 1 с.{% endcall %}
@@ -60,13 +60,14 @@
     <li>{{ s('radiant-benediction') }} — лікує союзників поруч під час атак; бери, якщо йдеш у шкоду повністю.</li>
     <li>{{ s('warm-benediction') }} і {{ s('immortal-veil') }} — непогано мати; {{ s('empyrean-lords-benediction') }} — для PvP.</li>
   </ul></div>
+  <p class="note">Перші дні (aLuckyRO): спершу качай {{ s('radiant-benediction') }} — вона лікує всю групу кожні кілька секунд, поки та б'є, — і {{ s('healing-enhancement') }}. Пасивки на крит окупаються, лише коли спорядження дає шанс криту; доти ти майже не критуєш.</p>
 {% endcall %}
 
 {% call section('gear', 'Спорядження й статі', 'pve') %}
   <div class="callout"><ul>
     <li><strong>Рядки спорядження:</strong> Might (атака й лікування), швидкість бою, бонус до шкоди; бонус до шкоди зброї й Precision теж сильні. Опори статусам, ухилення й захисні рядки в PvE пропускай.</li>
     <li><strong>Кільця:</strong> крафти якнайшвидше — у крафтових кілець на один рядок для активних скілів більше.</li>
-    <li><strong>Статі:</strong> Destruction, Wisdom (шанс подвійного удару), Illusion (перезарядки), Time (швидкість бою), Freedom (точність), плюс Death (крит) — власний вибір Kaeria, Цілителю завжди бракує криту; Might, Precision, Constitution.</li>
+    <li><strong>Статі:</strong> Destruction, Wisdom (шанс подвійного удару), Illusion (перезарядки), Time (швидкість бою), Freedom (точність), плюс Death (крит) — власний вибір Kaeria, Cleric завжди бракує криту; Might, Precision, Constitution.</li>
   </ul></div>
 {% endcall %}
 
@@ -111,8 +112,8 @@
 {% call section('stigmas', 'Стигми', 'pve') %}
   <ul class="skill-grid">
     {% call skill('earth-punishment', 'must', 'Рів. 15 → 20', upto=20) %}Condemnation завжди критує (тож не має перезарядки), а група отримує захист, атаку й шанс подвійного удару. Один із твоїх найважливіших скілів.{% endcall %}
-    {% call skill('light-of-protection', 'must', 'Рів. 20', upto=20) %}Твоя мантра: вхідне лікування, точність, +10% HP і шанс ідеального удару, без перезарядки. Не складається з мантрою Чародія — з Чародієм у групі прибирай.{% endcall %}
-    {% call skill('prayer-of-amplification', 'must', 'Рів. 10+', upto=10) %}+20% атаки за відкатом і посилює Empyrean Lord's Grace та Earth's Grace. Без неї в Цілителя немає шкоди.{% endcall %}
+    {% call skill('light-of-protection', 'must', 'Рів. 20', upto=20) %}Твоя мантра: вхідне лікування, точність, +10% HP і шанс ідеального удару, без перезарядки. Не складається з мантрою Chanter — з Chanter у групі прибирай.{% endcall %}
+    {% call skill('prayer-of-amplification', 'must', 'Рів. 10+', upto=10) %}+20% атаки за відкатом і посилює Empyrean Lord's Grace та Earth's Grace. Без неї в Cleric немає шкоди.{% endcall %}
     {% call skill('noble-aura', 'must', 'Рів. 10+', upto=10) %}Сфера, що атакує разом із тобою — приблизно подвоює твою шкоду; що вище, то краще.{% endcall %}
     {% call skill('absolution', 'opt', 'святилище', upto=15) %}Найсильніша лікувальна стигма, але добра лише з 15+. Став, лише якщо групі бракує лікування.{% endcall %}
     {% call skill('benevolence', 'opt', 'святилище', upto=15) %}Лікування з часом на всю групу; як і Absolution, варта слота лише з 15.{% endcall %}
@@ -120,7 +121,7 @@
     {% call skill('summon-resurrection', 'opt', 'Рів. 5', upto=5) %}На старті тримай на 5; бери, якщо група постійно вмирає.{% endcall %}
     {% call skill('salvation', 'skip', 'не брати') %}3 с невразливості на довгій перезарядці — червоні атаки все одно крізь неї проходять; краще ухиляйся.{% endcall %}
   </ul>
-  <p class="note">З Чародієм у групі: заміни Light of Protection будь-яким лікуванням чи Summon Resurrection. Voice of Doom (−200 опору криту на босі на 15) — варіант у святилищах із другим хілером, здебільшого на старті, поки всім бракує криту; Power Burst — лише там, де треба зламати шкалу оглушення, а більше нікому (Nightmare). {{ s('root') }} і {{ s('assault-mark') }} у PvE не потрібні.</p>
+  <p class="note">З Chanter у групі: заміни Light of Protection будь-яким лікуванням чи Summon Resurrection. Voice of Doom (−200 опору криту на босі на 15) — варіант у святилищах із другим хілером, здебільшого на старті, поки всім бракує криту; Power Burst — лише там, де треба зламати шкалу оглушення, а більше нікому (Nightmare). {{ s('root') }} і {{ s('assault-mark') }} у PvE не потрібні.</p>
 {% endcall %}
 
 {% call section('macro', 'Макрос', 'pve') %}
@@ -149,7 +150,7 @@
 {% call section('recap', 'Підсумок', 'pve') %}
   <div class="callout accent"><ul>
     <li><strong>Скіли:</strong> Condemnation, Divine Aura, Bolt 16 → 20; Judgment Thunder, Lightning Strike Scattershot, Healing Light, Radiant Recovery 16; решта 12–14.</li>
-    <li><strong>Стигми:</strong> Earth Punishment, Light of Protection, Prayer of Amplification, Noble Aura (з Чародієм міняй Light of Protection).</li>
+    <li><strong>Стигми:</strong> Earth Punishment, Light of Protection, Prayer of Amplification, Noble Aura (з Chanter міняй Light of Protection).</li>
     <li><strong>Гра:</strong> завдавай шкоди заради внеску; лікуй лише тих, кого щойно вдарили.</li>
   </ul></div>
 {% endcall %}
@@ -157,7 +158,7 @@
 
 
 {% call section('intro-lvl', 'Огляд', 'lvl') %}
-  <p>Цілитель — хілер, але на прокачці грається як дальній дамагер: {{ s('chain-of-torment') }} мітить ціль, {{ s('condemnation') }} її карає, а пасивка {{ s('radiant-benediction') }} лікує тебе й групу з кожного удару. Лікуй лише тоді, коли треба.</p>
+  <p>Cleric — хілер, але на прокачці грається як дальній дамагер: {{ s('chain-of-torment') }} мітить ціль, {{ s('condemnation') }} її карає, а пасивка {{ s('radiant-benediction') }} лікує тебе й групу з кожного удару. Лікуй лише тоді, коли треба.</p>
   <div class="callout accent">
     <h3>Прокачка одним реченням</h3>
     <p>Тримай {{ s('earths-retribution') }} заради мани, спам лінію Chain вбудованим макросом і вкладай очки навичок в атаки, а не в лікування.</p>
@@ -202,10 +203,11 @@
 <section class="sources" aria-labelledby="h-sources">
   <h2 id="h-sources">{{ t.sources }}</h2>
   <ul>
-    <li><a href="https://www.youtube.com/watch?v=7LjTwlZ4v_s" target="_blank" rel="noopener">Kaeria — PvE-гайд на Цілителя (російською)</a> — режим PvE: рівні скілів і спеціалізації, стигми, пасивки, статі, Daevanion, аркани</li>
-    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — слайд зі стартовими макросами (лінія й макрос Цілителя)</li>
-    <li><a href="https://mmo-codex.com/articles/aion-2-cleric-guide/" target="_blank" rel="noopener">MMO Codex — гайд по Цілителю Aion 2</a> — порядок скілів і спеціалізації на прокачці, стигми на 22</li>
+    <li><a href="https://www.youtube.com/watch?v=7LjTwlZ4v_s" target="_blank" rel="noopener">Kaeria — PvE-гайд на Cleric (російською)</a> — режим PvE: рівні скілів і спеціалізації, стигми, пасивки, статі, Daevanion, аркани</li>
+    <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — слайд зі стартовими макросами (лінія й макрос Cleric)</li>
+    <li><a href="https://mmo-codex.com/articles/aion-2-cleric-guide/" target="_blank" rel="noopener">MMO Codex — гайд по Cleric Aion 2</a> — порядок скілів і спеціалізації на прокачці, стигми на 22</li>
     <li><a href="https://questlog.gg/aion-2/en/db/skills/cleric" target="_blank" rel="noopener">questlog.gg</a> — дані скілів із глобального клієнта</li>
+    <li><a href="https://www.youtube.com/watch?v=A3pZDSt4ceU" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Cleric PVE Build for Global</a> — ранні спеціалізації (Divine Aura для фарму й босів, Earth's Retribution для мани), заміни стигм для підземель, зв'язка Chain of Torment → Condemnation, пасивки на старт</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>

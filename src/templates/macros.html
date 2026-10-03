@@ -8,7 +8,7 @@
 <section id="{{ id }}" class="g-section" data-only="{{ modes }}" aria-labelledby="h-{{ id }}">
   <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-{{ id }}">{{ title }}</h2></div>
   {{ caller() }}
-  {% if id.startswith('intro') %}<p class="guide-origin"><b>{{ t.guide_patch }} {{ cls.patch }}.</b> {{ t.guide_origin_kr if 'KR' in (cls.patch or '') else t.guide_origin }}</p>{% endif %}
+  {% if id.startswith('intro') %}<p class="guide-origin"><b>{{ t.guide_patch }} {{ t.patch_s1 if cls.patch == 'S1' else cls.patch }}.</b> {{ t.guide_origin_s1 if cls.patch == 'S1' else (t.guide_origin_kr if 'KR' in (cls.patch or '') else t.guide_origin) }}</p>{% endif %}
 </section>
 {%- endmacro %}
 

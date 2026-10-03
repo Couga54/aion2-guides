@@ -38,7 +38,7 @@
   <p>Almost everything goes into damage. The heals that matter need 16: Healing Light and Radiant Recovery.</p>
   <ul class="skill-grid">
     {% call skill('condemnation', 'must', '16 → 20', [1, 3]) %}The most important skill on your bar: +12% on a single target and a cooldown reset on crit. At 20 add MP if mana is short, Multi-Hit if not.{% endcall %}
-    {% call skill('divine-aura', 'must', '16 → 20', [3, 4]) %}Underrated: it deals damage in parallel with you, so the longer it stays up the better — at 16 take +3s and −10s cooldown, at 20 add the aura's attack speed.{% endcall %}
+    {% call skill('divine-aura', 'must', '16 → 20', [3, 4]) %}Underrated: it deals damage in parallel with you, so the longer it stays up the better — at 16 take +3s and −10s cooldown, at 20 add the aura's attack speed. For farming aLuckyRO takes the AoE pick (up to four mobs) instead of +3s.{% endcall %}
     {% call skill('bolt', 'must', '16 → 20', [2, 3]) %}Your strongest hit. Charge it fully. +30% skill speed, +20% damage on a single target; at 20 add the guaranteed crit.{% endcall %}
     {% call skill('judgment-thunder', 'must', '16', [1, 4]) %}Constant damage and animation cancel; the Divine Punishment pick roughly doubles it. At 20 add −20% MP.{% endcall %}
     {% call skill('lightning-strike-scattershot', 'must', '16', [3, 4]) %}Only during Stagger, but every hit cuts all your cooldowns by 1s.{% endcall %}
@@ -60,6 +60,7 @@
     <li>{{ s('radiant-benediction') }} — heals nearby allies on attacks; take it if you go all-in on damage.</li>
     <li>{{ s('warm-benediction') }} and {{ s('immortal-veil') }} are fine to have; {{ s('empyrean-lords-benediction') }} is for PvP.</li>
   </ul></div>
+  <p class="note">First days (aLuckyRO): level {{ s('radiant-benediction') }} — it heals the whole party every few seconds while they hit — and {{ s('healing-enhancement') }} first. The crit passives pay off only once your gear gives Critical Hit; until then you barely crit.</p>
 {% endcall %}
 
 {% call section('gear', 'Gear & stats', 'pve') %}
@@ -206,6 +207,7 @@
     <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — the early-game macro slide (Cleric hotbar line and macro)</li>
     <li><a href="https://mmo-codex.com/articles/aion-2-cleric-guide/" target="_blank" rel="noopener">MMO Codex — Aion 2 Cleric guide</a> — skill order and specializations while leveling, stigmas at 22</li>
     <li><a href="https://questlog.gg/aion-2/en/db/skills/cleric" target="_blank" rel="noopener">questlog.gg</a> — skill data from the global client</li>
+    <li><a href="https://www.youtube.com/watch?v=A3pZDSt4ceU" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Cleric PVE Build for Global</a> — early specializations (Divine Aura for farming and bosses, Earth's Retribution for mana), stigma swaps for dungeons, the Chain of Torment → Condemnation combo, early passives</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>

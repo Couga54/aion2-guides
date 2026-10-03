@@ -52,7 +52,7 @@
   <ul class="skill-grid">
     {% call skill('judgment', 'must', '20', [4, 3, 2]) %}Основной урон: его запускают Удар щитом, Кара хранителя, рывок щитом и Щит погибели, а на 16 у него пропадает перезарядка.{% endcall %}
     {% call skill('punishment', 'must', '20', [1, 4, 2]) %}Заряжаемый бурст — урон со временем, гарантированный крит сквозь блок и +30% скорости умения. Специализации «в движении» и поглощение ОЗ не бери: при достаточной скорости атаки это «пустышки».{% endcall %}
-    {% call skill('pummel', 'must', '20', [1, 2, 4]) %}Филлер и ошеломление. У SolAshur все специализации идут в Удар возмездия — он лечит и срабатывает второй раз; специализацию на −1 сек. перезарядки Кровавой мести он не берёт. Доведи до 20 как можно раньше.{% endcall %}
+    {% call skill('pummel', 'must', '20', [1, 2, 4]) %}Филлер и ошеломление. У SolAshur все специализации идут в Удар возмездия — он лечит и срабатывает второй раз; специализацию на −1 сек. перезарядки Кровавой мести он не берёт. Доведи до 20 как можно раньше. trueeevil берёт как раз её: Кровавая месть откатывается быстрее — честная замена поглощению ОЗ, если лечение не нужно.{% endcall %}
     {% call skill('annihilate', 'must', '16 → 20', [2, 3]) %}+100% урона по боссам с иммунитетом к контролю, −10 сек. перезарядки. Альтернативный билд качает его до 20 ради массового сбивания с ног. Третий слот открывается на 20: мультиудар для боссов.{% endcall %}
     {% call skill('shield-smite', 'must', '16', [3, 2]) %}Запускает Суд; −2 сек. перезарядки и шанс 50% активировать Удар изнеможения.{% endcall %}
     {% call skill('debilitating-smash', 'opt', '12', [3, 0]) %}Прок после блока или Удара щитом; игнорирует блок и уклонение.{% endcall %}
@@ -177,6 +177,8 @@
     {% call skill('taunt', 'must', 'Ур. 5', upto=5) %}Агро в групповом контенте. В соло ставь вместо неё Щит Неджакана.{% endcall %}
     {% call skill('nezekans-shield', 'opt', 'альт.', upto=15) %}Замена ради живучести; до 15 слабый.{% endcall %}
     {% call skill('comrade-in-arms', 'opt', 'группа', upto=15) %}Замена ради живучести в подземельях — вместо Щита погибели. В соло бесполезна.{% endcall %}
+    {% call skill('executing-blade', 'opt', 'соло · старт', upto=10) %}Выбор trueeevil для PvE в первые дни: −30% защиты цели, а на 10 — Уязвимость. Открывай им, потом {{ s('punishment') }}. Соло и на старте — замена {{ s('empyrean-lords-punishment') }} или {{ s('taunt') }}.{% endcall %}
+    {% call skill('noble-armor', 'opt', 'соло · старт', upto=5) %}Макс. ОЗ и защита на 2 минуты при перезарядке 2 минуты — висит всегда. trueeevil играет с ней соло; в группе важнее {{ s('taunt') }} и стигма на ошеломление.{% endcall %}
   </ul>
   <div class="table-wrap"><table>
     <thead><tr><th>Профиль</th><th>4 стигмы</th><th>Замены</th></tr></thead>
@@ -276,6 +278,7 @@
     <li><a href="https://mmo-codex.com/articles/aion-2-templar-guide/" target="_blank" rel="noopener">MMO Codex</a> — порядок скиллов на прокачке, приоритет пассивок</li>
     <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (таблица TitanTheF) — маршрут прокачки</li>
     <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — как работают линии и встроенный макрос</li>
+    <li><a href="https://www.youtube.com/watch?v=ZQVq7IYbLy8" target="_blank" rel="noopener">trueeevil — Ultimate Templar Guide for Aion 2: Skills, Stigmas, Rotations, Daevanion Board Explained</a> — настройка второго дня на глобале: Меч наказания и Благородная кольчуга для соло-PvE, специализация −1 сек. Кровавой мести на Граде ударов, порядок пассивок</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>

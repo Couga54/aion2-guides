@@ -7,7 +7,7 @@
   <h3>{{ t.stigma_loadout }}</h3>
   {{ loadout([('illusive-clone', 20), ('swift-contract', 15), ('savage-fang', 15), ('triniels-dagger', 10)]) }}
   <h3>{{ t.key_passives }}</h3>
-  {{ passives(['rear-smite', 'exploit-weakness', 'assault-stance', 'impact-hit']) }}
+  {{ passives(['rear-smite', 'exploit-weakness', 'assault-stance', 'determination']) }}
 {% endcall %}
 
 {% call section('intro', 'Overview', 'pve') %}
@@ -69,8 +69,8 @@
       <tr><td>{{ s('rear-smite') }}</td><td>1</td><td>Back attack and PvE damage boost — the strongest passive; it gives damage even from the front.</td></tr>
       <tr><td>{{ s('exploit-weakness') }}</td><td>2</td><td>Critical Hit and an Attack buff that is up almost all the time in combat; Illusive Clone multiplies it.</td></tr>
       <tr><td>{{ s('assault-stance') }}</td><td>2</td><td>Critical Damage Boost; Swift Contract multiplies it.</td></tr>
-      <tr><td>{{ s('impact-hit') }}</td><td>2</td><td>Double Chance.</td></tr>
-      <tr><td>{{ s('determination') }}</td><td>3</td><td>Extra damage below 30% HP — a solid execute if a line is free.</td></tr>
+      <tr><td>{{ s('determination') }}</td><td>3</td><td>Extra damage on a low-HP target — aLuckyRO counts it among the most important: every boss spends the end of the fight there.</td></tr>
+      <tr><td>{{ s('impact-hit') }}</td><td>4</td><td>Double Chance — only 3.3% at level 10, next to nothing in PvE (aLuckyRO). Keep it for PvP; on PvE gear take Determination first.</td></tr>
       <tr><td>{{ s('ambush-stance') }}, {{ s('heightened-sixth-sense') }}</td><td>points only</td><td>Maxed by skill points; not worth a gear line.</td></tr>
       <tr><td>{{ s('apply-poison') }}, {{ s('defense-break') }}</td><td>skip</td><td>Poison is under 1% of your damage; Defense Break is a PvP passive. {{ s('revitalization-contract') }} only with spare points.</td></tr>
     </tbody>
@@ -107,6 +107,7 @@
   <p>Daevanion takes your skills from 10 to 14 and adds stats. Each blue node gives <strong>+1 level</strong> to its skill.</p>
   <div class="callout"><ul>
     <li data-only="pve"><strong>Priority:</strong> blue nodes for {{ s('heart-gore') }}, {{ s('insignia-explosion') }}, {{ s('quick-slice') }}, then {{ s('ambush') }} and {{ s('storm-rampage') }}; orange nodes next.</li>
+    <li data-only="pve"><strong>Critical Damage early:</strong> for an Assassin the Vaizel orange Critical Damage Boost pays off from the start — it crits from day one, unlike most classes (aLuckyRO).</li>
     <li data-only="pvp"><strong>Priority:</strong> blue nodes for {{ s('shadowstrike') }}, {{ s('flash-slice') }}, {{ s('defiance') }}.</li>
     <li data-only="pve"><strong>No Ariel on global:</strong> there are five boards, and the level-45 one, Azphel, gives only PvP Damage Boost and Tolerance — in PvE finish the first four.</li>
     <li data-only="pvp"><strong>Azphel</strong> (level 45) is all PvP Damage Boost and Tolerance — take it, and Triniel earlier.</li>
@@ -131,7 +132,7 @@
 {% call section('stigmas', 'Stigmas', 'pve') %}
   <p>All four slots are buffs. Level Illusive Clone to 20 first — it eats most of your stigma shards — then the rest.</p>
   <ul class="skill-grid">
-    {% call skill('illusive-clone', 'must', 'Lv 20', upto=20) %}Your burst: for 20 seconds Heart Gore has no cooldown and you deal 20% extra damage, with +20% Critical Damage and ×1.5 Exploit Weakness on top. Cooldown 1 min 30 s. Most of your damage happens inside it — use it on the boss, never on trash.{% endcall %}
+    {% call skill('illusive-clone', 'must', 'Lv 20', upto=20) %}Your burst: for 20 seconds Heart Gore has no cooldown and you deal 20% extra damage, with +20% Critical Damage and ×1.5 Exploit Weakness on top. Cooldown 1 min 30 s. Most of your damage happens inside it — use it on the boss, never on trash. aLuckyRO: essential until Heart Gore reaches 16; with enough crits Heart Gore resets by itself and the slot can be swapped for a while, but at 20 it comes back for its damage boost.{% endcall %}
     {% call skill('swift-contract', 'must', 'Lv 15 → 20', upto=15) %}+20% Combat Speed, and ×1.5 Rear Smite and Assault Stance for the duration. 15 is enough to start; 20 adds 10% more Combat Speed.{% endcall %}
     {% call skill('savage-fang', 'must', 'Lv 15', upto=15) %}Five Insignias at once, big stagger damage and, at 15, +10% PvE Damage Boost for 10s. Same one-minute cooldown as Swift Contract — press them together.{% endcall %}
     {% call skill('triniels-dagger', 'must', 'Lv 10', upto=10) %}Not for its damage: at 10 a hit cuts the <em>remaining</em> cooldown of all your skills by 10%. Press it right after your buffs, when their cooldowns are longest.{% endcall %}
@@ -205,6 +206,7 @@
     <li><a href="https://aion2t.com/ru/simulator?job=5&amp;b=MeyRht" target="_blank" rel="noopener">aion2t.com</a> — TitanTheF's start and 45+ builds (skill levels, specializations, stigmas, passives)</li>
     <li><a href="https://questlog.gg/aion-2/en/db/skills/assassin" target="_blank" rel="noopener">questlog.gg</a> — skill data from the global client</li>
     <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — how hotbar lines and the in-game macro work</li>
+    <li><a href="https://www.youtube.com/watch?v=DNfd1lZtQkI" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Assassin PVE Build for Global</a> — early specializations (Quick Slice MP, Storm Rampage Multi-Hit), passive priority, Illusive Clone before Heart Gore 16, Throw Shadowblade for farming</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>

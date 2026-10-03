@@ -20,7 +20,7 @@
 {% endcall %}
 
 {% call section('intro', 'Огляд', 'pve') %}
-  <p>Гладіатор — флагманський клас NCSoft, і на корейських і тайванських серверах він тримається в S-тірі. Він бафає групу, напівтанкує й завдає величезної шкоди, вимагаючи менше рішень, ніж інші класи. Чарівник і Вбивця трохи обганяють його на нерухомому манекені, але Гладіатор зовсім поруч і грається набагато простіше.</p>
+  <p>Gladiator — флагманський клас NCSoft, і на корейських і тайванських серверах він тримається в S-тірі. Він бафає групу, напівтанкує й завдає величезної шкоди, вимагаючи менше рішень, ніж інші класи. Sorcerer і Assassin трохи обганяють його на нерухомому манекені, але Gladiator зовсім поруч і грається набагато простіше.</p>
   <div class="callout accent">
     <h3>Білд одним реченням</h3>
     <p>{{ s('overhead-slam') }} на 16–20, {{ s('lunge-stance') }} на 20 рівні стигми й {{ s('rage-burst') }}, щоб запускати Overhead Slam. Усе інше — підтримка.</p>
@@ -28,13 +28,13 @@
 {% endcall %}
 
 {% call section('intro-pvp', 'Огляд', 'pvp') %}
-  <p>У PvP Гладіатор — <strong>живучий дайвер</strong>: скорочує дистанцію, збиває ціль із ніг і карає збитого Overhead Slam. HP, блоку й самолікування в нього вистачає, щоб вижити в центрі бійки. Це один із найпопулярніших PvP-класів, тож чекай дзеркальних матчів.</p>
+  <p>У PvP Gladiator — <strong>живучий дайвер</strong>: скорочує дистанцію, збиває ціль із ніг і карає збитого Overhead Slam. HP, блоку й самолікування в нього вистачає, щоб вижити в центрі бійки. Це один із найпопулярніших PvP-класів, тож чекай дзеркальних матчів.</p>
   <p>Пріоритети по черзі: <strong>антиконтроль</strong> → <strong>липкість</strong> → <strong>берст</strong>, коли їхні захисні скіли на перезарядці.</p>
   <p class="note">Глобальної PvP-мети ще немає. Цей режим поєднує корейські/тайванські PvP-білди з даними скілів глобального клієнта — вважай його відправною точкою.</p>
 {% endcall %}
 
 {% call section('global', 'Глобальний 1 сезон: що змінюється', 'pve pvp') %}
-  <p>Глобальні сервери відкриваються <strong>5 жовтня 2026</strong> (ранній доступ Founder's — з 30 вересня), окремо від корейських/тайванських. Що це означає для Гладіатора:</p>
+  <p>Глобальні сервери відкриваються <strong>5 жовтня 2026</strong> (ранній доступ Founder's — з 30 вересня), окремо від корейських/тайванських. Що це означає для Gladiator:</p>
   <div class="callout">
     <ul>
       <li><strong>4 слоти стигм</strong> замість 6 (очікувано лише на 1 сезон).</li>
@@ -61,8 +61,8 @@
     {% call skill('crushing-wave', 'skip', '12', [0, 3]) %}Надто повільний для босів; АоЕ й самолікування на треші.{% endcall %}
     {% call skill('defiance', 'opt', '16, якщо є очки', [4]) %}Зняття контролю. Добре в рейдах, не пріоритет.{% endcall %}
     {% call skill('sword-aura-rampage', 'opt', '16, якщо є очки', [2, 4]) %}Б'є лише оглушені цілі, але на 16 кожен удар знімає 1 с з <em>усіх</em> перезарядок — зокрема й стигм. Якщо спамити у вікні оглушення, він сильний; поза ним — втрата шкоди (Grobs). Не пріоритет.{% endcall %}
-    {% call skill('keen-strike', 'skip', 'прокачка') %}Заповнювач, поки не запрацював макрос Overhead Slam.{% endcall %}
-    {% call skill('aerial-snare', 'skip', '—') %}PvP-інструмент. Тримай поза PvE-макросом.{% endcall %}
+    {% call skill('keen-strike', 'opt', '12', [0, 3]) %}Базова атака: +20% відновлення MP і −1 с перезарядки Ruinous Blow за влучання — aLuckyRO і Sen обидва качають її до 12 в перший день, коли мани мало. Коли Overhead Slam і Rending Blow стануть 16, перестань її затискати (Grobs, див. «Прокачку»).{% endcall %}
+    {% call skill('aerial-snare', 'opt', 'боси · 12', [2, 3]) %}Влучає лише по збитих з ніг цілях — але боси виняток. aLuckyRO качає його до 12 заради +100% шкоди по цілях з імунітетом до контролю (будь-який бос) і ланцюжка Forced Fall і бере його в Nightmare. Grobs і Arthars його не беруть; якщо додаєш, дай йому окрему клавішу, а не головну лінію.{% endcall %}
   </ul>
 {% endcall %}
 
@@ -78,7 +78,7 @@
     {% call skill('aerial-snare', 'must', '16', [3, 4]) %}Продовження, що підкидає збиту ціль. У PvE марний, тут — основа. На 16: ланцюжок Forced Fall і половина перезарядки; шанс підкидання — третій слот, на 20.{% endcall %}
     {% call skill('rush-strike', 'opt', '12–16', [1, 3]) %}Ухилення → ривок із шансом збити з ніг. На 16 можна поміняти спеціалізацію на дальність на +25% шансу збивання.{% endcall %}
     {% call skill('rending-blow', 'opt', '16', [2, 4]) %}Досі твій філер і двигун мани.{% endcall %}
-    {% call skill('ruinous-blow', 'opt', '12–16', [1, 4]) %}Третій ривок; ігнорування блоку/ухилення сильне проти Стражів. Ця спеціалізація потребує 16; на 12 бери дальність і додаткову шкоду.{% endcall %}
+    {% call skill('ruinous-blow', 'opt', '12–16', [1, 4]) %}Третій ривок; ігнорування блоку/ухилення сильне проти Templars. Ця спеціалізація потребує 16; на 12 бери дальність і додаткову шкоду.{% endcall %}
     {% call skill('crushing-wave', 'opt', '16', [3, 4]) %}Притягування витягає хілера чи кастера з їхнього тилу.{% endcall %}
     {% call skill('ankle-slice', 'opt', '12', [2, 0]) %}Ще один шлях у вікно збивання.{% endcall %}
     {% call skill('leaping-slam', 'opt', '12', [1, 3]) %}Стрибок на 20 м, що дає вижити, приземлившись у групу.{% endcall %}
@@ -86,14 +86,14 @@
 {% endcall %}
 
 {% call section('passives', 'Пасивки', 'pve') %}
-  <p>Очок на пасивки вдосталь — більшість доходять до максимуму без жодних роздумів. Дві пастки:</p>
+  <p>Очок на пасивки вдосталь — більшість доходять до максимуму без жодних роздумів. Одна пастка й одна пасивка на потім:</p>
   <div class="callout">
     <ul>
       <li>{{ s('protection-armor') }} — крихітне лікування при блоці. Перекидай спорядження й карти, де вона випала.</li>
-      <li>{{ s('destructive-impulse') }} — бонус до шкоди лише по оглушених цілях. Надто рідко, щоб мало значення.</li>
+      <li>{{ s('destructive-impulse') }} — бонус до шкоди лише по приголомшених цілях. Не пастка: aLuckyRO і Sen качають її заради вікна стагера, де вона складається з {{ s('sword-aura-rampage') }}. Бери після основних пасивок.</li>
     </ul>
   </div>
-  <p>{{ s('blood-absorption') }} вкладень не потребує: шанс 50% підлікуватися з кожного удару плюс велике миттєве лікування, коли падаєш до 50% HP. Тому Гладіатор і обходиться без хілера.</p>
+  <p>{{ s('blood-absorption') }} вкладень не потребує: шанс 50% підлікуватися з кожного удару плюс велике миттєве лікування, коли падаєш до 50% HP. Тому Gladiator і обходиться без хілера.</p>
 {% endcall %}
 
 {% call section('passives-pvp', 'Пасивки', 'pvp') %}
@@ -115,11 +115,11 @@
     <thead><tr><th>#</th><th>Пасивка</th><th>Навіщо</th></tr></thead>
     <tbody>
       <tr><td>1</td><td>{{ s('attack-preparation') }}</td><td>Чистий бонус до шкоди в PvE, захист і точність. Без умов.</td></tr>
-      <tr><td>2</td><td>{{ s('experienced-counterstrike') }}</td><td>Шкода спереду завжди, плюс бонус до шкоди в PvE на 20 с для тебе <em>і групи</em> з кожного блоку. Не складається з Fury Стража, але покриває групу без нього.</td></tr>
+      <tr><td>2</td><td>{{ s('experienced-counterstrike') }}</td><td>Шкода спереду завжди, плюс бонус до шкоди в PvE на 20 с для тебе <em>і групи</em> з кожного блоку. Не складається з Fury Templar, але покриває групу без нього.</td></tr>
       <tr><td>3</td><td>{{ s('murderous-burst') }} / {{ s('impact-hit') }}</td><td>Кожні 5 ударів = АоЕ-вибух + крит. шкода / більше шансу Impact і подвійного удару.</td></tr>
     </tbody>
   </table></div>
-  <p>Бонуси до шкоди зброї та шкоди спереду/ззаду — найсильніші типи, а Гладіатор завжди б'є спереду. Не женися за ідеальними манастоунами в 1 сезоні — перекидання коштує приблизно 200–300 тис. кожне на TW.</p>
+  <p>Бонуси до шкоди зброї та шкоди спереду/ззаду — найсильніші типи, а Gladiator завжди б'є спереду. Не женися за ідеальними манастоунами в 1 сезоні — перекидання коштує приблизно 200–300 тис. кожне на TW.</p>
 {% endcall %}
 
 {% call section('gear-pvp', 'Спорядження й аркани', 'pvp') %}
@@ -145,7 +145,7 @@
   <p>За середнього везіння: 14 + 2 (кільце) + 2 + 2 = <strong>20</strong> на Overhead Slam. Якщо до 20 може дійти лише ще один скіл, обирай Rending Blow, а не Ruinous Blow.</p>
   <div class="callout">
     <h3>Сети й карти пасивок</h3>
-    <p>Цілься в 4 частини <strong>Primal Vigor</strong> (усі карти Vigor вище — наведи на будь-яку, щоб побачити бонус сету). Гладіатору ніколи не потрібне скорочення перезарядок (Illusion). Якщо при швидкості атаки 1 сезону закінчується MP, переходь на 2 частини <strong>Magic Armor</strong> ({{ it('{i:mirror_magic_gold}') }} та інші карти Magic). Карти пасивок: спершу {{ s('attack-preparation') }}, потім будь-яка комбінація Experienced Counterstrike &gt; Murderous Burst &gt; Impact Hit &gt; Identify Weakness.</p>
+    <p>Цілься в 4 частини <strong>Primal Vigor</strong> (усі карти Vigor вище — наведи на будь-яку, щоб побачити бонус сету). Gladiator ніколи не потрібне скорочення перезарядок (Illusion). Якщо при швидкості атаки 1 сезону закінчується MP, переходь на 2 частини <strong>Magic Armor</strong> ({{ it('{i:mirror_magic_gold}') }} та інші карти Magic). Карти пасивок: спершу {{ s('attack-preparation') }}, потім будь-яка комбінація Experienced Counterstrike &gt; Murderous Burst &gt; Impact Hit &gt; Identify Weakness.</p>
   </div>
 {% endcall %}
 
@@ -178,16 +178,17 @@
 {% endcall %}
 
 {% call section('stigmas', 'Стигми', 'pve') %}
-  <p>Три стигми фіксовані, четверта залежить від групи. У PvE пропускай Wrath Wave, Armor of Balance, Blade Toss, Forced Restraint, Assault Strike і Fracturing Rush.</p>
+  <p>Три стигми фіксовані, четверта залежить від групи. У PvE пропускай Wrath Wave, Armor of Balance, Forced Restraint, Assault Strike і Fracturing Rush; Blade Toss — лише в групі (нижче).</p>
   <ul class="skill-grid">
     {% call skill('lunge-stance', 'must', 'рів. 20', upto=20) %}Прок 20 рівня скорочує всі перезарядки на критах: постійні Overhead Slam, Rage Burst, блок і ривки. Перша стигма на максимум.{% endcall %}
     {% call skill('focused-block', 'must', 'рів. 5', upto=5) %}Гарантоване парирування. Кожен блок запускає груповий баф Experienced Counterstrike — блокувати означає бафати. На 5 рівні її можна використати двічі поспіль. На прокачці бери першою.{% endcall %}
     {% call skill('rage-burst', 'must', 'рів. 5', upto=5) %}Запускає Overhead Slam по цілі на 10 с, +10% до шкоди в PvE і −10% атаки боса.{% endcall %}
     {% call skill('zikels-blessing', 'opt', 'рів. 10', upto=10) %}Стандартний 4-й слот: +20% атаки, не залежить від того, наскільки добре грає група.{% endcall %}
     {% call skill('lifestealing-blade', 'opt', 'рів. 20', upto=20) %}4-й слот для зіграної групи: Predation посилює удари всіх. Має сенс лише на 20.{% endcall %}
-    {% call skill('wave-armor', 'skip', 'рів. 15', upto=15) %}Лише без Стража. Її сильного рівня 25 на глобалі немає.{% endcall %}
+    {% call skill('blade-toss', 'opt', 'група', upto=5) %}Вибір aLuckyRO для групи: −30% захисту боса на 10 с, і вся група вбиває його швидше. Бери в зіграній групі замість Zikel's Blessing, коли граєш напівтанка.{% endcall %}
+    {% call skill('wave-armor', 'skip', 'рів. 15', upto=15) %}Лише без Templar. Її сильного рівня 25 на глобалі немає.{% endcall %}
   </ul>
-  <p>Звідки стигми: магазин Nightmare, магазин Shugo Festa і магазин Безодні за рангами. Гладіатору їх потрібно так мало, що збірка складається в перші дні.</p>
+  <p>Звідки стигми: магазин Nightmare, магазин Shugo Festa і магазин Безодні за рангами. Gladiator їх потрібно так мало, що збірка складається в перші дні.</p>
 {% endcall %}
 
 {% call section('stigmas-pvp', 'Стигми', 'pvp') %}
@@ -216,7 +217,7 @@
     <li><strong>Лінія на кнопці</strong> — кілька скілів на <em>одній</em> кнопці панелі. Натискання кастує готовий скіл із найвищим пріоритетом, і в AION 2 <strong>найвищий пріоритет у нижнього слота</strong>. Картки нижче показують лінії згори донизу, як у грі, з номером пріоритету на кожному скілі.</li>
     <li><strong>Вбудований макрос</strong> — поки тримаєш його клавішу, він по черзі натискає лінії й скасовує хвости анімацій. Скіли на перезарядці пропускаються. Базову атаку (ЛКМ) тримай <em>разом</em> із клавішею макросу, а не став у макрос — так гра краще її вплітає й скасовує.</li>
   </ul>
-  <p>Гладіатору потрібно <strong>6 скілів на 3 кнопках</strong>: 4 скіли шкоди й 2 бафи.</p>
+  <p>Gladiator потрібно <strong>6 скілів на 3 кнопках</strong>: 4 скіли шкоди й 2 бафи.</p>
 
   <h3>1. Лінії на кнопках</h3>
   <div class="hotlines">
@@ -242,7 +243,7 @@
     <h3>Початок бою з босом</h3>
     <div class="combo">{{ s('lunge-stance') }} + {{ s('zikels-blessing') }}<span class="arrow">→</span>{{ s('leaping-slam') }} усередину<span class="arrow">→</span>{{ s('ruinous-blow') }}<span class="arrow">→</span>тримай макрос</div>
     <p>Заблокуй <strong>першу атаку</strong> боса через {{ s('focused-block') }} — Experienced Counterstrike одразу бафає всю групу. Кожен бос починає по-своєму: на деяких краще застрибнути, спершу заблокувати й лише потім бафнутися. Вивчай босів і вписуй блок.</p>
-    <p class="note">Корисне налаштування (Grobs): Esc → Settings → Info Display → Combat → <strong>Display Boss Orientation Indicator</strong>. Показує, де в боса перед, — Гладіатор завжди хоче бити спереду.</p>
+    <p class="note">Корисне налаштування (Grobs): Esc → Settings → Info Display → Combat → <strong>Display Boss Orientation Indicator</strong>. Показує, де в боса перед, — Gladiator завжди хоче бити спереду.</p>
   </div>
   <div class="callout">
     <h3>Чому Rage Burst унизу</h3>
@@ -334,6 +335,8 @@
     <li><a href="https://www.iggm.com/news/aion-2-global-servers-dungeon-gameplay-changes-expeditions-gear-progression-stigma-slots" target="_blank" rel="noopener">IGGM</a> — зміни глобального 1 сезону</li>
     <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (таблиця TitanTheF) — маршрут прокачки</li>
     <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — як працюють лінії на кнопках і вбудований макрос</li>
+    <li><a href="https://www.youtube.com/watch?v=WlxLOTs62dM" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Gladiator PVE Build for Global</a> — ранні спеціалізації (Keen Strike, Aerial Snare на босах), стигми, пріоритет Daevanion, ротація на босі спереду</li>
+    <li><a href="https://www.youtube.com/watch?v=t-B-5lR_GIs" target="_blank" rel="noopener">Sen — AION 2 Progression Guide (+ Gladiator guide)</a> — підтверджує скіли, стигми й пасивки цього гайда на глобальних серверах</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>

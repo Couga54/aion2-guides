@@ -7,7 +7,7 @@
   <h3>{{ t.stigma_loadout }}</h3>
   {{ loadout([('illusive-clone', 20), ('swift-contract', 15), ('savage-fang', 15), ('triniels-dagger', 10)]) }}
   <h3>{{ t.key_passives }}</h3>
-  {{ passives(['rear-smite', 'exploit-weakness', 'assault-stance', 'impact-hit']) }}
+  {{ passives(['rear-smite', 'exploit-weakness', 'assault-stance', 'determination']) }}
 {% endcall %}
 
 {% call section('intro', 'Обзор', 'pve') %}
@@ -69,8 +69,8 @@
       <tr><td>{{ s('rear-smite') }}</td><td>1</td><td>Удар в спину и урон в PvE — самая сильная пассивка; даёт урон даже при ударах спереди.</td></tr>
       <tr><td>{{ s('exploit-weakness') }}</td><td>2</td><td>Шанс крита и бафф атаки, который в бою висит почти постоянно; Иллюзорный двойник его умножает.</td></tr>
       <tr><td>{{ s('assault-stance') }}</td><td>2</td><td>Крит. урон; Обет ускорения его умножает.</td></tr>
-      <tr><td>{{ s('impact-hit') }}</td><td>2</td><td>Двойной шанс.</td></tr>
-      <tr><td>{{ s('determination') }}</td><td>3</td><td>Доп. урон по цели ниже 30% ОЗ — хорошее добивание, если есть свободная строка.</td></tr>
+      <tr><td>{{ s('determination') }}</td><td>3</td><td>Доп. урон по цели с низким ОЗ — aLuckyRO считает её одной из самых важных: любой босс проводит там конец боя.</td></tr>
+      <tr><td>{{ s('impact-hit') }}</td><td>4</td><td>Двойной шанс — всего 3,3% на 10 уровне, в PvE почти ничего (aLuckyRO). Оставь для PvP; на PvE-экипировке сначала {{ s('determination', False) }}.</td></tr>
       <tr><td>{{ s('ambush-stance') }}, {{ s('heightened-sixth-sense') }}</td><td>только очками</td><td>Поднимаются очками навыков; строки экипировки не стоят.</td></tr>
       <tr><td>{{ s('apply-poison') }}, {{ s('defense-break') }}</td><td>не брать</td><td>Яд — меньше 1% урона; Брешь в защите — пассивка для PvP. {{ s('revitalization-contract') }} — только если остались очки.</td></tr>
     </tbody>
@@ -107,6 +107,7 @@
   <p>Daevanion поднимает скиллы с 10 до 14 и даёт статы. Каждый синий узел — <strong>+1 уровень</strong> своему скиллу.</p>
   <div class="callout"><ul>
     <li data-only="pve"><strong>Приоритет:</strong> синие узлы {{ s('heart-gore') }}, {{ s('insignia-explosion') }}, {{ s('quick-slice') }}, затем {{ s('ambush') }} и {{ s('storm-rampage') }}, затем оранжевые.</li>
+    <li data-only="pve"><strong>Крит. урон сразу:</strong> Убийце оранжевый узел крит. урона на Vaizel окупается с самого начала — он критует с первого дня, в отличие от большинства классов (aLuckyRO).</li>
     <li data-only="pvp"><strong>Приоритет:</strong> синие узлы {{ s('shadowstrike') }}, {{ s('flash-slice') }}, {{ s('defiance') }}.</li>
     <li data-only="pve"><strong>В глобале нет Ariel:</strong> досок пять, и доска 45 уровня, Azphel, даёт только урон и стойкость в PvP — в PvE закрывай первые четыре.</li>
     <li data-only="pvp"><strong>Azphel</strong> (45 уровень) — сплошь урон и стойкость в PvP: бери его, а Triniel пораньше.</li>
@@ -131,7 +132,7 @@
 {% call section('stigmas', 'Стигмы', 'pve') %}
   <p>Все четыре слота — баффы. Сначала доведи до 20 Иллюзорного двойника — он съест большую часть осколков стигм, — потом остальное.</p>
   <ul class="skill-grid">
-    {% call skill('illusive-clone', 'must', 'Ур. 20', upto=20) %}Твой бурст: 20 секунд у Пронзания сердца нет перезарядки и ты наносишь 20% дополнительного урона, плюс +20% крит. урона и ×1,5 к Выжиданию момента. Перезарядка 1 мин 30 сек. Большая часть урона проходит внутри него — используй на боссе, не на мобах.{% endcall %}
+    {% call skill('illusive-clone', 'must', 'Ур. 20', upto=20) %}Твой бурст: 20 секунд у Пронзания сердца нет перезарядки и ты наносишь 20% дополнительного урона, плюс +20% крит. урона и ×1,5 к Выжиданию момента. Перезарядка 1 мин 30 сек. Большая часть урона проходит внутри него — используй на боссе, не на мобах. aLuckyRO: обязателен, пока Пронзание сердца не 16; когда критов хватает, оно сбрасывается само и слот можно на время отдать, но на 20 клон возвращается ради бонуса урона.{% endcall %}
     {% call skill('swift-contract', 'must', 'Ур. 15 → 20', upto=15) %}+20% скорости боя и ×1,5 к Удару с тыла и Стойке нападения на время действия. Для старта хватит 15; 20 добавляет ещё 10% скорости боя.{% endcall %}
     {% call skill('savage-fang', 'must', 'Ур. 15', upto=15) %}Пять эмблем разом, большой урон по шкале ошеломления и на 15 — +10% урона в PvE на 10 сек. Перезарядка та же минута, что у Обета ускорения, — жми их вместе.{% endcall %}
     {% call skill('triniels-dagger', 'must', 'Ур. 10', upto=10) %}Не ради урона: на 10 удар сокращает <em>оставшуюся</em> перезарядку всех твоих скиллов на 10%. Жми сразу после баффов, когда их перезарядки самые длинные.{% endcall %}
@@ -205,6 +206,7 @@
     <li><a href="https://aion2t.com/ru/simulator?job=5&amp;b=MeyRht" target="_blank" rel="noopener">aion2t.com</a> — стартовый и 45+ билды TitanTheF (уровни, специализации, стигмы, пассивки)</li>
     <li><a href="https://questlog.gg/aion-2/ru/db/skills/assassin" target="_blank" rel="noopener">questlog.gg</a> — данные скиллов из глобального клиента</li>
     <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — как работают линии и встроенный макрос</li>
+    <li><a href="https://www.youtube.com/watch?v=DNfd1lZtQkI" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Assassin PVE Build for Global</a> — ранние специализации (мана на {{ s('quick-slice', False) }}, мультиудар на {{ s('storm-rampage', False) }}), приоритет пассивок, клон до {{ s('heart-gore', False) }} 16, {{ s('throw-shadowblade', False) }} для фарма</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>

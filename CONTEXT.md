@@ -10,7 +10,7 @@ Founder's early access from Sep 30), published on GitHub Pages:
 `https://couga54.github.io/aion2-guides/` (repo `https://github.com/Couga54/aion2-guides.git`).
 
 Requirements from the user (in their words, translated):
-- Guides for several classes; start with **Gladiator** and **Ranger** (Лучник).
+- Guides for several classes; start with **Gladiator** and **Ranger** (Стрелок).
 - It should look like a **site, not a document**.
 - **EN / RU / UK** versions (Ukrainian since Oct 1: our text in Ukrainian, game names — skills, items, sets, bosses, boards — in English, questlog has no Ukrainian).
 - A **PvE / PvP / Leveling** switch at the top; the whole page shows only the chosen mode.
@@ -128,9 +128,10 @@ Requirements from the user (in their words, translated):
   leveling checklist with progress saved per class (`localStorage` key `lvl-progress:<class>`),
   sticky side TOC (desktop) / chip TOC (mobile), dark + light themes, OG images, sitemap with hreflang.
 - Root `index.html` redirects to `/en/`, `/ru/` or `/uk/` (remembered choice, else browser language: uk → uk, ru/be → ru, else en).
-- RU class names follow classic AION RU naming (Гладиатор, Лучник, Страж, Убийца, Волшебник,
-  Заклинатель, Целитель, Чародей); RU skill names come from the global client via questlog.
-  UK class names mirror them (Гладіатор, Лучник, Страж, Вбивця, Чарівник, Заклинач, Цілитель, Чародій).
+- RU class names are the global client's (checked Oct 3 against item names on questlog, e.g. «Лук Стрелка», and class names in skill
+  descriptions): Гладиатор, Стрелок (not Лучник), Страж, Убийца, Волшебник, Заклинатель (Elementalist), Целитель, Чародей (Chanter);
+  RU skill names come from the global client via questlog. UK pages use the English class names (Gladiator, Ranger, …) —
+  the game has no Ukrainian, so class names are treated like skill names (user's decision, Oct 3).
 - Session 2 (Sep 27): pushed to GitHub, Pages live. Added class art (class cards,
   class hero + faint fixed backdrop on class pages), a landscape behind the home hero; a Sources & credits page (topbar button, footer, link under each guide's sources) and a launch schedule panel with timers on the home page.
 - Session 3 (Sep 27): Templar guide (EN/RU, PvE/PvP/leveling), "Updated / Patch: TBD" stamp on every
@@ -205,3 +206,9 @@ Requirements from the user (in their words, translated):
   + `truststore.inject_into_ssl()` works around it. At home the plain fetch should work.
 - Open ideas: more classes, Daevanion board visual per class, checklist export/import,
   verify global level cap and Daevanion values after launch (Oct 5).
+- Oct 3: class guides re-checked against the first global videos (aLuckyRO "Latest PVE Build for Global" series, Sen, LordRobson,
+  trueeevil, notXeon, WallyJTV, EUTOPIA); Sorcerer priority rebuilt on EUTOPIA (Hellfire/Firestorm core, no Ice Chain/Frost).
+  `patch: "S1"` in site.json shows "Season 1" for guides checked against global sources. Elementalist got PvE + PvP (no WIP)
+  from Evripides' written global guide https://aion2sm.com/global/ (snapshot rule: buff before summoning), checked against
+  DankRNG (KlmstIyukX8) and aLuckyRO (v9MYphrcvic). YouTube rate-limits transcripts after many requests (429) —
+  `tools/transcribe.py` works as the fallback.

@@ -20,22 +20,22 @@
 {% endcall %}
 
 {% call section('intro', 'Огляд', 'pve') %}
-  <p>Страж — головний танк AION 2, і він усе одно завдає відчутної шкоди. Увесь білд тримається на <strong>«святій трійці»</strong> скілів, які якнайшвидше доводять до 20, — {{ s('judgment') }}, {{ s('punishment') }} і {{ s('pummel') }}, — і використовують якомога частіше. Стража обмежує не живучість, а шкода.</p>
+  <p>Templar — головний танк AION 2, і він усе одно завдає відчутної шкоди. Увесь білд тримається на <strong>«святій трійці»</strong> скілів, які якнайшвидше доводять до 20, — {{ s('judgment') }}, {{ s('punishment') }} і {{ s('pummel') }}, — і використовують якомога частіше. Templar обмежує не живучість, а шкода.</p>
   <div class="callout accent">
     <h3>Білд одним реченням</h3>
     <p>Скіли щита запускають {{ s('judgment') }}: спам лінію Judgment на бічній кнопці, тримай макрос для Pummel і його проків, заряджай {{ s('punishment') }} за відкатом і блокуй великі удари, щоб тримати {{ s('fury') }} на групі.</p>
   </div>
-  <p class="note">Гайд іде за глобальним білдом Стража від SolAshur (solashur.com, 27 вересня) і його відеорозбором (29 вересня), повторно звіреним із кадрами відео 30 вересня.</p>
+  <p class="note">Гайд іде за глобальним білдом Templar від SolAshur (solashur.com, 27 вересня) і його відеорозбором (29 вересня), повторно звіреним із кадрами відео 30 вересня.</p>
 {% endcall %}
 
 {% call section('intro-pvp', 'Огляд', 'pvp') %}
-  <p>У PvP Страж зберігає ту саму святу трійцю й ту саму петлю Judgment; змінюються стигми. {{ s('executing-blade') }} дає перевагу в кожній дуелі, а {{ s('annihilate') }} на 20 перетворюється на АоЕ-збивання з ніг.</p>
+  <p>У PvP Templar зберігає ту саму святу трійцю й ту саму петлю Judgment; змінюються стигми. {{ s('executing-blade') }} дає перевагу в кожній дуелі, а {{ s('annihilate') }} на 20 перетворюється на АоЕ-збивання з ніг.</p>
   <p>Мілі кайтять — сильна зброя важить менше, коли до цілі не дістати, тож грай від ривків і Doom Shield.</p>
   <p class="note">Окремі PvP-сети з KR/TW для глобалу не підтверджені, тож план — PvX-спорядження з вкладки PvE. Якщо PvP-спорядження з'явиться: спершу качай PvP-стигми й лише потім витрачайся на PvP-зброю чи броню.</p>
 {% endcall %}
 
 {% call section('global', 'Глобальний 1 сезон: що змінюється', 'pve pvp') %}
-  <p>Глобальні сервери відкриваються <strong>5 жовтня 2026</strong> (ранній доступ Founder's — з 30 вересня). Що це означає для Стража:</p>
+  <p>Глобальні сервери відкриваються <strong>5 жовтня 2026</strong> (ранній доступ Founder's — з 30 вересня). Що це означає для Templar:</p>
   <div class="callout">
     <ul>
       <li><strong>4 стигми на 45 рівні.</strong> У тайванських наборах SolAshur їх було шість; для глобалу він прибирає по дві з кожного профілю (див. Стигми).</li>
@@ -52,7 +52,7 @@
   <ul class="skill-grid">
     {% call skill('judgment', 'must', '20', [4, 3, 2]) %}Твоя основна шкода: його запускають Shield Smite, Warding Strike, Shield Rush і Doom Shield, а на 16 його перезарядка зникає.{% endcall %}
     {% call skill('punishment', 'must', '20', [1, 4, 2]) %}Заряджений берст — шкода з часом, гарантований крит крізь блок і +30% швидкості скілів. Ніколи не бери спеціалізації на рух чи поглинання HP: це «приманка», коли вже вистачає швидкості атаки.{% endcall %}
-    {% call skill('pummel', 'must', '20', [1, 2, 4]) %}Філер і оглушення. Усі спеціалізації SolAshur ідуть у Punishing Strike — він лікує тебе й спрацьовує вдруге; спеціалізацію −1 с на Punishment він пропускає. Доведи до 20 якнайшвидше.{% endcall %}
+    {% call skill('pummel', 'must', '20', [1, 2, 4]) %}Філер і оглушення. Усі спеціалізації SolAshur ідуть у Punishing Strike — він лікує тебе й спрацьовує вдруге; спеціалізацію −1 с на Punishment він пропускає. Доведи до 20 якнайшвидше. trueeevil бере саме її: Punishment відкочується швидше — чесна заміна поглинанню HP, якщо лікування не потрібне.{% endcall %}
     {% call skill('annihilate', 'must', '16 → 20', [2, 3]) %}+100% шкоди по босах з імунітетом до контролю, −10 с перезарядки. Альтернативний білд доводить його до 20 заради спеціалізації на АоЕ-збивання. Третій слот відкривається на 20: мультиудар для босів.{% endcall %}
     {% call skill('shield-smite', 'must', '16', [3, 2]) %}Запускає Judgment; −2 с перезарядки й шанс 50% активувати Debilitating Smash.{% endcall %}
     {% call skill('debilitating-smash', 'opt', '12', [3, 0]) %}Прок після блоку чи Shield Smite; ігнорує блок і ухилення.{% endcall %}
@@ -77,7 +77,7 @@
   <div class="table-wrap"><table>
     <thead><tr><th>#</th><th>Пасивка</th><th>Навіщо</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td>{{ s('fury') }}</td><td>+бонус до шкоди в PvE для тебе <em>і групи</em> після кожного блоку — причина, з якої групи хочуть Стража.</td></tr>
+      <tr><td>1</td><td>{{ s('fury') }}</td><td>+бонус до шкоди в PvE для тебе <em>і групи</em> після кожного блоку — причина, з якої групи хочуть Templar.</td></tr>
       <tr><td>2</td><td>{{ s('punishing-benediction') }}</td><td>Крит і прок додаткової шкоди з кожного удару; її ролить аркана Bell.</td></tr>
       <tr><td>3</td><td>{{ s('insulting-roar') }}</td><td>Ворожнеча плюс атака при атаках спереду.</td></tr>
       <tr><td>4</td><td>{{ s('ironclad-defense') }}</td><td>Захист і Endurance — основа збірки статів на Endurance. На персонажі SolAshur (+6 рівнів) вона дає +37% захисту й +16% Endurance.</td></tr>
@@ -140,7 +140,7 @@
       <tr><td>Bell</td><td>{{ s('fury') }}, {{ s('punishing-benediction') }}</td></tr>
     </tbody>
   </table></div>
-  <p class="note">Бери ефекти сетів на шкоду, а не на живучість — живучості Стражу й так вистачає.</p>
+  <p class="note">Бери ефекти сетів на шкоду, а не на живучість — живучості Templar й так вистачає.</p>
 {% endcall %}
 
 {% call section('daevanion', 'Дошки Daevanion', 'pve pvp') %}
@@ -177,6 +177,8 @@
     {% call skill('taunt', 'must', 'Рів. 5', upto=5) %}Агро в груповому контенті. Соло бери замість неї Nezekan's Shield.{% endcall %}
     {% call skill('nezekans-shield', 'opt', 'альт.', upto=15) %}Заміна заради живучості; до 15 погана.{% endcall %}
     {% call skill('comrade-in-arms', 'opt', 'група', upto=15) %}Заміна заради живучості в підземеллях, замість Doom Shield. Соло марна.{% endcall %}
+    {% call skill('executing-blade', 'opt', 'соло · старт', upto=10) %}Вибір trueeevil для PvE в перші дні: −30% захисту цілі, а на 10 — Exposed. Відкривай ним, потім Punishment. Соло й на старті — заміна Empyrean Lord's Punishment або Taunt.{% endcall %}
+    {% call skill('noble-armor', 'opt', 'соло · старт', upto=5) %}Макс. HP і захист на 2 хвилини при перезарядці 2 хвилини — висить завжди. trueeevil грає з нею соло; у групі важливіші Taunt і стигма на стагер.{% endcall %}
   </ul>
   <div class="table-wrap"><table>
     <thead><tr><th>Профіль</th><th>4 стигми</th><th>Заміни</th></tr></thead>
@@ -267,15 +269,16 @@
 <section class="sources" aria-labelledby="h-sources">
   <h2 id="h-sources">{{ t.sources }}</h2>
   <ul>
-    <li><a href="https://solashur.com/builds/templar-global-build.html" target="_blank" rel="noopener">SolAshur — глобальний білд Стража AION 2</a> і <a href="https://www.youtube.com/watch?v=ayyzLdGOaNc" target="_blank" rel="noopener">його відеорозбір</a> — білд, за яким іде цей гайд (скіли, стигми за профілями, макрос, шлях екіпірування, статі, пети, Pantheon, аркани); спеціалізації — з <a href="https://questlog.gg/aion-2/en/character-builder/QuickCobraLifeBanish" target="_blank" rel="noopener">його білдів на questlog</a></li>
+    <li><a href="https://solashur.com/builds/templar-global-build.html" target="_blank" rel="noopener">SolAshur — глобальний білд Templar AION 2</a> і <a href="https://www.youtube.com/watch?v=ayyzLdGOaNc" target="_blank" rel="noopener">його відеорозбір</a> — білд, за яким іде цей гайд (скіли, стигми за профілями, макрос, шлях екіпірування, статі, пети, Pantheon, аркани); спеціалізації — з <a href="https://questlog.gg/aion-2/en/character-builder/QuickCobraLifeBanish" target="_blank" rel="noopener">його білдів на questlog</a></li>
     <li><a href="https://www.youtube.com/watch?v=JEWRiaOb9JY" target="_blank" rel="noopener">NoBS Game Guides — Aion 2 Templar Guide: Skills Introduction + Early Game Macro</a> (основа огляду скілів і макросу на прокачці)</li>
     <li><a href="https://questlog.gg/aion-2/en/db/skills/templar" target="_blank" rel="noopener">questlog.gg</a> — дані скілів і стигм із глобального клієнта</li>
-    <li><a href="https://www.inven.co.kr/board/aion2/6438/12803" target="_blank" rel="noopener">Inven</a> — корейські спеціалізації Стража, стигми й налаштування макросу</li>
+    <li><a href="https://www.inven.co.kr/board/aion2/6438/12803" target="_blank" rel="noopener">Inven</a> — корейські спеціалізації Templar, стигми й налаштування макросу</li>
     <li><a href="https://vortexgaming.io/postdetail/977999" target="_blank" rel="noopener">Vortex Gaming</a> — корейська PvE-збірка (рівні скілів, статі спорядження) і <a href="https://vortexgaming.io/postdetail/836552" target="_blank" rel="noopener">напрями PvP-збірки</a></li>
     <li><a href="https://www.inven.co.kr/board/aion2/6438/7621" target="_blank" rel="noopener">Inven</a> і <a href="https://www.fmkorea.com/9447817669" target="_blank" rel="noopener">FM Korea</a> — вибір PvP-стигм</li>
     <li><a href="https://mmo-codex.com/articles/aion-2-templar-guide/" target="_blank" rel="noopener">MMO Codex</a> — порядок скілів на прокачці, пріоритет пасивок</li>
     <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (таблиця TitanTheF) — маршрут прокачки</li>
     <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — як працюють лінії на кнопках і вбудований макрос</li>
+    <li><a href="https://www.youtube.com/watch?v=ZQVq7IYbLy8" target="_blank" rel="noopener">trueeevil — Ultimate Templar Guide for Aion 2: Skills, Stigmas, Rotations, Daevanion Board Explained</a> — налаштування другого дня на глобалі: Executing Blade і Noble Armor для соло-PvE, спеціалізація −1 с Punishment на Pummel, порядок пасивок</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>

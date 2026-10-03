@@ -11,16 +11,16 @@
 {% endcall %}
 
 {% call section('intro', 'Обзор', 'pve') %}
-  <p>Лучник — стрелок с луком, который сражается примерно с <strong>20 метров</strong>: это дальность почти всех его скиллов. Урон у него один из лучших, но живучесть и полезность для группы низкие, поэтому позиционирование решает всё.</p>
+  <p>Стрелок — стрелок с луком, который сражается примерно с <strong>20 метров</strong>: это дальность почти всех его скиллов. Урон у него один из лучших, но живучесть и полезность для группы низкие, поэтому позиционирование решает всё.</p>
   <div class="callout accent">
     <h3>Билд одной фразой</h3>
     <p>Накинь баффы, держи на цели {{ s('marking-shot') }} (Точность: +300 крит. удара и +35% урона {{ s('deadshot', False) }}) и зажимай три кнопки: {{ s('snipe') }}, макрос и полностью заряженный {{ s('deadshot') }}.</p>
   </div>
-  <p class="note">Гайд следует Whelps — мейну Лучника с 1 млн CP на корейских серверах, который играл и на глобальном тесте, — и его PvE-билду на эндгейм 1 сезона на questlog.</p>
+  <p class="note">Гайд следует Whelps — мейну Стрелка с 1 млн CP на корейских серверах, который играл и на глобальном тесте, — и его PvE-билду на эндгейм 1 сезона на questlog.</p>
 {% endcall %}
 
 {% call section('global', 'Глобальный 1 сезон: что меняется', 'pve pvp') %}
-  <p>Глобальные серверы открываются <strong>5 октября 2026</strong> (ранний доступ для Founder's Pack — с 30 сентября). Что это значит для Лучника:</p>
+  <p>Глобальные серверы открываются <strong>5 октября 2026</strong> (ранний доступ для Founder's Pack — с 30 сентября). Что это значит для Стрелка:</p>
   <div class="callout">
     <ul>
       <li><strong>Четыре стигмы на 37 уровне.</strong> Глобальный тест заканчивался на 37; пятый слот на 45 вероятен, но не подтверждён — если появится, в него идёт {{ s('explosive-arrow') }}.</li>
@@ -45,7 +45,7 @@
     {% call skill('explosion-trap', 'opt', '12', [0, 2]) %}Только чтобы стянуть мобов (например, в Transcendence).{% endcall %}
     {% call skill('suppressing-arrow', 'opt', '12', [0, 2]) %}Только ради оглушения — на прокачке пригодится, в эндгейм-PvE не используется.{% endcall %}
     {% call skill('defiance', 'opt', '12', [2, 1]) %}На 16 — третья и пятая специализации.{% endcall %}
-    {% call skill('arrow-scattershot', 'skip', 'не качать') %}Работает только по ошеломлённому боссу, а обычная ротация бьёт сильнее — не качай.{% endcall %}
+    {% call skill('arrow-scattershot', 'opt', 'старт 12', [2, 3]) %}Работает только по ошеломлённым боссам. Whelps её не качает: в его эндгейм-ротации остальные скиллы дают больше. aLuckyRO и LordRobson в первый день берут её до 12 ради мультиудара в окне ошеломления — нормально, пока очки дешёвые, и первое, что убирать потом.{% endcall %}
   </ul>
 {% endcall %}
 
@@ -74,8 +74,8 @@
     </tbody>
   </table></div>
   <div class="callout"><ul>
-    <li><strong>Точность — второй по важности стат.</strong> Парированный удар теряет больше половины урона, а Лучник не всегда может бить в спину. Цель — ~1100–1200 (саппорты добавляют +100).</li>
-    <li>Остальные слоты: атака, шанс крита или Око концентрации — оставляй то, что выпало первым. Крит Лучнику капнуть проще (+300 от Помечающего выстрела).</li>
+    <li><strong>Точность — второй по важности стат.</strong> Парированный удар теряет больше половины урона, а Стрелок не всегда может бить в спину. Цель — ~1100–1200 (саппорты добавляют +100).</li>
+    <li>Остальные слоты: атака, шанс крита или Око концентрации — оставляй то, что выпало первым. Крит Стрелку капнуть проще (+300 от Помечающего выстрела).</li>
     <li><strong>Манастоуны:</strong> в 1 сезоне хватит одной жёлтой строки атаки; не гонись за сетами «удар спереди/сзади».</li>
     <li>Перекатывай связывания только на броне, где уже есть одно из обязательных.</li>
   </ul></div>
@@ -125,13 +125,13 @@
 {% endcall %}
 
 {% call section('stigmas', 'Стигмы', 'pve') %}
-  <p>Сначала качай их ровно — 5 / 5 / 5, потом 10, — чтобы брать каждый порог. Как только хватит очков на <strong>Силу Байзела 20</strong>, сбрось и вложи сначала в неё: с этого момента Лучник раскрывается. Затем по очереди до 20 Благословенный лук, Поддерживающий огонь и Стрела грифона.</p>
+  <p>Сначала качай их ровно — 5 / 5 / 5, потом 10, — чтобы брать каждый порог. Как только хватит очков на <strong>Силу Байзела 20</strong>, сбрось и вложи сначала в неё: с этого момента Стрелок раскрывается. Затем по очереди до 20 Благословенный лук, Поддерживающий огонь и Стрела грифона.</p>
   <ul class="skill-grid">
     {% call skill('vaizels-authority', 'must', 'Lv 20', upto=20) %}×1,5 к Оку концентрации и Душе охотника; на 20 каждый крит с шансом 50% сокращает перезарядку <em>всех</em> скиллов на 1 сек. — огромный прирост урона.{% endcall %}
     {% call skill('bow-of-blessing', 'must', 'Lv 10 → 20', upto=20) %}Мультиудар, атака от крита, крит. урон и двойной шанс.{% endcall %}
     {% call skill('supporting-fire', 'must', 'Lv 10 → 20', upto=20) %}Сфера, которая стреляет вместе с тобой; перезарядка как у Силы Байзела, поэтому их можно повесить на одну кнопку.{% endcall %}
     {% call skill('griffon-arrow', 'must', 'Lv 10 → 20', upto=20) %}Периодический урон «Багровое пламя»; открывает линию макроса.{% endcall %}
-    {% call skill('explosive-arrow', 'opt', '5-й слот', upto=10) %}Если на 45 откроется пятый слот: держи её на 5–10, пока остальные не дойдут до 20.{% endcall %}
+    {% call skill('explosive-arrow', 'opt', 'альт. · 4-й слот', upto=10) %}Равноценная замена {{ s('griffon-arrow') }}: LordRobson оценивает их урон примерно одинаково, а aLuckyRO в первый день ставит её на 5 (−15 сек. перезарядки) вместо грифона. Если на 45 откроется пятый слот, бери обе.{% endcall %}
     {% call skill('arrow-storm', 'opt', 'прокачка', upto=5) %}АоЕ по пачкам на прокачке.{% endcall %}
   </ul>
 {% endcall %}
@@ -201,8 +201,8 @@
 <section class="sources" aria-labelledby="h-sources">
   <h2 id="h-sources">{{ t.sources }}</h2>
   <ul>
-    <li><a href="https://www.youtube.com/watch?v=wKOm6yKuu_I" target="_blank" rel="noopener">Whelps — гайд на Лучника AION 2</a> и его <a href="https://questlog.gg/aion-2/en/character-builder/AelonCommandAndTheSharpMerchant?build-id=8655" target="_blank" rel="noopener">PvE-билд на эндгейм 1 сезона на questlog</a> — билд, которому следует гайд (скиллы, стигмы, макрос, экипировка, арканы)</li>
-    <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener">TitanTheF — таблица прогрессии AION 2</a> (вкладка «Лучник») и его <a href="https://aion2t.com/ru/simulator?job=4&amp;b=8QbCF0" target="_blank" rel="noopener">билд 45+ на aion2t</a> — прежний глобальный билд (уровни скиллов, прокачка)</li>
+    <li><a href="https://www.youtube.com/watch?v=wKOm6yKuu_I" target="_blank" rel="noopener">Whelps — гайд на Стрелка AION 2</a> и его <a href="https://questlog.gg/aion-2/en/character-builder/AelonCommandAndTheSharpMerchant?build-id=8655" target="_blank" rel="noopener">PvE-билд на эндгейм 1 сезона на questlog</a> — билд, которому следует гайд (скиллы, стигмы, макрос, экипировка, арканы)</li>
+    <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener">TitanTheF — таблица прогрессии AION 2</a> (вкладка «Стрелок») и его <a href="https://aion2t.com/ru/simulator?job=4&amp;b=8QbCF0" target="_blank" rel="noopener">билд 45+ на aion2t</a> — прежний глобальный билд (уровни скиллов, прокачка)</li>
     <li><a href="https://questlog.gg/aion-2/ru/db/skills/ranger" target="_blank" rel="noopener">questlog.gg</a> — данные скиллов и стигм из глобального клиента</li>
     <li><a href="https://7mmo.com/threads/guide-ranger-aion-2-build-pve-complet-sorts-stigmas-stuff.5771/" target="_blank" rel="noopener">7MMO</a> — полный корейский PvE-билд (скиллы, стигмы, макрос)</li>
     <li><a href="https://vortexgaming.io/postdetail/722757" target="_blank" rel="noopener">Vortex Gaming</a> — корейская сборка стигм после патча</li>
@@ -211,6 +211,8 @@
     <li>Галерея AION 2 на DCInside — посты корейских игроков о текущей мете и стигмах (анонимные авторы, отдельной ссылки нет)</li>
     <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (таблица TitanTheF) — маршрут прокачки</li>
     <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — как работают линии и встроенный макрос</li>
+    <li><a href="https://www.youtube.com/watch?v=UOuiJT9E1xA" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Ranger PVE Build for Global</a> — ранние специализации, {{ s('explosive-arrow', False) }} вместо {{ s('griffon-arrow', False) }}, связка {{ s('marking-shot', False) }} → {{ s('gale-arrow', False) }} → {{ s('deadshot', False) }}</li>
+    <li><a href="https://www.youtube.com/watch?v=fGABxC3QKd8" target="_blank" rel="noopener">LordRobson — Aion 2 Ranger - Build, Skills, Stigmas and Macros</a> — подтверждает стигмы (четвёртая — {{ s('griffon-arrow', False) }} или {{ s('explosive-arrow', False) }}), {{ s('deadshot', False) }} до 16 первым, длительность {{ s('marking-shot', False) }}</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>

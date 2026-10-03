@@ -20,7 +20,7 @@
     {"id": "sorcerer-stigmas", "order": 221, "skills": ["element-enhancement", "fire-wall", "cold-storm", "steel-barrier"],
      "when": {"en": "Lv ~22", "ru": "~Ур. 22", "uk": "~Рів. 22"},
      "text": {"en": "Stigmas: [[element-enhancement]] first, then [[fire-wall]] and [[cold-storm]] for packs. Keep [[steel-barrier]] while leveling solo — the Sorcerer is fragile.",
-              "ru": "Стигмы: сначала [[element-enhancement]], затем [[fire-wall]] и [[cold-storm]] для пачек. На соло-прокачке держи [[steel-barrier]] — Волшебник хрупкий.", "uk": "Стигми: спершу [[element-enhancement]], потім [[fire-wall]] і [[cold-storm]] для пачок. На соло-прокачці тримай [[steel-barrier]] — Чарівник крихкий."}},
+              "ru": "Стигмы: сначала [[element-enhancement]], затем [[fire-wall]] и [[cold-storm]] для пачек. На соло-прокачке держи [[steel-barrier]] — Волшебник хрупкий.", "uk": "Стигми: спершу [[element-enhancement]], потім [[fire-wall]] і [[cold-storm]] для пачок. На соло-прокачці тримай [[steel-barrier]] — Sorcerer крихкий."}},
     {"id": "sorcerer-cap", "order": 455, "skills": ["blaze", "firestorm", "hellfire"],
      "when": {"en": "Cap", "ru": "Кап", "uk": "Кап"},
      "text": {"en": "At the cap swap Steel Barrier for [[delayed-explosion]] in groups and push [[blaze]], [[firestorm]], [[hellfire]] toward 16+ — see the PvE tab.",

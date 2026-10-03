@@ -3,7 +3,7 @@
 {# ============================== PvE ============================== #}
 {% call glance('pve') %}
   <h3>{{ t.core_skills }}</h3>
-  {{ core([('blaze', '16'), ('bittercold-wind', '16'), ('ice-chain', '16'), ('flame-arrow', '16'), ('wish-of-concentration', '16')]) }}
+  {{ core([('hellfire', '16'), ('firestorm', '16'), ('bittercold-wind', '16'), ('blaze', '16'), ('wish-of-concentration', '16')]) }}
   <h3>{{ t.stigma_loadout }}</h3>
   {{ loadout([('element-enhancement', 20), ('cold-storm', 10), ('fire-wall', 10), ('delayed-explosion', 10)]) }}
   <h3>{{ t.key_passives }}</h3>
@@ -11,20 +11,20 @@
 {% endcall %}
 
 {% call section('intro', 'Огляд', 'pve') %}
-  <p>Чарівник — крихка гармата на дальній дистанції, що кастує і вогонь, і лід. Вогонь дає шкоду — {{ s('fire-mark') }} мітить ціль, а {{ s('blaze') }} її реалізує, — а лід сповільнює, прикорінює й заморожує, щоб до тебе ніхто не дійшов. Половина твоїх бонусів до шкоди залежить від мани: вище 50% MP ти частіше критуєш, вище 25% — завдаєш на 20% більше шкоди.</p>
+  <p>Sorcerer — крихка гармата на дальній дистанції, що кастує і вогонь, і лід. Вогонь дає шкоду — {{ s('fire-mark') }} мітить ціль, а {{ s('blaze') }} її реалізує, — а лід сповільнює, прикорінює й заморожує, щоб до тебе ніхто не дійшов. Половина твоїх бонусів до шкоди залежить від мани: вище 50% MP ти частіше критуєш, вище 25% — завдаєш на 20% більше шкоди.</p>
   <div class="callout accent">
     <h3>Білд одним реченням</h3>
     <p>Тримай один макрос, який підтримує {{ s('element-enhancement') }} і {{ s('wish-of-concentration') }} та чергує {{ s('flame-arrow') }} з вогняною й крижаною лініями, щоб MP не падала нижче половини; {{ s('hellfire') }} кастуй вручну.</p>
   </div>
   <div class="callout"><ul>
     <li><strong>Грай у режимі з таргетом.</strong> Із закріпленою ціллю базова атака {{ s('flame-arrow') }} сама продовжує стріляти після кожного скіла й відновлює MP. В action-режимі вона зупиняється після кожного скіла, і доводиться клацати знову.</li>
-    <li><strong>Два етапи.</strong> У перші дні на 45 твої скіли на 8–10 з однією спеціалізацією кожен — бери спеціалізації на ману й швидкість, названі в картках. Рівні в картках і дві виділені спеціалізації — пізніша мета (16), з корейських гайдів.</li>
+    <li><strong>Два етапи.</strong> У перші дні на 45 скіли стоять на 8–10 з однією спеціалізацією — бери спеціалізації на ману й швидкість, названі в картках. Рівні в картках і дві виділені спеціалізації — ціль на потім (16), за глобальним налаштуванням EUTOPIA і корейськими гайдами.</li>
   </ul></div>
-  <p class="note">Стартове налаштування й макрос — за гайдом для новачків aLuckyRO по Чарівнику (відео, 15 вересня, свіжий персонаж 45 рівня на тайванському клієнті), прочитаним кадр за кадром; цілі на 16 рівень — за корейськими гайдами Vortex Gaming і MMO Codex. Назви й дані скілів — з глобального клієнта.</p>
+  <p class="note">Стартове налаштування й макрос — за гайдом aLuckyRO для початківців (відео, 15 вересня, тайванський клієнт) і його глобальним оновленням від 2 жовтня; пріоритет скілів і спеціалізації на 16 — за глобальним білдом EUTOPIA (45 рівень, рівень предметів 1 260, 3 жовтня), який у своїх групах у топі за шкодою. Назви й дані скілів — з глобального клієнта.</p>
 {% endcall %}
 
 {% call section('global', 'Глобальний 1 сезон: що змінюється', 'pve pvp') %}
-  <p>Глобальні сервери відкриваються <strong>5 жовтня 2026</strong> (ранній доступ Founder's — з 30 вересня). Що це означає для Чарівника:</p>
+  <p>Глобальні сервери відкриваються <strong>5 жовтня 2026</strong> (ранній доступ Founder's — з 30 вересня). Що це означає для Sorcerer:</p>
   <div class="callout">
     <ul>
       <li><strong>4 слоти стигм, максимум 20.</strong> На Тайвані й у Кореї грають із шістьма; тут лишено ті чотири, які обидва джерела качають першими.</li>
@@ -36,20 +36,20 @@
 {% endcall %}
 
 {% call section('skills', 'Скіли', 'pve') %}
-  <p>Пізніше шість скілів ідуть до <strong>16</strong>, решта лишаються на <strong>12</strong>. У кожній картці написано, яку одну спеціалізацію брати, поки скіл ще на 8–10.</p>
+  <p>Пізніше сім скілів ідуть до <strong>16</strong> — першим {{ s('hellfire') }}, — решта лишається на <strong>12</strong> або йде з панелі. У кожній картці сказано, яку одну спеціалізацію брати, поки скіл ще на 8–10.</p>
   <ul class="skill-grid">
-    {% call skill('flame-arrow', 'must', '16', [3, 4]) %}Базова атака й твій двигун мани. Перші дні: +20% відновлення MP. На 12 сама накладає Fire Mark, на 16 скидає Blaze.{% endcall %}
-    {% call skill('blaze', 'must', '16', [3, 4]) %}Головна шкода по цілі з Fire Mark; відновлює MP. Перші дні: поглинання HP — ти крихкий, а це економить зілля. На 16 кожне влучання скорочує Wish of Concentration.{% endcall %}
-    {% call skill('ice-chain', 'must', '16', [3, 4]) %}Водний філер без перезарядки, що сповільнює (Cold Snap спрацьовує на сповільнених цілях). Перші дні: +20% швидкості скілів — каст повільний; перемкнися на −20% MP, коли буде швидкість касту зі спорядження.{% endcall %}
-    {% call skill('bittercold-wind', 'must', '16', [3, 4]) %}Поле, що прикорінює; гарантований крит на 12, а на 16 скорочує Frost. Перші дні: +1 с тривалості.{% endcall %}
-    {% call skill('winters-shackles', 'must', '16', [2, 4]) %}+20% до шкоди в PvE на 5 с після влучання — заради цього його й качають. Із −15 с перезарядки на 16.{% endcall %}
-    {% call skill('wish-of-concentration', 'must', '16', [1, 4]) %}+атака й точність; із +10% додаткової атаки це 20% атаки приблизно на 14 секунд. На 16 скорочує всі перезарядки на 10 с.{% endcall %}
-    {% call skill('hellfire', 'opt', '12', [0, 3]) %}Твій найбільший удар, заряджається й кастується вручну. +30% швидкості скілів для зачистки; на фінальному босі міняй на шкоду з часом.{% endcall %}
-    {% call skill('firestorm', 'opt', '12', [0, 3]) %}Перезарядка 5 с і велика витрата мани — спершу бери −50% вартості MP; на 12 кожна вогняна куля скорочує перезарядку Hellfire.{% endcall %}
-    {% call skill('frost', 'opt', '12', [0, 2]) %}АоЕ Frost. Відновлює 200 MP — майже обов'язково, поки мани мало; влучання скидає Frost Burst.{% endcall %}
-    {% call skill('frost-burst', 'opt', '12', [1, 3]) %}Лише по заморожених цілях; на 12 критує. Найнижчий пріоритет для очок навичок.{% endcall %}
-    {% call skill('flame-scattershot', 'opt', '12', [2, 3]) %}Лише по оглушених цілях, тож може стояти в макросі. Бери спеціалізацію на рух.{% endcall %}
-    {% call skill('defiance', 'opt', '12', [2, 3]) %}Зняття контролю; 20% HP назад, коли вирвався.{% endcall %}
+    {% call skill('hellfire', 'must', '16', [0, 4]) %}Твій найбільший удар і центр білда — пріоритет номер один у EUTOPIA. Заряджай повністю й кастуй вручну. До 16: +30% швидкості умінь і шкода вогнем з часом (aLuckyRO); на 16 міняй шкоду з часом на −15 с перезарядки. Третій слот на 20 — мультиудар крізь блок і ухилення.{% endcall %}
+    {% call skill('firestorm', 'must', '16', [0, 3]) %}Перезарядка 5 с і велика витрата мани — спершу бери −50% витрат MP. На 12 кожна вогняна куля знімає 2 с з Hellfire, тож вони працюють у парі. На 20 додай +15% шкоди за кулю.{% endcall %}
+    {% call skill('bittercold-wind', 'must', '16', [0, 3]) %}Поле, що прикорінює: +1 с тривалості, а на 12 — гарантований крит крізь блок і ухилення (EUTOPIA). Спеціалізація на 16 лише скорочує Frost — пропусти її, коли Frost на панелі немає.{% endcall %}
+    {% call skill('blaze', 'must', '16', [2, 3]) %}Головна шкода по цілі з Fire Mark, відновлює ману. У групі — відкладена шкода й мультиудар; соло на важкому босі міняй відкладену шкоду на поглинання HP (aLuckyRO). На 20 додай скорочення Wish of Concentration.{% endcall %}
+    {% call skill('wish-of-concentration', 'must', '16', [1, 3]) %}+10% додаткової атаки й +10% швидкості бою — обидва джерела беруть саме ці дві. На 20 додай −10 с до всіх перезарядок.{% endcall %}
+    {% call skill('winters-shackles', 'must', '16', [2, 4]) %}+20% до шкоди в PvE на 5 с при влучанні — заради цього його й качають. На 16 — ще −15 с перезарядки; EUTOPIA замість неї бере ланцюжок.{% endcall %}
+    {% call skill('flame-arrow', 'must', '16', [3, 4]) %}Базова атака й твоє джерело мани. Перші дні: +20% відновлення MP; коли мани вистачає — +50% мультиудару. На 12 сама вішає Fire Mark, на 16 скидає Blaze.{% endcall %}
+    {% call skill('ice-chain', 'opt', '12', [1, 3]) %}EUTOPIA прибирає з панелі Ice Chain, Frost і Frost Burst: їх довго вплітати, а шкоди вони дають мало. aLuckyRO тримає Ice Chain на 12 — кожне влучання знімає 1 с з Winter's Shackles. +20% швидкості умінь або −20% мани, якщо її бракує.{% endcall %}
+    {% call skill('flame-scattershot', 'opt', '12', [2, 3]) %}Лише по приголомшених цілях, тож може стояти в макросі. Бери спеціалізацію «в русі», а на 12 — мультиудар.{% endcall %}
+    {% call skill('frost', 'opt', 'прокачка', [0, 2]) %}Відновлює 200 MP — корисно, поки качаєшся й мани мало; у глобальному налаштуванні ендгейму йде з панелі.{% endcall %}
+    {% call skill('defiance', 'opt', '12', [2, 3]) %}Зняття контролю; повертає 20% HP.{% endcall %}
+    {% call skill('frost-burst', 'skip', 'пропуск') %}Лише по заморожених цілях. До глобального налаштування не входить.{% endcall %}
   </ul>
 {% endcall %}
 
@@ -80,8 +80,8 @@
 {% call section('daevanion', 'Дошки Daevanion', 'pve pvp') %}
   <p>Daevanion піднімає твої скіли з 10 до 14 і додає статі. Кожен синій вузол дає <strong>+1 рівень</strong> своєму скілу.</p>
   <div class="callout"><ul>
-    <li data-only="pve"><strong>Пріоритет:</strong> помаранчеві швидкість бою й скорочення перезарядок, потім атака й бонус до шкоди, потім бонус до крит. шкоди; після цього сині вузли {{ s('blaze') }}, {{ s('bittercold-wind') }}, {{ s('ice-chain') }}, {{ s('hellfire') }} і зелений {{ s('robe-of-earth') }}.</li>
-    <li data-only="pve"><strong>Пропускай</strong> мультиудар і захисні помаранчеві вузли — Чарівнику потрібна чиста шкода; точність добереш пізніше.</li>
+    <li data-only="pve"><strong>Пріоритет:</strong> помаранчеві вузли швидкості бою й скорочення перезарядки, потім атака й збільшення шкоди, потім крит. шкода; після цього сині вузли {{ s('hellfire') }}, {{ s('firestorm') }}, {{ s('bittercold-wind') }}, {{ s('blaze') }}, {{ s('wish-of-concentration') }} і зелена {{ s('robe-of-earth') }}.</li>
+    <li data-only="pve"><strong>Пропускай</strong> мультиудар і захисні помаранчеві вузли — Sorcerer потрібна чиста шкода; точність добереш пізніше.</li>
     <li data-only="pvp"><strong>Пріоритет:</strong> сині вузли {{ s('frost') }}, {{ s('winters-shackles') }}, {{ s('firestorm') }}.</li>
     <li data-only="pve"><strong>На глобалі немає Ariel:</strong> дошок п'ять, і дошка 45 рівня, Azphel, дає лише шкоду й стійкість у PvP — у PvE закривай перші чотири.</li>
     <li data-only="pvp"><strong>Azphel</strong> (45 рівень) — суцільно шкода й стійкість у PvP: бери його.</li>
@@ -112,9 +112,9 @@
     {% call skill('delayed-explosion', 'must', 'Рів. 10', upto=10) %}Ціль отримує +15% шкоди від тебе на 4 с; рівень 10 скорочує перезарядку. Спершу вистачить одного очка.{% endcall %}
     {% call skill('glacial-smite', 'opt', 'альт.', upto=10) %}Великий миттєвий АоЕ-удар, сильніший по пачках; заміна Cold Storm на коротких боях і фармі.{% endcall %}
     {% call skill('divine-burst', 'opt', 'альт.', upto=10) %}Удар, що відкидає тебе від цілі, з поглинанням HP на 10 — інструмент безпеки, коли є зайві уламки.{% endcall %}
-    {% call skill('steel-barrier', 'opt', 'прокачка', upto=10) %}Щит на 16% максимуму HP — тримай на соло-прокачці.{% endcall %}
+    {% call skill('steel-barrier', 'opt', 'альт.', upto=10) %}Щит на 16% від макс. HP — тримай, поки качаєшся соло, і став замість Cold Storm на босі, який тебе вбиває (EUTOPIA).{% endcall %}
   </ul>
-  <p class="note">Тайванське налаштування aLuckyRO має шість стигм: ці чотири плюс Glacial Smite і Divine Burst. На глобалі слотів чотири.</p>
+  <p class="note">Тайванське налаштування aLuckyRO має шість стигм: ці чотири плюс Glacial Smite і Divine Burst. EUTOPIA на глобалі грає саме з цими чотирма; Divine Burst він ставить, коли група не добиває шкалу приголомшення.</p>
 {% endcall %}
 
 {% call section('macro', 'Макрос і ротація', 'pve') %}
@@ -126,10 +126,10 @@
 
   <h3>1. Лінії на кнопках</h3>
   <div class="hotlines">
-    {% call hotline('4', 'Лінія бафів', ['element-enhancement', 'bittercold-wind', 'delayed-explosion', 'frost-burst']) %}Element Enhancement спрацьовує щоразу, коли готовий; потім поле, що прикорінює, і дебаф +15% шкоди.{% endcall %}
+    {% call hotline('4', 'Лінія бафів', ['element-enhancement', 'bittercold-wind', 'delayed-explosion']) %}Element Enhancement спрацьовує, щойно готовий; далі поле, що прикорінює, і дебаф на +15% шкоди.{% endcall %}
     {% call hotline('5', 'Лінія Concentration', ['wish-of-concentration', 'cold-storm', 'fire-wall']) %}Спершу другий баф, потім обидва поля під ціль.{% endcall %}
     {% call hotline('1', 'Вогняна лінія', ['blaze', 'firestorm']) %}Blaze щоразу, коли на цілі Fire Mark, Firestorm — за 5-секундною перезарядкою.{% endcall %}
-    {% call hotline('T', 'Крижана лінія', ['winters-shackles', 'frost', 'ice-chain']) %}Winter's Shackles заради бафу шкоди, Frost заради мани, Ice Chain заповнює решту.{% endcall %}
+    {% call hotline('T', 'Крижана лінія', ['winters-shackles', 'ice-chain']) %}Winter's Shackles заради бафу шкоди; решту часу — Ice Chain, якщо ти його лишив. Без нього в лінії сам Winter's Shackles.{% endcall %}
   </div>
   <p>{{ s('flame-arrow') }} стоїть окремо на <span class="key">R</span>, {{ s('hellfire') }} — на <span class="key">2</span>, {{ s('flame-scattershot') }} — на <span class="key">3</span>.</p>
 
@@ -141,7 +141,7 @@
     <li><strong>Як перевірити:</strong> дивись на персонажа, поки працює макрос. Залишкові образи («тіні») за ним означають, що анімації скасовуються і затримка правильна.</li>
     <li><strong>Навіщо дві Flame Arrow:</strong> вони поповнюють ману між дорогими скілами, тож MP тримається вище 50% і обидві пасивки на ману лишаються ввімкненими.</li>
   </ul>
-  <p class="note">Перші шість кроків прочитано з вікна макросу у відео. Flame Scattershot сьомим — зі слів aLuckyRO (він сам спрацьовує на оглушеному босі); на екрані цього кроку не видно.</p>
+  <p class="note">Кроки взято з вікна макросу aLuckyRO (15 вересня, тайванський клієнт); Frost і Frost Burst прибрано за глобальним налаштуванням EUTOPIA. Flame Scattershot останнім кроком — зі слів aLuckyRO (він сам спрацьовує по приголомшеному босу).</p>
 
   <h3>3. Що ти насправді тиснеш</h3>
   <ul class="presslist">
@@ -164,7 +164,7 @@
 {% call section('recap', 'Підсумок', 'pve') %}
   <div class="callout accent"><ul>
     <li><strong>Перші дні:</strong> скіли на 8–10 зі спеціалізаціями на ману й швидкість; один макрос із бафами всередині; режим із таргетом.</li>
-    <li><strong>Пізніше:</strong> Blaze, Flame Arrow, Bittercold Wind, Ice Chain, Winter's Shackles, Wish of Concentration на 16; решта 12.</li>
+    <li><strong>Пізніше:</strong> Hellfire, Firestorm, Bittercold Wind, Blaze, Wish of Concentration, Winter's Shackles, Flame Arrow — 16; Ice Chain 12 або поза панеллю.</li>
     <li><strong>Стигми:</strong> Element Enhancement 20, Cold Storm 10, Fire Wall 10, Delayed Explosion 10.</li>
     <li><strong>Мана:</strong> тримай вище 50% — це шкода, а не комфорт.</li>
   </ul></div>
@@ -176,7 +176,7 @@
     <li><strong>Пачки:</strong> {{ s('bittercold-wind') }} (прикорінення + стягування) → {{ s('hellfire') }} → {{ s('ice-chain') }}, поки не впадуть.</li>
     <li><strong>Елітки:</strong> {{ s('flame-arrow') }} заради Fire Mark → {{ s('blaze') }} → {{ s('firestorm') }}, кайтячи зі сповільненням від {{ s('ice-chain') }}.</li>
     <li><strong>Мана:</strong> грай у режимі з таргетом, щоб базова атака не переривалася, і вплітай Flame Arrow.</li>
-    <li><strong>Мало HP:</strong> {{ s('steel-barrier') }} і дистанція — у Чарівника немає лікування.</li>
+    <li><strong>Мало HP:</strong> {{ s('steel-barrier') }} і дистанція — у Sorcerer немає лікування.</li>
   </ul></div>
 {% endcall %}
 
@@ -193,8 +193,10 @@
   <h2 id="h-sources">{{ t.sources }}</h2>
   <ul>
     <li><a href="https://www.youtube.com/watch?v=s-pYR_fmMDk" target="_blank" rel="noopener">aLuckyRO — AION 2 Sorcerer Guide For Skills &amp; Stigmas | Macros &amp; Daevanion Setup</a> — стартове налаштування на 45: перші спеціалізації, лінії на кнопках і макрос, контроль мани, режим таргета, порядок Daevanion</li>
-    <li><a href="https://vortexgaming.io/en/postdetail/724101" target="_blank" rel="noopener">Vortex Gaming — PvE-гайд по Чарівнику після балансного патча</a> — рівні скілів, спеціалізації, стигми, початок бою й макрос (корейські сервери)</li>
-    <li><a href="https://mmo-codex.com/articles/aion-2-sorcerer-guide/" target="_blank" rel="noopener">MMO Codex — гайд по Чарівнику Aion 2</a> — пріоритет стигм, порядок макросу, прокачка в режимі з таргетом</li>
+    <li><a href="https://www.youtube.com/watch?v=fsS86mITLsk" target="_blank" rel="noopener">EUTOPIA — AION 2 Sorcerer Build Guide - Best PvE Skills, Macro &amp; Rotation</a> — налаштування 45 рівня на глобалі: пріоритет скілів (Hellfire першим), спеціалізації, стигми та їхні заміни, порядок Daevanion</li>
+    <li><a href="https://www.youtube.com/watch?v=C6-9zLLRiDE" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Sorcerer PVE Build for Global</a> — ранні спеціалізації, зв'язки Firestorm → Hellfire та Ice Chain → Winter's Shackles, порядок стигм</li>
+    <li><a href="https://vortexgaming.io/en/postdetail/724101" target="_blank" rel="noopener">Vortex Gaming — PvE-гайд по Sorcerer після балансного патча</a> — рівні скілів, спеціалізації, стигми, початок бою й макрос (корейські сервери)</li>
+    <li><a href="https://mmo-codex.com/articles/aion-2-sorcerer-guide/" target="_blank" rel="noopener">MMO Codex — гайд по Sorcerer Aion 2</a> — пріоритет стигм, порядок макросу, прокачка в режимі з таргетом</li>
     <li><a href="https://questlog.gg/aion-2/en/db/skills/sorcerer" target="_blank" rel="noopener">questlog.gg</a> — дані й назви скілів із глобального клієнта</li>
     <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — як працюють лінії на кнопках і вбудований макрос</li>
   </ul>

@@ -22,10 +22,14 @@
     "pvp": {"4": {"special": true}, "*": {"skills": ["impactful-crush", "wave-blow", "defiance"], "special": true}}
   },
   "sorcerer": {
-    "pve": {"4": null, "*": {"skills": ["blaze", "bittercold-wind", "ice-chain", "hellfire", "robe-of-earth"], "special": ["combatspeed", "cooltimedecrease", "amplifyalldamage", "amplifycriticaldamage"]}},
+    "pve": {"4": null, "*": {"skills": ["hellfire", "firestorm", "bittercold-wind", "blaze", "wish-of-concentration", "robe-of-earth"], "special": ["combatspeed", "cooltimedecrease", "amplifyalldamage", "amplifycriticaldamage"]}},
     "pvp": {"4": {"special": true}, "*": {"skills": ["frost", "winters-shackles", "firestorm"], "special": true}}
   },
   "cleric": {
     "pve": {"4": null, "*": {"skills": ["condemnation", "divine-aura", "bolt"], "special": ["combatspeed", "cooltimedecrease", "amplifyalldamage", "amplifycriticaldamage", "additionalhitrate", "decreasedamage"]}}
+  },
+  "elementalist": {
+    "pve": {"4": null, "*": {"skills": ["elemental-fusion", "combustion", "summon-fire-spirit", "cold-shock", "summon-water-spirit", "mental-focus", "spirit-strike"], "special": ["combatspeed", "cooltimedecrease", "amplifyalldamage", "amplifycriticaldamage"]}},
+    "pvp": {"4": {"special": true}, "*": {"skills": ["defiance", "cold-shock", "elemental-fusion", "jointstrike-curse", "combustion"], "special": true}}
   }
 }

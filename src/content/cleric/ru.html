@@ -38,7 +38,7 @@
   <p>Почти всё уходит в урон. Из лечения важны два скилла на 16: Целительный свет и Свет исцеления.</p>
   <ul class="skill-grid">
     {% call skill('condemnation', 'must', '16 → 20', [1, 3]) %}Самый важный скилл на панели: +12% по одной цели и сброс перезарядки при крите. На 20 добавь ману, если её не хватает, иначе мультиудар.{% endcall %}
-    {% call skill('divine-aura', 'must', '16 → 20', [3, 4]) %}Недооценённый: бьёт параллельно с тобой, поэтому чем дольше стоит — тем лучше. На 16 бери +3 сек. и −10 сек. перезарядки, на 20 добавь скорость атаки ауры.{% endcall %}
+    {% call skill('divine-aura', 'must', '16 → 20', [3, 4]) %}Недооценённый: бьёт параллельно с тобой, поэтому чем дольше стоит — тем лучше. На 16 бери +3 сек. и −10 сек. перезарядки, на 20 добавь скорость атаки ауры. На фарме aLuckyRO берёт АоЕ-специализацию (до четырёх мобов) вместо +3 сек.{% endcall %}
     {% call skill('bolt', 'must', '16 → 20', [2, 3]) %}Самый сильный удар. Заряжай на максимум. +30% скорости умения, +20% урона по одной цели; на 20 добавь гарантированный крит.{% endcall %}
     {% call skill('judgment-thunder', 'must', '16', [1, 4]) %}Постоянный урон и отмена анимаций; специализация на Божественную кару примерно удваивает урон. На 20 добавь −20% маны.{% endcall %}
     {% call skill('lightning-strike-scattershot', 'must', '16', [3, 4]) %}Только во время ошеломления, но каждый удар сокращает все перезарядки на 1 сек.{% endcall %}
@@ -60,6 +60,7 @@
     <li>{{ s('radiant-benediction') }} — лечит союзников рядом при атаках; бери, если уходишь целиком в урон.</li>
     <li>{{ s('warm-benediction') }} и {{ s('immortal-veil') }} — неплохо иметь; {{ s('empyrean-lords-benediction') }} — для PvP.</li>
   </ul></div>
+  <p class="note">Первые дни (aLuckyRO): сначала качай {{ s('radiant-benediction') }} — она лечит всю группу каждые несколько секунд, пока та бьёт, — и {{ s('healing-enhancement') }}. Пассивки на крит окупаются, только когда экипировка даёт шанс крита; до этого ты почти не критуешь.</p>
 {% endcall %}
 
 {% call section('gear', 'Экипировка и статы', 'pve') %}
@@ -206,6 +207,7 @@
     <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — слайд со стартовыми макросами (линия и макрос Целителя)</li>
     <li><a href="https://mmo-codex.com/articles/aion-2-cleric-guide/" target="_blank" rel="noopener">MMO Codex — гайд на Целителя Aion 2</a> — порядок скиллов и специализации на прокачке, стигмы на 22</li>
     <li><a href="https://questlog.gg/aion-2/en/db/skills/cleric" target="_blank" rel="noopener">questlog.gg</a> — данные скиллов из глобального клиента</li>
+    <li><a href="https://www.youtube.com/watch?v=A3pZDSt4ceU" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Cleric PVE Build for Global</a> — ранние специализации (Священная аура для фарма и боссов, мана на базовой атаке), замены стигм для подземелий, связка {{ s('chain-of-torment', False) }} → {{ s('condemnation', False) }}, пассивки на старт</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>

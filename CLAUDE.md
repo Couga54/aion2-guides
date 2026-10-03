@@ -26,7 +26,7 @@ Read `CONTEXT.md` first — it has the user's requirements, verified game facts 
 - Launch day (Oct 5): work through `LAUNCH.md` — every value that must be checked against the live servers.
 - Do not push without the user's explicit go-ahead; they check locally first.
 - Every guide text exists in `src/content/<class>/en.html`, `ru.html` and `uk.html` — change all three; every `{"en", "ru"}` string in
-  `data/` has a `"uk"` too, and `data/i18n.json` has a `uk` block. Ukrainian pages use **English** names for everything from the game data (skills, items, sets, bosses, zones, boards, stats in tooltips) —
+  `data/` has a `"uk"` too, and `data/i18n.json` has a `uk` block. Ukrainian pages use **English** names for everything from the game data (classes, skills, items, sets, bosses, zones, boards, stats in tooltips) —
   questlog.gg has no Ukrainian; the build copies the English game data under `uk` (`DATA_LANG` in `tools/build.py`). In `uk.html` and in `"uk"` data
   strings write skill and game names in English (as the EN text does), the rest in Ukrainian.
 - Skill cards (`{% call skill('slug', kind, 'level', [picks]) %}`): a skill has 1 specialization slot from level 8, 2 from 12 and 3 only

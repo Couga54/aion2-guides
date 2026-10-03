@@ -2,6 +2,43 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-10-03-elementalist",
+      "date": "2026-10-03",
+      "items": [
+        {
+          "en": "<strong>Elementalist: PvE and PvP</strong> — the class now has full PvE and PvP modes for Season 1, built on Evripides' global Spirit Master guide (aion2sm.com) and checked against DankRNG and aLuckyRO: skills and specializations, stigmas, passives, the buff-before-summon rule, rotation, macro, matchups and the Daevanion route.",
+          "ru": "<strong>Заклинатель: PvE и PvP</strong> — у класса теперь полноценные режимы PvE и PvP для 1 сезона по глобальному гайду Evripides (aion2sm.com), сверенные с DankRNG и aLuckyRO: скиллы и специализации, стигмы, пассивки, правило «баффы до призыва», ротация, макрос, матчапы и маршрут Daevanion.",
+          "uk": "<strong>Elementalist: PvE і PvP</strong> — клас тепер має повноцінні режими PvE і PvP для 1 сезону за глобальним гайдом Evripides (aion2sm.com), звірені з DankRNG і aLuckyRO: скіли й спеціалізації, стигми, пасивки, правило «бафи до виклику», ротація, макрос, матчапи й маршрут Daevanion."
+        }
+      ]
+    },
+    {
+      "id": "2026-10-03-global-guides",
+      "date": "2026-10-03",
+      "items": [
+        {
+          "en": "<strong>Sorcerer</strong> — skill priority rebuilt on a global level-45 Sorcerer (EUTOPIA): Hellfire and Firestorm are now core, Ice Chain is optional, Frost and Frost Burst leave the bar.",
+          "ru": "<strong>Волшебник</strong> — приоритет скиллов пересобран по Волшебнику 45 уровня на глобале (EUTOPIA): Адское пламя и Огненный гарпун теперь основа, Ледяная цепь — по желанию, Заморозка и Замораживающий взрыв уходят с панели.",
+          "uk": "<strong>Sorcerer</strong> — пріоритет скілів перезібрано за Sorcerer 45 рівня на глобалі (EUTOPIA): Hellfire і Firestorm тепер основа, Ice Chain — за бажанням, Frost і Frost Burst ідуть з панелі."
+        },
+        {
+          "en": "<strong>Chanter</strong> — from two Chanter mains on global (notXeon, WallyJTV): Recuperation 12 is enough, Power of the Storm is a core stigma, Inspiring Spell moves up, plus a macro tip for before Dark Crush 16.",
+          "ru": "<strong>Чародей</strong> — по двум мейнам класса на глобале (notXeon, WallyJTV): Заклинания выздоровления на 12 хватает, Повелитель бурь — основная стигма, Заклинание воодушевления выше в приоритете, и совет по макросу до Удара скалы 16.",
+          "uk": "<strong>Chanter</strong> — за двома мейнами класу на глобалі (notXeon, WallyJTV): Recuperation на 12 досить, Power of the Storm — основна стигма, Inspiring Spell вище в пріоритеті, і порада щодо макросу до Dark Crush 16."
+        },
+        {
+          "en": "<strong>Gladiator, Ranger, Templar, Assassin, Cleric</strong> — checked against the first global guides (aLuckyRO, Sen, LordRobson, trueeevil): day-one picks and alternatives added — Keen Strike and Aerial Snare on bosses, Explosive Arrow as an equal fourth stigma, Executing Blade for solo Templars, Determination over Impact Hit, early Cleric passives.",
+          "ru": "<strong>Гладиатор, Стрелок, Страж, Убийца, Целитель</strong> — сверены с первыми глобальными гайдами (aLuckyRO, Sen, LordRobson, trueeevil): добавлены варианты на первые дни и альтернативы — Точный удар и Воздушные путы на боссах, Взрывная стрела как равноценная четвёртая стигма, Меч наказания для соло-Стража, Готовность вместо Попадания шоком, пассивки Целителя на старт.",
+          "uk": "<strong>Gladiator, Ranger, Templar, Assassin, Cleric</strong> — звірено з першими глобальними гайдами (aLuckyRO, Sen, LordRobson, trueeevil): додано варіанти на перші дні й альтернативи — Keen Strike і Aerial Snare на босах, Explosive Arrow як рівноцінна четверта стигма, Executing Blade для соло-Стража, Determination замість Impact Hit, пасивки Cleric на старт."
+        },
+        {
+          "en": "<strong>Leveling checklist</strong> — the stigma slots open one at a time at levels 22, 27, 32 and 37.",
+          "ru": "<strong>Чек-лист прокачки</strong> — слоты стигм открываются по одному на уровнях 22, 27, 32 и 37.",
+          "uk": "<strong>Чек-лист прокачки</strong> — слоти стигм відкриваються по одному на рівнях 22, 27, 32 і 37."
+        }
+      ]
+    },
+    {
       "id": "2026-10-01-uk",
       "date": "2026-10-01",
       "items": [
@@ -30,7 +67,7 @@
         {
           "href": "sorcerer/",
           "en": "<strong>Sorcerer PvE rewritten</strong> — a setup for the first days at 45 from aLuckyRO's video: which specialization to take at skill level 8–10, four hotbar lines and one macro that keeps mana above 50%, target mode, Daevanion order. The guide is no longer marked as work in progress.",
-          "ru": "<strong>PvE Волшебника переписан</strong> — настройка на первые дни на 45 по видео aLuckyRO: какую специализацию брать на 8–10 уровне скилла, четыре линии на кнопках и один макрос, который держит ману выше 50%, режим таргета, порядок Daevanion. С гайда снята пометка «в работе».", "uk": "<strong>PvE Чарівника переписано</strong> — налаштування на перші дні на 45 за відео aLuckyRO: яку спеціалізацію брати на 8–10 рівні скіла, чотири лінії на кнопках і один макрос, що тримає ману вище 50%, режим таргета, порядок Daevanion. З гайда знято позначку «в роботі»."
+          "ru": "<strong>PvE Волшебника переписан</strong> — настройка на первые дни на 45 по видео aLuckyRO: какую специализацию брать на 8–10 уровне скилла, четыре линии на кнопках и один макрос, который держит ману выше 50%, режим таргета, порядок Daevanion. С гайда снята пометка «в работе».", "uk": "<strong>PvE Sorcerer переписано</strong> — налаштування на перші дні на 45 за відео aLuckyRO: яку спеціалізацію брати на 8–10 рівні скіла, чотири лінії на кнопках і один макрос, що тримає ману вище 50%, режим таргета, порядок Daevanion. З гайда знято позначку «в роботі»."
         },
         {
           "en": "<strong>Where the builds come from</strong> — the Overview of every class guide now says it plainly: the guides are based on creators' videos from the Taiwanese servers (patch: TW), cut down to global Season 1. The “work in progress” marks are gone from all guides.",
@@ -45,12 +82,12 @@
         {
           "href": "assassin/",
           "en": "<strong>Assassin PvE rebuilt on Arthars Gaming's video</strong> — what to expect from the class in Season 1, new skill levels (Storm Rampage 16, Savage Roar only a filler), stigmas all in buffs (Illusive Clone, Swift Contract, Savage Fang, Triniel's Dagger), one damage line and the burst order.",
-          "ru": "<strong>PvE Убийцы перестроен по видео Arthars Gaming</strong> — чего ждать от класса в 1 сезоне, новые уровни скиллов (Неистовый шквал 16, Рёв зверя только филлер), все стигмы в баффы (Иллюзорный двойник, Обет ускорения, Клык хищника, Кинжал Триниэля), одна линия урона и порядок бурста.", "uk": "<strong>PvE Вбивці перебудовано за відео Arthars Gaming</strong> — чого чекати від класу в 1 сезоні, нові рівні скілів (Storm Rampage 16, Savage Roar лише філер), усі стигми в бафи (Illusive Clone, Swift Contract, Savage Fang, Triniel's Dagger), одна лінія шкоди й порядок берсту."
+          "ru": "<strong>PvE Убийцы перестроен по видео Arthars Gaming</strong> — чего ждать от класса в 1 сезоне, новые уровни скиллов (Неистовый шквал 16, Рёв зверя только филлер), все стигмы в баффы (Иллюзорный двойник, Обет ускорения, Клык хищника, Кинжал Триниэля), одна линия урона и порядок бурста.", "uk": "<strong>PvE Assassin перебудовано за відео Arthars Gaming</strong> — чого чекати від класу в 1 сезоні, нові рівні скілів (Storm Rampage 16, Savage Roar лише філер), усі стигми в бафи (Illusive Clone, Swift Contract, Savage Fang, Triniel's Dagger), одна лінія шкоди й порядок берсту."
         },
         {
           "href": "assassin/",
           "en": "<strong>Assassin: arcana and passives</strong> — a new arcana section (Illusion on the Mirror is a must) and passive priority for gear.",
-          "ru": "<strong>Убийца: арканы и пассивки</strong> — новый раздел про арканы (Illusion на Зеркале обязателен) и приоритет пассивок для экипировки.", "uk": "<strong>Вбивця: аркани й пасивки</strong> — новий розділ про аркани (Illusion на Дзеркалі обов'язковий) і пріоритет пасивок для екіпірування."
+          "ru": "<strong>Убийца: арканы и пассивки</strong> — новый раздел про арканы (Illusion на Зеркале обязателен) и приоритет пассивок для экипировки.", "uk": "<strong>Assassin: аркани й пасивки</strong> — новий розділ про аркани (Illusion на Дзеркалі обов'язковий) і пріоритет пасивок для екіпірування."
         }
       ]
     },
@@ -60,7 +97,7 @@
       "items": [
         {
           "en": "<strong>Specialization slots fixed</strong> — a skill has two slots from level 12 and the third only at 20. Gladiator, Templar, Sorcerer and Cleric cards no longer show three picks at level 16; each card says what the third slot takes at 20.",
-          "ru": "<strong>Исправлены слоты специализаций</strong> — у скилла два слота с 12 уровня, третий только на 20. В карточках Гладиатора, Стража, Волшебника и Целителя больше нет трёх специализаций на 16 уровне; в каждой написано, что занимает третий слот на 20.", "uk": "<strong>Виправлено слоти спеціалізацій</strong> — у скіла два слоти з 12 рівня, третій лише на 20. У картках Гладіатора, Стража, Чарівника й Цілителя більше немає трьох спеціалізацій на 16 рівні; у кожній написано, що займає третій слот на 20."
+          "ru": "<strong>Исправлены слоты специализаций</strong> — у скилла два слота с 12 уровня, третий только на 20. В карточках Гладиатора, Стража, Волшебника и Целителя больше нет трёх специализаций на 16 уровне; в каждой написано, что занимает третий слот на 20.", "uk": "<strong>Виправлено слоти спеціалізацій</strong> — у скіла два слоти з 12 рівня, третій лише на 20. У картках Gladiator, Templar, Sorcerer й Cleric більше немає трьох спеціалізацій на 16 рівні; у кожній написано, що займає третій слот на 20."
         }
       ]
     },
@@ -71,12 +108,12 @@
         {
           "href": "chanter/",
           "en": "<strong>Chanter PvE rebuilt on Arthars Gaming's video guide</strong> — how Dark Crush opens, a new hotbar line and a two-step macro, skill levels and specializations, stigmas for four slots (Marchutan's Wrath 1, Focused Defense 5), passive priority.",
-          "ru": "<strong>PvE Чародея перестроен по видеогайду Arthars Gaming</strong> — как открывается Удар скалы, новая линия на кнопке и макрос из двух шагов, уровни и специализации скиллов, стигмы под четыре слота (Ярость Маркутана 1, Концентрация на защите 5), приоритет пассивок.", "uk": "<strong>PvE Чародія перебудовано за відеогайдом Arthars Gaming</strong> — як відкривається Dark Crush, нова лінія на кнопці й макрос із двох кроків, рівні та спеціалізації скілів, стигми під чотири слоти (Marchutan's Wrath 1, Focused Defense 5), пріоритет пасивок."
+          "ru": "<strong>PvE Чародея перестроен по видеогайду Arthars Gaming</strong> — как открывается Удар скалы, новая линия на кнопке и макрос из двух шагов, уровни и специализации скиллов, стигмы под четыре слота (Ярость Маркутана 1, Концентрация на защите 5), приоритет пассивок.", "uk": "<strong>PvE Chanter перебудовано за відеогайдом Arthars Gaming</strong> — як відкривається Dark Crush, нова лінія на кнопці й макрос із двох кроків, рівні та спеціалізації скілів, стигми під чотири слоти (Marchutan's Wrath 1, Focused Defense 5), пріоритет пасивок."
         },
         {
           "href": "chanter/",
           "en": "<strong>Chanter: arcana</strong> — a new section: which stat, set and skills to look for on each of the five cards.",
-          "ru": "<strong>Чародей: арканы</strong> — новый раздел: какой стат, сет и скиллы искать на каждой из пяти карт.", "uk": "<strong>Чародій: аркани</strong> — новий розділ: який стат, сет і скіли шукати на кожній із п'яти карт."
+          "ru": "<strong>Чародей: арканы</strong> — новый раздел: какой стат, сет и скиллы искать на каждой из пяти карт.", "uk": "<strong>Chanter: аркани</strong> — новий розділ: який стат, сет і скіли шукати на кожній із п'яти карт."
         }
       ]
     },
@@ -87,12 +124,12 @@
         {
           "href": "cleric/",
           "en": "<strong>Cleric PvE: the macro in full</strong> — the three hotbar lines and the in-game macro steps read from Kaeria's video frame by frame, with the keys to hold and what to do on stagger. The guide is no longer marked as work in progress.",
-          "ru": "<strong>Целитель, PvE: макрос целиком</strong> — три линии на кнопках и шаги встроенного макроса, прочитанные по кадрам видео Kaeria, какие клавиши держать и что делать при ошеломлении. С гайда снята пометка «в работе».", "uk": "<strong>Цілитель, PvE: макрос повністю</strong> — три лінії на кнопках і кроки вбудованого макросу, прочитані за кадрами відео Kaeria, які клавіші тримати і що робити при оглушенні. З гайда знято позначку «в роботі»."
+          "ru": "<strong>Целитель, PvE: макрос целиком</strong> — три линии на кнопках и шаги встроенного макроса, прочитанные по кадрам видео Kaeria, какие клавиши держать и что делать при ошеломлении. С гайда снята пометка «в работе».", "uk": "<strong>Cleric, PvE: макрос повністю</strong> — три лінії на кнопках і кроки вбудованого макросу, прочитані за кадрами відео Kaeria, які клавіші тримати і що робити при оглушенні. З гайда знято позначку «в роботі»."
         },
         {
           "href": "cleric/",
           "en": "<strong>Cleric: Daevanion and arcana</strong> — the board route now skips the orange nodes that do nothing in PvE, set bonuses for arcana, Death as an extra stat, Benevolence as a healing swap, Voice of Doom corrected.",
-          "ru": "<strong>Целитель: Daevanion и арканы</strong> — маршрут на досках больше не берёт оранжевые узлы, бесполезные в PvE; бонусы сетов аркан, Death как дополнительный стат, Целительная сила как замена на лечение, исправлен Крик смерти.", "uk": "<strong>Цілитель: Daevanion і аркани</strong> — маршрут на дошках більше не бере помаранчеві вузли, марні в PvE; бонуси сетів аркан, Death як додатковий стат, Benevolence як заміна на лікування, виправлено Voice of Doom."
+          "ru": "<strong>Целитель: Daevanion и арканы</strong> — маршрут на досках больше не берёт оранжевые узлы, бесполезные в PvE; бонусы сетов аркан, Death как дополнительный стат, Целительная сила как замена на лечение, исправлен Крик смерти.", "uk": "<strong>Cleric: Daevanion і аркани</strong> — маршрут на дошках більше не бере помаранчеві вузли, марні в PvE; бонуси сетів аркан, Death як додатковий стат, Benevolence як заміна на лікування, виправлено Voice of Doom."
         }
       ]
     },
@@ -102,11 +139,11 @@
       "items": [
         {
           "en": "<strong>Daevanion boards in five more guides</strong> — Ranger, Assassin, Chanter, Sorcerer and Cleric now show the real global boards with the route to the nodes the guide takes and a tooltip on every node.",
-          "ru": "<strong>Доски Daevanion ещё в пяти гайдах</strong> — у Лучника, Убийцы, Чародея, Волшебника и Целителя теперь настоящие доски глобала с маршрутом к узлам, которые берёт гайд, и подсказкой на каждом узле.", "uk": "<strong>Дошки Daevanion ще в п'яти гайдах</strong> — у Лучника, Вбивці, Чародія, Чарівника й Цілителя тепер справжні дошки глобалу з маршрутом до вузлів, які бере гайд, і підказкою на кожному вузлі."
+          "ru": "<strong>Доски Daevanion ещё в пяти гайдах</strong> — у Стрелка, Убийцы, Чародея, Волшебника и Целителя теперь настоящие доски глобала с маршрутом к узлам, которые берёт гайд, и подсказкой на каждом узле.", "uk": "<strong>Дошки Daevanion ще в п'яти гайдах</strong> — у Ranger, Assassin, Chanter, Sorcerer й Cleric тепер справжні дошки глобалу з маршрутом до вузлів, які бере гайд, і підказкою на кожному вузлі."
         },
         {
           "en": "<strong>PvP guides in the same order as PvE</strong> — Gladiator and Templar PvP now start with the build at a glance, and the Daevanion boards sit between gear and stigmas.",
-          "ru": "<strong>PvP-гайды в том же порядке, что и PvE</strong> — PvP Гладиатора и Стража теперь начинается с блока «Билд коротко», а доски Daevanion стоят между экипировкой и стигмами.", "uk": "<strong>PvP-гайди в тому ж порядку, що й PvE</strong> — PvP Гладіатора й Стража тепер починається з блоку «Білд коротко», а дошки Daevanion стоять між екіпіровкою і стигмами."
+          "ru": "<strong>PvP-гайды в том же порядке, что и PvE</strong> — PvP Гладиатора и Стража теперь начинается с блока «Билд коротко», а доски Daevanion стоят между экипировкой и стигмами.", "uk": "<strong>PvP-гайди в тому ж порядку, що й PvE</strong> — PvP Gladiator й Templar тепер починається з блоку «Білд коротко», а дошки Daevanion стоять між екіпіровкою і стигмами."
         }
       ]
     },
@@ -117,17 +154,17 @@
         {
           "href": "templar/",
           "en": "<strong>Templar guide re-checked against SolAshur's video, frame by frame</strong> — Pummel specializations corrected, stigma sets for solo PvE and for dungeons, Assault Fury as a late PvP swap.",
-          "ru": "<strong>Гайд на Стража сверен с видео SolAshur по кадрам</strong> — исправлены специализации Града ударов, добавлены наборы стигм для соло-PvE и подземелий, Яростный натиск как поздняя замена в PvP.", "uk": "<strong>Гайд на Стража звірено з відео SolAshur за кадрами</strong> — виправлено спеціалізації Pummel, додано набори стигм для соло-PvE і підземель, Assault Fury як пізня заміна в PvP."
+          "ru": "<strong>Гайд на Стража сверен с видео SolAshur по кадрам</strong> — исправлены специализации Града ударов, добавлены наборы стигм для соло-PvE и подземелий, Яростный натиск как поздняя замена в PvP.", "uk": "<strong>Гайд на Templar звірено з відео SolAshur за кадрами</strong> — виправлено спеціалізації Pummel, додано набори стигм для соло-PvE і підземель, Assault Fury як пізня заміна в PvP."
         },
         {
           "href": "templar/",
           "en": "<strong>Templar: pets and gear</strong> — what to look for in each of the nine pet slots, item levels and attack of the weapons on the gear path, wing numbers, a note on PvP gear.",
-          "ru": "<strong>Страж: петы и экипировка</strong> — что искать в каждом из девяти слотов петов, уровни предметов и атака оружия на пути экипировки, цифры крыльев, заметка про PvP-экипировку.", "uk": "<strong>Страж: пети й екіпіровка</strong> — що шукати в кожному з дев'яти слотів петів, рівні предметів і атака зброї на шляху екіпірування, цифри крил, нотатка про PvP-екіпіровку."
+          "ru": "<strong>Страж: петы и экипировка</strong> — что искать в каждом из девяти слотов петов, уровни предметов и атака оружия на пути экипировки, цифры крыльев, заметка про PvP-экипировку.", "uk": "<strong>Templar: пети й екіпіровка</strong> — що шукати в кожному з дев'яти слотів петів, рівні предметів і атака зброї на шляху екіпірування, цифри крил, нотатка про PvP-екіпіровку."
         },
         {
           "href": "templar/",
           "en": "<strong>Templar: Daevanion boards</strong> — the real global boards with the route for PvE and PvP, and a tooltip on every node.",
-          "ru": "<strong>Страж: доски Daevanion</strong> — настоящие доски глобала с маршрутом для PvE и PvP и подсказкой на каждом узле.", "uk": "<strong>Страж: дошки Daevanion</strong> — справжні дошки глобалу з маршрутом для PvE і PvP та підказкою на кожному вузлі."
+          "ru": "<strong>Страж: доски Daevanion</strong> — настоящие доски глобала с маршрутом для PvE и PvP и подсказкой на каждом узле.", "uk": "<strong>Templar: дошки Daevanion</strong> — справжні дошки глобалу з маршрутом для PvE і PvP та підказкою на кожному вузлі."
         },
         {
           "en": "<strong>Daevanion in all guides</strong> — corrected for global: five boards, no Ariel; the level-45 board Azphel gives only PvP Damage Boost and Tolerance.",
@@ -142,7 +179,7 @@
         {
           "href": "gladiator/",
           "en": "<strong>Gladiator: Daevanion boards</strong> — the real global boards with the route for PvE, PvP and leveling (Grobs' 65-point route). Global has no Ariel board, only Azphel (PvP) — the guide is corrected.",
-          "ru": "<strong>Гладиатор: доски Daevanion</strong> — настоящие доски глобала с маршрутом для PvE, PvP и прокачки (маршрут Grobs на 65 очков). В глобале нет доски Ariel, только Azphel (PvP) — гайд исправлен.", "uk": "<strong>Гладіатор: дошки Daevanion</strong> — справжні дошки глобалу з маршрутом для PvE, PvP і прокачки (маршрут Grobs на 65 очок). На глобалі немає дошки Ariel, лише Azphel (PvP) — гайд виправлено."
+          "ru": "<strong>Гладиатор: доски Daevanion</strong> — настоящие доски глобала с маршрутом для PvE, PvP и прокачки (маршрут Grobs на 65 очков). В глобале нет доски Ariel, только Azphel (PvP) — гайд исправлен.", "uk": "<strong>Gladiator: дошки Daevanion</strong> — справжні дошки глобалу з маршрутом для PvE, PvP і прокачки (маршрут Grobs на 65 очок). На глобалі немає дошки Ariel, лише Azphel (PvP) — гайд виправлено."
         },
         {
           "href": "gladiator/",
@@ -152,7 +189,7 @@
         {
           "href": "gladiator/",
           "en": "<strong>Gladiator guide updated</strong> — boss opener, the boss orientation setting, Focused Block charges, Sword Aura Rampage, leveling priorities and arcana cards with tooltips.",
-          "ru": "<strong>Гайд на Гладиатора обновлён</strong> — начало боя с боссом, настройка направления босса, два заряда Концентрации на блоке, Неистовый клинок, приоритеты на прокачке и карты аркан с подсказками.", "uk": "<strong>Гайд на Гладіатора оновлено</strong> — початок бою з босом, налаштування напрямку боса, два заряди Focused Block, Sword Aura Rampage, пріоритети на прокачці й карти аркан із підказками."
+          "ru": "<strong>Гайд на Гладиатора обновлён</strong> — начало боя с боссом, настройка направления босса, два заряда Концентрации на блоке, Неистовый клинок, приоритеты на прокачке и карты аркан с подсказками.", "uk": "<strong>Гайд на Gladiator оновлено</strong> — початок бою з босом, налаштування напрямку боса, два заряди Focused Block, Sword Aura Rampage, пріоритети на прокачці й карти аркан із підказками."
         }
       ]
     },
@@ -235,12 +272,12 @@
         {
           "href": "templar/",
           "en": "<strong>Templar rebuilt on SolAshur's global build</strong> — the Judgment / Punishment / Pummel trinity, stigmas per profile, macro, gear path, stats, pets, Pantheon and arcana. No longer WIP.",
-          "ru": "<strong>Страж переписан по глобальному билду SolAshur</strong> — «троица» Суд / Кровавая месть / Град ударов, стигмы по профилям, макрос, путь экипировки, статы, петы, Pantheon и арканы. Больше не WIP.", "uk": "<strong>Стража переписано за глобальним білдом SolAshur</strong> — «трійця» Judgment / Punishment / Pummel, стигми за профілями, макрос, шлях екіпірування, статі, пети, Pantheon і аркани. Більше не WIP."
+          "ru": "<strong>Страж переписан по глобальному билду SolAshur</strong> — «троица» Суд / Кровавая месть / Град ударов, стигмы по профилям, макрос, путь экипировки, статы, петы, Pantheon и арканы. Больше не WIP.", "uk": "<strong>Templar переписано за глобальним білдом SolAshur</strong> — «трійця» Judgment / Punishment / Pummel, стигми за профілями, макрос, шлях екіпірування, статі, пети, Pantheon і аркани. Більше не WIP."
         },
         {
           "href": "cleric/",
           "en": "<strong>Cleric PvE (WIP)</strong> — from Kaeria's guide: a healer that deals damage, Earth Punishment + Condemnation, stigmas and arcana.",
-          "ru": "<strong>PvE Целителя (WIP)</strong> — по гайду Kaeria: хил, который наносит урон, Возмездие природы + Приговор, стигмы и арканы.", "uk": "<strong>PvE Цілителя (WIP)</strong> — за гайдом Kaeria: хіл, який завдає шкоди, Earth's Retribution + Condemnation, стигми й аркани."
+          "ru": "<strong>PvE Целителя (WIP)</strong> — по гайду Kaeria: хил, который наносит урон, Возмездие природы + Приговор, стигмы и арканы.", "uk": "<strong>PvE Cleric (WIP)</strong> — за гайдом Kaeria: хіл, який завдає шкоди, Earth's Retribution + Condemnation, стигми й аркани."
         }
       ]
     },
@@ -251,7 +288,7 @@
         {
           "href": "cleric/",
           "en": "<strong>Cleric and Elementalist (WIP)</strong> — leveling guides with Grobs' early macros; PvE and PvP come once there is a real global source.",
-          "ru": "<strong>Целитель и Заклинатель (WIP)</strong> — гайды на прокачку со стартовыми макросами Grobs; PvE и PvP появятся, когда будет настоящий глобальный источник.", "uk": "<strong>Цілитель і Заклинач (WIP)</strong> — гайди на прокачку зі стартовими макросами Grobs; PvE і PvP з'являться, коли буде справжнє глобальне джерело."
+          "ru": "<strong>Целитель и Заклинатель (WIP)</strong> — гайды на прокачку со стартовыми макросами Grobs; PvE и PvP появятся, когда будет настоящий глобальный источник.", "uk": "<strong>Cleric і Elementalist (WIP)</strong> — гайди на прокачку зі стартовими макросами Grobs; PvE і PvP з'являться, коли буде справжнє глобальне джерело."
         },
         {
           "en": "<strong>Search</strong> — press Ctrl+K (or /) to find a class, skill, boss or guide section.",
@@ -294,11 +331,11 @@
         {
           "href": "ranger/",
           "en": "<strong>Ranger PvE rebuilt on Whelps' guide</strong> — Deadshot and Gale Arrow to 20, Vaizel's Authority first, the two-line macro, soul binds, accuracy and arcana.",
-          "ru": "<strong>PvE Лучника переписан по гайду Whelps</strong> — Прицельный выстрел и Шквал стрел до 20, сначала Сила Байзела, макрос из двух линий, связывания души, точность и арканы.", "uk": "<strong>PvE Лучника переписано за гайдом Whelps</strong> — Deadshot і Gale Arrow до 20, спершу Vaizel's Authority, макрос із двох ліній, прив'язки душі, точність і аркани."
+          "ru": "<strong>PvE Стрелка переписан по гайду Whelps</strong> — Прицельный выстрел и Шквал стрел до 20, сначала Сила Байзела, макрос из двух линий, связывания души, точность и арканы.", "uk": "<strong>PvE Ranger переписано за гайдом Whelps</strong> — Deadshot і Gale Arrow до 20, спершу Vaizel's Authority, макрос із двох ліній, прив'язки душі, точність і аркани."
         },
         {
           "en": "<strong>Only sourced guides</strong> — PvP for Ranger, Assassin, Chanter and Sorcerer is off until launch (no reliable source yet); modes built on Korean data carry a WIP note.",
-          "ru": "<strong>Только гайды с источниками</strong> — PvP у Лучника, Убийцы, Чародея и Волшебника отключён до запуска (надёжного источника нет); режимы на корейских данных помечены WIP.", "uk": "<strong>Лише гайди з джерелами</strong> — PvP у Лучника, Вбивці, Чародія й Чарівника вимкнено до запуску (надійного джерела немає); режими на корейських даних позначено WIP."
+          "ru": "<strong>Только гайды с источниками</strong> — PvP у Стрелка, Убийцы, Чародея и Волшебника отключён до запуска (надёжного источника нет); режимы на корейских данных помечены WIP.", "uk": "<strong>Лише гайди з джерелами</strong> — PvP у Ranger, Assassin, Chanter й Sorcerer вимкнено до запуску (надійного джерела немає); режими на корейських даних позначено WIP."
         },
         {
           "en": "<strong>Smoother site</strong> — modes switch with a fade, the header folds smoothly, the class menu animates, class figures step out of their cards on hover, and the theme button shows a sun or a moon.",
@@ -313,7 +350,7 @@
         {
           "href": "sorcerer/",
           "en": "<strong>Sorcerer guide (WIP)</strong> — fire &amp; ice build, stigmas, macro and leveling, assembled from Korean guides until proper global builds appear.",
-          "ru": "<strong>Гайд на Волшебника (WIP)</strong> — билд огонь + лёд, стигмы, макрос и прокачка; собран из корейских гайдов, пока не появятся нормальные глобальные билды.", "uk": "<strong>Гайд на Чарівника (WIP)</strong> — білд вогонь + лід, стигми, макрос і прокачка; зібрано з корейських гайдів, поки не з'являться нормальні глобальні білди."
+          "ru": "<strong>Гайд на Волшебника (WIP)</strong> — билд огонь + лёд, стигмы, макрос и прокачка; собран из корейских гайдов, пока не появятся нормальные глобальные билды.", "uk": "<strong>Гайд на Sorcerer (WIP)</strong> — білд вогонь + лід, стигми, макрос і прокачка; зібрано з корейських гайдів, поки не з'являться нормальні глобальні білди."
         }
       ]
     },
@@ -324,17 +361,17 @@
         {
           "href": "chanter/",
           "en": "<strong>Chanter guide</strong> — TitanTheF's global build: skills, stigmas, mantras and the simple starting macro.",
-          "ru": "<strong>Гайд на Чародея</strong> — глобальный билд TitanTheF: скиллы, стигмы, мантры и простой стартовый макрос.", "uk": "<strong>Гайд на Чародія</strong> — глобальний білд TitanTheF: скіли, стигми, мантри й простий стартовий макрос."
+          "ru": "<strong>Гайд на Чародея</strong> — глобальный билд TitanTheF: скиллы, стигмы, мантры и простой стартовый макрос.", "uk": "<strong>Гайд на Chanter</strong> — глобальний білд TitanTheF: скіли, стигми, мантри й простий стартовий макрос."
         },
         {
           "href": "assassin/",
           "en": "<strong>Assassin guide</strong> — Insignias, Heart Gore and the Illusive Clone burst window, with TitanTheF's global build.",
-          "ru": "<strong>Гайд на Убийцу</strong> — эмблемы, Пронзание сердца и окно бурста с Иллюзорным двойником, по глобальному билду TitanTheF.", "uk": "<strong>Гайд на Вбивцю</strong> — емблеми, Heart Gore і вікно берсту з Illusive Clone, за глобальним білдом TitanTheF."
+          "ru": "<strong>Гайд на Убийцу</strong> — эмблемы, Пронзание сердца и окно бурста с Иллюзорным двойником, по глобальному билду TitanTheF.", "uk": "<strong>Гайд на Assassin</strong> — емблеми, Heart Gore і вікно берсту з Illusive Clone, за глобальним білдом TitanTheF."
         },
         {
           "href": "ranger/",
           "en": "<strong>Ranger reworked for global</strong> — realistic skill levels (16), the global stigma set and arcana targets instead of the Korean endgame.",
-          "ru": "<strong>Лучник переделан под глобалку</strong> — реальные уровни скиллов (16), глобальный набор стигм и цели для аркан вместо корейского эндгейма.", "uk": "<strong>Лучника перероблено під глобал</strong> — реальні рівні скілів (16), глобальний набір стигм і цілі для аркан замість корейського ендгейму."
+          "ru": "<strong>Стрелок переделан под глобалку</strong> — реальные уровни скиллов (16), глобальный набор стигм и цели для аркан вместо корейского эндгейма.", "uk": "<strong>Ranger перероблено під глобал</strong> — реальні рівні скілів (16), глобальний набір стигм і цілі для аркан замість корейського ендгейму."
         },
         {
           "href": "gladiator/",
@@ -350,7 +387,7 @@
         {
           "href": "templar/",
           "en": "<strong>Templar guide</strong> — PvE, PvP and leveling: skills, stigmas for global's 4 slots and a macro setup.",
-          "ru": "<strong>Гайд на Стража</strong> — PvE, PvP и прокачка: скиллы, стигмы под 4 слота глобальной версии и настройка макроса.", "uk": "<strong>Гайд на Стража</strong> — PvE, PvP і прокачка: скіли, стигми під 4 слоти глобальної версії й налаштування макросу."
+          "ru": "<strong>Гайд на Стража</strong> — PvE, PvP и прокачка: скиллы, стигмы под 4 слота глобальной версии и настройка макроса.", "uk": "<strong>Гайд на Templar</strong> — PvE, PvP і прокачка: скіли, стигми під 4 слоти глобальної версії й налаштування макросу."
         },
         {
           "href": "week-1/",
