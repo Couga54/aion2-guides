@@ -14,7 +14,7 @@
 <meta name="color-scheme" content="dark light">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{{ t.site_name }}">
-<meta property="og:locale" content="{{ {'ru': 'ru_RU', 'uk': 'uk_UA'}.get(lang, 'en_US') }}">
+<meta property="og:locale" content="{{ {'ru': 'ru_RU', 'uk': 'uk_UA', 'tr': 'tr_TR'}.get(lang, 'en_US') }}">
 <meta property="og:title" content="{{ self.title() }}">
 <meta property="og:description" content="{{ self.desc() }}">
 <meta property="og:url" content="{{ canonical }}">
@@ -158,9 +158,9 @@
           </div>
         </nav>
       </details>
-      {#- Language menu: the current language on the button, all three inside. -#}
-      {% set LANG_CODE = {'en': 'EN', 'ru': 'RU', 'uk': 'UA'} %}
-      {% set LANG_NAME = {'en': 'English', 'ru': 'Русский', 'uk': 'Українська'} %}
+      {#- Language menu: the current language on the button, every language inside. -#}
+      {% set LANG_CODE = {'en': 'EN', 'ru': 'RU', 'uk': 'UA', 'tr': 'TR'} %}
+      {% set LANG_NAME = {'en': 'English', 'ru': 'Русский', 'uk': 'Українська', 'tr': 'Türkçe'} %}
       <details class="lang-menu">
         <summary class="lang-switch" title="{{ t.switch_lang }}"><span aria-hidden="true">{{ LANG_CODE[lang] }}</span><span class="sr-only">{{ t.switch_lang }}</span></summary>
         <nav class="lang-panel" aria-label="{{ t.switch_lang }}">

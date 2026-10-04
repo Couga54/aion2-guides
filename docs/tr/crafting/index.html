@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="tr" data-mode="pve">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Toplama ve üretim: meslekler nasıl geliştirilir — AION 2 Rehberleri</title>
+<meta name="description" content="AION 2 toplama ve üretim: hangi mesleği seçmeli, safir ve Odyle ile geliştirme, altın 60. seviye taslaklar, ne kadar malzeme gerekir ve ne zaman satın almak daha iyi.">
+<link rel="canonical" href="https://couga54.github.io/aion2-guides/tr/crafting/">
+<link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/crafting/">
+<link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/crafting/">
+<link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/crafting/">
+<link rel="alternate" hreflang="tr" href="https://couga54.github.io/aion2-guides/tr/crafting/">
+<link rel="alternate" hreflang="x-default" href="https://couga54.github.io/aion2-guides/en/crafting/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Rehberleri">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Toplama ve üretim: meslekler nasıl geliştirilir — AION 2 Rehberleri">
+<meta property="og:description" content="AION 2 toplama ve üretim: hangi mesleği seçmeli, safir ve Odyle ile geliştirme, altın 60. seviye taslaklar, ne kadar malzeme gerekir ve ne zaman satın almak daha iyi.">
+<meta property="og:url" content="https://couga54.github.io/aion2-guides/tr/crafting/">
+<meta property="og:image" content="https://couga54.github.io/aion2-guides/assets/og/crafting-tr.jpg?v=90e2e663">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var off = (r.getAttribute('data-off') || '').split(' ');
+    var modes = ['pve', 'pvp', 'lvl'].filter(function (x) { return off.indexOf(x) < 0; });
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+    else if (modes.indexOf(r.dataset.mode) < 0) r.dataset.mode = modes[0];
+  })(document.documentElement);
+</script>
+<script>
+  // Google Analytics (site.json "ga"). Not loaded on local previews. A visitor who came through the root
+  // language redirect keeps the site they came from (root.html saves it in sessionStorage).
+  if (!/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+    (function () {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-6WYEWLG4B5';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      var ref = null;
+      try { ref = sessionStorage.getItem('ref'); sessionStorage.removeItem('ref'); } catch (e) {}
+      gtag('js', new Date());
+      gtag('config', 'G-6WYEWLG4B5', ref ? { page_referrer: ref } : {});
+    })();
+  }
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=90e2e663">
+</head>
+<body class="page-guide page-crafting">
+<a class="skip-link" href="#main">İçeriğe geç</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../tr/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
+      <span>AION 2 Rehberleri</span>
+    </a>
+    <details class="class-menu">
+      <summary class="class-menu-btn">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg><span>Sınıflar</span>        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="Sınıflar">
+        <a href="../../tr/gladiator/" class="cm-item accent-crimson">
+          <img src="../../assets/classes/gladiator.webp" width="44" height="44" alt=""><span class="cm-name">Gladiator</span><span class="cm-role">Yakın dövüş DPS · bruiser</span>
+        </a>
+        <a href="../../tr/ranger/" class="cm-item accent-emerald">
+          <img src="../../assets/classes/ranger.webp" width="44" height="44" alt=""><span class="cm-name">Ranger</span><span class="cm-role">Menzilli DPS · kiter</span>
+        </a>
+        <a href="../../tr/templar/" class="cm-item accent-sapphire">
+          <img src="../../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Templar</span><span class="cm-role">Tank · grup bufferı</span>
+        </a>
+        <a href="../../tr/assassin/" class="cm-item accent-violet">
+          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Assassin</span><span class="cm-role">Yakın dövüş DPS · patlama</span>
+        </a>
+        <a href="../../tr/sorcerer/" class="cm-item accent-frost">
+          <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Sorcerer</span><span class="cm-role">Menzilli büyü DPS</span>
+        </a>
+        <a href="../../tr/elementalist/" class="cm-item accent-spirit">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Elementalist</span><span class="cm-role">Çağırıcı · büyü DPS</span>
+        </a>
+        <a href="../../tr/cleric/" class="cm-item accent-sunlight">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Cleric</span><span class="cm-role">Şifacı · toprak ve şimşek hasarı</span>
+        </a>
+        <a href="../../tr/chanter/" class="cm-item accent-amber">
+          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Chanter</span><span class="cm-role">Yakın dövüş destek · buffer</span>
+        </a>
+      </nav>
+    </details>
+    <div class="topbar-tools">      <span class="rift-timer" data-anchor="2026-10-02T18:00:00Z" data-every="3" data-tz="Europe/Kyiv" data-open-min="10" data-open="Rift açık" title="Rift — düşman bölgesine açılan portal, her 3 saatte bir açılır; giriş 10 dakika açık kalır, içeride yaklaşık bir saat kalabilirsin. Sonraki">
+        <svg class="rt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="7.5" ry="10.5"/><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/><g transform="rotate(180 12 12)"><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/></g></svg><span class="rt-name">Rift</span><b class="rt-time">--:--</b>
+      </span>
+      <a class="wr-chip" href="../../tr/weekly/" data-anchor="2026-09-30T07:00:00Z" data-tz="Europe/Kyiv" data-units="g,sa,dk,sn" title="Haftalık sıfırlamaya">
+        <svg class="wr-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg><span class="wr-name">Sıfırlama</span><b class="wr-time">--</b>
+      </a>
+      <a class="top-timer" href="../../tr/" title="Çıkış takvimi" data-events='[{"at": "2026-09-28T13:00:00Z", "n": "\u00d6n indirme", "o": ""}, {"at": "2026-09-30T14:00:00Z", "n": "Erken Eri\u015fim", "o": "Erken Eri\u015fim ba\u015flad\u0131"}, {"at": "2026-10-05T13:00:00Z", "n": "Global \u00e7\u0131k\u0131\u015f", "o": "Sunucular a\u00e7\u0131k"}]' data-units="g,sa,dk,sn" data-open="açık">
+        <span class="tt-dot" aria-hidden="true"></span><span class="tt-name"></span><b class="tt-time">--:--:--</b>
+      </a>
+      <details class="class-menu nav-menu">
+        <summary class="class-menu-btn is-here">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Rehberler</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <nav class="nav-menu-panel" aria-label="Rehberler">
+          <div class="nm-col">
+            <p class="nm-group">İlerleme</p>
+            <a href="../../tr/week-1/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+              <span class="nm-name">1. hafta</span><span class="nm-desc">İlk sıfırlamadan önce bitirilecekler</span>
+            </a>
+            <a href="../../tr/progression/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h4v-6H3zM10 20h4V9h-4zM17 20h4V4h-4z"/></svg>
+              <span class="nm-name">45 sonrası</span><span class="nm-desc">Raide giden item level rotası</span>
+            </a>
+            <a href="../../tr/crafting/" class="nm-item" aria-current="page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 1.3-1.3a4 4 0 0 0-5-5L3 10l3-3 3 3 1.3-1.3a4 4 0 0 1 4.4-2.4z"/></svg>
+              <span class="nm-name">Toplama ve üretim</span><span class="nm-desc">Meslekler ve altın taslaklar</span>
+            </a>
+            <a href="../../tr/settings/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+              <span class="nm-name">Oyun ayarları</span><span class="nm-desc">Kontroller, tuşlar, FPS ve toplu PvP</span>
+            </a>
+          </div>
+          <div class="nm-col">
+            <p class="nm-group">Takipçiler</p>
+            <a href="../../tr/weekly/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+              <span class="nm-name">Haftalık</span><span class="nm-desc">Haftalık girişler ve enerji</span>
+            </a>
+            <a href="../../tr/bosses/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
+              <span class="nm-name">Bosslar</span><span class="nm-desc">Öldürme takibi ve zamanlayıcılar</span>
+            </a>
+          </div>
+          <div class="nm-foot">
+            <a href="../../tr/sources/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+              <span class="nm-name">Kaynaklar ve emeği geçenler</span><span class="nm-desc">Bu sitenin dayandığı herkes</span>
+            </a>
+          </div>
+        </nav>
+      </details>      <details class="lang-menu">
+        <summary class="lang-switch" title="Dil"><span aria-hidden="true">TR</span><span class="sr-only">Dil</span></summary>
+        <nav class="lang-panel" aria-label="Dil">
+<a href="../../en/crafting/" hreflang="en" lang="en" data-keep-query><b>EN</b>English</a><a href="../../ru/crafting/" hreflang="ru" lang="ru" data-keep-query><b>RU</b>Русский</a><a href="../../uk/crafting/" hreflang="uk" lang="uk" data-keep-query><b>UA</b>Українська</a><a href="../../tr/crafting/" hreflang="tr" lang="tr" aria-current="true" data-keep-query><b>TR</b>Türkçe</a>        </nav>
+      </details>
+      <button class="icon-btn search-open" type="button" aria-label="Ara (Ctrl+K)" title="Ara (Ctrl+K)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+<a class="icon-btn wn-top" href="../../tr/changelog/" aria-label="Değişiklik günlüğü" title="Değişiklik günlüğü">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </a>      <button class="icon-btn theme-toggle" type="button" aria-label="Karanlık modu değiştir" title="Karanlık modu değiştir">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero has-art" style="--hero-art:url('../../assets/art/hero-crafting.webp');--hero-pos:50% 45%">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../../tr/">Tüm sınıflar</a><span aria-hidden="true">/</span><span>Üretim</span></nav>
+      <h1>Toplama ve üretim</h1>
+      <p class="lead">Toplama puanları nereye gider, hangi iki dal maksimuma çıkarılır ve üretim zinciri nasıl işler.</p>
+    </div>
+  </section>
+
+  <div class="wrap guide-layout pg-layout"><aside class="toc-side pg-side" aria-label="Bu sayfada">
+    <p class="toc-title">Bu sayfada</p>
+    <nav class="toc-list">
+<a href="#tree">Essence Extraction: puanlar nereye gider</a><a href="#branches">Hangi ikinci dal</a><a href="#odyle">Odyle → herhangi bir kaynak</a><a href="#chain">Üretim zinciri</a><a href="#before">Üretmeden önce</a><a href="#leveling">Hızlı geliştir</a><a href="#money">Kinah kazanmak</a>    </nav>
+  </aside>
+  <div class="pg-page">
+    <p class="pg-note">Global istemciden; trueeevil, Silvias, TitanTheF ve Aragon ile karşılaştırıldı (2–3 Ekim).
+<a class="w1-src" href="https://www.youtube.com/watch?v=Iqi6pR8r6FY" target="_blank" rel="noopener" title="trueeevil — Beginner Aion 2 Crafting Guide">trueeevil</a><a class="w1-src" href="https://www.youtube.com/watch?v=8T12po8Myqk" target="_blank" rel="noopener" title="Silvias — ГАЙД НА ПРОФЕССИИ">Silvias</a><a class="w1-src" href="https://www.youtube.com/watch?v=hUk7jO3jUdw" target="_blank" rel="noopener" title="TitanTheF (video) — Day 2: progression and why craft the weapon">TitanTheF (video)</a><a class="w1-src" href="https://www.youtube.com/watch?v=C70IXgdByFM" target="_blank" rel="noopener" title="Aragon — Make MILLIONS Of Kina Without Energy">Aragon</a><a class="w1-src" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml#gid=683322434" target="_blank" rel="noopener" title="TitanTheF (sheet) — AION 2 progression sheet">TitanTheF (sheet)</a></p>
+
+    <ol class="pg-toc" aria-label="Adımlar">
+      <li><a href="#tree"><span>Essence Extraction: puanlar nereye gider</span></a></li>
+      <li><a href="#branches"><span>Hangi ikinci dal</span></a></li>
+      <li><a href="#odyle"><span>Odyle → herhangi bir kaynak</span></a></li>
+      <li><a href="#chain"><span>Üretim zinciri</span></a></li>
+      <li><a href="#before"><span>Üretmeden önce</span></a></li>
+      <li><a href="#leveling"><span>Hızlı geliştir</span></a></li>
+      <li><a href="#money"><span>Kinah kazanmak</span></a></li>
+    </ol>
+
+    <section class="pg-sec" id="tree" aria-labelledby="h-tree">
+      <h2 id="h-tree" class="section-title">Essence Extraction: puanlar nereye gider</h2>
+<p class="pg-lead">Toplama seviyeleri iki tür puan verir: solda ortak yetenekler, sağda dallar.</p><div class="ct-tree">
+        <div class="ct-common">
+          <span class="ct-ring" aria-hidden="true"></span>
+          <div class="ct-skill ct-s1 is-hi" data-sk="g:proficient" tabindex="0">
+            <span class="ct-lvl">10</span><span class="ct-sname">Proficient Handling</span><span class="ct-snote">daha hızlı başarı göstergesi — maksimuma çıkar</span>
+          </div>
+          <div class="ct-skill ct-s2 is-hi" data-sk="g:delicate" tabindex="0">
+            <span class="ct-lvl">10</span><span class="ct-sname">Delicate Touch</span><span class="ct-snote">daha az başarısızlık — ilkiyle birlikte maksimuma çıkar</span>
+          </div>
+          <div class="ct-skill ct-s3" data-sk="g:luck" tabindex="0">
+            <span class="ct-lvl">≤ 5</span><span class="ct-sname">Lady Luck</span><span class="ct-snote">yalnızca artan puanlar</span>
+          </div>
+        </div>
+        <div class="ct-branches">
+<div class="ct-branch">
+            <p class="ct-bname"><span aria-hidden="true">✦</span> Ore</p>
+            <div class="ct-nodes">
+              <div class="ct-node" data-sk="g:seeker">
+                <span class="ct-ico"><img src="../../assets/icons/items/ore.webp" width="40" height="40" alt=""><i>1</i></span>
+                <span class="ct-nlabel">Ore Seeker</span>
+              </div>
+              <div class="ct-node" data-sk="g:harvest">
+                <span class="ct-ico"><img src="../../assets/icons/items/ore.webp" width="40" height="40" alt=""><b>×2</b><i>3</i></span>
+                <span class="ct-nlabel">Plentiful Harvest</span>
+              </div>
+              <div class="ct-node" data-sk="g:appraiser">
+                <span class="ct-ico"><img src="../../assets/icons/items/ore.webp" width="40" height="40" alt=""><i>3</i></span>
+                <span class="ct-nlabel">Ore Appraiser</span>
+              </div>
+            </div>
+          </div>
+<div class="ct-branch">
+            <p class="ct-bname"><span aria-hidden="true">✦</span> Gem</p>
+            <div class="ct-nodes">
+              <div class="ct-node" data-sk="g:seeker">
+                <span class="ct-ico"><img src="../../assets/icons/items/sapphire.webp" width="40" height="40" alt=""><i>1</i></span>
+                <span class="ct-nlabel">Gem Seeker</span>
+              </div>
+              <div class="ct-node" data-sk="g:harvest">
+                <span class="ct-ico"><img src="../../assets/icons/items/sapphire.webp" width="40" height="40" alt=""><b>×2</b><i>3</i></span>
+                <span class="ct-nlabel">Plentiful Harvest</span>
+              </div>
+              <div class="ct-node" data-sk="g:appraiser">
+                <span class="ct-ico"><img src="../../assets/icons/items/sapphire.webp" width="40" height="40" alt=""><i>3</i></span>
+                <span class="ct-nlabel">Gem Appraiser</span>
+              </div>
+            </div>
+          </div>
+<div class="ct-branch">
+            <p class="ct-bname"><span aria-hidden="true">✦</span> Log</p>
+            <div class="ct-nodes">
+              <div class="ct-node" data-sk="g:seeker">
+                <span class="ct-ico"><img src="../../assets/icons/items/log.webp" width="40" height="40" alt=""><i>1</i></span>
+                <span class="ct-nlabel">Log Seeker</span>
+              </div>
+              <div class="ct-node" data-sk="g:harvest">
+                <span class="ct-ico"><img src="../../assets/icons/items/log.webp" width="40" height="40" alt=""><b>×2</b><i>3</i></span>
+                <span class="ct-nlabel">Plentiful Harvest</span>
+              </div>
+              <div class="ct-node" data-sk="g:appraiser">
+                <span class="ct-ico"><img src="../../assets/icons/items/log.webp" width="40" height="40" alt=""><i>3</i></span>
+                <span class="ct-nlabel">Log Appraiser</span>
+              </div>
+            </div>
+          </div>
+<div class="ct-branch">
+            <p class="ct-bname"><span aria-hidden="true">✦</span> Herb</p>
+            <div class="ct-nodes">
+              <div class="ct-node" data-sk="g:seeker">
+                <span class="ct-ico"><img src="../../assets/icons/items/herb.webp" width="40" height="40" alt=""><i>1</i></span>
+                <span class="ct-nlabel">Herb Seeker</span>
+              </div>
+              <div class="ct-node" data-sk="g:harvest">
+                <span class="ct-ico"><img src="../../assets/icons/items/herb.webp" width="40" height="40" alt=""><b>×2</b><i>3</i></span>
+                <span class="ct-nlabel">Plentiful Harvest</span>
+              </div>
+              <div class="ct-node" data-sk="g:appraiser">
+                <span class="ct-ico"><img src="../../assets/icons/items/herb.webp" width="40" height="40" alt=""><i>3</i></span>
+                <span class="ct-nlabel">Herb Appraiser</span>
+              </div>
+            </div>
+          </div>
+<div class="ct-branch">
+            <p class="ct-bname"><span aria-hidden="true">✦</span> Ingredient</p>
+            <div class="ct-nodes">
+              <div class="ct-node" data-sk="g:seeker">
+                <span class="ct-ico"><img src="../../assets/icons/items/ingredient.webp" width="40" height="40" alt=""><i>1</i></span>
+                <span class="ct-nlabel">Cooking Ingredient Seeker</span>
+              </div>
+              <div class="ct-node" data-sk="g:harvest">
+                <span class="ct-ico"><img src="../../assets/icons/items/ingredient.webp" width="40" height="40" alt=""><b>×2</b><i>3</i></span>
+                <span class="ct-nlabel">Plentiful Harvest</span>
+              </div>
+              <div class="ct-node" data-sk="g:appraiser">
+                <span class="ct-ico"><img src="../../assets/icons/items/ingredient.webp" width="40" height="40" alt=""><i>3</i></span>
+                <span class="ct-nlabel">Cooking Ingredient Appraiser</span>
+              </div>
+            </div>
+          </div>
+<div class="ct-branch is-on is-odyle">
+            <p class="ct-bname"><span aria-hidden="true">✦</span> Odyle <em>her zaman maksimum</em></p>
+            <div class="ct-nodes">
+              <div class="ct-node" data-sk="g:seeker">
+                <span class="ct-ico"><img src="../../assets/icons/items/odyle.webp" width="40" height="40" alt=""><i>1</i></span>
+                <span class="ct-nlabel">Odyle Seeker</span>
+              </div>
+              <div class="ct-node" data-sk="g:harvest">
+                <span class="ct-ico"><img src="../../assets/icons/items/odyle.webp" width="40" height="40" alt=""><b>×2</b><i>3</i></span>
+                <span class="ct-nlabel">Plentiful Harvest</span>
+              </div>
+              <div class="ct-node" data-sk="g:appraiser">
+                <span class="ct-ico"><img src="../../assets/icons/items/odyle.webp" width="40" height="40" alt=""><i>3</i></span>
+                <span class="ct-nlabel">Odyle Appraiser</span>
+              </div>
+            </div>
+          </div>
+          <p class="ct-legend">İki dalı maksimuma çıkar: Odyle ve ilk üreteceğin eşyanın kaynağı.</p>
+        </div>
+      </div>
+      <div class="callout pg-tip" role="note"><p>Lady Luck yalnızca başarısızlık göstergesi zaten yüksekken yardım eder ve kaliteyi yükseltmez. trueeevil 10. seviyede yaklaşık 50 düğümde bir tetiklendiğini gördü. Bir dalın ilk puanı ayrıca düğümlerini mini haritada gösterir.</p></div>
+    </section>
+    <section class="pg-sec" id="branches" aria-labelledby="h-branches">
+      <h2 id="h-branches" class="section-title">Hangi ikinci dal</h2>
+<p class="pg-lead">İlk üretmek istediğin eşyanın kaynağı — genellikle silahın.</p>      <div class="ct-cards">
+        <div class="ct-card">
+<img src="../../assets/icons/items/ore.webp" width="40" height="40" alt="">          <div><p class="ct-ctitle">Ore</p><p class="ct-ctext">Zırh, silahlar ve korumalar</p></div>
+        </div>
+        <div class="ct-card">
+<img src="../../assets/icons/items/sapphire.webp" width="40" height="40" alt="">          <div><p class="ct-ctitle">Gem</p><p class="ct-ctext">Aksesuarlar (Handicrafting)</p></div>
+        </div>
+        <div class="ct-card">
+<img src="../../assets/icons/items/log.webp" width="40" height="40" alt="">          <div><p class="ct-ctitle">Log</p><p class="ct-ctext">Yaylar ve asalar (Handicrafting)</p></div>
+        </div>
+        <div class="ct-card">
+<img src="../../assets/icons/items/herb.webp" width="40" height="40" alt="">          <div><p class="ct-ctitle">Herb</p><p class="ct-ctext">Simya: iksirler, orb ve spellbook'lar, manastone'lar</p></div>
+        </div>
+        <div class="ct-card">
+<img src="../../assets/icons/items/ingredient.webp" width="40" height="40" alt="">          <div><p class="ct-ctitle">Ingredient</p><p class="ct-ctext">Aşçılık — bekleyebilir</p></div>
+        </div>
+        <div class="ct-card is-hi">
+<img src="../../assets/icons/items/odyle.webp" width="40" height="40" alt="">          <div><p class="ct-ctitle">Odyle</p><p class="ct-ctext">Her üretim, kanatlar, Odyle Energy — ve başka herhangi bir kaynağa dönüşür</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="pg-sec" id="odyle" aria-labelledby="h-odyle">
+      <h2 id="h-odyle" class="section-title">Odyle <svg class="arr" viewBox="0 0 12 8" aria-label="→"><path d="M1 4h9M7 1l3 3-3 3"/></svg> herhangi bir kaynak</h2>
+      <div class="ct-morph">
+        <div class="ct-from"><img src="../../assets/icons/items/odyle.webp" width="52" height="52" alt=""><span>Odyle</span></div>
+        <div class="ct-arrow"><span>Substance Morph</span><svg viewBox="0 0 24 10" aria-hidden="true"><path d="M1 5h20M17 1l4 4-4 4"/></svg></div>
+        <div class="ct-to"><img src="../../assets/icons/items/ore.webp" width="40" height="40" alt=""><img src="../../assets/icons/items/sapphire.webp" width="40" height="40" alt=""><img src="../../assets/icons/items/log.webp" width="40" height="40" alt=""><img src="../../assets/icons/items/herb.webp" width="40" height="40" alt=""><img src="../../assets/icons/items/ingredient.webp" width="40" height="40" alt=""></div>
+      </div>
+      <div class="ct-cards cols-3">
+        <div class="ct-card">
+<span class="ct-sym">=</span>          <div><p class="ct-ctitle">Aynı kalite</p><p class="ct-ctext">Beyaz Odyle beyaz kaynak yapar, yeşil yeşil, altına kadar.</p></div>
+        </div>
+        <div class="ct-card">
+<span class="ct-sym">₭</span>          <div><p class="ct-ctitle">Fiyatları karşılaştır</p><p class="ct-ctext">Pazarda Odyle kaynaktan ucuzsa Odyle al ve dönüştür — TitanTheF kütüklerine bu yolla yarı fiyat ödedi.</p></div>
+        </div>
+        <div class="ct-card">
+<span class="ct-sym">✦</span>          <div><p class="ct-ctitle">Bedava Odyle</p><p class="ct-ctext">Conquest zindanları son bosstan sonra Odyle düğümleri bırakır — dalı önce maksimuma çıkarmak için bir neden daha.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="pg-sec" id="chain" aria-labelledby="h-chain">
+      <h2 id="h-chain" class="section-title">Üretim zinciri</h2>
+<div class="ct-chain">
+        <div class="ct-tile g11"><span>Gri</span></div>
+<div class="ct-arrow"><span>%25 proc</span><svg viewBox="0 0 24 10" aria-hidden="true"><path d="M1 5h20M17 1l4 4-4 4"/></svg></div>        <div class="ct-tile g21"><span>Yeşil</span></div>
+<div class="ct-arrow"><span>%25 proc</span><svg viewBox="0 0 24 10" aria-hidden="true"><path d="M1 5h20M17 1l4 4-4 4"/></svg></div>        <div class="ct-tile g31"><span>Mavi</span></div>
+<div class="ct-arrow"><span>%25 proc</span><svg viewBox="0 0 24 10" aria-hidden="true"><path d="M1 5h20M17 1l4 4-4 4"/></svg></div>        <div class="ct-tile g41"><span>Altın taslak</span></div>
+<div class="ct-arrow"><span>+ zindan malzemeleri</span><svg viewBox="0 0 24 10" aria-hidden="true"><path d="M1 5h20M17 1l4 4-4 4"/></svg></div>        <div class="ct-tile g41"><span>Altın eşya</span></div>
+      </div>
+<p class="ct-cnote">Her üretim başarısız olabilir ve eşya kırılır — kalite yükseldikçe daha sık. Proc, bir sonraki adım için gereken bir üst kalitede eşyayı verir.</p>      <div class="ct-cards cols-3">
+        <div class="ct-card">
+<span class="ct-sym">5</span>          <div><p class="ct-ctitle">4 değil, 5 stat</p><p class="ct-ctext">Üretilen eşya beş stat, zindan eşyası dört stat alır; Philosopher's Stone ile beşe karşı altı.</p></div>
+        </div>
+        <div class="ct-card">
+<span class="ct-sym">↑</span>          <div><p class="ct-ctitle">%100 aktarım</p><p class="ct-ctext">Bir sonraki kademe kendi eşyandan garantili başarıyla yapılır; güçlendirme ve statlar aktarılır.</p></div>
+        </div>
+        <div class="ct-card">
+<span class="ct-sym">∞</span>          <div><p class="ct-ctitle">Asla değiştirilmez</p><p class="ct-ctext">Bir kez üret, sonra aynı eşyayı yamadan yamaya yükselt.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="pg-sec" id="before" aria-labelledby="h-before">
+      <h2 id="h-before" class="section-title">Üretmeden önce</h2>
+      <div class="ct-cards cols-3">
+        <div class="ct-card">
+<span class="ct-sym">30</span>          <div><p class="ct-ctitle">Meslek 30+</p><p class="ct-ctext">Mavi ve altın üretimlerden önce mesleği ucuz tariflerle geliştir.</p></div>
+        </div>
+        <div class="ct-card">
+<span class="ct-sym">%</span>          <div><p class="ct-ctitle">Gerçek oranlar</p><p class="ct-ctext">Üretim penceresindeki "+%90", temel şansın üstüne yaklaşık +%9'dur (TitanTheF).</p></div>
+        </div>
+        <div class="ct-card">
+<span class="ct-sym">♻</span>          <div><p class="ct-ctitle">Başarısız taslaklar</p><p class="ct-ctext">Abyss puanı için tedarik siparişlerine teslim et, sat ya da parçala.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="pg-sec" id="leveling" aria-labelledby="h-leveling">
+      <h2 id="h-leveling" class="section-title">Hızlı geliştir</h2>
+      <ul class="pg-list">
+<li>Toplamayı <span class="it g11" data-sk="i:sapphire"><img src="../../assets/icons/items/sapphire.webp" width="20" height="20" alt="" loading="lazy">Sapphire Gemstone</span> ile geliştir: 40–60 damar seni Novice 50'ye çıkarır, sonra şehirdeki NPC'nin yeşil görevi (<span class="it g11" data-sk="i:ruby"><img src="../../assets/icons/items/ruby.webp" width="20" height="20" alt="" loading="lazy">Ruby Gemstone</span>) Professional'ı açar.</li><li>Yaklaşık Novice 20'ye kadar en ucuz gri eşyaları üret, sonra zincire başla.</li><li>Toplarken evcil hayvan farmla — Refining Stone ve üretim malzemesi düşürürler.</li><li>Uzun toplama seanslarında çıkan bot kontrolünü yanıtla.</li>      </ul>
+    </section>
+    <section class="pg-sec" id="money" aria-labelledby="h-money">
+      <h2 id="h-money" class="section-title">Kinah kazanmak</h2>
+<p class="pg-sec-src">Kaynak: <a class="pg-at" href="https://www.youtube.com/watch?v=C70IXgdByFM" target="_blank" rel="noopener" title="Aragon — Make MILLIONS Of Kina Without Energy">Aragon</a></p>      <ul class="pg-list">
+<li>Herkes Handicrafting geliştirirken taşlar iyi satar: Aragon sabah tanesini yaklaşık 2.000 kinah gördü, akşam fiyatları daha yüksek.</li><li>Taş satmak için Delicate Touch yerine Lady Luck'ı maksimuma çıkarıyor — bu üretim değil, para buildi.</li><li>Hazır taslaklara fazla ödeme: onlara hâlâ pahalı malzemeler gerekiyor.</li>      </ul>
+    </section>
+    <script type="application/json" id="sk-data">{"i:wings":{"n":"Ultimate Daeva Wings (Bound)","m":"","g":41,"d":"Grants [Ultimate Daeva Wings (Bound)].\n\n[Equipped Effect]\nHP: 500\nMP: 250\nPenetration: 500\nCritical Hit: 35\n[Owned Effect]\nFlight Power: 500\nPenetration: 100\nAccuracy Bonus: 20\nAttack Bonus: 10","sp":[]},"i:bracelet":{"n":"Ascension Bracelet","m":"Item level 51","g":41,"d":"Defense: 156\nAttack: 65","sp":[]},"i:trace":{"n":"Empyrean Trace: Altgard (Bound)","m":"","g":71,"d":"A trace faintly imbued with the strength of the Empyrean Lords who protect Altgard. Can be resonated with Altgard Monolith.","sp":[]},"i:dcrystal":{"n":"Daevanion Crystal (Bound)","m":"","g":71,"d":"Use to obtain 1 Daevanion Point.","sp":[]},"i:dcrystal_ariel":{"n":"Daevanion Crystal: Ariel (Bound)","m":"","g":71,"d":"Use to obtain 1 Ariel Daevanion Point.","sp":[]},"i:dcrystal_azphel":{"n":"Daevanion Crystal: Azphel (Bound)","m":"","g":71,"d":"Use to obtain 1 Azphel Daevanion Point.","sp":[]},"i:wisdom":{"n":"Wisdom Stone (Bound)","m":"","g":71,"d":"A mysterious stone imbued with memories of battle.\nUse to obtain 1 Skill Point.","sp":[]},"i:clashrune":{"n":"Clash Rune Chest (Bound)","m":"","g":71,"d":"A rune that can be earned only by those who have overcome a nightmare.\nUse to obtain a Clash Rune (Bound) and Rune Enhance Scrolls (Bound).","sp":[]},"i:beltscroll":{"n":"Noble Belt Enhance Scroll (Bound)","m":"","g":11,"d":"An Enhance Scroll containing an ancient power.\nUse to enhance Noble Belt.","sp":[]},"i:shugokey":{"n":"Shugo Festival Reward Key (Bound)","m":"","g":71,"d":"Recharges 1 Shugo Festival Reward Key count.","sp":[]},"i:bakarma":{"n":"Bakarma Breastplate","m":"Item level 54","g":41,"d":"HP: 216\nDefense: 397","sp":[]},"i:voucher":{"n":"Gear Change Voucher: Vakron Sky Island (Bound)","m":"","g":41,"d":"A reward obtained by defeating Vakron.\nWhen used as a Substance Morph material, it can be transformed into a Unique Guard or Unique Gear Selection Chest.","sp":[]},"i:vakronguard":{"n":"Vakron Guard","m":"Item level 70","g":41,"d":"Critical Hit: 50\nAccuracy: 50\nAttack: 144","sp":[]},"i:mana_sup":{"n":"Superior Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:mana_int":{"n":"Intermediate Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:mana_less":{"n":"Lesser Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:theostone":{"n":"Theostone: Jumentis's Dexterity (Bound)","m":"","g":31,"d":"Grants [Theostone: Jumentis's Dexterity].\nThe obtained Theostone can be found in the Enhancement menu.\nHas a 20% chance to deal 250 AoE Wind damage to up to 4 targets on attack\nEffect Activation Cooldown: 1s\nOnly one Theostone's effect applies when identical Theostones are engraved.","sp":[]},"i:enhance":{"n":"Enhance Stone","m":"","g":11,"d":"Used to awaken hidden potential of gear.","sp":[]},"i:bell_green":{"n":"Bell of Vigor","m":"Item level 40 · Set: Primal Vigor","g":21,"d":"Justice [Nezekan]: 12","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:mirror_green":{"n":"Mirror of Magic","m":"Item level 40 · Set: Magic Armor","g":21,"d":"Wisdom [Lumiel]: 12","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:compass_grey":{"n":"Compass of Magic","m":"Item level 20 · Set: Magic Armor","g":11,"d":"Death [Triniel]: 8","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:chalice_grey":{"n":"Chalice of Magic","m":"Item level 20 · Set: Magic Armor","g":11,"d":"Space [Israphel]: 8","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:mirror_gold":{"n":"Mirror of Vigor","m":"Item level 80 · Set: Primal Vigor","g":41,"d":"Illusion [Kaisinel]: 20","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:transfer_w":{"n":"Transfer Stone: Weapon (Unique) (Bound)","m":"","g":41,"d":"A formidable gemstone that transfers the boundless power of the gear to another.\nCan be used on the Unique Weapon.","sp":[]},"i:transfer_a":{"n":"Transfer Stone: Armor (Unique) (Bound)","m":"","g":41,"d":"A formidable gemstone that transfers the boundless power of the gear to another.\nCan be used on the Unique Armor.","sp":[]},"i:stigmashard":{"n":"Stigma Shard (Bound)","m":"","g":71,"d":"A fragment sealed with the Essence of Experience.\nGrants 1 Stigma Shard Point when obtained.","sp":[]},"i:amplify":{"n":"Amplify Stone (Unique) (Bound)","m":"","g":41,"d":"A mystical gemstone that awakens the unique power of gear.\nUsed to amplify Unique Gear that has reached its maximum enhancement level.","sp":[]},"i:amplify_frag":{"n":"Amplify Stone Fragment (Unique) (Bound)","m":"","g":41,"d":"A piece of an Amplify Stone used to awaken the unique power of the gear.\nCan be converted into an Amplify Stone through Substance Morph.","sp":[]},"i:sync":{"n":"Sync Stone (Unique) (Bound)","m":"","g":41,"d":"A stone that harmonizes the energies within gear to awaken new possibilities.\nWhen used in [Enhancement - Soul Binding - Sync], it allows you to adjust the properties of gear.","sp":[]},"i:sapphire":{"n":"Sapphire Gemstone (Bound)","m":"","g":11,"d":"A gemstone infused with valuable gems. Used as a material for handicrafting accessories.","sp":[]},"i:ruby":{"n":"Ruby Gemstone (Bound)","m":"","g":11,"d":"A gemstone infused with valuable gems. Used as a material for handicrafting accessories.","sp":[]},"i:odyle":{"n":"Odyle","m":"","g":11,"d":"Used to imbue an item with the power of Odyle. Used as a material for Crafting and Substance Morph.","sp":[]},"i:log":{"n":"Yggdrasil Log (Bound)","m":"","g":11,"d":"A magic-imbued log. Used for making wooden weapons in Handicrafting.","sp":[]},"i:odyle_energy":{"n":"Odyle Energy (Bound)","m":"","g":71,"d":"Recharges 40 Odyle Energy.\nOdyle Energy can be used to activate the Odyle Energy Cube that appears when you clear an Expedition, Transcendence, or Sanctuary.","sp":[]},"i:ore":{"n":"Orichalcum Ore","m":"","g":11,"d":"A hard ore. Used as a material for Blacksmithing and Armorsmithing.","sp":[]},"i:herb":{"n":"Calendula","m":"","g":11,"d":"An herb used to concoct a potion in Alchemy.","sp":[]},"i:ingredient":{"n":"Kukuru","m":"","g":11,"d":"A cooking ingredient.","sp":[]},"i:parchment_vigor":{"n":"Parchment of Vigor","m":"Item level 80 · Set: Primal Vigor","g":41,"d":"Life [Yustiel]: 20","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:compass_vigor":{"n":"Compass of Vigor","m":"Item level 80 · Set: Primal Vigor","g":41,"d":"","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:chalice_vigor":{"n":"Chalice of Vigor","m":"Item level 80 · Set: Primal Vigor","g":41,"d":"","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:mirror_magic_gold":{"n":"Mirror of Magic","m":"Item level 80 · Set: Magic Armor","g":41,"d":"Wisdom [Lumiel]: 20","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"g:proficient":{"n":"Proficient Handling","m":"","d":"Ortak yetenek · en fazla 10. Toplarken Success Gauge'u hızlandırır, böylece düğüm başarısız olmadan dolar. Delicate Touch ile birlikte maksimuma çıkar.","sp":[]},"g:delicate":{"n":"Delicate Touch","m":"","d":"Ortak yetenek · en fazla 10. Başarısız toplama denemesi şansını düşürür. Proficient Handling ile paralel olarak maksimuma çıkar.","sp":[]},"g:luck":{"n":"Lady Luck","m":"","d":"Ortak yetenek. Yalnızca Failure Gauge %50 veya üstündeyken çalışır: o zaman Success Gauge'u katlama şansı vardır (5. seviyede ×2,5 için %24). Yalnızca toplama — kaliteyi yükseltmez ve üretimi etkilemez. Artan puanlar, en fazla 5.","sp":[]},"g:seeker":{"n":"Seeker","m":"","d":"1 puan. Dalı açar ve kaynak düğümlerini mini haritada gösterir.","sp":[]},"g:harvest":{"n":"Plentiful Harvest","m":"","d":"3 puan. İki kat toplama şansı (×2).","sp":[]},"g:appraiser":{"n":"Appraiser","m":"","d":"3 puan. Daha yüksek kaliteli kaynak toplama şansı artar.","sp":[]}}</script>
+<p class="w1-cta"><a class="btn btn-primary" href="../../tr/progression/">45 sonrası rotayı aç →</a></p>  </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../tr/">AION 2 Rehberleri</a>
+      <p>Resmî olmayan hayran sitesi, NCSOFT ile bağlantılı değildir. AION 2 ve yetenek simgeleri © NCSOFT.</p>
+      <p>Son kontrol: 2026-10-04 (global çıkıştan önce).</p>
+      <p><a href="../../tr/sources/">Tüm kaynaklar ve içerik üreticileri</a> · <a href="../../tr/changelog/">Değişiklik günlüğü</a> · <button type="button" class="link-btn report-open">Hata bildir</button></p>
+    </div>
+  </div>
+</footer>
+<dialog class="search-dlg" aria-label="Ara" data-index="../../tr/search.json" data-base="../../tr/" data-empty="Hiçbir şey bulunamadı"
+  data-kinds="{&#34;boss&#34;: &#34;Boss&#34;, &#34;class&#34;: &#34;S\u0131n\u0131f&#34;, &#34;page&#34;: &#34;Sayfa&#34;, &#34;section&#34;: &#34;B\u00f6l\u00fcm&#34;, &#34;skill&#34;: &#34;Yetenek&#34;}" data-root="../../">
+  <div class="search-in">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-q" placeholder="Sınıf, yetenek, boss, bölüm…" aria-label="Ara" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-res" role="listbox"></ul>
+  </div>
+</dialog>
+<dialog class="whatsnew" data-id="2026-10-04" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title">Yenilikler</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="Anladım">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <section class="wn-entry">
+      <time class="wn-date" datetime="2026-10-04">4 Ekim 2026</time>
+      <ul>
+        <li><span><strong>Türkçe sürüm</strong> — tüm site artık Türkçe de: rehberler, sayfalar ve takipçiler. Ukraynaca sayfalarda olduğu gibi yetenek ve eşya adları İngilizce kalıyor. Çeviri yapay zekâ ile yapıldı — bir hata görürsen "Hata bildir"i kullan veya GitHub'da bir issue aç.</span></li>
+      </ul>
+    </section>
+    <button class="btn btn-primary wn-ok" value="close">Anladım</button>
+    <p class="wn-all"><a href="../../tr/changelog/">Tüm değişiklik günlüğü →</a></p>
+  </form>
+</dialog>
+<dialog class="whatsnew feedback" aria-labelledby="fb-title" data-url="https://aion2-feedback.couga-ua.workers.dev/" data-page="tr/crafting/" data-lang="tr">
+  <form class="wn-in fb-form" novalidate>
+    <div class="wn-head">
+      <h2 id="fb-title">Hata bildir</h2>
+      <button type="button" class="icon-btn fb-x" aria-label="Anladım">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <p class="fb-hint">Yanlış veya eskimiş olan ne? Bir kaynağın bağlantısı ya da ekran görüntüsü çok yardımcı olur.</p>
+    <label class="fb-label" for="fb-text">Mesajın</label>
+    <textarea id="fb-text" class="fb-text" name="text" rows="6" maxlength="2000" required placeholder="Örneğin: global&#39;de Blaze&#39;in üçüncü uzmanlığı farklı…"></textarea>
+    <label class="fb-label" for="fb-contact">Yanıt için iletişim (isteğe bağlı)</label>
+    <input id="fb-contact" class="fb-contact" name="contact" type="text" maxlength="100" autocomplete="off" placeholder="Discord veya Telegram">
+    <input class="fb-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="fb-meta">Mesajla birlikte gönderilir: <b class="fb-where"></b></p>
+    <p class="fb-status" role="status" data-sending="Gönderiliyor…" data-ok="Gönderildi — teşekkürler!" data-err="Gönderilemedi. Lütfen daha sonra tekrar dene." data-rate="Art arda çok fazla mesaj — birkaç dakika sonra tekrar dene." data-short="Önce birkaç kelime yaz."></p>
+    <div class="fb-actions">
+      <button type="submit" class="btn btn-primary fb-send">Gönder</button>
+      <button type="button" class="btn btn-ghost fb-cancel">İptal</button>
+    </div>
+  </form>
+</dialog>
+<script src="../../assets/js/site.js?v=90e2e663" defer></script>
+<script src="../../assets/js/fx.js?v=90e2e663" defer></script>
+<div class="cel-banner" role="status" hidden data-at="2026-09-30T14:00:00Z" data-id="early">
+  <span class="cel-ico" aria-hidden="true">✦</span>
+  <div><p class="cel-h">Erken Erişim açıldı!</p><p class="cel-p">Founder&#39;s Pack sunucuları açık — ilk günde bol şans. Sınıf rehberlerin hazır.</p></div>
+  <button type="button" class="cel-x" aria-label="Kapat">×</button>
+</div>
+<script src="../../assets/js/celebrate.js?v=90e2e663" defer></script>
+</body>
+</html>

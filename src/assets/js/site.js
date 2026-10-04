@@ -319,7 +319,7 @@
     var pad = function (n) { return (n < 10 ? '0' : '') + n; };
     // Main date = the visitor's own local time; the UTC text from the build moves to the note.
     try {
-      var fmt = new Intl.DateTimeFormat(({ ru: 'ru-RU', uk: 'uk-UA' })[evBox.dataset.lang] || 'en-GB',
+      var fmt = new Intl.DateTimeFormat(({ ru: 'ru-RU', uk: 'uk-UA', tr: 'tr-TR' })[evBox.dataset.lang] || 'en-GB',
         { weekday: 'short', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' });
       evs.forEach(function (e) {
         var t = e.li.querySelector('.ev-when time'), el = e.li.querySelector('.ev-local');

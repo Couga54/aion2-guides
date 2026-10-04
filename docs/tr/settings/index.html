@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="tr" data-mode="pve">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oyun ayarları: kontroller, tuşlar ve FPS — AION 2 Rehberleri</title>
+<meta name="description" content="İlk gün değiştirmeye değer AION 2 ayarları: kontrol modu, hedef seçimi, makro tuşu, ayrı Defiance tuşu, buff parşömenlerinin otomatik kullanımı, boss yönelimi ve aggro menzili, FPS ve toplu PvP seçenekleri.">
+<link rel="canonical" href="https://couga54.github.io/aion2-guides/tr/settings/">
+<link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/settings/">
+<link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/settings/">
+<link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/settings/">
+<link rel="alternate" hreflang="tr" href="https://couga54.github.io/aion2-guides/tr/settings/">
+<link rel="alternate" hreflang="x-default" href="https://couga54.github.io/aion2-guides/en/settings/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Rehberleri">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Oyun ayarları: kontroller, tuşlar ve FPS — AION 2 Rehberleri">
+<meta property="og:description" content="İlk gün değiştirmeye değer AION 2 ayarları: kontrol modu, hedef seçimi, makro tuşu, ayrı Defiance tuşu, buff parşömenlerinin otomatik kullanımı, boss yönelimi ve aggro menzili, FPS ve toplu PvP seçenekleri.">
+<meta property="og:url" content="https://couga54.github.io/aion2-guides/tr/settings/">
+<meta property="og:image" content="https://couga54.github.io/aion2-guides/assets/og/settings-tr.jpg?v=90e2e663">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var off = (r.getAttribute('data-off') || '').split(' ');
+    var modes = ['pve', 'pvp', 'lvl'].filter(function (x) { return off.indexOf(x) < 0; });
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+    else if (modes.indexOf(r.dataset.mode) < 0) r.dataset.mode = modes[0];
+  })(document.documentElement);
+</script>
+<script>
+  // Google Analytics (site.json "ga"). Not loaded on local previews. A visitor who came through the root
+  // language redirect keeps the site they came from (root.html saves it in sessionStorage).
+  if (!/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+    (function () {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-6WYEWLG4B5';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      var ref = null;
+      try { ref = sessionStorage.getItem('ref'); sessionStorage.removeItem('ref'); } catch (e) {}
+      gtag('js', new Date());
+      gtag('config', 'G-6WYEWLG4B5', ref ? { page_referrer: ref } : {});
+    })();
+  }
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=90e2e663">
+</head>
+<body class="page-guide page-settings">
+<a class="skip-link" href="#main">İçeriğe geç</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../tr/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
+      <span>AION 2 Rehberleri</span>
+    </a>
+    <details class="class-menu">
+      <summary class="class-menu-btn">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg><span>Sınıflar</span>        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="Sınıflar">
+        <a href="../../tr/gladiator/" class="cm-item accent-crimson">
+          <img src="../../assets/classes/gladiator.webp" width="44" height="44" alt=""><span class="cm-name">Gladiator</span><span class="cm-role">Yakın dövüş DPS · bruiser</span>
+        </a>
+        <a href="../../tr/ranger/" class="cm-item accent-emerald">
+          <img src="../../assets/classes/ranger.webp" width="44" height="44" alt=""><span class="cm-name">Ranger</span><span class="cm-role">Menzilli DPS · kiter</span>
+        </a>
+        <a href="../../tr/templar/" class="cm-item accent-sapphire">
+          <img src="../../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Templar</span><span class="cm-role">Tank · grup bufferı</span>
+        </a>
+        <a href="../../tr/assassin/" class="cm-item accent-violet">
+          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Assassin</span><span class="cm-role">Yakın dövüş DPS · patlama</span>
+        </a>
+        <a href="../../tr/sorcerer/" class="cm-item accent-frost">
+          <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Sorcerer</span><span class="cm-role">Menzilli büyü DPS</span>
+        </a>
+        <a href="../../tr/elementalist/" class="cm-item accent-spirit">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Elementalist</span><span class="cm-role">Çağırıcı · büyü DPS</span>
+        </a>
+        <a href="../../tr/cleric/" class="cm-item accent-sunlight">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Cleric</span><span class="cm-role">Şifacı · toprak ve şimşek hasarı</span>
+        </a>
+        <a href="../../tr/chanter/" class="cm-item accent-amber">
+          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Chanter</span><span class="cm-role">Yakın dövüş destek · buffer</span>
+        </a>
+      </nav>
+    </details>
+    <div class="topbar-tools">      <span class="rift-timer" data-anchor="2026-10-02T18:00:00Z" data-every="3" data-tz="Europe/Kyiv" data-open-min="10" data-open="Rift açık" title="Rift — düşman bölgesine açılan portal, her 3 saatte bir açılır; giriş 10 dakika açık kalır, içeride yaklaşık bir saat kalabilirsin. Sonraki">
+        <svg class="rt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="7.5" ry="10.5"/><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/><g transform="rotate(180 12 12)"><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/></g></svg><span class="rt-name">Rift</span><b class="rt-time">--:--</b>
+      </span>
+      <a class="wr-chip" href="../../tr/weekly/" data-anchor="2026-09-30T07:00:00Z" data-tz="Europe/Kyiv" data-units="g,sa,dk,sn" title="Haftalık sıfırlamaya">
+        <svg class="wr-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg><span class="wr-name">Sıfırlama</span><b class="wr-time">--</b>
+      </a>
+      <a class="top-timer" href="../../tr/" title="Çıkış takvimi" data-events='[{"at": "2026-09-28T13:00:00Z", "n": "\u00d6n indirme", "o": ""}, {"at": "2026-09-30T14:00:00Z", "n": "Erken Eri\u015fim", "o": "Erken Eri\u015fim ba\u015flad\u0131"}, {"at": "2026-10-05T13:00:00Z", "n": "Global \u00e7\u0131k\u0131\u015f", "o": "Sunucular a\u00e7\u0131k"}]' data-units="g,sa,dk,sn" data-open="açık">
+        <span class="tt-dot" aria-hidden="true"></span><span class="tt-name"></span><b class="tt-time">--:--:--</b>
+      </a>
+      <details class="class-menu nav-menu">
+        <summary class="class-menu-btn is-here">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Rehberler</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <nav class="nav-menu-panel" aria-label="Rehberler">
+          <div class="nm-col">
+            <p class="nm-group">İlerleme</p>
+            <a href="../../tr/week-1/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+              <span class="nm-name">1. hafta</span><span class="nm-desc">İlk sıfırlamadan önce bitirilecekler</span>
+            </a>
+            <a href="../../tr/progression/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h4v-6H3zM10 20h4V9h-4zM17 20h4V4h-4z"/></svg>
+              <span class="nm-name">45 sonrası</span><span class="nm-desc">Raide giden item level rotası</span>
+            </a>
+            <a href="../../tr/crafting/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 1.3-1.3a4 4 0 0 0-5-5L3 10l3-3 3 3 1.3-1.3a4 4 0 0 1 4.4-2.4z"/></svg>
+              <span class="nm-name">Toplama ve üretim</span><span class="nm-desc">Meslekler ve altın taslaklar</span>
+            </a>
+            <a href="../../tr/settings/" class="nm-item" aria-current="page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+              <span class="nm-name">Oyun ayarları</span><span class="nm-desc">Kontroller, tuşlar, FPS ve toplu PvP</span>
+            </a>
+          </div>
+          <div class="nm-col">
+            <p class="nm-group">Takipçiler</p>
+            <a href="../../tr/weekly/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+              <span class="nm-name">Haftalık</span><span class="nm-desc">Haftalık girişler ve enerji</span>
+            </a>
+            <a href="../../tr/bosses/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
+              <span class="nm-name">Bosslar</span><span class="nm-desc">Öldürme takibi ve zamanlayıcılar</span>
+            </a>
+          </div>
+          <div class="nm-foot">
+            <a href="../../tr/sources/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+              <span class="nm-name">Kaynaklar ve emeği geçenler</span><span class="nm-desc">Bu sitenin dayandığı herkes</span>
+            </a>
+          </div>
+        </nav>
+      </details>      <details class="lang-menu">
+        <summary class="lang-switch" title="Dil"><span aria-hidden="true">TR</span><span class="sr-only">Dil</span></summary>
+        <nav class="lang-panel" aria-label="Dil">
+<a href="../../en/settings/" hreflang="en" lang="en" data-keep-query><b>EN</b>English</a><a href="../../ru/settings/" hreflang="ru" lang="ru" data-keep-query><b>RU</b>Русский</a><a href="../../uk/settings/" hreflang="uk" lang="uk" data-keep-query><b>UA</b>Українська</a><a href="../../tr/settings/" hreflang="tr" lang="tr" aria-current="true" data-keep-query><b>TR</b>Türkçe</a>        </nav>
+      </details>
+      <button class="icon-btn search-open" type="button" aria-label="Ara (Ctrl+K)" title="Ara (Ctrl+K)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+<a class="icon-btn wn-top" href="../../tr/changelog/" aria-label="Değişiklik günlüğü" title="Değişiklik günlüğü">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </a>      <button class="icon-btn theme-toggle" type="button" aria-label="Karanlık modu değiştir" title="Karanlık modu değiştir">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero has-art" style="--hero-art:url('../../assets/art/hero-sources.webp');--hero-pos:50% 30%">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../../tr/">Tüm sınıflar</a><span aria-hidden="true">/</span><span>Ayarlar</span></nav>
+      <h1>Oyun ayarları</h1>
+      <p class="lead">İlk gün ayarlarda neyi değiştirmelisin: kontroller ve hedefleme, gözden kaçması kolay tuşlar, ekranda neyin gösterileceği, FPS ve toplu PvP.</p>
+    </div>
+  </section>
+
+  <div class="wrap guide-layout pg-layout"><aside class="toc-side pg-side" aria-label="Bu sayfada">
+    <p class="toc-title">Bu sayfada</p>
+    <nav class="toc-list">
+<a href="#first">Önce bunları değiştir</a><a href="#controls">Combat → Controls</a><a href="#targeting">Combat → Target Scanning</a><a href="#autouse">Combat → Looting ve Auto-use</a><a href="#keys">Key Settings: atamaya değer tuşlar</a><a href="#display">Info Display: ekranda ne gösterilir</a><a href="#graphics">Graphics → Optimize: FPS ve toplu PvP</a><a href="#camera">Graphics → Camera / Direction</a><a href="#other">Diğer sekmeler</a>    </nav>
+  </aside>
+  <div class="pg-page">
+    <p class="pg-note">İki ayar videosundan: Whelps (Ranger main) ve Grobs. Ayar adları İngilizce istemcideki gibi yazıldı; değerler onlarındır — başlangıç noktası olarak gör. İkisinin ayrıştığı yerlerde iki seçenek de verildi. Her blok videodaki ilgili ana bağlantı verir.
+<a class="w1-src" href="https://www.youtube.com/watch?v=M5IeDf9CczU" target="_blank" rel="noopener" title="Whelps — My Settings &amp; Recommendations | Aion 2">Whelps</a><a class="w1-src" href="https://www.youtube.com/watch?v=5BoGBzDZdZI" target="_blank" rel="noopener" title="Grobs — 12 Settings You Should Change in AION 2">Grobs</a></p>
+
+    <ol class="pg-toc" aria-label="Adımlar">
+      <li><a href="#first"><span>Önce bunları değiştir</span></a></li>
+      <li><a href="#controls"><span>Combat → Controls</span></a></li>
+      <li><a href="#targeting"><span>Combat → Target Scanning</span></a></li>
+      <li><a href="#autouse"><span>Combat → Looting ve Auto-use</span></a></li>
+      <li><a href="#keys"><span>Key Settings: atamaya değer tuşlar</span></a></li>
+      <li><a href="#display"><span>Info Display: ekranda ne gösterilir</span></a></li>
+      <li><a href="#graphics"><span>Graphics → Optimize: FPS ve toplu PvP</span></a></li>
+      <li><a href="#camera"><span>Graphics → Camera / Direction</span></a></li>
+      <li><a href="#other"><span>Diğer sekmeler</span></a></li>
+    </ol>
+
+    <section class="pg-sec" id="first" aria-labelledby="h-first">
+      <h2 id="h-first" class="section-title">Önce bunları değiştir</h2>
+<p class="pg-lead">Yalnızca iki dakikan varsa — en çok fark yaratan ayarlar bunlar. Ayrıntılar ve nedenleri aşağıdaki bölümlerde.</p><p class="st-label">Key Settings <svg class="arr" viewBox="0 0 12 8" aria-label="→"><path d="M1 4h9M7 1l3 3-3 3"/></svg> General</p>      <div class="st-opts">
+        <div class="st-row"><p class="st-name">Macro</p><div class="st-body"><p class="st-val"><b class="sv">bir tuş ata</b> — genellikle farenin sağ tuşu</p><p class="st-why">Varsayılan olarak tuşu yok ve tuş olmadan oyun içi makro hiç çalışmaz.</p></div></div>
+        <div class="st-row"><p class="st-name">Separate Defiance Hotkey</p><div class="st-body"><p class="st-val"><b class="sv sv-on">ON</b> + kendi tuşu</p><p class="st-why">Space'te Defiance, zıplama ve süzülmeyle aynı tuşu paylaşır — kontrol altındayken ona basıp durursan süzülmeye başlarsın.</p></div></div>
+        <div class="st-row"><p class="st-name">Fly Up, Fly Down</p><div class="st-body"><p class="st-val"><b class="sv">rahat tuşlar</b></p><p class="st-why">Varsayılanlar Ctrl+R ve Ctrl+F, ve ikisine de sürekli ihtiyacın var.</p></div></div>
+        <div class="st-row"><p class="st-name">Interact</p><div class="st-body"><p class="st-val"><b class="sv">ikinci bir tuş</b>: <kbd>F</kbd> + <kbd>Z</kbd></p><p class="st-why">İkisine sırayla bas — görev diyalogları çok daha hızlı geçer.</p></div></div>
+      </div>
+<p class="st-label">Combat</p>      <div class="st-opts">
+        <div class="st-row"><p class="st-name">Auto-use → Buff Auto-use Conditions</p><div class="st-body"><p class="st-val"><b class="sv">In Combat</b></p><p class="st-why">Şehirde koşarken buff parşömenleri yanmayı bırakır.</p></div></div>
+        <div class="st-row"><p class="st-name">Controls → Skill Queue</p><div class="st-body"><p class="st-val"><b class="sv sv-on">ON</b></p><p class="st-why">Makro onunla en iyi çalışır.</p></div></div>
+        <div class="st-row"><p class="st-name">Target Scanning → Preferred Search Direction</p><div class="st-body"><p class="st-val"><b class="sv">Front of Camera</b></p><p class="st-why">Tab baktığın hedefi alır.</p></div></div>
+        <div class="st-row"><p class="st-name">Target Scanning → Detailed Settings</p><div class="st-body"><p class="st-val"><b class="sv">Priority Ranking</b>, önce Hostile Players</p><p class="st-why">PvP için: Tab moblardan önce oyuncuları alır.</p></div></div>
+      </div>
+<p class="st-label">Info Display <svg class="arr" viewBox="0 0 12 8" aria-label="→"><path d="M1 4h9M7 1l3 3-3 3"/></svg> Combat</p>      <div class="st-opts">
+        <div class="st-row"><p class="st-name">Aggro Range Display</p><div class="st-body"><p class="st-val"><b class="sv sv-on">ON</b></p><p class="st-why">Bir mobun nerede aggro alacağını görürsün.</p></div></div>
+        <div class="st-row"><p class="st-name">Display Boss Orientation Indicator</p><div class="st-body"><p class="st-val"><b class="sv">ALL</b></p><p class="st-why">Bossun sırtının nerede olduğunu görürsün.</p></div></div>
+      </div>
+<p class="st-label">Graphics <svg class="arr" viewBox="0 0 12 8" aria-label="→"><path d="M1 4h9M7 1l3 3-3 3"/></svg> Optimize</p>      <div class="st-opts">
+        <div class="st-row"><p class="st-name">Effect Quality</p><div class="st-body"><p class="st-val"><b class="sv">Very Low</b></p><p class="st-why">En büyük FPS kazancı ve ekranda çok daha az yanıp sönme.</p></div></div>
+        <div class="st-row"><p class="st-name">Player Particle Effect Display</p><div class="st-body"><p class="st-val"><b class="sv">Self Only</b></p><p class="st-why">Diğer herkesin yetenek efektlerini gizler.</p></div></div>
+        <div class="st-row"><p class="st-name">Identical Player Appearance, [Abyss] Display as Tier Icon</p><div class="st-body"><p class="st-val"><b class="sv sv-on">ON</b></p><p class="st-why">Toplu PvP için şart.</p></div></div>
+      </div>
+<p class="st-label">Graphics <svg class="arr" viewBox="0 0 12 8" aria-label="→"><path d="M1 4h9M7 1l3 3-3 3"/></svg> Camera / Direction</p>      <div class="st-opts">
+        <div class="st-row"><p class="st-name">Teleport Effect Color</p><div class="st-body"><p class="st-val"><b class="sv">Dark</b></p><p class="st-why">Her ışınlanmada beyaz parlama yok.</p></div></div>
+        <div class="st-row"><p class="st-name">Camera Shake Effect During Combat</p><div class="st-body"><p class="st-val"><b class="sv sv-off">OFF</b></p><p class="st-why">Savaşta sarsıntı yok.</p></div></div>
+        <div class="st-row"><p class="st-name">World Map Transition Animation</p><div class="st-body"><p class="st-val"><b class="sv sv-off">OFF</b></p><p class="st-why">Haritayı her açtığında animasyon yok.</p></div></div>
+      </div>
+    </section>
+    <section class="pg-sec" id="controls" aria-labelledby="h-controls">
+      <h2 id="h-controls" class="section-title">Combat <svg class="arr" viewBox="0 0 12 8" aria-label="→"><path d="M1 4h9M7 1l3 3-3 3"/></svg> Controls</h2>
+      <p class="pg-p"><strong>Control Mode: AION 2 mi AION 1 mi?</strong> AION 2 aksiyon modudur: nişangâh ekranın ortasında durur ve kamera fareyi takip eder. AION 1 klasik moddur: serbest imleç, kamera sağ fare tuşunu basılı tutarken döner. Zevk meselesi, ama AION 2 makroya daha dost — AION 1 modunda sol ve sağ fare tuşları yeniden atanamaz. <a class="pg-at" href="https://www.youtube.com/watch?v=M5IeDf9CczU&t=8s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 0:08</a></p>
+      <div class="st-opts">
+        <div class="st-row"><p class="st-name">Control Mode</p><div class="st-body"><p class="st-val"><b class="sv">AION 2</b></p><p class="st-why">Fare tuşundaki makro için daha iyi; yukarıya bak.</p></div></div>
+        <div class="st-row"><p class="st-name">Display Distance to Aimed Target</p><div class="st-body"><p class="st-val"><b class="sv sv-on">ON</b></p><p class="st-why">Hedefe olan mesafeyi isim plakasının üstünde gösterir.</p></div></div>
+        <div class="st-row"><p class="st-name">Adjust Aim Position</p><div class="st-body"><p class="st-val">zevke göre</p><p class="st-why">Nişangâhı ekranda yukarı veya aşağı taşır (videoda 188px).</p></div></div>
+        <div class="st-row"><p class="st-name">Select Aimable Target</p><div class="st-body"><p class="st-val"><b class="sv">Hostile Target</b></p><p class="st-why">Yoksa nişangâh müttefikleri de seçer. Bir müttefiki hedeflemen nadiren gerekir — saldırdığın hedefte kalmak daha iyi.</p></div></div>
+        <div class="st-row"><p class="st-name">Pursue Targets with Skill Activation</p><div class="st-body"><p class="st-val">menzilliler için <b class="sv sv-off">OFF</b>, yakın dövüş için isteğe bağlı</p><p class="st-why">ON iken menzil dışında bir yeteneğe basınca karakter hedefe yürür ve sonra kullanır. OFF daha fazla kontrol verir.</p></div></div>
+        <div class="st-row"><p class="st-name">Auto Target Upon Skill Use</p><div class="st-body"><p class="st-val">açık dünya farmı için <b class="sv sv-on">ON</b> (varsayılan: OFF)</p><p class="st-why">Hedef seçili değilken bir yetenek en yakın hedefi seçer: makroyu basılı tutarak koş, mobdan moba geçer. Grobs farm için hep açar, özellikle menzilli sınıflarda; Whelps farm dışında kapalı tutar.</p></div></div>
+        <div class="st-row"><p class="st-name">Set Main Target Upon Attack</p><div class="st-body"><p class="st-val">iki yol, aşağıya bak (varsayılan: ON, iki tık da ON)</p><p class="st-why">Saldırının hedefi kilitleyip kilitlemediği. Whelps: sol tık ON ve sağ tık OFF ile ON. Grobs: yakın dövüşte OFF.</p></div></div>
+        <div class="st-row"><p class="st-name">Skill Queue</p><div class="st-body"><p class="st-val"><b class="sv sv-on">ON</b></p><p class="st-why">Başka bir yetenek sırasında basılan yetenek sıraya alınır. Makroyla en iyi sonucu verir.</p></div></div>
+      </div>
+<p class="pg-table-at"> <a class="pg-at" href="https://www.youtube.com/watch?v=M5IeDf9CczU&t=50s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 0:50</a> <a class="pg-at" href="https://www.youtube.com/watch?v=5BoGBzDZdZI&t=100s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ Grobs 1:40</a></p>      <h3 class="pg-h">Yumuşak kilit ve sert kilit</h3>
+      <p class="pg-p">Bir düşmana nişan al, etrafında beyaz bir daire belirir — bu <strong>yumuşak kilit</strong>: yetenekler oraya gider ama başka yere nişan aldığın anda hedef değişir. HP çubuğundaki iki ok <strong>sert kilit</strong> demek: hedef sen değiştirene kadar kalır. Varsayılan olarak her saldırı sert kilitler; <kbd>Tab</kbd> her zaman kilitler. <a class="pg-at" href="https://www.youtube.com/watch?v=5BoGBzDZdZI&t=39s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ Grobs 0:39</a></p>
+      <ul class="pg-list">
+<li><strong>Set Main Target Upon Attack → OFF</strong> (Grobs, yakın dövüş): saldırılar artık kilitlemez, böylece durmadan hedeften hedefe atlarsın — mob grupları için iyi. Bossta <kbd>Tab</kbd> ile kilitle.</li><li><strong>ON, sol tık ON, sağ tık OFF</strong> (Whelps, Ranger): sol tuş hedefi seçip kilitler, makronun olduğu sağ tuş ise onu asla yanlışlıkla değiştirmez.</li>      </ul>
+    </section>
+    <section class="pg-sec" id="targeting" aria-labelledby="h-targeting">
+      <h2 id="h-targeting" class="section-title">Combat <svg class="arr" viewBox="0 0 12 8" aria-label="→"><path d="M1 4h9M7 1l3 3-3 3"/></svg> Target Scanning</h2>
+      <div class="st-opts">
+        <div class="st-row"><p class="st-name">Preferred Search Direction</p><div class="st-body"><p class="st-val"><b class="sv">Front of Camera</b> (varsayılan: None)</p><p class="st-why">Tab, kameranın baktığı yerde hedef arar; böylece neyi seçeceğini sen kontrol edersin.</p></div></div>
+        <div class="st-row"><p class="st-name">Target Scanning Detailed Settings</p><div class="st-body"><p class="st-val"><b class="sv">Priority Ranking</b> (varsayılan: Closest First)</p><p class="st-why">PvP yapıyorsan: hedefler mesafeye göre değil kendi öncelik listene göre seçilir. Abyss'te moblar ve oyuncular yan yana — Tab oyuncuyu almalı.</p></div></div>
+      </div>
+<p class="pg-table-at"> <a class="pg-at" href="https://www.youtube.com/watch?v=M5IeDf9CczU&t=136s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 2:16</a> <a class="pg-at" href="https://www.youtube.com/watch?v=5BoGBzDZdZI&t=133s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ Grobs 2:13</a></p>      <h3 class="pg-h">PvP için öncelik sırası</h3>
+      <ul class="pg-list">
+<li><strong>1–2.</strong> Hostile Players, sonra Players Attacking Me. Global'de varsayılan birinci sıra «saldırdığın veya nişan aldığın hedefler» ve oyuncular ancak 2. ve 3. sırada — Hostile Players'ı en üste taşımak asgari olan; Grobs başka hiçbir şey değiştirmiyor. <a class="pg-at" href="https://www.youtube.com/watch?v=M5IeDf9CczU&t=154s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 2:34</a></li><li><strong>3–8.</strong> Zaten vurduğun hedefler, sonra varsayılan sırada canavarlar ve NPC'ler.</li><li><strong>9–10.</strong> Oyuncuların ruhları (global istemcide familiars) — en altta: bunlar Elementalist'in ruhları. Global'de varsayılan olarak canavarların üstünde 4. ve 6. sıradalar, bu yüzden PvP'de Tab sürekli onlara düşer.</li>      </ul>
+      <div class="callout pg-tip" role="note"><p>İki yazar da bu ikisini aynı şekilde ayarlıyor. Yalnızca PvE mi yapıyorsun? Closest First yeterli — Tab sadece en yakın hedefi alır; Front of Camera yine de değer.</p></div>
+    </section>
+    <section class="pg-sec" id="autouse" aria-labelledby="h-autouse">
+      <h2 id="h-autouse" class="section-title">Combat <svg class="arr" viewBox="0 0 12 8" aria-label="→"><path d="M1 4h9M7 1l3 3-3 3"/></svg> Looting ve Auto-use</h2>
+      <div class="st-opts">
+        <div class="st-row"><p class="st-name">Looting → Obtaining Gear / Obtaining Item</p><div class="st-body"><p class="st-val">Hepsi veya filtre</p><p class="st-why">Bir ekipman kalitesini (Common, Rare …) veya eşya türünü (iksirler, parçalar, üretim malzemeleri) toplamayı bırakabilirsin — farmda çanta dolunca işe yarar.</p></div></div>
+        <div class="st-row"><p class="st-name">Auto-use → Buff Auto-use Conditions</p><div class="st-body"><p class="st-val"><b class="sv">In Combat</b></p><p class="st-why">Buff parşömenleri genellikle otomatik kullanımdadır. «Hareket hâlinde» seçeneğiyle hareket ettiğin anda, «her zaman» ile sürekli kullanılırlar. İkisi de parşömen israfı.</p></div></div>
+        <div class="st-row"><p class="st-name">Auto-use → Life Potion</p><div class="st-body"><p class="st-val"><b class="sv sv-on">ON</b>, videoda %83</p><p class="st-why">Seçilen HP'nin altında iksirler otomatik içilir.</p></div></div>
+      </div>
+<p class="pg-table-at"> <a class="pg-at" href="https://www.youtube.com/watch?v=M5IeDf9CczU&t=167s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 2:47</a></p>      <div class="callout pg-tip" role="note"><p><strong>Yakın dövüş, dikkat:</strong> yakın dövüş sınıfı hedef olmadan da sallayabilir ve şehirde tek bir sol tık bile savaş sayılır — parşömenler kullanılır. Ranger otomatik saldırı için hedefe ihtiyaç duyar, o yüzden onda olmaz.</p></div>
+    </section>
+    <section class="pg-sec" id="keys" aria-labelledby="h-keys">
+      <h2 id="h-keys" class="section-title">Key Settings: atamaya değer tuşlar</h2>
+<p class="pg-lead">Tuşlar onun — kendininkileri seç. Önemli olan bu eylemlerin bir tuşunun olması.</p>      <div class="st-opts">
+        <div class="st-row"><p class="st-name">General → Separate Defiance Hotkey + Set Defiance Hotkey</p><div class="st-body"><p class="st-val"><b class="sv sv-on">ON</b>, tuş <kbd>`</kbd> (<kbd>1</kbd>'in solunda); varsayılan: OFF</p><p class="st-why">Varsayılan olarak Defiance (kontrolü kırar) zıplama ve süzülmeyle birlikte <kbd>Space</kbd>'tedir. Kontrol altında Space'e bas bas — süzülmeye başlarsın ve bu sonraki hamleni mahveder: boss mekaniği ya da PvP dövüşü kaybedilir.</p></div></div>
+        <div class="st-row"><p class="st-name">General → Fly Up, Fly Down</p><div class="st-body"><p class="st-val">Fly Up için yan fare tuşu; varsayılanlar: <kbd>Ctrl</kbd>+<kbd>R</kbd> ve <kbd>Ctrl</kbd>+<kbd>F</kbd></p><p class="st-why">Kamerayı eğmeden dümdüz yukarı veya aşağı uçar — PvP'de kamera hedefte kalır. İkisine de sürekli ihtiyacın var ve bunun için kimse Ctrl+R'ye basmaz: ilk girişte yeniden ata ve alış.</p></div></div>
+        <div class="st-row"><p class="st-name">General → Macro</p><div class="st-body"><p class="st-val">sağ fare tuşu; varsayılan: <b class="sv">tuş yok</b></p><p class="st-why">Tuş olmadan makro hiç çalışmaz. Tüm dövüş boyunca basılı tutulur, o yüzden en rahat tuşa gider — çoğu oyuncu için sağ tık.</p></div></div>
+        <div class="st-row"><p class="st-name">General → Target Hostile Players</p><div class="st-body"><p class="st-val"><kbd>Caps</kbd> (Whelps); örn. orta fare tuşu (Grobs)</p><p class="st-why">Yalnızca düşman oyuncuları hedefler. Abyss'te Tab sürekli moblara düşer — bu tuş düşmez. Grobs kendisi kullanmıyor: ona Priority Ranking yetiyor.</p></div></div>
+        <div class="st-row"><p class="st-name">General → Switch Control Mode</p><div class="st-body"><p class="st-val"><kbd>/</kbd></p><p class="st-why">AION 2 ve AION 1 modları arasında anında geçiş yapar.</p></div></div>
+        <div class="st-row"><p class="st-name">General → Combat Analysis</p><div class="st-body"><p class="st-val"><kbd>Ctrl</kbd>+<kbd>X</kbd></p><p class="st-why">Yerleşik hasar ölçeri açar.</p></div></div>
+        <div class="st-row"><p class="st-name">Menu → Display Cursor</p><div class="st-body"><p class="st-val"><kbd>Alt</kbd> (basılı tut)</p><p class="st-why">AION 2 modunda: imleci almak ve arayüze tıklamak için basılı tut.</p></div></div>
+        <div class="st-row"><p class="st-name">Quickslot</p><div class="st-body"><p class="st-val">slot başına iki tuş</p><p class="st-why">Her hızlı erişim slotu bir ana ve bir ikinci tuş alır.</p></div></div>
+        <div class="st-row"><p class="st-name">Marker</p><div class="st-body"><p class="st-val">numpad işaret koyar, <kbd>Ctrl</kbd>+<kbd>1</kbd> 1. işareti seçer</p><p class="st-why">Sesli sohbetli grup PvP'si için: lider bir hedefi işaretler, herkes onu tek tuşla seçer.</p></div></div>
+      </div>
+<p class="pg-table-at"> <a class="pg-at" href="https://www.youtube.com/watch?v=M5IeDf9CczU&t=210s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 3:30</a> <a class="pg-at" href="https://www.youtube.com/watch?v=5BoGBzDZdZI&t=352s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ Grobs 5:52</a></p>      <h3 class="pg-h">Diyalogları daha hızlı geçmek</h3>
+      <div class="callout pg-tip" role="note"><p>Key Settings'teki her eylemin <strong>iki tuş alanı</strong> var. <strong>Interact</strong>'e (varsayılan <kbd>F</kbd>) yanında ikinci bir tuş ver — örneğin <kbd>Z</kbd> — ve ikisine sırayla bas: görev diyalogları <kbd>F</kbd>'de tek parmakla olduğundan yaklaşık iki kat hızlı akar. 45'e giden yolda çok diyalog var, bu yüzden fark birikir.</p></div>
+    </section>
+    <section class="pg-sec" id="display" aria-labelledby="h-display">
+      <h2 id="h-display" class="section-title">Info Display: ekranda ne gösterilir</h2>
+      <div class="st-opts">
+        <div class="st-row"><p class="st-name">Combat → Aggro Range Display</p><div class="st-body"><p class="st-val"><b class="sv sv-on">ON</b></p><p class="st-why">Bir canavar seç, mavi bir daire görürsün — içine adım atarsan saldırır.</p></div></div>
+        <div class="st-row"><p class="st-name">Combat → Display Boss Orientation Indicator</p><div class="st-body"><p class="st-val"><b class="sv">ALL</b></p><p class="st-why">Bossun etrafında bir yay: mavi kısım önü, sarı kısım sırtı. Arkasında durmana yardım eder.</p></div></div>
+        <div class="st-row"><p class="st-name">Combat → Display Skill Range</p><div class="st-body"><p class="st-val"><b class="sv sv-on">ON</b></p><p class="st-why">Yeteneklerinin menzilini gösterir.</p></div></div>
+        <div class="st-row"><p class="st-name">Common → Performance → Display Network Status</p><div class="st-body"><p class="st-val"><b class="sv sv-on">ON</b></p><p class="st-why">Ekranın köşesinde ping göstergesi.</p></div></div>
+        <div class="st-row"><p class="st-name">Common → Pets → Display Other Players' Pets</p><div class="st-body"><p class="st-val"><b class="sv sv-off">OFF</b></p><p class="st-why">Kendi evcil hayvanın kalır, diğer herkesinki kaybolur — yalnızca performans yerler.</p></div></div>
+        <div class="st-row"><p class="st-name">Common → Nameplate</p><div class="st-body"><p class="st-val">zevke göre</p><p class="st-why">Ekranı temizlemek için diğer oyuncuların, ruhlarının ve canavarların isim plakalarını gizle. Kendi isim plakan gizlenemez.</p></div></div>
+        <div class="st-row"><p class="st-name">Floater → Combat Floater Display</p><div class="st-body"><p class="st-val">ON, daha küçük bir UI ile</p><p class="st-why">Uçuşan hasar ve iyileştirme sayıları. Hepsi birden veya tek tek kapatılabilir (bana hasar, bana iyileştirme, hedefe hasar …), ama o zaman vuruşlar boş hissettirir. Grobs onları tutuyor ve <strong>UI Proportion</strong> ile küçültüyor — Graphics'e bak.</p></div></div>
+      </div>
+<p class="pg-table-at"> <a class="pg-at" href="https://www.youtube.com/watch?v=M5IeDf9CczU&t=345s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 5:45</a> <a class="pg-at" href="https://www.youtube.com/watch?v=5BoGBzDZdZI&t=204s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ Grobs 3:24</a></p>    </section>
+    <section class="pg-sec" id="graphics" aria-labelledby="h-graphics">
+      <h2 id="h-graphics" class="section-title">Graphics <svg class="arr" viewBox="0 0 12 8" aria-label="→"><path d="M1 4h9M7 1l3 3-3 3"/></svg> Optimize: FPS ve toplu PvP</h2>
+<p class="pg-lead">Kalite ön ayarları bilgisayarına bağlı — bunlar her durumda önemli olan ayarlar.</p>      <div class="st-opts">
+        <div class="st-row"><p class="st-name">UI Proportion</p><div class="st-body"><p class="st-val"><b class="sv">Small</b> (varsayılan: Medium)</p><p class="st-why">Arayüzü ve hasar sayılarını birlikte ölçekler: daha küçük UI daha küçük sayılar demek, böylece dövüşü kapatmazlar.</p></div></div>
+        <div class="st-row"><p class="st-name">Effect Quality</p><div class="st-body"><p class="st-val"><b class="sv">Very Low</b></p><p class="st-why">FPS'i her şeyden çok etkiler (Whelps geri kalanını Very High'da tutuyor) ve bir sürü parçacığı kaldırır — uzun seanslarda gözü çok daha az yorar.</p></div></div>
+        <div class="st-row"><p class="st-name">Upscaler</p><div class="st-body"><p class="st-val"><b class="sv">DLSS</b></p><p class="st-why">NVIDIA kartta.</p></div></div>
+        <div class="st-row"><p class="st-name">Frame Generator</p><div class="st-body"><p class="st-val"><b class="sv">PvE'de kapalı</b>, toplu PvP için açık</p><p class="st-why">Kare üretimi giriş gecikmesi ekler ve giriş gecikmesi kaybedilen hasardır. Büyük dövüşlerde akıcılık daha önemli.</p></div></div>
+        <div class="st-row"><p class="st-name">Player Particle Effect Display</p><div class="st-body"><p class="st-val"><b class="sv">Self Only</b> (Grobs); Self and Party (Whelps)</p><p class="st-why">Self Only, takım arkadaşları dahil diğer herkesin yetenek efektlerini gizler: daha az karmaşa ve belirgin bir FPS kazancı. Ara sıra eksikliğini fark edeceksin — değer.</p></div></div>
+        <div class="st-row"><p class="st-name">NVIDIA Reflex</p><div class="st-body"><p class="st-val"><b class="sv">BOOST</b></p><p class="st-why">Daha düşük giriş gecikmesi.</p></div></div>
+        <div class="st-row"><p class="st-name">Volumetric Light Scattering, Volumetric Fog</p><div class="st-body"><p class="st-val">videoda OFF</p><p class="st-why">Ekranında böyle ayarlı; bunlar hakkında yorum yapmıyor.</p></div></div>
+        <div class="st-row"><p class="st-name">[Abyss] Display as Tier Icon</p><div class="st-body"><p class="st-val"><b class="sv sv-on">ON</b></p><p class="st-why">Abyss'teki düşman isim plakaları küçük rütbe simgelerine dönüşür — ekranda çok daha az yazı.</p></div></div>
+        <div class="st-row"><p class="st-name">Identical Player Appearance</p><div class="st-body"><p class="st-val"><b class="sv sv-on">ON</b></p><p class="st-why">Diğer tüm oyuncular aynı basit görünümü alır; hemen uygulanır. Oyun kuşatmalar ve diğer büyük çaplı dövüşler için optimize edilmemiş — bu olmadan herhangi bir bilgisayarda neredeyse oynanamazlar.</p></div></div>
+      </div>
+<p class="pg-table-at"> <a class="pg-at" href="https://www.youtube.com/watch?v=M5IeDf9CczU&t=410s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 6:50</a> <a class="pg-at" href="https://www.youtube.com/watch?v=5BoGBzDZdZI&t=233s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ Grobs 3:53</a></p>      <div class="callout pg-tip" role="note"><p>Yanında <strong>[Domination] Display as Tier Icon</strong> var — Domination için aynı düğme; videoda OFF.</p></div>
+    </section>
+    <section class="pg-sec" id="camera" aria-labelledby="h-camera">
+      <h2 id="h-camera" class="section-title">Graphics <svg class="arr" viewBox="0 0 12 8" aria-label="→"><path d="M1 4h9M7 1l3 3-3 3"/></svg> Camera / Direction</h2>
+      <div class="st-opts">
+        <div class="st-row"><p class="st-name">World Map Transition Animation</p><div class="st-body"><p class="st-val"><b class="sv sv-off">OFF</b></p><p class="st-why">Yoksa haritayı her açtığında bir animasyon oynar — baş döndürmeye başlar.</p></div></div>
+        <div class="st-row"><p class="st-name">Teleport Effect Color</p><div class="st-body"><p class="st-val"><b class="sv">Dark</b> (varsayılan: Bright)</p><p class="st-why">Parlak sürüm, her ışınlanmada yüzüne beyaz bir ekran demek.</p></div></div>
+        <div class="st-row"><p class="st-name">Camera Perspective</p><div class="st-body"><p class="st-val">Default veya omuz üstü</p><p class="st-why">İkinci seçenek karakteri merkezin biraz soluna koyar.</p></div></div>
+        <div class="st-row"><p class="st-name">Camera Shake Effect During Combat</p><div class="st-body"><p class="st-val"><b class="sv sv-off">OFF</b></p><p class="st-why">İki yazar da kapatıyor. Zevk meselesi — bazıları sarsıntıyı sever.</p></div></div>
+        <div class="st-row"><p class="st-name">Display Weapon Outside of Combat</p><div class="st-body"><p class="st-val"><b class="sv sv-on">ON</b> (varsayılan: OFF)</p><p class="st-why">Tamamen görünüş için: silah savaş dışında kaybolmak yerine görünür kalır.</p></div></div>
+        <div class="st-row"><p class="st-name">Display Equipped Title Effects on Nameplate</p><div class="st-body"><p class="st-val">zevke göre</p><p class="st-why">İsimlerin etrafındaki özel unvan çerçeveleri. OFF onları kaldırır; bir de «yalnızca benim isim plakamda» seçeneği var.</p></div></div>
+      </div>
+<p class="pg-table-at"> <a class="pg-at" href="https://www.youtube.com/watch?v=M5IeDf9CczU&t=474s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 7:54</a> <a class="pg-at" href="https://www.youtube.com/watch?v=5BoGBzDZdZI&t=389s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ Grobs 6:29</a></p>    </section>
+    <section class="pg-sec" id="other" aria-labelledby="h-other">
+      <h2 id="h-other" class="section-title">Diğer sekmeler</h2>
+      <ul class="pg-list">
+<li><strong>Accessibility</strong> — yazı boyutu ve sohbet renkleri, altyazılar. <a class="pg-at" href="https://www.youtube.com/watch?v=M5IeDf9CczU&t=523s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 8:43</a></li><li><strong>Notification</strong> — oyun uyarıları ve istekleri; davetler otomatik reddedilebilir. Her şeyi varsayılanda bıraktı.</li><li><strong>Miscellaneous</strong> — arayüz ve ses dili; <em>Account</em> altında — kupon kodu alanı.</li>      </ul>
+    </section>
+    <script type="application/json" id="sk-data">{"i:wings":{"n":"Ultimate Daeva Wings (Bound)","m":"","g":41,"d":"Grants [Ultimate Daeva Wings (Bound)].\n\n[Equipped Effect]\nHP: 500\nMP: 250\nPenetration: 500\nCritical Hit: 35\n[Owned Effect]\nFlight Power: 500\nPenetration: 100\nAccuracy Bonus: 20\nAttack Bonus: 10","sp":[]},"i:bracelet":{"n":"Ascension Bracelet","m":"Item level 51","g":41,"d":"Defense: 156\nAttack: 65","sp":[]},"i:trace":{"n":"Empyrean Trace: Altgard (Bound)","m":"","g":71,"d":"A trace faintly imbued with the strength of the Empyrean Lords who protect Altgard. Can be resonated with Altgard Monolith.","sp":[]},"i:dcrystal":{"n":"Daevanion Crystal (Bound)","m":"","g":71,"d":"Use to obtain 1 Daevanion Point.","sp":[]},"i:dcrystal_ariel":{"n":"Daevanion Crystal: Ariel (Bound)","m":"","g":71,"d":"Use to obtain 1 Ariel Daevanion Point.","sp":[]},"i:dcrystal_azphel":{"n":"Daevanion Crystal: Azphel (Bound)","m":"","g":71,"d":"Use to obtain 1 Azphel Daevanion Point.","sp":[]},"i:wisdom":{"n":"Wisdom Stone (Bound)","m":"","g":71,"d":"A mysterious stone imbued with memories of battle.\nUse to obtain 1 Skill Point.","sp":[]},"i:clashrune":{"n":"Clash Rune Chest (Bound)","m":"","g":71,"d":"A rune that can be earned only by those who have overcome a nightmare.\nUse to obtain a Clash Rune (Bound) and Rune Enhance Scrolls (Bound).","sp":[]},"i:beltscroll":{"n":"Noble Belt Enhance Scroll (Bound)","m":"","g":11,"d":"An Enhance Scroll containing an ancient power.\nUse to enhance Noble Belt.","sp":[]},"i:shugokey":{"n":"Shugo Festival Reward Key (Bound)","m":"","g":71,"d":"Recharges 1 Shugo Festival Reward Key count.","sp":[]},"i:bakarma":{"n":"Bakarma Breastplate","m":"Item level 54","g":41,"d":"HP: 216\nDefense: 397","sp":[]},"i:voucher":{"n":"Gear Change Voucher: Vakron Sky Island (Bound)","m":"","g":41,"d":"A reward obtained by defeating Vakron.\nWhen used as a Substance Morph material, it can be transformed into a Unique Guard or Unique Gear Selection Chest.","sp":[]},"i:vakronguard":{"n":"Vakron Guard","m":"Item level 70","g":41,"d":"Critical Hit: 50\nAccuracy: 50\nAttack: 144","sp":[]},"i:mana_sup":{"n":"Superior Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:mana_int":{"n":"Intermediate Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:mana_less":{"n":"Lesser Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:theostone":{"n":"Theostone: Jumentis's Dexterity (Bound)","m":"","g":31,"d":"Grants [Theostone: Jumentis's Dexterity].\nThe obtained Theostone can be found in the Enhancement menu.\nHas a 20% chance to deal 250 AoE Wind damage to up to 4 targets on attack\nEffect Activation Cooldown: 1s\nOnly one Theostone's effect applies when identical Theostones are engraved.","sp":[]},"i:enhance":{"n":"Enhance Stone","m":"","g":11,"d":"Used to awaken hidden potential of gear.","sp":[]},"i:bell_green":{"n":"Bell of Vigor","m":"Item level 40 · Set: Primal Vigor","g":21,"d":"Justice [Nezekan]: 12","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:mirror_green":{"n":"Mirror of Magic","m":"Item level 40 · Set: Magic Armor","g":21,"d":"Wisdom [Lumiel]: 12","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:compass_grey":{"n":"Compass of Magic","m":"Item level 20 · Set: Magic Armor","g":11,"d":"Death [Triniel]: 8","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:chalice_grey":{"n":"Chalice of Magic","m":"Item level 20 · Set: Magic Armor","g":11,"d":"Space [Israphel]: 8","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:mirror_gold":{"n":"Mirror of Vigor","m":"Item level 80 · Set: Primal Vigor","g":41,"d":"Illusion [Kaisinel]: 20","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:transfer_w":{"n":"Transfer Stone: Weapon (Unique) (Bound)","m":"","g":41,"d":"A formidable gemstone that transfers the boundless power of the gear to another.\nCan be used on the Unique Weapon.","sp":[]},"i:transfer_a":{"n":"Transfer Stone: Armor (Unique) (Bound)","m":"","g":41,"d":"A formidable gemstone that transfers the boundless power of the gear to another.\nCan be used on the Unique Armor.","sp":[]},"i:stigmashard":{"n":"Stigma Shard (Bound)","m":"","g":71,"d":"A fragment sealed with the Essence of Experience.\nGrants 1 Stigma Shard Point when obtained.","sp":[]},"i:amplify":{"n":"Amplify Stone (Unique) (Bound)","m":"","g":41,"d":"A mystical gemstone that awakens the unique power of gear.\nUsed to amplify Unique Gear that has reached its maximum enhancement level.","sp":[]},"i:amplify_frag":{"n":"Amplify Stone Fragment (Unique) (Bound)","m":"","g":41,"d":"A piece of an Amplify Stone used to awaken the unique power of the gear.\nCan be converted into an Amplify Stone through Substance Morph.","sp":[]},"i:sync":{"n":"Sync Stone (Unique) (Bound)","m":"","g":41,"d":"A stone that harmonizes the energies within gear to awaken new possibilities.\nWhen used in [Enhancement - Soul Binding - Sync], it allows you to adjust the properties of gear.","sp":[]},"i:sapphire":{"n":"Sapphire Gemstone (Bound)","m":"","g":11,"d":"A gemstone infused with valuable gems. Used as a material for handicrafting accessories.","sp":[]},"i:ruby":{"n":"Ruby Gemstone (Bound)","m":"","g":11,"d":"A gemstone infused with valuable gems. Used as a material for handicrafting accessories.","sp":[]},"i:odyle":{"n":"Odyle","m":"","g":11,"d":"Used to imbue an item with the power of Odyle. Used as a material for Crafting and Substance Morph.","sp":[]},"i:log":{"n":"Yggdrasil Log (Bound)","m":"","g":11,"d":"A magic-imbued log. Used for making wooden weapons in Handicrafting.","sp":[]},"i:odyle_energy":{"n":"Odyle Energy (Bound)","m":"","g":71,"d":"Recharges 40 Odyle Energy.\nOdyle Energy can be used to activate the Odyle Energy Cube that appears when you clear an Expedition, Transcendence, or Sanctuary.","sp":[]},"i:ore":{"n":"Orichalcum Ore","m":"","g":11,"d":"A hard ore. Used as a material for Blacksmithing and Armorsmithing.","sp":[]},"i:herb":{"n":"Calendula","m":"","g":11,"d":"An herb used to concoct a potion in Alchemy.","sp":[]},"i:ingredient":{"n":"Kukuru","m":"","g":11,"d":"A cooking ingredient.","sp":[]},"i:parchment_vigor":{"n":"Parchment of Vigor","m":"Item level 80 · Set: Primal Vigor","g":41,"d":"Life [Yustiel]: 20","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:compass_vigor":{"n":"Compass of Vigor","m":"Item level 80 · Set: Primal Vigor","g":41,"d":"","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:chalice_vigor":{"n":"Chalice of Vigor","m":"Item level 80 · Set: Primal Vigor","g":41,"d":"","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:mirror_magic_gold":{"n":"Mirror of Magic","m":"Item level 80 · Set: Magic Armor","g":41,"d":"Wisdom [Lumiel]: 20","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]}}</script>
+  </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../tr/">AION 2 Rehberleri</a>
+      <p>Resmî olmayan hayran sitesi, NCSOFT ile bağlantılı değildir. AION 2 ve yetenek simgeleri © NCSOFT.</p>
+      <p>Son kontrol: 2026-10-04 (global çıkıştan önce).</p>
+      <p><a href="../../tr/sources/">Tüm kaynaklar ve içerik üreticileri</a> · <a href="../../tr/changelog/">Değişiklik günlüğü</a> · <button type="button" class="link-btn report-open">Hata bildir</button></p>
+    </div>
+  </div>
+</footer>
+<dialog class="search-dlg" aria-label="Ara" data-index="../../tr/search.json" data-base="../../tr/" data-empty="Hiçbir şey bulunamadı"
+  data-kinds="{&#34;boss&#34;: &#34;Boss&#34;, &#34;class&#34;: &#34;S\u0131n\u0131f&#34;, &#34;page&#34;: &#34;Sayfa&#34;, &#34;section&#34;: &#34;B\u00f6l\u00fcm&#34;, &#34;skill&#34;: &#34;Yetenek&#34;}" data-root="../../">
+  <div class="search-in">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-q" placeholder="Sınıf, yetenek, boss, bölüm…" aria-label="Ara" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-res" role="listbox"></ul>
+  </div>
+</dialog>
+<dialog class="whatsnew" data-id="2026-10-04" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title">Yenilikler</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="Anladım">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <section class="wn-entry">
+      <time class="wn-date" datetime="2026-10-04">4 Ekim 2026</time>
+      <ul>
+        <li><span><strong>Türkçe sürüm</strong> — tüm site artık Türkçe de: rehberler, sayfalar ve takipçiler. Ukraynaca sayfalarda olduğu gibi yetenek ve eşya adları İngilizce kalıyor. Çeviri yapay zekâ ile yapıldı — bir hata görürsen "Hata bildir"i kullan veya GitHub'da bir issue aç.</span></li>
+      </ul>
+    </section>
+    <button class="btn btn-primary wn-ok" value="close">Anladım</button>
+    <p class="wn-all"><a href="../../tr/changelog/">Tüm değişiklik günlüğü →</a></p>
+  </form>
+</dialog>
+<dialog class="whatsnew feedback" aria-labelledby="fb-title" data-url="https://aion2-feedback.couga-ua.workers.dev/" data-page="tr/settings/" data-lang="tr">
+  <form class="wn-in fb-form" novalidate>
+    <div class="wn-head">
+      <h2 id="fb-title">Hata bildir</h2>
+      <button type="button" class="icon-btn fb-x" aria-label="Anladım">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <p class="fb-hint">Yanlış veya eskimiş olan ne? Bir kaynağın bağlantısı ya da ekran görüntüsü çok yardımcı olur.</p>
+    <label class="fb-label" for="fb-text">Mesajın</label>
+    <textarea id="fb-text" class="fb-text" name="text" rows="6" maxlength="2000" required placeholder="Örneğin: global&#39;de Blaze&#39;in üçüncü uzmanlığı farklı…"></textarea>
+    <label class="fb-label" for="fb-contact">Yanıt için iletişim (isteğe bağlı)</label>
+    <input id="fb-contact" class="fb-contact" name="contact" type="text" maxlength="100" autocomplete="off" placeholder="Discord veya Telegram">
+    <input class="fb-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="fb-meta">Mesajla birlikte gönderilir: <b class="fb-where"></b></p>
+    <p class="fb-status" role="status" data-sending="Gönderiliyor…" data-ok="Gönderildi — teşekkürler!" data-err="Gönderilemedi. Lütfen daha sonra tekrar dene." data-rate="Art arda çok fazla mesaj — birkaç dakika sonra tekrar dene." data-short="Önce birkaç kelime yaz."></p>
+    <div class="fb-actions">
+      <button type="submit" class="btn btn-primary fb-send">Gönder</button>
+      <button type="button" class="btn btn-ghost fb-cancel">İptal</button>
+    </div>
+  </form>
+</dialog>
+<script src="../../assets/js/site.js?v=90e2e663" defer></script>
+<script src="../../assets/js/fx.js?v=90e2e663" defer></script>
+<div class="cel-banner" role="status" hidden data-at="2026-09-30T14:00:00Z" data-id="early">
+  <span class="cel-ico" aria-hidden="true">✦</span>
+  <div><p class="cel-h">Erken Erişim açıldı!</p><p class="cel-p">Founder&#39;s Pack sunucuları açık — ilk günde bol şans. Sınıf rehberlerin hazır.</p></div>
+  <button type="button" class="cel-x" aria-label="Kapat">×</button>
+</div>
+<script src="../../assets/js/celebrate.js?v=90e2e663" defer></script>
+</body>
+</html>

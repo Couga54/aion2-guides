@@ -29,18 +29,18 @@
    "id": "first",
    "title": {
     "en": "Change these first",
-    "ru": "Что поменять в первую очередь", "uk": "Що змінити насамперед"
+    "ru": "Что поменять в первую очередь", "uk": "Що змінити насамперед", "tr": "Önce bunları değiştir"
    },
    "lead": {
     "en": "If you only have two minutes — these are the settings that change the most. Details and the reasons are in the sections below.",
-    "ru": "Если есть только две минуты — вот настройки, которые дают больше всего. Подробности и причины — в разделах ниже.", "uk": "Якщо є лише дві хвилини — ось налаштування, які дають найбільше. Подробиці й причини — в розділах нижче."
+    "ru": "Если есть только две минуты — вот настройки, которые дают больше всего. Подробности и причины — в разделах ниже.", "uk": "Якщо є лише дві хвилини — ось налаштування, які дають найбільше. Подробиці й причини — в розділах нижче.", "tr": "Yalnızca iki dakikan varsa — en çok fark yaratan ayarlar bunlar. Ayrıntılar ve nedenleri aşağıdaki bölümlerde."
    },
    "blocks": [
     {
      "type": "opts",
      "label": {
       "en": "Key Settings → General",
-      "ru": "Клавиши → General", "uk": "Key Settings → General"
+      "ru": "Клавиши → General", "uk": "Key Settings → General", "tr": "Key Settings → General"
      },
      "rows": [
       {
@@ -53,7 +53,7 @@
         "Macro",
         "<strong>назначь клавишу</strong> — обычно правая кнопка мыши",
         "По умолчанию клавиши нет, а без неё встроенный макрос просто не работает."
-       ], "uk": ["Macro", "<strong>признач клавішу</strong> — зазвичай права кнопка миші", "За замовчуванням клавіші немає, а без неї вбудований макрос просто не працює."]
+       ], "uk": ["Macro", "<strong>признач клавішу</strong> — зазвичай права кнопка миші", "За замовчуванням клавіші немає, а без неї вбудований макрос просто не працює."], "tr": ["Macro", "<strong>bir tuş ata</strong> — genellikle farenin sağ tuşu", "Varsayılan olarak tuşu yok ve tuş olmadan oyun içi makro hiç çalışmaz."]
       },
       {
        "en": [
@@ -65,7 +65,7 @@
         "Separate Defiance Hotkey",
         "<strong>Вкл</strong> + своя клавиша",
         "На пробеле Снятие шока делит клавишу с прыжком и планированием — будешь долбить её в контроле и улетишь планировать."
-       ], "uk": ["Separate Defiance Hotkey", "<strong>ON</strong> + своя клавіша", "На пробілі Defiance ділить клавішу зі стрибком і плануванням — гатитимеш її в контролі й полетиш планувати."]
+       ], "uk": ["Separate Defiance Hotkey", "<strong>ON</strong> + своя клавіша", "На пробілі Defiance ділить клавішу зі стрибком і плануванням — гатитимеш її в контролі й полетиш планувати."], "tr": ["Separate Defiance Hotkey", "<strong>ON</strong> + kendi tuşu", "Space'te Defiance, zıplama ve süzülmeyle aynı tuşu paylaşır — kontrol altındayken ona basıp durursan süzülmeye başlarsın."]
       },
       {
        "en": [
@@ -77,7 +77,7 @@
         "Fly Up, Fly Down",
         "<strong>удобные клавиши</strong>",
         "По умолчанию это Ctrl+R и Ctrl+F, а нужны обе постоянно."
-       ], "uk": ["Fly Up, Fly Down", "<strong>зручні клавіші</strong>", "За замовчуванням це Ctrl+R і Ctrl+F, а потрібні обидві постійно."]
+       ], "uk": ["Fly Up, Fly Down", "<strong>зручні клавіші</strong>", "За замовчуванням це Ctrl+R і Ctrl+F, а потрібні обидві постійно."], "tr": ["Fly Up, Fly Down", "<strong>rahat tuşlar</strong>", "Varsayılanlar Ctrl+R ve Ctrl+F, ve ikisine de sürekli ihtiyacın var."]
       },
       {
        "en": [
@@ -89,7 +89,7 @@
         "Interact",
         "<strong>вторая клавиша</strong>: <kbd>F</kbd> + <kbd>Z</kbd>",
         "Жмёшь их по очереди — диалоги квестов пропускаются намного быстрее."
-       ], "uk": ["Interact", "<strong>друга клавіша</strong>: <kbd>F</kbd> + <kbd>Z</kbd>", "Тиснеш їх по черзі — діалоги квестів пропускаються набагато швидше."]
+       ], "uk": ["Interact", "<strong>друга клавіша</strong>: <kbd>F</kbd> + <kbd>Z</kbd>", "Тиснеш їх по черзі — діалоги квестів пропускаються набагато швидше."], "tr": ["Interact", "<strong>ikinci bir tuş</strong>: <kbd>F</kbd> + <kbd>Z</kbd>", "İkisine sırayla bas — görev diyalogları çok daha hızlı geçer."]
       }
      ]
     },
@@ -97,7 +97,7 @@
      "type": "opts",
      "label": {
       "en": "Combat",
-      "ru": "Бой", "uk": "Combat"
+      "ru": "Бой", "uk": "Combat", "tr": "Combat"
      },
      "rows": [
       {
@@ -110,7 +110,7 @@
         "Автоиспольз. → Условия автоиспользования положительных эффектов <span class='st-en'>Buff Auto-use Conditions</span>",
         "<strong>В состоянии боя</strong>",
         "Свитки баффов перестают сгорать, пока ты бегаешь по городу."
-       ], "uk": ["Auto-use → Buff Auto-use Conditions", "<strong>In Combat</strong>", "Сувої бафів перестають згорати, поки ти бігаєш містом."]
+       ], "uk": ["Auto-use → Buff Auto-use Conditions", "<strong>In Combat</strong>", "Сувої бафів перестають згорати, поки ти бігаєш містом."], "tr": ["Auto-use → Buff Auto-use Conditions", "<strong>In Combat</strong>", "Şehirde koşarken buff parşömenleri yanmayı bırakır."]
       },
       {
        "en": [
@@ -122,7 +122,7 @@
         "Управление → Skill Queue",
         "<strong>Вкл</strong>",
         "С ним макрос работает лучше всего."
-       ], "uk": ["Controls → Skill Queue", "<strong>ON</strong>", "Із ним макрос працює найкраще."]
+       ], "uk": ["Controls → Skill Queue", "<strong>ON</strong>", "Із ним макрос працює найкраще."], "tr": ["Controls → Skill Queue", "<strong>ON</strong>", "Makro onunla en iyi çalışır."]
       },
       {
        "en": [
@@ -134,7 +134,7 @@
         "Поиск цели → Предпочтительное направление поиска <span class='st-en'>Preferred Search Direction</span>",
         "<strong>Front of Camera</strong>",
         "Tab берёт цель, на которую ты смотришь."
-       ], "uk": ["Target Scanning → Preferred Search Direction", "<strong>Front of Camera</strong>", "Tab бере ціль, на яку ти дивишся."]
+       ], "uk": ["Target Scanning → Preferred Search Direction", "<strong>Front of Camera</strong>", "Tab бере ціль, на яку ти дивишся."], "tr": ["Target Scanning → Preferred Search Direction", "<strong>Front of Camera</strong>", "Tab baktığın hedefi alır."]
       },
       {
        "en": [
@@ -146,7 +146,7 @@
         "Поиск цели → Подробные настройки поиска цели <span class='st-en'>Detailed Settings</span>",
         "<strong>Priority Ranking</strong> (вместо «Начиная с ближайшей»), «Враждебные игроки» первыми",
         "Для PvP: Tab берёт игроков раньше мобов."
-       ], "uk": ["Target Scanning → Detailed Settings", "<strong>Priority Ranking</strong>, Hostile Players першими", "Для PvP: Tab бере гравців раніше за мобів."]
+       ], "uk": ["Target Scanning → Detailed Settings", "<strong>Priority Ranking</strong>, Hostile Players першими", "Для PvP: Tab бере гравців раніше за мобів."], "tr": ["Target Scanning → Detailed Settings", "<strong>Priority Ranking</strong>, önce Hostile Players", "PvP için: Tab moblardan önce oyuncuları alır."]
       }
      ]
     },
@@ -154,7 +154,7 @@
      "type": "opts",
      "label": {
       "en": "Info Display → Combat",
-      "ru": "Отображение → Бой", "uk": "Info Display → Combat"
+      "ru": "Отображение → Бой", "uk": "Info Display → Combat", "tr": "Info Display → Combat"
      },
      "rows": [
       {
@@ -167,7 +167,7 @@
         "Отображение области агрессии <span class='st-en'>Aggro Range Display</span>",
         "<strong>Вкл</strong>",
         "Видно, где моб сагрится."
-       ], "uk": ["Aggro Range Display", "<strong>ON</strong>", "Видно, де моб саґриться."]
+       ], "uk": ["Aggro Range Display", "<strong>ON</strong>", "Видно, де моб саґриться."], "tr": ["Aggro Range Display", "<strong>ON</strong>", "Bir mobun nerede aggro alacağını görürsün."]
       },
       {
        "en": [
@@ -179,7 +179,7 @@
         "Отображение маркера направления босса <span class='st-en'>Display Boss Orientation Indicator</span>",
         "<strong>ВСЕ</strong>",
         "Видно, где у босса спина."
-       ], "uk": ["Display Boss Orientation Indicator", "<strong>ALL</strong>", "Видно, де в боса спина."]
+       ], "uk": ["Display Boss Orientation Indicator", "<strong>ALL</strong>", "Видно, де в боса спина."], "tr": ["Display Boss Orientation Indicator", "<strong>ALL</strong>", "Bossun sırtının nerede olduğunu görürsün."]
       }
      ]
     },
@@ -187,7 +187,7 @@
      "type": "opts",
      "label": {
       "en": "Graphics → Optimize",
-      "ru": "Графика → Optimize", "uk": "Graphics → Optimize"
+      "ru": "Графика → Optimize", "uk": "Graphics → Optimize", "tr": "Graphics → Optimize"
      },
      "rows": [
       {
@@ -200,7 +200,7 @@
         "Effect Quality",
         "<strong>Very Low</strong>",
         "Самый большой прирост FPS и гораздо меньше мельтешения на экране."
-       ], "uk": ["Effect Quality", "<strong>Very Low</strong>", "Найбільший приріст FPS і набагато менше мерехтіння на екрані."]
+       ], "uk": ["Effect Quality", "<strong>Very Low</strong>", "Найбільший приріст FPS і набагато менше мерехтіння на екрані."], "tr": ["Effect Quality", "<strong>Very Low</strong>", "En büyük FPS kazancı ve ekranda çok daha az yanıp sönme."]
       },
       {
        "en": [
@@ -212,7 +212,7 @@
         "Player Particle Effect Display",
         "<strong>Self Only</strong>",
         "Скрывает эффекты чужих скиллов."
-       ], "uk": ["Player Particle Effect Display", "<strong>Self Only</strong>", "Ховає ефекти чужих скілів."]
+       ], "uk": ["Player Particle Effect Display", "<strong>Self Only</strong>", "Ховає ефекти чужих скілів."], "tr": ["Player Particle Effect Display", "<strong>Self Only</strong>", "Diğer herkesin yetenek efektlerini gizler."]
       },
       {
        "en": [
@@ -224,7 +224,7 @@
         "Identical Player Appearance, [Abyss] Display as Tier Icon",
         "<strong>Вкл</strong>",
         "Обязательно для массового PvP."
-       ], "uk": ["Identical Player Appearance, [Abyss] Display as Tier Icon", "<strong>ON</strong>", "Обов'язково для масового PvP."]
+       ], "uk": ["Identical Player Appearance, [Abyss] Display as Tier Icon", "<strong>ON</strong>", "Обов'язково для масового PvP."], "tr": ["Identical Player Appearance, [Abyss] Display as Tier Icon", "<strong>ON</strong>", "Toplu PvP için şart."]
       }
      ]
     },
@@ -232,7 +232,7 @@
      "type": "opts",
      "label": {
       "en": "Graphics → Camera / Direction",
-      "ru": "Графика → Camera / Direction", "uk": "Graphics → Camera / Direction"
+      "ru": "Графика → Camera / Direction", "uk": "Graphics → Camera / Direction", "tr": "Graphics → Camera / Direction"
      },
      "rows": [
       {
@@ -245,7 +245,7 @@
         "Teleport Effect Color",
         "<strong>Dark</strong>",
         "Без белой вспышки при каждом телепорте."
-       ], "uk": ["Teleport Effect Color", "<strong>Dark</strong>", "Без білого спалаху при кожному телепорті."]
+       ], "uk": ["Teleport Effect Color", "<strong>Dark</strong>", "Без білого спалаху при кожному телепорті."], "tr": ["Teleport Effect Color", "<strong>Dark</strong>", "Her ışınlanmada beyaz parlama yok."]
       },
       {
        "en": [
@@ -257,7 +257,7 @@
         "Camera Shake Effect During Combat",
         "<strong>Выкл</strong>",
         "Без тряски в бою."
-       ], "uk": ["Camera Shake Effect During Combat", "<strong>OFF</strong>", "Без трясіння в бою."]
+       ], "uk": ["Camera Shake Effect During Combat", "<strong>OFF</strong>", "Без трясіння в бою."], "tr": ["Camera Shake Effect During Combat", "<strong>OFF</strong>", "Savaşta sarsıntı yok."]
       },
       {
        "en": [
@@ -269,7 +269,7 @@
         "World Map Transition Animation",
         "<strong>Выкл</strong>",
         "Без анимации при каждом открытии карты."
-       ], "uk": ["World Map Transition Animation", "<strong>OFF</strong>", "Без анімації при кожному відкритті мапи."]
+       ], "uk": ["World Map Transition Animation", "<strong>OFF</strong>", "Без анімації при кожному відкритті мапи."], "tr": ["World Map Transition Animation", "<strong>OFF</strong>", "Haritayı her açtığında animasyon yok."]
       }
      ]
     }
@@ -279,7 +279,7 @@
    "id": "controls",
    "title": {
     "en": "Combat → Controls",
-    "ru": "Бой → Управление", "uk": "Combat → Controls"
+    "ru": "Бой → Управление", "uk": "Combat → Controls", "tr": "Combat → Controls"
    },
    "blocks": [
     {
@@ -287,7 +287,7 @@
      "at": "0:08",
      "text": {
       "en": "<strong>Control Mode: AION 2 or AION 1?</strong> AION 2 is the action mode: the aim sits in the middle of the screen and the camera follows the mouse. AION 1 is the classic one: a free cursor, the camera turns while you hold the right mouse button. It is a matter of taste, but AION 2 is friendlier to the macro — in AION 1 mode the left and right mouse buttons cannot be rebound.",
-      "ru": "<strong>Режим управления: AION 2 или AION 1?</strong> AION 2 — экшен-режим: прицел в центре экрана, камера следует за мышью. AION 1 — классика: свободный курсор, камера крутится с зажатой правой кнопкой мыши. Это дело вкуса, но AION 2 удобнее для макроса — в режиме AION 1 левую и правую кнопки мыши нельзя переназначить.", "uk": "<strong>Control Mode: AION 2 чи AION 1?</strong> AION 2 — екшн-режим: приціл у центрі екрана, камера стежить за мишею. AION 1 — класика: вільний курсор, камера крутиться із затиснутою правою кнопкою миші. Це справа смаку, але AION 2 зручніший для макросу — в режимі AION 1 ліву й праву кнопки миші не можна перепризначити."
+      "ru": "<strong>Режим управления: AION 2 или AION 1?</strong> AION 2 — экшен-режим: прицел в центре экрана, камера следует за мышью. AION 1 — классика: свободный курсор, камера крутится с зажатой правой кнопкой мыши. Это дело вкуса, но AION 2 удобнее для макроса — в режиме AION 1 левую и правую кнопки мыши нельзя переназначить.", "uk": "<strong>Control Mode: AION 2 чи AION 1?</strong> AION 2 — екшн-режим: приціл у центрі екрана, камера стежить за мишею. AION 1 — класика: вільний курсор, камера крутиться із затиснутою правою кнопкою миші. Це справа смаку, але AION 2 зручніший для макросу — в режимі AION 1 ліву й праву кнопки миші не можна перепризначити.", "tr": "<strong>Control Mode: AION 2 mi AION 1 mi?</strong> AION 2 aksiyon modudur: nişangâh ekranın ortasında durur ve kamera fareyi takip eder. AION 1 klasik moddur: serbest imleç, kamera sağ fare tuşunu basılı tutarken döner. Zevk meselesi, ama AION 2 makroya daha dost — AION 1 modunda sol ve sağ fare tuşları yeniden atanamaz."
      }
     },
     {
@@ -310,7 +310,7 @@
         "Режим управления <span class='st-en'>Control Mode</span>",
         "<strong>AION 2</strong>",
         "Удобнее для макроса на кнопке мыши; см. выше."
-       ], "uk": ["Control Mode", "<strong>AION 2</strong>", "Зручніше для макросу на кнопці миші; див. вище."]
+       ], "uk": ["Control Mode", "<strong>AION 2</strong>", "Зручніше для макросу на кнопці миші; див. вище."], "tr": ["Control Mode", "<strong>AION 2</strong>", "Fare tuşundaki makro için daha iyi; yukarıya bak."]
       },
       {
        "en": [
@@ -322,7 +322,7 @@
         "Указание дальности цели при прицеливании <span class='st-en'>Display Distance to Aimed Target</span>",
         "<strong>Вкл</strong>",
         "Показывает расстояние до цели над её табличкой."
-       ], "uk": ["Display Distance to Aimed Target", "<strong>ON</strong>", "Показує відстань до цілі над її табличкою."]
+       ], "uk": ["Display Distance to Aimed Target", "<strong>ON</strong>", "Показує відстань до цілі над її табличкою."], "tr": ["Display Distance to Aimed Target", "<strong>ON</strong>", "Hedefe olan mesafeyi isim plakasının üstünde gösterir."]
       },
       {
        "en": [
@@ -334,7 +334,7 @@
         "Регулировка высоты прицела <span class='st-en'>Adjust Aim Position</span>",
         "по вкусу",
         "Сдвигает прицел выше или ниже на экране (в видео — 188px)."
-       ], "uk": ["Adjust Aim Position", "на смак", "Зсуває приціл вище чи нижче на екрані (у відео — 188px)."]
+       ], "uk": ["Adjust Aim Position", "на смак", "Зсуває приціл вище чи нижче на екрані (у відео — 188px)."], "tr": ["Adjust Aim Position", "zevke göre", "Nişangâhı ekranda yukarı veya aşağı taşır (videoda 188px)."]
       },
       {
        "en": [
@@ -346,7 +346,7 @@
         "Выбор цели для прицеливания <span class='st-en'>Select Aimable Target</span>",
         "<strong>Враждебные цели</strong>",
         "Иначе прицел цепляет и союзников. Брать союзника в цель почти не нужно — лучше не слетать с того, кого бьёшь."
-       ], "uk": ["Select Aimable Target", "<strong>Hostile Target</strong>", "Інакше приціл чіпляє й союзників. Брати союзника в ціль майже не потрібно — краще не злітати з того, кого б'єш."]
+       ], "uk": ["Select Aimable Target", "<strong>Hostile Target</strong>", "Інакше приціл чіпляє й союзників. Брати союзника в ціль майже не потрібно — краще не злітати з того, кого б'єш."], "tr": ["Select Aimable Target", "<strong>Hostile Target</strong>", "Yoksa nişangâh müttefikleri de seçer. Bir müttefiki hedeflemen nadiren gerekir — saldırdığın hedefte kalmak daha iyi."]
       },
       {
        "en": [
@@ -358,7 +358,7 @@
         "Преследование при использовании умений <span class='st-en'>Pursue Targets with Skill Activation</span>",
         "<strong>Выкл</strong> дальним, мили — по желанию",
         "Если включено, при нажатии скилла вне дистанции персонаж сам подходит к цели и применяет его. С Выкл контроля больше."
-       ], "uk": ["Pursue Targets with Skill Activation", "<strong>OFF</strong> дальнім, мілі — за бажанням", "Якщо ввімкнено, при натисканні скіла поза дистанцією персонаж сам підходить до цілі й застосовує його. З OFF контролю більше."]
+       ], "uk": ["Pursue Targets with Skill Activation", "<strong>OFF</strong> дальнім, мілі — за бажанням", "Якщо ввімкнено, при натисканні скіла поза дистанцією персонаж сам підходить до цілі й застосовує його. З OFF контролю більше."], "tr": ["Pursue Targets with Skill Activation", "menzilliler için <strong>OFF</strong>, yakın dövüş için isteğe bağlı", "ON iken menzil dışında bir yeteneğe basınca karakter hedefe yürür ve sonra kullanır. OFF daha fazla kontrol verir."]
       },
       {
        "en": [
@@ -370,7 +370,7 @@
         "Автоматический выбор цели при использовании умения <span class='st-en'>Auto Target Upon Skill Use</span>",
         "<strong>Вкл</strong> на фарме в открытом мире (по умолчанию Выкл)",
         "Без выбранной цели скилл сам берёт ближайшую: бегаешь с зажатым макросом, и он идёт от моба к мобу. Grobs всегда включает это на фарме, прежде всего дальним классам; Whelps вне фарма держит выключенным."
-       ], "uk": ["Auto Target Upon Skill Use", "<strong>ON</strong> на фармі у відкритому світі (за замовчуванням OFF)", "Без вибраної цілі скіл сам бере найближчу: бігаєш із затиснутим макросом, і він іде від моба до моба. Grobs завжди вмикає це на фармі, насамперед дальнім класам; Whelps поза фармом тримає вимкненим."]
+       ], "uk": ["Auto Target Upon Skill Use", "<strong>ON</strong> на фармі у відкритому світі (за замовчуванням OFF)", "Без вибраної цілі скіл сам бере найближчу: бігаєш із затиснутим макросом, і він іде від моба до моба. Grobs завжди вмикає це на фармі, насамперед дальнім класам; Whelps поза фармом тримає вимкненим."], "tr": ["Auto Target Upon Skill Use", "açık dünya farmı için <strong>ON</strong> (varsayılan: OFF)", "Hedef seçili değilken bir yetenek en yakın hedefi seçer: makroyu basılı tutarak koş, mobdan moba geçer. Grobs farm için hep açar, özellikle menzilli sınıflarda; Whelps farm dışında kapalı tutar."]
       },
       {
        "en": [
@@ -382,7 +382,7 @@
         "Установка главной цели при атаке <span class='st-en'>Set Main Target Upon Attack</span>",
         "два варианта, см. ниже (по умолчанию Вкл, оба клика Вкл)",
         "Закрепляет ли атака цель. Whelps: Вкл, левый клик Вкл, правый Выкл. Grobs: Выкл на мили."
-       ], "uk": ["Set Main Target Upon Attack", "два варіанти, див. нижче (за замовчуванням ON, обидва кліки ON)", "Чи закріплює атака ціль. Whelps: ON, лівий клік ON, правий OFF. Grobs: OFF на мілі."]
+       ], "uk": ["Set Main Target Upon Attack", "два варіанти, див. нижче (за замовчуванням ON, обидва кліки ON)", "Чи закріплює атака ціль. Whelps: ON, лівий клік ON, правий OFF. Grobs: OFF на мілі."], "tr": ["Set Main Target Upon Attack", "iki yol, aşağıya bak (varsayılan: ON, iki tık da ON)", "Saldırının hedefi kilitleyip kilitlemediği. Whelps: sol tık ON ve sağ tık OFF ile ON. Grobs: yakın dövüşte OFF."]
       },
       {
        "en": [
@@ -394,7 +394,7 @@
         "Skill Queue",
         "<strong>Вкл</strong>",
         "Скилл, нажатый во время другого, встаёт в очередь. С макросом даёт лучший результат."
-       ], "uk": ["Skill Queue", "<strong>ON</strong>", "Скіл, натиснутий під час іншого, стає в чергу. З макросом дає найкращий результат."]
+       ], "uk": ["Skill Queue", "<strong>ON</strong>", "Скіл, натиснутий під час іншого, стає в чергу. З макросом дає найкращий результат."], "tr": ["Skill Queue", "<strong>ON</strong>", "Başka bir yetenek sırasında basılan yetenek sıraya alınır. Makroyla en iyi sonucu verir."]
       }
      ]
     },
@@ -402,7 +402,7 @@
      "type": "h",
      "text": {
       "en": "Soft lock and hard lock",
-      "ru": "Мягкий и жёсткий захват цели", "uk": "М'яке й жорстке захоплення цілі"
+      "ru": "Мягкий и жёсткий захват цели", "uk": "М'яке й жорстке захоплення цілі", "tr": "Yumuşak kilit ve sert kilit"
      }
     },
     {
@@ -411,7 +411,7 @@
      "at": "0:39",
      "text": {
       "en": "Aim at an enemy and a white circle appears around it — a <strong>soft lock</strong>: skills go there, but the target changes as soon as you aim elsewhere. Two arrows on its HP bar mean a <strong>hard lock</strong>: the target stays until you change it. By default any attack hard-locks; <kbd>Tab</kbd> always does.",
-      "ru": "Наводишь прицел на врага — вокруг него появляется белый круг, это <strong>мягкий захват</strong>: скиллы летят туда, но цель сменится, как только наведёшься на другого. Две стрелки у полосы HP — <strong>жёсткий захват</strong>: цель остаётся, пока сам её не сменишь. По умолчанию любая атака захватывает жёстко; <kbd>Tab</kbd> — всегда.", "uk": "Наводиш приціл на ворога — навколо нього з'являється біле коло, це <strong>м'яке захоплення</strong>: скіли летять туди, але ціль зміниться, щойно наведешся на іншого. Дві стрілки біля смуги HP — <strong>жорстке захоплення</strong>: ціль лишається, поки сам її не зміниш. За замовчуванням будь-яка атака захоплює жорстко; <kbd>Tab</kbd> — завжди."
+      "ru": "Наводишь прицел на врага — вокруг него появляется белый круг, это <strong>мягкий захват</strong>: скиллы летят туда, но цель сменится, как только наведёшься на другого. Две стрелки у полосы HP — <strong>жёсткий захват</strong>: цель остаётся, пока сам её не сменишь. По умолчанию любая атака захватывает жёстко; <kbd>Tab</kbd> — всегда.", "uk": "Наводиш приціл на ворога — навколо нього з'являється біле коло, це <strong>м'яке захоплення</strong>: скіли летять туди, але ціль зміниться, щойно наведешся на іншого. Дві стрілки біля смуги HP — <strong>жорстке захоплення</strong>: ціль лишається, поки сам її не зміниш. За замовчуванням будь-яка атака захоплює жорстко; <kbd>Tab</kbd> — завжди.", "tr": "Bir düşmana nişan al, etrafında beyaz bir daire belirir — bu <strong>yumuşak kilit</strong>: yetenekler oraya gider ama başka yere nişan aldığın anda hedef değişir. HP çubuğundaki iki ok <strong>sert kilit</strong> demek: hedef sen değiştirene kadar kalır. Varsayılan olarak her saldırı sert kilitler; <kbd>Tab</kbd> her zaman kilitler."
      }
     },
     {
@@ -419,11 +419,11 @@
      "items": [
       {
        "en": "<strong>Set Main Target Upon Attack → OFF</strong> (Grobs, melee): attacks no longer lock, so you jump from target to target without stopping — good for packs of mobs. On a boss lock it with <kbd>Tab</kbd>.",
-       "ru": "<strong>Установка главной цели при атаке → Выкл</strong> (Grobs, мили): атаки больше не закрепляют цель, и ты перескакиваешь с одной на другую без остановки — удобно на пачках мобов. На боссе закрепи цель через <kbd>Tab</kbd>.", "uk": "<strong>Set Main Target Upon Attack → OFF</strong> (Grobs, мілі): атаки більше не закріплюють ціль, і ти перескакуєш з однієї на іншу без зупинки — зручно на пачках мобів. На босі закріпи ціль через <kbd>Tab</kbd>."
+       "ru": "<strong>Установка главной цели при атаке → Выкл</strong> (Grobs, мили): атаки больше не закрепляют цель, и ты перескакиваешь с одной на другую без остановки — удобно на пачках мобов. На боссе закрепи цель через <kbd>Tab</kbd>.", "uk": "<strong>Set Main Target Upon Attack → OFF</strong> (Grobs, мілі): атаки більше не закріплюють ціль, і ти перескакуєш з однієї на іншу без зупинки — зручно на пачках мобів. На босі закріпи ціль через <kbd>Tab</kbd>.", "tr": "<strong>Set Main Target Upon Attack → OFF</strong> (Grobs, yakın dövüş): saldırılar artık kilitlemez, böylece durmadan hedeften hedefe atlarsın — mob grupları için iyi. Bossta <kbd>Tab</kbd> ile kilitle."
       },
       {
        "en": "<strong>ON, left click ON, right click OFF</strong> (Whelps, Ranger): the left button picks and locks the target, the right one — where his macro sits — never switches it by accident.",
-       "ru": "<strong>Вкл, левый клик Вкл, правый Выкл</strong> (Whelps, Стрелок): левая кнопка выбирает и закрепляет цель, а правая — на ней у него макрос — никогда не переключает её случайно.", "uk": "<strong>ON, лівий клік ON, правий OFF</strong> (Whelps, Ranger): ліва кнопка обирає й закріплює ціль, а права — на ній у нього макрос — ніколи не перемикає її випадково."
+       "ru": "<strong>Вкл, левый клик Вкл, правый Выкл</strong> (Whelps, Стрелок): левая кнопка выбирает и закрепляет цель, а правая — на ней у него макрос — никогда не переключает её случайно.", "uk": "<strong>ON, лівий клік ON, правий OFF</strong> (Whelps, Ranger): ліва кнопка обирає й закріплює ціль, а права — на ній у нього макрос — ніколи не перемикає її випадково.", "tr": "<strong>ON, sol tık ON, sağ tık OFF</strong> (Whelps, Ranger): sol tuş hedefi seçip kilitler, makronun olduğu sağ tuş ise onu asla yanlışlıkla değiştirmez."
       }
      ]
     }
@@ -433,7 +433,7 @@
    "id": "targeting",
    "title": {
     "en": "Combat → Target Scanning",
-    "ru": "Бой → Поиск цели: выбор цели по Tab", "uk": "Combat → Target Scanning: вибір цілі через Tab"
+    "ru": "Бой → Поиск цели: выбор цели по Tab", "uk": "Combat → Target Scanning: вибір цілі через Tab", "tr": "Combat → Target Scanning"
    },
    "blocks": [
     {
@@ -456,7 +456,7 @@
         "Предпочтительное направление поиска <span class='st-en'>Preferred Search Direction</span>",
         "<strong>Front of Camera</strong> (по умолчанию «Нет»)",
         "Tab ищет цели там, куда смотрит камера — ты управляешь тем, что он выберет."
-       ], "uk": ["Preferred Search Direction", "<strong>Front of Camera</strong> (за замовчуванням None)", "Tab шукає цілі там, куди дивиться камера — ти керуєш тим, що він обере."]
+       ], "uk": ["Preferred Search Direction", "<strong>Front of Camera</strong> (за замовчуванням None)", "Tab шукає цілі там, куди дивиться камера — ти керуєш тим, що він обере."], "tr": ["Preferred Search Direction", "<strong>Front of Camera</strong> (varsayılan: None)", "Tab, kameranın baktığı yerde hedef arar; böylece neyi seçeceğini sen kontrol edersin."]
       },
       {
        "en": [
@@ -468,7 +468,7 @@
         "Подробные настройки поиска цели <span class='st-en'>Target Scanning Detailed Settings</span>",
         "<strong>Priority Ranking</strong> (по умолчанию «Начиная с ближайшей»)",
         "Если ходишь в PvP: цели выбираются по твоему списку приоритетов, а не по расстоянию. В Бездне мобы и игроки стоят вперемешку — Tab должен брать игрока."
-       ], "uk": ["Target Scanning Detailed Settings", "<strong>Priority Ranking</strong> (за замовчуванням Closest First)", "Якщо ходиш у PvP: цілі обираються за твоїм списком пріоритетів, а не за відстанню. У Безодні моби й гравці стоять упереміш — Tab має брати гравця."]
+       ], "uk": ["Target Scanning Detailed Settings", "<strong>Priority Ranking</strong> (за замовчуванням Closest First)", "Якщо ходиш у PvP: цілі обираються за твоїм списком пріоритетів, а не за відстанню. У Безодні моби й гравці стоять упереміш — Tab має брати гравця."], "tr": ["Target Scanning Detailed Settings", "<strong>Priority Ranking</strong> (varsayılan: Closest First)", "PvP yapıyorsan: hedefler mesafeye göre değil kendi öncelik listene göre seçilir. Abyss'te moblar ve oyuncular yan yana — Tab oyuncuyu almalı."]
       }
      ]
     },
@@ -476,7 +476,7 @@
      "type": "h",
      "text": {
       "en": "Priority order for PvP",
-      "ru": "Порядок приоритетов для PvP", "uk": "Порядок пріоритетів для PvP"
+      "ru": "Порядок приоритетов для PvP", "uk": "Порядок пріоритетів для PvP", "tr": "PvP için öncelik sırası"
      }
     },
     {
@@ -485,15 +485,15 @@
      "items": [
       {
        "en": "<strong>1–2.</strong> Hostile Players, then Players Attacking Me. On global the default first place is «targets you attacked or aimed at» and players come only 2nd and 3rd — moving Hostile Players to the top is the minimum; Grobs changes nothing else.",
-       "ru": "<strong>1–2.</strong> «Враждебные игроки», затем «Атакующие меня игроки». На глобале по умолчанию первым стоит «Атакованные мною цели или враждебные цели прицеливания», а игроки — только 2-м и 3-м; поднять «Враждебные игроки» наверх — это минимум, Grobs больше ничего не меняет.", "uk": "<strong>1–2.</strong> Hostile Players, потім Players Attacking Me. На глобалі за замовчуванням першим стоїть «цілі, які ти атакував чи взяв на приціл», а гравці — лише 2-ми й 3-ми; підняти Hostile Players нагору — це мінімум, Grobs більше нічого не змінює."
+       "ru": "<strong>1–2.</strong> «Враждебные игроки», затем «Атакующие меня игроки». На глобале по умолчанию первым стоит «Атакованные мною цели или враждебные цели прицеливания», а игроки — только 2-м и 3-м; поднять «Враждебные игроки» наверх — это минимум, Grobs больше ничего не меняет.", "uk": "<strong>1–2.</strong> Hostile Players, потім Players Attacking Me. На глобалі за замовчуванням першим стоїть «цілі, які ти атакував чи взяв на приціл», а гравці — лише 2-ми й 3-ми; підняти Hostile Players нагору — це мінімум, Grobs більше нічого не змінює.", "tr": "<strong>1–2.</strong> Hostile Players, sonra Players Attacking Me. Global'de varsayılan birinci sıra «saldırdığın veya nişan aldığın hedefler» ve oyuncular ancak 2. ve 3. sırada — Hostile Players'ı en üste taşımak asgari olan; Grobs başka hiçbir şey değiştirmiyor."
       },
       {
        "en": "<strong>3–8.</strong> Targets you already hit, then monsters and NPCs in the default order.",
-       "ru": "<strong>3–8.</strong> Цели, которые ты уже бил, затем монстры и NPC в порядке по умолчанию.", "uk": "<strong>3–8.</strong> Цілі, які ти вже бив, потім монстри й NPC у порядку за замовчуванням."
+       "ru": "<strong>3–8.</strong> Цели, которые ты уже бил, затем монстры и NPC в порядке по умолчанию.", "uk": "<strong>3–8.</strong> Цілі, які ти вже бив, потім монстри й NPC у порядку за замовчуванням.", "tr": "<strong>3–8.</strong> Zaten vurduğun hedefler, sonra varsayılan sırada canavarlar ve NPC'ler."
       },
       {
        "en": "<strong>9–10.</strong> The players' spirits (familiars in the global client) — at the very bottom: these are the Elementalist's spirits. On global they sit 4th and 6th by default, above the monsters, so in PvP Tab keeps landing on them.",
-       "ru": "<strong>9–10.</strong> «Фамильяры враждебных игроков» и «Фамильяры атакующих меня игроков» — в самый низ: это духи Заклинателя. На глобале они по умолчанию стоят 4-м и 6-м, выше монстров, — в PvP Tab будет попадать на них.", "uk": "<strong>9–10.</strong> Духи гравців (у глобальному клієнті — фамільяри) — у самий низ: це духи Elementalist. На глобалі вони за замовчуванням стоять 4-ми й 6-ми, вище за монстрів, — у PvP Tab чіплятиметься за них."
+       "ru": "<strong>9–10.</strong> «Фамильяры враждебных игроков» и «Фамильяры атакующих меня игроков» — в самый низ: это духи Заклинателя. На глобале они по умолчанию стоят 4-м и 6-м, выше монстров, — в PvP Tab будет попадать на них.", "uk": "<strong>9–10.</strong> Духи гравців (у глобальному клієнті — фамільяри) — у самий низ: це духи Elementalist. На глобалі вони за замовчуванням стоять 4-ми й 6-ми, вище за монстрів, — у PvP Tab чіплятиметься за них.", "tr": "<strong>9–10.</strong> Oyuncuların ruhları (global istemcide familiars) — en altta: bunlar Elementalist'in ruhları. Global'de varsayılan olarak canavarların üstünde 4. ve 6. sıradalar, bu yüzden PvP'de Tab sürekli onlara düşer."
       }
      ]
     },
@@ -501,7 +501,7 @@
      "type": "tip",
      "text": {
       "en": "Both authors set these two the same way. Only do PvE? Closest First is fine — Tab simply takes the nearest target; Front of Camera is still worth it.",
-      "ru": "Оба автора ставят эти две настройки одинаково. Играешь только PvE? Closest First подойдёт — Tab просто берёт ближайшую цель; Front of Camera стоит включить всё равно.", "uk": "Обидва автори ставлять ці два налаштування однаково. Граєш лише PvE? Closest First підійде — Tab просто бере найближчу ціль; Front of Camera варто ввімкнути все одно."
+      "ru": "Оба автора ставят эти две настройки одинаково. Играешь только PvE? Closest First подойдёт — Tab просто берёт ближайшую цель; Front of Camera стоит включить всё равно.", "uk": "Обидва автори ставлять ці два налаштування однаково. Граєш лише PvE? Closest First підійде — Tab просто бере найближчу ціль; Front of Camera варто ввімкнути все одно.", "tr": "İki yazar da bu ikisini aynı şekilde ayarlıyor. Yalnızca PvE mi yapıyorsun? Closest First yeterli — Tab sadece en yakın hedefi alır; Front of Camera yine de değer."
      }
     }
    ]
@@ -510,7 +510,7 @@
    "id": "autouse",
    "title": {
     "en": "Combat → Looting and Auto-use",
-    "ru": "Бой → Получение и Автоиспольз.: лут и автоиспользование", "uk": "Combat → Looting і Auto-use: лут і автовикористання"
+    "ru": "Бой → Получение и Автоиспольз.: лут и автоиспользование", "uk": "Combat → Looting і Auto-use: лут і автовикористання", "tr": "Combat → Looting ve Auto-use"
    },
    "blocks": [
     {
@@ -527,7 +527,7 @@
         "Получение → Obtaining Gear / Obtaining Item",
         "All или фильтр",
         "Можно не подбирать снаряжение определённого грейда (Common, Rare …) или тип предметов (зелья, осколки, материалы) — полезно, когда на фарме забивается сумка."
-       ], "uk": ["Looting → Obtaining Gear / Obtaining Item", "All або фільтр", "Можна не підбирати спорядження певного ґрейду (Common, Rare …) чи тип предметів (зілля, уламки, матеріали) — корисно, коли на фармі забивається сумка."]
+       ], "uk": ["Looting → Obtaining Gear / Obtaining Item", "All або фільтр", "Можна не підбирати спорядження певного ґрейду (Common, Rare …) чи тип предметів (зілля, уламки, матеріали) — корисно, коли на фармі забивається сумка."], "tr": ["Looting → Obtaining Gear / Obtaining Item", "Hepsi veya filtre", "Bir ekipman kalitesini (Common, Rare …) veya eşya türünü (iksirler, parçalar, üretim malzemeleri) toplamayı bırakabilirsin — farmda çanta dolunca işe yarar."]
       },
       {
        "en": [
@@ -539,7 +539,7 @@
         "Автоиспольз. → Условия автоиспользования положительных эффектов <span class='st-en'>Buff Auto-use Conditions</span>",
         "<strong>В состоянии боя</strong>",
         "Свитки баффов обычно стоят на автоиспользовании. С вариантом «в движении» они тратятся, стоит сдвинуться с места, с «всегда» — постоянно. И то и другое — свитки на ветер."
-       ], "uk": ["Auto-use → Buff Auto-use Conditions", "<strong>In Combat</strong>", "Сувої бафів зазвичай стоять на автовикористанні. З варіантом «в русі» вони витрачаються, щойно зрушиш із місця, з «завжди» — постійно. І те, й інше — сувої на вітер."]
+       ], "uk": ["Auto-use → Buff Auto-use Conditions", "<strong>In Combat</strong>", "Сувої бафів зазвичай стоять на автовикористанні. З варіантом «в русі» вони витрачаються, щойно зрушиш із місця, з «завжди» — постійно. І те, й інше — сувої на вітер."], "tr": ["Auto-use → Buff Auto-use Conditions", "<strong>In Combat</strong>", "Buff parşömenleri genellikle otomatik kullanımdadır. «Hareket hâlinde» seçeneğiyle hareket ettiğin anda, «her zaman» ile sürekli kullanılırlar. İkisi de parşömen israfı."]
       },
       {
        "en": [
@@ -551,7 +551,7 @@
         "Автоиспольз. → Зелья жизни <span class='st-en'>Life Potion</span>",
         "<strong>Вкл</strong>, в видео 83%",
         "Зелья пьются автоматически ниже выбранного порога HP."
-       ], "uk": ["Auto-use → Life Potion", "<strong>ON</strong>, у відео 83%", "Зілля п'ються автоматично нижче вибраного порогу HP."]
+       ], "uk": ["Auto-use → Life Potion", "<strong>ON</strong>, у відео 83%", "Зілля п'ються автоматично нижче вибраного порогу HP."], "tr": ["Auto-use → Life Potion", "<strong>ON</strong>, videoda %83", "Seçilen HP'nin altında iksirler otomatik içilir."]
       }
      ]
     },
@@ -559,7 +559,7 @@
      "type": "tip",
      "text": {
       "en": "<strong>Melee, careful:</strong> a melee class can swing without a target, and one left click in town already counts as combat — the scrolls get used. A Ranger needs a target to auto-attack, so it does not happen to them.",
-      "ru": "<strong>Мили, осторожно:</strong> ближний бой может бить без цели, и один левый клик в городе уже считается боем — свитки потратятся. Стрелку для автоатаки нужна цель, у него такого не случается.", "uk": "<strong>Мілі, обережно:</strong> ближній бій може бити без цілі, і один лівий клік у місті вже вважається боєм — сувої витратяться. Ranger для автоатаки потрібна ціль, у нього такого не трапляється."
+      "ru": "<strong>Мили, осторожно:</strong> ближний бой может бить без цели, и один левый клик в городе уже считается боем — свитки потратятся. Стрелку для автоатаки нужна цель, у него такого не случается.", "uk": "<strong>Мілі, обережно:</strong> ближній бій може бити без цілі, і один лівий клік у місті вже вважається боєм — сувої витратяться. Ranger для автоатаки потрібна ціль, у нього такого не трапляється.", "tr": "<strong>Yakın dövüş, dikkat:</strong> yakın dövüş sınıfı hedef olmadan da sallayabilir ve şehirde tek bir sol tık bile savaş sayılır — parşömenler kullanılır. Ranger otomatik saldırı için hedefe ihtiyaç duyar, o yüzden onda olmaz."
      }
     }
    ]
@@ -568,11 +568,11 @@
    "id": "keys",
    "title": {
     "en": "Key Settings: keys worth binding",
-    "ru": "Клавиши: что стоит назначить", "uk": "Key Settings: що варто призначити"
+    "ru": "Клавиши: что стоит назначить", "uk": "Key Settings: що варто призначити", "tr": "Key Settings: atamaya değer tuşlar"
    },
    "lead": {
     "en": "The keys are his — pick your own. What matters is that these actions have a key at all.",
-    "ru": "Клавиши — его, выбери свои. Важно, чтобы у этих действий вообще была клавиша.", "uk": "Клавіші — його, обери свої. Важливо, щоб у цих дій взагалі була клавіша."
+    "ru": "Клавиши — его, выбери свои. Важно, чтобы у этих действий вообще была клавиша.", "uk": "Клавіші — його, обери свої. Важливо, щоб у цих дій взагалі була клавіша.", "tr": "Tuşlar onun — kendininkileri seç. Önemli olan bu eylemlerin bir tuşunun olması."
    },
    "blocks": [
     {
@@ -595,7 +595,7 @@
         "General → Separate Defiance Hotkey + Set Defiance Hotkey",
         "<strong>Вкл</strong>, клавиша <kbd>`</kbd> (слева от <kbd>1</kbd>); по умолчанию Выкл",
         "По умолчанию Снятие шока (выход из контроля) — на <kbd>Space</kbd> вместе с прыжком и планированием. Долбишь пробел в контроле — и начинаешь планировать, следующее движение сорвано: механика босса или PvP-драка проиграны."
-       ], "uk": ["General → Separate Defiance Hotkey + Set Defiance Hotkey", "<strong>ON</strong>, клавіша <kbd>`</kbd> (ліворуч від <kbd>1</kbd>); за замовчуванням OFF", "За замовчуванням Defiance (вихід із контролю) — на <kbd>Space</kbd> разом зі стрибком і плануванням. Гатиш пробіл у контролі — і починаєш планувати, наступний рух зірвано: механіку боса чи PvP-бійку програно."]
+       ], "uk": ["General → Separate Defiance Hotkey + Set Defiance Hotkey", "<strong>ON</strong>, клавіша <kbd>`</kbd> (ліворуч від <kbd>1</kbd>); за замовчуванням OFF", "За замовчуванням Defiance (вихід із контролю) — на <kbd>Space</kbd> разом зі стрибком і плануванням. Гатиш пробіл у контролі — і починаєш планувати, наступний рух зірвано: механіку боса чи PvP-бійку програно."], "tr": ["General → Separate Defiance Hotkey + Set Defiance Hotkey", "<strong>ON</strong>, tuş <kbd>`</kbd> (<kbd>1</kbd>'in solunda); varsayılan: OFF", "Varsayılan olarak Defiance (kontrolü kırar) zıplama ve süzülmeyle birlikte <kbd>Space</kbd>'tedir. Kontrol altında Space'e bas bas — süzülmeye başlarsın ve bu sonraki hamleni mahveder: boss mekaniği ya da PvP dövüşü kaybedilir."]
       },
       {
        "en": [
@@ -607,7 +607,7 @@
         "General → Fly Up, Fly Down",
         "Fly Up на боковой кнопке мыши; по умолчанию <kbd>Ctrl</kbd>+<kbd>R</kbd> и <kbd>Ctrl</kbd>+<kbd>F</kbd>",
         "Взлёт и снижение строго по вертикали без наклона камеры — в PvP камера остаётся на цели. Нужны постоянно, а Ctrl+R для этого никто жать не будет: переназначь при первом входе и привыкай."
-       ], "uk": ["General → Fly Up, Fly Down", "Fly Up на бічній кнопці миші; за замовчуванням <kbd>Ctrl</kbd>+<kbd>R</kbd> і <kbd>Ctrl</kbd>+<kbd>F</kbd>", "Зліт і зниження строго по вертикалі без нахилу камери — у PvP камера лишається на цілі. Потрібні постійно, а Ctrl+R для цього ніхто тиснути не буде: перепризнач при першому вході й звикай."]
+       ], "uk": ["General → Fly Up, Fly Down", "Fly Up на бічній кнопці миші; за замовчуванням <kbd>Ctrl</kbd>+<kbd>R</kbd> і <kbd>Ctrl</kbd>+<kbd>F</kbd>", "Зліт і зниження строго по вертикалі без нахилу камери — у PvP камера лишається на цілі. Потрібні постійно, а Ctrl+R для цього ніхто тиснути не буде: перепризнач при першому вході й звикай."], "tr": ["General → Fly Up, Fly Down", "Fly Up için yan fare tuşu; varsayılanlar: <kbd>Ctrl</kbd>+<kbd>R</kbd> ve <kbd>Ctrl</kbd>+<kbd>F</kbd>", "Kamerayı eğmeden dümdüz yukarı veya aşağı uçar — PvP'de kamera hedefte kalır. İkisine de sürekli ihtiyacın var ve bunun için kimse Ctrl+R'ye basmaz: ilk girişte yeniden ata ve alış."]
       },
       {
        "en": [
@@ -619,7 +619,7 @@
         "General → Macro",
         "правая кнопка мыши; по умолчанию <strong>клавиши нет</strong>",
         "Без клавиши макрос вообще не работает. Он зажат весь бой, поэтому стоит на самой удобной кнопке — у большинства это правый клик."
-       ], "uk": ["General → Macro", "права кнопка миші; за замовчуванням <strong>клавіші немає</strong>", "Без клавіші макрос узагалі не працює. Він затиснутий увесь бій, тому стоїть на найзручнішій кнопці — у більшості це правий клік."]
+       ], "uk": ["General → Macro", "права кнопка миші; за замовчуванням <strong>клавіші немає</strong>", "Без клавіші макрос узагалі не працює. Він затиснутий увесь бій, тому стоїть на найзручнішій кнопці — у більшості це правий клік."], "tr": ["General → Macro", "sağ fare tuşu; varsayılan: <strong>tuş yok</strong>", "Tuş olmadan makro hiç çalışmaz. Tüm dövüş boyunca basılı tutulur, o yüzden en rahat tuşa gider — çoğu oyuncu için sağ tık."]
       },
       {
        "en": [
@@ -631,7 +631,7 @@
         "General → Target Hostile Players",
         "<kbd>Caps</kbd> (Whelps); например, средняя кнопка мыши (Grobs)",
         "Берёт в цель только вражеских игроков. В Бездне Tab то и дело попадает на мобов — эта клавиша нет. Сам Grobs ей не пользуется: ему хватает Priority Ranking."
-       ], "uk": ["General → Target Hostile Players", "<kbd>Caps</kbd> (Whelps); наприклад, середня кнопка миші (Grobs)", "Бере в ціль лише ворожих гравців. У Безодні Tab раз у раз потрапляє на мобів — ця клавіша ні. Сам Grobs нею не користується: йому вистачає Priority Ranking."]
+       ], "uk": ["General → Target Hostile Players", "<kbd>Caps</kbd> (Whelps); наприклад, середня кнопка миші (Grobs)", "Бере в ціль лише ворожих гравців. У Безодні Tab раз у раз потрапляє на мобів — ця клавіша ні. Сам Grobs нею не користується: йому вистачає Priority Ranking."], "tr": ["General → Target Hostile Players", "<kbd>Caps</kbd> (Whelps); örn. orta fare tuşu (Grobs)", "Yalnızca düşman oyuncuları hedefler. Abyss'te Tab sürekli moblara düşer — bu tuş düşmez. Grobs kendisi kullanmıyor: ona Priority Ranking yetiyor."]
       },
       {
        "en": [
@@ -643,7 +643,7 @@
         "General → Switch Control Mode",
         "<kbd>/</kbd>",
         "Переключает режимы AION 2 и AION 1 на лету."
-       ], "uk": ["General → Switch Control Mode", "<kbd>/</kbd>", "Перемикає режими AION 2 і AION 1 на льоту."]
+       ], "uk": ["General → Switch Control Mode", "<kbd>/</kbd>", "Перемикає режими AION 2 і AION 1 на льоту."], "tr": ["General → Switch Control Mode", "<kbd>/</kbd>", "AION 2 ve AION 1 modları arasında anında geçiş yapar."]
       },
       {
        "en": [
@@ -655,7 +655,7 @@
         "General → Combat Analysis",
         "<kbd>Ctrl</kbd>+<kbd>X</kbd>",
         "Открывает встроенный счётчик урона."
-       ], "uk": ["General → Combat Analysis", "<kbd>Ctrl</kbd>+<kbd>X</kbd>", "Відкриває вбудований лічильник шкоди."]
+       ], "uk": ["General → Combat Analysis", "<kbd>Ctrl</kbd>+<kbd>X</kbd>", "Відкриває вбудований лічильник шкоди."], "tr": ["General → Combat Analysis", "<kbd>Ctrl</kbd>+<kbd>X</kbd>", "Yerleşik hasar ölçeri açar."]
       },
       {
        "en": [
@@ -667,7 +667,7 @@
         "Menu → Display Cursor",
         "<kbd>Alt</kbd> (удерживать)",
         "В режиме AION 2: зажми, чтобы появился курсор и можно было кликать по интерфейсу."
-       ], "uk": ["Menu → Display Cursor", "<kbd>Alt</kbd> (утримувати)", "У режимі AION 2: затисни, щоб з'явився курсор і можна було клацати по інтерфейсу."]
+       ], "uk": ["Menu → Display Cursor", "<kbd>Alt</kbd> (утримувати)", "У режимі AION 2: затисни, щоб з'явився курсор і можна було клацати по інтерфейсу."], "tr": ["Menu → Display Cursor", "<kbd>Alt</kbd> (basılı tut)", "AION 2 modunda: imleci almak ve arayüze tıklamak için basılı tut."]
       },
       {
        "en": [
@@ -679,7 +679,7 @@
         "Quickslot",
         "две клавиши на слот",
         "У каждого слота панели есть основная и вторая клавиша."
-       ], "uk": ["Quickslot", "дві клавіші на слот", "У кожного слота панелі є основна й друга клавіша."]
+       ], "uk": ["Quickslot", "дві клавіші на слот", "У кожного слота панелі є основна й друга клавіша."], "tr": ["Quickslot", "slot başına iki tuş", "Her hızlı erişim slotu bir ana ve bir ikinci tuş alır."]
       },
       {
        "en": [
@@ -691,7 +691,7 @@
         "Marker",
         "цифровой блок ставит метку, <kbd>Ctrl</kbd>+<kbd>1</kbd> выбирает метку 1",
         "Для группового PvP с голосовой связью: лидер ставит метку, все берут эту цель одной клавишей."
-       ], "uk": ["Marker", "цифровий блок ставить мітку, <kbd>Ctrl</kbd>+<kbd>1</kbd> обирає мітку 1", "Для групового PvP із голосовим зв'язком: лідер ставить мітку, всі беруть цю ціль однією клавішею."]
+       ], "uk": ["Marker", "цифровий блок ставить мітку, <kbd>Ctrl</kbd>+<kbd>1</kbd> обирає мітку 1", "Для групового PvP із голосовим зв'язком: лідер ставить мітку, всі беруть цю ціль однією клавішею."], "tr": ["Marker", "numpad işaret koyar, <kbd>Ctrl</kbd>+<kbd>1</kbd> 1. işareti seçer", "Sesli sohbetli grup PvP'si için: lider bir hedefi işaretler, herkes onu tek tuşla seçer."]
       }
      ]
     },
@@ -699,14 +699,14 @@
      "type": "h",
      "text": {
       "en": "Skipping dialogues faster",
-      "ru": "Быстрый пропуск диалогов", "uk": "Швидкий пропуск діалогів"
+      "ru": "Быстрый пропуск диалогов", "uk": "Швидкий пропуск діалогів", "tr": "Diyalogları daha hızlı geçmek"
      }
     },
     {
      "type": "tip",
      "text": {
       "en": "Every action in Key Settings has <strong>two key fields</strong>. Give <strong>Interact</strong> (<kbd>F</kbd> by default) a second key next to it — for example <kbd>Z</kbd> — and tap the two in turn: quest dialogues fly by about twice as fast as with one finger on <kbd>F</kbd>. There is a lot of dialogue on the way to 45, so it adds up.",
-      "ru": "У каждого действия в Key Settings есть <strong>два поля для клавиш</strong>. Назначь <strong>Interact</strong> (по умолчанию <kbd>F</kbd>) вторую клавишу рядом — например <kbd>Z</kbd> — и жми их по очереди: диалоги квестов пролетают примерно вдвое быстрее, чем одним пальцем по <kbd>F</kbd>. До 45 уровня диалогов много, так что экономия набегает.", "uk": "У кожної дії в Key Settings є <strong>два поля для клавіш</strong>. Признач <strong>Interact</strong> (за замовчуванням <kbd>F</kbd>) другу клавішу поруч — наприклад <kbd>Z</kbd> — і тисни їх по черзі: діалоги квестів пролітають приблизно вдвічі швидше, ніж одним пальцем по <kbd>F</kbd>. До 45 рівня діалогів багато, тож економія набігає."
+      "ru": "У каждого действия в Key Settings есть <strong>два поля для клавиш</strong>. Назначь <strong>Interact</strong> (по умолчанию <kbd>F</kbd>) вторую клавишу рядом — например <kbd>Z</kbd> — и жми их по очереди: диалоги квестов пролетают примерно вдвое быстрее, чем одним пальцем по <kbd>F</kbd>. До 45 уровня диалогов много, так что экономия набегает.", "uk": "У кожної дії в Key Settings є <strong>два поля для клавіш</strong>. Признач <strong>Interact</strong> (за замовчуванням <kbd>F</kbd>) другу клавішу поруч — наприклад <kbd>Z</kbd> — і тисни їх по черзі: діалоги квестів пролітають приблизно вдвічі швидше, ніж одним пальцем по <kbd>F</kbd>. До 45 рівня діалогів багато, тож економія набігає.", "tr": "Key Settings'teki her eylemin <strong>iki tuş alanı</strong> var. <strong>Interact</strong>'e (varsayılan <kbd>F</kbd>) yanında ikinci bir tuş ver — örneğin <kbd>Z</kbd> — ve ikisine sırayla bas: görev diyalogları <kbd>F</kbd>'de tek parmakla olduğundan yaklaşık iki kat hızlı akar. 45'e giden yolda çok diyalog var, bu yüzden fark birikir."
      }
     }
    ]
@@ -715,7 +715,7 @@
    "id": "display",
    "title": {
     "en": "Info Display: what is shown on screen",
-    "ru": "Отображение: что показывать на экране", "uk": "Info Display: що показувати на екрані"
+    "ru": "Отображение: что показывать на экране", "uk": "Info Display: що показувати на екрані", "tr": "Info Display: ekranda ne gösterilir"
    },
    "blocks": [
     {
@@ -738,7 +738,7 @@
         "Бой → Отображение области агрессии <span class='st-en'>Aggro Range Display</span>",
         "<strong>Вкл</strong>",
         "Выбираешь монстра — видишь синий круг: зайдёшь внутрь, и он нападёт."
-       ], "uk": ["Combat → Aggro Range Display", "<strong>ON</strong>", "Обираєш монстра — бачиш синє коло: зайдеш усередину, і він нападе."]
+       ], "uk": ["Combat → Aggro Range Display", "<strong>ON</strong>", "Обираєш монстра — бачиш синє коло: зайдеш усередину, і він нападе."], "tr": ["Combat → Aggro Range Display", "<strong>ON</strong>", "Bir canavar seç, mavi bir daire görürsün — içine adım atarsan saldırır."]
       },
       {
        "en": [
@@ -750,7 +750,7 @@
         "Бой → Отображение маркера направления босса <span class='st-en'>Display Boss Orientation Indicator</span>",
         "<strong>ВСЕ</strong>",
         "Дуга вокруг босса: синяя часть — перед, жёлтая — спина. Помогает вставать за спину."
-       ], "uk": ["Combat → Display Boss Orientation Indicator", "<strong>ALL</strong>", "Дуга навколо боса: синя частина — перед, жовта — спина. Допомагає ставати за спину."]
+       ], "uk": ["Combat → Display Boss Orientation Indicator", "<strong>ALL</strong>", "Дуга навколо боса: синя частина — перед, жовта — спина. Допомагає ставати за спину."], "tr": ["Combat → Display Boss Orientation Indicator", "<strong>ALL</strong>", "Bossun etrafında bir yay: mavi kısım önü, sarı kısım sırtı. Arkasında durmana yardım eder."]
       },
       {
        "en": [
@@ -762,7 +762,7 @@
         "Бой → Отображение области умения <span class='st-en'>Display Skill Range</span>",
         "<strong>Вкл</strong>",
         "Показывает дальность твоих скиллов."
-       ], "uk": ["Combat → Display Skill Range", "<strong>ON</strong>", "Показує дальність твоїх скілів."]
+       ], "uk": ["Combat → Display Skill Range", "<strong>ON</strong>", "Показує дальність твоїх скілів."], "tr": ["Combat → Display Skill Range", "<strong>ON</strong>", "Yeteneklerinin menzilini gösterir."]
       },
       {
        "en": [
@@ -774,7 +774,7 @@
         "Общий → Performance → Display Network Status",
         "<strong>Вкл</strong>",
         "Индикатор пинга в углу экрана."
-       ], "uk": ["Common → Performance → Display Network Status", "<strong>ON</strong>", "Індикатор пінгу в куті екрана."]
+       ], "uk": ["Common → Performance → Display Network Status", "<strong>ON</strong>", "Індикатор пінгу в куті екрана."], "tr": ["Common → Performance → Display Network Status", "<strong>ON</strong>", "Ekranın köşesinde ping göstergesi."]
       },
       {
        "en": [
@@ -786,7 +786,7 @@
         "Общий → Pets → Display Other Players' Pets",
         "<strong>Выкл</strong>",
         "Свой питомец остаётся, чужие пропадают — они только едят производительность."
-       ], "uk": ["Common → Pets → Display Other Players' Pets", "<strong>OFF</strong>", "Свій пет лишається, чужі зникають — вони лише з'їдають продуктивність."]
+       ], "uk": ["Common → Pets → Display Other Players' Pets", "<strong>OFF</strong>", "Свій пет лишається, чужі зникають — вони лише з'їдають продуктивність."], "tr": ["Common → Pets → Display Other Players' Pets", "<strong>OFF</strong>", "Kendi evcil hayvanın kalır, diğer herkesinki kaybolur — yalnızca performans yerler."]
       },
       {
        "en": [
@@ -798,7 +798,7 @@
         "Общий → Именная табличка <span class='st-en'>Nameplate</span>",
         "по вкусу",
         "Можно скрыть таблички других игроков, их духов и монстров, чтобы разгрузить экран. Свою табличку скрыть нельзя."
-       ], "uk": ["Common → Nameplate", "на смак", "Можна сховати таблички інших гравців, їхніх духів і монстрів, щоб розвантажити екран. Свою табличку сховати не можна."]
+       ], "uk": ["Common → Nameplate", "на смак", "Можна сховати таблички інших гравців, їхніх духів і монстрів, щоб розвантажити екран. Свою табличку сховати не можна."], "tr": ["Common → Nameplate", "zevke göre", "Ekranı temizlemek için diğer oyuncuların, ruhlarının ve canavarların isim plakalarını gizle. Kendi isim plakan gizlenemez."]
       },
       {
        "en": [
@@ -810,7 +810,7 @@
         "Подсказки боя → Отображение подсказок боя <span class='st-en'>Combat Floater Display</span>",
         "Вкл, с уменьшенным интерфейсом",
         "Вылетающие цифры урона и лечения. Их можно выключить, все или по отдельности (урон по мне, лечение меня, урон по цели …), но тогда удары ощущаются пустыми. Grobs оставляет их и уменьшает через <strong>UI Proportion</strong> — см. Graphics."
-       ], "uk": ["Floater → Combat Floater Display", "ON, зі зменшеним інтерфейсом", "Цифри шкоди й лікування, що вилітають. Їх можна вимкнути, всі чи окремо (шкода по мені, лікування мене, шкода по цілі …), але тоді удари відчуваються порожніми. Grobs лишає їх і зменшує через <strong>UI Proportion</strong> — див. Graphics."]
+       ], "uk": ["Floater → Combat Floater Display", "ON, зі зменшеним інтерфейсом", "Цифри шкоди й лікування, що вилітають. Їх можна вимкнути, всі чи окремо (шкода по мені, лікування мене, шкода по цілі …), але тоді удари відчуваються порожніми. Grobs лишає їх і зменшує через <strong>UI Proportion</strong> — див. Graphics."], "tr": ["Floater → Combat Floater Display", "ON, daha küçük bir UI ile", "Uçuşan hasar ve iyileştirme sayıları. Hepsi birden veya tek tek kapatılabilir (bana hasar, bana iyileştirme, hedefe hasar …), ama o zaman vuruşlar boş hissettirir. Grobs onları tutuyor ve <strong>UI Proportion</strong> ile küçültüyor — Graphics'e bak."]
       }
      ]
     }
@@ -820,11 +820,11 @@
    "id": "graphics",
    "title": {
     "en": "Graphics → Optimize: FPS and mass PvP",
-    "ru": "Графика → Optimize: FPS и массовое PvP", "uk": "Graphics → Optimize: FPS і масове PvP"
+    "ru": "Графика → Optimize: FPS и массовое PvP", "uk": "Graphics → Optimize: FPS і масове PvP", "tr": "Graphics → Optimize: FPS ve toplu PvP"
    },
    "lead": {
     "en": "Quality presets depend on your PC — these are the settings that matter regardless.",
-    "ru": "Пресеты качества зависят от твоего ПК — здесь те настройки, которые важны в любом случае.", "uk": "Пресети якості залежать від твого ПК — тут ті налаштування, які важливі в будь-якому разі."
+    "ru": "Пресеты качества зависят от твоего ПК — здесь те настройки, которые важны в любом случае.", "uk": "Пресети якості залежать від твого ПК — тут ті налаштування, які важливі в будь-якому разі.", "tr": "Kalite ön ayarları bilgisayarına bağlı — bunlar her durumda önemli olan ayarlar."
    },
    "blocks": [
     {
@@ -847,7 +847,7 @@
         "UI Proportion",
         "<strong>Small</strong> (по умолчанию Medium)",
         "Масштабирует интерфейс вместе с цифрами урона: меньше интерфейс — меньше цифры, и они перестают закрывать бой."
-       ], "uk": ["UI Proportion", "<strong>Small</strong> (за замовчуванням Medium)", "Масштабує інтерфейс разом із цифрами шкоди: менший інтерфейс — менші цифри, і вони перестають закривати бій."]
+       ], "uk": ["UI Proportion", "<strong>Small</strong> (за замовчуванням Medium)", "Масштабує інтерфейс разом із цифрами шкоди: менший інтерфейс — менші цифри, і вони перестають закривати бій."], "tr": ["UI Proportion", "<strong>Small</strong> (varsayılan: Medium)", "Arayüzü ve hasar sayılarını birlikte ölçekler: daha küçük UI daha küçük sayılar demek, böylece dövüşü kapatmazlar."]
       },
       {
        "en": [
@@ -859,7 +859,7 @@
         "Effect Quality",
         "<strong>Very Low</strong>",
         "Сильнее всего бьёт по FPS (остальное у Whelps на Very High) и убирает массу частиц — глазам намного легче на долгих сессиях."
-       ], "uk": ["Effect Quality", "<strong>Very Low</strong>", "Найсильніше б'є по FPS (решта у Whelps на Very High) і прибирає масу частинок — очам набагато легше на довгих сесіях."]
+       ], "uk": ["Effect Quality", "<strong>Very Low</strong>", "Найсильніше б'є по FPS (решта у Whelps на Very High) і прибирає масу частинок — очам набагато легше на довгих сесіях."], "tr": ["Effect Quality", "<strong>Very Low</strong>", "FPS'i her şeyden çok etkiler (Whelps geri kalanını Very High'da tutuyor) ve bir sürü parçacığı kaldırır — uzun seanslarda gözü çok daha az yorar."]
       },
       {
        "en": [
@@ -871,7 +871,7 @@
         "Upscaler",
         "<strong>DLSS</strong>",
         "На видеокарте NVIDIA."
-       ], "uk": ["Upscaler", "<strong>DLSS</strong>", "На відеокарті NVIDIA."]
+       ], "uk": ["Upscaler", "<strong>DLSS</strong>", "На відеокарті NVIDIA."], "tr": ["Upscaler", "<strong>DLSS</strong>", "NVIDIA kartta."]
       },
       {
        "en": [
@@ -883,7 +883,7 @@
         "Frame Generator",
         "<strong>выключен в PvE</strong>, включён в массовом PvP",
         "Генерация кадров добавляет задержку ввода, а задержка — это потерянный урон. В больших замесах плавность важнее."
-       ], "uk": ["Frame Generator", "<strong>вимкнений у PvE</strong>, увімкнений у масовому PvP", "Генерація кадрів додає затримку вводу, а затримка — це втрачена шкода. У великих замісах плавність важливіша."]
+       ], "uk": ["Frame Generator", "<strong>вимкнений у PvE</strong>, увімкнений у масовому PvP", "Генерація кадрів додає затримку вводу, а затримка — це втрачена шкода. У великих замісах плавність важливіша."], "tr": ["Frame Generator", "<strong>PvE'de kapalı</strong>, toplu PvP için açık", "Kare üretimi giriş gecikmesi ekler ve giriş gecikmesi kaybedilen hasardır. Büyük dövüşlerde akıcılık daha önemli."]
       },
       {
        "en": [
@@ -895,7 +895,7 @@
         "Player Particle Effect Display",
         "<strong>Self Only</strong> (Grobs); Self and Party (Whelps)",
         "Self Only скрывает эффекты скиллов всех остальных, включая союзников: меньше мельтешения и заметный прирост FPS. Иногда этого будет не хватать — оно того стоит."
-       ], "uk": ["Player Particle Effect Display", "<strong>Self Only</strong> (Grobs); Self and Party (Whelps)", "Self Only ховає ефекти скілів усіх інших, зокрема союзників: менше мерехтіння й помітний приріст FPS. Іноді цього бракуватиме — воно того варте."]
+       ], "uk": ["Player Particle Effect Display", "<strong>Self Only</strong> (Grobs); Self and Party (Whelps)", "Self Only ховає ефекти скілів усіх інших, зокрема союзників: менше мерехтіння й помітний приріст FPS. Іноді цього бракуватиме — воно того варте."], "tr": ["Player Particle Effect Display", "<strong>Self Only</strong> (Grobs); Self and Party (Whelps)", "Self Only, takım arkadaşları dahil diğer herkesin yetenek efektlerini gizler: daha az karmaşa ve belirgin bir FPS kazancı. Ara sıra eksikliğini fark edeceksin — değer."]
       },
       {
        "en": [
@@ -907,7 +907,7 @@
         "NVIDIA Reflex",
         "<strong>BOOST</strong>",
         "Меньше задержка ввода."
-       ], "uk": ["NVIDIA Reflex", "<strong>BOOST</strong>", "Менша затримка вводу."]
+       ], "uk": ["NVIDIA Reflex", "<strong>BOOST</strong>", "Менша затримка вводу."], "tr": ["NVIDIA Reflex", "<strong>BOOST</strong>", "Daha düşük giriş gecikmesi."]
       },
       {
        "en": [
@@ -919,7 +919,7 @@
         "Volumetric Light Scattering, Volumetric Fog",
         "в видео Выкл",
         "Так стоит у него на экране; отдельно он их не комментирует."
-       ], "uk": ["Volumetric Light Scattering, Volumetric Fog", "у відео OFF", "Так стоїть у нього на екрані; окремо він їх не коментує."]
+       ], "uk": ["Volumetric Light Scattering, Volumetric Fog", "у відео OFF", "Так стоїть у нього на екрані; окремо він їх не коментує."], "tr": ["Volumetric Light Scattering, Volumetric Fog", "videoda OFF", "Ekranında böyle ayarlı; bunlar hakkında yorum yapmıyor."]
       },
       {
        "en": [
@@ -931,7 +931,7 @@
         "[Abyss] Display as Tier Icon",
         "<strong>Вкл</strong>",
         "Таблички врагов в Бездне превращаются в маленькие значки ранга — надписей на экране гораздо меньше."
-       ], "uk": ["[Abyss] Display as Tier Icon", "<strong>ON</strong>", "Таблички ворогів у Безодні перетворюються на маленькі значки рангу — написів на екрані набагато менше."]
+       ], "uk": ["[Abyss] Display as Tier Icon", "<strong>ON</strong>", "Таблички ворогів у Безодні перетворюються на маленькі значки рангу — написів на екрані набагато менше."], "tr": ["[Abyss] Display as Tier Icon", "<strong>ON</strong>", "Abyss'teki düşman isim plakaları küçük rütbe simgelerine dönüşür — ekranda çok daha az yazı."]
       },
       {
        "en": [
@@ -943,7 +943,7 @@
         "Identical Player Appearance",
         "<strong>Вкл</strong>",
         "Все чужие игроки выглядят одинаково и просто; применяется сразу. Игра не оптимизирована под осады и другие массовые бои — без этой настройки они почти неиграбельны на любом ПК."
-       ], "uk": ["Identical Player Appearance", "<strong>ON</strong>", "Усі чужі гравці виглядають однаково й просто; застосовується одразу. Гра не оптимізована під облоги та інші масові бої — без цього налаштування вони майже неграбельні на будь-якому ПК."]
+       ], "uk": ["Identical Player Appearance", "<strong>ON</strong>", "Усі чужі гравці виглядають однаково й просто; застосовується одразу. Гра не оптимізована під облоги та інші масові бої — без цього налаштування вони майже неграбельні на будь-якому ПК."], "tr": ["Identical Player Appearance", "<strong>ON</strong>", "Diğer tüm oyuncular aynı basit görünümü alır; hemen uygulanır. Oyun kuşatmalar ve diğer büyük çaplı dövüşler için optimize edilmemiş — bu olmadan herhangi bir bilgisayarda neredeyse oynanamazlar."]
       }
      ]
     },
@@ -951,7 +951,7 @@
      "type": "tip",
      "text": {
       "en": "Next to it there is <strong>[Domination] Display as Tier Icon</strong> — the same switch for Domination; it is OFF in the video.",
-      "ru": "Рядом есть <strong>[Domination] Display as Tier Icon</strong> — такой же переключатель для режима Domination; в видео он выключен.", "uk": "Поруч є <strong>[Domination] Display as Tier Icon</strong> — такий самий перемикач для режиму Domination; у відео він вимкнений."
+      "ru": "Рядом есть <strong>[Domination] Display as Tier Icon</strong> — такой же переключатель для режима Domination; в видео он выключен.", "uk": "Поруч є <strong>[Domination] Display as Tier Icon</strong> — такий самий перемикач для режиму Domination; у відео він вимкнений.", "tr": "Yanında <strong>[Domination] Display as Tier Icon</strong> var — Domination için aynı düğme; videoda OFF."
      }
     }
    ]
@@ -960,7 +960,7 @@
    "id": "camera",
    "title": {
     "en": "Graphics → Camera / Direction",
-    "ru": "Графика → Camera / Direction: камера и эффекты", "uk": "Graphics → Camera / Direction: камера й ефекти"
+    "ru": "Графика → Camera / Direction: камера и эффекты", "uk": "Graphics → Camera / Direction: камера й ефекти", "tr": "Graphics → Camera / Direction"
    },
    "blocks": [
     {
@@ -983,7 +983,7 @@
         "World Map Transition Animation",
         "<strong>Выкл</strong>",
         "Иначе при каждом открытии карты проигрывается анимация — от неё начинает мутить."
-       ], "uk": ["World Map Transition Animation", "<strong>OFF</strong>", "Інакше при кожному відкритті мапи програється анімація — від неї починає нудити."]
+       ], "uk": ["World Map Transition Animation", "<strong>OFF</strong>", "Інакше при кожному відкритті мапи програється анімація — від неї починає нудити."], "tr": ["World Map Transition Animation", "<strong>OFF</strong>", "Yoksa haritayı her açtığında bir animasyon oynar — baş döndürmeye başlar."]
       },
       {
        "en": [
@@ -995,7 +995,7 @@
         "Teleport Effect Color",
         "<strong>Dark</strong> (по умолчанию Bright)",
         "Светлый вариант — белый экран в лицо при каждом телепорте."
-       ], "uk": ["Teleport Effect Color", "<strong>Dark</strong> (за замовчуванням Bright)", "Світлий варіант — білий екран в обличчя при кожному телепорті."]
+       ], "uk": ["Teleport Effect Color", "<strong>Dark</strong> (за замовчуванням Bright)", "Світлий варіант — білий екран в обличчя при кожному телепорті."], "tr": ["Teleport Effect Color", "<strong>Dark</strong> (varsayılan: Bright)", "Parlak sürüm, her ışınlanmada yüzüne beyaz bir ekran demek."]
       },
       {
        "en": [
@@ -1007,7 +1007,7 @@
         "Camera Perspective",
         "Default или из-за плеча",
         "Второй вариант ставит персонажа чуть левее центра."
-       ], "uk": ["Camera Perspective", "Default або з-за плеча", "Другий варіант ставить персонажа трохи лівіше від центру."]
+       ], "uk": ["Camera Perspective", "Default або з-за плеча", "Другий варіант ставить персонажа трохи лівіше від центру."], "tr": ["Camera Perspective", "Default veya omuz üstü", "İkinci seçenek karakteri merkezin biraz soluna koyar."]
       },
       {
        "en": [
@@ -1019,7 +1019,7 @@
         "Camera Shake Effect During Combat",
         "<strong>Выкл</strong>",
         "Оба автора её выключают. Дело вкуса — кому-то тряска нравится."
-       ], "uk": ["Camera Shake Effect During Combat", "<strong>OFF</strong>", "Обидва автори її вимикають. Справа смаку — комусь трясіння подобається."]
+       ], "uk": ["Camera Shake Effect During Combat", "<strong>OFF</strong>", "Обидва автори її вимикають. Справа смаку — комусь трясіння подобається."], "tr": ["Camera Shake Effect During Combat", "<strong>OFF</strong>", "İki yazar da kapatıyor. Zevk meselesi — bazıları sarsıntıyı sever."]
       },
       {
        "en": [
@@ -1031,7 +1031,7 @@
         "Display Weapon Outside of Combat",
         "<strong>Вкл</strong> (по умолчанию Выкл)",
         "Чисто для красоты: оружие остаётся на виду, а не исчезает вне боя."
-       ], "uk": ["Display Weapon Outside of Combat", "<strong>ON</strong> (за замовчуванням OFF)", "Суто для краси: зброя лишається на виду, а не зникає поза боєм."]
+       ], "uk": ["Display Weapon Outside of Combat", "<strong>ON</strong> (за замовчуванням OFF)", "Суто для краси: зброя лишається на виду, а не зникає поза боєм."], "tr": ["Display Weapon Outside of Combat", "<strong>ON</strong> (varsayılan: OFF)", "Tamamen görünüş için: silah savaş dışında kaybolmak yerine görünür kalır."]
       },
       {
        "en": [
@@ -1043,7 +1043,7 @@
         "Display Equipped Title Effects on Nameplate",
         "по вкусу",
         "Рамки особых титулов вокруг имён. Выкл убирает их; есть и вариант «только на моей табличке»."
-       ], "uk": ["Display Equipped Title Effects on Nameplate", "на смак", "Рамки особливих титулів навколо імен. OFF прибирає їх; є й варіант «лише на моїй табличці»."]
+       ], "uk": ["Display Equipped Title Effects on Nameplate", "на смак", "Рамки особливих титулів навколо імен. OFF прибирає їх; є й варіант «лише на моїй табличці»."], "tr": ["Display Equipped Title Effects on Nameplate", "zevke göre", "İsimlerin etrafındaki özel unvan çerçeveleri. OFF onları kaldırır; bir de «yalnızca benim isim plakamda» seçeneği var."]
       }
      ]
     }
@@ -1053,7 +1053,7 @@
    "id": "other",
    "title": {
     "en": "The other tabs",
-    "ru": "Остальные вкладки", "uk": "Інші вкладки"
+    "ru": "Остальные вкладки", "uk": "Інші вкладки", "tr": "Diğer sekmeler"
    },
    "blocks": [
     {
@@ -1062,15 +1062,15 @@
      "items": [
       {
        "en": "<strong>Accessibility</strong> — font size and chat colours, subtitles.",
-       "ru": "<strong>Доступность</strong> — размер шрифта и цвета чата, субтитры.", "uk": "<strong>Accessibility</strong> — розмір шрифту й кольори чату, субтитри."
+       "ru": "<strong>Доступность</strong> — размер шрифта и цвета чата, субтитры.", "uk": "<strong>Accessibility</strong> — розмір шрифту й кольори чату, субтитри.", "tr": "<strong>Accessibility</strong> — yazı boyutu ve sohbet renkleri, altyazılar."
       },
       {
        "en": "<strong>Notification</strong> — game alerts and requests; invites can be declined automatically. He left everything at the defaults.",
-       "ru": "<strong>Уведомления</strong> — игровые оповещения и запросы; приглашения можно отклонять автоматически. У него всё по умолчанию.", "uk": "<strong>Notification</strong> — ігрові сповіщення й запити; запрошення можна відхиляти автоматично. У нього все за замовчуванням."
+       "ru": "<strong>Уведомления</strong> — игровые оповещения и запросы; приглашения можно отклонять автоматически. У него всё по умолчанию.", "uk": "<strong>Notification</strong> — ігрові сповіщення й запити; запрошення можна відхиляти автоматично. У нього все за замовчуванням.", "tr": "<strong>Notification</strong> — oyun uyarıları ve istekleri; davetler otomatik reddedilebilir. Her şeyi varsayılanda bıraktı."
       },
       {
        "en": "<strong>Miscellaneous</strong> — interface and voice language; under <em>Account</em> — the field for coupon codes.",
-       "ru": "<strong>Другое</strong> — язык интерфейса и озвучки; в разделе <em>Account</em> — поле для купонов.", "uk": "<strong>Miscellaneous</strong> — мова інтерфейсу й озвучки; у розділі <em>Account</em> — поле для купонів."
+       "ru": "<strong>Другое</strong> — язык интерфейса и озвучки; в разделе <em>Account</em> — поле для купонов.", "uk": "<strong>Miscellaneous</strong> — мова інтерфейсу й озвучки; у розділі <em>Account</em> — поле для купонів.", "tr": "<strong>Miscellaneous</strong> — arayüz ve ses dili; <em>Account</em> altında — kupon kodu alanı."
       }
      ]
     }

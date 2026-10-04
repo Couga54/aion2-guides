@@ -9,17 +9,18 @@
 <link rel="alternate" hreflang="en" href="{{ SITE.base_url }}en/">
 <link rel="alternate" hreflang="ru" href="{{ SITE.base_url }}ru/">
 <link rel="alternate" hreflang="uk" href="{{ SITE.base_url }}uk/">
+<link rel="alternate" hreflang="tr" href="{{ SITE.base_url }}tr/">
 <link rel="alternate" hreflang="x-default" href="{{ SITE.base_url }}en/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <script>
-  // Remembered choice first, then browser language: uk → Ukrainian, ru/be → Russian, anything else → English.
+  // Remembered choice first, then browser language: uk → Ukrainian, tr → Turkish, ru/be → Russian, anything else → English.
   (function () {
     var lang;
     try { lang = localStorage.getItem('lang'); } catch (e) {}
-    if (lang !== 'en' && lang !== 'ru' && lang !== 'uk') {
+    if (lang !== 'en' && lang !== 'ru' && lang !== 'uk' && lang !== 'tr') {
       var nav = (navigator.languages || [navigator.language || 'en']).join(',').toLowerCase();
-      var first = (nav.match(/(^|,)(uk|ru|be)/) || [])[2];
-      lang = first === 'uk' ? 'uk' : first ? 'ru' : 'en';
+      var first = (nav.match(/(^|,)(uk|tr|ru|be)/) || [])[2];
+      lang = first === 'uk' || first === 'tr' ? first : first ? 'ru' : 'en';
     }
     // keep where the visitor came from for the analytics on the language page (base.html)
     try { if (document.referrer) sessionStorage.setItem('ref', document.referrer); } catch (e) {}
@@ -32,6 +33,6 @@
 </style>
 </head>
 <body>
-  <p><a href="en/">English</a> · <a href="ru/">Русский</a> · <a href="uk/">Українська</a></p>
+  <p><a href="en/">English</a> · <a href="ru/">Русский</a> · <a href="uk/">Українська</a> · <a href="tr/">Türkçe</a></p>
 </body>
 </html>

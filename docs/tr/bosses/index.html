@@ -1,0 +1,1077 @@
+<!doctype html>
+<html lang="tr" data-mode="pve">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dünya bossları — AION 2 Rehberleri</title>
+<meta name="description" content="AION 2 global alan ve dünya bossları: Verteron, Altgard ve Lower Reshanta, öldürme takibiyle.">
+<link rel="canonical" href="https://couga54.github.io/aion2-guides/tr/bosses/">
+<link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/bosses/">
+<link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/bosses/">
+<link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/bosses/">
+<link rel="alternate" hreflang="tr" href="https://couga54.github.io/aion2-guides/tr/bosses/">
+<link rel="alternate" hreflang="x-default" href="https://couga54.github.io/aion2-guides/en/bosses/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Rehberleri">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Dünya bossları — AION 2 Rehberleri">
+<meta property="og:description" content="AION 2 global alan ve dünya bossları: Verteron, Altgard ve Lower Reshanta, öldürme takibiyle.">
+<meta property="og:url" content="https://couga54.github.io/aion2-guides/tr/bosses/">
+<meta property="og:image" content="https://couga54.github.io/aion2-guides/assets/og/bosses-tr.jpg?v=90e2e663">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var off = (r.getAttribute('data-off') || '').split(' ');
+    var modes = ['pve', 'pvp', 'lvl'].filter(function (x) { return off.indexOf(x) < 0; });
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+    else if (modes.indexOf(r.dataset.mode) < 0) r.dataset.mode = modes[0];
+  })(document.documentElement);
+</script>
+<script>
+  // Google Analytics (site.json "ga"). Not loaded on local previews. A visitor who came through the root
+  // language redirect keeps the site they came from (root.html saves it in sessionStorage).
+  if (!/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+    (function () {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-6WYEWLG4B5';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      var ref = null;
+      try { ref = sessionStorage.getItem('ref'); sessionStorage.removeItem('ref'); } catch (e) {}
+      gtag('js', new Date());
+      gtag('config', 'G-6WYEWLG4B5', ref ? { page_referrer: ref } : {});
+    })();
+  }
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=90e2e663">
+</head>
+<body class="page-bosses">
+<a class="skip-link" href="#main">İçeriğe geç</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../tr/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
+      <span>AION 2 Rehberleri</span>
+    </a>
+    <details class="class-menu">
+      <summary class="class-menu-btn">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg><span>Sınıflar</span>        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="Sınıflar">
+        <a href="../../tr/gladiator/" class="cm-item accent-crimson">
+          <img src="../../assets/classes/gladiator.webp" width="44" height="44" alt=""><span class="cm-name">Gladiator</span><span class="cm-role">Yakın dövüş DPS · bruiser</span>
+        </a>
+        <a href="../../tr/ranger/" class="cm-item accent-emerald">
+          <img src="../../assets/classes/ranger.webp" width="44" height="44" alt=""><span class="cm-name">Ranger</span><span class="cm-role">Menzilli DPS · kiter</span>
+        </a>
+        <a href="../../tr/templar/" class="cm-item accent-sapphire">
+          <img src="../../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Templar</span><span class="cm-role">Tank · grup bufferı</span>
+        </a>
+        <a href="../../tr/assassin/" class="cm-item accent-violet">
+          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Assassin</span><span class="cm-role">Yakın dövüş DPS · patlama</span>
+        </a>
+        <a href="../../tr/sorcerer/" class="cm-item accent-frost">
+          <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Sorcerer</span><span class="cm-role">Menzilli büyü DPS</span>
+        </a>
+        <a href="../../tr/elementalist/" class="cm-item accent-spirit">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Elementalist</span><span class="cm-role">Çağırıcı · büyü DPS</span>
+        </a>
+        <a href="../../tr/cleric/" class="cm-item accent-sunlight">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Cleric</span><span class="cm-role">Şifacı · toprak ve şimşek hasarı</span>
+        </a>
+        <a href="../../tr/chanter/" class="cm-item accent-amber">
+          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Chanter</span><span class="cm-role">Yakın dövüş destek · buffer</span>
+        </a>
+      </nav>
+    </details>
+    <div class="topbar-tools">      <span class="rift-timer" data-anchor="2026-10-02T18:00:00Z" data-every="3" data-tz="Europe/Kyiv" data-open-min="10" data-open="Rift açık" title="Rift — düşman bölgesine açılan portal, her 3 saatte bir açılır; giriş 10 dakika açık kalır, içeride yaklaşık bir saat kalabilirsin. Sonraki">
+        <svg class="rt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="7.5" ry="10.5"/><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/><g transform="rotate(180 12 12)"><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/></g></svg><span class="rt-name">Rift</span><b class="rt-time">--:--</b>
+      </span>
+      <a class="wr-chip" href="../../tr/weekly/" data-anchor="2026-09-30T07:00:00Z" data-tz="Europe/Kyiv" data-units="g,sa,dk,sn" title="Haftalık sıfırlamaya">
+        <svg class="wr-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg><span class="wr-name">Sıfırlama</span><b class="wr-time">--</b>
+      </a>
+      <a class="top-timer" href="../../tr/" title="Çıkış takvimi" data-events='[{"at": "2026-09-28T13:00:00Z", "n": "\u00d6n indirme", "o": ""}, {"at": "2026-09-30T14:00:00Z", "n": "Erken Eri\u015fim", "o": "Erken Eri\u015fim ba\u015flad\u0131"}, {"at": "2026-10-05T13:00:00Z", "n": "Global \u00e7\u0131k\u0131\u015f", "o": "Sunucular a\u00e7\u0131k"}]' data-units="g,sa,dk,sn" data-open="açık">
+        <span class="tt-dot" aria-hidden="true"></span><span class="tt-name"></span><b class="tt-time">--:--:--</b>
+      </a>
+      <details class="class-menu nav-menu">
+        <summary class="class-menu-btn is-here">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Rehberler</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <nav class="nav-menu-panel" aria-label="Rehberler">
+          <div class="nm-col">
+            <p class="nm-group">İlerleme</p>
+            <a href="../../tr/week-1/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+              <span class="nm-name">1. hafta</span><span class="nm-desc">İlk sıfırlamadan önce bitirilecekler</span>
+            </a>
+            <a href="../../tr/progression/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h4v-6H3zM10 20h4V9h-4zM17 20h4V4h-4z"/></svg>
+              <span class="nm-name">45 sonrası</span><span class="nm-desc">Raide giden item level rotası</span>
+            </a>
+            <a href="../../tr/crafting/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 1.3-1.3a4 4 0 0 0-5-5L3 10l3-3 3 3 1.3-1.3a4 4 0 0 1 4.4-2.4z"/></svg>
+              <span class="nm-name">Toplama ve üretim</span><span class="nm-desc">Meslekler ve altın taslaklar</span>
+            </a>
+            <a href="../../tr/settings/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+              <span class="nm-name">Oyun ayarları</span><span class="nm-desc">Kontroller, tuşlar, FPS ve toplu PvP</span>
+            </a>
+          </div>
+          <div class="nm-col">
+            <p class="nm-group">Takipçiler</p>
+            <a href="../../tr/weekly/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+              <span class="nm-name">Haftalık</span><span class="nm-desc">Haftalık girişler ve enerji</span>
+            </a>
+            <a href="../../tr/bosses/" class="nm-item" aria-current="page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
+              <span class="nm-name">Bosslar</span><span class="nm-desc">Öldürme takibi ve zamanlayıcılar</span>
+            </a>
+          </div>
+          <div class="nm-foot">
+            <a href="../../tr/sources/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+              <span class="nm-name">Kaynaklar ve emeği geçenler</span><span class="nm-desc">Bu sitenin dayandığı herkes</span>
+            </a>
+          </div>
+        </nav>
+      </details>      <details class="lang-menu">
+        <summary class="lang-switch" title="Dil"><span aria-hidden="true">TR</span><span class="sr-only">Dil</span></summary>
+        <nav class="lang-panel" aria-label="Dil">
+<a href="../../en/bosses/" hreflang="en" lang="en" data-keep-query><b>EN</b>English</a><a href="../../ru/bosses/" hreflang="ru" lang="ru" data-keep-query><b>RU</b>Русский</a><a href="../../uk/bosses/" hreflang="uk" lang="uk" data-keep-query><b>UA</b>Українська</a><a href="../../tr/bosses/" hreflang="tr" lang="tr" aria-current="true" data-keep-query><b>TR</b>Türkçe</a>        </nav>
+      </details>
+      <button class="icon-btn search-open" type="button" aria-label="Ara (Ctrl+K)" title="Ara (Ctrl+K)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+<a class="icon-btn wn-top" href="../../tr/changelog/" aria-label="Değişiklik günlüğü" title="Değişiklik günlüğü">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </a>      <button class="icon-btn theme-toggle" type="button" aria-label="Karanlık modu değiştir" title="Karanlık modu değiştir">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero has-art" style="--hero-art:url('../../assets/art/hero-bosses.webp');--hero-pos:50% 68%">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../../tr/">Tüm sınıflar</a><span aria-hidden="true">/</span><span>Bosslar</span></nav>
+      <h1>Dünya bossları</h1>
+      <p class="lead">Global Season 1 alan bossları ve öldürme takibi. Bir öldürmeyi işaretle, sayfa bossun ne zaman döneceğini gösterir: Verteron ve Altgard&#39;ın 48 bossunun tamamının yeniden doğma süreleri var.</p>
+    </div>
+  </section>
+
+  <div class="wrap bs-page" data-lang="tr" data-t-killed="öldürüldü" data-t-next="sonraki" data-t-up="çıkmış olabilir" data-t-notify="{name} çıkmış olabilir">
+    <div class="notify-box">
+  <button type="button" class="btn btn-ghost btn-sm notify-toggle" aria-pressed="false"
+    data-t-on="Bildirimler açık" data-t-off="Bildirimleri aç" data-t-denied="Bildirimler tarayıcıda engellendi" data-t-unsupported="Bu tarayıcıda bildirim yok">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+    <span class="notify-label">Bildirimleri aç</span>
+  </button>
+  <span class="notify-note">Bu sekme açıkken çalışırlar.</span>
+</div>
+<script src="../../assets/js/notify.js?v=90e2e663" defer></script>
+    <section class="bs-group bs-elyos" aria-labelledby="h-bs-elyos">
+      <h2 id="h-bs-elyos" class="bs-group-title"><span>Verteron</span><small>Elyos</small></h2>
+      <ul class="bs-list">
+        <li class="bs-item" id="b-2100050" data-id="2100050" data-respawn="30">
+          <div class="bs-main">
+            <span class="bs-name">Kernon of the West</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Cantas Valley · Sv 45 · Yeniden doğma: 30 dk</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Kernon of the West">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2100003" data-id="2100003" data-respawn="30">
+          <div class="bs-main">
+            <span class="bs-name">Neikel of the East</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Cantas Valley · Sv 45 · Yeniden doğma: 30 dk</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Neikel of the East">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2100040" data-id="2100040" data-respawn="30">
+          <div class="bs-main">
+            <span class="bs-name">Rotten Kutar</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Elun River Swamp · Sv 45 · Yeniden doğma: 30 dk</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Rotten Kutar">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2100141" data-id="2100141" data-respawn="60">
+          <div class="bs-main">
+            <span class="bs-name">Blooming Korin</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Elun River Midstream · Sv 45 · Yeniden doğma: 1 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Blooming Korin">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2100079" data-id="2100079" data-respawn="90">
+          <div class="bs-main">
+            <span class="bs-name">Bodyguard Teegant</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Fortress Ruins · Sv 45 · Yeniden doğma: 1 sa 30 dk</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Bodyguard Teegant">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2100076" data-id="2100076" data-respawn="120">
+          <div class="bs-main">
+            <span class="bs-name">Kusan the Mad Gladiator</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Fortress Ruins · Sv 45 · Yeniden doğma: 2 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Kusan the Mad Gladiator">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2100077" data-id="2100077" data-respawn="120">
+          <div class="bs-main">
+            <span class="bs-name">Ritualist Garshim</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Fortress Ruins · Sv 45 · Yeniden doğma: 2 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Ritualist Garshim">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2100178" data-id="2100178" data-respawn="180">
+          <div class="bs-main">
+            <span class="bs-name">Bloodfang Pnyn</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Tolbas Forest · Sv 45 · Yeniden doğma: 3 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Bloodfang Pnyn">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2100177" data-id="2100177" data-respawn="180">
+          <div class="bs-main">
+            <span class="bs-name">Furious Saursus</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Tolbas Forest · Sv 45 · Yeniden doğma: 3 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Furious Saursus">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2100988" data-id="2100988" data-respawn="120">
+          <div class="bs-main">
+            <span class="bs-name">Scholar Aulla</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Aulau Village · Sv 45 · Yeniden doğma: 2 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Scholar Aulla">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2100991" data-id="2100991" data-respawn="120">
+          <div class="bs-main">
+            <span class="bs-name">Chaser Taulo</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Aulau Village · Sv 45 · Yeniden doğma: 2 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Chaser Taulo">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2100989" data-id="2100989" data-respawn="120">
+          <div class="bs-main">
+            <span class="bs-name">Forest Warrior Aullamu</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Aulau Village · Sv 45 · Yeniden doğma: 2 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Forest Warrior Aullamu">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2100582" data-id="2100582" data-respawn="180">
+          <div class="bs-main">
+            <span class="bs-name">Heretic Layla</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Artamia Plateau · Sv 45 · Yeniden doğma: 3 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Heretic Layla">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2100617" data-id="2100617" data-respawn="120">
+          <div class="bs-main">
+            <span class="bs-name">Black Tentacle Lawa</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Artamia Gorge · Sv 45 · Yeniden doğma: 2 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Black Tentacle Lawa">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2100708" data-id="2100708" data-respawn="120">
+          <div class="bs-main">
+            <span class="bs-name">Centurion Demiros</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Artamia Plateau · Sv 45 · Yeniden doğma: 2 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Centurion Demiros">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2100718" data-id="2100718" data-respawn="360">
+          <div class="bs-main">
+            <span class="bs-name">Divine Ansas</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Artamia Plateau · Sv 45 · Yeniden doğma: 6 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Divine Ansas">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2100876" data-id="2100876" data-respawn="180">
+          <div class="bs-main">
+            <span class="bs-name">Harvest Manager Moshav</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Drana Plantation · Sv 45 · Yeniden doğma: 3 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Harvest Manager Moshav">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2100877" data-id="2100877" data-respawn="120">
+          <div class="bs-main">
+            <span class="bs-name">Sentinel K&#39;nash</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Drana Plantation · Sv 45 · Yeniden doğma: 2 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Sentinel K&#39;nash">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2101016" data-id="2101016" data-respawn="180">
+          <div class="bs-main">
+            <span class="bs-name">Researcher Setram</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Nahid Legion Fortress · Sv 45 · Yeniden doğma: 3 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Researcher Setram">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2100661" data-id="2100661" data-respawn="360">
+          <div class="bs-main">
+            <span class="bs-name">Phantasm Kasia</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Garden of the Illusion God · Sv 45 · Yeniden doğma: 6 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Phantasm Kasia">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2101120" data-id="2101120" data-respawn="180">
+          <div class="bs-main">
+            <span class="bs-name">Silent Dartan</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Artamia Plateau South · Sv 48 · Yeniden doğma: 3 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Silent Dartan">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2101122" data-id="2101122" data-respawn="360">
+          <div class="bs-main">
+            <span class="bs-name">Soul Ruler Kashapa</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Artamia Plateau East · Sv 48 · Yeniden doğma: 6 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Soul Ruler Kashapa">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2101131" data-id="2101131" data-respawn="360">
+          <div class="bs-main">
+            <span class="bs-name">High Commander Lagta</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Red Forest · Sv 48 · Yeniden doğma: 6 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: High Commander Lagta">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2101074" data-id="2101074" data-respawn="360">
+          <div class="bs-main">
+            <span class="bs-name">Eternal Gartua</span><span hidden class="bs-zone">Verteron</span>
+            <span class="bs-meta">Isle of Eternity · Sv 51 · Yeniden doğma: 6 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Eternal Gartua">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="bs-group bs-asmodians" aria-labelledby="h-bs-asmodians">
+      <h2 id="h-bs-asmodians" class="bs-group-title"><span>Altgard</span><small>Asmodians</small></h2>
+      <ul class="bs-list">
+        <li class="bs-item" id="b-2400017" data-id="2400017" data-respawn="30">
+          <div class="bs-main">
+            <span class="bs-name">Melted Danar</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Dredgion Crash Site · Sv 45 · Yeniden doğma: 30 dk</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Melted Danar">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400074" data-id="2400074" data-respawn="30">
+          <div class="bs-main">
+            <span class="bs-name">Black Warrior Aed</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Nameless Graveyard · Sv 45 · Yeniden doğma: 30 dk</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Black Warrior Aed">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400140" data-id="2400140" data-respawn="30">
+          <div class="bs-main">
+            <span class="bs-name">Faithful Rajit</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Sanctuary Watch Post · Sv 45 · Yeniden doğma: 30 dk</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Faithful Rajit">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400141" data-id="2400141" data-respawn="60">
+          <div class="bs-main">
+            <span class="bs-name">Berserker Vargor</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Sanctuary Watch Post · Sv 45 · Yeniden doğma: 1 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Berserker Vargor">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400223" data-id="2400223" data-respawn="90">
+          <div class="bs-main">
+            <span class="bs-name">Blood Warrior Lannar</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Moslan Forest · Sv 45 · Yeniden doğma: 1 sa 30 dk</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Blood Warrior Lannar">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400212" data-id="2400212" data-respawn="120">
+          <div class="bs-main">
+            <span class="bs-name">Predator Garsan</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Moslan Forest · Sv 45 · Yeniden doğma: 2 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Predator Garsan">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400274" data-id="2400274" data-respawn="120">
+          <div class="bs-main">
+            <span class="bs-name">Deceiver Trid</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Urtumheim · Sv 45 · Yeniden doğma: 2 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Deceiver Trid">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400335" data-id="2400335" data-respawn="120">
+          <div class="bs-main">
+            <span class="bs-name">Blue Wave Kelpina</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Forest of Purification · Sv 45 · Yeniden doğma: 2 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Blue Wave Kelpina">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400358" data-id="2400358" data-respawn="180">
+          <div class="bs-main">
+            <span class="bs-name">Advisor Resana</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Dranactus · Sv 45 · Yeniden doğma: 3 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Advisor Resana">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400353" data-id="2400353" data-respawn="120">
+          <div class="bs-main">
+            <span class="bs-name">High Overseer Nutah</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Dranactus · Sv 45 · Yeniden doğma: 2 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: High Overseer Nutah">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400419" data-id="2400419" data-respawn="180">
+          <div class="bs-main">
+            <span class="bs-name">Special Operations Leader Linx</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Basfelt Ruins · Sv 45 · Yeniden doğma: 3 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Special Operations Leader Linx">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400424" data-id="2400424" data-respawn="240">
+          <div class="bs-main">
+            <span class="bs-name">Desecrator Newbold</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Basfelt Ruins · Sv 45 · Yeniden doğma: 4 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Desecrator Newbold">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400425" data-id="2400425" data-respawn="240">
+          <div class="bs-main">
+            <span class="bs-name">Specter Archon Axios</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Basfelt Ruins · Sv 45 · Yeniden doğma: 4 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Specter Archon Axios">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400474" data-id="2400474" data-respawn="180">
+          <div class="bs-main">
+            <span class="bs-name">Addicted Hardirun</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Pafnite Burial Ground · Sv 45 · Yeniden doğma: 3 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Addicted Hardirun">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400504" data-id="2400504" data-respawn="240">
+          <div class="bs-main">
+            <span class="bs-name">Executioner Barthien</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Gribade Canyon West · Sv 45 · Yeniden doğma: 4 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Executioner Barthien">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400593" data-id="2400593" data-respawn="360">
+          <div class="bs-main">
+            <span class="bs-name">Drakan Battalion Weapon Guruta</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Gribade Canyon East · Sv 45 · Yeniden doğma: 6 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Drakan Battalion Weapon Guruta">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400607" data-id="2400607" data-respawn="180">
+          <div class="bs-main">
+            <span class="bs-name">Veteran Shujakan</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Black Claw Village · Sv 45 · Yeniden doğma: 3 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Veteran Shujakan">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400608" data-id="2400608" data-respawn="240">
+          <div class="bs-main">
+            <span class="bs-name">Visionary Karuka</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Black Claw Village · Sv 45 · Yeniden doğma: 4 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Visionary Karuka">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400659" data-id="2400659" data-respawn="360">
+          <div class="bs-main">
+            <span class="bs-name">Dark Shadow Vishwada</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Ragta Fortress · Sv 45 · Yeniden doğma: 6 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Dark Shadow Vishwada">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400709" data-id="2400709" data-respawn="360">
+          <div class="bs-main">
+            <span class="bs-name">Sharp Shylak</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Impetusium Plaza · Sv 45 · Yeniden doğma: 6 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Sharp Shylak">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400855" data-id="2400855" data-respawn="360">
+          <div class="bs-main">
+            <span class="bs-name">Silent Dartan</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Forest of Purification · Sv 48 · Yeniden doğma: 6 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Silent Dartan">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400854" data-id="2400854" data-respawn="360">
+          <div class="bs-main">
+            <span class="bs-name">Soul Ruler Kashapa</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Pafnite Burial Ground · Sv 48 · Yeniden doğma: 6 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Soul Ruler Kashapa">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400853" data-id="2400853" data-respawn="720">
+          <div class="bs-main">
+            <span class="bs-name">High Commander Lagta</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Ragta Fortress · Sv 48 · Yeniden doğma: 12 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: High Commander Lagta">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2400800" data-id="2400800" data-respawn="720">
+          <div class="bs-main">
+            <span class="bs-name">Immortal Gartua</span><span hidden class="bs-zone">Altgard</span>
+            <span class="bs-meta">Isle of Immortality · Sv 51 · Yeniden doğma: 12 sa</span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Immortal Gartua">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section class="bs-group bs-abyss" aria-labelledby="h-bs-abyss">
+      <h2 id="h-bs-abyss" class="bs-group-title"><span>Chaotic Lower Reshanta</span><small>Abyss</small></h2>
+      <ul class="bs-list">
+        <li class="bs-item" id="b-2600089" data-id="2600089">
+          <div class="bs-main">
+            <span class="bs-name">Watcher Kaira</span><span hidden class="bs-zone">Chaotic Lower Reshanta</span>
+            <span class="bs-meta">Sv 65 · Yeniden doğma: <i>çıkıştan sonra</i> · <span class="bs-kr">KR/TW: every 4 h from 01:00</span></span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Watcher Kaira">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2600097" data-id="2600097">
+          <div class="bs-main">
+            <span class="bs-name">Executor Argo</span><span hidden class="bs-zone">Chaotic Lower Reshanta</span>
+            <span class="bs-meta">Sv 65 · Yeniden doğma: <i>çıkıştan sonra</i> · <span class="bs-kr">KR/TW: Wed, Sat 22:30</span></span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Executor Argo">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2600098" data-id="2600098">
+          <div class="bs-main">
+            <span class="bs-name">Executor Kaira</span><span hidden class="bs-zone">Chaotic Lower Reshanta</span>
+            <span class="bs-meta">Sv 65 · Yeniden doğma: <i>çıkıştan sonra</i> · <span class="bs-kr">KR/TW: Wed, Sat 22:30</span></span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Executor Kaira">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-2600096" data-id="2600096">
+          <div class="bs-main">
+            <span class="bs-name">Executor Tamasa</span><span hidden class="bs-zone">Chaotic Lower Reshanta</span>
+            <span class="bs-meta">Sv 65 · Yeniden doğma: <i>çıkıştan sonra</i> · <span class="bs-kr">KR/TW: Wed, Sat 22:30</span></span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Executor Tamasa">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+        <li class="bs-item" id="b-siege-lower" data-id="siege-lower">
+          <div class="bs-main">
+            <span class="bs-name">Abyss siege boss</span><span hidden class="bs-zone">Chaotic Lower Reshanta</span>
+            <span class="bs-meta">Yeniden doğma: <i>çıkıştan sonra</i> · <span class="bs-kr">KR/TW: Fri, Sun 22:00</span></span>
+            <span class="bs-status" aria-live="polite"></span>
+          </div>
+          <div class="bs-ctrl">
+            <button type="button" class="btn btn-ghost btn-sm bs-bell" aria-pressed="true" title="Bu boss için bildir" aria-label="Bu boss için bildir: Abyss siege boss">
+              <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg>
+              <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.7 3A6 6 0 0 1 18 8a21 21 0 0 0 .6 5"/><path d="M17 17H3s3-2 3-9a4.7 4.7 0 0 1 .3-2"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/><path d="m2 2 20 20"/></svg>
+            </button>
+            <button type="button" class="btn btn-sm bs-kill">Öldürüldü</button>
+            <button type="button" class="btn btn-ghost btn-sm bs-undo" hidden>Geri al</button>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <p class="note">Adlar ve seviyeler global istemciden gelir. Yeniden doğma öldürmeden itibaren sayılır. Global&#39;de alan bosslarının döngüleri NCSOFT&#39;un Kore duyurusundakinin yarısıdır (aion2timers.com üzerinden) — oyunda Altgard bosslarında kontrol edildi. KR/TW işaretli takvimler Kore sunucularından gelir ve yalnızca referans olarak gösterilir. Öldürme işaretleri bu tarayıcıda kaydedilir.</p>
+    <p class="note">Eltnen ve Morheim (80. seviye) ile Middle Reshanta bossları istemci dosyalarında var ama henüz global Season 1&#39;in parçası değil.</p>
+  </div>
+</main>
+<script src="../../assets/js/bosses.js?v=90e2e663" defer></script>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../tr/">AION 2 Rehberleri</a>
+      <p>Resmî olmayan hayran sitesi, NCSOFT ile bağlantılı değildir. AION 2 ve yetenek simgeleri © NCSOFT.</p>
+      <p>Son kontrol: 2026-10-04 (global çıkıştan önce).</p>
+      <p><a href="../../tr/sources/">Tüm kaynaklar ve içerik üreticileri</a> · <a href="../../tr/changelog/">Değişiklik günlüğü</a> · <button type="button" class="link-btn report-open">Hata bildir</button></p>
+    </div>
+  </div>
+</footer>
+<dialog class="search-dlg" aria-label="Ara" data-index="../../tr/search.json" data-base="../../tr/" data-empty="Hiçbir şey bulunamadı"
+  data-kinds="{&#34;boss&#34;: &#34;Boss&#34;, &#34;class&#34;: &#34;S\u0131n\u0131f&#34;, &#34;page&#34;: &#34;Sayfa&#34;, &#34;section&#34;: &#34;B\u00f6l\u00fcm&#34;, &#34;skill&#34;: &#34;Yetenek&#34;}" data-root="../../">
+  <div class="search-in">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-q" placeholder="Sınıf, yetenek, boss, bölüm…" aria-label="Ara" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-res" role="listbox"></ul>
+  </div>
+</dialog>
+<dialog class="whatsnew" data-id="2026-10-04" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title">Yenilikler</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="Anladım">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <section class="wn-entry">
+      <time class="wn-date" datetime="2026-10-04">4 Ekim 2026</time>
+      <ul>
+        <li><span><strong>Türkçe sürüm</strong> — tüm site artık Türkçe de: rehberler, sayfalar ve takipçiler. Ukraynaca sayfalarda olduğu gibi yetenek ve eşya adları İngilizce kalıyor. Çeviri yapay zekâ ile yapıldı — bir hata görürsen "Hata bildir"i kullan veya GitHub'da bir issue aç.</span></li>
+      </ul>
+    </section>
+    <button class="btn btn-primary wn-ok" value="close">Anladım</button>
+    <p class="wn-all"><a href="../../tr/changelog/">Tüm değişiklik günlüğü →</a></p>
+  </form>
+</dialog>
+<dialog class="whatsnew feedback" aria-labelledby="fb-title" data-url="https://aion2-feedback.couga-ua.workers.dev/" data-page="tr/bosses/" data-lang="tr">
+  <form class="wn-in fb-form" novalidate>
+    <div class="wn-head">
+      <h2 id="fb-title">Hata bildir</h2>
+      <button type="button" class="icon-btn fb-x" aria-label="Anladım">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <p class="fb-hint">Yanlış veya eskimiş olan ne? Bir kaynağın bağlantısı ya da ekran görüntüsü çok yardımcı olur.</p>
+    <label class="fb-label" for="fb-text">Mesajın</label>
+    <textarea id="fb-text" class="fb-text" name="text" rows="6" maxlength="2000" required placeholder="Örneğin: global&#39;de Blaze&#39;in üçüncü uzmanlığı farklı…"></textarea>
+    <label class="fb-label" for="fb-contact">Yanıt için iletişim (isteğe bağlı)</label>
+    <input id="fb-contact" class="fb-contact" name="contact" type="text" maxlength="100" autocomplete="off" placeholder="Discord veya Telegram">
+    <input class="fb-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="fb-meta">Mesajla birlikte gönderilir: <b class="fb-where"></b></p>
+    <p class="fb-status" role="status" data-sending="Gönderiliyor…" data-ok="Gönderildi — teşekkürler!" data-err="Gönderilemedi. Lütfen daha sonra tekrar dene." data-rate="Art arda çok fazla mesaj — birkaç dakika sonra tekrar dene." data-short="Önce birkaç kelime yaz."></p>
+    <div class="fb-actions">
+      <button type="submit" class="btn btn-primary fb-send">Gönder</button>
+      <button type="button" class="btn btn-ghost fb-cancel">İptal</button>
+    </div>
+  </form>
+</dialog>
+<script src="../../assets/js/site.js?v=90e2e663" defer></script>
+<script src="../../assets/js/fx.js?v=90e2e663" defer></script>
+<div class="cel-banner" role="status" hidden data-at="2026-09-30T14:00:00Z" data-id="early">
+  <span class="cel-ico" aria-hidden="true">✦</span>
+  <div><p class="cel-h">Erken Erişim açıldı!</p><p class="cel-p">Founder&#39;s Pack sunucuları açık — ilk günde bol şans. Sınıf rehberlerin hazır.</p></div>
+  <button type="button" class="cel-x" aria-label="Kapat">×</button>
+</div>
+<script src="../../assets/js/celebrate.js?v=90e2e663" defer></script>
+</body>
+</html>

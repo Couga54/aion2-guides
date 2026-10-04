@@ -1,6 +1,6 @@
 # AION 2 Guides
 
-Static multi-class guide site (EN/RU/UK) for AION 2 global Season 1, built with Python + Jinja2 into `docs/` for GitHub Pages.
+Static multi-class guide site (EN/RU/UK/TR) for AION 2 global Season 1, built with Python + Jinja2 into `docs/` for GitHub Pages.
 
 Read `CONTEXT.md` first — it has the user's requirements, verified game facts and the site architecture.
 
@@ -25,8 +25,11 @@ Read `CONTEXT.md` first — it has the user's requirements, verified game facts 
   Transcript only: `.venv/Scripts/python tools/fetch_transcript.py <video id>` → `frames/<id>/transcript.json`.
 - Launch day (Oct 5): work through `LAUNCH.md` — every value that must be checked against the live servers.
 - Do not push without the user's explicit go-ahead; they check locally first.
-- Every guide text exists in `src/content/<class>/en.html`, `ru.html` and `uk.html` — change all three; every `{"en", "ru"}` string in
-  `data/` has a `"uk"` too, and `data/i18n.json` has a `uk` block. Ukrainian pages use **English** names for everything from the game data (classes, skills, items, sets, bosses, zones, boards, stats in tooltips) —
+- Every guide text exists in `src/content/<class>/en.html`, `ru.html`, `uk.html` and `tr.html` — change all four; every `{"en", "ru"}` string in
+  `data/` has a `"uk"` and a `"tr"` too, and `data/i18n.json` has `uk` and `tr` blocks. Turkish (Oct 4, from GitHub issue #1) follows the Ukrainian
+  rules: game names in English, the rest in Turkish (AI translation; native speakers send fixes as PRs). A missing `"tr"` string, i18n key or
+  `tr.html` falls back to English at build time (`TEXT_FALLBACK` in `tools/build.py`), so the build never breaks — but add the Turkish text.
+  Put the `"tr"` key right after `"uk"` and keep the hand-formatted JSON layout (don't re-dump the data files with json.dumps). Ukrainian pages use **English** names for everything from the game data (classes, skills, items, sets, bosses, zones, boards, stats in tooltips) —
   questlog.gg has no Ukrainian; the build copies the English game data under `uk` (`DATA_LANG` in `tools/build.py`). In `uk.html` and in `"uk"` data
   strings write skill and game names in English (as the EN text does), the rest in Ukrainian.
 - Skill cards (`{% call skill('slug', kind, 'level', [picks]) %}`): a skill has 1 specialization slot from level 8, 2 from 12 and 3 only

@@ -48,8 +48,8 @@ for _cls, _fixes in load(DATA / "skills" / "_overrides.json").items():
             SKILLS[_cls][_slug][_lang].update(_fields)
 
 # Game data (skills, items, Daevanion boards, world bosses) comes from questlog.gg, which has no Ukrainian:
-# Ukrainian pages show it in English. Only our own text (guides, UI) is translated.
-DATA_LANG = {"uk": "en"}
+# Ukrainian and Turkish pages show it in English. Only our own text (guides, UI) is translated.
+DATA_LANG = {"uk": "en", "tr": "en"}
 
 
 def _game_lang(x):
@@ -69,6 +69,28 @@ def _game_lang(x):
 
 for _data in (SKILLS, ITEMS, BOARDS, BOSSES):
     _game_lang(_data)
+
+# Our own text: a string, UI key or class guide not translated to Turkish yet shows in English, so a guide edit
+# made in EN / RU / UK only never breaks the build (the Turkish text catches up later).
+TEXT_FALLBACK = {"tr": "en"}
+
+
+def _text_fallback(x):
+    if isinstance(x, dict):
+        if "en" in x and "ru" in x:
+            for lang, src in TEXT_FALLBACK.items():
+                x.setdefault(lang, x[src])
+        for v in list(x.values()):
+            _text_fallback(v)
+    elif isinstance(x, list):
+        for v in x:
+            _text_fallback(v)
+
+
+for _data in (SITE, SOURCES, WEEKLY, CHANGELOG, WEEK1, PROGRESSION, CRAFTING, SETTINGS):
+    _text_fallback(_data)
+for _lang, _src in TEXT_FALLBACK.items():
+    I18N[_lang] = {**I18N[_src], **I18N.get(_lang, {})}
 
 
 # ---- helpers exposed to templates -------------------------------------------------
@@ -109,7 +131,7 @@ STAT_LABELS = {
            "death": "Смерть [Триниэль]", "space": "Пространство [Исфаэль]", "illusion": "Иллюзия [Кайсинель]",
            "destruction": "Разрушение [Зикель]", "life": "Жизнь [Юстиэль]", "destiny": "Судьба [Марчутан]"},
 }
-STAT_LABELS["uk"] = STAT_LABELS["en"]   # game stat names: English on Ukrainian pages, like the rest of the game data
+STAT_LABELS["uk"] = STAT_LABELS["tr"] = STAT_LABELS["en"]   # game stat names: English on Ukrainian and Turkish pages, like the rest of the game data
 
 
 def items_tip_json(lang, extra=None):
@@ -135,7 +157,7 @@ def items_tip(lang):
     return out
 
 
-WATCH_FILL = {"ru": "en", "uk": "en"}   # RU / UK pages fill free places with the English-speaking authors of the guide
+WATCH_FILL = {"ru": "en", "uk": "en", "tr": "en"}   # RU / UK / TR pages fill free places with the English-speaking authors of the guide
 
 
 def watch_for(cls, lang, limit=3):
@@ -217,7 +239,7 @@ def board_tips(cls_slug, lang):
             if e["type"] != "stat":
                 continue
             v = e["statValue"]
-            val = f"{v / 100:g}%".replace(".", "," if lang in ("ru", "uk") else ".") if e["statName"] in BOARD_PCT_STATS else str(v)
+            val = f"{v / 100:g}%".replace(".", "," if lang in ("ru", "uk", "tr") else ".") if e["statName"] in BOARD_PCT_STATS else str(v)
             lines.append(f'{names.get(e["statName"], e["statName"])} +{val}')
         meta = "" if n["auto"] else f'{t["dv_k_special"] if n["grade"] == 41 else t["dv_k_stat"]} · {n["cost"] or 0} {t["dv_pts"]}'
         out[board_tip_key(n)] = {"n": n["name"][lang], "m": meta, "g": n["grade"], "d": "\n".join(lines), "sp": []}
@@ -335,6 +357,7 @@ MONTHS = {
            "сентября", "октября", "ноября", "декабря"],
     "uk": ["січня", "лютого", "березня", "квітня", "травня", "червня", "липня", "серпня",
            "вересня", "жовтня", "листопада", "грудня"],
+    "tr": ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
 }
 
 
@@ -356,9 +379,11 @@ def fmt_day(iso, lang):
 def leveling_steps(cls_slug, lang):
     """Merge the shared route with class-specific steps, ordered by level."""
     steps = load(DATA / "leveling" / "common.json")["steps"]
+    _text_fallback(steps)
     cls_file = DATA / "leveling" / f"{cls_slug}.json"
     if cls_file.exists():
         steps = steps + load(cls_file)["steps"]
+        _text_fallback(steps)
     out = []
     for st in steps:
         out.append({
@@ -478,7 +503,8 @@ def build():
             path = f'{cls["slug"]}/'
             ctx = page_ctx(lang, path, "../../", cls)
             ctx["steps"] = leveling_steps(cls["slug"], lang)
-            ctx["content_tpl"] = f'{cls["slug"]}/{lang}.html'
+            tpl_lang = lang if (SRC / "content" / cls["slug"] / f"{lang}.html").exists() else TEXT_FALLBACK.get(lang, lang)
+            ctx["content_tpl"] = f'{cls["slug"]}/{tpl_lang}.html'
             html = e.get_template("class.html").render(ctx)
             write(f'{lang}/{path}index.html', html)
             urls.append(path)

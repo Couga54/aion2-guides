@@ -12,7 +12,8 @@ Founder's early access from Sep 30), published on GitHub Pages:
 Requirements from the user (in their words, translated):
 - Guides for several classes; start with **Gladiator** and **Ranger** (Стрелок).
 - It should look like a **site, not a document**.
-- **EN / RU / UK** versions (Ukrainian since Oct 1: our text in Ukrainian, game names — skills, items, sets, bosses, boards — in English, questlog has no Ukrainian).
+- **EN / RU / UK / TR** versions (Ukrainian since Oct 1: our text in Ukrainian, game names — skills, items, sets, bosses, boards — in English, questlog has no Ukrainian;
+  Turkish since Oct 4, same rules, AI-translated after a request in GitHub issue #1 — corrections come as separate PRs).
 - A **PvE / PvP / Leveling** switch at the top; the whole page shows only the chosen mode.
 - Switching modes must **not jump the page** (keep scroll position).
 - **Leveling** mode: short, second-monitor friendly, an **interactive checklist with progress**
@@ -99,7 +100,7 @@ Requirements from the user (in their words, translated):
 ## Architecture
 
 - `data/site.json` — classes (status ready/soon, names/roles in EN+RU+UK), base URL, launch date.
-- `data/i18n.json` — UI strings EN/RU/UK. Ukrainian (added Oct 1): our own text in Ukrainian, game data (skills, items, boards, bosses) in English.
+- `data/i18n.json` — UI strings EN/RU/UK/TR. Ukrainian (added Oct 1): our own text in Ukrainian, game data (skills, items, boards, bosses) in English.
 - `data/weekly.json`, `data/week1.json` — tracker items and first-week goals (EN+RU+UK).
 - `data/changelog.json` — "What's new" modal (base.html). Shown once per new top entry id
   (localStorage `whatsnew-seen`) and only that entry, with a link to the full changelog page
@@ -127,11 +128,11 @@ Requirements from the user (in their words, translated):
   PvE / PvP / Leveling switch (keeps scroll position, remembered per browser, `?mode=pvp|lvl`),
   leveling checklist with progress saved per class (`localStorage` key `lvl-progress:<class>`),
   sticky side TOC (desktop) / chip TOC (mobile), dark + light themes, OG images, sitemap with hreflang.
-- Root `index.html` redirects to `/en/`, `/ru/` or `/uk/` (remembered choice, else browser language: uk → uk, ru/be → ru, else en).
+- Root `index.html` redirects to `/en/`, `/ru/`, `/uk/` or `/tr/` (remembered choice, else browser language: uk → uk, tr → tr, ru/be → ru, else en).
 - RU class names are the global client's (checked Oct 3 against item names on questlog, e.g. «Лук Стрелка», and class names in skill
   descriptions): Гладиатор, Стрелок (not Лучник), Страж, Убийца, Волшебник, Заклинатель (Elementalist), Целитель, Чародей (Chanter);
   RU skill names come from the global client via questlog. UK pages use the English class names (Gladiator, Ranger, …) —
-  the game has no Ukrainian, so class names are treated like skill names (user's decision, Oct 3).
+  the game has no Ukrainian, so class names are treated like skill names (user's decision, Oct 3). TR pages do the same.
 - Session 2 (Sep 27): pushed to GitHub, Pages live. Added class art (class cards,
   class hero + faint fixed backdrop on class pages), a landscape behind the home hero; a Sources & credits page (topbar button, footer, link under each guide's sources) and a launch schedule panel with timers on the home page.
 - Session 3 (Sep 27): Templar guide (EN/RU, PvE/PvP/leveling), "Updated / Patch: TBD" stamp on every
@@ -195,7 +196,7 @@ Requirements from the user (in their words, translated):
   (the head script and site.js then open the Leveling mode). Plan: fetch skills (`fetch_skills.py cleric elementalist` — questlog
   categories are `cleric` and `elementalist`, 35 skills each; `spiritmaster` returns nothing), mark both
   `ready` + `wip` in site.json, write `data/leveling/<class>.json`, a leveling section with the macro in
-  `src/content/<class>/en.html` + `ru.html` + `uk.html`, changelog entry. Skill-point order: search the web if there is
+  `src/content/<class>/en.html` + `ru.html` + `uk.html` + `tr.html`, changelog entry. Skill-point order: search the web if there is
   no solid data.
   Macro source: Grobs' "early game macros" slide from his macro video (HMod6Z4GrE0, transcript in
   frames/<id>/transcript.json) — saved locally as `frames/HMod6Z4GrE0/grobs-early-game-macros.webp` (all 8 classes; the transcript

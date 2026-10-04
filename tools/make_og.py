@@ -20,6 +20,11 @@ GOLD = (217, 179, 108)
 ACCENTS = {"crimson": (200, 50, 60), "emerald": (40, 170, 115), "sapphire": (60, 110, 230), "amber": (220, 140, 40), "violet": (140, 80, 230), "frost": (40, 170, 210), "sunlight": (235, 205, 110), "spirit": (225, 80, 180)}
 
 
+def upper(text, lang):
+    """Capitals with the Turkish dotted İ (Python's upper() turns i into a dotless I)."""
+    return (text.replace("i", "İ") if lang == "tr" else text).upper()
+
+
 def font(names, size):
     for n in names:
         try:
@@ -75,7 +80,7 @@ def render_class(cls, lang):
     img = base(ACCENTS[cls["accent"]])
     d = ImageDraw.Draw(img)
     emblem(img, cls["slug"], 80, 90, 170)
-    d.text((290, 100), t["home_kicker"].upper(), font=font(MONO, 26), fill=GOLD)
+    d.text((290, 100), upper(t["home_kicker"], lang), font=font(MONO, 26), fill=GOLD)
     d.text((286, 135), cls["name"][lang], font=font(SERIF, 104), fill=(245, 240, 230))
     y = 300
     for line in wrap(d, cls["pitch"][lang], font(SANS, 34), 1020)[:3]:
@@ -91,7 +96,7 @@ def render_home(lang):
     t = I18N[lang]
     img = base((160, 130, 70))
     d = ImageDraw.Draw(img)
-    d.text((80, 90), t["home_kicker"].upper(), font=font(MONO, 26), fill=GOLD)
+    d.text((80, 90), upper(t["home_kicker"], lang), font=font(MONO, 26), fill=GOLD)
     size = 78                            # shrink until the headline fits in two lines
     while len(wrap(d, t["home_h1"], font(SERIF, size), 1040)) > 2:
         size -= 4
@@ -132,7 +137,7 @@ def render_page(slug, lang):
         ImageDraw.Draw(shade).line((x, 0, x, H), fill=a)
     img = Image.composite(Image.new("RGB", (W, H), BG), img, shade)
     d = ImageDraw.Draw(img)
-    d.text((80, 90), t["home_kicker"].upper(), font=font(MONO, 26), fill=GOLD)
+    d.text((80, 90), upper(t["home_kicker"], lang), font=font(MONO, 26), fill=GOLD)
     d.text((76, 130), t[title_key], font=font(SERIF, 84), fill=(245, 240, 230))
     y = 260
     lines = wrap(d, t[lead_key], font(SANS, 34), 700)
