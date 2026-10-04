@@ -269,7 +269,8 @@
       rtName.textContent = open ? rift.dataset.open : 'Rift';
       if (open) next = shut;
       var ms = next - now, h = Math.floor(ms / 36e5), m = Math.floor(ms / 6e4) % 60, s = Math.floor(ms / 1e3) % 60;
-      rtTime.textContent = (h ? h + ':' + r2(m) : m) + ':' + r2(s);
+      // full form, and a short one (no seconds once there are hours) for phones
+      rtTime.innerHTML = '<span class="rt-full">' + (h ? h + ':' + r2(m) : m) + ':' + r2(s) + '</span><span class="rt-short">' + (h ? h + ':' + r2(m) : m + ':' + r2(s)) + '</span>';
       rift.classList.toggle('is-soon', !open && ms < 6e5);   // last 10 minutes
       try {
         rift.title = rift.dataset.title + ' · ' + new Intl.DateTimeFormat(document.documentElement.lang, { hour: '2-digit', minute: '2-digit' }).format(rtAt(k));
@@ -278,6 +279,35 @@
     };
     rift.dataset.title = rift.title;
     rtTick();
+  }
+
+  // ---- weekly reset countdown in the top bar: every 7 days from the anchor at the same wall-clock hour in tz ----
+  var rst = document.querySelector('.wr-chip');
+  if (rst) {
+    var rsAnchor = Date.parse(rst.dataset.anchor), WK = 7 * 864e5, rsFmt = null, rsU = rst.dataset.units.split(',');
+    var rsTime = rst.querySelector('.wr-time');
+    try { rsFmt = new Intl.DateTimeFormat('en-US', { timeZone: rst.dataset.tz, hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' }); } catch (err) {}
+    var rsOff = function (t) {
+      if (!rsFmt) return 0;
+      var p = {};
+      rsFmt.formatToParts(new Date(t)).forEach(function (x) { p[x.type] = +x.value; });
+      return Date.UTC(p.year, p.month - 1, p.day, p.hour % 24, p.minute, p.second) - Math.floor(t / 1000) * 1000;
+    };
+    var rsOff0 = rsOff(rsAnchor);
+    var rsAt = function (k) { var t = rsAnchor + k * WK; return t + rsOff0 - rsOff(t); };
+    var s2 = function (n) { return (n < 10 ? '0' : '') + n; };
+    var rsTick = function () {
+      var now = Date.now(), k = Math.max(0, Math.floor((now - rsAnchor) / WK) - 1), next;
+      while ((next = rsAt(k)) <= now) k++;
+      var ms = next - now, d = Math.floor(ms / 864e5), h = Math.floor(ms / 36e5) % 24, m = Math.floor(ms / 6e4) % 60, s = Math.floor(ms / 1e3) % 60;
+      rsTime.innerHTML = '<span class="rt-full">' + (d ? d + rsU[0] + ' ' + h + rsU[1] : s2(h) + ':' + s2(m) + ':' + s2(s)) + '</span><span class="rt-short">' + (d ? d + rsU[0] : h ? h + rsU[1] : m + rsU[2]) + '</span>';
+      try {
+        rst.title = rst.dataset.title + ' · ' + new Intl.DateTimeFormat(document.documentElement.lang, { weekday: 'short', hour: '2-digit', minute: '2-digit' }).format(next);
+      } catch (err) {}
+      setTimeout(rsTick, 1000 - (Date.now() % 1000));
+    };
+    rst.dataset.title = rst.title;
+    rsTick();
   }
 
   // ---- launch schedule timers (home) ---------------------------------------

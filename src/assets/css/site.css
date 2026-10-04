@@ -142,20 +142,24 @@ p{margin:0 0 12px;}
   .topbar:has(.top-timer:not([hidden])) .topbar-tools{gap:3px;}
 }
 /* Rift countdown chip: smaller and quieter than the launch timer, always shown */
-.rift-timer{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 10px;border-radius:999px;border:1px solid color-mix(in srgb,var(--rift) 40%,var(--border-2));background:color-mix(in srgb,var(--rift) 9%,transparent);white-space:nowrap;font-size:.75rem;cursor:default;}
+.rift-timer{display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 13px;border-radius:999px;border:1px solid color-mix(in srgb,var(--rift) 40%,var(--border-2));background:color-mix(in srgb,var(--rift) 9%,transparent);white-space:nowrap;font-size:.8rem;cursor:default;}
 .rt-ico{width:14px;height:14px;color:var(--rift);flex:none;}
 .rt-name{font-weight:600;color:var(--text-dim);}
-.rt-time{font:700 .75rem var(--font-mono);font-variant-numeric:tabular-nums;color:var(--rift);}
+.rt-time{font:700 .8rem var(--font-mono);font-variant-numeric:tabular-nums;color:var(--rift);}
+.rt-short{display:none;}
 .rift-timer.is-soon{border-color:var(--rift);}
 .rift-timer.is-soon .rt-ico{animation:tt-pulse 1.2s ease-in-out infinite;}
 .rift-timer.is-open{border-color:color-mix(in srgb,var(--good) 45%,var(--border-2));background:var(--good-bg);}
 .is-open .rt-ico,.is-open .rt-time,.is-open .rt-name{color:var(--good);}
 .is-open .rt-ico{animation:tt-pulse 1.2s ease-in-out infinite;}
-@media (max-width: 900px){ .rt-name{display:none;} }
+@media (max-width: 1180px){ .rt-name{display:none;} }
 @media (max-width: 480px){
-  .rift-timer{height:28px;padding:0 7px;gap:0;}
+  .rift-timer{height:32px;padding:0 7px;gap:0;}
   .rt-ico{display:none;}
   .rt-time{font-size:.68rem;}
+  .rift-timer .rt-full,.wr-chip .rt-full{display:none;}
+  .rift-timer .rt-short,.wr-chip .rt-short{display:inline;}
+  .topbar:has(.wr-chip) .theme-toggle{display:none;}   /* the theme follows the system anyway */
   .topbar-in > .class-menu{flex:none;}
   .topbar:has(.rift-timer) .wn-top{display:none;}
   .topbar:has(.rift-timer) .topbar-in{gap:6px;padding-inline:12px;}
@@ -163,6 +167,33 @@ p{margin:0 0 12px;}
 }
 /* the narrowest phones with both chips: the theme button goes until the launch chip is gone (the theme follows the system anyway) */
 @media (max-width: 400px){ .topbar:has(.rift-timer):has(.top-timer:not([hidden])) .theme-toggle{display:none;} }
+/* weekly reset chip next to the Rift one: same size, gold, links to the weekly tracker */
+.wr-chip{display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 13px;border-radius:999px;border:1px solid color-mix(in srgb,var(--gold) 35%,var(--border-2));background:color-mix(in srgb,var(--gold) 8%,transparent);white-space:nowrap;font-size:.75rem;color:var(--text);text-decoration:none;}
+.wr-chip:hover{border-color:var(--gold);}
+.wr-ico{width:13px;height:13px;color:var(--gold);flex:none;}
+.wr-name{font-weight:600;color:var(--text-dim);}
+.wr-time{font:700 .8rem var(--font-mono);font-variant-numeric:tabular-nums;color:var(--gold);}
+@media (max-width: 1280px){ .wr-name{display:none;} }
+@media (max-width: 480px){
+  .wr-chip{height:32px;padding:0 7px;gap:0;}
+  .wr-ico{display:none;}
+  .wr-time{font-size:.68rem;}
+  /* phones: no room while the launch countdown is still in the bar */
+  .topbar:has(.top-timer:not([hidden])) .wr-chip{display:none;}
+}
+@media print{ .wr-chip{display:none;} }
+/* the class picker never shrinks below its label */
+.topbar-in > .class-menu{flex:none;}
+/* tablets and narrow windows: three timers + the menus don't fit — short times, icon-only brand,
+   and the What's new / theme buttons go (What's new is in the footer, the theme follows the system) */
+@media (max-width: 1100px){
+  .brand > :not(svg){display:none;}
+  .tt-full{display:none;} .tt-short{display:inline;} .tt-dot{display:none;}
+  .rift-timer .rt-full,.wr-chip .rt-full{display:none;}
+  .rift-timer .rt-short,.wr-chip .rt-short{display:inline;}
+  .topbar .wn-top,.topbar .theme-toggle{display:none;}
+}
+@media (min-width: 481px) and (max-width: 1100px){ .topbar-tools{gap:4px;} }
 @media (prefers-reduced-motion: reduce){ .rift-timer .rt-ico{animation:none;} }
 @media print{ .rift-timer{display:none;} }
 /* moving between pages: the home timer card and the chip are one element for the browser's page transition */
@@ -796,8 +827,8 @@ a.cm-item[aria-current="page"]{background:var(--accent-soft);border-color:color-
   .cm-name{font-size:.7rem;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
   .cm-item img{width:44px;height:44px;}
 }
-@media (max-width: 520px){ .nav-menu .class-menu-btn span{display:none;} .nav-menu .class-menu-btn{padding:0 8px;} }
-@media (max-width: 420px){ .class-menu-btn span{display:none;} .class-menu-btn{padding:0 8px 0 4px;} }
+@media (max-width: 700px){ .nav-menu .class-menu-btn span{display:none;} .nav-menu .class-menu-btn{padding:0 8px;} }
+@media (max-width: 700px){ .class-menu-btn span{display:none;} .class-menu-btn{padding:0 8px 0 4px;} }
 .energy-chest:disabled{opacity:.4;cursor:not-allowed;}
 .hotline-skills li.is-first{border-color:color-mix(in srgb,var(--accent) 55%,var(--border));background:linear-gradient(90deg,var(--accent-soft),transparent 70%),var(--bg-2);}
 .hotline-order{margin:8px 0 0;font:500 .68rem var(--font-mono);color:var(--text-faint);}

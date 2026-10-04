@@ -100,6 +100,12 @@
         <svg class="rt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="7.5" ry="10.5"/><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/><g transform="rotate(180 12 12)"><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/></g></svg><span class="rt-name">Rift</span><b class="rt-time">--:--</b>
       </span>
       {% endif %}
+      {#- Weekly reset: a small countdown next to the Rift chip, linking to the weekly tracker (anchor + tz like tracker.js). -#}
+      {% if SITE.get('weekly_reset') %}
+      <a class="wr-chip" href="{{ root }}{{ lang }}/weekly/" data-anchor="{{ SITE.weekly_reset.anchor }}" data-tz="{{ SITE.weekly_reset.tz }}" data-units="{{ t.units|join(',') }}" title="{{ t.reset_in }}">
+        <svg class="wr-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg><span class="wr-name">{{ t.tt_reset }}</span><b class="wr-time">--</b>
+      </a>
+      {% endif %}
       {% if tt.list %}
       <a class="top-timer{% if path == '' %} is-away{% endif %}" href="{{ root }}{{ lang }}/" title="{{ t.events_title }}" data-events='{{ tt.list|tojson }}' data-units="{{ t.units|join(',') }}" data-open="{{ t.tt_open_short }}">
         <span class="tt-dot" aria-hidden="true"></span><span class="tt-name"></span><b class="tt-time">--:--:--</b>
