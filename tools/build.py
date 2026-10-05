@@ -38,6 +38,9 @@ BOSSES = load(DATA / "bosses.json")
 PROGRESSION = load(DATA / "progression.json")
 CRAFTING = load(DATA / "crafting.json")
 SETTINGS = load(DATA / "settings.json")
+DUNGEONS = load(DATA / "dungeons.json")          # dungeon guides: our text
+DUNGEONS_DB = load(DATA / "dungeons_db.json")    # dungeon and boss names from questlog (tools/fetch_dungeons.py)
+TIERS = load(DATA / "tierlist.json")
 BOARDS = {p.stem: load(p) for p in (DATA / "boards").glob("*.json") if p.stem != "presets"}
 BOARD_PRESETS = load(DATA / "boards" / "presets.json")
 ITEMS = load(DATA / "items.json")
@@ -67,7 +70,7 @@ def _game_lang(x):
             _game_lang(v)
 
 
-for _data in (SKILLS, ITEMS, BOARDS, BOSSES):
+for _data in (SKILLS, ITEMS, BOARDS, BOSSES, DUNGEONS_DB):
     _game_lang(_data)
 
 # Our own text: a string, UI key or class guide not translated to Turkish yet shows in English, so a guide edit
@@ -87,7 +90,7 @@ def _text_fallback(x):
             _text_fallback(v)
 
 
-for _data in (SITE, SOURCES, WEEKLY, CHANGELOG, WEEK1, PROGRESSION, CRAFTING, SETTINGS):
+for _data in (SITE, SOURCES, WEEKLY, CHANGELOG, WEEK1, PROGRESSION, CRAFTING, SETTINGS, DUNGEONS, TIERS):
     _text_fallback(_data)
 for _lang, _src in TEXT_FALLBACK.items():
     I18N[_lang] = {**I18N[_src], **I18N.get(_lang, {})}
@@ -416,7 +419,7 @@ def env():
         lstrip_blocks=True,
         extensions=["jinja2.ext.do"],
     )
-    e.globals.update(chips=chips, ASSET_V=asset_version(), tooltip_json=tooltip_json, CHANGELOG=CHANGELOG, fmt_utc=fmt_utc, fmt_day=fmt_day, s=s, sp=sp, skill_data=skill_data, icon_url=icon_url, it=it, items_tip_json=items_tip_json, board_view=board_view, BOARDS=BOARDS, SITE=SITE, watch_for=watch_for)
+    e.globals.update(chips=chips, ASSET_V=asset_version(), tooltip_json=tooltip_json, CHANGELOG=CHANGELOG, fmt_utc=fmt_utc, fmt_day=fmt_day, s=s, sp=sp, skill_data=skill_data, icon_url=icon_url, it=it, items_tip_json=items_tip_json, board_view=board_view, BOARDS=BOARDS, SITE=SITE, watch_for=watch_for, DG_DB=DUNGEONS_DB)
     return e
 
 
@@ -474,7 +477,7 @@ def page_entries(lang):
     """Search entries for the standalone pages and the world bosses."""
     t = I18N[lang]
     out = [{"k": "page", "t": t[key], "s": "", "u": path} for path, key in (
-        ("week-1/", "w1_title"), ("progression/", "pg_title"), ("crafting/", "cr_title"), ("settings/", "st_title"), ("weekly/", "wk_title"), ("bosses/", "bs_title"),
+        ("week-1/", "w1_title"), ("progression/", "pg_title"), ("crafting/", "cr_title"), ("settings/", "st_title"), ("weekly/", "wk_title"), ("bosses/", "bs_title"), ("dungeons/", "dg_title"), ("tier-list/", "tl_title"),
         ("sources/", "src_title"), ("changelog/", "wn_history"))]
     for g in BOSSES["groups"]:
         for b in g["bosses"]:
@@ -489,6 +492,7 @@ def build():
     OUT.mkdir()
     shutil.copytree(SRC / "assets", OUT / "assets")
     (OUT / ".nojekyll").write_text("")
+    shutil.copy(SRC / "assets" / "favicon.ico", OUT / "favicon.ico")   # crawlers also look for /favicon.ico next to the home page
 
     e = env()
     urls = []
@@ -509,7 +513,7 @@ def build():
             write(f'{lang}/{path}index.html', html)
             urls.append(path)
             index += search_entries(cls, lang, html)
-        for path, tpl, key, data in (("week-1/", "week1.html", "week1", WEEK1), ("progression/", "guide_page.html", "prog", PROGRESSION), ("crafting/", "guide_page.html", "prog", CRAFTING), ("settings/", "guide_page.html", "prog", SETTINGS), ("weekly/", "weekly.html", "weekly", WEEKLY), ("bosses/", "bosses.html", "bosses", BOSSES), ("changelog/", "changelog.html", "changelog", CHANGELOG)):
+        for path, tpl, key, data in (("week-1/", "week1.html", "week1", WEEK1), ("progression/", "guide_page.html", "prog", PROGRESSION), ("crafting/", "guide_page.html", "prog", CRAFTING), ("settings/", "guide_page.html", "prog", SETTINGS), ("weekly/", "weekly.html", "weekly", WEEKLY), ("bosses/", "bosses.html", "bosses", BOSSES), ("dungeons/", "dungeons.html", "dg", DUNGEONS), ("tier-list/", "tierlist.html", "tl", TIERS), ("changelog/", "changelog.html", "changelog", CHANGELOG)):
             ctx = page_ctx(lang, path, "../../")
             ctx[key] = data
             write(f"{lang}/{path}index.html", e.get_template(tpl).render(ctx))

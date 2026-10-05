@@ -22,7 +22,12 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+{#- Icons: Google Search wants a square raster icon of 48px or a multiple (tools/make_icons.py). -#}
+<link rel="icon" href="{{ root }}favicon.ico" sizes="48x48">
 <link rel="icon" href="{{ root }}assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{{ root }}assets/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="{{ root }}assets/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="{{ root }}assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
@@ -93,7 +98,7 @@
       {#- Countdown to the next launch event on every page; for a day after an event with a tt_open_<id> text it says that it is open.
           On the home page it stays hidden while the schedule panel is on screen. -#}
       {% set tt = namespace(list=[]) %}
-      {% for ev in SITE.events if ev.at %}{% do tt.list.append({'at': ev.at, 'n': t['ev_' ~ ev.id], 'o': t.get('tt_open_' ~ ev.id, '')}) %}{% endfor %}
+      {% for ev in SITE.events if ev.get('at') %}{% do tt.list.append({'at': ev.at, 'n': t['ev_' ~ ev.id], 'o': t.get('tt_open_' ~ ev.id, '')}) %}{% endfor %}
       {#- Rift: a small always-on countdown to the next portal to the enemy zone (every few hours from an anchor). -#}
       {% if SITE.rift %}
       <span class="rift-timer" data-anchor="{{ SITE.rift.anchor }}" data-every="{{ SITE.rift.every_h }}" data-tz="{{ SITE.rift.tz }}" data-open-min="{{ SITE.rift.open_min }}" data-open="{{ t.rift_open }}" title="{{ t.rift_title }}">
@@ -188,6 +193,7 @@
     <div>
       <a class="brand brand-sm" href="{{ root }}{{ lang }}/">{{ t.site_name }}</a>
       <p>{{ t.footer_disclaimer }}</p>
+      <p class="foot-credit">{{ t.credit_foot }} <a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
       <p>{{ t.footer_updated }}: {{ updated }} ({{ t.footer_before_launch }}).</p>
       <p><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }}</a> · <a href="{{ root }}{{ lang }}/changelog/">{{ t.wn_history }}</a> · {% if SITE.get('feedback_url') %}<button type="button" class="link-btn report-open">{{ t.report }}</button>{% else %}<a class="report-link" href="{{ SITE.repo }}/issues/new" target="_blank" rel="noopener" title="{{ t.report_hint }}" data-body="{{ t.report_body }}" data-page="{{ lang }}/{{ path }}">{{ t.report }}</a>{% endif %}</p>
     </div>
@@ -256,7 +262,7 @@
 {% endif %}
 <script src="{{ root }}assets/js/site.js?v={{ ASSET_V }}" defer></script>
 <script src="{{ root }}assets/js/fx.js?v={{ ASSET_V }}" defer></script>
-{% for ev in SITE.events if ev.get('celebrate') and ev.at %}
+{% for ev in SITE.events if ev.get('celebrate') and ev.get('at') %}
 <div class="cel-banner" role="status" hidden data-at="{{ ev.at }}" data-id="{{ ev.id }}">
   <span class="cel-ico" aria-hidden="true">✦</span>
   <div><p class="cel-h">{{ t.cel_title }}</p><p class="cel-p">{{ t.cel_text }}</p></div>

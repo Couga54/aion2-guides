@@ -15,11 +15,11 @@
   "feedback_url": "https://aion2-feedback.couga-ua.workers.dev/",
   "_ga": "Google Analytics 4 measurement ID; the tag is added to every page by base.html (not loaded on localhost). Empty string = analytics off.",
   "ga": "G-6WYEWLG4B5",
-  "_events": "Home timers. at=null -> 'date TBA'. confirmed=false -> date is official, hour is not. delayed=true -> a small 'delayed' mark next to the time. celebrate=true -> the site celebrates when it starts (assets/js/celebrate.js, once per visitor within 24 h; ?celebrate=1 previews it). acc_label=false hides the access mark; ongoing=true keeps a started event from being greyed out (pre-download is still going).",
+  "_events": "Home timers. at=null -> 'date TBA'. confirmed=false -> date is official, hour is not. delayed=true -> a small 'delayed' mark next to the time. celebrate=true -> the site celebrates when it starts (assets/js/celebrate.js, once per visitor within 24 h; ?celebrate=1 previews it). acc_label=false hides the access mark; ongoing=true keeps a started event from being greyed out. cycle=rift / weekly_reset: a repeating timer (the next Rift opening or weekly reset) driven by site.json rift / weekly_reset, the same as the top bar chips (since Oct 5, when pre-download and Early Access left the schedule).",
   "events": [
-    {"id": "pre_founder", "access": "all", "acc_label": false, "ongoing": true, "at": "2026-09-28T13:00:00Z", "confirmed": true},
-    {"id": "early", "access": "founder", "at": "2026-09-30T14:00:00Z", "confirmed": true, "celebrate": true, "delayed": true},
-    {"id": "launch", "access": "all", "at": "2026-10-05T13:00:00Z", "confirmed": true}
+    {"id": "launch", "access": "all", "acc_label": false, "ongoing": true, "at": "2026-10-05T13:00:00Z", "confirmed": true},
+    {"id": "rift", "cycle": "rift"},
+    {"id": "reset", "cycle": "weekly_reset", "href": "weekly/"}
   ],
   "updated": "2026-10-04",
   "classes": [

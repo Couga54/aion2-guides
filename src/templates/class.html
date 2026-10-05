@@ -51,6 +51,18 @@
   </aside>
 
   <main id="main" class="guide">
+    {#- Suggest box at the top of every guide: opens the feedback form. Modes still built on Korean guides and classes
+        without a PvP guide ask for a global source. -#}
+    {% set off = cls.get('modes_off', []) %}
+    <div class="suggest-box" role="note">
+      <svg class="sg-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M12 7v6M9 10h6"/></svg>
+      <div class="sg-text">
+        <p>{{ t.sg_text }}</p>
+        {% for m, v in cls.get('src', {}).items() if m not in off and ('(KR' in v[0] or m in cls.get('wip_modes', [])) %}<p class="sg-extra" data-only="{{ m }}">{{ t.sg_kr }}</p>{% endfor %}
+        {% if 'pvp' in off %}<p class="sg-extra">{{ t.sg_nopvp }}</p>{% endif %}
+      </div>
+      {% if SITE.get('feedback_url') %}<button type="button" class="btn btn-primary btn-sm report-open">{{ t.sg_btn }}</button>{% else %}<a class="btn btn-primary btn-sm report-link" href="{{ SITE.repo }}/issues/new" target="_blank" rel="noopener" data-body="{{ t.report_body }}" data-page="{{ lang }}/{{ path }}">{{ t.sg_btn }}</a>{% endif %}
+    </div>
     <section id="progress" class="g-section tracker" data-only="lvl" data-class="{{ cls.slug }}" aria-labelledby="h-progress">
       <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-progress">{{ t.lvl_progress }}</h2></div>
       <div class="tracker-bar">

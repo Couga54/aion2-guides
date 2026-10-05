@@ -345,6 +345,35 @@
       }
     };
     tick();
+
+    // Repeating timers (Rift, weekly reset): the next occurrence every N hours from the anchor, at the same
+    // wall-clock hour in tz across daylight saving — the same rule as the top bar chips.
+    [].slice.call(evBox.querySelectorAll('.ev-cycle')).forEach(function (li) {
+      var anchor = Date.parse(li.dataset.anchor), every = (+li.dataset.every || 168) * 36e5, openMs = (+li.dataset.openMin || 0) * 6e4;
+      var cells = li.querySelectorAll('.ev-timer b'), when = li.querySelector('.ev-when time'), zf = null, lf = null;
+      try { zf = new Intl.DateTimeFormat('en-US', { timeZone: li.dataset.tz, hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' }); } catch (err) {}
+      try { lf = new Intl.DateTimeFormat(({ ru: 'ru-RU', uk: 'uk-UA', tr: 'tr-TR' })[evBox.dataset.lang] || 'en-GB', { weekday: 'short', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' }); } catch (err) {}
+      var off = function (t) {
+        if (!zf) return 0;
+        var p = {};
+        zf.formatToParts(new Date(t)).forEach(function (x) { p[x.type] = +x.value; });
+        return Date.UTC(p.year, p.month - 1, p.day, p.hour % 24, p.minute, p.second) - Math.floor(t / 1000) * 1000;
+      };
+      var off0 = off(anchor);
+      var at = function (k) { var t = anchor + k * every; return t + off0 - off(t); };
+      var ctick = function () {
+        var now = Date.now(), k = Math.max(0, Math.floor((now - anchor) / every) - 1), next;
+        while ((next = at(k)) <= now) k++;
+        var shut = openMs && k > 0 ? at(k - 1) + openMs : 0, open = now < shut;   // the Rift entrance stays open a few minutes
+        li.classList.toggle('is-open', open);
+        var ms = (open ? shut : next) - now;
+        var v = [Math.floor(ms / 864e5), Math.floor(ms / 36e5) % 24, Math.floor(ms / 6e4) % 60, Math.floor(ms / 1e3) % 60];
+        for (var i = 0; i < 4; i++) cells[i].textContent = i ? pad(v[i]) : v[i];
+        if (when && lf) when.textContent = lf.format(next);
+        setTimeout(ctick, 1000 - (Date.now() % 1000));
+      };
+      ctick();
+    });
   }
 
   // ---- tooltips: hover (or tap) any skill name or icon, or an item on the progression page ---------------------

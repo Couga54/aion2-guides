@@ -24,6 +24,19 @@
         <h2 id="h-events" class="events-title">{{ t.events_title }}</h2>
         <ol class="ev-list">
           {% for ev in SITE.events %}
+          {% if ev.get('cycle') %}
+          {#- Repeating timer: the next Rift opening or weekly reset, same rules as the top bar chips (site.js). -#}
+          {% set C = SITE[ev.cycle] %}
+          <li class="ev ev-cycle ev-{{ ev.id }}" data-cycle="{{ ev.cycle }}" data-anchor="{{ C.anchor }}" data-tz="{{ C.tz }}" data-every="{{ C.get('every_h', 168) }}" data-open-min="{{ C.get('open_min', 0) }}">
+            <div class="ev-head">
+              <span class="ev-name">{% if ev.get('href') %}<a href="{{ root }}{{ lang }}/{{ ev.href }}">{{ t['ev_' ~ ev.id] }}</a>{% else %}{{ t['ev_' ~ ev.id] }}{% endif %}</span>
+              <span class="ev-acc">{{ t['ev_' ~ ev.id ~ '_note'] }}</span>
+            </div>
+            <div class="ev-timer" aria-hidden="true">{% for u in t.units %}<span><b>--</b><i>{{ u }}</i></span>{% endfor %}</div>
+            {% if ev.cycle == 'rift' %}<div class="ev-open-msg">{{ t.rift_open }}</div>{% endif %}
+            <p class="ev-when"><time></time></p>
+          </li>
+          {% else %}
           <li class="ev ev-{{ ev.access }}{% if ev.get('ongoing') %} is-ongoing{% endif %}"{% if ev.at %} data-at="{{ ev.at }}"{% endif %}{% if ev.get('celebrate') %} data-celebrate{% endif %}>
             <div class="ev-head">
               <span class="ev-name">{{ t['ev_' ~ ev.id] }}</span>
@@ -43,11 +56,17 @@
             <p class="ev-tba">{{ t.ev_tba }}</p>
             {% endif %}
           </li>
+          {% endif %}
           {% endfor %}
         </ol>
       </aside>
     </div>
   </section>
+
+  {#- Who made the guides: creators first, the site only collects them. -#}
+  <div class="wrap">
+    <p class="credit-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.6 1-1.1a5.5 5.5 0 0 0 0-7.7z"/></svg><span>{{ t.credit }} <a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></span></p>
+  </div>
 
   <section class="wrap" id="classes" aria-labelledby="h-classes">
     <h2 id="h-classes" class="section-title">{{ t.classes }}</h2>
