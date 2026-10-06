@@ -7,8 +7,8 @@
   "desc": "st_desc",
   "note": "st_note",
   "nav": "nav_settings",
-  "hero": "hero-sources",
-  "pos": "50% 30%",
+  "hero": "hero-settings",
+  "pos": "50% 45%",
   "og": "settings"
  },
  "sources": {

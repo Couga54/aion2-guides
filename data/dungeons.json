@@ -1,6 +1,6 @@
 {
   "_note": "Dungeon guides page (/<lang>/dungeons/). Our own text, from BIGSKALA's walkthrough of the launch dungeons (Taiwan client, Sep 15). db = questlog dungeon / boss id in data/dungeons_db.json (names, portraits; tools/fetch_dungeons.py). mechs[].diagram = src/templates/diagrams/<name>.svg, danger = a wipe mechanic. at = moment in the video.",
-  "meta": {"hero": "bosses", "pos": "50% 60%"},
+  "meta": {"hero": "dungeons", "pos": "50% 60%"},
   "src": "bigskala",
   "sources": {
     "bigskala": {"name": "BIGSKALA — Все подземелья AION 2 на старте (полный разбор)", "url": "https://www.youtube.com/watch?v=mMjaSbaVTjc", "video": true}

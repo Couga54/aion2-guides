@@ -1,6 +1,6 @@
 {
   "_note": "Class tier list page (/<lang>/tier-list/). boards[].lists = one author's tiers for that kind of content (class slugs per letter, read from the video frames, `at` = the moment the finished board is on screen). The page averages S=4 … D=0 per class and places it by the rounded average. Not ours: every letter is the author's.",
-  "meta": {"hero": "sources", "pos": "50% 40%"},
+  "meta": {"hero": "tier-list", "pos": "50% 78%"},
   "sources": {
     "trueeevil": {"name": "trueeevil — Ultimate Class Tier List for Aion 2 Global Launch", "url": "https://www.youtube.com/watch?v=TupssWSk8GQ", "date": "2026-10-04"},
     "xifan": {"name": "XifanGG — Global Tier List (PvP, PvE, F2P & ZvZ)", "url": "https://www.youtube.com/watch?v=YlYUst_BJD8", "date": "2026-09-29"},
