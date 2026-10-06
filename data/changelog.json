@@ -2,6 +2,18 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-10-06-progression",
+      "date": "2026-10-06",
+      "items": [
+        {
+          "en": "<strong>After 45: SywoGG's gear route</strong> — item level milestones from 700, clash runes, the story bracelet, belt and amulet, arcana math, Fire Temple, gear past +15 and where else combat power comes from. Also fixed for global: Shugo cards by place, Nightmare attempts and the Nightmare shop.",
+          "ru": "<strong>После 45: путь экипировки от SywoGG</strong> — ориентиры уровня предмета с 700, руны столкновения, браслет из сюжета, пояс и амулет, арифметика аркан, Храм огня, заточка выше +15 и откуда ещё берётся боевая мощь. Плюс исправлено под глобал: карточки Шуго по местам, попытки Кошмара и магазин Кошмара.",
+          "uk": "<strong>Після 45: маршрут екіпірування від SywoGG</strong> — орієнтири рівня предмета з 700, clash runes, браслет із сюжету, пояс і амулет, арифметика аркан, Fire Temple, заточка вище +15 і звідки ще береться combat power. Також виправлено під глобал: картки Shugo за місцями, спроби Nightmare і магазин Nightmare.",
+          "tr": "<strong>45 sonrası: SywoGG'nin ekipman yolu</strong> — 700'den itibaren eşya seviyesi aşamaları, clash runes, hikâye bileziği, kemer ve muska, arcana hesabı, Fire Temple, +15 üstü ekipman ve combat power başka nereden gelir. Global'e göre düzeltildi: sıraya göre Shugo kartları, Nightmare denemeleri ve Nightmare mağazası."
+        }
+      ]
+    },
+    {
       "id": "2026-10-06-skills",
       "date": "2026-10-06",
       "items": [

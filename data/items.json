@@ -97,26 +97,6 @@
       "set": null
     }
   },
-  "dcrystal_ariel": {
-    "id": "531900011",
-    "grade": 71,
-    "cat": "getpoint",
-    "icon": "dcrystal_ariel.webp",
-    "en": "Daevanion Crystal: Ariel (Bound)",
-    "tip_en": {
-      "desc": "Use to obtain 1 Ariel Daevanion Point.",
-      "il": null,
-      "stats": [],
-      "set": null
-    },
-    "ru": "Кристалл Даэваниона: Ариэль (привяз.)",
-    "tip_ru": {
-      "desc": "Дает 1 очко Даэваниона Ариэль.",
-      "il": null,
-      "stats": [],
-      "set": null
-    }
-  },
   "dcrystal_azphel": {
     "id": "531900012",
     "grade": 71,
