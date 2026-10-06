@@ -51,8 +51,8 @@
 {% call section('skills', 'Yetenekler', 'pve') %}
   <p>Yalnızca üç yeteneğin yükselmesi gerekiyor: <strong>Overhead Slam → Rending Blow → Ruinous Blow</strong>. Yetenekler yetenek puanlarıyla <strong>10</strong>'a, Daevanion ile <strong>14</strong>'e, iki yüzükle (her biri +1) <strong>16</strong>'ya ve arcana ile <strong>20</strong>'ye ulaşır. Uzmanlıklar 8, 12 ve 16'da açılır.</p>
   <ul class="skill-grid">
-    {% call skill('overhead-slam', 'must', '16 → 20', [2, 4]) %}1 numaralı hasar kaynağın. Rage Burst ve Lunge Stance ile fiilen hep hazır. 20'de üçüncü slot garantili kritiğe gider.{% endcall %}
-    {% call skill('rending-blow', 'must', '16 → 20', [3, 4]) %}İkinci en büyük hasar kaynağı ve mana motorun. 20'de hareket seçimini ekle.{% endcall %}
+    {% call skill('overhead-slam', 'must', '16 → 20', [2, 4], then=[3]) %}1 numaralı hasar kaynağın. Rage Burst ve Lunge Stance ile fiilen hep hazır. 20'de üçüncü slot garantili kritiğe gider.{% endcall %}
+    {% call skill('rending-blow', 'must', '16 → 20', [3, 4], then=[2]) %}İkinci en büyük hasar kaynağı ve mana motorun. 20'de hareket seçimini ekle.{% endcall %}
     {% call skill('ruinous-blow', 'must', '16', [2, 3]) %}Prepare for Battle veren büyük bomba (+%20 PvE hasarı, 20 sn). Grobs 8'de Skill Critical Hit yerine +%20 Skill Speed alıyor.{% endcall %}
     {% call skill('leaping-slam', 'opt', '12', [0, 2]) %}Ana mesafe kapatıcı; Ruinous Blow'dan önceki 3 sn Prepare for Battle onu uzatır.{% endcall %}
     {% call skill('rush-strike', 'opt', '12', [1, 0]) %}Kaçınmadan atılmaya geçiş. Lunge Stance'in bekleme süresi tetiklemeleriyle Stamina, −10 sn bekleme süresinden iyi.{% endcall %}
@@ -72,7 +72,7 @@
     <p>{{ s('overhead-slam') }} ve {{ s('aerial-snare') }} yalnızca <strong>Knockdown</strong> etkisindeki hedefe vurur (bosslar istisna, o yüzden PvE'de hiç önemli değil). Her patlama penceresi bir yere düşürmeyle başlar: Mocking Blade (garantili), kaçınmadan sonra Rush Strike, Ankle Slice. İstisna, hedefinde 10 sn boyunca Overhead Slam'i açan {{ s('rage-burst') }}.</p>
   </div>
   <ul class="skill-grid">
-    {% call skill('overhead-slam', 'must', '16 → 20', [2, 4]) %}Yere düşürülmüş hedeflerdeki cezalandırman. Kore PvP rehberleri 20. seviyedeki garantili kritiği şart sayıyor. 20'de açılan üçüncü slotu alır.{% endcall %}
+    {% call skill('overhead-slam', 'must', '16 → 20', [2, 4], then=[3]) %}Yere düşürülmüş hedeflerdeki cezalandırman. Kore PvP rehberleri 20. seviyedeki garantili kritiği şart sayıyor. 20'de açılan üçüncü slotu alır.{% endcall %}
     {% call skill('mocking-blade', 'must', '16', [3, 4]) %}Garantili 3 sn Knockdown — ana açılışın. 16'da: Block ve Evasion'ı yok sayan daha uzun Knockdown; iki ek vuruş 20'deki üçüncü slotu bekler.{% endcall %}
     {% call skill('defiance', 'must', '16', [3, 4]) %}Stun, Knockdown, Airborne, Grab, Frost ve Fear'ı kırar. Zorunlu. 16'da: hasar toleransıyla +2 sn Tenacity; %20 HP seçimi üçüncü slot, 20'de.{% endcall %}
     {% call skill('aerial-snare', 'must', '16', [3, 4]) %}Yere düşürülmüş hedefi havaya fırlatan devam hamlesi. PvE'de işe yaramaz, burada temel. 16'da: Forced Fall zinciri ve yarı bekleme süresi; Airborne şansı üçüncü slot, 20'de.{% endcall %}

@@ -46,9 +46,9 @@
 {% call section('skills', 'Yetenekler', 'pve') %}
   <p>Yalnızca üç yetenek seviyesi önemli: <strong>12, 16 ve 20</strong>. Yetenek puanları 10, Daevanion +4, iki yüzük +2, arcana geri kalanını verir. Önce beş ana yeteneği <strong>16</strong>'ya çıkar, sonra Heart Gore ve Insignia Explosion'ı 20'ye it.</p>
   <ul class="skill-grid">
-    {% call skill('heart-gore', 'must', '16 → 20', [0, 4]) %}En önemli yeteneğin. 16 ister: bir kritik bekleme süresini sıfırlar, yoksa 5 saniye bekler. HP emme seni hayatta tutar; 20'de Multi-Hit ekle. Başta Critical Hit'in azsa emme yerine +%20 kritik seçimi bir seçenek.{% endcall %}
-    {% call skill('insignia-explosion', 'must', '16 → 20', [2, 4]) %}Hasarının diğer yarısı. −3 sn bekleme süresi ve her patlamadan sonra korunan iki Insignia — her hazır olduğunda bas, yük bekleme. 20'de Multi-Hit ekle.{% endcall %}
-    {% call skill('quick-slice', 'must', '16 → 20', [3, 4]) %}Her şeyin arasına ördüğün temel saldırı: garantili kritik ve vuruş başına Insignia Explosion'a −1 sn. 20'de üçüncü slot senin seçimin — HP emme veya Multi-Hit.{% endcall %}
+    {% call skill('heart-gore', 'must', '16 → 20', [0, 4], then=[3]) %}En önemli yeteneğin. 16 ister: bir kritik bekleme süresini sıfırlar, yoksa 5 saniye bekler. HP emme seni hayatta tutar; 20'de Multi-Hit ekle. Başta Critical Hit'in azsa emme yerine +%20 kritik seçimi bir seçenek.{% endcall %}
+    {% call skill('insignia-explosion', 'must', '16 → 20', [2, 4], then=[1]) %}Hasarının diğer yarısı. −3 sn bekleme süresi ve her patlamadan sonra korunan iki Insignia — her hazır olduğunda bas, yük bekleme. 20'de Multi-Hit ekle.{% endcall %}
+    {% call skill('quick-slice', 'must', '16 → 20', [3, 4], then=[2]) %}Her şeyin arasına ördüğün temel saldırı: garantili kritik ve vuruş başına Insignia Explosion'a −1 sn. 20'de üçüncü slot senin seçimin — HP emme veya Multi-Hit.{% endcall %}
     {% call skill('ambush', 'must', '16', [0, 4]) %}Heart Gore kapalıyken ilk dolgun: 16'da iki ek kullanım ve arkadan vuruş başına iki Insignia. 20'ye ulaşırsa HP emmeyi ekle.{% endcall %}
     {% call skill('storm-rampage', 'must', '16', [3, 4]) %}Diğer sınıflarda atlanabilir; burada değil. Boss stagger'dayken her vuruş tüm bekleme sürelerinden 1 sn düşer — bufflarını geri getirir ve bu sınıf buffsız hasar yapmaz.{% endcall %}
     {% call skill('defiance', 'opt', '12 → 16', [2, 3]) %}Kontrol kırıcı: 12'de iyileşme ve +2 sn Tenacity; 16'da iyileşmeyi hasar toleransıyla değiştir.{% endcall %}

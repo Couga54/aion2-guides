@@ -19,7 +19,8 @@
   picks:  for active skills, indexes of specializations to take (see data/skills/<class>.json)
   upto:   for stigmas, the target stigma level — tiers up to it are highlighted
 #}
-{% macro skill(slug, kind, badge, picks=[], upto=0) -%}
+{#- then = picks for the third slot at skill level 20 (shown as a separate, dashed chip) -#}
+{% macro skill(slug, kind, badge, picks=[], upto=0, then=[]) -%}
 {% set sk = skill_data(slug) %}
 {% set L = sk[lang] %}
 <li class="skill" data-sk-card="{{ slug }}">
@@ -32,6 +33,7 @@
     {% if chosen %}
     <ul class="spec-chips">
       {% for sp in chosen %}<li><span class="spec-lv">{{ sp.level }}</span>{{ sp.text }}</li>{% endfor %}
+      {% for sp in L.specs %}{% if loop.index0 in then %}<li class="is-next" title="{{ t.spec_at20 }}"><span class="spec-lv">20</span>{{ sp.text }}</li>{% endif %}{% endfor %}
     </ul>
     {% endif %}
     {% if L.specs %}
@@ -39,7 +41,7 @@
       <summary>{{ t.all_specs }}</summary>
       <ul>
         {% for sp in L.specs %}
-        <li class="{{ 'on' if (loop.index0 in picks or (upto and sp.level <= upto)) }}"><span class="spec-lv">{{ sp.level }}</span>{{ sp.text }}</li>
+        <li class="{{ 'on' if (loop.index0 in picks or (upto and sp.level <= upto)) else ('next' if loop.index0 in then) }}"><span class="spec-lv">{{ sp.level }}</span>{{ sp.text }}</li>
         {% endfor %}
       </ul>
     </details>

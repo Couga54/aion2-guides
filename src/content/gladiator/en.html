@@ -51,8 +51,8 @@
 {% call section('skills', 'Skills', 'pve') %}
   <p>Only three skills need to go high: <strong>Overhead Slam → Rending Blow → Ruinous Blow</strong>. Skills reach <strong>10</strong> from skill points, <strong>14</strong> with Daevanion, <strong>16</strong> with two rings (+1 each) and <strong>20</strong> with arcana. Specializations unlock at 8, 12 and 16.</p>
   <ul class="skill-grid">
-    {% call skill('overhead-slam', 'must', '16 → 20', [2, 4]) %}Your #1 damage source. With Rage Burst and Lunge Stance it's effectively always up. At 20 the third slot goes to the guaranteed crit.{% endcall %}
-    {% call skill('rending-blow', 'must', '16 → 20', [3, 4]) %}Second-biggest damage source and your mana engine. At 20 add the mobile pick.{% endcall %}
+    {% call skill('overhead-slam', 'must', '16 → 20', [2, 4], then=[3]) %}Your #1 damage source. With Rage Burst and Lunge Stance it's effectively always up. At 20 the third slot goes to the guaranteed crit.{% endcall %}
+    {% call skill('rending-blow', 'must', '16 → 20', [3, 4], then=[2]) %}Second-biggest damage source and your mana engine. At 20 add the mobile pick.{% endcall %}
     {% call skill('ruinous-blow', 'must', '16', [2, 3]) %}Big nuke that grants Prepare for Battle (+20% PvE damage, 20s). Grobs takes +20% Skill Speed instead of Skill Critical Hit at 8.{% endcall %}
     {% call skill('leaping-slam', 'opt', '12', [0, 2]) %}Main gap-closer; 3s of Prepare for Battle before Ruinous Blow extends it.{% endcall %}
     {% call skill('rush-strike', 'opt', '12', [1, 0]) %}Dodge into a gap-close. With Lunge Stance's cooldown procs, Stamina beats −10s cooldown.{% endcall %}
@@ -72,7 +72,7 @@
     <p>{{ s('overhead-slam') }} and {{ s('aerial-snare') }} only hit a target afflicted with <strong>Knockdown</strong> (bosses are an exception, which is why PvE never cares). Every burst window starts with a knockdown: Mocking Blade (guaranteed), Rush Strike after a dodge, Ankle Slice. The exception is {{ s('rage-burst') }}, which enables Overhead Slam on its target for 10s.</p>
   </div>
   <ul class="skill-grid">
-    {% call skill('overhead-slam', 'must', '16 → 20', [2, 4]) %}Your punish on knocked-down targets. Korean PvP guides call the level-20 guaranteed crit essential. It takes the third slot, which opens at 20.{% endcall %}
+    {% call skill('overhead-slam', 'must', '16 → 20', [2, 4], then=[3]) %}Your punish on knocked-down targets. Korean PvP guides call the level-20 guaranteed crit essential. It takes the third slot, which opens at 20.{% endcall %}
     {% call skill('mocking-blade', 'must', '16', [3, 4]) %}Guaranteed 3s Knockdown — your main opener. At 16: a longer Knockdown that ignores Block and Evasion; the two extra strikes wait for the third slot at 20.{% endcall %}
     {% call skill('defiance', 'must', '16', [3, 4]) %}Breaks Stun, Knockdown, Airborne, Grab, Frost and Fear. Mandatory. At 16: +2s Tenacity with the damage tolerance; the 20% HP pick is the third slot, at 20.{% endcall %}
     {% call skill('aerial-snare', 'must', '16', [3, 4]) %}Follow-up that launches a knocked-down target. Useless in PvE, core here. At 16: the Forced Fall chain and half the cooldown; the Airborne chance is the third slot, at 20.{% endcall %}

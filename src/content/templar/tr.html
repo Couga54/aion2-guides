@@ -52,12 +52,12 @@
   <ul class="skill-grid">
     {% call skill('judgment', 'must', '20', [4, 3, 2]) %}Temel hasarın: Shield Smite, Warding Strike, Shield Rush ve Doom Shield onu tetikler, 16'da bekleme süresi ortadan kalkar.{% endcall %}
     {% call skill('punishment', 'must', '20', [1, 4, 2]) %}Şarjlı patlama — DoT, Block'u delen garantili kritik ve +%30 yetenek hızı. Hareket veya HP emme seçimlerini asla alma: yeterli saldırı hızın olunca "yem" olurlar.{% endcall %}
-    {% call skill('pummel', 'must', '20', [1, 2, 4]) %}Dolgu ve stagger. SolAshur'un seçimlerinin hepsi Punishing Strike'a gidiyor — seni iyileştirir ve daha sert vurur; −1 sn Punishment seçimini atlıyor. Bir an önce 20'ye çıkar. trueeevil ise bu −1 sn Punishment seçimini alıyor: Punishment daha erken döner — iyileşmeye ihtiyacın yoksa HP emme için adil bir değişim.{% endcall %}
-    {% call skill('annihilate', 'must', '16 → 20', [2, 3]) %}Kontrole bağışık bosslara +%100 hasar, −10 sn bekleme süresi. Alternatif build alan yere düşürme seçimi için 20'ye çıkarıyor. Üçüncü slot 20'de açılır: bosslar için Multi-Hit.{% endcall %}
+    {% call skill('pummel', 'must', '20', [1, 2, 4]) %}Dolgu ve stagger. SolAshur'un seçimlerinin hepsi Punishing Strike'a gidiyor — seni iyileştirir ve daha sert vurur; −1 sn Punishment seçimini atlıyor. Bir an önce 20'ye çıkar. trueeevil ise bu −1 sn Punishment seçimini alıyor: Punishment daha erken döner — iyileşmeye ihtiyacın yoksa HP emme için adil bir değişim. Leonis de alıyor: Punishment 20 sn boyunca +%20 PvE hasarı verir ve bu seçimle bekleme süresi 20 sn'nin altına düşer, böylece bonus hiç düşmez — kuklada DPS'i yaklaşık 22k'dan 26k'ya çıktı.{% endcall %}
+    {% call skill('annihilate', 'must', '16 → 20', [2, 3], then=[0]) %}Kontrole bağışık bosslara +%100 hasar, −10 sn bekleme süresi. Alternatif build alan yere düşürme seçimi için 20'ye çıkarıyor. Üçüncü slot 20'de açılır: bosslar için Multi-Hit.{% endcall %}
     {% call skill('shield-smite', 'must', '16', [3, 2]) %}Judgment'ı tetikler; −2 sn bekleme süresi ve Debilitating Smash'i tetikleme için %50 şans.{% endcall %}
     {% call skill('debilitating-smash', 'opt', '12', [3, 0]) %}Bloktan veya Shield Smite'tan sonra tetiklenir; Block ve Evasion'ı yok sayar.{% endcall %}
     {% call skill('warding-strike', 'opt', '12', [1, 3]) %}Judgment'ı tetikler; Warding sırasında Block ve hasar toleransı.{% endcall %}
-    {% call skill('flash-rampage', 'opt', '12 → 16', [4, 3]) %}Yalnızca Stagger'daki hedeflerde; vuruş başına tüm bekleme sürelerine −1 sn. PvE makrosunda, ama Daevanion düğümlerini atla — oyunun ortasında etkisini kaybeder. −1 sn seçimi 16. seviye ister; 12'de Multi-Hit ve MP yenilemeyi al.{% endcall %}
+    {% call skill('flash-rampage', 'opt', '12 → 16', [4, 3]) %}Yalnızca Stagger'daki hedeflerde; vuruş başına tüm bekleme sürelerine −1 sn. Artık PvE satırında değil: Leonis onu düz bir DPS kaybı olarak çıkardı — boşlukları Pummel daha iyi doldurur. Daevanion düğümlerini de atla. −1 sn seçimi 16. seviye ister; 12'de Multi-Hit ve MP yenilemeyi al.{% endcall %}
     {% call skill('shield-rush', 'opt', '12', [3, 1]) %}Kaçın → atılma, Judgment'ı tetikler; −10 sn bekleme süresi ve +10 m menzil.{% endcall %}
     {% call skill('vicious-strike', 'opt', '10', []) %}LMB'de temel saldırı; yetenek puanlarından gelen 10 yeterli.{% endcall %}
   </ul>
@@ -178,6 +178,7 @@
     {% call skill('nezekans-shield', 'opt', 'alt.', upto=15) %}Dayanıklılık değişimi; 15'ten önce iyi değil.{% endcall %}
     {% call skill('comrade-in-arms', 'opt', 'grup', upto=15) %}Zindanlarda Doom Shield yerine dayanıklılık değişimi. Soloda işe yaramaz.{% endcall %}
     {% call skill('executing-blade', 'opt', 'solo · başlangıç', upto=10) %}trueeevil'in ilk gün PvE seçimi: hedefte −%30 Defense ve 10'da Exposed. Onunla aç, sonra Punishment. Empyrean Lord's Punishment veya Taunt'a solo ve erken bir alternatif.{% endcall %}
+    {% call skill('shield-of-protection', 'opt', 'güvenli değişim', upto=10) %}Healer zayıfsa ya da dövüş yeniyse Leonis'in Empyrean Lord's Punishment yerine aldığı: hasarı sıfırlayan ve biraz iyileştiren tam bir blok; 10'da açıkken hareket edebilirsin.{% endcall %}
     {% call skill('noble-armor', 'opt', 'solo · başlangıç', upto=5) %}2 dakikalık bekleme süresiyle 2 dakika boyunca Max HP ve Defense — hep açık. trueeevil soloda kullanıyor; grupta Taunt ve stagger stigması daha önemli.{% endcall %}
   </ul>
   <div class="table-wrap"><table>
@@ -213,9 +214,9 @@
 
   <h3>1. Hızlı erişim satırları</h3>
   <div class="hotlines">
-    {% call hotline('RMB', 'Pummel satırı', ['annihilate', 'debilitating-smash', 'flash-rampage', 'pummel']) %}Oyun içi makro bu satıra basar. Tetiklemeler yanar yanmaz ateşlenir; geri kalanı Pummel doldurur. {{ s('flash-rampage') }} yalnızca Stagger'daki hedefe vurur — geri kalan zamanda makro onu atlar, stagger pencerelerinde ise her vuruş tüm bekleme sürelerinden 1 sn düşer.{% endcall %}
+    {% call hotline('RMB', 'Pummel satırı', ['annihilate', 'debilitating-smash', 'pummel']) %}Oyun içi makro bu satıra basar. Tetiklemeler yanar yanmaz ateşlenir; Pummel her boşluğu doldurur — −1 sn Punishment seçimiyle her Pummel Punishment'ı daha erken geri getirir. {{ s('flash-rampage') }} çıkarıldı (Leonis): onun testinde satır onsuz daha çok hasar veriyor.{% endcall %}
     {% call hotline('Yan', 'Judgment satırı', ['judgment', 'shield-smite', 'warding-strike', 'doom-shield']) %}Spamla: her kalkan yeteneği Judgment'ı tetikler ve Judgment her zaman kazanır.{% endcall %}
-    {% call hotline('RMB · PvX', 'PvX için Pummel satırı', ['doom-shield', 'annihilate', 'debilitating-smash', 'pummel']) %}PvX ön ayarıyla aynı düğme: {{ s('flash-rampage') }} çıkar, {{ s('doom-shield') }} en yüksek önceliği alır ve geri kalanı aşağı kayar. Bilerek Judgment satırında da duruyor: burada dövüşü açar — NPC'lerde {{ s('annihilate') }}'u açan bir atılma ve garantili yere düşürme — ve 15. seviyede öldürmede sıfırlanır, PvX ve evcil hayvan farmının anahtarı.{% endcall %}
+    {% call hotline('RMB · PvX', 'PvX için Pummel satırı', ['doom-shield', 'annihilate', 'debilitating-smash', 'pummel']) %}PvX ön ayarıyla aynı düğme: {{ s('doom-shield') }} en yüksek önceliği alır. Bilerek Judgment satırında da duruyor: burada dövüşü açar — NPC'lerde {{ s('annihilate') }}'u açan bir atılma ve garantili yere düşürme — ve 15. seviyede öldürmede sıfırlanır, PvX ve evcil hayvan farmının anahtarı.{% endcall %}
   </div>
 
   <h3>2. Tuşlar</h3>
@@ -279,6 +280,7 @@
     <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (TitanTheF'in tablosu) — seviye rotası</li>
     <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — hızlı erişim satırları ve oyun içi makro nasıl çalışır</li>
     <li><a href="https://www.youtube.com/watch?v=ZQVq7IYbLy8" target="_blank" rel="noopener">trueeevil — Ultimate Templar Guide for Aion 2: Skills, Stigmas, Rotations, Daevanion Board Explained</a> — global'de ikinci gün düzeni: solo PvE için Executing Blade ve Noble Armor, Pummel'da −1 sn Punishment seçimi, pasif sırası</li>
+    <li><a href="https://www.youtube.com/watch?v=0_Fu1DlEKPc" target="_blank" rel="noopener">Leonis — How I'm Top DPS as Templar | Build Guide Update</a> — Pummel'da −1 sn Punishment seçimi, Flash Rampage satırdan çıktı, güvenli değişim olarak Shield of Protection</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>

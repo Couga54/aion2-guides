@@ -26,7 +26,8 @@
     "pvp": {"4": {"special": true}, "*": {"skills": ["frost", "winters-shackles", "firestorm"], "special": true}}
   },
   "cleric": {
-    "pve": {"4": null, "*": {"skills": ["condemnation", "divine-aura", "bolt"], "special": ["combatspeed", "cooltimedecrease", "amplifyalldamage", "amplifycriticaldamage", "additionalhitrate", "decreasedamage"]}}
+    "pve": {"4": null, "*": {"skills": ["condemnation", "divine-aura", "bolt"], "special": ["combatspeed", "cooltimedecrease", "amplifyalldamage", "amplifycriticaldamage", "additionalhitrate", "decreasedamage"]}},
+    "pvp": {"4": {"special": true}, "*": {"skills": ["condemnation", "judgment-thunder", "radiant-recovery", "chain-of-torment"], "special": true}}
   },
   "elementalist": {
     "pve": {"4": null, "*": {"skills": ["elemental-fusion", "combustion", "summon-fire-spirit", "cold-shock", "summon-water-spirit", "mental-focus", "spirit-strike"], "special": ["combatspeed", "cooltimedecrease", "amplifyalldamage", "amplifycriticaldamage"]}},

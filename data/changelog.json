@@ -2,6 +2,24 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-10-06-classes",
+      "date": "2026-10-06",
+      "items": [
+        {
+          "en": "<strong>Cleric, Chanter and Templar checked against fresh global guides</strong> — Lucia (World's First Rank 1 Cleric), Grobs and Leonis. New main macros: Lucia's two-step macro for the Cleric and Grobs' line for the Chanter, with the rest of their hotbars; Flash Rampage out of the Templar's Pummel line. Plus skill-pick options, stigma levels, Cleric gear lines, Genus Insight and wings.",
+          "ru": "<strong>Целитель, Чародей и Страж сверены со свежими глобальными гайдами</strong> — Lucia (Целитель, первое место в мировом рейтинге), Grobs и Leonis. Новые основные макросы: макрос Lucia из двух шагов для Целителя и линия Grobs для Чародея, вместе с остальной панелью; Сияющий клинок убран из линии Града ударов у Стража. Плюс варианты специализаций, уровни стигм, строки экипировки Целителя, Genus Insight и крылья.",
+          "uk": "<strong>Cleric, Chanter і Templar звірено зі свіжими глобальними гайдами</strong> — Lucia (Cleric, перше місце у світовому рейтингу), Grobs і Leonis. Нові основні макроси: макрос Lucia з двох кроків для Cleric і лінія Grobs для Chanter, разом з рештою панелі; Flash Rampage прибраний з лінії Pummel у Templar. Плюс варіанти спеціалізацій, рівні стигм, рядки спорядження Cleric, Genus Insight і крила.",
+          "tr": "<strong>Cleric, Chanter ve Templar yeni global rehberlerle karşılaştırıldı</strong> — Lucia (dünya birincisi Cleric), Grobs ve Leonis. Yeni ana makrolar: Cleric için Lucia'nın iki adımlı makrosu ve Chanter için Grobs'un satırı, çubuğun geri kalanıyla birlikte; Templar'ın Pummel satırından Flash Rampage çıkarıldı. Ayrıca yetenek seçimi seçenekleri, stigma seviyeleri, Cleric ekipman satırları, Genus Insight ve kanatlar."
+        },
+        {
+          "en": "<strong>Cleric: new PvP mode</strong> — from Lucia's guide: stigmas for duels, group fights and the Abyss (Voice of Doom against healers, Yustiel's Power against bursts), the crowd-control picks, Genus Insight for PvP and a PvP route on the Daevanion boards.",
+          "ru": "<strong>Целитель: новый PvP-режим</strong> — по гайду Lucia: стигмы для дуэлей, групповых боёв и Бездны (Крик смерти против хилов, Сила Юстиэль против бурста), специализации на контроль, Genus Insight под PvP и PvP-маршрут на досках Daevanion.",
+          "uk": "<strong>Cleric: новий PvP-режим</strong> — за гайдом Lucia: стигми для дуелей, групових боїв і Безодні (Voice of Doom проти хілерів, Yustiel's Power проти бурсту), спеціалізації на контроль, Genus Insight під PvP і PvP-маршрут на дошках Daevanion.",
+          "tr": "<strong>Cleric: yeni PvP modu</strong> — Lucia'nın rehberinden: düellolar, grup dövüşleri ve Abyss için stigmalar (şifacılara karşı Voice of Doom, burst'e karşı Yustiel's Power), kitle kontrolü seçimleri, PvP için Genus Insight ve Daevanion panolarında PvP rotası."
+        }
+      ]
+    },
+    {
       "id": "2026-10-06-progression",
       "date": "2026-10-06",
       "items": [

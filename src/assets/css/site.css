@@ -536,6 +536,10 @@ p{margin:0 0 12px;}
 .spec-all li{color:var(--text-faint);}
 .spec-all li.on{color:var(--text);}
 .spec-all li:not(.on) .spec-lv{background:var(--surface-3);color:var(--text-faint);}
+/* the level-20 pick (skill(..., then=[i])): same row, but dashed and dimmer — a later step, not the current build */
+.spec-chips li.is-next{color:var(--text-dim);}
+.spec-chips li.is-next .spec-lv,.spec-all li.next .spec-lv{background:transparent;border:1px dashed var(--accent);color:var(--accent);padding:1px 3px;}
+.spec-all li.next{color:var(--text-dim);}
 
 /* tables */
 .table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:12px;margin:14px 0;background:var(--surface);}

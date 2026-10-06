@@ -7,9 +7,18 @@
   <h3>{{ t.core_skills }}</h3>
   {{ core([('condemnation', '16 → 20'), ('divine-aura', '16 → 20'), ('bolt', '16 → 20'), ('judgment-thunder', '16'), ('lightning-strike-scattershot', '16')]) }}
   <h3>{{ t.stigma_loadout }}</h3>
-  {{ loadout([('earth-punishment', 20), ('light-of-protection', 20), ('prayer-of-amplification', 10), ('noble-aura', 10)]) }}
+  {{ loadout([('earth-punishment', 20), ('light-of-protection', 20), ('prayer-of-amplification', 20), ('noble-aura', 10)]) }}
   <h3>{{ t.key_passives }}</h3>
   {{ passives(['empyrean-lords-grace', 'earths-grace', 'healing-enhancement', 'radiant-benediction']) }}
+{% endcall %}
+
+{% call glance('pvp') %}
+  <h3>{{ t.core_skills }}</h3>
+  {{ core([('condemnation', '16 → 20'), ('radiant-recovery', '16 → 20'), ('judgment-thunder', '16'), ('bolt', '16'), ('chain-of-torment', '14')]) }}
+  <h3>{{ t.stigma_loadout }}</h3>
+  {{ loadout([('prayer-of-amplification', 20), ('light-of-protection', 20), ('yustiels-power', 15), ('voice-of-doom', 10)]) }}
+  <h3>{{ t.key_passives }}</h3>
+  {{ passives(['empyrean-lords-grace', 'healing-enhancement', 'earths-grace', 'survival-willpower']) }}
 {% endcall %}
 
 {% call section('intro', 'Genel bakış', 'pve') %}
@@ -18,7 +27,16 @@
     <h3>Tek cümlede build</h3>
     <p>{{ s('earth-punishment') }}, {{ s('condemnation') }}'ın hep kritik vurmasını sağlar ve kritik Condemnation'ı sıfırlar — böylece bekleme süresi olmadan ateşlenir; {{ s('divine-aura') }}, {{ s('bolt') }} ve {{ s('noble-aura') }} da üstüne hasar ekler.</p>
   </div>
-  <p class="note">Bu mod Kaeria'nın Cleric PvE video rehberini izliyor (Rusça, 28 Eylül'de Tayvan istemcisinde kaydedildi; global için de geçerli olduğunu söylüyor), 30 Eylül'de video karelerine göre kontrol edildi. Yetenek seçimleri ücretsiz geri alınabilir — yalnızca arcana kaynak harcar.</p>
+  <p class="note">Bu mod Kaeria'nın Cleric PvE video rehberini izliyor (Rusça, 28 Eylül'de Tayvan istemcisinde kaydedildi; global için de geçerli olduğunu söylüyor), 30 Eylül'de video karelerine göre kontrol edildi, ayrıca Lucia'nın rehberiyle (İngilizce, global, 5 Ekim — 2.160 eşya seviyesinde dünya birincisi Cleric) karşılaştırıldı. Yetenek seçimleri ücretsiz geri alınabilir — yalnızca arcana kaynak harcar.</p>
+{% endcall %}
+
+{% call section('intro-pvp', 'Genel bakış', 'pvp') %}
+  <p>PvP'de Cleric PvE çekirdeğini korur — kritiklerle sıfırlanan {{ s('condemnation') }}, {{ s('judgment-thunder') }}, iyileştirmeler — ve stigmaların ve birkaç seçimin amacını değiştirir: kitle kontrolü, düşmanın iyileştirmesini kesmek ve bir burst sırasında grubu ayakta tutmak.</p>
+  <div class="callout accent">
+    <h3>Tek cümlede build</h3>
+    <p>{{ s('prayer-of-amplification') }} ve {{ s('light-of-protection') }} ile buffla, öldürdüğün şifacıya ya da tanka {{ s('voice-of-doom') }} koy ve {{ s('yustiels-power') }}'ı düşmanın burst yaptığı ana sakla.</p>
+  </div>
+  <p class="note">Bu mod Lucia'nın Cleric rehberinin PvP bölümünü izliyor (İngilizce, global, 5 Ekim — dünya birincisi Cleric): düellolar ve grup dövüşleri için stigmalar ve PvP için değiştirdiği seçimler. PvP kombolarına ayrı bir video sözü verdi; o zamana kadar rotasyon PvE'deki gibi.</p>
 {% endcall %}
 
 {% call section('global', 'Global Season 1: neler değişiyor', 'pve pvp') %}
@@ -36,19 +54,32 @@
 
 {% call section('skills', 'Yetenekler', 'pve') %}
   <p>Neredeyse her şey hasara gidiyor. Önemli iyileştirmeler 16 ister: Healing Light ve Radiant Recovery.</p>
+  <p><strong>Yükseltme sırası</strong> (Lucia): önce ördüğün iki yetenek — {{ s('earths-retribution') }} ve {{ s('judgment-thunder') }} — sonra {{ s('condemnation') }}, sonra iyileştirmeler. 45'teki bölge görevlerinden sonra her yetenek 12 ya da üstünde olmalı; oradan uzmanlaşmaları al ve iyileştirmeleri yükselt.</p>
   <ul class="skill-grid">
-    {% call skill('condemnation', 'must', '16 → 20', [1, 3]) %}Çubuğundaki en önemli yetenek: tek hedefte +%12 ve kritikte bekleme süresi sıfırlama. 20'de mana azsa MP, değilse Multi-Hit ekle.{% endcall %}
-    {% call skill('divine-aura', 'must', '16 → 20', [3, 4]) %}Hafife alınıyor: seninle paralel hasar verir, bu yüzden ne kadar uzun açık kalırsa o kadar iyi — 16'da +3 sn ve −10 sn bekleme süresi al, 20'de auranın saldırı hızını ekle. Farm için aLuckyRO +3 sn yerine alan seçimini (dört moba kadar) alıyor.{% endcall %}
-    {% call skill('bolt', 'must', '16 → 20', [2, 3]) %}En güçlü vuruşun. Tam şarj et. +%30 yetenek hızı, tek hedefte +%20 hasar; 20'de garantili kritiği ekle.{% endcall %}
+    {% call skill('condemnation', 'must', '16 → 20', [1, 3], then=[4]) %}Çubuğundaki en önemli yetenek: tek hedefte +%12 ve kritikte bekleme süresi sıfırlama. 20'de mana azsa MP, değilse Multi-Hit ekle.{% endcall %}
+    {% call skill('divine-aura', 'must', '16 → 20', [2, 4], then=[3]) %}Hafife alınıyor: seninle paralel hasar verir, ne kadar uzun kalırsa o kadar iyi. 16'da auranın saldırı hızını ve −10 sn bekleme süresini al, 20'de +3 sn ekle (Lucia). Seçenek: Kaeria 16'da saldırı hızı yerine +3 sn alıyor; farm için aLuckyRO AoE seçimini alıyor (dört moba kadar).{% endcall %}
+    {% call skill('bolt', 'must', '16 → 20', [1, 2], then=[4]) %}En güçlü vuruşun. Tam şarj et. Neredeyse hep isabet etmesi için +300 Skill Accuracy ve +%30 yetenek hızı; 20'de garantili kritiği ekle (Lucia). Seçenek: accuracy'n yükseldiğinde Kaeria'nın +%20 tek hedef seçimi accuracy'den fazlasını verir.{% endcall %}
     {% call skill('judgment-thunder', 'must', '16', [1, 4]) %}Sürekli hasar ve animasyon iptali; Divine Punishment seçimi onu kabaca ikiye katlar. 20'de −%20 MP ekle.{% endcall %}
     {% call skill('lightning-strike-scattershot', 'must', '16', [3, 4]) %}Yalnızca Stagger sırasında, ama her vuruş tüm bekleme sürelerini 1 sn kısaltır.{% endcall %}
     {% call skill('healing-light', 'must', '16', [0, 3]) %}Neredeyse bekleme süresiz hızlı iyileştirme: +2 kullanım ve +%2 HP (iyileştirme artışıyla ölçeklenir). 20'de −2 sn ekle.{% endcall %}
-    {% call skill('radiant-recovery', 'must', '16', [1, 4]) %}Stigmalar dışındaki en güçlü iyileştirmen; bir debuffı kaldırır. +1 art arda kullanım — üst üste iki büyük iyileştirme — ve +%5 HP. 20'de −3 sn ekle.{% endcall %}
-    {% call skill('earths-retribution', 'opt', '12 → 16', [1, 3]) %}Animasyonları iptal etmek için kullanılan temel saldırı: Discharge şansı ve Discharge'da Bolt'a −7 sn bekleme süresi.{% endcall %}
-    {% call skill('debilitating-mark', 'opt', '12', [1, 3]) %}Bossta −%15 Defense ve ondan daha az hasar.{% endcall %}
-    {% call skill('chain-of-torment', 'opt', '14', [1, 3]) %}Condemnation'ı açmak için var; bossta −%10 PvE hasar toleransı.{% endcall %}
-    {% call skill('light-of-regeneration', 'opt', '12–16', [0, 4]) %}Bekleme süresi dolunca yeniden kullan; 16'da %5 tolerans seçimini al.{% endcall %}
+    {% call skill('radiant-recovery', 'must', '16 → 20', [2, 4]) %}Stigmalar dışındaki en güçlü iyileştirmen; bir debuffı kaldırır. Lucia: 16'ya kadar −3 sn bekleme süresi ve +%10 Incoming Heal, sonra −3 sn ve +%5 HP — erkenden 20'ye çıkar. Seçenek: −3 sn yerine +1 art arda kullanım, üst üste iki büyük iyileştirme için.{% endcall %}
+    {% call skill('earths-retribution', 'opt', '12 → 16', [1, 3], then=[2]) %}Animasyonları iptal etmek için kullanılan temel saldırı: Discharge şansı ve Discharge'da Bolt'a −7 sn bekleme süresi. Discharge ne kadar sık tetiklenirse Bolt o kadar erken döner. 20'de Multi-Hit ekle.{% endcall %}
+    {% call skill('debilitating-mark', 'opt', '12', [1, 2]) %}Zamanla hasar sürerken boss'ta −%15 Defense; Lucia Transcendence'ta kitle kontrolü için %20 sersemletmeyi ekliyor. Seçenek: sersemletme yerine boss'un hasarını düşüren seçim — Lucia onun yazıldığı gibi çalıştığından emin değil.{% endcall %}
+    {% call skill('chain-of-torment', 'opt', '14', [2, 3]) %}Condemnation'ı mümkün kılmak için var; boss'ta −%10 PvE hasar toleransı. Lucia Transcendence'ta kitle kontrolü için %20 yere düşürmeyi alıyor. Seçenek: yere düşürmeye ihtiyacın yoksa +3 sn zamanla hasar.{% endcall %}
+    {% call skill('light-of-regeneration', 'opt', '12–16', [2, 4]) %}Bekleme süresinde yenile. +%5 Incoming Heal; 16'dan önce ikinci seçim %50 HP altında +%20 iyileştirme, 16'da %5 tolerans seçimi.{% endcall %}
     {% call skill('defiance', 'opt', '12', [2, 3]) %}Kontrol kırıcı; %10 HP ve +2 sn bağışıklık.{% endcall %}
+  </ul>
+{% endcall %}
+
+{% call section('skills-pvp', 'Yetenekler', 'pvp') %}
+  <p>Yetenek seviyeleri ve seçimlerin çoğu PvE'deki gibi. PvP'de değişenler:</p>
+  <ul class="skill-grid">
+    {% call skill('earths-retribution', 'opt', '16 → 20', [1, 3], then=[4]) %}Aynı Discharge ve Bolt'a −7 sn seçimleri; 20'de Ignores Block and Evasion'ı al — PvP'de temel saldırın isabet etmeli.{% endcall %}
+    {% call skill('chain-of-torment', 'must', '14', [2, 3]) %}−%5 PvP hasar toleransı seçiminin üstüne %20 yere düşürme: kitle kontrolü zamanla hasardan değerli.{% endcall %}
+    {% call skill('debilitating-mark', 'opt', '12', [1, 2]) %}−%15 Defense ve %20 sersemletme.{% endcall %}
+    {% call skill('bolt', 'must', '16', [1, 2]) %}+300 Skill Accuracy, Evasion'ı olan oyunculara karşı daha da önemli.{% endcall %}
+    {% call skill('light-of-regeneration', 'opt', '16', [2, 4]) %}Tolerans seçimi iyileştirme sırasında %2,5 PvP hasar toleransı verir.{% endcall %}
+    {% call skill('defiance', 'must', '16', [2, 3]) %}Sersemletmeye ya da yere düşürmeye cevabın — PvP'de dövüşleri belirler. Lucia: seçimler pek önemli değil.{% endcall %}
   </ul>
 {% endcall %}
 
@@ -56,18 +87,44 @@
   <div class="callout"><ul>
     <li>{{ s('empyrean-lords-grace') }} — en önemlisi: Critical Damage, Double Chance ve her vuruşta ek hasar. Olabildiğince yükselt.</li>
     <li>{{ s('earths-grace') }} — eskiden grubu bufflardı, artık yalnızca seni; yine de geliştirmeye değer.</li>
-    <li>{{ s('healing-enhancement') }} — çok iyileştiriyorsan iyileştirme artışı.</li>
+    <li>{{ s('healing-enhancement') }} — Attack'ının bir payı kadar iyileştirme artışı, bu yüzden Cleric Defense yerine Attack toplar.</li>
     <li>{{ s('radiant-benediction') }} — saldırılarda yakındaki müttefikleri iyileştirir; tamamen hasara gidiyorsan al.</li>
     <li>{{ s('warm-benediction') }} ve {{ s('immortal-veil') }} olsa iyi olur; {{ s('empyrean-lords-benediction') }} PvP için.</li>
   </ul></div>
+  <p>Lucia bu üçünü başka her pasiften önce yükseltiyor: {{ s('empyrean-lords-grace') }}, {{ s('healing-enhancement') }} ve {{ s('earths-grace') }}. {{ s('immortal-veil') }} başta yardım eder, zırhın büyüdükçe önemini kaybeder.</p>
   <p class="note">İlk günler (aLuckyRO): önce {{ s('radiant-benediction') }}'u — grup vurdukça birkaç saniyede bir tüm grubu iyileştirir — ve {{ s('healing-enhancement') }}'ı geliştir. Kritik pasifleri ancak ekipmanın Critical Hit verince karşılığını verir; o zamana kadar zar zor kritik vurursun.</p>
 {% endcall %}
 
 {% call section('gear', 'Ekipman ve statlar', 'pve') %}
   <div class="callout"><ul>
     <li><strong>Ekipman satırları:</strong> Might (saldırı ve iyileştirme), Combat Speed, Damage Boost; Weapon Damage Boost ve Precision de güçlü. PvE'de durum dirençlerini, kaçınmayı ve savunma satırlarını atla.</li>
-    <li><strong>Yüzükler:</strong> bir an önce üret — üretilmiş yüzüklerde aktif yetenekler için bir satır fazla var.</li>
-    <li><strong>Statlar:</strong> Destruction, Wisdom (Double Chance), Illusion (bekleme süreleri), Time (Combat Speed), Freedom (accuracy), artı Death (Critical Hit) — Kaeria'nın kendi seçimi, Cleric'in kritiği hep eksik; Might, Precision, Constitution.</li>
+    <li><strong>Silah ve guard</strong> (Lucia): Weapon Damage Boost, Might, Combat Speed, Precision. Eldiven: Combat Speed; bot: Movement Speed. Aksesuarlar: Combat Speed, Might ve Precision, artı Earth's Grace ya da Empyrean Lord's Grace için bir satır.</li>
+    <li><strong>Yüzükler:</strong> bir an önce üret — üretilmiş yüzüklerde aktif yetenekler için bir satır fazla var. Her satırı aktif yeteneklerle doldur: Condemnation, Radiant Recovery, Judgment Thunder ve Healing Light ya da Divine Aura.</li>
+    <li><strong>Statlar:</strong> Destruction, Wisdom (Double Chance), Illusion (bekleme süreleri), Time (Combat Speed), Freedom (accuracy), artı Death (Critical Hit) — Kaeria'nın kendi seçimi, Cleric'in kritiği hep eksik; Might, Precision, Constitution. Lucia'nın dördü: Time, Illusion, Space, Destruction.</li>
+    <li><strong>Ludra raid'i için:</strong> en az 1.000 Accuracy ve 1.000 Critical Hit.</li>
+    <li><strong>Kanatlar:</strong> sezon mağazasından yaklaşık 250.000 sezon puanına <strong>Talisra Wings</strong> (Attack 60, Defense 400, Accuracy 35, −%4 bekleme süreleri) — puanlarını onlara sakla.</li>
+  </ul></div>
+  <h3>Genus Insight</h3>
+  <p>Her evcil hayvanı erkenden 3. seviyeye çıkar: yükselttiğin evcil hayvanları öldürmek bu satırların kristallerini verir. Lucia'nın her çark için seçimleri:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Yuva</th><th>Al</th></tr></thead>
+    <tbody>
+      <tr><td>1, 5</td><td>Attack Bonus (5: ya da Max Attack)</td></tr>
+      <tr><td>2, 8</td><td>HP</td></tr>
+      <tr><td>3, 6, 9</td><td>Accuracy, ya da accuracy'n zaten yüksekse Block</td></tr>
+      <tr><td>4</td><td>O çarkın hasar satırı: Damage Boost, Perfect Chance, Back Attack Damage</td></tr>
+      <tr><td>7</td><td>Regeneration ya da Endurance</td></tr>
+      <tr><td>Özel</td><td>Double Chance</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">En yüksek değer için çevir ve bir satırı yalnızca maksimuma yakınken kilitle — çark 9–10. seviyeye gelmeden asla.</p>
+{% endcall %}
+
+{% call section('gear-pvp', 'Ekipman ve statlar', 'pvp') %}
+  <div class="callout"><ul>
+    <li><strong>Ekipman satırları</strong> PvE'deki gibi — silah ve guard'da Weapon Damage Boost, Might, Combat Speed, Precision; aksesuarlarda Combat Speed, Might, Precision.</li>
+    <li><strong>Genus Insight:</strong> 2. yuvada HP yerine Critical Hit Resist ve o çarkın hasar yuvasında Front Attack Damage Boost — PvP'de hedefe yüzün dönük.</li>
+    <li><strong>Azphel</strong>, 45. seviye Daevanion panosu, tamamen PvP Damage Boost ve Tolerance — PvP için doldur.</li>
   </ul></div>
 {% endcall %}
 
@@ -91,7 +148,9 @@
     <li><strong>Öncelik:</strong> önce turuncu Cooldown ve Combat Speed düğümleri, sonra Attack ve Critical, sonra mavi yetenek düğümleri, sonra savunma turuncu düğümleri, pasifler en son.</li>
     <li>Critical Damage Tolerance ve Multi-Hit Resist PvE'de hiçbir şey yapmaz — bosslar kritik veya çoklu vuruş yapmaz.</li>
     <li>Bir panoyu sıfırlamak ucuz ve onu defalarca yeniden kuracaksın.</li>
-    <li><strong>Global'de Ariel yok:</strong> beş pano var ve 45. seviyedeki Azphel yalnızca PvP Damage Boost ve Tolerance veriyor — PvE'de ilk dördünü bitir.</li>
+    <li><strong>Lucia'nın sırası:</strong> Nezekan ve Zikel'de dört köşeyi ve yeteneklerini al; Vaizel ve Triniel'de köşeleri atla ve doğrudan kullandığın aktif yeteneklere git.</li>
+    <li data-only="pvp"><strong>Azphel</strong> (45. seviye) tamamen PvP Damage Boost ve Tolerance — PvP için al.</li>
+    <li data-only="pve"><strong>Global'de Ariel yok:</strong> beş pano var ve 45. seviyedeki Azphel yalnızca PvP Damage Boost ve Tolerance veriyor — PvE'de ilk dördünü bitir.</li>
   </ul></div>
   <div class="table-wrap"><table>
     <thead><tr><th>Pano</th><th>Açılış</th><th>Turuncu düğümler</th></tr></thead>
@@ -105,7 +164,8 @@
   </table></div>
   <h3>Panolardaki rota</h3>
   <p>Oyun verilerinden gerçek global panolar. Altın renk, Start'tan bu rehberin aldığı düğümlere — öncelikli yeteneklerin mavi düğümleri ve PvE'de önemli olan turuncu düğümler (Critical Damage Tolerance ve Multi-Hit Resist olmadan) — giden en ucuz yolu gösterir; ne verdiğini görmek için herhangi bir düğümün üzerine gel.</p>
-  {{ dv_board('pve') }}
+  <div data-only="pve">{{ dv_board('pve') }}</div>
+  <div data-only="pvp">{{ dv_board('pvp') }}</div>
   <p class="note">Panolar ve maliyetler global istemci verilerinden (questlog.gg) geliyor; yol videodan alınmadı, hesaplandı. Stat değerleri çıkışta hâlâ değişebilir — tam bir rotaya girmeden önce oyundaki panoyu kontrol et.</p>
 {% endcall %}
 
@@ -113,45 +173,92 @@
   <ul class="skill-grid">
     {% call skill('earth-punishment', 'must', 'Sv 15 → 20', upto=20) %}Condemnation hep kritik vurur (yani bekleme süresi yok), grup da Defense, Attack ve Double Chance alır. En önemli yeteneklerinden biri.{% endcall %}
     {% call skill('light-of-protection', 'must', 'Sv 20', upto=20) %}Mantran: gelen iyileştirme, accuracy, +%10 HP ve Perfect Chance, bekleme süresi yok. Chanter'ın mantrasıyla üst üste binmez — grupta Chanter varsa çıkar. Aç/kapa bir yetenek: bir kez aç ve hızlı erişim satırlarının ve makronun dışında tut.{% endcall %}
-    {% call skill('prayer-of-amplification', 'must', 'Sv 10+', upto=10) %}Bekleme süresi dolunca +%20 Attack ve Empyrean Lord's Grace ile Earth's Grace'i güçlendirir. Onsuz Cleric'in hasarı yok.{% endcall %}
+    {% call skill('prayer-of-amplification', 'must', 'Sv 10 → 20', upto=20) %}Bekleme süresinde +%20 Attack ve Empyrean Lord's Grace ile Earth's Grace'i güçlendirir. Onsuz Cleric'in hasarı yok. Lucia'nın 20'deki ilk üç stigması: bu, Earth Punishment ve Light of Protection.{% endcall %}
     {% call skill('noble-aura', 'must', 'Sv 10+', upto=10) %}Yanında saldıran bir küre — hasarının yaklaşık iki katı; ne kadar yüksek o kadar iyi.{% endcall %}
-    {% call skill('absolution', 'opt', 'sanctuary', upto=15) %}En güçlü iyileştirme stigması, ama yalnızca 15+'da iyi. Yalnızca grupta iyileştirme eksikse koy.{% endcall %}
+    {% call skill('absolution', 'opt', 'Chanter varsa', upto=15) %}En güçlü iyileştirme stigması, ama yalnızca 15+'da iyi: +%5 HP yenileme, 15–20k iyileştirir, 5. seviyeden 1 dakika bekleme süresi. Grupta Chanter varken Lucia'nın Light of Protection yerine seçimi.{% endcall %}
     {% call skill('benevolence', 'opt', 'sanctuary', upto=15) %}Tüm grup için zamanla iyileştirme; Absolution gibi ancak 15'ten itibaren bir slota değer.{% endcall %}
     {% call skill('yustiels-power', 'opt', 'sanctuary', upto=15) %}10 sn grup hasar toleransı — Noble Aura veya Prayer yerine sanctuary değişimi.{% endcall %}
-    {% call skill('summon-resurrection', 'opt', 'Sv 5', upto=5) %}Başta 5'te tut; grubun sürekli ölüyorsa al.{% endcall %}
+    {% call skill('summon-resurrection', 'opt', 'Sv 5', upto=5) %}Başta 5'te tut; grubun sürekli ölüyorsa al. Rastgele gruplarda Lucia onu almıyor: oyuncu taşla dirilse bile stigma 2 dakikalık bekleme süresine girer.{% endcall %}
     {% call skill('salvation', 'skip', 'atla') %}Uzun bekleme süresinde 3 sn dokunulmazlık — kırmızı saldırılar yine de içinden geçer; onun yerine kaçın.{% endcall %}
   </ul>
   <p class="note">Grupta Chanter varken: Light of Protection'ı herhangi bir iyileştirme veya Summon Resurrection ile değiştir. Voice of Doom (15'te bossta −200 Critical Hit Resist), ikinci şifacılı sanctuary'lerde bir seçenek, çoğunlukla herkesin kritiği eksikken erken dönemde; Power Burst yalnızca stagger çubuğunun kırılması gerekip başka kimsenin yapamadığı yerde (Nightmare). {{ s('root') }} ve {{ s('assault-mark') }}'ın PvE'de kullanımı yok.</p>
 {% endcall %}
 
-{% call section('macro', 'Makro', 'pve') %}
-  <p>Kaeria yalnızca oyun içi makroyu kullanıyor — üçüncü taraf yazılım yok — böylece makro adımları arasında iyileştirmelere hâlâ basabiliyor. Aşağıdaki satırlar videodaki hızlı erişim çubuğundan okundu. AION 2'de <strong>bir satırın en alttaki slotu en yüksek önceliğe sahiptir</strong>; kartlar her satırı oyundaki gibi yukarıdan aşağıya gösterir.</p>
+{% call section('stigmas-pvp', 'Stigmalar', 'pvp') %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Dövüş</th><th>Stigmalar</th></tr></thead>
+    <tbody>
+      <tr><td>Düellolar, küçük dövüşler</td><td>Prayer of Amplification, Light of Protection, Yustiel's Power, Voice of Doom</td></tr>
+      <tr><td>Grup PvP</td><td>Voice of Doom yerine Absolution — temizlik ve büyük iyileştirme</td></tr>
+      <tr><td>Abyss, açık dünya</td><td>Bazen Absolution yerine Summon Resurrection</td></tr>
+    </tbody>
+  </table></div>
+  <ul class="skill-grid">
+    {% call skill('prayer-of-amplification', 'must', 'Sv 20', upto=20) %}+%20 Attack — ve kritik pasiflerini güçlendirir. Hasar ya da daha büyük iyileştirmeler için.{% endcall %}
+    {% call skill('light-of-protection', 'must', 'Sv 20', upto=20) %}Grup için PvP Damage Boost ve Tolerance, accuracy ve Max HP. Aç/kapa — bir kez aç.{% endcall %}
+    {% call skill('yustiels-power', 'must', 'Sv 15', upto=15) %}Grup için kalkan, Block ve Evasion ile 10 sn hasar toleransı — düşman burst'ünü başlattığında bas.{% endcall %}
+    {% call skill('voice-of-doom', 'must', 'Sv 10', upto=10) %}Hedefte 20 saniye boyunca −%60 gelen iyileştirme ve HP iksiri yenilemesi — Cleric'leri, Chanter'ları ve Gladiator ile Templar'ların kendi iyileştirmesini kapatır. 10'da koruyucu kalkanları da kaldırır; birden çok hedefe isabette +%20 hasar grup dövüşlerinde işe yarar.{% endcall %}
+    {% call skill('absolution', 'opt', 'grup PvP', upto=15) %}En güçlü iyileştirme stigması; 10'dan itibaren tüm debuffları kaldırır — Lucia'nın grup dövüşleri için seçimi.{% endcall %}
+    {% call skill('summon-resurrection', 'opt', 'Abyss', upto=5) %}Bir diriltmenin dövüşü çevirdiği Abyss ve açık dünya için.{% endcall %}
+  </ul>
+{% endcall %}
 
-  <h3>1. Hızlı erişim satırları</h3>
+{% call section('macro', 'Makro', 'pve') %}
+  <p>Lucia'nın global düzeni: yalnızca oyun içi makro, iki adım ve onun çubuğundan okunan iki satır (kare 13:10). AION 2'de <strong>bir satırın en alt yuvası en yüksek önceliğe sahiptir</strong>; kartlar satırları oyundaki gibi yukarıdan aşağıya gösterir.</p>
+
+  <h3>1. Kısayol satırları</h3>
   <div class="hotlines">
-    {% call hotline('3', 'Condemnation satırı', ['earth-punishment', 'condemnation', 'chain-of-torment']) %}Earth Punishment önce gider, böylece Condemnation hep kritik vurur ve sıfırlanır; Chain of Torment Condemnation'ın ihtiyaç duyduğu işareti tutar. {{ s('light-of-protection') }}'ı satırın dışında tut: aç/kapa bir yetenek ve her ikinci basış onu kapatır.{% endcall %}
-    {% call hotline('2', 'Divine Aura satırı', ['divine-aura', 'debilitating-mark', 'light-of-regeneration', 'judgment-thunder']) %}Aura ve debuff hazır olduklarında; geri kalanı Judgment Thunder doldurur.{% endcall %}
-    {% call hotline('1', 'Stagger', ['lightning-strike-scattershot']) %}Yalnızca stagger'daki bossta çalışır, bu yüzden çoğu zaman bu adım atlanır.{% endcall %}
+    {% call hotline('Q', 'Prayer satırı', ['prayer-of-amplification', 'earth-punishment', 'chain-of-torment', 'condemnation']) %}Hazır olunca Prayer, sonra Earth Punishment ve Chain of Torment, böylece her Condemnation kritik vurur ve sıfırlanır. {{ s('light-of-protection') }}'ı satıra koyma: aç/kapa bir yetenek, her ikinci basış onu kapatır.{% endcall %}
+    {% call hotline('T', 'Divine Aura satırı', ['divine-aura', 'judgment-thunder']) %}Hazır olunca aura, arada Judgment Thunder — her Judgment Thunder'dan sonra Condemnation yine kritik vurup sıfırlanabilir.{% endcall %}
   </div>
+  <p>Makronun dışında — çubuğunun geri kalanı:</p>
+  <div class="hotlines">
+    {% call hotline('1', 'Debuff satırı', ['lightning-strike-scattershot', 'debilitating-mark']) %}Stagger'daki boss'a Lightning Strike Scattershot, yoksa Debilitating Mark — bekleme süresi dolunca bas.{% endcall %}
+    {% call hotline('E', 'İyileştirme satırı', ['light-of-regeneration', 'healing-light']) %}Hazır olunca Light of Regeneration, geri kalanında Healing Light (üç hak).{% endcall %}
+  </div>
+  <ul class="presslist">
+    <li><span class="press-how">Kendi tuşları</span><span class="press-what"><span class="key">LMB</span> {{ s('earths-retribution') }}, <span class="key">3</span> {{ s('radiant-recovery') }}, <span class="key">4</span> {{ s('bolt') }}, <span class="key">5</span> {{ s('light-of-protection') }} (aç/kapa — bir kez aç), <span class="key">8</span> {{ s('noble-aura') }}.</span></li>
+  </ul>
 
   <h3>2. Oyun içi makro</h3>
   <p><span class="key">RMB</span>'de, her adım <strong>10 ms</strong> gecikmeyle:</p>
-  {{ macroseq([("Earth's Retribution", 'temel saldırı'), ('Satır 2', 'Divine Aura'), ('Satır 3', 'Condemnation'), ('Satır 1', 'stagger'), ('Satır 3', ''), ('Satır 1', ''), ('Satır 1', '')]) }}
+  {{ macroseq([('Prayer satırı', 'Prayer of Amplification'), ('Divine Aura satırı', 'Divine Aura')]) }}
 
   <h3>3. Tuşlar</h3>
   <ul class="presslist">
-    <li><span class="press-how">Basılı tut</span><span class="press-what"><span class="key">RMB</span>'deki makroyu <span class="key">3</span> (Condemnation satırı) ile birlikte — Condemnation'ın bekleme süresi yok ve diğer her şeyin animasyonlarını keser.</span></li>
-    <li><span class="press-how">Stagger</span><span class="press-what">Boss stagger'a girince <span class="key">3</span>'ü bırak ve yalnızca makroyu basılı tut, böylece {{ s('lightning-strike-scattershot') }} araya girer.</span></li>
-    <li><span class="press-how">Elle</span><span class="press-what">Biri az önce vuruş aldığında {{ s('healing-light') }} (onda <span class="key">4</span>'te) ve {{ s('radiant-recovery') }} (<span class="key">Q</span>), tam şarjlı {{ s('bolt') }} (<span class="key">E</span>), bekleme süresi dolunca {{ s('prayer-of-amplification') }}.</span></li>
+    <li><span class="press-how">Basılı tut</span><span class="press-what"><span class="key">RMB</span>'deki makroyu <span class="key">LMB</span>'deki {{ s('earths-retribution') }} ile birlikte — temel saldırı, Judgment Thunder ve Condemnation dizi yeniden başlayana kadar örülür.</span></li>
+    <li><span class="press-how">Elle</span><span class="press-what">Debuff satırı bekleme süresi dolunca; iyileştirme satırı ve {{ s('radiant-recovery') }} az önce vuruş alana; tam şarjlı {{ s('bolt') }}; {{ s('noble-aura') }} bekleme süresi dolunca.</span></li>
   </ul>
-  <p class="note">Bu, yüksek ping için yapılmış Tayvan düzeni. Global'de daha düşük pingle animasyonlar daha iyi iptal edilir ve biraz daha fazla Earth's Retribution örebilirsin.</p>
+  <p class="note">Lucia üçüncü taraf bir makronun daha çok verdiğini söylüyor, ama kendisi oyun içi makroda kalıyor.</p>
+
+  <h3>Diğer seçenek: Kaeria'nın makrosu (Tayvan istemcisi)</h3>
+  <p>Yedi adım ve üç satır, yüksek ping için; stagger yeteneği makroda.</p>
+  <div class="hotlines">
+    {% call hotline('3', 'Condemnation satırı', ['earth-punishment', 'condemnation', 'chain-of-torment']) %}Earth Punishment önce gider, böylece Condemnation hep kritik vurur ve sıfırlanır; Chain of Torment Condemnation'ın ihtiyaç duyduğu işareti tutar.{% endcall %}
+    {% call hotline('2', 'Divine Aura satırı', ['divine-aura', 'debilitating-mark', 'light-of-regeneration', 'judgment-thunder']) %}Aura ve debuff hazır olduklarında; geri kalanı Judgment Thunder doldurur.{% endcall %}
+    {% call hotline('1', 'Stagger', ['lightning-strike-scattershot']) %}Yalnızca stagger'daki bossta çalışır, bu yüzden çoğu zaman bu adım atlanır.{% endcall %}
+  </div>
+  {{ macroseq([("Earth's Retribution", 'temel saldırı'), ('Satır 2', 'Divine Aura'), ('Satır 3', 'Condemnation'), ('Satır 1', 'stagger'), ('Satır 3', ''), ('Satır 1', ''), ('Satır 1', '')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Basılı tut</span><span class="press-what"><span class="key">RMB</span>'deki makroyu <span class="key">3</span> (Condemnation satırı) ile birlikte; boss stagger'dayken {{ s('lightning-strike-scattershot') }} geçsin diye <span class="key">3</span>'ü bırak.</span></li>
+    <li><span class="press-how">Elle</span><span class="press-what">{{ s('healing-light') }} (<span class="key">4</span>), {{ s('radiant-recovery') }} (<span class="key">Q</span>), şarjlı {{ s('bolt') }} (<span class="key">E</span>), bekleme süresi dolunca {{ s('prayer-of-amplification') }}.</span></li>
+  </ul>
+  <p class="note">Global'de ping Tayvan'dan düşük: animasyonlar daha iyi kesilir ve biraz daha fazla Earth's Retribution örebilirsin.</p>
 {% endcall %}
 
 {% call section('recap', 'Özet', 'pve') %}
   <div class="callout accent"><ul>
-    <li><strong>Yetenekler:</strong> Condemnation, Divine Aura, Bolt 16 → 20; Judgment Thunder, Lightning Strike Scattershot, Healing Light, Radiant Recovery 16; geri kalanı 12–14.</li>
-    <li><strong>Stigmalar:</strong> Earth Punishment, Light of Protection, Prayer of Amplification, Noble Aura (Chanter varsa Light of Protection'ı değiştir).</li>
+    <li><strong>Yetenekler:</strong> Condemnation, Radiant Recovery, Divine Aura, Bolt 16 → 20; Judgment Thunder, Lightning Strike Scattershot, Healing Light 16; geri kalanı 12–14.</li>
+    <li><strong>Stigmalar:</strong> Earth Punishment, Light of Protection, Prayer of Amplification (üçü de 20'ye), Noble Aura; Chanter varsa Light of Protection yerine Absolution.</li>
     <li><strong>Oyun:</strong> katkı için hasar ver; yalnızca az önce vuruş alanları iyileştir.</li>
+  </ul></div>
+{% endcall %}
+
+{% call section('recap-pvp', 'Özet', 'pvp') %}
+  <div class="callout accent"><ul>
+    <li><strong>Yetenekler:</strong> PvE'deki gibi; Chain of Torment ve Debilitating Mark kitle kontrolü seçimlerini alır, Earth's Retribution 20'de Block ve Evasion'ı yok sayar.</li>
+    <li><strong>Stigmalar:</strong> Prayer of Amplification, Light of Protection, Yustiel's Power, Voice of Doom; grup PvP'de Voice of Doom yerine Absolution.</li>
+    <li><strong>Ekipman:</strong> PvE satırları; Genus Insight'ta Critical Hit Resist ve Front Attack Damage, Azphel panosu.</li>
   </ul></div>
 {% endcall %}
 
@@ -208,6 +315,7 @@
     <li><a href="https://mmo-codex.com/articles/aion-2-cleric-guide/" target="_blank" rel="noopener">MMO Codex — Aion 2 Cleric guide</a> — seviye atlarken yetenek sırası ve uzmanlıklar, 22'de stigmalar</li>
     <li><a href="https://questlog.gg/aion-2/en/db/skills/cleric" target="_blank" rel="noopener">questlog.gg</a> — global istemciden yetenek verileri</li>
     <li><a href="https://www.youtube.com/watch?v=A3pZDSt4ceU" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Cleric PVE Build for Global</a> — erken uzmanlıklar (farm ve bosslar için Divine Aura, mana için Earth's Retribution), zindanlar için stigma değişimleri, Chain of Torment → Condemnation kombosu, erken pasifler</li>
+    <li><a href="https://www.youtube.com/watch?v=KptUtnv35vk" target="_blank" rel="noopener">Lucia — Aion 2 Cleric Guide from a Worlds 1st Rank 1</a> — global yetenek seçimleri, stigma seviyeleri, iki adımlı makro, ekipman satırları, Genus Insight, kanatlar; PvP modu</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>

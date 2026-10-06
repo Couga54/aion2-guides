@@ -36,7 +36,7 @@ Read `CONTEXT.md` first — it has the user's requirements, verified game facts 
   strings write skill and game names in English (as the EN text does), the rest in Ukrainian.
 - Skill cards (`{% call skill('slug', kind, 'level', [picks]) %}`): a skill has 1 specialization slot from level 8, 2 from 12 and 3 only
   at 20, and options 4 / 5 unlock at 12 / 16 — never list more picks than the level allows; for "16 → 20" list the two picks for 16
-  and say in the text what the third slot takes at 20.
+  and put the third slot's pick in `then=[i]` (shown as a dashed "20" chip) — or say in the text when the third pick is a free choice.
 - Changed a class guide → set that class's `updated` in `data/site.json` to today (the "Updated" date in the guide header and on the
   home card), the date in `classes[].src.<mode>` for every mode whose source was re-checked, and the site-wide `updated` (footer, sitemap).
 - New or updated guide source → also update its creator in `data/sources.json` (group `creators`): `name` exactly as it is written in

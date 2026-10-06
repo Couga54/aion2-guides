@@ -52,12 +52,12 @@
   <ul class="skill-grid">
     {% call skill('judgment', 'must', '20', [4, 3, 2]) %}Твоя основна шкода: його запускають Shield Smite, Warding Strike, Shield Rush і Doom Shield, а на 16 його перезарядка зникає.{% endcall %}
     {% call skill('punishment', 'must', '20', [1, 4, 2]) %}Заряджений берст — шкода з часом, гарантований крит крізь блок і +30% швидкості скілів. Ніколи не бери спеціалізації на рух чи поглинання HP: це «приманка», коли вже вистачає швидкості атаки.{% endcall %}
-    {% call skill('pummel', 'must', '20', [1, 2, 4]) %}Філер і оглушення. Усі спеціалізації SolAshur ідуть у Punishing Strike — він лікує тебе й б'є сильніше; спеціалізацію −1 с на Punishment він пропускає. Доведи до 20 якнайшвидше. trueeevil бере саме її: Punishment відкочується швидше — чесна заміна поглинанню HP, якщо лікування не потрібне.{% endcall %}
-    {% call skill('annihilate', 'must', '16 → 20', [2, 3]) %}+100% шкоди по босах з імунітетом до контролю, −10 с перезарядки. Альтернативний білд доводить його до 20 заради спеціалізації на АоЕ-збивання. Третій слот відкривається на 20: мультиудар для босів.{% endcall %}
+    {% call skill('pummel', 'must', '20', [1, 2, 4]) %}Філер і оглушення. Усі спеціалізації SolAshur ідуть у Punishing Strike — він лікує тебе й б'є сильніше; спеціалізацію −1 с на Punishment він пропускає. Доведи до 20 якнайшвидше. trueeevil бере саме її: Punishment відкочується швидше — чесна заміна поглинанню HP, якщо лікування не потрібне. Leonis теж її бере: Punishment дає +20% шкоди в PvE на 20 с, а з цією спеціалізацією її перезарядка падає нижче 20 с, тож бонус не спадає — на манекені в нього DPS виріс приблизно з 22k до 26k.{% endcall %}
+    {% call skill('annihilate', 'must', '16 → 20', [2, 3], then=[0]) %}+100% шкоди по босах з імунітетом до контролю, −10 с перезарядки. Альтернативний білд доводить його до 20 заради спеціалізації на АоЕ-збивання. Третій слот відкривається на 20: мультиудар для босів.{% endcall %}
     {% call skill('shield-smite', 'must', '16', [3, 2]) %}Запускає Judgment; −2 с перезарядки й шанс 50% активувати Debilitating Smash.{% endcall %}
     {% call skill('debilitating-smash', 'opt', '12', [3, 0]) %}Прок після блоку чи Shield Smite; ігнорує блок і ухилення.{% endcall %}
     {% call skill('warding-strike', 'opt', '12', [1, 3]) %}Запускає Judgment; блок і стійкість до шкоди під час Warding.{% endcall %}
-    {% call skill('flash-rampage', 'opt', '12 → 16', [4, 3]) %}Лише по оглушених цілях; −1 с до всіх перезарядок за удар. Стоїть у PvE-макросі, але вузли Daevanion на нього не бери — до середини гри він втрачає цінність. Спеціалізація −1 с відкривається на 16; на 12 бери мультиудар і відновлення мани.{% endcall %}
+    {% call skill('flash-rampage', 'opt', '12 → 16', [4, 3]) %}Лише по оглушених цілях; −1 с до всіх перезарядок за удар. З PvE-лінії прибраний: Leonis вийняв його як чисту втрату DPS — паузи краще закриває Pummel. Вузли Daevanion на нього теж не бери. Спеціалізація −1 с відкривається на 16; на 12 бери мультиудар і відновлення мани.{% endcall %}
     {% call skill('shield-rush', 'opt', '12', [3, 1]) %}Ухилення → ривок, запускає Judgment; −10 с перезарядки й +10 м дальності.{% endcall %}
     {% call skill('vicious-strike', 'opt', '10', []) %}Базова атака на ЛКМ; вистачить 10 рівня з очок навичок.{% endcall %}
   </ul>
@@ -178,6 +178,7 @@
     {% call skill('nezekans-shield', 'opt', 'альт.', upto=15) %}Заміна заради живучості; до 15 погана.{% endcall %}
     {% call skill('comrade-in-arms', 'opt', 'група', upto=15) %}Заміна заради живучості в підземеллях, замість Doom Shield. Соло марна.{% endcall %}
     {% call skill('executing-blade', 'opt', 'соло · старт', upto=10) %}Вибір trueeevil для PvE в перші дні: −30% захисту цілі, а на 10 — Exposed. Відкривай ним, потім Punishment. Соло й на старті — заміна Empyrean Lord's Punishment або Taunt.{% endcall %}
+    {% call skill('shield-of-protection', 'opt', 'безпечна заміна', upto=10) %}Заміна Leonis замість Empyrean Lord's Punishment, якщо хіл слабкий або бій незнайомий: повний блок, що гасить шкоду й трохи лікує; на 10 можна рухатися, поки він активний.{% endcall %}
     {% call skill('noble-armor', 'opt', 'соло · старт', upto=5) %}Макс. HP і захист на 2 хвилини при перезарядці 2 хвилини — висить завжди. trueeevil грає з нею соло; у групі важливіші Taunt і стигма на стагер.{% endcall %}
   </ul>
   <div class="table-wrap"><table>
@@ -213,9 +214,9 @@
 
   <h3>1. Лінії на кнопках</h3>
   <div class="hotlines">
-    {% call hotline('ПКМ', 'Лінія Pummel', ['annihilate', 'debilitating-smash', 'flash-rampage', 'pummel']) %}Цю лінію натискає вбудований макрос. Проки спрацьовують, щойно загоряються; решту часу — Pummel. {{ s('flash-rampage') }} б'є лише ціль під оглушенням — решту часу макрос його пропускає, а у вікна оглушення кожен удар знімає 1 с з усіх перезарядок.{% endcall %}
+    {% call hotline('ПКМ', 'Лінія Pummel', ['annihilate', 'debilitating-smash', 'pummel']) %}Цю лінію натискає вбудований макрос. Проки спрацьовують, щойно загоряються; Pummel закриває кожну паузу — а зі спеціалізацією −1 с на Punishment кожен Pummel наближає її відкат. {{ s('flash-rampage') }} прибраний (Leonis): у його тесті лінія без нього завдає більше шкоди.{% endcall %}
     {% call hotline('Бічна', 'Лінія Judgment', ['judgment', 'shield-smite', 'warding-strike', 'doom-shield']) %}Спам її: кожен скіл щита запускає Judgment, а Judgment завжди в пріоритеті.{% endcall %}
-    {% call hotline('ПКМ · PvX', 'Лінія Pummel для PvX', ['doom-shield', 'annihilate', 'debilitating-smash', 'pummel']) %}Та сама кнопка з пресетом PvX: {{ s('flash-rampage') }} прибирається, {{ s('doom-shield') }} стає на найвищий пріоритет, решта зсуваються. У лінії Judgment він стоїть теж — це навмисно: тут він відкриває бій — ривок і гарантоване збивання з ніг на NPC, яке відкриває {{ s('annihilate') }}, — а на 15 рівні скидається при вбивстві, це головне для PvX і фарму петів.{% endcall %}
+    {% call hotline('ПКМ · PvX', 'Лінія Pummel для PvX', ['doom-shield', 'annihilate', 'debilitating-smash', 'pummel']) %}Та сама кнопка з пресетом PvX: {{ s('doom-shield') }} стає на найвищий пріоритет. У лінії Judgment він стоїть теж — це навмисно: тут він відкриває бій — ривок і гарантоване збивання з ніг на NPC, яке відкриває {{ s('annihilate') }}, — а на 15 рівні скидається при вбивстві, це головне для PvX і фарму петів.{% endcall %}
   </div>
 
   <h3>2. Клавіші</h3>
@@ -279,6 +280,7 @@
     <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (таблиця TitanTheF) — маршрут прокачки</li>
     <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — як працюють лінії на кнопках і вбудований макрос</li>
     <li><a href="https://www.youtube.com/watch?v=ZQVq7IYbLy8" target="_blank" rel="noopener">trueeevil — Ultimate Templar Guide for Aion 2: Skills, Stigmas, Rotations, Daevanion Board Explained</a> — налаштування другого дня на глобалі: Executing Blade і Noble Armor для соло-PvE, спеціалізація −1 с Punishment на Pummel, порядок пасивок</li>
+    <li><a href="https://www.youtube.com/watch?v=0_Fu1DlEKPc" target="_blank" rel="noopener">Leonis — How I'm Top DPS as Templar | Build Guide Update</a> — спеціалізація −1 с Punishment на Pummel, Flash Rampage з лінії, Shield of Protection як безпечна заміна</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>

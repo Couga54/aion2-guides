@@ -52,12 +52,12 @@
   <ul class="skill-grid">
     {% call skill('judgment', 'must', '20', [4, 3, 2]) %}Your core damage: Shield Smite, Warding Strike, Shield Rush and Doom Shield trigger it, and at 16 its cooldown disappears.{% endcall %}
     {% call skill('punishment', 'must', '20', [1, 4, 2]) %}Charged burst — DoT, guaranteed crit through Block and +30% skill speed. Never take the mobile or HP-absorb picks: "bait" once you have enough attack speed.{% endcall %}
-    {% call skill('pummel', 'must', '20', [1, 2, 4]) %}Filler and stagger. SolAshur's picks all go into Punishing Strike — it heals you and hits harder; he skips the −1s Punishment pick. Get it to 20 as soon as possible. trueeevil takes that −1s Punishment pick instead: Punishment comes back sooner — a fair swap for the HP absorb if you don't need the heal.{% endcall %}
-    {% call skill('annihilate', 'must', '16 → 20', [2, 3]) %}+100% damage to CC-immune bosses, −10s cooldown. The alternate build takes it to 20 for the AoE knockdown pick. The third slot opens at 20: Multi-Hit for bosses.{% endcall %}
+    {% call skill('pummel', 'must', '20', [1, 2, 4]) %}Filler and stagger. SolAshur's picks all go into Punishing Strike — it heals you and hits harder; he skips the −1s Punishment pick. Get it to 20 as soon as possible. trueeevil takes that −1s Punishment pick instead: Punishment comes back sooner — a fair swap for the HP absorb if you don't need the heal. Leonis takes it too: Punishment gives +20% PvE Damage Boost for 20s, and with the pick its cooldown drops under 20s, so the boost never falls off — about 22k → 26k DPS on his dummy test.{% endcall %}
+    {% call skill('annihilate', 'must', '16 → 20', [2, 3], then=[0]) %}+100% damage to CC-immune bosses, −10s cooldown. The alternate build takes it to 20 for the AoE knockdown pick. The third slot opens at 20: Multi-Hit for bosses.{% endcall %}
     {% call skill('shield-smite', 'must', '16', [3, 2]) %}Triggers Judgment; −2s cooldown and a 50% chance to proc Debilitating Smash.{% endcall %}
     {% call skill('debilitating-smash', 'opt', '12', [3, 0]) %}Proc after a block or Shield Smite; ignores Block and Evasion.{% endcall %}
     {% call skill('warding-strike', 'opt', '12', [1, 3]) %}Triggers Judgment; Block and damage tolerance during Warding.{% endcall %}
-    {% call skill('flash-rampage', 'opt', '12 → 16', [4, 3]) %}Only on Staggered targets; −1s to all cooldowns per hit. In the PvE macro, but skip its Daevanion nodes — it falls off mid-game. The −1s pick needs level 16; at 12 take Multi-Hit and the MP restore.{% endcall %}
+    {% call skill('flash-rampage', 'opt', '12 → 16', [4, 3]) %}Only on Staggered targets; −1s to all cooldowns per hit. No longer in the PvE line: Leonis took it out as a straight DPS loss — Pummel fills the gaps better. Skip its Daevanion nodes too. The −1s pick needs level 16; at 12 take Multi-Hit and the MP restore.{% endcall %}
     {% call skill('shield-rush', 'opt', '12', [3, 1]) %}Dodge → dash, triggers Judgment; −10s cooldown and +10m range.{% endcall %}
     {% call skill('vicious-strike', 'opt', '10', []) %}Basic attack on LMB; 10 from skill points is enough.{% endcall %}
   </ul>
@@ -178,6 +178,7 @@
     {% call skill('nezekans-shield', 'opt', 'alt.', upto=15) %}Survivability swap; not good before 15.{% endcall %}
     {% call skill('comrade-in-arms', 'opt', 'group', upto=15) %}Survivability swap in dungeons, in place of Doom Shield. No use solo.{% endcall %}
     {% call skill('executing-blade', 'opt', 'solo · start', upto=10) %}trueeevil's day-one PvE pick: −30% Defense on the target, and Exposed at 10. Open with it, then Punishment. A solo and early alternative to Empyrean Lord's Punishment or Taunt.{% endcall %}
+    {% call skill('shield-of-protection', 'opt', 'safe swap', upto=10) %}Leonis' swap for Empyrean Lord's Punishment when the healer is weak or the fight is new: a full block that negates the damage and heals a little; at 10 you can move while it is up.{% endcall %}
     {% call skill('noble-armor', 'opt', 'solo · start', upto=5) %}Max HP and Defense for 2 minutes on a 2-minute cooldown — always up. trueeevil runs it solo; in a group Taunt and the stagger stigma matter more.{% endcall %}
   </ul>
   <div class="table-wrap"><table>
@@ -213,9 +214,9 @@
 
   <h3>1. Hotbar lines</h3>
   <div class="hotlines">
-    {% call hotline('RMB', 'Pummel line', ['annihilate', 'debilitating-smash', 'flash-rampage', 'pummel']) %}The in-game macro presses this line. Procs fire as soon as they light up; Pummel fills the rest. {{ s('flash-rampage') }} only hits a Staggered target — the rest of the time the macro skips it, and in stagger windows every hit takes 1s off all cooldowns.{% endcall %}
+    {% call hotline('RMB', 'Pummel line', ['annihilate', 'debilitating-smash', 'pummel']) %}The in-game macro presses this line. Procs fire as soon as they light up; Pummel fills every gap — and with the −1s Punishment pick each Pummel brings Punishment back sooner. {{ s('flash-rampage') }} is out (Leonis): in his test the line does more damage without it.{% endcall %}
     {% call hotline('Side', 'Judgment line', ['judgment', 'shield-smite', 'warding-strike', 'doom-shield']) %}Spam it: every shield skill triggers Judgment, and Judgment always wins.{% endcall %}
-    {% call hotline('RMB · PvX', 'Pummel line for PvX', ['doom-shield', 'annihilate', 'debilitating-smash', 'pummel']) %}The same button with the PvX preset: {{ s('flash-rampage') }} goes, {{ s('doom-shield') }} takes the top priority and the rest move down. It sits in the Judgment line too on purpose: here it opens the fight — a rush and a guaranteed knockdown on NPCs that unlocks {{ s('annihilate') }} — and at level 15 it resets on a kill, the key to PvX and pet farming.{% endcall %}
+    {% call hotline('RMB · PvX', 'Pummel line for PvX', ['doom-shield', 'annihilate', 'debilitating-smash', 'pummel']) %}The same button with the PvX preset: {{ s('doom-shield') }} takes the top priority. It sits in the Judgment line too on purpose: here it opens the fight — a rush and a guaranteed knockdown on NPCs that unlocks {{ s('annihilate') }} — and at level 15 it resets on a kill, the key to PvX and pet farming.{% endcall %}
   </div>
 
   <h3>2. Keys</h3>
@@ -279,6 +280,7 @@
     <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (TitanTheF's table) — leveling route</li>
     <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — how hotbar lines and the in-game macro work</li>
     <li><a href="https://www.youtube.com/watch?v=ZQVq7IYbLy8" target="_blank" rel="noopener">trueeevil — Ultimate Templar Guide for Aion 2: Skills, Stigmas, Rotations, Daevanion Board Explained</a> — day-two global setup: Executing Blade and Noble Armor for solo PvE, the −1s Punishment pick on Pummel, passive order</li>
+    <li><a href="https://www.youtube.com/watch?v=0_Fu1DlEKPc" target="_blank" rel="noopener">Leonis — How I'm Top DPS as Templar | Build Guide Update</a> — the −1s Punishment pick on Pummel, Flash Rampage out of the line, Shield of Protection as a safe swap</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>
