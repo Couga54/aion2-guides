@@ -357,7 +357,7 @@ p{margin:0 0 12px;}
 .my-pick svg{width:14px;height:14px;fill:#e2557a;filter:drop-shadow(0 0 5px rgba(226,85,122,.6));}
 .my-pick:hover svg,.my-pick:focus-visible svg{animation:my-pick-beat .9s ease-in-out infinite;}
 @keyframes my-pick-beat{0%,100%{transform:scale(1);}40%{transform:scale(1.25);}}
-.my-pick-tip{position:absolute;right:-6px;top:calc(100% + 8px);text-align:right;width:max-content;max-width:220px;padding:8px 11px;border:1px solid var(--border-2);border-radius:10px;background:var(--surface-2);box-shadow:var(--shadow);font-family:var(--font);font-size:.78rem;font-weight:400;line-height:1.4;color:var(--text-dim);opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .18s,transform .18s,visibility .18s;pointer-events:none;}
+.my-pick-tip{position:absolute;right:-6px;top:calc(100% + 8px);text-align:center;white-space:nowrap;padding:8px 11px;border:1px solid var(--border-2);border-radius:10px;background:var(--surface-2);box-shadow:var(--shadow);font-family:var(--font);font-size:.78rem;font-weight:400;line-height:1.4;color:var(--text-dim);opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .18s,transform .18s,visibility .18s;pointer-events:none;}
 .my-pick-tip b{display:block;color:#e2557a;font-weight:700;}
 .my-pick:hover .my-pick-tip,.my-pick:focus-visible .my-pick-tip{opacity:1;visibility:visible;transform:none;}
 @media (prefers-reduced-motion: reduce){ .my-pick:hover svg,.my-pick:focus-visible svg{animation:none;} }
