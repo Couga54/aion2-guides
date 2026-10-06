@@ -28,7 +28,7 @@
   },
   "ru": {
    "name": "Защитный барьер",
-   "desc": "Не дает ОЗ персонажа и участников группы в радиусе 40 м опуститься ниже 10% в течение 3s.\n\nНе может блокировать некоторые мощные атаки. Эффекты увеличения времени перезарядки не действуют.\nЭффекты Упорства, Спасения, Защитного барьера и Неудержимости не могут быть применены в течение 30s, если суммирование Неуязвимости заблокировано.",
+   "desc": "Не дает ОЗ персонажа и участников группы в радиусе 40 м опуститься ниже 10% в течение 3s\n\nНе может блокировать некоторые мощные атаки. Эффекты увеличения времени перезарядки не действуют.\nЭффекты Упорства, Спасения, Защитного барьера и Неудержимости не могут быть применены в течение 30s, если суммирование Неуязвимости заблокировано.",
    "specs": [
     {
      "level": 5,
@@ -82,7 +82,7 @@
   },
   "ru": {
    "name": "Разгром",
-   "desc": "Наносит {se_dmg:1801000011:SkillUIMinDmgSum}–{se_dmg:1801000011:SkillUIMaxDmgSum} ед. урона макс. 4 врагам в радиусе 4 м и восстанавливает 100 ОМ.",
+   "desc": "Наносит {se_dmg:1801000011:SkillUIMinDmgSum}–{se_dmg:1801000011:SkillUIMaxDmgSum} урона врагам (макс. 4) в радиусе 4 м и восстанавливает 100 ОМ.",
    "specs": [
     {
      "level": 8,
@@ -140,7 +140,7 @@
   },
   "ru": {
    "name": "Раскаленный удар",
-   "desc": "Наносит {se_dmg:1804000011:SkillUIMinDmgSum}–{se_dmg:1804000011:SkillUIMaxDmgSum} урона макс. 4 врагам в радиусе 4 м.\n\nУрон по шкале ошеломления — 2",
+   "desc": "Наносит {se_dmg:1804000011:SkillUIMinDmgSum}–{se_dmg:1804000011:SkillUIMaxDmgSum} урона врагам (макс. 4) в радиусе 4 м.\n\nУрон по шкале ошеломления — 2",
    "specs": [
     {
      "level": 8,
@@ -388,11 +388,11 @@
     },
     {
      "level": 12,
-     "text": "Добавление 2-ой комбинации [Дробящее пробитие]"
+     "text": "Добавление 2-й комбинации [Дробящее пробитие]"
     },
     {
      "level": 16,
-     "text": "Удаление времени перезарядки [Удара скалы]"
+     "text": "Убирает перезарядку [Удара скалы]"
     }
    ]
   }
@@ -804,11 +804,11 @@
     },
     {
      "level": 8,
-     "text": "Восстановление 1000 ОД при использовании [Снятия шока]"
+     "text": "При использовании [Снятия шока] восстанавливает 1000 ОД"
     },
     {
      "level": 8,
-     "text": "Восстановление 10% ОЗ при использовании [Снятия шока]"
+     "text": "При использовании [Снятия шока] восстанавливает 10% ОЗ"
     },
     {
      "level": 12,
@@ -870,7 +870,7 @@
     },
     {
      "level": 12,
-     "text": "Добавление 2-ой комбинации [Дробящий всплеск]"
+     "text": "Добавление 2-й комбинации [Дробящий всплеск]"
     },
     {
      "level": 16,
@@ -908,7 +908,7 @@
   },
   "ru": {
    "name": "Истребляющий огонь",
-   "desc": "Наносит {se_dmg:1822000011:SkillUIMinDmgSum}–{se_dmg:1822000011:SkillUIMaxDmgSum} урона макс. 4 врагам в радиусе 4 м от цели с шансом 50% накладывает Сбивание с ног.\nДля NPC сбивание с ног срабатывает гарантированно.\n\nУрон по шкале ошеломления — 50",
+   "desc": "Наносит {se_dmg:1822000011:SkillUIMinDmgSum}–{se_dmg:1822000011:SkillUIMaxDmgSum} урона врагам (макс. 4) в радиусе 4 м от цели с шансом 50% сбивает с ног.\nДля NPC сбивание с ног срабатывает гарантированно.\n\nУрон по шкале ошеломления — 50 ед.",
    "specs": [
     {
      "level": 5,
@@ -936,7 +936,7 @@
   "cooldown": 60000,
   "en": {
    "name": "Ensnaring Mark",
-   "desc": "Selects a target within 20m and deals {se_dmg:1823000011:SkillUIMinDmg}-{se_dmg:1823000011:SkillUIMaxDmg} damage to up to 4 enemies within 4m, with a 50% chance to inflict Seal for 5s.\n100% chance to inflict Seal on NPC targets.\n\n[Dark Crush] becomes available for 3s on skill use.",
+   "desc": "Selects a target within 20m and deals {se_dmg:1823000011:SkillUIMinDmg}-{se_dmg:1823000011:SkillUIMaxDmg} damage to up to 4 enemies within 4m. Has a 50% chance to inflict Seal for 5s.\n100% chance to inflict Seal on NPC targets.\n\n[Dark Crush] becomes available for 3s on skill use.",
    "specs": [
     {
      "level": 5,
@@ -1112,7 +1112,7 @@
   },
   "ru": {
    "name": "Удар с вращением",
-   "desc": "Наносит {se_dmg:1829000011:SkillUIMinDmgSum}–{se_dmg:1829000011:SkillUIMaxDmgSum} ед. урона макс. 4 врагам в радиусе 20 м от цели. Увелич. усиление крит. урона на 15% в теч. 30s при попадании. Суммируется не более 2 раз.\n\nПосле применения можно в течение 2s использовать умение [Удар скалы].\nУрон по шкале ошеломления —15 ед.",
+   "desc": "Наносит {se_dmg:1829000011:SkillUIMinDmgSum}–{se_dmg:1829000011:SkillUIMaxDmgSum} урона врагам (макс. 4) в радиусе 20 м от цели. Увелич. усиление крит. урона на 15% в теч. 30s при попадании. Суммируется не более 2 раз.\n\nПосле применения можно в течение 2s использовать умение [Удар скалы].\nУрон по шкале ошеломления —15 ед.",
    "specs": [
     {
      "level": 8,
@@ -1120,7 +1120,7 @@
     },
     {
      "level": 8,
-     "text": "Увеличение исцеления +30% (макс. 20%)"
+     "text": "Увеличение исцеления +10% (макс. 20%)"
     },
     {
      "level": 8,
@@ -1224,7 +1224,7 @@
   },
   "ru": {
    "name": "Ярость Маркутана",
-   "desc": "Наносит {se_dmg:1833000011:SkillUIMinDmg}~{se_dmg:1833000011:SkillUIMaxDmg} ед. урона макс. 4 врагам в радиусе 4 м от цели в пределах 20 м.\n\nПри использовании можно в теч. 3s использовать [Удар скалы].",
+   "desc": "Наносит {se_dmg:1833000011:SkillUIMinDmg}-{se_dmg:1833000011:SkillUIMaxDmg} урона врагам (макс. 4) в радиусе 4 м от цели в пределах 20 м.\n\nПри использовании можно в теч. 3s использовать [Удар скалы].",
    "specs": [
     {
      "level": 5,
@@ -1249,10 +1249,10 @@
   "id": "18420000",
   "category": "stigma",
   "icon": "guardian-blessing.webp",
-  "cooldown": 300000,
+  "cooldown": 120000,
   "en": {
    "name": "Guardian Blessing",
-   "desc": "Increases the caster's Max HP by 5.4% for 300s and immediately restores 5.4% HP.\n\nNot affected by buff dispel effects.",
+   "desc": "Increases the caster's Max HP by 5.4% for 120s and immediately restores 5.4% HP.\n\nNot affected by buff dispel effects.",
    "specs": [
     {
      "level": 5,
@@ -1274,7 +1274,7 @@
   },
   "ru": {
    "name": "Благословение хранителя",
-   "desc": "Увелич. макс. ОЗ на 5.4% и мгновенно восст. ОЗ на 5.4% в теч. 300s.\n\nЭффекты маг. усиления не действуют.",
+   "desc": "Увелич. макс. ОЗ на 5.4% и мгновенно восст. ОЗ на 5.4% в теч. 120s.\n\nЭффекты маг. усиления не действуют.",
    "specs": [
     {
      "level": 5,
@@ -1302,7 +1302,7 @@
   "cooldown": 120000,
   "en": {
    "name": "Assault Shock",
-   "desc": "Selects a target within 20m and deals {se_dmg:1870000021:SkillUIMinDmgSum}-{se_dmg:1870000021:SkillUIMaxDmgSum} damage to up to 4 enemies within 4m with a 30% chance to inflict Stun for 3s.\n100% chance to inflict Stun on NPC targets.\n\nIncreases Defense by up to 20% proportional to the number of targets hit.",
+   "desc": "Selects a target within 20m and deals {se_dmg:1870000021:SkillUIMinDmgSum}-{se_dmg:1870000021:SkillUIMaxDmgSum} damage to up to 4 enemies within 4m of the target, with a 30% chance to inflict Stun for 3s.\n100% chance to inflict Stun on NPC targets.\n\nIncreases Defense by up to 20% proportional to the number of targets hit.",
    "specs": [
     {
      "level": 5,
@@ -1314,7 +1314,7 @@
     },
     {
      "level": 15,
-     "text": "+10m Range"
+     "text": "+10m range"
     },
     {
      "level": 20,
@@ -1352,12 +1352,12 @@
   "cooldown": 0,
   "en": {
    "name": "Blessing of Life",
-   "desc": "Increases the caster's HP by 15300. Increases Max HP by an additional 1.5% and Heal Boost by 15300% of Attack.",
+   "desc": "Increases the caster's HP by 150. Increases Max HP by an additional 6.5% and Heal Boost by 15300% of Attack.",
    "specs": []
   },
   "ru": {
    "name": "Благословение жизни",
-   "desc": "Увелич. ОЗ на 15300. Дополнительно увеличивает макс. ОЗ на 1.5%, исцеление — на 15300% от АТК.",
+   "desc": "Увелич. ОЗ на 150. Дополнительно увеличивает макс. ОЗ на 6.5%, исцеление — на 15300% от АТК.",
    "specs": []
   }
  },
@@ -1453,7 +1453,7 @@
   },
   "ru": {
    "name": "Заклинание гнева",
-   "desc": "Наносит {se_dmg:1877000111:SkillUIMinDmg}–{se_dmg:1877000111:SkillUIMaxDmg} ед. дополнительного урона целям под действием Ошеломления или шок. эффекта.\n\nВремя перезарядки: 1s",
+   "desc": "Наносит {se_dmg:1877000111:SkillUIMinDmg}–{se_dmg:1877000111:SkillUIMaxDmg} доп. урона целям под действием Ошеломления или шок. эффекта.\n\nВремя перезарядки: 1s",
    "specs": []
   }
  },

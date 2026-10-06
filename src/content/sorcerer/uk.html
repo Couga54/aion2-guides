@@ -44,7 +44,7 @@
     {% call skill('blaze', 'must', '16', [2, 3]) %}Головна шкода по цілі з Fire Mark, відновлює ману. У групі — відкладена шкода й мультиудар; соло на важкому босі міняй відкладену шкоду на поглинання HP (aLuckyRO). На 20 додай скорочення Wish of Concentration.{% endcall %}
     {% call skill('wish-of-concentration', 'must', '16', [1, 3]) %}+10% додаткової атаки й +10% швидкості бою — обидва джерела беруть саме ці дві. На 20 додай −10 с до всіх перезарядок.{% endcall %}
     {% call skill('winters-shackles', 'must', '16', [2, 4]) %}+20% до шкоди в PvE на 5 с при влучанні — заради цього його й качають. На 16 — ще −15 с перезарядки; EUTOPIA замість неї бере ланцюжок.{% endcall %}
-    {% call skill('flame-arrow', 'must', '16', [3, 4]) %}Базова атака й твоє джерело мани. Перші дні: +20% відновлення MP; коли мани вистачає — +50% мультиудару. На 12 сама вішає Fire Mark, на 16 скидає Blaze.{% endcall %}
+    {% call skill('flame-arrow', 'must', '16', [3, 4]) %}Базова атака й твоє джерело мани. Перші дні: +20% відновлення MP; коли мани вистачає — +50% мультиудару. На 12: +5% шкоди стихій на 10 с, коли спрацьовує Pyroclasm; на 16 скидає Blaze.{% endcall %}
     {% call skill('ice-chain', 'opt', '12', [1, 3]) %}EUTOPIA прибирає з панелі Ice Chain, Frost і Frost Burst: їх довго вплітати, а шкоди вони дають мало. aLuckyRO тримає Ice Chain на 12 — кожне влучання знімає 1 с з Winter's Shackles. +20% швидкості умінь або −20% мани, якщо її бракує.{% endcall %}
     {% call skill('flame-scattershot', 'opt', '12', [2, 3]) %}Лише по приголомшених цілях, тож може стояти в макросі. Бери спеціалізацію «в русі», а на 12 — мультиудар.{% endcall %}
     {% call skill('frost', 'opt', 'прокачка', [0, 2]) %}Відновлює 200 MP — корисно, поки качаєшся й мани мало; у глобальному налаштуванні ендгейму йде з панелі.{% endcall %}
@@ -174,7 +174,7 @@
 {% call section('fight-lvl', t.lvl_combat, 'lvl') %}
   <div class="callout"><ul>
     <li><strong>Пачки:</strong> {{ s('bittercold-wind') }} (прикорінення + стягування) → {{ s('hellfire') }} → {{ s('ice-chain') }}, поки не впадуть.</li>
-    <li><strong>Елітки:</strong> {{ s('flame-arrow') }} заради Fire Mark → {{ s('blaze') }} → {{ s('firestorm') }}, кайтячи зі сповільненням від {{ s('ice-chain') }}.</li>
+    <li><strong>Елітки:</strong> {{ s('fire-mark') }} → {{ s('blaze') }} → {{ s('firestorm') }}, кайтячи зі сповільненням від {{ s('ice-chain') }}.</li>
     <li><strong>Мана:</strong> грай у режимі з таргетом, щоб базова атака не переривалася, і вплітай Flame Arrow.</li>
     <li><strong>Мало HP:</strong> {{ s('steel-barrier') }} і дистанція — у Sorcerer немає лікування.</li>
   </ul></div>

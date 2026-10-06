@@ -80,11 +80,11 @@
     },
     {
      "level": 12,
-     "text": "-1s [Punishment] cooldown on landing [Punishing Strike]"
+     "text": "-1s [Punishment] cooldown on hit"
     },
     {
      "level": 16,
-     "text": "Activates [Punishing Strike] 1 extra time"
+     "text": "[Punishing Strike] grants extra damage on hit"
     }
    ]
   },
@@ -98,7 +98,7 @@
     },
     {
      "level": 8,
-     "text": "Поглощение 3% ОЗ от [Удар возмездия]"
+     "text": "Поглощение 3% ОЗ от [Удара возмездия]"
     },
     {
      "level": 8,
@@ -106,11 +106,11 @@
     },
     {
      "level": 12,
-     "text": "Перезарядка [Кары] -1s при попадании [Ударом укора]"
+     "text": "Перезарядка [Кровавая месть] -1s при попадании"
     },
     {
      "level": 16,
-     "text": "[Удар возмездия] срабатывает еще раз"
+     "text": "Доп. урон при попадании атакой [Удар возмездия]"
     }
    ]
   }
@@ -198,7 +198,7 @@
   },
   "ru": {
    "name": "Кровавая месть",
-   "desc": "Наносит {se_dmg:1209000011:SkillUIMindmgsum}–{se_dmg:1209000311:SkillUIMaxdmgsum} урона макс. 4 врагам в радиусе 4 м от цели в пределах 20 м и активирует эффект «Палач» на 20s.\nПалач: увелич. меткость на 200, усиление урона в PvE на 20% и усиление урона в PvP на 10%\n\nМакс. 3 стадии заряда\nУрон по шкале ошеломления — от 20 до 35 ед.",
+   "desc": "Наносит {se_dmg:1209000011:SkillUIMindmgsum}–{se_dmg:1209000311:SkillUIMaxdmgsum} урона врагам (макс. 4) в радиусе 4 м от цели в пределах 20 м и активирует эффект «Палач» на 20s.\nПалач: увелич. меткость на 200, усиление урона в PvE на 20% и усиление урона в PvP на 10%\n\nМакс. 3 стадии заряда\nУрон по шкале ошеломления — от 20 до 35 ед.",
    "specs": [
     {
      "level": 8,
@@ -372,7 +372,7 @@
     },
     {
      "level": 15,
-     "text": "СКР движ. +5% на 3s при успешном блоке"
+     "text": "СКР движ. +20% на 3s при успешном блоке"
     },
     {
      "level": 20,
@@ -388,7 +388,7 @@
   "cooldown": 30000,
   "en": {
    "name": "Taunt",
-   "desc": "Deals {se_dmg:1212000011:SkillUIMindmgsum}-{se_dmg:1212000011:SkillUIMaxdmgsum} damage to a target within 20m and increases Enmity by 20000. Inflict Shrink for 15s on hit and has a 50% chance to inflict Taunt for 3s if the target is a player.\nShrink: Reduces Accuracy by 200 and Attack by 10%\n\n20 Stagger Gauge Damage",
+   "desc": "Deals {se_dmg:1212000011:SkillUIMindmgsum}-{se_dmg:1212000011:SkillUIMaxdmgsum} damage to a target within 20m and increases Enmity. Inflict Shrink for 15s on hit and has a 50% chance to inflict Taunt for 3s if the target is a player.\nShrink: Reduces Accuracy by 200 and Attack by 10%\n\n20 Stagger Gauge Damage",
    "specs": [
     {
      "level": 5,
@@ -410,7 +410,7 @@
   },
   "ru": {
    "name": "Провокация",
-   "desc": "Наносит {se_dmg:1212000011:SkillUIMindmgsum}–{se_dmg:1212000011:SkillUIMaxdmgsum} урона цели в радиусе 20 м и увеличивает Враждебность на 20000. Если цель — другой персонаж, переводит противника в состояние смятения на 15s при попадании и с шансом 50% — в состояние провокации на 3s.\nСмятение: снижает меткость на 200, АТК на 10%.\n\nУрон по шкале ошеломления —  20 ед.",
+   "desc": "Наносит {se_dmg:1212000011:SkillUIMindmgsum}–{se_dmg:1212000011:SkillUIMaxdmgsum} урона цели в радиусе 20 м и увеличивает Враждебность. Если цель — другой персонаж, переводит противника в состояние смятения на 15s при попадании и с шансом 50% — в состояние провокации на 3s.\nСмятение: снижает меткость на 200, АТК на 10%.\n\nУрон по шкале ошеломления —  20 ед.",
    "specs": [
     {
      "level": 5,
@@ -618,7 +618,7 @@
   },
   "ru": {
    "name": "Задержание",
-   "desc": "Выберите цель в радиусе 20 м, нанесите {se_dmg:1222000011:SkillUIMindmgsum}–{se_dmg:1222000011:SkillUIMaxdmgsum} урона макс. 4 врагам в радиусе 7 м от цели и притяните их в положение перед собой. Накладывает Сковывание на 3s.\n\n20 ед. урона по шкале Истощения",
+   "desc": "Выберите цель в радиусе 20 м, нанесите {se_dmg:1222000011:SkillUIMindmgsum}–{se_dmg:1222000011:SkillUIMaxdmgsum} урона врагам (макс. 4) в радиусе 7 м от цели и притяните их в положение перед собой. Накладывает Сковывание на 3s.\n\n20 ед. урона по шкале Истощения",
    "specs": [
     {
      "level": 5,
@@ -643,10 +643,10 @@
   "id": "12230000",
   "category": "stigma",
   "icon": "noble-armor.webp",
-  "cooldown": 300000,
+  "cooldown": 120000,
   "en": {
    "name": "Noble Armor",
-   "desc": "Increases Max HP by 5.4% for 300s and immediately restores HP by 5.4% of Max HP.\n\nNot affected by buff dispel effects.",
+   "desc": "Increases Max HP by 5.4% for 120s and immediately restores HP by 5.4% of Max HP.\n\nNot affected by buff dispel effects.",
    "specs": [
     {
      "level": 5,
@@ -667,8 +667,8 @@
    ]
   },
   "ru": {
-   "name": "Благородная кольчуга",
-   "desc": "Увелич. макс. ОЗ на 5.4% и мгновенно восст. 5.4% макс. ОЗ в теч. 300s.\n\nЭффекты маг. усиления не действуют.",
+   "name": "Благородные доспехи",
+   "desc": "Увелич. макс. ОЗ на 5.4% и мгновенно восст. 5.4% макс. ОЗ в теч. 120s.\n\nЭффекты маг. усиления не действуют.",
    "specs": [
     {
      "level": 5,
@@ -742,7 +742,7 @@
     },
     {
      "level": 16,
-     "text": "Удаление перезарядки [Суда]"
+     "text": "Убирает перезарядку"
     }
    ]
   }
@@ -978,7 +978,7 @@
   "cooldown": 60000,
   "en": {
    "name": "Empyrean Lord's Punishment",
-   "desc": "Selects a target within 20m and deals {se_dmg:1231000011:SkillUIMindmgsum}-{se_dmg:1231000011:SkillUIMaxdmgsum} damage to up to 4 enemies within 4m of the target. Has a 50% chance to inflict Stun for 3s.\n100% chance to inflict Stun on NPC targets.\n\n50 Stagger Gauge Damage",
+   "desc": "Selects a target within 20m and deals {se_dmg:1231000011:SkillUIMindmgsum}-{se_dmg:1231000011:SkillUIMaxdmgsum} damage to up to 4 enemies within 4m of the target with a 50% chance to inflict Stun for 3s.\n100% chance to inflict Stun on NPC targets.\n\n50 Stagger Gauge Damage",
    "specs": [
     {
      "level": 5,
@@ -1000,7 +1000,7 @@
   },
   "ru": {
    "name": "Кара Владыки Эмпирея",
-   "desc": "Выберите цель в радиусе 20 м и нанесите {se_dmg:1231000011:SkillUIMindmgsum}–{se_dmg:1231000011:SkillUIMaxdmgsum} урона макс. 4 врагам в радиусе 4 м от цели с шансом 50% наложить Оглушение на 3s.\nС шансом 100% накладывает Оглушение на NPC-цели.\n\n50 ед. урона по шкале Истощения",
+   "desc": "Выберите цель в радиусе 20 м и нанесите {se_dmg:1231000011:SkillUIMindmgsum}–{se_dmg:1231000011:SkillUIMaxdmgsum} урона врагам (макс. 4) в радиусе 4 м от цели с шансом 50% наложить Оглушение на 3s.\nС шансом 100% накладывает Оглушение на NPC-цели.\n\n50 ед. урона по шкале Истощения",
    "specs": [
     {
      "level": 5,
@@ -1098,7 +1098,7 @@
     },
     {
      "level": 16,
-     "text": "-1s all cooldowns on hit"
+     "text": "-1s to all skill cooldowns on hit"
     }
    ]
   },
@@ -1162,7 +1162,7 @@
   },
   "ru": {
    "name": "Кара хранителя",
-   "desc": "Наносит {se_dmg:1235000011:SkillUIMindmgsum}–{se_dmg:1235000011:SkillUIMaxdmgsum} урона макс. 4 врагам в радиусе 5 м. Мгновенно восст. 180–198 ОЗ и активирует эффект Покровительства на 10s. При использовании на 2s активирует [Суд].\nПокровительство: увелич. стойкость к урону в PvE на 20%, стойкость к урону в PvP на 10%\n\nУрон по шкале ошеломления — 5 ед.",
+   "desc": "Наносит {se_dmg:1235000011:SkillUIMindmgsum}–{se_dmg:1235000011:SkillUIMaxdmgsum} урона врагам (макс. 4) в радиусе 5 м. Мгновенно восст. 180–198 ОЗ и активирует эффект Покровительства на 10s. При использовании на 2s активирует [Суд].\nПокровительство: увелич. стойкость к урону в PvE на 20%, стойкость к урону в PvP на 10%\n\nУрон по шкале ошеломления — 5 ед.",
    "specs": [
     {
      "level": 8,
@@ -1216,7 +1216,7 @@
   },
   "ru": {
    "name": "Меч наказания",
-   "desc": "Наносит  {se_dmg:1241000011:SkillUIMindmgsum}–{se_dmg:1241000011:SkillUIMaxdmgsum} урона макс. 4 врагам в радиусе 4 м и снижает ЗЩТ на 30% на 5s. При атаке цели под воздействием шок. негат. эффектов наносит на 20% больше урона.\n\nУрон по шкале ошеломления — 20 ед.",
+   "desc": "Наносит  {se_dmg:1241000011:SkillUIMindmgsum}–{se_dmg:1241000011:SkillUIMaxdmgsum} урона врагам (макс. 4) в радиусе 4 м и снижает ЗЩТ на 30% на 5s. При атаке цели под воздействием шок. негат. эффектов наносит на 20% больше урона.\n\nУрон по шкале ошеломления — 20 ед.",
    "specs": [
     {
      "level": 5,
@@ -1252,7 +1252,7 @@
     },
     {
      "level": 8,
-     "text": "+10m Range"
+     "text": "+10m range"
     },
     {
      "level": 8,
@@ -1330,7 +1330,7 @@
     },
     {
      "level": 15,
-     "text": "+10m Range"
+     "text": "+10m range"
     },
     {
      "level": 20,

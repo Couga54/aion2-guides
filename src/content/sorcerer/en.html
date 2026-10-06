@@ -44,7 +44,7 @@
     {% call skill('blaze', 'must', '16', [2, 3]) %}Main damage on a Fire-Marked target; restores MP. Delayed damage and Multi-Hit in a group; solo on a hard boss swap the delay for the HP absorb (aLuckyRO). At 20 add the Wish of Concentration cooldown pick.{% endcall %}
     {% call skill('wish-of-concentration', 'must', '16', [1, 3]) %}+10% additional Attack and +10% Combat Speed — both sources take these two. At 20 add −10s to all cooldowns.{% endcall %}
     {% call skill('winters-shackles', 'must', '16', [2, 4]) %}+20% PvE Damage Boost for 5s on landing — the reason to level it. With −15s cooldown at 16; EUTOPIA takes the chain skill instead.{% endcall %}
-    {% call skill('flame-arrow', 'must', '16', [3, 4]) %}Basic attack and your mana engine. First days: +20% MP restored; +50% Multi-Hit once mana holds. At 12 it applies Fire Mark itself, at 16 it resets Blaze.{% endcall %}
+    {% call skill('flame-arrow', 'must', '16', [3, 4]) %}Basic attack and your mana engine. First days: +20% MP restored; +50% Multi-Hit once mana holds. At 12: +5% elemental damage for 10s whenever Pyroclasm triggers; at 16 it resets Blaze.{% endcall %}
     {% call skill('ice-chain', 'opt', '12', [1, 3]) %}EUTOPIA takes Ice Chain, Frost and Frost Burst off the bar: they are slow to weave in and add little damage. aLuckyRO keeps Ice Chain at 12 — every hit takes 1s off Winter's Shackles. +20% Skill Speed, or −20% MP if mana runs short.{% endcall %}
     {% call skill('flame-scattershot', 'opt', '12', [2, 3]) %}Only on Staggered targets, so it can sit in the macro. Take the mobile pick, and Multi-Hit at 12.{% endcall %}
     {% call skill('frost', 'opt', 'leveling', [0, 2]) %}Restores 200 MP — handy while leveling and short on mana; it leaves the bar in the global endgame setup.{% endcall %}
@@ -174,7 +174,7 @@
 {% call section('fight-lvl', t.lvl_combat, 'lvl') %}
   <div class="callout"><ul>
     <li><strong>Packs:</strong> {{ s('bittercold-wind') }} (root + pull) → {{ s('hellfire') }} → {{ s('ice-chain') }} until they drop.</li>
-    <li><strong>Elites:</strong> {{ s('flame-arrow') }} for Fire Mark → {{ s('blaze') }} → {{ s('firestorm') }}, kiting with {{ s('ice-chain') }} slows.</li>
+    <li><strong>Elites:</strong> {{ s('fire-mark') }} → {{ s('blaze') }} → {{ s('firestorm') }}, kiting with {{ s('ice-chain') }} slows.</li>
     <li><strong>Mana:</strong> use target mode so the basic attack keeps running, and weave Flame Arrow.</li>
     <li><strong>Low HP:</strong> {{ s('steel-barrier') }} and distance — the Sorcerer has no heal.</li>
   </ul></div>

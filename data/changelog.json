@@ -2,6 +2,18 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-10-06-skills",
+      "date": "2026-10-06",
+      "items": [
+        {
+          "en": "<strong>Fixed skill data and guides</strong> — skill specializations re-checked against the live client for all classes. Cleric: Radiant Recovery now has +1 consecutive use and the guide takes it at 16. Assassin (Shadowstrike), Sorcerer (Flame Arrow) and Templar (Pummel): the guide texts now match what the options do.",
+          "ru": "<strong>Исправлены ошибки в данных скиллов и гайдах</strong> — специализации всех классов сверены с живым клиентом. Целитель: у Света исцеления есть +1 применение подряд, и гайд берёт его на 16. Убийца (Удар из сумрака), Волшебник (Огненная стрела) и Страж (Град ударов): тексты гайдов теперь совпадают с тем, что делают специализации.",
+          "uk": "<strong>Виправлено помилки в даних скілів і гайдах</strong> — спеціалізації всіх класів звірено з живим клієнтом. Cleric: у Radiant Recovery є +1 використання поспіль, і гайд бере його на 16. Assassin (Shadowstrike), Sorcerer (Flame Arrow) і Templar (Pummel): тексти гайдів тепер відповідають тому, що роблять спеціалізації.",
+          "tr": "<strong>Yetenek verilerindeki ve rehberlerdeki hatalar düzeltildi</strong> — tüm sınıfların uzmanlaşmaları canlı istemciyle karşılaştırıldı. Cleric: Radiant Recovery'de +1 art arda kullanım var ve rehber onu 16'da alıyor. Assassin (Shadowstrike), Sorcerer (Flame Arrow) ve Templar (Pummel): rehber metinleri artık seçeneklerin yaptığıyla uyuşuyor."
+        }
+      ]
+    },
+    {
       "id": "2026-10-06",
       "date": "2026-10-06",
       "items": [

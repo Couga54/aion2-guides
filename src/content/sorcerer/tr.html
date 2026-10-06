@@ -44,7 +44,7 @@
     {% call skill('blaze', 'must', '16', [2, 3]) %}Fire Mark'lı hedefte ana hasar; MP yeniler. Grupta gecikmeli hasar ve Multi-Hit; zor bir bossta soloysan gecikmeyi HP emmeyle değiştir (aLuckyRO). 20'de Wish of Concentration bekleme süresi seçimini ekle.{% endcall %}
     {% call skill('wish-of-concentration', 'must', '16', [1, 3]) %}+%10 ek Attack ve +%10 Combat Speed — iki kaynak da bu ikisini alıyor. 20'de tüm bekleme sürelerine −10 sn ekle.{% endcall %}
     {% call skill('winters-shackles', 'must', '16', [2, 4]) %}İsabet edince 5 sn boyunca +%20 PvE Damage Boost — geliştirme nedeni bu. 16'da −15 sn bekleme süresiyle; EUTOPIA yerine zincir yeteneğini alıyor.{% endcall %}
-    {% call skill('flame-arrow', 'must', '16', [3, 4]) %}Temel saldırı ve mana motorun. İlk günler: +%20 MP yenileme; mana dayanınca +%50 Multi-Hit. 12'de Fire Mark'ı kendisi uygular, 16'da Blaze'i sıfırlar.{% endcall %}
+    {% call skill('flame-arrow', 'must', '16', [3, 4]) %}Temel saldırı ve mana motorun. İlk günler: +%20 MP yenileme; mana dayanınca +%50 Multi-Hit. 12'de: Pyroclasm tetiklendiğinde 10 sn boyunca +%5 element hasarı; 16'da Blaze'i sıfırlar.{% endcall %}
     {% call skill('ice-chain', 'opt', '12', [1, 3]) %}EUTOPIA Ice Chain, Frost ve Frost Burst'ü çubuktan çıkarıyor: araya örmesi yavaş ve az hasar katıyorlar. aLuckyRO Ice Chain'i 12'de tutuyor — her vuruş Winter's Shackles'tan 1 sn düşer. +%20 Skill Speed, ya da mana yetmiyorsa −%20 MP.{% endcall %}
     {% call skill('flame-scattershot', 'opt', '12', [2, 3]) %}Yalnızca Stagger'daki hedeflerde, bu yüzden makroda durabilir. Hareket seçimini ve 12'de Multi-Hit'i al.{% endcall %}
     {% call skill('frost', 'opt', 'seviye', [0, 2]) %}200 MP yeniler — seviye atlarken mana azken kullanışlı; global endgame düzeninde çubuktan çıkar.{% endcall %}
@@ -174,7 +174,7 @@
 {% call section('fight-lvl', t.lvl_combat, 'lvl') %}
   <div class="callout"><ul>
     <li><strong>Gruplar:</strong> {{ s('bittercold-wind') }} (kökleme + çekme) → {{ s('hellfire') }} → düşene kadar {{ s('ice-chain') }}.</li>
-    <li><strong>Elitler:</strong> Fire Mark için {{ s('flame-arrow') }} → {{ s('blaze') }} → {{ s('firestorm') }}, {{ s('ice-chain') }} yavaşlatmalarıyla kite ederek.</li>
+    <li><strong>Elitler:</strong> {{ s('fire-mark') }} → {{ s('blaze') }} → {{ s('firestorm') }}, {{ s('ice-chain') }} yavaşlatmalarıyla kite ederek.</li>
     <li><strong>Mana:</strong> temel saldırı sürsün diye hedef modunu kullan ve Flame Arrow'u araya ör.</li>
     <li><strong>Düşük HP:</strong> {{ s('steel-barrier') }} ve mesafe — Sorcerer'ın iyileştirmesi yok.</li>
   </ul></div>

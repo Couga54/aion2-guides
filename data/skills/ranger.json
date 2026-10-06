@@ -6,7 +6,7 @@
   "cooldown": 90000,
   "en": {
    "name": "Supporting Fire",
-   "desc": "Summons an orb that provides supporting fire for 15s near the caster. The orb has a 25% chance to fire a shot dealing {se_dmg:1438000711:SkillUIMinDmgsum}-{se_dmg:1438000711:SkillUIMaxDmgsum} damage and absorbing 1.5% HP.\n\nFiring Cooldown: 0.5s",
+   "desc": "Summons an orb that provides supporting fire for 15s near the caster. The orb has a 25% chance to fire a shot dealing {se_dmg:1438000711:SkillUIMinDmgsum}-{se_dmg:1438000711:SkillUIMaxDmgsum} Wind damage and absorbing 1.5% HP.\n\nFiring Cooldown: 0.5s",
    "specs": [
     {
      "level": 5,
@@ -28,7 +28,7 @@
   },
   "ru": {
    "name": "Поддерживающий огонь",
-   "desc": "На 15s призывает в область вокруг себя сферу, ведущую огонь поддержки. Сфера с шансом 25% наносит {se_dmg:1438000711:SkillUIMinDmgsum}-{se_dmg:1438000711:SkillUIMaxDmgsum} урона и ведет огонь поддержки, поглощающий 1.5% ОЗ.\n\nПерезарядка стрельбы: 0.5s",
+   "desc": "На 15s призывает в область вокруг себя сферу, ведущую огонь поддержки. Сфера с шансом 25% наносит {se_dmg:1438000711:SkillUIMinDmgsum}-{se_dmg:1438000711:SkillUIMaxDmgsum} урона стихии воздуха и ведет огонь поддержки, поглощающий 1.5% ОЗ.\n\nПерезарядка стрельбы: 0.5s",
    "specs": [
     {
      "level": 5,
@@ -56,7 +56,7 @@
   "cooldown": 20000,
   "en": {
    "name": "Deadshot",
-   "desc": "Deals {se_dmg:1401000011:SkillUIMinDmgsum}-{se_dmg:1401000311:SkillUIMaxDmgsum} damage to a target within 20m. Increases damage by 35% if the caster has Precision.\n\nMax 3 Charge Levels\n10-16 Stagger Gauge Damage",
+   "desc": "Deals {se_dmg:1401000011:SkillUIMinDmgsum}-{se_dmg:1401000311:SkillUIMaxDmgsum} Wind damage to a target within 20m. Increases damage by 35% if the caster has Precision.\n\nMax 3 Charge Levels\n10-16 Stagger Gauge Damage",
    "specs": [
     {
      "level": 8,
@@ -82,7 +82,7 @@
   },
   "ru": {
    "name": "Прицельный выстрел",
-   "desc": "Наносит {se_dmg:1401000011:SkillUIMinDmgsum}–{se_dmg:1401000311:SkillUIMaxDmgsum} урона цели в пределах 20 м. В состоянии [Зоркого глаза] урон увеличивается на 35%.\n\nМакс. 3 стадии заряда\nУрон по шкале ошеломления — 10–16",
+   "desc": "Наносит {se_dmg:1401000011:SkillUIMinDmgsum}–{se_dmg:1401000311:SkillUIMaxDmgsum} урона стихии воздуха цели в пределах 20 м. В состоянии [Зоркого глаза] урон увеличивается на 35%.\n\nМакс. 3 стадии заряда\nУрон по шкале ошеломления — 10–16 ед.",
    "specs": [
     {
      "level": 8,
@@ -114,7 +114,7 @@
   "cooldown": 0,
   "en": {
    "name": "Snipe",
-   "desc": "Deals {se_dmg:1402000011:SkillUIMinDmgsum}-{se_dmg:1402000011:SkillUIMaxDmgsum} damage to a target within 20m and restores 120 MP.",
+   "desc": "Deals {se_dmg:1402000011:SkillUIMinDmgsum}-{se_dmg:1402000011:SkillUIMaxDmgsum} Wind damage to a target within 20m and restores 120 MP.",
    "specs": [
     {
      "level": 8,
@@ -140,7 +140,7 @@
   },
   "ru": {
    "name": "Меткий выстрел",
-   "desc": "Наносит {se_dmg:1402000011:SkillUIMinDmgsum}-{se_dmg:1402000011:SkillUIMaxDmgsum} урона цели в радиусе 20 м и восстанавливает 120 ОМ.",
+   "desc": "Наносит {se_dmg:1402000011:SkillUIMinDmgsum}-{se_dmg:1402000011:SkillUIMaxDmgsum} урона стихии воздуха цели в радиусе 20 м и восстанавливает 120 ОМ.",
    "specs": [
     {
      "level": 8,
@@ -172,7 +172,7 @@
   "cooldown": 5000,
   "en": {
    "name": "Drill Dart",
-   "desc": "Selects a target within 20m and deals {se_dmg:1405000011:SkillUIMinDmgsum}-{se_dmg:1405000011:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m of the target and restores 100 MP on landing a Critical Hit. Inflicts Bleed on targets, dealing {se_abe_dmg:1405000012:1405000012:SkillUIDotMinDmg:tick}-{se_abe_dmg:1405000012:1405000012:SkillUIDotMaxDmg:tick} damage every 1s for 6s and reducing Incoming Heal by 60%.\n\nIncoming Heal reduction from [Drill Dart], [Debilitating Smash], and [Firestorm] does not stack.\n\n5 Stagger Gauge Damage",
+   "desc": "Selects a target within 20m and deals {se_dmg:1405000011:SkillUIMinDmgsum}-{se_dmg:1405000011:SkillUIMaxDmgsum} Fire damage to up to 4 enemies within 4m of the target and restores 100 MP on landing a Critical Hit. Inflicts Bleed on targets, dealing {se_abe_dmg:1405000012:1405000012:SkillUIDotMinDmg:tick}-{se_abe_dmg:1405000012:1405000012:SkillUIDotMaxDmg:tick} Fire damage every 1s for 6s and reducing Incoming Heal by 60%.\n\nIncoming Heal reduction from [Drill Dart], [Debilitating Smash], and [Firestorm] does not stack.\n\n5 Stagger Gauge Damage",
    "specs": [
     {
      "level": 8,
@@ -198,7 +198,7 @@
   },
   "ru": {
    "name": "Пронзающая стрела",
-   "desc": "При крит. ударе наносит {se_dmg:1405000011:SkillUIMinDmgsum}–{se_dmg:1405000011:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м от цели в пределах 20 м и восстанавливает 100 ОМ. На 6s накладывает на цель Потеря крови: каждые 1 сек. цель получает {se_abe_dmg:1405000012:1405000012:SkillUIDotMinDmg:tick}–{se_abe_dmg:1405000012:1405000012:SkillUIDotMaxDmg:tick} урона, получ. исцеление -60%.\n\nСнижение получ. исцеления от [Пронзающей стрелы], [Удара изнеможения] и [Огненного гарпуна] не суммируется.\n\nУрон по шкале ошеломления — 5",
+   "desc": "При крит. ударе наносит {se_dmg:1405000011:SkillUIMinDmgsum}–{se_dmg:1405000011:SkillUIMaxDmgsum} урона стихии огня врагам (макс. 4) в радиусе 4 м от цели в пределах 20 м и восстанавливает 100 ОМ. На 6s активирует Потерю крови: каждые 1 сек. цель получает {se_abe_dmg:1405000012:1405000012:SkillUIDotMinDmg:tick}–{se_abe_dmg:1405000012:1405000012:SkillUIDotMaxDmg:tick} урона стихии огня, получ. исцеление -60%.\n\nСнижение получ. исцеления от [Пронзающей стрелы], [Удара изнеможения] и [Огненного гарпуна] не суммируется.\n\nУрон по шкале ошеломления — 5 ед.",
    "specs": [
     {
      "level": 8,
@@ -230,7 +230,7 @@
   "cooldown": 45000,
   "en": {
    "name": "Griffon Arrow",
-   "desc": "Selects a target within 20m and deals {se_dmg:1406000011:SkillUIMinDmgsum}-{se_dmg:1406000011:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m. Inflicts Crimson Flames for 10s.\nCrimson Flames: Takes {se_abe_dmg:1406000012:1406000011:SkillUIDotMinDmg:tick}-{se_abe_dmg:1406000012:1406000011:SkillUIDotMaxDmg:tick} Fire Damage over Time every 1s. Damage over Time amount increases when targets move.\n\n20 Stagger Gauge Damage",
+   "desc": "Selects a target within 20m and deals {se_dmg:1406000011:SkillUIMinDmgsum}-{se_dmg:1406000011:SkillUIMaxDmgsum} Fire damage to up to 4 enemies within 4m. Inflicts Crimson Flames for 10s.\nCrimson Flames: Takes {se_abe_dmg:1406000012:1406000011:SkillUIDotMinDmg:tick}-{se_abe_dmg:1406000012:1406000011:SkillUIDotMaxDmg:tick} Fire Damage over Time every 1s. Damage over Time amount increases when targets move.\n\n20 Stagger Gauge Damage",
    "specs": [
     {
      "level": 5,
@@ -252,7 +252,7 @@
   },
   "ru": {
    "name": "Стрела грифона",
-   "desc": "Наносит {se_dmg:1406000011:SkillUIMinDmgsum}-{se_dmg:1406000011:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в пределах 20 м, и на 10s активирует состояние «Искра».\nИскра: каждую 1 сек. получает {se_abe_dmg:1406000012:1406000011:SkillUIDotMinDmg:tick}-{se_abe_dmg:1406000012:1406000011:SkillUIDotMaxDmg:tick} постоянного урона стихии огня. Пост. урон увеличивается при передвижении.\n\nУрон по шкале ошеломления — 20 ед.",
+   "desc": "Наносит {se_dmg:1406000011:SkillUIMinDmgsum}-{se_dmg:1406000011:SkillUIMaxDmgsum} урона стихии огня врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в пределах 20 м, и на 10s активирует состояние «Искра».\nИскра: каждую 1 сек. получает {se_abe_dmg:1406000012:1406000011:SkillUIDotMinDmg:tick}-{se_abe_dmg:1406000012:1406000011:SkillUIDotMaxDmg:tick} постоянного урона стихии огня. Пост. урон увеличивается при передвижении.\n\nУрон по шкале ошеломления — 20 ед.",
    "specs": [
     {
      "level": 5,
@@ -280,7 +280,7 @@
   "cooldown": 20000,
   "en": {
    "name": "Suppressing Arrow",
-   "desc": "Deals {se_dmg:1407000011:SkillUIMinDmgsum}-{se_dmg:1407000011:SkillUIMaxDmgsum} damage to a target within 20m with a 40% chance to inflict Stun for 3s while Precision is active.\n100% chance to inflict Stun on NPC targets.\n\n10 Stagger Gauge Damage",
+   "desc": "Deals {se_dmg:1407000011:SkillUIMinDmgsum}-{se_dmg:1407000011:SkillUIMaxDmgsum} Wind damage to a target within 20m with a 40% chance to inflict Stun for 3s while Precision is active.\n100% chance to inflict Stun on NPC targets.\n\n10 Stagger Gauge Damage",
    "specs": [
     {
      "level": 8,
@@ -306,7 +306,7 @@
   },
   "ru": {
    "name": "Поражающая стрела",
-   "desc": "В состоянии «Зоркий глаз» наносит {se_dmg:1407000011:SkillUIMinDmgsum}-{se_dmg:1407000011:SkillUIMaxDmgsum} урона цели в радиусе 20 м и с шансом 40% оглушает ее на 3s\nДля NPC оглушение срабатывает гарантированно.\n\nУрон по шкале ошеломления — 10",
+   "desc": "В состоянии «Зоркий глаз» наносит {se_dmg:1407000011:SkillUIMinDmgsum}-{se_dmg:1407000011:SkillUIMaxDmgsum} урона стихии воздуха цели в радиусе 20 м и с шансом 40% оглушает ее на 3s\nДля NPC оглушение срабатывает гарантированно.\n\nУрон по шкале ошеломления — 10 ед.",
    "specs": [
     {
      "level": 8,
@@ -338,7 +338,7 @@
   "cooldown": 20000,
   "en": {
    "name": "Burst Arrow",
-   "desc": "Selects a target afflicted with Slow or Root within 20m and deals {se_dmg:1408000011:SkillUIMinDmgsum}-{se_dmg:1408000011:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m of the target.\n\n15 Stagger Gauge Damage",
+   "desc": "Selects a target afflicted with Slow or Root within 20m and deals {se_dmg:1408000011:SkillUIMinDmgsum}-{se_dmg:1408000011:SkillUIMaxDmgsum} Wind damage to up to 4 enemies within 4m of the target.\n\n15 Stagger Gauge Damage",
    "specs": [
     {
      "level": 8,
@@ -364,7 +364,7 @@
   },
   "ru": {
    "name": "Рассекающая стрела",
-   "desc": "Наносит {se_dmg:1408000011:SkillUIMinDmgsum}-{se_dmg:1408000011:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м вокруг цели в состоянии Замедления или Плена, находящейся в пределах 20 м.\n\nУрон по шкале ошеломления — 15 ед.",
+   "desc": "Наносит {se_dmg:1408000011:SkillUIMinDmgsum}-{se_dmg:1408000011:SkillUIMaxDmgsum} урона стихии воздуха врагам (макс. 4) в радиусе 4 м вокруг цели в состоянии Замедления или Плена, находящейся в пределах 20 м.\n\nУрон по шкале ошеломления — 15 ед.",
    "specs": [
     {
      "level": 8,
@@ -396,7 +396,7 @@
   "cooldown": 10000,
   "en": {
    "name": "Marking Shot",
-   "desc": "Deals {se_dmg:1409001021:SkillUIMinDmgsum}-{se_dmg:1409001021:SkillUIMaxDmgsum} damage to a target within 20m. Moves the caster in the input direction and grants Precision for 10s.\nPrecision: Increases Critical Hit by 300\n\n7 Stagger Gauge Damage",
+   "desc": "Deals {se_dmg:1409001021:SkillUIMinDmgsum}-{se_dmg:1409001021:SkillUIMaxDmgsum} Wind damage to a target within 20m. Moves the caster in the input direction and grants Precision for 10s.\nPrecision: Increases Critical Hit by 300\n\n7 Stagger Gauge Damage",
    "specs": [
     {
      "level": 8,
@@ -422,7 +422,7 @@
   },
   "ru": {
    "name": "Помечающий выстрел",
-   "desc": "Наносит {se_dmg:1409001021:SkillUIMinDmgsum}-{se_dmg:1409001021:SkillUIMaxDmgsum} урона цели в радиусе 20 м. Перемещается в выбранном направлении и на 10s активирует Зоркий глаз.\nЗоркий глаз: крит. удар +300\n\nУрон по шкале ошеломления — 7",
+   "desc": "Наносит {se_dmg:1409001021:SkillUIMinDmgsum}-{se_dmg:1409001021:SkillUIMaxDmgsum} урона стихии воздуха цели в радиусе 20 м. Перемещается в выбранном направлении и на 10s активирует Зоркий глаз.\nЗоркий глаз: крит. удар +300\n\nУрон по шкале ошеломления — 7 ед.",
    "specs": [
     {
      "level": 8,
@@ -454,7 +454,7 @@
   "cooldown": 20000,
   "en": {
    "name": "Gale Arrow",
-   "desc": "Selects a target within 20m and deals {se_dmg:1411000011:SkillUIMinDmgsum}-{se_dmg:1411000011:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m of the target. Grants Gale to the caster for 10s.\nGale: Increases Combat Speed by 7%, PvE Damage Boost by 7%, and PvP Damage Boost by 3.5%\n\n10 Stagger Gauge Damage",
+   "desc": "Selects a target within 20m and deals {se_dmg:1411000011:SkillUIMinDmgsum}-{se_dmg:1411000011:SkillUIMaxDmgsum} Wind damage to up to 4 enemies within 4m of the target. Grants Gale to the caster for 10s.\nGale: Increases Combat Speed by 7%, PvE Damage Boost by 7%, and PvP Damage Boost by 3.5%\n\n10 Stagger Gauge Damage",
    "specs": [
     {
      "level": 8,
@@ -480,7 +480,7 @@
   },
   "ru": {
    "name": "Шквал стрел",
-   "desc": "Наносит {se_dmg:1411000011:SkillUIMinDmgsum}-{se_dmg:1411000011:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в пределах 20 м. Активируется состояние Ярость ветра на 10s.\nЯрость ветра: СКР боя +7%, усил. урона в PvE на 7%, усил. урона в PvP на 3.5%.\n\nУрон по шкале ошеломления — 10 ед.",
+   "desc": "Наносит {se_dmg:1411000011:SkillUIMinDmgsum}-{se_dmg:1411000011:SkillUIMaxDmgsum} урона стихии воздуха врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в пределах 20 м. Активируется состояние Ярость ветра на 10s.\nЯрость ветра: СКР боя +7%, усил. урона в PvE на 7%, усил. урона в PvP на 3.5%.\n\nУрон по шкале ошеломления — 10 ед.",
    "specs": [
     {
      "level": 8,
@@ -512,7 +512,7 @@
   "cooldown": 30000,
   "en": {
    "name": "Ambush Kick",
-   "desc": "Moves behind a target within 5m and deals {se_dmg:1412000021:SkillUIMinDmgsum}-{se_dmg:1412000021:SkillUIMaxDmgsum} damage and inflicts Knock Back. The caster moves back.",
+   "desc": "Moves behind a target within 5m and deals {se_dmg:1412000021:SkillUIMinDmgsum}-{se_dmg:1412000021:SkillUIMaxDmgsum} Wind damage and inflicts Knock Back. The caster moves back.",
    "specs": [
     {
      "level": 5,
@@ -534,7 +534,7 @@
   },
   "ru": {
    "name": "Внезапный толчок",
-   "desc": "Перемещается за цель, находящуюся в радиусе 5 м, наносит {se_dmg:1412000021:SkillUIMinDmgsum}-{se_dmg:1412000021:SkillUIMaxDmgsum} урона, отталкивает ее и перемещается назад.",
+   "desc": "Перемещается за цель, находящуюся в радиусе 5 м, наносит {se_dmg:1412000021:SkillUIMinDmgsum}-{se_dmg:1412000021:SkillUIMaxDmgsum} урона стихии воздуха, отталкивает ее и перемещается назад.",
    "specs": [
     {
      "level": 5,
@@ -562,7 +562,7 @@
   "cooldown": 15000,
   "en": {
    "name": "Snare Shot",
-   "desc": "Selects a target within 20m and deals {se_dmg:1413000011:SkillUIMinDmgsum}-{se_dmg:1413000011:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m of the target. Inflicts Slow, reducing Move Speed by 40% for 5s.\n\n10 Stagger Gauge Damage",
+   "desc": "Selects a target within 20m and deals {se_dmg:1413000011:SkillUIMinDmgsum}-{se_dmg:1413000011:SkillUIMaxDmgsum} Earth damage to up to 4 enemies within 4m of the target. Inflicts Slow, reducing Move Speed by 40% for 5s.\n\n10 Stagger Gauge Damage",
    "specs": [
     {
      "level": 8,
@@ -588,7 +588,7 @@
   },
   "ru": {
    "name": "Опутывающий выстрел",
-   "desc": "Наносит {se_dmg:1413000011:SkillUIMinDmgsum}-{se_dmg:1413000011:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и на 5s замедляет их, снижающее СКР движ. на 40%.\n\nУрон по шкале ошеломления — 10",
+   "desc": "Наносит {se_dmg:1413000011:SkillUIMinDmgsum}-{se_dmg:1413000011:SkillUIMaxDmgsum} урона стихии земли врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в пределах 20 м, и на 5s замедляет их, снижающее СКР движ. на 40%.\n\nУрон по шкале ошеломления — 10 ед.",
    "specs": [
     {
      "level": 8,
@@ -604,7 +604,7 @@
     },
     {
      "level": 12,
-     "text": "Добавление 2-ой комбинации [Сковывающая стрела]"
+     "text": "Добавление 2-й комбинации [Сковывающая стрела]"
     },
     {
      "level": 16,
@@ -620,7 +620,7 @@
   "cooldown": 30000,
   "en": {
    "name": "Illusory Arrow",
-   "desc": "Deals {se_dmg:1415000011:SkillUIMinDmgsum}-{se_dmg:1415000011:SkillUIMaxDmgsum} to a target within 20m and inflicts Blind for 3s.\n\n15 Stagger Gauge Damage",
+   "desc": "Deals {se_dmg:1415000011:SkillUIMinDmgsum}-{se_dmg:1415000011:SkillUIMaxDmgsum} Wind damage to a target within 20m and inflicts Blind for 3s.\n\n15 Stagger Gauge Damage",
    "specs": [
     {
      "level": 5,
@@ -642,7 +642,7 @@
   },
   "ru": {
    "name": "Иллюзорная стрела",
-   "desc": "Наносит {se_dmg:1415000011:SkillUIMinDmgsum}-{se_dmg:1415000011:SkillUIMaxDmgsum} урона цели в радиусе 20 м и ослепляет ее на 3s\n\nУрон по шкале ошеломления — 15 ед.",
+   "desc": "Наносит {se_dmg:1415000011:SkillUIMinDmgsum}-{se_dmg:1415000011:SkillUIMaxDmgsum} урона стихии воздуха цели в радиусе 20 м и ослепляет ее на 3s\n\nУрон по шкале ошеломления — 15 ед.",
    "specs": [
     {
      "level": 5,
@@ -670,7 +670,7 @@
   "cooldown": 60000,
   "en": {
    "name": "Sealing Arrow",
-   "desc": "Deals {se_dmg:1416000011:SkillUIMinDmgsum}-{se_dmg:1416000011:SkillUIMaxDmgsum} damage to a target within 20m. Has a 75% chance to inflict Seal for 5s.\n100% chance to inflict Seal on NPC targets.\n\n20 Stagger Gauge Damage",
+   "desc": "Deals {se_dmg:1416000011:SkillUIMinDmgsum}-{se_dmg:1416000011:SkillUIMaxDmgsum} Wind damage to a target within 20m. Has a 75% chance to inflict Seal for 5s.\n100% chance to inflict Seal on NPC targets.\n\n20 Stagger Gauge Damage",
    "specs": [
     {
      "level": 5,
@@ -692,7 +692,7 @@
   },
   "ru": {
    "name": "Стрела печати",
-   "desc": "Наносит {se_dmg:1416000011:SkillUIMinDmgsum}-{se_dmg:1416000011:SkillUIMaxDmgsum} урона цели в радиусе 20 м и с шансом 75% накладывает на нее Запечатывание на 5s\nДля NPC запечатывание гарантировано.\n\nУрон по шкале ошеломления — 20",
+   "desc": "Наносит {se_dmg:1416000011:SkillUIMinDmgsum}-{se_dmg:1416000011:SkillUIMaxDmgsum} урона стихии воздуха цели в радиусе 20 м и с шансом 75% накладывает на нее Запечатывание на 5s\nДля NPC запечатывание гарантировано.\n\nУрон по шкале ошеломления — 20 ед.",
    "specs": [
     {
      "level": 5,
@@ -720,7 +720,7 @@
   "cooldown": 20000,
   "en": {
    "name": "Explosion Trap",
-   "desc": "Sets an explosive trap at the caster's location. The trap lasts for 10 seconds and deals {se_dmg:1417000111:SkillUIMinDmgsum}-{se_dmg:1417000111:SkillUIMaxDmgsum} damage to up to 4 enemies within 5m when stepped on. Has a 40% chance to inflict Stun for 3s.\n100% chance to inflict Stun on NPC targets.\n\n10 Stagger Gauge Damage",
+   "desc": "Sets an explosive trap at the caster's location. The trap lasts for 10 seconds and deals {se_dmg:1417000111:SkillUIMinDmgsum}-{se_dmg:1417000111:SkillUIMaxDmgsum} Earth damage to up to 4 enemies within 5m when stepped on. Has a 40% chance to inflict Stun for 3s.\n100% chance to inflict Stun on NPC targets.\n\n10 Stagger Gauge Damage",
    "specs": [
     {
      "level": 8,
@@ -746,7 +746,7 @@
   },
   "ru": {
    "name": "Взрывной капкан",
-   "desc": "Устанавливает рядом с собой взрывную ловушку. Ловушка активна в течение 10 сек., при приближении к ней врага наносит {se_dmg:1417000111:SkillUIMinDmgsum}-{se_dmg:1417000111:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 5 м и с шансом 40% оглушает их на 3s\nДля NPC оглушение срабатывает гарантированно.\n\nУрон по шкале ошеломления — 10",
+   "desc": "Устанавливает рядом с собой взрывную ловушку. Ловушка активна в течение 10 сек., при приближении к ней врага наносит {se_dmg:1417000111:SkillUIMinDmgsum}-{se_dmg:1417000111:SkillUIMaxDmgsum} урона стихии земли врагам (макс. 4) в радиусе 5 м и с шансом 40% оглушает их на 3s\nДля NPC оглушение срабатывает гарантированно.\n\nУрон по шкале ошеломления — 10 ед.",
    "specs": [
     {
      "level": 8,
@@ -778,7 +778,7 @@
   "cooldown": 90000,
   "en": {
    "name": "Ensnaring Trap",
-   "desc": "Sets an explosive trap at the caster's location. The trap lasts for 30 seconds and deals {se_dmg:1418000111:SkillUIMinDmgsum}-{se_dmg:1418000111:SkillUIMaxDmgsum} damage to up to 4 enemies within 5m when stepped on. Inflicts Airborne for 3s.\n\n20 Stagger Gauge Damage",
+   "desc": "Sets an explosive trap at the caster's location. The trap lasts for 30 seconds and deals {se_dmg:1418000111:SkillUIMinDmgsum}-{se_dmg:1418000111:SkillUIMaxDmgsum} Earth damage to up to 4 enemies within 5m when stepped on. Inflicts Airborne for 3s.\n\n20 Stagger Gauge Damage",
    "specs": [
     {
      "level": 5,
@@ -800,11 +800,11 @@
   },
   "ru": {
    "name": "Капкан",
-   "desc": "Устанавливает рядом с собой взрывную ловушку. Ловушка активна в течение 30 сек. и при приближении врага наносит {se_dmg:1418000111:SkillUIMinDmgsum}-{se_dmg:1418000111:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 5 м и накладывает на них Воздушные оковы на 3s\n\nУрон по шкале ошеломления — 20",
+   "desc": "Устанавливает рядом с собой взрывную ловушку. Ловушка активна в течение 30 сек. и при приближении врага наносит {se_dmg:1418000111:SkillUIMinDmgsum}-{se_dmg:1418000111:SkillUIMaxDmgsum} урона стихии земли врагам (макс. 4) в радиусе 5 м и накладывает на них Воздушные оковы на 3s\n\nУрон по шкале ошеломления — 20 ед.",
    "specs": [
     {
      "level": 5,
-     "text": "Добавление 2-ой комбинации [Разрез с отступлением]"
+     "text": "Добавление 2-й комбинации [Разрез с отступлением]"
     },
     {
      "level": 10,
@@ -958,7 +958,7 @@
    "specs": [
     {
      "level": 8,
-     "text": "Добавляет 2-ой комбинации [Стрела молнии]"
+     "text": "Добавляет 2-й комбинации [Стрела молнии]"
     },
     {
      "level": 8,
@@ -986,7 +986,7 @@
   "cooldown": 60000,
   "en": {
    "name": "Arrow Storm",
-   "desc": "Selects a target within 20m and deals {se_dmg:1427000011:SkillUIMinDmgsum}-{se_dmg:1427000011:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m of the target. Has a 50% chance to inflict Stun for 3s.\n100% chance to inflict Stun on NPC targets.\n\n50 Stagger Gauge Damage",
+   "desc": "Selects a target within 20m and deals {se_dmg:1427000011:SkillUIMinDmgsum}-{se_dmg:1427000011:SkillUIMaxDmgsum} Wind damage to up to 4 enemies within 4m of the target. Has a 50% chance to inflict Stun for 3s.\n100% chance to inflict Stun on NPC targets.\n\n50 Stagger Gauge Damage",
    "specs": [
     {
      "level": 5,
@@ -1008,7 +1008,7 @@
   },
   "ru": {
    "name": "Ураган стрел",
-   "desc": "Наносит {se_dmg:1427000011:SkillUIMinDmgsum}-{se_dmg:1427000011:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и с шансом 50% оглушает их на 3s\nДля NPC оглушение срабатывает гарантированно.\n\nУрон по шкале ошеломления — 50",
+   "desc": "Наносит {se_dmg:1427000011:SkillUIMinDmgsum}-{se_dmg:1427000011:SkillUIMaxDmgsum} урона стихии воздуха врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и с шансом 50% оглушает их на 3s\nДля NPC оглушение срабатывает гарантированно.\n\nУрон по шкале ошеломления — 50 ед.",
    "specs": [
     {
      "level": 5,
@@ -1086,7 +1086,7 @@
   "cooldown": 0,
   "en": {
    "name": "Arrow Scattershot",
-   "desc": "Deals {se_dmg:1433000011:SkillUIMinDmgsum}-{se_dmg:1433000011:SkillUIMaxDmgsum} damage to a target afflicted with Stagger within 20m.",
+   "desc": "Deals {se_dmg:1433000011:SkillUIMinDmgsum}-{se_dmg:1433000011:SkillUIMaxDmgsum} Wind damage to a target afflicted with Stagger within 20m.",
    "specs": [
     {
      "level": 8,
@@ -1112,7 +1112,7 @@
   },
   "ru": {
    "name": "Град из стрел",
-   "desc": "Наносит {se_dmg:1433000011:SkillUIMinDmgsum}-{se_dmg:1433000011:SkillUIMaxDmgsum} урона цели в состоянии Ошеломления в радиусе 20 м.",
+   "desc": "Наносит {se_dmg:1433000011:SkillUIMinDmgsum}-{se_dmg:1433000011:SkillUIMaxDmgsum} урона стихии воздуха цели в состоянии Ошеломления в радиусе 20 м.",
    "specs": [
     {
      "level": 8,
@@ -1144,7 +1144,7 @@
   "cooldown": 0,
   "en": {
    "name": "Tempest Shot",
-   "desc": "Selects a target within 20m and deals {se_dmg:1434000011:SkillUIMinDmgsum}-{se_dmg:1434000011:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m of the target.\n\n1 Stagger Gauge Damage",
+   "desc": "Selects a target within 20m and deals {se_dmg:1434000011:SkillUIMinDmgsum}-{se_dmg:1434000011:SkillUIMaxDmgsum} Wind damage to up to 4 enemies within 4m of the target.\n\n1 Stagger Gauge Damage",
    "specs": [
     {
      "level": 8,
@@ -1170,7 +1170,7 @@
   },
   "ru": {
    "name": "Скоростная стрельба",
-   "desc": "Наносит {se_dmg:1434000011:SkillUIMinDmgsum}-{se_dmg:1434000011:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в пределах 20 м.\n\nУрон по шкале ошеломления — 1 ед.",
+   "desc": "Наносит {se_dmg:1434000011:SkillUIMinDmgsum}–{se_dmg:1434000011:SkillUIMaxDmgsum} урона стихии воздуха врагам (макс. 4) в радиусе 4 м от выбранной цели в пределах 20 м.\n\nУрон по шкале ошеломления — 1 ед.",
    "specs": [
     {
      "level": 8,
@@ -1252,7 +1252,7 @@
   "cooldown": 45000,
   "en": {
    "name": "Explosive Arrow",
-   "desc": "Selects a target within 20m and deals {se_dmg:1436000011:SkillUIMinDmgsum}-{se_dmg:1436000011:SkillUIMaxDmgsum} damage to up to 4 enemies within 4m. Increases damage by 20% to targets afflicted with Slow or Root.\n\n20 Stagger Gauge Damage",
+   "desc": "Selects a target within 20m and deals {se_dmg:1436000011:SkillUIMinDmgsum}-{se_dmg:1436000011:SkillUIMaxDmgsum} Fire damage to up to 4 enemies within 4m. Increases damage by 20% to targets afflicted with Slow or Root.\n\n20 Stagger Gauge Damage",
    "specs": [
     {
      "level": 5,
@@ -1274,7 +1274,7 @@
   },
   "ru": {
    "name": "Взрывная стрела",
-   "desc": "Наносит {se_dmg:1436000011:SkillUIMinDmgsum}–{se_dmg:1436000011:SkillUIMaxDmgsum} урона врагам (макс. 4) в радиусе 4 м от выбранной цели в пределах 20 м. Если цель находится в состоянии Замедления или Плена, урон увеличивается на 20%.\n\nУрон по шкале ошеломления — 20 ед.",
+   "desc": "Наносит {se_dmg:1436000011:SkillUIMinDmgsum}–{se_dmg:1436000011:SkillUIMaxDmgsum} урона стихии огня врагам (макс. 4) в радиусе 4 м от выбранной цели в пределах 20 м. Если цель находится в состоянии Замедления или Плена, урон увеличивается на 20%.\n\nУрон по шкале ошеломления — 20 ед.",
    "specs": [
     {
      "level": 5,
@@ -1302,7 +1302,7 @@
   "cooldown": 120000,
   "en": {
    "name": "Assault Smite",
-   "desc": "Selects a target within 20m and deals {se_dmg:1470000021:SkillUIMinDmgSum}-{se_dmg:1470000021:SkillUIMaxDmgSum} damage to up to 4 enemies within 4m of the target. Has a 30% chance to inflict Stun for 3s.\n100% chance to inflict Stun on NPC targets.\n\nIncreases Defense by up to 20% proportional to the number of targets hit.",
+   "desc": "Selects a target within 20m and deals {se_dmg:1470000021:SkillUIMinDmgSum}-{se_dmg:1470000021:SkillUIMaxDmgSum} Wind damage to up to 4 enemies within 4m of the target. Has a 30% chance to inflict Stun for 3s.\n100% chance to inflict Stun on NPC targets.\n\nIncreases Defense by up to 20% proportional to the number of targets hit.",
    "specs": [
     {
      "level": 5,
@@ -1314,7 +1314,7 @@
     },
     {
      "level": 15,
-     "text": "+10m Range"
+     "text": "+10m range"
     },
     {
      "level": 20,
@@ -1324,7 +1324,7 @@
   },
   "ru": {
    "name": "Сокрушающий натиск",
-   "desc": "Наносит {se_dmg:1470000021:SkillUIMinDmgSum}-{se_dmg:1470000021:SkillUIMaxDmgSum} урона врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и с шансом 30% оглушает их на 3s\nДля NPC оглушение срабатывает гарантированно.\n\nУвеличивает ЗЩТ пропорционально количеству целей попадания (макс. до 20%).",
+   "desc": "Наносит {se_dmg:1470000021:SkillUIMinDmgSum}-{se_dmg:1470000021:SkillUIMaxDmgSum} урона стихии воздуха врагам (макс. 4) в радиусе 4 м вокруг цели, находящейся в радиусе 20 м, и с шансом 30% оглушает их на 3s\nДля NPC оглушение срабатывает гарантированно.\n\nУвеличивает ЗЩТ пропорционально количеству целей попадания (макс. до 20%).",
    "specs": [
     {
      "level": 5,
@@ -1368,12 +1368,12 @@
   "cooldown": 0,
   "en": {
    "name": "Concentrated Fire",
-   "desc": "Has a 50% chance to deal {se_dmg:1472000711:SkillUIMinDmgsum}-{se_dmg:1472000711:SkillUIMaxDmgsum} damage to a target taking Damage over Time.\n\nCooldown: 1s",
+   "desc": "Has a 50% chance to deal {se_dmg:1472000711:SkillUIMinDmgsum}-{se_dmg:1472000711:SkillUIMaxDmgsum} Wind damage to a target taking Damage over Time.\n\nCooldown: 1s",
    "specs": []
   },
   "ru": {
    "name": "Шквальный огонь",
-   "desc": "С шансом 50% наносит {se_dmg:1472000711:SkillUIMinDmgsum}–{se_dmg:1472000711:SkillUIMaxDmgsum} ед урона цели, находящейся под действием постоянного урона.\n\nВремя перезарядки: 1s",
+   "desc": "С шансом 50% наносит {se_dmg:1472000711:SkillUIMinDmgsum}–{se_dmg:1472000711:SkillUIMaxDmgsum} урона стихии воздуха цели, находящейся под действием постоянного урона.\n\nВремя перезарядки: 1s",
    "specs": []
   }
  },
@@ -1448,12 +1448,12 @@
   "cooldown": 0,
   "en": {
    "name": "Rooting Eye",
-   "desc": "Has a 50% chance to deal {se_dmg:1477000711:SkillUIMinDmgsum}-{se_dmg:1477000711:SkillUIMaxDmgsum} damage when landing an attack on a target afflicted with Slow or Root.\n\nCooldown: 1s",
+   "desc": "Has a 50% chance to deal {se_dmg:1477000711:SkillUIMinDmgsum}-{se_dmg:1477000711:SkillUIMaxDmgsum} Wind damage when landing an attack on a target afflicted with Slow or Root.\n\nCooldown: 1s",
    "specs": []
   },
   "ru": {
    "name": "Пленяющий взгляд",
-   "desc": "С шансом 50% наносит {se_dmg:1477000711:SkillUIMinDmgsum}–{se_dmg:1477000711:SkillUIMaxDmgsum} ед. урона при атаке цели с эффектом Замедления или Плена.\n\nВремя перезарядки: 1s",
+   "desc": "С шансом 50% наносит {se_dmg:1477000711:SkillUIMinDmgsum}–{se_dmg:1477000711:SkillUIMaxDmgsum} урона стихии воздуха при атаке цели с эффектом Замедления или Плена.\n\nВремя перезарядки: 1s",
    "specs": []
   }
  },
@@ -1464,12 +1464,12 @@
   "cooldown": 0,
   "en": {
    "name": "Melee Fire",
-   "desc": "Has a 25% chance to inflict {se_dmg:1478000811:SkillUIMinDmgsum}-{se_dmg:1478000811:SkillUIMaxDmgsum} extra damage when landing an attack. Has a 5% chance to inflict Knock Back when landing an attack on a target within 5m.\n\nCooldown: 1s",
+   "desc": "Has a 25% chance to inflict {se_dmg:1478000811:SkillUIMinDmgsum}-{se_dmg:1478000811:SkillUIMaxDmgsum} extra Wind damage when landing an attack. Has a 5% chance to inflict Knock Back when landing an attack on a target within 5m.\n\nCooldown: 1s",
    "specs": []
   },
   "ru": {
    "name": "Стрельба вблизи",
-   "desc": "С шансом 5% наносит {se_dmg:1478000811:SkillUIMinDmgsum}~{se_dmg:1478000811:SkillUIMaxDmgsum} доп. урона при каждом попадании. С шансом 25% отталкивает при кажд. попадании по цели в радиусе 5 м.\n\nВремя перезарядки: 1s",
+   "desc": "С шансом 5% наносит {se_dmg:1478000811:SkillUIMinDmgsum}~{se_dmg:1478000811:SkillUIMaxDmgsum} доп. урона стихии воздуха при каждом попадании. С шансом 25% отталкивает при кажд. попадании по цели в радиусе 5 м.\n\nВремя перезарядки: 1s",
    "specs": []
   }
  },
@@ -1496,12 +1496,12 @@
   "cooldown": 0,
   "en": {
    "name": "Hunter's Soul",
-   "desc": "Has a 50% chance to deal {se_dmg:1480000711:SkillUIMinDmgsum}-{se_dmg:1480000711:SkillUIMaxDmgsum} damage on a Critical Hit.\n\nCooldown: 1s",
+   "desc": "Has a 50% chance to deal {se_dmg:1480000711:SkillUIMinDmgsum}-{se_dmg:1480000711:SkillUIMaxDmgsum} Wind damage on a Critical Hit.\n\nCooldown: 1s",
    "specs": []
   },
   "ru": {
    "name": "Душа охотника",
-   "desc": "При крит. ударе с шансом 50% наносит {se_dmg:1480000711:SkillUIMinDmgsum}–{se_dmg:1480000711:SkillUIMaxDmgsum} ед. урона.\n\nВремя перезарядки: 1s",
+   "desc": "При крит. ударе с шансом 50% наносит {se_dmg:1480000711:SkillUIMinDmgsum}–{se_dmg:1480000711:SkillUIMaxDmgsum} ед. урона стихии воздуха.\n\nВремя перезарядки: 1s",
    "specs": []
   }
  }
