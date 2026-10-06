@@ -100,6 +100,22 @@
 
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
       {{ t.report }}{% if SITE.get('feedback_url') %}</button>{% else %}</a>{% endif %}</p>
+    {%- if cls.slug == 'cleric' %}
+    {#- Easter egg: the site author's main. A faint star under the guide opens the screenshot. -#}
+    <button type="button" class="egg-star" aria-label="{{ t.egg_hint }}" title="{{ t.egg_hint }}">✦</button>
+    <dialog class="egg-dlg" aria-labelledby="egg-title">
+      <div class="wn-in">
+        <div class="wn-head">
+          <h2 id="egg-title">{{ t.egg_title }}</h2>
+          <button type="button" class="icon-btn egg-x" aria-label="{{ t.cel_close }}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </button>
+        </div>
+        <img class="egg-img" src="{{ root }}assets/art/egg-cleric.webp" width="1200" height="675" alt="Mimisaki" loading="lazy">
+        <p class="egg-cap">{{ cls.name[lang] }} — {{ t.egg_text }}.<br><b>Mimisaki</b> · {{ t.egg_faction }} · {{ t.egg_server }}</p>
+      </div>
+    </dialog>
+    {%- endif %}
     <script type="application/json" id="sk-data" data-cd="{{ t.tip_cd }}" data-s="{{ t.tip_s }}" data-active="{{ t.tip_cat.active }}" data-stigma="{{ t.tip_cat.stigma }}" data-passive="{{ t.tip_cat.passive }}">{{ tooltip_json(cls.slug, lang) }}</script>
   </main>
 </div>

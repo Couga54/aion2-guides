@@ -149,6 +149,14 @@
     });
   }
 
+  // ---- easter egg (Cleric guide): the star under the guide opens the author's main ----
+  var egg = document.querySelector('.egg-dlg'), eggStar = document.querySelector('.egg-star');
+  if (egg && eggStar && typeof egg.showModal === 'function') {
+    eggStar.addEventListener('click', function () { egg.showModal(); });
+    egg.addEventListener('click', function (ev) { if (ev.target === egg) egg.close(); });
+    egg.querySelector('.egg-x').addEventListener('click', function () { egg.close(); });
+  }
+
   // ---- "Report a mistake": a form sent to the site owner (Telegram, through the Worker in site.json) ----
   var fb = document.querySelector('.feedback');
   if (fb && typeof fb.showModal === 'function') {

@@ -1,6 +1,8 @@
 {
   "base_url": "https://couga54.github.io/aion2-guides/",
   "langs": ["en", "ru", "uk", "tr"],
+  "_author_main": "The site owner's main class (Mimisaki, Asmodian, Zikel): a heart on its home card and an easter egg star at the end of its guide.",
+  "author_main": "cleric",
   "launch_utc": "2026-10-05T13:00:00Z",
   "_weekly_reset": "Weekly reset: Wednesday 10:00 Kyiv time (from the user, Oct 1). anchor = the first reset (UTC); every next one is 7 days later at the same local time in tz, so the reset keeps its wall-clock hour across daylight saving changes. confirmed=false shows the 'not announced' note.",
   "weekly_reset": {"anchor": "2026-09-30T07:00:00Z", "tz": "Europe/Kyiv", "confirmed": true},
