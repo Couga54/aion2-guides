@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="tr" data-mode="pve">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zindan rehberleri: boss mekanikleri — AION 2 Global - Rehberler</title>
+<meta name="description" content="AION 2 zindan boss rehberleri: Krao Cave, Draupnir, Urugugu Canyon, Vakron Sky Island, Fire Temple, Ferocious Horn Den, Transcendence zindanları ve Nightmare&#39;de Zikel — grubu silen mekanikler, arena şemalarıyla.">
+<link rel="canonical" href="https://couga54.github.io/aion2-guides/tr/dungeons/">
+<link rel="alternate" hreflang="en" href="https://couga54.github.io/aion2-guides/en/dungeons/">
+<link rel="alternate" hreflang="ru" href="https://couga54.github.io/aion2-guides/ru/dungeons/">
+<link rel="alternate" hreflang="uk" href="https://couga54.github.io/aion2-guides/uk/dungeons/">
+<link rel="alternate" hreflang="tr" href="https://couga54.github.io/aion2-guides/tr/dungeons/">
+<link rel="alternate" hreflang="x-default" href="https://couga54.github.io/aion2-guides/en/dungeons/">
+<meta name="theme-color" content="#0b0e14">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AION 2 Global - Rehberler">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Zindan rehberleri: boss mekanikleri — AION 2 Global - Rehberler">
+<meta property="og:description" content="AION 2 zindan boss rehberleri: Krao Cave, Draupnir, Urugugu Canyon, Vakron Sky Island, Fire Temple, Ferocious Horn Den, Transcendence zindanları ve Nightmare&#39;de Zikel — grubu silen mekanikler, arena şemalarıyla.">
+<meta property="og:url" content="https://couga54.github.io/aion2-guides/tr/dungeons/">
+<meta property="og:image" content="https://couga54.github.io/aion2-guides/assets/og/dungeons-tr.jpg?v=97d1d107">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><link rel="icon" href="../../favicon.ico" sizes="48x48">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="../../assets/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Yeseva+One&family=JetBrains+Mono:wght@500;700&display=swap&subset=cyrillic">
+<script>
+  // Theme + guide mode before first paint (no flash).
+  (function (r) {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') r.dataset.theme = t; } catch (e) {}
+    var off = (r.getAttribute('data-off') || '').split(' ');
+    var modes = ['pve', 'pvp', 'lvl'].filter(function (x) { return off.indexOf(x) < 0; });
+    var m = new URLSearchParams(location.search).get('mode');
+    if (modes.indexOf(m) < 0) { try { m = localStorage.getItem('mode'); } catch (e) {} }
+    if (modes.indexOf(m) >= 0) r.dataset.mode = m;
+    else if (modes.indexOf(r.dataset.mode) < 0) r.dataset.mode = modes[0];
+  })(document.documentElement);
+</script>
+<script>
+  // Google Analytics (site.json "ga"). Not loaded on local previews. A visitor who came through the root
+  // language redirect keeps the site they came from (root.html saves it in sessionStorage).
+  if (!/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+    (function () {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-6WYEWLG4B5';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      var ref = null;
+      try { ref = sessionStorage.getItem('ref'); sessionStorage.removeItem('ref'); } catch (e) {}
+      gtag('js', new Date());
+      gtag('config', 'G-6WYEWLG4B5', ref ? { page_referrer: ref } : {});
+    })();
+  }
+</script>
+<link rel="stylesheet" href="../../assets/css/site.css?v=97d1d107">
+</head>
+<body class="page-guide page-dungeons">
+<a class="skip-link" href="#main">İçeriğe geç</a>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="../../tr/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg><span class="brand-text"><b>AION 2 Global</b><small><span class="sr-only"> - </span>Rehberler</small></span>
+    </a>
+    <details class="class-menu">
+      <summary class="class-menu-btn">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg><span>Sınıflar</span>        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <nav class="class-menu-panel" aria-label="Sınıflar">
+        <a href="../../tr/gladiator/" class="cm-item accent-crimson">
+          <img src="../../assets/classes/gladiator.webp" width="44" height="44" alt=""><span class="cm-name">Gladiator</span><span class="cm-role">Yakın dövüş DPS · bruiser</span>
+        </a>
+        <a href="../../tr/ranger/" class="cm-item accent-emerald">
+          <img src="../../assets/classes/ranger.webp" width="44" height="44" alt=""><span class="cm-name">Ranger</span><span class="cm-role">Menzilli DPS · kiter</span>
+        </a>
+        <a href="../../tr/templar/" class="cm-item accent-sapphire">
+          <img src="../../assets/classes/templar.webp" width="44" height="44" alt=""><span class="cm-name">Templar</span><span class="cm-role">Tank · grup bufferı</span>
+        </a>
+        <a href="../../tr/assassin/" class="cm-item accent-violet">
+          <img src="../../assets/classes/assassin.webp" width="44" height="44" alt=""><span class="cm-name">Assassin</span><span class="cm-role">Yakın dövüş DPS · patlama</span>
+        </a>
+        <a href="../../tr/sorcerer/" class="cm-item accent-frost">
+          <img src="../../assets/classes/sorcerer.webp" width="44" height="44" alt=""><span class="cm-name">Sorcerer</span><span class="cm-role">Menzilli büyü DPS</span>
+        </a>
+        <a href="../../tr/elementalist/" class="cm-item accent-spirit">
+          <img src="../../assets/classes/elementalist.webp" width="44" height="44" alt=""><span class="cm-name">Elementalist</span><span class="cm-role">Çağırıcı · büyü DPS</span>
+        </a>
+        <a href="../../tr/cleric/" class="cm-item accent-sunlight">
+          <img src="../../assets/classes/cleric.webp" width="44" height="44" alt=""><span class="cm-name">Cleric</span><span class="cm-role">Şifacı · toprak ve şimşek hasarı</span>
+        </a>
+        <a href="../../tr/chanter/" class="cm-item accent-amber">
+          <img src="../../assets/classes/chanter.webp" width="44" height="44" alt=""><span class="cm-name">Chanter</span><span class="cm-role">Yakın dövüş destek · buffer</span>
+        </a>
+      </nav>
+    </details>
+    <div class="topbar-tools">      <span class="rift-timer" data-anchor="2026-10-02T18:00:00Z" data-every="3" data-tz="Europe/Kyiv" data-open-min="10" data-open="Rift açık" title="Rift — düşman bölgesine açılan portal, her 3 saatte bir açılır; giriş 10 dakika açık kalır, içeride yaklaşık bir saat kalabilirsin. Sonraki">
+        <svg class="rt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="7.5" ry="10.5"/><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/><g transform="rotate(180 12 12)"><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/></g></svg><span class="rt-name">Rift</span><b class="rt-time">--:--</b>
+      </span>
+      <a class="wr-chip" href="../../tr/weekly/" data-anchor="2026-09-30T07:00:00Z" data-tz="Europe/Kyiv" data-units="g,sa,dk,sn" title="Haftalık sıfırlamaya">
+        <svg class="wr-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg><span class="wr-name">Sıfırlama</span><b class="wr-time">--</b>
+      </a>
+      <a class="top-timer" href="../../tr/" title="Zamanlayıcılar" data-events='[{"at": "2026-10-05T13:00:00Z", "n": "Global \u00e7\u0131k\u0131\u015f", "o": "Sunucular a\u00e7\u0131k"}]' data-units="g,sa,dk,sn" data-open="açık">
+        <span class="tt-dot" aria-hidden="true"></span><span class="tt-name"></span><b class="tt-time">--:--:--</b>
+      </a>
+      <details class="class-menu nav-menu">
+        <summary class="class-menu-btn is-here">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Rehberler</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <nav class="nav-menu-panel" aria-label="Rehberler">
+          <div class="nm-col">
+            <p class="nm-group">İlerleme</p>
+            <a href="../../tr/week-1/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>
+              <span class="nm-name">1. hafta</span><span class="nm-desc">İlk sıfırlamadan önce bitirilecekler</span>
+            </a>
+            <a href="../../tr/progression/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h4v-6H3zM10 20h4V9h-4zM17 20h4V4h-4z"/></svg>
+              <span class="nm-name">45 sonrası</span><span class="nm-desc">Raide giden item level rotası</span>
+            </a>
+            <a href="../../tr/crafting/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 1.3-1.3a4 4 0 0 0-5-5L3 10l3-3 3 3 1.3-1.3a4 4 0 0 1 4.4-2.4z"/></svg>
+              <span class="nm-name">Toplama ve üretim</span><span class="nm-desc">Meslekler ve altın taslaklar</span>
+            </a>
+            <a href="../../tr/settings/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+              <span class="nm-name">Oyun ayarları</span><span class="nm-desc">Kontroller, tuşlar, FPS ve toplu PvP</span>
+            </a>
+            <a href="../../tr/dungeons/" class="nm-item" aria-current="page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l9-7 9 7v11"/><path d="M9 21v-6a3 3 0 0 1 6 0v6"/></svg>
+              <span class="nm-name">Zindanlar</span><span class="nm-desc">Arena şemalarıyla boss mekanikleri</span>
+            </a>
+            <a href="../../tr/tier-list/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h4M4 12h4M4 19h4"/><path d="M11 5h9M11 12h6M11 19h3"/></svg>
+              <span class="nm-name">Tier list</span><span class="nm-desc">İçeriğe göre sınıflar</span>
+            </a>
+          </div>
+          <div class="nm-col">
+            <p class="nm-group">Takipçiler</p>
+            <a href="../../tr/weekly/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M8.5 15l2 2 4-4"/></svg>
+              <span class="nm-name">Haftalık</span><span class="nm-desc">Haftalık girişler ve enerji</span>
+            </a>
+            <a href="../../tr/bosses/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-4.4 0-8 3.1-8 7.5 0 2.6 1.3 4.4 3 5.5V20h2v-2h2v2h2v-2h2v2h2v-4c1.7-1.1 3-2.9 3-5.5C20 6.1 16.4 3 12 3z"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
+              <span class="nm-name">Bosslar</span><span class="nm-desc">Öldürme takibi ve zamanlayıcılar</span>
+            </a>
+          </div>
+          <div class="nm-foot">
+            <a href="../../tr/sources/" class="nm-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg>
+              <span class="nm-name">Kaynaklar ve emeği geçenler</span><span class="nm-desc">Bu sitenin dayandığı herkes</span>
+            </a>
+          </div>
+        </nav>
+      </details>      <details class="lang-menu">
+        <summary class="lang-switch" title="Dil"><span aria-hidden="true">TR</span><span class="sr-only">Dil</span></summary>
+        <nav class="lang-panel" aria-label="Dil">
+<a href="../../en/dungeons/" hreflang="en" lang="en" data-keep-query><b>EN</b>English</a><a href="../../ru/dungeons/" hreflang="ru" lang="ru" data-keep-query><b>RU</b>Русский</a><a href="../../uk/dungeons/" hreflang="uk" lang="uk" data-keep-query><b>UA</b>Українська</a><a href="../../tr/dungeons/" hreflang="tr" lang="tr" aria-current="true" data-keep-query><b>TR</b>Türkçe</a>        </nav>
+      </details>
+      <button class="icon-btn search-open" type="button" aria-label="Ara (Ctrl+K)" title="Ara (Ctrl+K)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+<a class="icon-btn wn-top" href="../../tr/changelog/" aria-label="Değişiklik günlüğü" title="Değişiklik günlüğü">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.9"/><path d="M12 17h.01"/></svg>
+      </a>      <button class="icon-btn theme-toggle" type="button" aria-label="Karanlık modu değiştir" title="Karanlık modu değiştir">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero has-art" style="--hero-art:url('../../assets/art/hero-bosses.webp');--hero-pos:50% 60%">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../../tr/">Tüm sınıflar</a><span aria-hidden="true">/</span><span>Zindanlar</span></nav>
+      <h1>Zindan bossları</h1>
+      <p class="lead">Grubu silen mekanikler, boss boss, arena şemalarıyla.</p>
+    </div>
+  </section>
+
+  <div class="wrap guide-layout pg-layout">
+  <aside class="toc-side pg-side" aria-label="Bu sayfada">
+    <p class="toc-title">Bu sayfada</p>
+    <nav class="toc-list">
+<a href="#krao-cave">Krao Cave</a><a href="#draupnir">Draupnir</a><a href="#urugugu-canyon">Urugugu Canyon</a><a href="#vakron-sky-island">Vakron Sky Island</a><a href="#fire-temple">Fire Temple</a><a href="#ferocious-horn-den">Ferocious Horn Den</a><a href="#deus-research-base">Deus Research Base</a><a href="#shattered-arkanis">Shattered Arkanis</a><a href="#zikel">Nightmare: Zikel</a>    </nav>
+  </aside>
+  <div class="pg-page">
+    <p class="pg-note">BIGSKALA&#39;nın çıkış zindanları anlatımından (Tayvan sunucularında kaydedildi, 15 Eylül); zindan ve boss adları global istemciden. Her blok videodaki anına bağlantı verir. Şemalar harita değil, basitleştirilmiş çizimler.
+<a class="w1-src" href="https://www.youtube.com/watch?v=mMjaSbaVTjc" target="_blank" rel="noopener" title="BIGSKALA — Все подземелья AION 2 на старте (полный разбор)">BIGSKALA</a></p>    <div class="page-tabs-wrap">
+  <div class="page-tabs" role="tablist" aria-label="Zindanlar">
+    <span class="pt-ind" aria-hidden="true"></span>
+<button type="button" role="tab" class="pt-tab" id="tab-expedition" data-tab="expedition" aria-selected="true">Expedition</button><button type="button" role="tab" class="pt-tab" id="tab-transcendence" data-tab="transcendence" aria-selected="false">Transcendence</button><button type="button" role="tab" class="pt-tab" id="tab-nightmare" data-tab="nightmare" aria-selected="false">Nightmare</button>  </div>
+</div>
+
+
+    <div class="dg-group tab-panel" id="panel-expedition" data-tab-panel="expedition" role="tabpanel" aria-labelledby="tab-expedition">
+    <h2 class="dg-gtitle">Expedition: Conquest</h2>
+    <p class="pg-lead dg-glead">5 kişilik zindanlar. Gereken GS Conquest içindir; aynı zindanın Exploration&#39;ı daha erken açılır.</p>
+    <ol class="pg-toc dg-toc" aria-label="Adımlar">
+      <li><a href="#krao-cave"><b>GS 700</b><span>Krao Cave</span></a></li>
+      <li><a href="#draupnir"><b>GS 700</b><span>Draupnir</span></a></li>
+      <li><a href="#urugugu-canyon"><b>GS 1400</b><span>Urugugu Canyon</span></a></li>
+      <li><a href="#vakron-sky-island"><b>GS 1400</b><span>Vakron Sky Island</span></a></li>
+      <li><a href="#fire-temple"><b>GS 2100</b><span>Fire Temple</span></a></li>
+      <li><a href="#ferocious-horn-den"><b>GS 2100</b><span>Ferocious Horn Den</span></a></li>
+    </ol>
+
+    <section class="pg-sec dg-sec" id="krao-cave" aria-labelledby="h-krao-cave">
+      <h2 id="h-krao-cave" class="section-title">Krao Cave</h2>
+      <p class="dg-meta"><span class="dg-tier">Gereken GS: 700</span><span>5 oyuncu</span><a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=60s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 1:00</a></p>
+<p class="pg-lead">İlk iki bossta seni anında öldüren bir şey yok — kaçın ve vurmaya devam et.</p>      <article class="dg-boss is-final">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2300171.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Ultimate Berk</h3>
+            <p class="dg-brole">Son boss <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=72s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 1:12</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech has-diagram is-danger">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Krao Cave: hide behind the rocks"><defs><marker id="dz-ar-krao-rocks" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><circle cx="100" cy="100" r="88" class="dz-floor"/><circle cx="100" cy="100" r="88" class="dz-bad-soft"/><path d="M162.4 85.6L162.4 114.4L181.7 126.9L181.7 73.1z" class="dz-safe"/><rect x="150.0" y="92.0" width="16" height="16" rx="4" class="dz-rock" transform="rotate(45 158.0 100.0)"/><circle cx="176.0" cy="100.0" r="5" class="dz-p"/><path d="M114.4 162.4L85.6 162.4L73.1 181.7L126.9 181.7z" class="dz-safe"/><rect x="92.0" y="150.0" width="16" height="16" rx="4" class="dz-rock" transform="rotate(45 100.0 158.0)"/><circle cx="100.0" cy="176.0" r="5" class="dz-p"/><path d="M37.6 114.4L37.6 85.6L18.3 73.1L18.3 126.9z" class="dz-safe"/><rect x="34.0" y="92.0" width="16" height="16" rx="4" class="dz-rock" transform="rotate(45 42.0 100.0)"/><circle cx="24.0" cy="100.00000000000001" r="5" class="dz-p"/><path d="M85.6 37.6L114.4 37.6L126.9 18.3L73.1 18.3z" class="dz-safe"/><rect x="92.0" y="34.0" width="16" height="16" rx="4" class="dz-rock" transform="rotate(45 100.0 42.0)"/><circle cx="99.99999999999999" cy="24.0" r="5" class="dz-p"/><path d="M111.3 111.3L156.6 156.6" class="dz-beam"/><path d="M88.7 111.3L43.4 156.6" class="dz-beam"/><path d="M88.7 88.7L43.4 43.4" class="dz-beam"/><path d="M111.3 88.7L156.6 43.4" class="dz-beam"/><circle cx="100" cy="100" r="11" class="dz-boss"/><path d="M96 99l4-5 4 5-4 6z" class="dz-boss-in"/></svg><figcaption>Boss ortada, dört kaya kenarda; bir kayanın arkasındaki yeşil gölgede dur.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">wipe</span> Kayaların arkasına saklan <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=75s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 1:15</a></p>
+              <p>Boss ortaya uçar ve kenarlarda dört kaya belirir. O büyüyü yaparken herkes bir kayanın arkasına saklanır — her birinin arkasındaki yeşil alan güvenli. Açıkta kalan tek vuruşta ölür. Büyü çubuğunu izle.</p>
+            </div>
+          </div>
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Kanlı dönüş <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=93s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 1:33</a></p>
+              <p>Pizza dilimi bir vuruştan sonra etrafında parlak kıvılcımlar çakar ve dönerek bir oyuncuyu kovalar, kanama ekler. Yolundan uzak dur; yeni oyuncular burada bir kaçınma, iksir veya dokunulmazlık harcayabilir.</p>
+            </div>
+          </div>
+          <div class="dg-mech is-danger">
+            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">wipe</span> Stagger çubuğu <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=123s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 2:03</a></p>
+              <p>Pençelerini kaldırınca bir stagger çubuğu belirir — hızla kır, yoksa grup ölür. Stagger yeteneklerini bu ana sakla; kırılan çubuk onu birkaç saniye bedava hasar için sersemletir.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="pg-sec dg-sec" id="draupnir" aria-labelledby="h-draupnir">
+      <h2 id="h-draupnir" class="section-title">Draupnir</h2>
+      <p class="dg-meta"><span class="dg-tier">Gereken GS: 700</span><span>5 oyuncu</span><a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=150s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 2:30</a></p>
+<p class="pg-lead">Yoldaki iki boss basit; son solucan zıplamaların zamanlamasıyla ilgili.</p>      <article class="dg-boss is-final">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310471.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Transcendent Bakarma</h3>
+            <p class="dg-brole">Son boss <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=162s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 2:42</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech has-diagram is-danger">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Draupnir: jump the waves to the safe zone at the boss"><defs><marker id="dz-ar-draupnir-waves" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><circle cx="100" cy="100" r="88" class="dz-floor"/><circle cx="100" cy="100" r="30" class="dz-wave"/><circle cx="100" cy="100" r="50" class="dz-wave"/><circle cx="100" cy="100" r="70" class="dz-wave"/><circle cx="100" cy="100" r="20" class="dz-safe"/><circle cx="100" cy="100" r="11" class="dz-boss"/><path d="M96 99l4-5 4 5-4 6z" class="dz-boss-in"/><circle cx="100" cy="182" r="5" class="dz-p"/><circle cx="100" cy="18" r="5" class="dz-p"/><circle cx="18" cy="100" r="5" class="dz-p"/><circle cx="182" cy="100" r="5" class="dz-p"/><path d="M100 176L100 126" class="dz-arrow" marker-end="url(#dz-ar-draupnir-waves)"/><path d="M100 24L100 74" class="dz-arrow" marker-end="url(#dz-ar-draupnir-waves)"/><path d="M24 100L74 100" class="dz-arrow" marker-end="url(#dz-ar-draupnir-waves)"/><path d="M176 100L126 100" class="dz-arrow" marker-end="url(#dz-ar-draupnir-waves)"/><text x="106" y="147" class="dz-t">⤴</text><text x="106" y="47" class="dz-t">⤴</text><text x="56" y="97" class="dz-t">⤴</text><text x="156" y="97" class="dz-t">⤴</text></svg><figcaption>Kenardan başla, halkaların üstünden zıpla, bossun yanında bitir.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">wipe</span> Dalgalar, sonra sersemletme çubuğu <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=165s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 2:45</a></p>
+              <p>Ekran kararır ve herkes zıt taraflarda kenara iner. Bosstan dalgalar yayılır: hemen içeri koş ve hemen yanındaki güvenli alana ulaşmak için her dalganın üstünden zıpla (Space) — Gladiator, Chanter ve Assassin'in atılmaları yardım eder. Sonra sersemletme çubuğunu hemen kır: yavaş bir grubun süresi yetmez ve silinir.</p>
+            </div>
+          </div>
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Dalış ve dağılma <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=216s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 3:36</a></p>
+              <p>Dalar ve her oyuncuya ayrı ayrı saldırır — hareket et ve dağılın. Fazı büyük bir alan vuruşu bitirir: sadece içinden çık. Sona doğru dalga fazı, etrafından dolaşılacak su hortumlarıyla tekrar eder.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="pg-sec dg-sec" id="urugugu-canyon" aria-labelledby="h-urugugu-canyon">
+      <h2 id="h-urugugu-canyon" class="section-title">Urugugu Canyon</h2>
+      <p class="dg-meta"><span class="dg-tier">Gereken GS: 1400</span><span>5 oyuncu</span><a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=246s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 4:06</a></p>
+      <article class="dg-boss">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310206.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Guardian Captain Raur</h3>
+            <p class="dg-brole">İlk boss <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=249s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 4:09</a></p>
+          </div>
+        </header>
+<p class="dg-btext">Zaman zaman kalkanını indirir ve ayaklarının altında büyük bir hasar alanı belirir — ona vurmayı bırak ve bitene kadar uzağa koş.</p>      </article>
+      <article class="dg-boss">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310207.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Judge Urahum</h3>
+            <p class="dg-brole">İkinci boss <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=261s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 4:21</a></p>
+          </div>
+        </header>
+<p class="dg-btext">Basit: öfkelenir, hareketi ve saldırıları hızlanır.</p>      </article>
+      <article class="dg-boss is-final">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310218.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Divine Auldor</h3>
+            <p class="dg-brole">Son boss — kuş <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=267s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 4:27</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Önündeki rüzgâr <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=270s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 4:30</a></p>
+              <p>Rüzgârı önüne vurur — arkasında dur. Yakalanırsan seni birkaç saniye gagasında havaya kaldırır ve yere çarpar.</p>
+            </div>
+          </div>
+          <div class="dg-mech has-diagram is-danger">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Share the hit: the whole group runs into the marked player's circle"><defs><marker id="dz-ar-share-circle" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><circle cx="100" cy="100" r="88" class="dz-floor"/><circle cx="158" cy="42" r="11" class="dz-boss"/><path d="M154 41l4-5 4 5-4 6z" class="dz-boss-in"/><circle cx="100" cy="108" r="26" class="dz-share"/><circle cx="100" cy="108" r="5" class="dz-mark"/><circle cx="100" cy="44" r="5" class="dz-p"/><path d="M100 51L100 90" class="dz-arrow" marker-end="url(#dz-ar-share-circle)"/><circle cx="164" cy="108" r="5" class="dz-p"/><path d="M157 108L118 108" class="dz-arrow" marker-end="url(#dz-ar-share-circle)"/><circle cx="100" cy="172" r="5" class="dz-p"/><path d="M100 165L100 126" class="dz-arrow" marker-end="url(#dz-ar-share-circle)"/><circle cx="36" cy="108" r="5" class="dz-p"/><path d="M43 108L82 108" class="dz-arrow" marker-end="url(#dz-ar-share-circle)"/></svg><figcaption>Dört yönden oklar: tüm grup işaretli dairenin içinde toplanır.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">wipe</span> İşaretli oyuncu: vuruşu paylaş <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=285s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 4:45</a></p>
+              <p>Havalanır, gözüyle bir oyuncuyu işaretler ve etrafında dört yönden içeriyi gösteren oklarla küçük bir alan büyür. Herkes o daireye koşar ve son vuruşu paylaşır, yoksa işaretli oyuncu ölür. Yoldaki rüzgâr çizgilerinden kaçın. İkinci fazda aynısını ortadan yapar, arenanın etrafında bir girdapla.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="pg-sec dg-sec" id="vakron-sky-island" aria-labelledby="h-vakron-sky-island">
+      <h2 id="h-vakron-sky-island" class="section-title">Vakron Sky Island</h2>
+      <p class="dg-meta"><span class="dg-tier">Gereken GS: 1400</span><span>5 oyuncu</span><a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=321s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 5:21</a></p>
+<div class="callout pg-tip" role="note"><p>Zindanda koşarken üç seviyeli bir debuff birikir; 3. seviyede kökler seni tutar ve can yakar — destekler kökleri vurarak seni kurtarır. Debuff'ı bir çeşmede temizle.</p></div>      <article class="dg-boss">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310810.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Tiere</h3>
+            <p class="dg-brole">İlk boss <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=345s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 5:45</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech has-diagram">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Vakron Sky Island first boss: move together inside the clean circle"><defs><marker id="dz-ar-tiere-poison" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><circle cx="100" cy="100" r="88" class="dz-floor"/><circle cx="100" cy="100" r="88" class="dz-poison"/><circle cx="100" cy="100" r="44" class="dz-floor-clean"/><path d="M128 100l5-5 5 5-5 5z" class="dz-flower"/><circle cx="100" cy="100" r="10" class="dz-boss"/><path d="M96 99l4-5 4 5-4 6z" class="dz-boss-in"/><circle cx="70" cy="116" r="5" class="dz-p"/><circle cx="66" cy="104" r="5" class="dz-p"/><circle cx="74" cy="126" r="5" class="dz-p"/><circle cx="92" cy="132" r="6" class="dz-puddle"/><circle cx="106" cy="134" r="6" class="dz-puddle"/><circle cx="118" cy="128" r="6" class="dz-puddle"/><path d="M64 92A40 40 0 0 1 96 66" class="dz-arrow" marker-end="url(#dz-ar-tiere-poison)"/></svg><figcaption>Çiçeği öldür; zehir arkanda kalsın diye birlikte hareket edin.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname">Zehirli arena <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=348s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 5:48</a></p>
+              <p>Ortaya çekilir ve etrafındaki küçük bir daire dışında her yeri zehirler; içeride bir çiçek açar — alanı temizlemek için onu öldür. Her oyuncuya zehir atar ve zehir yerde kalır, bu yüzden temiz bir yer kalsın diye tüm grup birlikte tek yöne hareket eder.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="dg-boss">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310811.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Thamon</h3>
+            <p class="dg-brole">İkinci boss — kaya <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=381s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 6:21</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Taş daireler <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=384s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 6:24</a></p>
+              <p>Oyuncuların altında ışık daireleri çakar; birinde kalırsan taşa dönüşürsün. Diğerleri taşı hızla kırar, çünkü hemen ardından hâlâ içeride olanlara çarpan dev bir alan vuruşu gelir.</p>
+            </div>
+          </div>
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Kırmızı veya mor <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=396s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 6:36</a></p>
+              <p>İkinci fazda kendine vampirik bir buff koyar: kırmızı parıltı — yakın dövüş vurmayı bırakır; mor parıltı — büyücüler bırakır. Yanlış renge vurmak onu çok iyileştirir.</p>
+            </div>
+          </div>
+        </div>
+<p class="dg-btext dg-after">Ondan sonra uçuş modunda dört küre bul ve her birini kendi elementinin heykeline götür — bu Vakron'a giden yolu açar.</p>      </article>
+      <article class="dg-boss is-final">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310812.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Vakron</h3>
+            <p class="dg-brole">Son boss <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=423s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 7:03</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Tohum <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=423s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 7:03</a></p>
+              <p>Bir oyuncuya tohum atar; birkaç saniye sonra onu zamanla ağır hasar veren dikenlere hapseder ve yakındakilere de bulaşır. Tohumlu oyuncu gruptan çıkar — ama çok uzağa değil, diğerleri dikenlere vurup onu kurtarabilsin.</p>
+            </div>
+          </div>
+          <div class="dg-mech has-diagram is-danger">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Vakron: jump the three waves, stand between the rays of the next set, glide over the blast"><defs><marker id="dz-ar-vakron-waves" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><circle cx="100" cy="100" r="88" class="dz-floor"/><circle cx="100" cy="100" r="88" class="dz-bad-soft"/><circle cx="100" cy="100" r="32" class="dz-wave"/><circle cx="100" cy="100" r="52" class="dz-wave"/><circle cx="100" cy="100" r="72" class="dz-wave"/><path d="M100 100L186.0 100.0" class="dz-ray-a"/><path d="M100 100L160.8 160.8" class="dz-ray-a"/><path d="M100 100L100.0 186.0" class="dz-ray-a"/><path d="M100 100L39.2 160.8" class="dz-ray-a"/><path d="M100 100L14.0 100.0" class="dz-ray-a"/><path d="M100 100L39.2 39.2" class="dz-ray-a"/><path d="M100 100L100.0 14.0" class="dz-ray-a"/><path d="M100 100L160.8 39.2" class="dz-ray-a"/><circle cx="100" cy="100" r="11" class="dz-boss"/><path d="M96 99l4-5 4 5-4 6z" class="dz-boss-in"/><circle cx="123.72637280663557" cy="157.28053101569978" r="5" class="dz-p"/></svg><figcaption>Üç halkanın üstünden zıpla; kırmızı çizgiler merkezden gelen saldırılar — aralarında dur; son patlamanın üstünde süzül.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">wipe</span> Kırmızı zemin: üç dalga ve patlama <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=435s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 7:15</a></p>
+              <p>Tüm zemin kızarır. Ondan üç dalga yayılır — her birinin üstünden zıpla. Aynı anda merkezden her yöne çizgiler boyunca saldırılar çıkar, sırayla iki set hâlinde: bir sonraki setin çizgilerinin arasında dur. Üçüncü dalgadan kısa süre sonra alanı bir patlama kaplar: ondan da zıplayarak kaçın. En kolayı: üçüncü dalgada zıpla, Space'e bir daha bas ve süzül, patlama altından geçer.</p>
+            </div>
+          </div>
+          <div class="dg-mech has-diagram is-danger">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Vakron: break the red rock and leave the circle"><defs><marker id="dz-ar-vakron-rocks" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><circle cx="100" cy="100" r="88" class="dz-floor"/><circle cx="100" cy="100" r="54" class="dz-bad-soft"/><circle cx="100" cy="100" r="11" class="dz-boss"/><path d="M96 99l4-5 4 5-4 6z" class="dz-boss-in"/><rect x="142.9" y="113.7" width="14" height="14" rx="3" class="dz-rock" transform="rotate(30 149.9 120.7)"/><rect x="113.7" y="142.9" width="14" height="14" rx="3" class="dz-rock-red" transform="rotate(30 120.7 149.9)"/><rect x="72.3" y="142.9" width="14" height="14" rx="3" class="dz-rock" transform="rotate(30 79.3 149.9)"/><rect x="43.1" y="113.7" width="14" height="14" rx="3" class="dz-rock" transform="rotate(30 50.1 120.7)"/><rect x="43.1" y="72.3" width="14" height="14" rx="3" class="dz-rock" transform="rotate(30 50.1 79.3)"/><rect x="72.3" y="43.1" width="14" height="14" rx="3" class="dz-rock" transform="rotate(30 79.3 50.1)"/><rect x="113.7" y="43.1" width="14" height="14" rx="3" class="dz-rock" transform="rotate(30 120.7 50.1)"/><rect x="142.9" y="72.3" width="14" height="14" rx="3" class="dz-rock" transform="rotate(30 149.9 79.3)"/><circle cx="104.08946671086241" cy="130.77785343425933" r="5" class="dz-p"/><circle cx="111.4805029709527" cy="127.7163859753386" r="5" class="dz-p"/><circle cx="118.87153923104299" cy="124.65491851641788" r="5" class="dz-p"/><path d="M114.5 135.1L130.6 173.9" class="dz-arrow" marker-end="url(#dz-ar-vakron-rocks)"/></svg><figcaption>Kırmızı kayayı kır, daireden onun boşluğundan çık.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">wipe</span> Kırmızı kaya <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=465s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 7:45</a></p>
+              <p>Ortaya gider ve herkesi çeker; etrafında kayalar büyür ve biri kırmızımsı. Tüm grup o kayayı kırar ve boşluktan daireden dışarı koşar — kaya kalırsa herkes ölür.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="pg-sec dg-sec" id="fire-temple" aria-labelledby="h-fire-temple">
+      <h2 id="h-fire-temple" class="section-title">Fire Temple</h2>
+      <p class="dg-meta"><span class="dg-tier">Gereken GS: 2100</span><span>5 oyuncu</span><a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=482s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 8:02</a></p>
+<div class="callout pg-tip" role="note"><p>Debuff temizlemek için sarı iksir al ve Chanter ile Cleric yeteneklerini temizleme seçimlerine ayarla. Bu en hızlı zindan ve en çok farmlayacağın yer.</p></div>      <article class="dg-boss is-final">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310371.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Kromede&#39;s Desire</h3>
+            <p class="dg-brole">Son boss — Kromede <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=524s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 8:44</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Yay yukarı, yay aşağı <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=524s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 8:44</a></p>
+              <p>Yay yukarıda: her oyuncuya ok yağar — hareket et. Yay aşağıda: birkaç yöne toplar uçar ve isabet ettiklerine debuff koyar. Sonra oyuncudan oyuncuya alan vuruşlarıyla sıçrar, daha sonra da her seferinde yarıçapı büyüyen üç aşamalı bir sıçrama.</p>
+            </div>
+          </div>
+          <div class="dg-mech has-diagram is-danger">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Fire Temple: run through the window in each wall of fire"><defs><marker id="dz-ar-fire-walls" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><rect x="12" y="12" width="176" height="176" rx="14" class="dz-floor"/><rect x="16" y="36" width="14" height="8" rx="2" class="dz-fire"/><rect x="58" y="36" width="126" height="8" rx="2" class="dz-fire"/><rect x="16" y="74" width="104" height="8" rx="2" class="dz-fire"/><rect x="148" y="74" width="36" height="8" rx="2" class="dz-fire"/><rect x="16" y="112" width="44" height="8" rx="2" class="dz-fire"/><rect x="88" y="112" width="96" height="8" rx="2" class="dz-fire"/><rect x="16" y="150" width="124" height="8" rx="2" class="dz-fire"/><rect x="168" y="150" width="16" height="8" rx="2" class="dz-fire"/><path d="M100 186 L154 154 L74 116 L134 78 L44 40 L100 16" class="dz-arrow" marker-end="url(#dz-ar-fire-walls)"/><circle cx="100" cy="182" r="5" class="dz-p"/></svg><figcaption>Her duvarda bir pencere, hiç aynı yerde değil: zikzakla geç.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">wipe</span> Ateş duvarları <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=570s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 9:30</a></p>
+              <p>Havalanır ve arenada her birinde tek güvenli pencere olan ateş duvarları ilerler. Pencereler sağa sola atlar, o yüzden erken dön — yüksek ping'le duvara varmadan dönmeye başla. İyileş ve dokunulmazlık kullan; önemli olan hayatta kalmak. İkinci seferde arenada ateş topları da uçar.</p>
+            </div>
+          </div>
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Klonlar <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=612s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 10:12</a></p>
+              <p>Ortaya geçer ve hızlı saldıran illüzyonlar belirir, sonra oyunculara yaklaşıp birlikte bir alana vurur — atıl veya dışarı koş. İkinci ateş duvarlarından sonra kenarlardaki illüzyonlar ateş okları da atar.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="pg-sec dg-sec" id="ferocious-horn-den" aria-labelledby="h-ferocious-horn-den">
+      <h2 id="h-ferocious-horn-den" class="section-title">Ferocious Horn Den</h2>
+      <p class="dg-meta"><span class="dg-tier">Gereken GS: 2100</span><span>5 oyuncu</span><a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=651s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 10:51</a></p>
+<p class="pg-lead">Zırh parçaları ve koruma için zindan.</p>      <article class="dg-boss">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310908.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Watchdog Kwapo</h3>
+            <p class="dg-brole">İlk boss — kurt <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=654s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 10:54</a></p>
+          </div>
+        </header>
+<p class="dg-btext">Alan vuruşları yağarken arenada zıplar, sonra ateş topları belirir: hızla toplayın — her biri seni daha çok yavaşlatır. Sonunda ortadan bir dalga salar (üstünden zıpla) ve toplanmayan her top patlar.</p>      </article>
+      <article class="dg-boss">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310909.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Necromancer Duanka</h3>
+            <p class="dg-brole">İkinci boss — nekromant <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=696s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 11:36</a></p>
+          </div>
+        </header>
+<p class="dg-btext">Ondan önce: totemli bir oda — mobları temizlemek için iki yandaki merdivenlerden bomba al (bir seferde üç). Dört ruh çağırır; bir oyuncu (genellikle menzilli) bir küre alır ki grup onlara hasar verebilsin. Bir oyuncuyu işaretler ve ağır hasarla üstünde durur — destekler dairede paylaşır. Sonunda herkesi çeker ve alanı genişletir: dışarı koş ve ona uçan ruhlardan kaçın.</p>      </article>
+      <article class="dg-boss is-final">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2310910.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Ferocious Horn Nuakum</h3>
+            <p class="dg-brole">Son boss <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=747s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 12:27</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">İllüzyon sıçraması <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=768s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 12:48</a></p>
+              <p>Heykeline sıçrar, bir oyuncuyu işaretleyip köklendirir ve bir daire büyürken illüzyonu ondan uzağa zıplar. Oklara bak: küçük daire — destekler içeri koşar; büyük daire — dışarı koşar. Bir oyuncu daha illüzyonun yolunda durur, yoksa onun alınan hasar debuff'ı kurt indiğinde işaretli oyuncuyu öldürür. İlk seferde iki sıçrama, ikincide üç.</p>
+            </div>
+          </div>
+          <div class="dg-mech has-diagram is-danger">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Ferocious Horn Nuakum: put the orb between the boss and the marked player"><defs><marker id="dz-ar-nuakum-orb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><circle cx="100" cy="100" r="88" class="dz-floor"/><circle cx="100" cy="100" r="16" class="dz-orb"/><circle cx="40" cy="58" r="11" class="dz-boss"/><path d="M36 57l4-5 4 5-4 6z" class="dz-boss-in"/><path d="M40 58L166 150" class="dz-beam"/><circle cx="166" cy="150" r="5" class="dz-mark"/><path d="M118 176Q156 176 162 156" class="dz-arrow" marker-end="url(#dz-ar-nuakum-orb)"/><circle cx="76" cy="160" r="12" class="dz-bad"/><circle cx="148" cy="80" r="12" class="dz-bad"/></svg><figcaption>Boss, küre ve işaretli oyuncu tek çizgide.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">wipe</span> Vuruşu küreye yönlendir <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=822s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 13:42</a></p>
+              <p>Ortada oyuncuları hafifçe çeken bir küre yaratır, kenara zıplar ve bir oyuncuyu işaretler. İşaretli oyuncu alan vuruşlarının arasından karşı tarafa koşar, böylece menzilli vuruşu küreden geçer. Dört denemeden üç vuruş küreye gitmeli; her seferinde yeni bir yere zıplar.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    </div>
+    <div class="dg-group tab-panel" id="panel-transcendence" data-tab-panel="transcendence" role="tabpanel" aria-labelledby="tab-transcendence" hidden>
+    <h2 class="dg-gtitle">Transcendence</h2>
+    <p class="pg-lead dg-glead">Arcana için grup zindanları; her mob ve boss için puanlar son bossa giden yolu açar.</p>
+    <ol class="pg-toc dg-toc" aria-label="Adımlar">
+      <li><a href="#deus-research-base"><b>GS 1600</b><span>Deus Research Base</span></a></li>
+      <li><a href="#shattered-arkanis"><b>GS 1600</b><span>Shattered Arkanis</span></a></li>
+    </ol>
+
+    <section class="pg-sec dg-sec" id="deus-research-base" aria-labelledby="h-deus-research-base">
+      <h2 id="h-deus-research-base" class="section-title">Deus Research Base</h2>
+      <p class="dg-meta"><span class="dg-tier">Gereken GS: 1600</span><span>5 oyuncu</span><a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=861s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 14:21</a></p>
+<div class="callout pg-tip" role="note"><p>Son bossa giden yolu her mob ve boss için verilen puanlar açar, bu yüzden kapı açılır açılmaz başlangıç moblarını ve ilk ışınlayıcıdaki her şeyi temizle. Mor su birikintilerinden kaçın.</p></div>      <article class="dg-boss">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2320616.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Gelcos</h3>
+            <p class="dg-brole">İlk boss — elektrik kırbaç <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=891s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 14:51</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Hücum ve birikintiler <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=909s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 15:09</a></p>
+              <p>Kırbaç vuruşları zayıf ekipmanda can yakar; üç yüke ulaşan bir debuff seni her yöne şimşek saçarak patlatır. Bir oyuncuyu işaretler ve iki kez hücum eder, her seferinde elektrikli bir birikinti bırakır — işaretli oyuncu onu köşeye çeker ki birikintiler arenayı kaplamasın. Sonra ortadan yere yumruk atar: büyük kırbaç vuruşundan önce alanlardan kaçın.</p>
+            </div>
+          </div>
+          <div class="dg-mech is-danger">
+            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">wipe</span> Büyük kırbaç <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=963s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 16:03</a></p>
+              <p>Büyük bir halka belirir ve devasa hasarla büyük kırbacını her yöne savurur — halkadan dışarı koş veya yeteneklerle blokla.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="dg-boss">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2320615.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Nazmun</h3>
+            <p class="dg-brole">İkinci boss <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=978s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 16:18</a></p>
+          </div>
+        </header>
+<p class="dg-btext">Daha kolay: önüne vurur, üç cihaz elektrik iplerini daire içinde döndürür — üstlerinden zıpla — ve oyunculara büyük, işleyen bir alan koyar: onu gruptan uzağa taşı. Bombalarından kaçın.</p>      </article>
+      <article class="dg-boss is-final">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2320601.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Atiel</h3>
+            <p class="dg-brole">Son boss <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1011s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 16:51</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">İp ve ortak vuruş <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1011s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 16:51</a></p>
+              <p>Grubu bir araya çeker ve oyuncuları bir ip bağlar — kırmak için ayrı yönlere koşun. Sonra bir oyuncuyu köklendirir: hasarı paylaşmak için herkes o daireye koşar. Can yakan ve kısa süre sersemleten dalgalar uçar — ritmini bul — bir rüzgâr ise seni sonunda patlayıp daralan kenara iter.</p>
+            </div>
+          </div>
+          <div class="dg-mech is-danger">
+            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">wipe</span> Son stagger <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1052s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 17:32</a></p>
+              <p>Kopyalar arenada tren gibi geçer, kırmızı bir ip de ondan çok uzaklaşmayı cezalandırır. Sonra bir stagger çubuğu çıkarır ama rüzgâr yakın dövüşçüleri savurur — yeteneklerle yaklaş ve pizza vuruşlarından kaçarak kır. Çubuk dayanırsa koşu başarısız olur.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="pg-sec dg-sec" id="shattered-arkanis" aria-labelledby="h-shattered-arkanis">
+      <h2 id="h-shattered-arkanis" class="section-title">Shattered Arkanis</h2>
+      <p class="dg-meta"><span class="dg-tier">Gereken GS: 1600</span><span>5 oyuncu</span><a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1083s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 18:03</a></p>
+<div class="callout pg-tip" role="note"><p>Kapılar açılınca mobları temizle, hareket et — çoğu büyü hasarı verir — ve bir wipe'tan sonra baştan koşmamak için obeliski etkinleştir. Yoldaki dönen duvarlar sert vurur; en güvenli yer çıktıkları sütunun yanındaki orta nokta.</p></div>      <article class="dg-boss">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2330707.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Siliator of Deceit</h3>
+            <p class="dg-brole">İlk boss — halkalar <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1110s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 18:30</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech has-diagram is-danger">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Siliator of Deceit: stand so the two red bars cross and the rings meet"><defs><marker id="dz-ar-rings-cross" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><circle cx="100" cy="100" r="88" class="dz-floor"/><circle cx="100" cy="34" r="9" class="dz-boss"/><path d="M96 33l4-5 4 5-4 6z" class="dz-boss-in"/><path d="M24 70L176 150" class="dz-bar"/><path d="M176 70L24 150" class="dz-bar"/><circle cx="170" cy="147" r="5" class="dz-mark"/><circle cx="30" cy="147" r="5" class="dz-mark"/><circle cx="44" cy="81" r="8" class="dz-ring"/><circle cx="156" cy="81" r="8" class="dz-ring"/><path d="M56 88L80 100" class="dz-arrow" marker-end="url(#dz-ar-rings-cross)"/><path d="M144 88L120 100" class="dz-arrow" marker-end="url(#dz-ar-rings-cross)"/><path d="M100 104l4 6h7l-5 5 2 7-8-4-8 4 2-7-5-5h7z" class="dz-hit"/></svg><figcaption>İki oyuncu kırmızı çubukları çaprazlar; halkalar ortada buluşur.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">wipe</span> Halkaları çaprazla <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1137s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 18:57</a></p>
+              <p>Önce birkaç oyuncuya halka atar, sonra kalanlar fırlar — güvenli bir yer bulmak için yollarını oku. Ana mekanik iki oyuncu için: iki halka kırmızı çubuklar boyunca onlara yavaşça gelir. Çubuklar çarpı oluşturacak ve halkalar çarpışacak şekilde durun. Biri son anda kıpırdarsa halkalar geçip gider ve yeniden hizalanmalı; başarısız deneme halkaları peşinize takar ve herkese vurur. Sakince düzeltin.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class="dg-boss">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2330708.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Ruthilis of Pain</h3>
+            <p class="dg-brole">İkinci boss <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1203s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 20:03</a></p>
+          </div>
+        </header>
+<p class="dg-btext">Daha kolay. Pizzasından kaçın; tüm arena kızarınca ona koş — orası güvenli. Yukarıdan birkaç kez şimşek çakar; isabet ederse etrafında bir daire belirir ve sonunda tüm arenaya yayılır — üstünden zıpla (birkaç tane olabilir). Sonra bir pizza daha ve hasar veren pıhtılar. Hızla erit.</p>      </article>
+      <article class="dg-boss is-final">
+        <header class="dg-bhead">
+<img class="dg-portrait" src="../../assets/icons/bosses/2330709.webp" width="64" height="64" alt="" loading="lazy">          <div>
+            <h3>Talisra of the Void</h3>
+            <p class="dg-brole">Son boss <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1236s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 20:36</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Mızraklar ve ışınlar <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1236s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 20:36</a></p>
+              <p>Dört mızrak belirir, üçü mor biri beyaz — beyazı vur, yoksa çok sert vurur. Sudaki daireler yukarıdan gelecek, rastgele hareket eden ateş ışınları demek. Kenara beyaz bir dalga, kendine doğru mor bir dalga gönderir: ikisinin de üstünden zıpla.</p>
+            </div>
+          </div>
+          <div class="dg-mech has-diagram is-danger">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Talisra of the Void: one dome per player, kept apart"><defs><marker id="dz-ar-color-domes" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><circle cx="100" cy="100" r="88" class="dz-floor"/><circle cx="100" cy="100" r="11" class="dz-boss"/><path d="M96 99l4-5 4 5-4 6z" class="dz-boss-in"/><circle cx="52" cy="60" r="20" class="dz-dome-w"/><circle cx="52" cy="60" r="5" class="dz-p"/><circle cx="150" cy="62" r="20" class="dz-dome-p"/><circle cx="150" cy="62" r="5" class="dz-p"/><circle cx="56" cy="146" r="20" class="dz-dome-p"/><circle cx="56" cy="146" r="5" class="dz-p"/><circle cx="146" cy="144" r="20" class="dz-dome-w"/><circle cx="146" cy="144" r="5" class="dz-p"/><circle cx="180.0" cy="100.0" r="4" class="dz-o-w"/><circle cx="169.3" cy="140.0" r="4" class="dz-o-p"/><circle cx="140.0" cy="169.3" r="4" class="dz-o-w"/><circle cx="100.0" cy="180.0" r="4" class="dz-o-p"/><circle cx="60.0" cy="169.3" r="4" class="dz-o-w"/><circle cx="30.7" cy="140.0" r="4" class="dz-o-p"/><circle cx="20.0" cy="100.0" r="4" class="dz-o-w"/><circle cx="30.7" cy="60.0" r="4" class="dz-o-p"/><circle cx="60.0" cy="30.7" r="4" class="dz-o-w"/><circle cx="100.0" cy="20.0" r="4" class="dz-o-p"/><circle cx="140.0" cy="30.7" r="4" class="dz-o-w"/><circle cx="169.3" cy="60.0" r="4" class="dz-o-p"/></svg><figcaption>Her oyuncu kendi kubbesinin altında, ayrı; ilk gösterdiği renge gidin.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">wipe</span> Renkli küreler ve kubbeler <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1263s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 21:03</a></p>
+              <p>Mor ve beyaz küreler her yönden ona doğru gelir — kimin hangi rengi toplayacağında önceden anlaşın; kaçan her küre hasarını artırır. Küreler bitince üstünde kendi renginde bir kubbe oluşur; başkalarına yakın durma, yoksa kubbeler kaybolur. Gösterdiği renk sırasını hatırla: herkes önce ilk rengin kubbesinin altına, sonra ikinciye geçer. İkinci seferde üç renk ve zıplanacak dalgalar var.</p>
+            </div>
+          </div>
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Kafesi kır <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1329s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 22:09</a></p>
+              <p>Bir oyuncuyu hasar alan bir kafese kilitler ve diğer üçüne mızrak atar, yolları sarı bir çubukla gösterilir. Üçünü de kafese yönlendirin: üç isabet onu kırar.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    </div>
+    <div class="dg-group tab-panel" id="panel-nightmare" data-tab-panel="nightmare" role="tabpanel" aria-labelledby="tab-nightmare" hidden>
+    <h2 class="dg-gtitle">Nightmare</h2>
+    <p class="pg-lead dg-glead">Solo boss dövüşleri; deneme yalnızca öldürmede harcanır.</p>
+    <ol class="pg-toc dg-toc" aria-label="Adımlar">
+      <li><a href="#zikel"><span>Nightmare: Zikel</span></a></li>
+    </ol>
+
+    <section class="pg-sec dg-sec" id="zikel" aria-labelledby="h-zikel">
+      <h2 id="h-zikel" class="section-title">Nightmare: Zikel</h2>
+      <p class="dg-meta"><a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1365s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 22:45</a></p>
+<div class="callout pg-tip" role="note"><p>Stok yap: HP iksirleri, debuff için sarı iksirler, yemek. Onu yenmek, Pantheon'un için heykelini solo mod mağazasından almanı sağlar.</p></div>      <article class="dg-boss is-final">
+        <header class="dg-bhead">
+<span class="dg-portrait dg-noimg" aria-hidden="true">1</span>          <div>
+            <h3>Zikel</h3>
+            <p class="dg-brole">Solo boss <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1407s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 23:27</a></p>
+          </div>
+        </header>
+        <div class="dg-mechs">
+          <div class="dg-mech">
+            <div class="dg-mtext">
+              <p class="dg-mname">Her vuruş can yakar <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1407s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 23:27</a></p>
+              <p>Her şeyden kaçın: tek vuruşlar ve kısa kombolar hep can yakar ve kanatır — iksir veya yetenekle temizle. Bir saldırı seni bağlayıp havaya kaldırır, ardından devasa kılıcı iner.</p>
+            </div>
+          </div>
+          <div class="dg-mech has-diagram is-danger">
+<figure class="dg-diagram"><svg class="dz" viewBox="0 0 200 200" role="img" aria-label="Zikel: stand in the lane after he strikes, then move to the next one"><defs><marker id="dz-ar-zikel-lanes" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="dz-ah"/></marker></defs><circle cx="100" cy="100" r="88" class="dz-floor"/><circle cx="100" cy="100" r="88" class="dz-purple"/><path d="M34 74L166 67" class="dz-lane"/><path d="M34 132L166 127" class="dz-lane dz-lane-2"/><circle cx="24" cy="46" r="10" class="dz-boss"/><path d="M20 45l4-5 4 5-4 6z" class="dz-boss-in"/><circle cx="176" cy="154" r="9" class="dz-ghost"/><circle cx="100" cy="70" r="5" class="dz-p"/><path d="M100 80L100 116" class="dz-arrow" marker-end="url(#dz-ar-zikel-lanes)"/></svg><figcaption>Önce bir taraftan, sonra diğerinden vurur: savuruşunda koridordan koridora geç.</figcaption></figure>            <div class="dg-mtext">
+              <p class="dg-mname"><span class="dg-wipe">wipe</span> Güvenli koridorlar <a class="pg-at" href="https://www.youtube.com/watch?v=mMjaSbaVTjc&t=1440s" target="_blank" rel="noopener" title="Bu anı videoda izle">▶ 24:00</a></p>
+              <p>Kenara zıplar ve yere vurur; vurduktan sonra güvenli bir koridor oluşur — ancak o zaman gir, asla önce değil. Karşı tarafta yeniden belirir ve ikinci, aşağı yukarı paralel bir koridor vurur: mor parıltı sönünce harekete geç, ne erken ne geç. Arena yeniden mora boyandığında koridorun dışındaysan ölürsün. Sonra ortaya dalar — iniş dalgasından hemen önce zıpla. İkinci tur yere alan vuruşları ve üçüncü bir taraf ekler; sonunda güvenli yer tam yanı.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+    </div>
+    <script type="application/json" id="sk-data">{"i:wings":{"n":"Ultimate Daeva Wings (Bound)","m":"","g":41,"d":"Grants [Ultimate Daeva Wings (Bound)].\n\n[Equipped Effect]\nHP: 500\nMP: 250\nPenetration: 500\nCritical Hit: 35\n[Owned Effect]\nFlight Power: 500\nPenetration: 100\nAccuracy Bonus: 20\nAttack Bonus: 10","sp":[]},"i:bracelet":{"n":"Ascension Bracelet","m":"Item level 51","g":41,"d":"Defense: 156\nAttack: 65","sp":[]},"i:trace":{"n":"Empyrean Trace: Altgard (Bound)","m":"","g":71,"d":"A trace faintly imbued with the strength of the Empyrean Lords who protect Altgard. Can be resonated with Altgard Monolith.","sp":[]},"i:dcrystal":{"n":"Daevanion Crystal (Bound)","m":"","g":71,"d":"Use to obtain 1 Daevanion Point.","sp":[]},"i:dcrystal_ariel":{"n":"Daevanion Crystal: Ariel (Bound)","m":"","g":71,"d":"Use to obtain 1 Ariel Daevanion Point.","sp":[]},"i:dcrystal_azphel":{"n":"Daevanion Crystal: Azphel (Bound)","m":"","g":71,"d":"Use to obtain 1 Azphel Daevanion Point.","sp":[]},"i:wisdom":{"n":"Wisdom Stone (Bound)","m":"","g":71,"d":"A mysterious stone imbued with memories of battle.\nUse to obtain 1 Skill Point.","sp":[]},"i:clashrune":{"n":"Clash Rune Chest (Bound)","m":"","g":71,"d":"A rune that can be earned only by those who have overcome a nightmare.\nUse to obtain a Clash Rune (Bound) and Rune Enhance Scrolls (Bound).","sp":[]},"i:beltscroll":{"n":"Noble Belt Enhance Scroll (Bound)","m":"","g":11,"d":"An Enhance Scroll containing an ancient power.\nUse to enhance Noble Belt.","sp":[]},"i:shugokey":{"n":"Shugo Festival Reward Key (Bound)","m":"","g":71,"d":"Recharges 1 Shugo Festival Reward Key count.","sp":[]},"i:bakarma":{"n":"Bakarma Breastplate","m":"Item level 54","g":41,"d":"HP: 216\nDefense: 397","sp":[]},"i:voucher":{"n":"Gear Change Voucher: Vakron Sky Island (Bound)","m":"","g":41,"d":"A reward obtained by defeating Vakron.\nWhen used as a Substance Morph material, it can be transformed into a Unique Guard or Unique Gear Selection Chest.","sp":[]},"i:vakronguard":{"n":"Vakron Guard","m":"Item level 70","g":41,"d":"Critical Hit: 50\nAccuracy: 50\nAttack: 144","sp":[]},"i:mana_sup":{"n":"Superior Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:mana_int":{"n":"Intermediate Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:mana_less":{"n":"Lesser Manastone (Bound)","m":"","g":11,"d":"Can be engraved on Manastone slots in all weapons and armor to imbue them with stats.\nThe type and value of the stats are determined by chance.","sp":[]},"i:theostone":{"n":"Theostone: Jumentis's Dexterity (Bound)","m":"","g":31,"d":"Grants [Theostone: Jumentis's Dexterity].\nThe obtained Theostone can be found in the Enhancement menu.\nHas a 20% chance to deal 250 AoE Wind damage to up to 4 targets on attack\nEffect Activation Cooldown: 1s\nOnly one Theostone's effect applies when identical Theostones are engraved.","sp":[]},"i:enhance":{"n":"Enhance Stone","m":"","g":11,"d":"Used to awaken hidden potential of gear.","sp":[]},"i:bell_green":{"n":"Bell of Vigor","m":"Item level 40 · Set: Primal Vigor","g":21,"d":"Justice [Nezekan]: 12","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:mirror_green":{"n":"Mirror of Magic","m":"Item level 40 · Set: Magic Armor","g":21,"d":"Wisdom [Lumiel]: 12","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:compass_grey":{"n":"Compass of Magic","m":"Item level 20 · Set: Magic Armor","g":11,"d":"Death [Triniel]: 8","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:chalice_grey":{"n":"Chalice of Magic","m":"Item level 20 · Set: Magic Armor","g":11,"d":"Space [Israphel]: 8","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]},"i:mirror_gold":{"n":"Mirror of Vigor","m":"Item level 80 · Set: Primal Vigor","g":41,"d":"Illusion [Kaisinel]: 20","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:transfer_w":{"n":"Transfer Stone: Weapon (Unique) (Bound)","m":"","g":41,"d":"A formidable gemstone that transfers the boundless power of the gear to another.\nCan be used on the Unique Weapon.","sp":[]},"i:transfer_a":{"n":"Transfer Stone: Armor (Unique) (Bound)","m":"","g":41,"d":"A formidable gemstone that transfers the boundless power of the gear to another.\nCan be used on the Unique Armor.","sp":[]},"i:stigmashard":{"n":"Stigma Shard (Bound)","m":"","g":71,"d":"A fragment sealed with the Essence of Experience.\nGrants 1 Stigma Shard Point when obtained.","sp":[]},"i:amplify":{"n":"Amplify Stone (Unique) (Bound)","m":"","g":41,"d":"A mystical gemstone that awakens the unique power of gear.\nUsed to amplify Unique Gear that has reached its maximum enhancement level.","sp":[]},"i:amplify_frag":{"n":"Amplify Stone Fragment (Unique) (Bound)","m":"","g":41,"d":"A piece of an Amplify Stone used to awaken the unique power of the gear.\nCan be converted into an Amplify Stone through Substance Morph.","sp":[]},"i:sync":{"n":"Sync Stone (Unique) (Bound)","m":"","g":41,"d":"A stone that harmonizes the energies within gear to awaken new possibilities.\nWhen used in [Enhancement - Soul Binding - Sync], it allows you to adjust the properties of gear.","sp":[]},"i:sapphire":{"n":"Sapphire Gemstone (Bound)","m":"","g":11,"d":"A gemstone infused with valuable gems. Used as a material for handicrafting accessories.","sp":[]},"i:ruby":{"n":"Ruby Gemstone (Bound)","m":"","g":11,"d":"A gemstone infused with valuable gems. Used as a material for handicrafting accessories.","sp":[]},"i:odyle":{"n":"Odyle","m":"","g":11,"d":"Used to imbue an item with the power of Odyle. Used as a material for Crafting and Substance Morph.","sp":[]},"i:log":{"n":"Yggdrasil Log (Bound)","m":"","g":11,"d":"A magic-imbued log. Used for making wooden weapons in Handicrafting.","sp":[]},"i:odyle_energy":{"n":"Odyle Energy (Bound)","m":"","g":71,"d":"Recharges 40 Odyle Energy.\nOdyle Energy can be used to activate the Odyle Energy Cube that appears when you clear an Expedition, Transcendence, or Sanctuary.","sp":[]},"i:ore":{"n":"Orichalcum Ore","m":"","g":11,"d":"A hard ore. Used as a material for Blacksmithing and Armorsmithing.","sp":[]},"i:herb":{"n":"Calendula","m":"","g":11,"d":"An herb used to concoct a potion in Alchemy.","sp":[]},"i:ingredient":{"n":"Kukuru","m":"","g":11,"d":"A cooking ingredient.","sp":[]},"i:parchment_vigor":{"n":"Parchment of Vigor","m":"Item level 80 · Set: Primal Vigor","g":41,"d":"Life [Yustiel]: 20","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:compass_vigor":{"n":"Compass of Vigor","m":"Item level 80 · Set: Primal Vigor","g":41,"d":"","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:chalice_vigor":{"n":"Chalice of Vigor","m":"Item level 80 · Set: Primal Vigor","g":41,"d":"","sp":[["2×","+60 PvE Attack when HP is 70% or more"],["4×","+150 PvE Attack when HP is 70% or more"]]},"i:mirror_magic_gold":{"n":"Mirror of Magic","m":"Item level 80 · Set: Magic Armor","g":41,"d":"Wisdom [Lumiel]: 20","sp":[["2×","Restores 1,500 MP when MP is 20% or less [30s cooldown]"],["4×","+1,000 PvE Defense when MP is 50% or more"]]}}</script>
+  </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div>
+      <a class="brand brand-sm" href="../../tr/">AION 2 Global - Rehberler</a>
+      <p>Resmî olmayan hayran sitesi, NCSOFT ile bağlantılı değildir. AION 2 ve yetenek simgeleri © NCSOFT.</p>
+      <p class="foot-credit">Rehberler içerik üreticilerinden derlendi — tüm emek onlara ait; site Claude (yapay zekâ) yardımıyla hazırlandı.</p>
+      <p>Son kontrol: <time datetime="2026-10-06">6 Ekim 2026</time>.</p>
+      <p><a href="../../tr/sources/">Tüm kaynaklar ve içerik üreticileri</a> · <a href="../../tr/changelog/">Değişiklik günlüğü</a> · <button type="button" class="link-btn report-open">Hata bildir / Değişiklik öner</button></p>
+    </div>
+  </div>
+</footer>
+<dialog class="search-dlg" aria-label="Ara" data-index="../../tr/search.json" data-base="../../tr/" data-empty="Hiçbir şey bulunamadı"
+  data-kinds="{&#34;boss&#34;: &#34;Boss&#34;, &#34;class&#34;: &#34;S\u0131n\u0131f&#34;, &#34;page&#34;: &#34;Sayfa&#34;, &#34;section&#34;: &#34;B\u00f6l\u00fcm&#34;, &#34;skill&#34;: &#34;Yetenek&#34;}" data-root="../../">
+  <div class="search-in">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" class="search-q" placeholder="Sınıf, yetenek, boss, bölüm…" aria-label="Ara" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="search-res" role="listbox"></ul>
+  </div>
+</dialog>
+<dialog class="whatsnew" data-id="2026-10-06" aria-labelledby="wn-title">
+  <form method="dialog" class="wn-in">
+    <div class="wn-head">
+      <h2 id="wn-title">Yenilikler</h2>
+      <button class="icon-btn wn-x" value="close" aria-label="Anladım">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <section class="wn-entry">
+      <time class="wn-date" datetime="2026-10-06">6 Ekim 2026</time>
+      <ul>
+        <li><span><strong>Yeni sayfa: Zindanlar</strong> — Krao Cave, Draupnir, Urugugu Canyon, Vakron Sky Island, Fire Temple, Ferocious Horn Den, iki Transcendence zindanı ve Nightmare'de Zikel'in bossları: grubu silen mekanikler, arena şemaları ve videodaki ana bağlantılarla. Rehberler menüsünde.</span></li>
+        <li><span><strong>Yeni sayfa: Tier list</strong> (kesin değil, öznel) — PvE, toplu PvP, solo PvP ve saf DPS için trueeevil, XifanGG, Kanon ve KaidWOW yan yana, ortalamayla, artı ping'in seçimi nasıl değiştirdiği.</span></li>
+        <li><span><strong>Değişiklik öner</strong> — her sınıf rehberi artık geri bildirim formunu açan bir kutuyla başlıyor; hâlâ Kore rehberlerine dayanan modlar ve PvP rehberi olmayan sınıflar global bir rehberin bağlantısını istiyor.</span></li>
+        <li><span><strong>Ana sayfa zamanlayıcıları</strong> — “Global çıkış başladı”nın yanında: bir sonraki Rift açılışı ve haftalık sıfırlama.</span></li>
+        <li><span><strong>Fraksiyona göre dünya bossları</strong> — Elyos, Asmodian ve Abyss sekmeleri; sayfa seninkini hatırlar. Sitenin adı artık AION 2 Global - Rehberler.</span></li>
+      </ul>
+    </section>
+    <button class="btn btn-primary wn-ok" value="close">Anladım</button>
+    <p class="wn-all"><a href="../../tr/changelog/">Tüm değişiklik günlüğü →</a></p>
+  </form>
+</dialog>
+<dialog class="whatsnew feedback" aria-labelledby="fb-title" data-url="https://aion2-feedback.couga-ua.workers.dev/" data-page="tr/dungeons/" data-lang="tr">
+  <form class="wn-in fb-form" novalidate>
+    <div class="wn-head">
+      <h2 id="fb-title">Hata bildir / Değişiklik öner</h2>
+      <button type="button" class="icon-btn fb-x" aria-label="Anladım">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <p class="fb-hint">Yanlış veya eskimiş olan ne, ya da hangi rehber eklenmeli? Bir kaynağın bağlantısı ya da ekran görüntüsü çok yardımcı olur.</p>
+    <label class="fb-label" for="fb-text">Mesajın</label>
+    <textarea id="fb-text" class="fb-text" name="text" rows="6" maxlength="2000" required placeholder="Örneğin: global&#39;de Blaze&#39;in üçüncü uzmanlığı farklı…"></textarea>
+    <label class="fb-label" for="fb-contact">Yanıt için iletişim (isteğe bağlı)</label>
+    <input id="fb-contact" class="fb-contact" name="contact" type="text" maxlength="100" autocomplete="off" placeholder="Discord veya Telegram">
+    <input class="fb-hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="fb-meta">Mesajla birlikte gönderilir: <b class="fb-where"></b></p>
+    <p class="fb-status" role="status" data-sending="Gönderiliyor…" data-ok="Gönderildi — teşekkürler!" data-err="Gönderilemedi. Lütfen daha sonra tekrar dene." data-rate="Art arda çok fazla mesaj — birkaç dakika sonra tekrar dene." data-short="Önce birkaç kelime yaz."></p>
+    <div class="fb-actions">
+      <button type="submit" class="btn btn-primary fb-send">Gönder</button>
+      <button type="button" class="btn btn-ghost fb-cancel">İptal</button>
+    </div>
+  </form>
+</dialog>
+<script src="../../assets/js/site.js?v=97d1d107" defer></script>
+<script src="../../assets/js/fx.js?v=97d1d107" defer></script>
+</body>
+</html>

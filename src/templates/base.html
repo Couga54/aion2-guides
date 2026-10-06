@@ -72,7 +72,8 @@
   <div class="topbar-in">
     <a class="brand" href="{{ root }}{{ lang }}/">
       <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c1.8 4.6 5.6 7.2 12 8-4.4 2.2-6.8 5.6-7.4 10.6L16 29l-4.6-7.4C10.8 16.6 8.4 13.2 4 11c6.4-.8 10.2-3.4 12-8z" fill="currentColor"/></svg>
-      <span>{{ t.site_name }}</span>
+      {#- "AION 2 Global - Guides" in two lines: the name on top, the word "Guides" small below it (saves top bar room). -#}
+      {% set bn = t.site_name.split(' - ') %}<span class="brand-text"><b>{{ bn[0] }}</b>{% if bn|length > 1 %}<small><span class="sr-only"> - </span>{{ bn[1] }}</small>{% endif %}</span>
     </a>
     <details class="class-menu">
       <summary class="class-menu-btn{% if cls %} accent-{{ cls.accent }}{% endif %}">
@@ -101,13 +102,13 @@
       {% for ev in SITE.events if ev.get('at') %}{% do tt.list.append({'at': ev.at, 'n': t['ev_' ~ ev.id], 'o': t.get('tt_open_' ~ ev.id, '')}) %}{% endfor %}
       {#- Rift: a small always-on countdown to the next portal to the enemy zone (every few hours from an anchor). -#}
       {% if SITE.rift %}
-      <span class="rift-timer" data-anchor="{{ SITE.rift.anchor }}" data-every="{{ SITE.rift.every_h }}" data-tz="{{ SITE.rift.tz }}" data-open-min="{{ SITE.rift.open_min }}" data-open="{{ t.rift_open }}" title="{{ t.rift_title }}">
+      <span class="rift-timer{% if path == '' %} is-away{% endif %}" data-anchor="{{ SITE.rift.anchor }}" data-every="{{ SITE.rift.every_h }}" data-tz="{{ SITE.rift.tz }}" data-open-min="{{ SITE.rift.open_min }}" data-open="{{ t.rift_open }}" title="{{ t.rift_title }}">
         <svg class="rt-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><ellipse cx="12" cy="12" rx="7.5" ry="10.5"/><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/><g transform="rotate(180 12 12)"><path d="M11 13C10.2 11.4 11.4 10 12.8 10.4C14.6 11 14.6 14 12.8 15.6C11.4 16.8 9.6 16.8 8.6 16"/><path d="M12.4 6.6C14.8 6.4 17 8.6 17 12"/></g></svg><span class="rt-name">Rift</span><b class="rt-time">--:--</b>
       </span>
       {% endif %}
       {#- Weekly reset: a small countdown next to the Rift chip, linking to the weekly tracker (anchor + tz like tracker.js). -#}
       {% if SITE.get('weekly_reset') %}
-      <a class="wr-chip" href="{{ root }}{{ lang }}/weekly/" data-anchor="{{ SITE.weekly_reset.anchor }}" data-tz="{{ SITE.weekly_reset.tz }}" data-units="{{ t.units|join(',') }}" title="{{ t.reset_in }}">
+      <a class="wr-chip{% if path == '' %} is-away{% endif %}" href="{{ root }}{{ lang }}/weekly/" data-anchor="{{ SITE.weekly_reset.anchor }}" data-tz="{{ SITE.weekly_reset.tz }}" data-units="{{ t.units|join(',') }}" title="{{ t.reset_in }}">
         <svg class="wr-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg><span class="wr-name">{{ t.tt_reset }}</span><b class="wr-time">--</b>
       </a>
       {% endif %}
@@ -117,7 +118,7 @@
       </a>
       {% endif %}
       {#- Site pages menu, right-aligned so the class name length never moves it; the current page is highlighted inside. -#}
-      {% set NAV = [('week-1/', 'nav_week1'), ('progression/', 'nav_progression'), ('crafting/', 'nav_crafting'), ('settings/', 'nav_settings'), ('weekly/', 'nav_weekly'), ('bosses/', 'nav_bosses'), ('sources/', 'sources')] %}
+      {% set NAV = [('week-1/', 'nav_week1'), ('progression/', 'nav_progression'), ('crafting/', 'nav_crafting'), ('settings/', 'nav_settings'), ('weekly/', 'nav_weekly'), ('bosses/', 'nav_bosses'), ('dungeons/', 'nav_dungeons'), ('tier-list/', 'nav_tier'), ('sources/', 'sources')] %}
       {% set here = NAV|selectattr(0, 'equalto', path)|list %}
       <details class="class-menu nav-menu">
         <summary class="class-menu-btn{% if here %} is-here{% endif %}">
@@ -142,6 +143,14 @@
             <a href="{{ root }}{{ lang }}/settings/" class="nm-item"{% if path == 'settings/' %} aria-current="page"{% endif %}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg>
               <span class="nm-name">{{ t.st_h1 }}</span><span class="nm-desc">{{ t.nd_settings }}</span>
+            </a>
+            <a href="{{ root }}{{ lang }}/dungeons/" class="nm-item"{% if path == 'dungeons/' %} aria-current="page"{% endif %}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l9-7 9 7v11"/><path d="M9 21v-6a3 3 0 0 1 6 0v6"/></svg>
+              <span class="nm-name">{{ t.nav_dungeons }}</span><span class="nm-desc">{{ t.nd_dungeons }}</span>
+            </a>
+            <a href="{{ root }}{{ lang }}/tier-list/" class="nm-item"{% if path == 'tier-list/' %} aria-current="page"{% endif %}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h4M4 12h4M4 19h4"/><path d="M11 5h9M11 12h6M11 19h3"/></svg>
+              <span class="nm-name">{{ t.nav_tier }}</span><span class="nm-desc">{{ t.nd_tier }}</span>
             </a>
           </div>
           <div class="nm-col">
@@ -193,8 +202,8 @@
     <div>
       <a class="brand brand-sm" href="{{ root }}{{ lang }}/">{{ t.site_name }}</a>
       <p>{{ t.footer_disclaimer }}</p>
-      <p class="foot-credit">{{ t.credit_foot }} <a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
-      <p>{{ t.footer_updated }}: {{ updated }} ({{ t.footer_before_launch }}).</p>
+      <p class="foot-credit">{{ t.credit_foot }}</p>
+      <p>{{ t.footer_updated }}: <time datetime="{{ updated }}">{{ fmt_day(updated, lang) }}</time>{% if updated < SITE.launch_utc[:10] %} ({{ t.footer_before_launch }}){% endif %}.</p>
       <p><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }}</a> · <a href="{{ root }}{{ lang }}/changelog/">{{ t.wn_history }}</a> · {% if SITE.get('feedback_url') %}<button type="button" class="link-btn report-open">{{ t.report }}</button>{% else %}<a class="report-link" href="{{ SITE.repo }}/issues/new" target="_blank" rel="noopener" title="{{ t.report_hint }}" data-body="{{ t.report_body }}" data-page="{{ lang }}/{{ path }}">{{ t.report }}</a>{% endif %}</p>
     </div>
     {% block footer_extra %}{% endblock %}

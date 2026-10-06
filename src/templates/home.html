@@ -68,6 +68,18 @@
     <p class="credit-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.6 1-1.1a5.5 5.5 0 0 0 0-7.7z"/></svg><span>{{ t.credit }} <a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></span></p>
   </div>
 
+  {#- Spotlight: the guide pages people look for after launch (dungeon bosses first). -#}
+  <div class="wrap spot-grid">
+    <a class="spot spot-dungeons" href="{{ root }}{{ lang }}/dungeons/">
+      <span class="spot-art" aria-hidden="true">{% include 'diagrams/krao-rocks.svg' %}</span>
+      <span class="spot-body"><span class="spot-kicker">{{ t.nd_dungeons }}</span><span class="spot-title">{{ t.dg_h1 }} →</span><span class="spot-text">{{ t.dg_lead }}</span></span>
+    </a>
+    <a class="spot spot-tier" href="{{ root }}{{ lang }}/tier-list/">
+      <span class="spot-art spot-emblems" aria-hidden="true">{% for c in classes[:4] %}<img src="{{ root }}assets/classes/{{ c.slug }}.webp" width="40" height="40" alt="" loading="lazy">{% endfor %}</span>
+      <span class="spot-body"><span class="spot-kicker">{{ t.nd_tier }}</span><span class="spot-title">{{ t.tl_h1 }} →</span><span class="spot-text">{{ t.tl_lead }}</span></span>
+    </a>
+  </div>
+
   <section class="wrap" id="classes" aria-labelledby="h-classes">
     <h2 id="h-classes" class="section-title">{{ t.classes }}</h2>
     {% macro card(c) %}

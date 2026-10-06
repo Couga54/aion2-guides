@@ -117,7 +117,8 @@ def render_home(lang):
 
 # Standalone pages: slug -> (title key, lead key, focal point of the header art, 0..1 from the top[, slug of the page whose art it borrows])
 PAGES = {"week-1": ("w1_h1", "w1_lead", .40), "progression": ("pg_h1", "pg_lead", .60), "crafting": ("cr_h1", "cr_lead", .50), "settings": ("st_h1", "st_lead", .30, "sources"), "weekly": ("wk_h1", "wk_lead", .45),
-         "bosses": ("bs_h1", "bs_lead", .68), "sources": ("src_h1", "src_lead", .62), "changelog": ("wn_history", "cl_lead", .45)}
+         "bosses": ("bs_h1", "bs_lead", .68), "sources": ("src_h1", "src_lead", .62), "changelog": ("wn_history", "cl_lead", .45),
+         "dungeons": ("dg_h1", "dg_lead", .60, "bosses"), "tier-list": ("tl_h1", "tl_lead", .40, "sources")}
 
 
 def render_page(slug, lang):

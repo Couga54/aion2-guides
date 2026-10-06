@@ -18,6 +18,8 @@ Read `CONTEXT.md` first — it has the user's requirements, verified game facts 
   1–4 s depending on the length, `--every N` to override). Full-size frames: `tools/storyboard.py <id> --at 7:45 465`.
   A video file of your own: `tools/storyboard.py <file.mp4> <youtube id>`. No captions on YouTube: `tools/transcribe.py <id> --lang en`
   (local speech recognition, needs `pip install faster-whisper`), then `tools/storyboard.py <id>` again.
+- Raster site icons (Google wants a 48px-multiple PNG/ICO): `.venv/Scripts/python tools/make_icons.py`
+- Dungeon / boss names and portraits for the Dungeons page: `.venv/Scripts/python tools/fetch_dungeons.py` → `data/dungeons_db.json`; our text is `data/dungeons.json`, arena diagrams `src/templates/diagrams/*.svg`
 - Refresh item icons/names for the guide pages (progression, crafting): `.venv/Scripts/python tools/fetch_items.py` (search: `--find <name>`)
 - **Source material stays local, never in git:** creators' guides, videos, transcripts, frames and screenshots live in
   `frames/<youtube id>/` (git-ignored). Do not save them under `data/`, `src/` or `docs/`, and do not publish them on the site —

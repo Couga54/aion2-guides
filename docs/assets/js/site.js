@@ -211,7 +211,7 @@
       var now = Date.now(), next = null, live = null;
       ttList.forEach(function (e) {
         if (!next && e.at > now) next = e;
-        if (e.o && e.at <= now && now < e.at + 864e5) live = e;   // open for less than a day
+        if (e.o && e.at <= now && now < e.at + 2 * 864e5) live = e;   // 'open' for two days, then the chip goes away
       });
       topTimer.classList.toggle('is-live', !!live);
       if (live) {
@@ -230,17 +230,19 @@
       setTimeout(ttTick, 1000 - (Date.now() % 1000));
     };
     ttTick();
-    // Home: the schedule panel already shows the timers, so the chip appears only when the panel scrolls away.
-    var ttPanel = document.querySelector('.events');
-    if (ttPanel && 'IntersectionObserver' in window) {
-      new IntersectionObserver(function (entries) {
-        var on = entries[0].isIntersecting;
-        topTimer.classList.toggle('is-away', on);
-        root.classList.toggle('tt-panel', on);
-      }, { rootMargin: '-56px 0px 0px 0px' }).observe(ttPanel);
-    } else {
-      topTimer.classList.remove('is-away');
-    }
+  }
+  // Home: the timers panel already shows the launch, Rift and reset timers, so the top bar chips appear only when
+  // the panel scrolls away.
+  var ttChips = [].slice.call(document.querySelectorAll('.top-timer, .rift-timer, .wr-chip'));
+  var ttPanel = document.querySelector('.events');
+  if (ttPanel && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      var on = entries[0].isIntersecting;
+      ttChips.forEach(function (c) { c.classList.toggle('is-away', on); });
+      root.classList.toggle('tt-panel', on);
+    }, { rootMargin: '-56px 0px 0px 0px' }).observe(ttPanel);
+  } else {
+    ttChips.forEach(function (c) { c.classList.remove('is-away'); });
   }
 
   // ---- Rift countdown in the top bar (every page): openings every N hours from the anchor, at the same
@@ -333,6 +335,7 @@
       evs.forEach(function (e) {
         var ms = e.at - now;
         e.li.classList.toggle('is-done', ms <= 0);
+        if (ms < -2 * 864e5) { e.li.hidden = true; return; }   // two days after it started the card leaves the panel
         e.li.classList.remove('is-next');
         if (ms <= 0) return;
         if (!next) next = e;
@@ -375,6 +378,52 @@
       ctick();
     });
   }
+
+  // ---- page tabs (templates/tabs.html): show one data-tab-panel, slide the gold indicator, open the tab of a #link ----
+  [].forEach.call(document.querySelectorAll('.page-tabs'), function (bar) {
+    var tabs = [].slice.call(bar.querySelectorAll('.pt-tab')), ind = bar.querySelector('.pt-ind');
+    var panels = [].slice.call(document.querySelectorAll('[data-tab-panel]'));
+    var place = function () {
+      var on = tabs.filter(function (x) { return x.getAttribute('aria-selected') === 'true'; })[0];
+      if (!on || !ind) return;
+      ind.style.width = on.offsetWidth + 'px';
+      ind.style.transform = 'translateX(' + on.offsetLeft + 'px)';
+      if (bar.scrollWidth > bar.clientWidth) on.scrollIntoView({ block: 'nearest', inline: 'center' });
+    };
+    var show = function (id) {
+      tabs.forEach(function (x) { x.setAttribute('aria-selected', x.dataset.tab === id ? 'true' : 'false'); });
+      panels.forEach(function (p) { p.hidden = p.dataset.tabPanel !== id; });
+      place();
+    };
+    tabs.forEach(function (x) {
+      x.addEventListener('click', function () {
+        show(x.dataset.tab);
+        // a shorter panel must not drop the reader to the footer: keep the tabs at the top of the screen
+        var top = bar.getBoundingClientRect().top;
+        if (top < 0) window.scrollTo({ top: top + window.pageYOffset - 80, behavior: 'smooth' });
+      });
+      x.addEventListener('keydown', function (e) {   // arrow keys move between tabs
+        var i = tabs.indexOf(x) + (e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0);
+        if (i !== tabs.indexOf(x) && tabs[i]) { e.preventDefault(); tabs[i].focus(); show(tabs[i].dataset.tab); }
+      });
+    });
+    var fromHash = function () {
+      var el = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      var p = el && el.closest('[data-tab-panel]');
+      if (p) { show(p.dataset.tabPanel); el.scrollIntoView(); }
+    };
+    window.addEventListener('hashchange', fromHash);
+    window.addEventListener('resize', place);
+    // remember the last tab of this page in this browser (a #link still wins)
+    var key = 'tab:' + location.pathname.replace(/^.*?\/(?:en|ru|uk|tr)\//, '');
+    var saved = null;
+    try { saved = localStorage.getItem(key); } catch (err) {}
+    if (saved && tabs.some(function (x) { return x.dataset.tab === saved; })) show(saved);
+    tabs.forEach(function (x) { x.addEventListener('click', function () { try { localStorage.setItem(key, x.dataset.tab); } catch (err) {} }); });
+    fromHash();
+    place();
+    requestAnimationFrame(function () { bar.classList.add('is-ready'); });   // no slide on first paint
+  });
 
   // ---- tooltips: hover (or tap) any skill name or icon, or an item on the progression page ---------------------
   var skEl = document.getElementById('sk-data');

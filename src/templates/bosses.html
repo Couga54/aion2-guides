@@ -4,6 +4,7 @@
 {% block title %}{{ t.bs_title }} — {{ t.site_name }}{% endblock %}
 {% block desc %}{{ t.bs_desc }}{% endblock %}
 {% block body_class %}page-bosses{% endblock %}
+{% from "tabs.html" import page_tabs %}
 {% block main %}
 <main id="main">
   <section class="page-hero has-art" style="--hero-art:url('{{ root }}assets/art/hero-bosses.webp');--hero-pos:50% 68%">
@@ -16,8 +17,11 @@
 
   <div class="wrap bs-page" data-lang="{{ lang }}" data-t-killed="{{ t.bs_killed_at }}" data-t-next="{{ t.bs_next }}" data-t-up="{{ t.bs_up }}" data-t-notify="{{ t.notify_boss }}">
     {{ notify_toggle() }}
+    {#- One faction at a time (tabs); a #b-<id> link from search opens its tab. -#}
+    {% set tabs = [] %}{% for g in bosses.groups %}{% do tabs.append((g.id, g.faction[lang] ~ ' · ' ~ g.zone[lang])) %}{% endfor %}
+    {{ page_tabs(tabs, t.nav_bosses) }}
     {% for g in bosses.groups %}
-    <section class="bs-group bs-{{ g.id }}" aria-labelledby="h-bs-{{ g.id }}">
+    <section class="bs-group bs-{{ g.id }} tab-panel" data-tab-panel="{{ g.id }}" role="tabpanel" aria-labelledby="h-bs-{{ g.id }}"{% if not loop.first %} hidden{% endif %}>
       <h2 id="h-bs-{{ g.id }}" class="bs-group-title"><span>{{ g.zone[lang] }}</span><small>{{ g.faction[lang] }}</small></h2>
       <ul class="bs-list">
         {% for b in g.bosses %}

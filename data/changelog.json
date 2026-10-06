@@ -2,6 +2,42 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-10-06",
+      "date": "2026-10-06",
+      "items": [
+        {
+          "en": "<strong>New page: Dungeons</strong> — the bosses of Krao Cave, Draupnir, Urugugu Canyon, Vakron Sky Island, Fire Temple, Ferocious Horn Den, both Transcendence dungeons and Zikel in Nightmare: the mechanics that wipe a group, with arena diagrams and links to the moment in the video. In the Guides menu.",
+          "ru": "<strong>Новая страница: Подземелья</strong> — боссы Пещеры крао, Драупнира, Ущелья ауругу, Парящего острова Вакрона, Храма огня, Логова Свирепого Рога, обоих подземелий Transcendence и Зикель в Кошмаре: механики, на которых вайпается группа, со схемами арен и ссылками на момент в видео. В меню «Гайды».",
+          "uk": "<strong>Нова сторінка: Підземелля</strong> — боси Krao Cave, Draupnir, Urugugu Canyon, Vakron Sky Island, Fire Temple, Ferocious Horn Den, обох підземель Transcendence і Zikel у Nightmare: механіки, на яких вайпається група, зі схемами арен і посиланнями на момент у відео. У меню «Гайди».",
+          "tr": "<strong>Yeni sayfa: Zindanlar</strong> — Krao Cave, Draupnir, Urugugu Canyon, Vakron Sky Island, Fire Temple, Ferocious Horn Den, iki Transcendence zindanı ve Nightmare'de Zikel'in bossları: grubu silen mekanikler, arena şemaları ve videodaki ana bağlantılarla. Rehberler menüsünde."
+        },
+        {
+          "en": "<strong>New page: Tier list</strong> (not final, subjective) — trueeevil, XifanGG, Kanon and KaidWOW side by side for PvE, mass PvP, solo PvP and pure DPS, with the average, plus how your ping changes the choice.",
+          "ru": "<strong>Новая страница: Тир-лист</strong> (не окончательный, субъективный) — trueeevil, XifanGG, Kanon и KaidWOW рядом для PvE, массового PvP, соло PvP и чистого DPS, со средним, плюс как пинг меняет выбор.",
+          "uk": "<strong>Нова сторінка: Тір-лист</strong> (не остаточний, суб'єктивний) — trueeevil, XifanGG, Kanon і KaidWOW поруч для PvE, масового PvP, соло PvP і чистого DPS, із середнім, плюс як пінг змінює вибір.",
+          "tr": "<strong>Yeni sayfa: Tier list</strong> (kesin değil, öznel) — PvE, toplu PvP, solo PvP ve saf DPS için trueeevil, XifanGG, Kanon ve KaidWOW yan yana, ortalamayla, artı ping'in seçimi nasıl değiştirdiği."
+        },
+        {
+          "en": "<strong>Suggest a change</strong> — every class guide now starts with a box that opens the feedback form; modes still built on Korean guides and classes without a PvP guide ask for a link to a global one.",
+          "ru": "<strong>Предложить изменение</strong> — каждый гайд по классу теперь начинается с плашки, которая открывает форму; режимы, всё ещё собранные по корейским гайдам, и классы без PvP-гайда просят ссылку на глобальный.",
+          "uk": "<strong>Запропонувати зміну</strong> — кожен гайд по класу тепер починається з плашки, яка відкриває форму; режими, ще зібрані за корейськими гайдами, і класи без PvP-гайда просять посилання на глобальний.",
+          "tr": "<strong>Değişiklik öner</strong> — her sınıf rehberi artık geri bildirim formunu açan bir kutuyla başlıyor; hâlâ Kore rehberlerine dayanan modlar ve PvP rehberi olmayan sınıflar global bir rehberin bağlantısını istiyor."
+        },
+        {
+          "en": "<strong>Home page timers</strong> — next to “Global launch started”: the next Rift opening and the weekly reset.",
+          "ru": "<strong>Таймеры на главной</strong> — рядом с «Глобальный запуск начался»: следующее открытие Rift и еженедельный сброс.",
+          "uk": "<strong>Таймери на головній</strong> — поруч із «Глобальний запуск почався»: наступне відкриття Rift і тижневе скидання.",
+          "tr": "<strong>Ana sayfa zamanlayıcıları</strong> — “Global çıkış başladı”nın yanında: bir sonraki Rift açılışı ve haftalık sıfırlama."
+        },
+        {
+          "en": "<strong>World bosses by faction</strong> — tabs for Elyos, Asmodians and the Abyss; the page remembers yours. The site is now called AION 2 Global - Guides.",
+          "ru": "<strong>Мировые боссы по фракциям</strong> — вкладки Элийцы, Асмодиане и Бездна; страница запоминает твою. Сайт теперь называется AION 2 Global - Гайды.",
+          "uk": "<strong>Світові боси за фракціями</strong> — вкладки Elyos, Asmodians і Abyss; сторінка запам'ятовує твою. Сайт тепер називається AION 2 Global - Гайди.",
+          "tr": "<strong>Fraksiyona göre dünya bossları</strong> — Elyos, Asmodian ve Abyss sekmeleri; sayfa seninkini hatırlar. Sitenin adı artık AION 2 Global - Rehberler."
+        }
+      ]
+    },
+    {
       "id": "2026-10-04",
       "date": "2026-10-04",
       "items": [
