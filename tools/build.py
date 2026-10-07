@@ -564,6 +564,12 @@ def build():
     write("sitemap.xml", "\n".join(sm) + "\n")
     write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {base}sitemap.xml\n")
     print(f"built {len(urls)} pages -> docs/")
+    from lint_guides import lint
+    problems = lint()
+    for p in problems:
+        print(f"  guide check: {p}")
+    if problems:
+        print(f"{len(problems)} guide problem(s) - see tools/lint_guides.py for the rules")
 
 
 if __name__ == "__main__":
