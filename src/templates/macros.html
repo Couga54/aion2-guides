@@ -123,8 +123,9 @@
 
 {#- Example hotbar, drawn like the game's: icons only, no names. cols = [(key, [slugs in priority order]), ...];
     None makes a gap between groups. A line holds up to 4 skills stacked upward (the first slug is the bottom slot,
-    which fires first). Keys in `macro` are the lines the in-game macro presses (gold). Hover an icon for the skill. -#}
-{% macro hotbar(cols, macro=[]) -%}
+    which fires first). Keys in `macro` are the lines the in-game macro presses (gold). own_keys: the author binds
+    unusual keys (side mouse buttons, numpad) - the note says the line matters, not the key. Hover an icon for the skill. -#}
+{% macro hotbar(cols, macro=[], own_keys=false) -%}
 {% set tpl = [] %}{% for c in cols %}{% do tpl.append('.35fr' if c is none else 'minmax(30px,1fr)') %}{% endfor %}
 <figure class="hbar">
   <figcaption class="hbar-title">{{ t.hb_title }}</figcaption>
@@ -132,10 +133,10 @@
     {% for c in cols %}{% if c is none %}<span class="hbar-gap" aria-hidden="true"></span>{% else %}{% set key, slugs = c %}
     <div class="hbar-col{{ ' is-macro' if key in macro }}">
       {% for r in range(3, -1, -1) %}{% if slugs|length > r %}<span class="hbar-slot" data-sk="{{ slugs[r] }}"><img src="{{ icon_url(slugs[r]) }}" width="56" height="56" alt="{{ skill_data(slugs[r])[lang].name }}" loading="lazy"></span>{% else %}<span class="hbar-slot is-empty" aria-hidden="true"></span>{% endif %}{% endfor %}
-      <span class="hbar-key">{{ key }}</span>
+      <span class="hbar-key" title="{{ key }}">{{ key }}</span>
     </div>{% endif %}{% endfor %}
   </div></div>
-  <p class="hbar-note">{{ t.hb_note }}</p>
+  <p class="hbar-note">{{ t.hb_note }}{% if own_keys %} {{ t.hb_own_keys }}{% endif %}</p>
 </figure>
 {%- endmacro %}
 

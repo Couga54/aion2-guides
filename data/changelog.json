@@ -2,6 +2,24 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-10-07-hotbars",
+      "date": "2026-10-07",
+      "items": [
+        {
+          "en": "<strong>Templar: Leonis' macro</strong> — the in-game macro now opens with the Doom Shield line, then the Pummel line with Debilitating Smash first; SolAshur's Judgment line stays as an option.",
+          "ru": "<strong>Страж: макрос Leonis</strong> — встроенный макрос теперь начинается с линии Щита погибели, затем линия Града ударов с Ударом изнеможения первым; линия Суда от SolAshur осталась вариантом.",
+          "uk": "<strong>Templar: макрос Leonis</strong> — вбудований макрос тепер починається з лінії Doom Shield, далі лінія Pummel з Debilitating Smash першим; лінія Judgment від SolAshur лишилась варіантом.",
+          "tr": "<strong>Templar: Leonis'in makrosu</strong> — oyun içi makro artık Doom Shield satırıyla başlıyor, ardından Debilitating Smash'in ilk sırada olduğu Pummel satırı geliyor; SolAshur'un Judgment satırı seçenek olarak kaldı."
+        },
+        {
+          "en": "<strong>Example hotbar layout for Chanter, Assassin and Templar</strong> — the author's bar as in the game, read from their videos (Grobs, Arthars, Leonis). Where the author uses side mouse buttons or the numpad, the note under the bar says to copy the lines, not the keys.",
+          "ru": "<strong>Пример раскладки скиллов на панели для Чародея, Убийцы и Стража</strong> — панель автора как в игре, по их видео (Grobs, Arthars, Leonis). Если автор использует боковые кнопки мыши или нампад, подсказка под панелью напомнит повторять линии, а не клавиши.",
+          "uk": "<strong>Приклад розкладки скілів на панелі для Chanter, Assassin і Templar</strong> — панель автора як у грі, за їхніми відео (Grobs, Arthars, Leonis). Якщо автор використовує бічні кнопки миші чи нампад, підказка під панеллю нагадає повторювати лінії, а не клавіші.",
+          "tr": "<strong>Chanter, Assassin ve Templar için örnek kısayol çubuğu düzeni</strong> — yazarın çubuğu oyundaki gibi, videolarından okundu (Grobs, Arthars, Leonis). Yazar yan fare tuşları ya da numpad kullanıyorsa, çubuğun altındaki not tuşları değil satırları kopyalamanı hatırlatır."
+        }
+      ]
+    },
+    {
       "id": "2026-10-07",
       "date": "2026-10-07",
       "items": [

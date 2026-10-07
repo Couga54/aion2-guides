@@ -59,10 +59,36 @@ It runs three tools; each can also be run on its own:
 Skill, item and stat names: use the official ones from `data/skills/<class>.json` and `data/items.json`
 (EN and RU), not the author's nicknames. For a new item, `tools/fetch_items.py --find <name>`.
 
+### 4a. Hotbar and macro (every class video)
+
+Every class guide built or updated from a video gets the game-like hotbar panel, so read the author's bar even if the
+video does not talk about it.
+
+1. Find on the sheets the moments where the whole hotbar is visible and calm (no cast animation, no tooltip over it);
+   for a mode switch (leveling vs endgame, PvE vs PvP) the author may show two bars - note which is which.
+2. Enlarge the bar and make the reference sheet of the class's icons:
+   ```bash
+   .venv/Scripts/python tools/hotbar_kit.py crop <id> <mm:ss> <x0> <y0> <x1> <y1> --scale 2   # 1920x1080 coordinates
+   .venv/Scripts/python tools/hotbar_kit.py icons <class>                                    # frames/_icons/<class>.jpg
+   ```
+   Match every slot against `frames/_icons/<class>.jpg`; when two icons look alike, take another frame (the moment a
+   skill is cast or its tooltip is open) instead of guessing.
+3. Read each key's column **from the bottom up**: the bottom slot fires first (highest priority), so the list in
+   `hotbar()` / `hotline()` starts with the bottom skill. Getting this order backwards is the usual mistake - check
+   it against a frame where the line is used.
+4. Write the bar down as it is, all three groups: keys 1–4, 5–8, then Q / E / mouse buttons / T (whatever the author
+   uses), empty keys and empty slots included.
+5. The in-game macro (Settings → Key Settings → General → Macro; RU client «Настройки → Клавиши → Общее → Связка»):
+   which keys it presses and in what order, and the key the author binds it to (we recommend RMB). Note the lines that
+   are **not** in the macro too (buffs, debuffs like Debilitating Mark, emergency skills) - the panel shows them.
+6. Skill picks seen on the bar or in the skill window, with the level: a third pick at 20 goes to `then=[i]`.
+
+If no frame shows the bar for a mode, say so in the analysis; never fill a panel from the transcript alone.
+
 ## 5. Compare with the current guide
 
-Read `CONTEXT.md` (verified facts and rules), then the current text: `src/content/<class>/en.html`,
-`ru.html` and `uk.html`, the class entry in `data/site.json`, `data/boards/presets.json` when the video shows Daevanion
+Read `CONTEXT.md` (verified facts and rules), then the current text: `src/content/<class>/en.html` only (the other
+languages repeat it line by line - no need to read them), the class entry in `data/site.json`, `data/boards/presets.json` when the video shows Daevanion
 boards, and `data/progression.json` / `data/crafting.json` for general advice. Sort every finding:
 
 - **New** - the guide does not have it.
@@ -72,9 +98,12 @@ boards, and `data/progression.json` / `data/crafting.json` for general advice. S
 - **Confirmed** - the same as in the guide (one line, it matters for the "checked" date).
 - **Not for the guide** - opinion, KR/TW-only, outdated, off topic.
 
+Always compare the hotbar and the macro (step 4a) with the guide's `hotbar(...)`, `hotline(...)` and `macroseq(...)`
+calls in the macro section of each mode: a different line order or a different set of skills on a key is a conflict.
+
 ## 6. Propose the changes
 
-Give the user a short list, grouped by guide section and mode, each item with: what changes, where, the
+Give the user a short list, grouped by guide section and mode (the hotbar panel and the macro as their own item), each item with: what changes, where, the
 timestamp (and frame) it comes from, and the recommendation. Put the conflicts and the questions first.
 Then stop and wait. Nothing is edited before the user agrees; they may accept only a part.
 
@@ -82,8 +111,19 @@ Then stop and wait. Nothing is edited before the user agrees; they may accept on
 
 Write the text in our own words - facts and numbers from the video, never its sentences.
 
-- [ ] Guide text in **all three** `src/content/<class>/en.html`, `ru.html` and `uk.html` (UK: game names in English). Skill cards: at most 2 specialization picks below
-      skill level 20 (1 below 12), and no pick that unlocks above the card's level.
+**English first:** apply everything to `src/content/<class>/en.html` and the `"en"` data strings, show the user, and
+translate only after they approve - with the `translate-site` skill (it finds the changed lines itself). Small
+fixes (a number, a name) go into all languages at once.
+
+- [ ] Guide text in `en.html`. Skill cards: at most 2 specialization picks below skill level 20 (1 below 12), no pick
+      that unlocks above the card's level, the level-20 pick in `then=[i]`; the build checks this (`guide check:` lines).
+- [ ] The macro section of every mode the video covers (section id starting with `macro` - it gets the "?" tip about
+      binding the macro key): at the top `{{ hotbar([('1', [...]), ..., None, ('5', [...]), ..., None, ('Q', [...]), ...],
+      macro=['Q', ...]) }}` - every key and empty slot, first slug = bottom slot, `None` between the groups, mouse keys as
+      `'LMB'` / `'RMB'` (RU and UK `'ЛКМ'` / `'ПКМ'`, TR as EN); keys exactly as the author binds them; for side mouse
+      buttons / numpad add `own_keys=true` (a note says to copy the lines, not the keys); every key label must be unique (`'Side'`,
+      `'Side 2'`) - the gold macro columns are matched by label; then the macro steps (`macroseq`) and one `hotline(...)` per
+      macro line with notes; then the lines outside the macro. The source author in the text if several are combined.
 - [ ] Data the text leans on: `data/boards/presets.json`, `data/class_items.json` + `tools/fetch_items.py`,
       `data/progression.json` / `data/crafting.json` (their `sources` with `video` and timestamps in `at`).
 - [ ] `data/site.json`, the class: `updated` = today; `src.<mode>` = `["<authors>", "<today>"]` for every
@@ -92,8 +132,11 @@ Write the text in our own words - facts and numbers from the video, never its se
       `lang`, `plays` (the one class they main - a creator is shown in "Who to watch" for a single class even
       if they make guides for several; `[]` for general channels such as Grobs), channel links, `used` classes; the video itself among the sources.
 - [ ] `wip` / `wip_modes` / `modes_off` in `site.json` if the video makes a mode solid (or opens a new one).
-- [ ] `data/changelog.json`: a What's new entry (EN + RU) with a new id - what changed for the reader.
+- [ ] `data/changelog.json`: a What's new entry (all languages after translation) with a new id - what changed for the
+      reader; one entry per push, never items that are already published.
 - [ ] `LAUNCH.md`: every value taken on trust that must be checked on the live servers.
-- [ ] Build (`.venv/Scripts/python tools/build.py`) and check the page in the preview.
+- [ ] Build (`.venv/Scripts/python tools/build.py`): no `guide check:` lines; check the page in the preview (the hotbar
+      panel at phone width too).
+- [ ] After translation: `.venv/Scripts/python tools/preflight.py` shows no errors.
 - [ ] Social preview (`tools/make_og.py`) only if a title, lead or header art changed.
 - [ ] Report what was changed. **No commit and no push** until the user says so.

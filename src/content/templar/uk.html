@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
 
 {# ===== PvE і PvP: кожен PvP-блок іде після свого PvE-відповідника, тож обидва режими читаються в однаковому порядку; спільні розділи — 'pve pvp' ===== #}
 {% call glance('pve') %}
@@ -23,7 +23,7 @@
   <p>Templar — головний танк AION 2, і він усе одно завдає відчутної шкоди. Увесь білд тримається на <strong>«святій трійці»</strong> скілів, які якнайшвидше доводять до 20, — {{ s('judgment') }}, {{ s('punishment') }} і {{ s('pummel') }}, — і використовують якомога частіше. Templar обмежує не живучість, а шкода.</p>
   <div class="callout accent">
     <h3>Білд одним реченням</h3>
-    <p>Скіли щита запускають {{ s('judgment') }}: спам лінію Judgment на бічній кнопці, тримай макрос для Pummel і його проків, заряджай {{ s('punishment') }} за відкатом і блокуй великі удари, щоб тримати {{ s('fury') }} на групі.</p>
+    <p>Скіли щита запускають {{ s('judgment') }}: тримай макрос — він відкриває бій {{ s('doom-shield') }}, підтримує Judgment і заповнює паузи Pummel і його проками, — заряджай {{ s('punishment') }} за відкатом і блокуй великі удари, щоб тримати {{ s('fury') }} на групі.</p>
   </div>
   <p class="note">Гайд іде за глобальним білдом Templar від SolAshur (solashur.com, 27 вересня) і його відеорозбором (29 вересня), повторно звіреним із кадрами відео 30 вересня.</p>
 {% endcall %}
@@ -211,19 +211,22 @@
     <li><strong>Лінія на кнопці</strong> — кілька скілів на <em>одній</em> кнопці панелі. Натискання кастує готовий скіл із найвищим пріоритетом, і в AION 2 <strong>найвищий пріоритет у нижнього слота</strong>. Картки показують лінії згори донизу, як у грі.</li>
     <li><strong>Вбудований макрос</strong> — поки тримаєш його клавішу, він по черзі натискає лінії й скасовує хвости анімацій. Скіли на перезарядці пропускаються.</li>
   </ul>
+  <p>Глобальна схема Leonis (відео від 5 жовтня, кадр 0:57): дві лінії на кнопках, які натискає вбудований макрос, решта вручну. Тепер макрос починається з Doom Shield; за його словами, оновлена схема дає приблизно на 20% більше шкоди.</p>
+  {{ hotbar([('1', ['poach']), ('2', ['punishment', 'empyrean-lords-punishment']), ('3', ['debilitating-smash', 'annihilate', 'pummel']), ('Бічна', []), None, ('X', []), ('R', []), ('Бічна 2', []), ('', []), None, ('Q', ['shield-rush']), ('E', ['battlefield-banner', 'noble-armor']), ('ЛКМ', ['vicious-strike']), ('—', ['doom-shield', 'judgment', 'shield-smite', 'warding-strike'])], macro=['—', '3'], own_keys=true) }}
 
   <h3>1. Лінії на кнопках</h3>
   <div class="hotlines">
-    {% call hotline('ПКМ', 'Лінія Pummel', ['annihilate', 'debilitating-smash', 'pummel']) %}Цю лінію натискає вбудований макрос. Проки спрацьовують, щойно загоряються; Pummel закриває кожну паузу — а зі спеціалізацією −1 с на Punishment кожен Pummel наближає її відкат. {{ s('flash-rampage') }} прибраний (Leonis): у його тесті лінія без нього завдає більше шкоди.{% endcall %}
-    {% call hotline('Бічна', 'Лінія Judgment', ['judgment', 'shield-smite', 'warding-strike', 'doom-shield']) %}Спам її: кожен скіл щита запускає Judgment, а Judgment завжди в пріоритеті.{% endcall %}
-    {% call hotline('ПКМ · PvX', 'Лінія Pummel для PvX', ['doom-shield', 'annihilate', 'debilitating-smash', 'pummel']) %}Та сама кнопка з пресетом PvX: {{ s('doom-shield') }} стає на найвищий пріоритет. У лінії Judgment він стоїть теж — це навмисно: тут він відкриває бій — ривок і гарантоване збивання з ніг на NPC, яке відкриває {{ s('annihilate') }}, — а на 15 рівні скидається при вбивстві, це головне для PvX і фарму петів.{% endcall %}
+    {% call hotline('—', 'Лінія Doom Shield', ['doom-shield', 'judgment', 'shield-smite', 'warding-strike']) %}Перший крок макросу. {{ s('doom-shield') }} відкриває бій — ривок і гарантоване збивання з ніг на NPC, яке відкриває {{ s('annihilate') }}, — а на 15 рівні скидається при вбивстві, це головне для PvX і фарму петів. Між його застосуваннями лінія спамить Judgment і скіли щита, що його запускають.{% endcall %}
+    {% call hotline('3', 'Лінія Pummel', ['debilitating-smash', 'annihilate', 'pummel']) %}Другий крок макросу. Проки спрацьовують, щойно загоряються; Pummel закриває кожну паузу — а зі спеціалізацією −1 с на Punishment кожен Pummel наближає її відкат. {{ s('flash-rampage') }} прибраний: у тесті Leonis лінія без нього завдає більше шкоди. У SolAshur першим стоїть Annihilate.{% endcall %}
+    {% call hotline('Бічна', 'Лінія Judgment (SolAshur)', ['judgment', 'shield-smite', 'warding-strike', 'doom-shield']) %}Варіант SolAshur, поза макросом: Judgment завжди в пріоритеті, Doom Shield останнім. Він прив'язує її до <span class="key">R</span>, а миша повторює R приблизно 10 разів на секунду.{% endcall %}
   </div>
 
-  <h3>2. Клавіші</h3>
+  <h3>2. Вбудований макрос і клавіші</h3>
+  {{ macroseq([('Лінія Doom Shield', '10 мс'), ('Лінія Pummel', '3 · 10 мс')]) }}
   <ul class="presslist">
     <li><span class="press-how">ЛКМ</span><span class="press-what">{{ s('vicious-strike') }} (швидкий слот 1).</span></li>
-    <li><span class="press-how">ПКМ</span><span class="press-what">Вбудований макрос (лінія Pummel), 10 мс.</span></li>
-    <li><span class="press-how">Бічна кнопка</span><span class="press-what">Лінія Judgment. SolAshur прив'язує її до <span class="key">R</span>, а миша повторює R приблизно 10 разів на секунду.</span></li>
+    <li><span class="press-how">ПКМ</span><span class="press-what">Вбудований макрос. Leonis тримає обидві кнопки миші весь бій.</span></li>
+    <li><span class="press-how">Варіант</span><span class="press-what">Лінія Judgment від SolAshur на бічній кнопці замість Doom Shield у макросі (див. вище).</span></li>
     <li><span class="press-how">Вручну</span><span class="press-what">Заряджений {{ s('punishment') }} за відкатом, {{ s('battlefield-banner') }}, {{ s('empyrean-lords-punishment') }} для оглушення, {{ s('taunt') }}.</span></li>
   </ul>
   <p class="note">Повне налаштування клавіш SolAshur показує в ранішому відео про макроси; щоб воно збіглося, доведеться змінити кілька прив'язок клавіш у грі.</p>

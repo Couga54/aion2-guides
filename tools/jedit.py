@@ -105,7 +105,10 @@ def insert_item(fn, list_path, index, val, indent=None):
     a, b = spans(s)[f"{list_path}/{index}"]
     if indent is None:
         indent = a - s.rfind("\n", 0, a) - 1
-    s = s[:a] + dumps(val) + ",\n" + " " * indent + s[a:]
+    text = dumps(val)
+    if isinstance(val, (dict, list)) and "\n" in s[a:b]:  # the neighbour is spread over lines: do the same
+        text = json.dumps(val, ensure_ascii=False, indent=2).replace("\n", "\n" + " " * indent)
+    s = s[:a] + text + ",\n" + " " * indent + s[a:]
     write(fn, s)
 
 

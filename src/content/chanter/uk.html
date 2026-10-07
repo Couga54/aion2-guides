@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
 
 {# ============================== PvE ============================== #}
 {% call glance('pve') %}
@@ -142,12 +142,13 @@
     <li><strong>Лінія на кнопці</strong> — кілька скілів на <em>одній</em> кнопці панелі. Натискання кастує готовий скіл із найвищим пріоритетом, і в AION 2 <strong>найвищий пріоритет у нижнього слота</strong>. Картки показують лінії згори донизу, як у грі.</li>
     <li><strong>Вбудований макрос</strong> — поки тримаєш його клавішу, він по черзі натискає кнопки панелі й скасовує хвости анімацій. Скіли на перезарядці пропускаються.</li>
   </ul>
+  {{ hotbar([('1', []), ('2', []), ('3', ['undefeated-mantra']), ('4', ['sprint-mantra']), None, ('Q', ['recuperation']), ('E', ['power-of-the-storm']), ('R', []), ('F', ['rushing-smash', 'tremor-crush']), None, ('Бічна 2', []), ('Бічна', ['dark-crush', 'spinning-strike', 'marchutans-wrath', 'impactful-crush']), ('ЛКМ', ['onslaught']), ('—', ['incandescent-blow'])], macro=['Бічна', '—'], own_keys=true) }}
 
   <h3>1. Лінії на панелі</h3>
   <p>Глобальна схема Grobs (кадр 19:05): усі три відкривачі стоять на одній лінії з {{ s('dark-crush') }} унизу, тож після кожного відкривача лінія одразу повертається до Dark Crush; у Incandescent Blow своя лінія.</p>
   <div class="hotlines">
-    {% call hotline('1', 'Лінія Dark Crush', ['dark-crush', 'spinning-strike', 'marchutans-wrath', 'impactful-crush']) %}Dark Crush, поки його вікно відкрите; коли закривається, його знову відкриває Spinning Strike, потім Marchutan's Wrath, потім Impactful Crush.{% endcall %}
-    {{ hotline('2', 'Філер', ['incandescent-blow']) }}
+    {% call hotline('Бічна', 'Лінія Dark Crush', ['dark-crush', 'spinning-strike', 'marchutans-wrath', 'impactful-crush']) %}Dark Crush, поки його вікно відкрите; коли закривається, його знову відкриває Spinning Strike, потім Marchutan's Wrath, потім Impactful Crush.{% endcall %}
+    {{ hotline('—', 'Філер', ['incandescent-blow']) }}
   </div>
   <p>Поза макросом — решта панелі:</p>
   <div class="hotlines">

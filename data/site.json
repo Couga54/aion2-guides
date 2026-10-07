@@ -39,7 +39,7 @@
      "difficulty": 2,
      "pitch": {"en": "20-metre burst built on buffs, charged Deadshots and bleeds — and the best zoning tools in PvP.",
                "ru": "Урон с 20 метров на баффах, заряженных Прицельных выстрелах и кровотечениях — и лучший контроль дистанции в PvP.", "uk": "Шкода з 20 метрів на бафах, заряджених Deadshot і кровотечах — і найкращий контроль дистанції в PvP.", "tr": "Bufflar, şarjlı Deadshot'lar ve kanamalar üzerine kurulu 20 metrelik patlama hasarı — ve PvP'de en iyi alan kontrolü araçları."}},
-    {"slug": "templar", "status": "ready", "src": {"pve": ["SolAshur · trueeevil · Leonis", "2026-10-06"], "pvp": ["SolAshur", "2026-09-30"], "lvl": ["NoBS Game Guides", "2026-09-27"]}, "updated": "2026-10-07", "patch": "S1", "accent": "sapphire",
+    {"slug": "templar", "status": "ready", "src": {"pve": ["SolAshur · trueeevil · Leonis", "2026-10-07"], "pvp": ["SolAshur", "2026-09-30"], "lvl": ["NoBS Game Guides", "2026-09-27"]}, "updated": "2026-10-07", "patch": "S1", "accent": "sapphire",
      "name": {"en": "Templar", "ru": "Страж", "uk": "Templar", "tr": "Templar"},
      "role": {"en": "Tank · party buffer", "ru": "Танк · баффер группы", "uk": "Танк · бафер групи", "tr": "Tank · grup bufferı"},
      "weapon": {"en": "Sword & shield", "ru": "Меч и щит", "uk": "Меч і щит", "tr": "Sword & shield"},

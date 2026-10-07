@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
 
 {# ============================== PvE ============================== #}
 {% call glance('pve') %}
@@ -147,6 +147,7 @@
     <li><strong>Лінія на кнопці</strong> — кілька скілів на <em>одній</em> кнопці панелі. Натискання кастує готовий скіл із найвищим пріоритетом, і в AION 2 <strong>найвищий пріоритет у нижнього слота</strong>. Картки показують лінії згори донизу, як у грі.</li>
     <li><strong>Вбудований макрос</strong> — поки тримаєш його клавішу, він по черзі натискає кнопки панелі й скасовує хвости анімацій. Скіли на перезарядці пропускаються.</li>
   </ul>
+  {{ hotbar([('N2', ['shadowstrike']), ('Бічна', []), ('3', ['flash-slice']), ('4', []), None, ('5', []), ('N4', []), ('6', []), ('7', ['illusive-clone', 'swift-contract', 'savage-fang', 'triniels-dagger']), None, ('N1', ['whirlwind-slice', 'infiltrate', 'shadow-fall']), ('N5', ['storm-rampage']), ('1', ['quick-slice']), ('E', ['insignia-explosion', 'heart-gore', 'ambush', 'savage-roar'])], macro=['E', '1'], own_keys=true) }}
 
   <h3>1. Лінії на кнопках</h3>
   <div class="hotlines">

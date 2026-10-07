@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
 
 {# ============================== PvE ============================== #}
 {% call glance('pve') %}
@@ -147,6 +147,7 @@
     <li><strong>Hızlı erişim satırı</strong> — <em>tek</em> bir hızlı erişim düğmesine üst üste dizilmiş birkaç yetenek. Basınca hazır olan en yüksek öncelikli yeteneği kullanır ve AION 2'de <strong>en alttaki slot en yüksek önceliğe sahiptir</strong>. Kartlar her satırı oyundaki gibi yukarıdan aşağıya gösterir.</li>
     <li><strong>Oyun içi makro</strong> — tuşunu basılı tuttuğun sürece hızlı erişim düğmelerine sırayla basar ve animasyon kuyruklarını iptal eder. Bekleme süresindeki yetenekler atlanır.</li>
   </ul>
+  {{ hotbar([('N2', ['shadowstrike']), ('Yan', []), ('3', ['flash-slice']), ('4', []), None, ('5', []), ('N4', []), ('6', []), ('7', ['illusive-clone', 'swift-contract', 'savage-fang', 'triniels-dagger']), None, ('N1', ['whirlwind-slice', 'infiltrate', 'shadow-fall']), ('N5', ['storm-rampage']), ('1', ['quick-slice']), ('E', ['insignia-explosion', 'heart-gore', 'ambush', 'savage-roar'])], macro=['E', '1'], own_keys=true) }}
 
   <h3>1. Hızlı erişim satırları</h3>
   <div class="hotlines">

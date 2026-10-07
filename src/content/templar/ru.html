@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
 
 {# ===== PvE and PvP: each PvP block follows its PvE counterpart, so both modes read in the same order; shared sections are 'pve pvp' ===== #}
 {% call glance('pve') %}
@@ -23,7 +23,7 @@
   <p>Страж — главный танк AION 2, и при этом он наносит заметный урон. Весь билд держится на <strong>«святой троице»</strong> скиллов, которые нужно как можно быстрее довести до 20 и использовать при любой возможности: {{ s('judgment') }}, {{ s('punishment') }} и {{ s('pummel') }}. Стража ограничивает не живучесть, а урон.</p>
   <div class="callout accent">
     <h3>Билд в одном предложении</h3>
-    <p>Скиллы щита запускают {{ s('judgment') }}: спамь линию Суда на боковой кнопке, держи макрос с Градом ударов и его проками, заряжай {{ s('punishment') }} по откату и блокируй сильные удары, чтобы {{ s('fury') }} висела на группе.</p>
+    <p>Скиллы щита запускают {{ s('judgment') }}: держи макрос — он открывает бой {{ s('doom-shield') }}, поддерживает Суд и заполняет паузы Градом ударов и его проками, — заряжай {{ s('punishment') }} по откату и блокируй сильные удары, чтобы {{ s('fury') }} висела на группе.</p>
   </div>
   <p class="note">Гайд построен на глобальном билде Стража от SolAshur (solashur.com, 27 сентября) и его видеоразбору (29 сентября); 30 сентября сверен с кадрами видео.</p>
 {% endcall %}
@@ -211,19 +211,22 @@
     <li><strong>Линия на кнопке</strong> — несколько скиллов на <em>одной</em> кнопке панели. Нажатие кастует готовый скилл с наивысшим приоритетом, и в AION 2 <strong>наивысший приоритет у нижнего слота</strong>. Карточки показывают линии сверху вниз, как в игре.</li>
     <li><strong>Встроенный макрос</strong> — пока ты держишь его клавишу, он по очереди нажимает линии и отменяет хвосты анимаций. Скиллы на перезарядке пропускаются.</li>
   </ul>
+  <p>Глобальная схема Leonis (видео от 5 октября, кадр 0:57): две линии на кнопках, которые нажимает встроенный макрос, остальное вручную. Теперь макрос начинается со Щита погибели; по его словам, обновлённая схема даёт примерно на 20% больше урона.</p>
+  {{ hotbar([('1', ['poach']), ('2', ['punishment', 'empyrean-lords-punishment']), ('3', ['debilitating-smash', 'annihilate', 'pummel']), ('Боковая', []), None, ('X', []), ('R', []), ('Боковая 2', []), ('', []), None, ('Q', ['shield-rush']), ('E', ['battlefield-banner', 'noble-armor']), ('ЛКМ', ['vicious-strike']), ('—', ['doom-shield', 'judgment', 'shield-smite', 'warding-strike'])], macro=['—', '3'], own_keys=true) }}
 
   <h3>1. Линии на кнопках</h3>
   <div class="hotlines">
-    {% call hotline('ПКМ', 'Линия Града ударов', ['annihilate', 'debilitating-smash', 'pummel']) %}Эту линию нажимает встроенный макрос. Проки срабатывают, как только загораются; Град ударов закрывает каждую паузу — а со специализацией −1 сек. Кровавой мести каждый Град ударов приближает её откат. {{ s('flash-rampage') }} убран (Leonis): в его тесте линия без него наносит больше урона.{% endcall %}
-    {% call hotline('Боковая', 'Линия Суда', ['judgment', 'shield-smite', 'warding-strike', 'doom-shield']) %}Спамь её: каждый скилл щита запускает Суд, а Суд всегда в приоритете.{% endcall %}
-    {% call hotline('ПКМ · PvX', 'Линия Града ударов для PvX', ['doom-shield', 'annihilate', 'debilitating-smash', 'pummel']) %}Та же кнопка с пресетом PvX: {{ s('doom-shield') }} встаёт на высший приоритет. В линии Суда он стоит тоже, и это нарочно: здесь он открывает бой (рывок и гарантированное сбивание с ног на NPC, которое открывает {{ s('annihilate') }}), а на 15 уровне сбрасывается при убийстве — это главное для PvX и фарма петов.{% endcall %}
+    {% call hotline('—', 'Линия Щита погибели', ['doom-shield', 'judgment', 'shield-smite', 'warding-strike']) %}Первый шаг макроса. {{ s('doom-shield') }} открывает бой (рывок и гарантированное сбивание с ног на NPC, которое открывает {{ s('annihilate') }}), а на 15 уровне сбрасывается при убийстве — это главное для PvX и фарма петов. Между его применениями линия спамит Суд и скиллы щита, которые его запускают.{% endcall %}
+    {% call hotline('3', 'Линия Града ударов', ['debilitating-smash', 'annihilate', 'pummel']) %}Второй шаг макроса. Проки срабатывают, как только загораются; Град ударов закрывает каждую паузу — а со специализацией −1 сек. Кровавой мести каждый Град ударов приближает её откат. {{ s('flash-rampage') }} убран: в тесте Leonis линия без него наносит больше урона. У SolAshur первым стоит Истребление.{% endcall %}
+    {% call hotline('Боковая', 'Линия Суда (SolAshur)', ['judgment', 'shield-smite', 'warding-strike', 'doom-shield']) %}Вариант SolAshur, вне макроса: Суд всегда в приоритете, Щит погибели последним. Он вешает её на <span class="key">R</span>, а мышь повторяет R примерно 10 раз в секунду.{% endcall %}
   </div>
 
-  <h3>2. Кнопки</h3>
+  <h3>2. Встроенный макрос и кнопки</h3>
+  {{ macroseq([('Линия Щита погибели', '10 мс'), ('Линия Града ударов', '3 · 10 мс')]) }}
   <ul class="presslist">
     <li><span class="press-how">ЛКМ</span><span class="press-what">{{ s('vicious-strike') }} (быстрый слот 1).</span></li>
-    <li><span class="press-how">ПКМ</span><span class="press-what">Встроенный макрос (линия Града ударов), 10 мс.</span></li>
-    <li><span class="press-how">Боковая кнопка</span><span class="press-what">Линия Суда. SolAshur вешает её на <span class="key">R</span>, а мышь повторяет R примерно 10 раз в секунду.</span></li>
+    <li><span class="press-how">ПКМ</span><span class="press-what">Встроенный макрос. Leonis держит обе кнопки мыши весь бой.</span></li>
+    <li><span class="press-how">Вариант</span><span class="press-what">Линия Суда SolAshur на боковой кнопке вместо Щита погибели в макросе (см. выше).</span></li>
     <li><span class="press-how">Вручную</span><span class="press-what">Заряженная {{ s('punishment') }} по откату, {{ s('battlefield-banner') }}, {{ s('empyrean-lords-punishment') }} для ошеломления, {{ s('taunt') }}.</span></li>
   </ul>
   <p class="note">Полную раскладку клавиш SolAshur показывает в отдельном видео про макросы; часть внутриигровых клавиш придётся переназначить.</p>

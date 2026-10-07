@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
 
 {# ===== PvE and PvP: each PvP block follows its PvE counterpart, so both modes read in the same order; shared sections are 'pve pvp' ===== #}
 {% call glance('pve') %}
@@ -23,7 +23,7 @@
   <p>Templar, AION 2'nin ana tankı ve yine de gerçek hasar çıkarıyor. Tüm build, olabildiğince hızlı 20'ye çıkarılan ve olabildiğince sık kullanılan bir <strong>"kutsal üçlü"</strong> yeteneğe dayanıyor — {{ s('judgment') }}, {{ s('punishment') }} ve {{ s('pummel') }}. Templar'ı sınırlayan dayanıklılık değil, hasar.</p>
   <div class="callout accent">
     <h3>Tek cümlede build</h3>
-    <p>Kalkan yetenekleri {{ s('judgment') }}'ı tetikler: Judgment satırını yan tuşta spamla, Pummel ve tetiklemeleri için makroyu basılı tut, {{ s('punishment') }}'ı bekleme süresi dolunca şarj et ve {{ s('fury') }}'yi grupta tutmak için büyük vuruşları blokla.</p>
+    <p>Kalkan yetenekleri {{ s('judgment') }}'ı tetikler: makroyu basılı tut — dövüşü {{ s('doom-shield') }} ile açar, Judgment'ı sürdürür ve boşlukları Pummel ve tetiklemeleriyle doldurur —, {{ s('punishment') }}'ı bekleme süresi dolunca şarj et ve {{ s('fury') }}'yi grupta tutmak için büyük vuruşları blokla.</p>
   </div>
   <p class="note">Bu rehber SolAshur'un global çıkış Templar buildini (solashur.com, 27 Eylül) ve onun video anlatımını (29 Eylül) izliyor; 30 Eylül'de video karelerine göre yeniden kontrol edildi.</p>
 {% endcall %}
@@ -211,19 +211,22 @@
     <li><strong>Hızlı erişim satırı</strong> — <em>tek</em> bir hızlı erişim düğmesine üst üste dizilmiş birkaç yetenek. Basınca hazır olan en yüksek öncelikli yeteneği kullanır ve AION 2'de <strong>en alttaki slot en yüksek önceliğe sahiptir</strong>. Kartlar her satırı oyundaki gibi yukarıdan aşağıya gösterir.</li>
     <li><strong>Oyun içi makro</strong> — tuşunu basılı tuttuğun sürece hızlı erişim satırlarına sırayla basar ve animasyon kuyruklarını iptal eder. Bekleme süresindeki yetenekler atlanır.</li>
   </ul>
+  <p>Leonis'in global düzeni (5 Ekim videosu, kare 0:57): oyun içi makronun bastığı iki hızlı erişim satırı, gerisi elle. Makro artık Doom Shield ile başlıyor; ona göre güncel düzen yaklaşık %20 daha fazla hasar veriyor.</p>
+  {{ hotbar([('1', ['poach']), ('2', ['punishment', 'empyrean-lords-punishment']), ('3', ['debilitating-smash', 'annihilate', 'pummel']), ('Yan', []), None, ('X', []), ('R', []), ('Yan 2', []), ('', []), None, ('Q', ['shield-rush']), ('E', ['battlefield-banner', 'noble-armor']), ('LMB', ['vicious-strike']), ('—', ['doom-shield', 'judgment', 'shield-smite', 'warding-strike'])], macro=['—', '3'], own_keys=true) }}
 
   <h3>1. Hızlı erişim satırları</h3>
   <div class="hotlines">
-    {% call hotline('RMB', 'Pummel satırı', ['annihilate', 'debilitating-smash', 'pummel']) %}Oyun içi makro bu satıra basar. Tetiklemeler yanar yanmaz ateşlenir; Pummel her boşluğu doldurur — −1 sn Punishment seçimiyle her Pummel Punishment'ı daha erken geri getirir. {{ s('flash-rampage') }} çıkarıldı (Leonis): onun testinde satır onsuz daha çok hasar veriyor.{% endcall %}
-    {% call hotline('Yan', 'Judgment satırı', ['judgment', 'shield-smite', 'warding-strike', 'doom-shield']) %}Spamla: her kalkan yeteneği Judgment'ı tetikler ve Judgment her zaman kazanır.{% endcall %}
-    {% call hotline('RMB · PvX', 'PvX için Pummel satırı', ['doom-shield', 'annihilate', 'debilitating-smash', 'pummel']) %}PvX ön ayarıyla aynı düğme: {{ s('doom-shield') }} en yüksek önceliği alır. Bilerek Judgment satırında da duruyor: burada dövüşü açar — NPC'lerde {{ s('annihilate') }}'u açan bir atılma ve garantili yere düşürme — ve 15. seviyede öldürmede sıfırlanır, PvX ve evcil hayvan farmının anahtarı.{% endcall %}
+    {% call hotline('—', 'Doom Shield satırı', ['doom-shield', 'judgment', 'shield-smite', 'warding-strike']) %}Makronun ilk adımı. {{ s('doom-shield') }} dövüşü açar — NPC'lerde {{ s('annihilate') }}'u açan bir atılma ve garantili yere düşürme — ve 15. seviyede öldürmede sıfırlanır, PvX ve evcil hayvan farmının anahtarı. Aralarda satır Judgment'ı ve onu tetikleyen kalkan yeteneklerini spamlar.{% endcall %}
+    {% call hotline('3', 'Pummel satırı', ['debilitating-smash', 'annihilate', 'pummel']) %}Makronun ikinci adımı. Tetiklemeler yanar yanmaz ateşlenir; Pummel her boşluğu doldurur — −1 sn Punishment seçimiyle her Pummel Punishment'ı daha erken geri getirir. {{ s('flash-rampage') }} çıkarıldı: Leonis'in testinde satır onsuz daha çok hasar veriyor. SolAshur Annihilate'i ilk sıraya koyuyor.{% endcall %}
+    {% call hotline('Yan', 'Judgment satırı (SolAshur)', ['judgment', 'shield-smite', 'warding-strike', 'doom-shield']) %}SolAshur'un makro dışı versiyonu: Judgment her zaman kazanır, Doom Shield en sonda. Onu <span class="key">R</span>'ye atıyor ve faresi R'yi saniyede yaklaşık 10 kez tekrarlıyor.{% endcall %}
   </div>
 
-  <h3>2. Tuşlar</h3>
+  <h3>2. Oyun içi makro ve tuşlar</h3>
+  {{ macroseq([('Doom Shield satırı', '10 ms'), ('Pummel satırı', '3 · 10 ms')]) }}
   <ul class="presslist">
     <li><span class="press-how">LMB</span><span class="press-what">{{ s('vicious-strike') }} (hızlı slot 1).</span></li>
-    <li><span class="press-how">RMB</span><span class="press-what">Oyun içi makro (Pummel satırı), 10 ms.</span></li>
-    <li><span class="press-how">Yan tuş</span><span class="press-what">Judgment satırı. SolAshur onu <span class="key">R</span>'ye atıyor ve faresi R'yi saniyede yaklaşık 10 kez tekrarlıyor.</span></li>
+    <li><span class="press-how">RMB</span><span class="press-what">Oyun içi makro. Leonis dövüş boyunca iki fare tuşunu da basılı tutuyor.</span></li>
+    <li><span class="press-how">Seçenek</span><span class="press-what">Makrodaki Doom Shield yerine SolAshur'un Judgment satırı yan tuşta (yukarıya bak).</span></li>
     <li><span class="press-how">Elle</span><span class="press-what">Bekleme süresi dolunca şarjlı {{ s('punishment') }}, {{ s('battlefield-banner') }}, stagger için {{ s('empyrean-lords-punishment') }}, {{ s('taunt') }}.</span></li>
   </ul>
   <p class="note">SolAshur tam kısayol düzenini daha önceki bir makro videosunda anlatıyor; buna uymak için oyundaki birkaç tuş atamasını değiştirmen gerekecek.</p>

@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
 
 {# ============================== PvE ============================== #}
 {% call glance('pve') %}
@@ -142,12 +142,13 @@
     <li><strong>Hızlı erişim satırı</strong> — <em>tek</em> bir hızlı erişim düğmesine üst üste dizilmiş birkaç yetenek. Basınca hazır olan en yüksek öncelikli yeteneği kullanır ve AION 2'de <strong>en alttaki slot en yüksek önceliğe sahiptir</strong>. Kartlar her satırı oyundaki gibi yukarıdan aşağıya gösterir.</li>
     <li><strong>Oyun içi makro</strong> — tuşunu basılı tuttuğun sürece hızlı erişim düğmelerine sırayla basar ve animasyon kuyruklarını iptal eder. Bekleme süresindeki yetenekler atlanır.</li>
   </ul>
+  {{ hotbar([('1', []), ('2', []), ('3', ['undefeated-mantra']), ('4', ['sprint-mantra']), None, ('Q', ['recuperation']), ('E', ['power-of-the-storm']), ('R', []), ('F', ['rushing-smash', 'tremor-crush']), None, ('Yan 2', []), ('Yan', ['dark-crush', 'spinning-strike', 'marchutans-wrath', 'impactful-crush']), ('LMB', ['onslaught']), ('—', ['incandescent-blow'])], macro=['Yan', '—'], own_keys=true) }}
 
   <h3>1. Kısayol satırları</h3>
   <p>Grobs'un global düzeni (kare 19:05): üç açıcı da en altta {{ s('dark-crush') }} olan tek bir satırda, böylece her açıcıdan sonra satır doğrudan Dark Crush'a döner; Incandescent Blow'un kendi satırı var.</p>
   <div class="hotlines">
-    {% call hotline('1', 'Dark Crush satırı', ['dark-crush', 'spinning-strike', 'marchutans-wrath', 'impactful-crush']) %}Penceresi açıkken Dark Crush; kapanınca onu yine Spinning Strike açar, sonra Marchutan's Wrath, sonra Impactful Crush.{% endcall %}
-    {{ hotline('2', 'Dolgu', ['incandescent-blow']) }}
+    {% call hotline('Yan', 'Dark Crush satırı', ['dark-crush', 'spinning-strike', 'marchutans-wrath', 'impactful-crush']) %}Penceresi açıkken Dark Crush; kapanınca onu yine Spinning Strike açar, sonra Marchutan's Wrath, sonra Impactful Crush.{% endcall %}
+    {{ hotline('—', 'Dolgu', ['incandescent-blow']) }}
   </div>
   <p>Makronun dışında — çubuğunun geri kalanı:</p>
   <div class="hotlines">

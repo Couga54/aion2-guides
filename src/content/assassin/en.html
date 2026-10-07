@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
 
 {# ============================== PvE ============================== #}
 {% call glance('pve') %}
@@ -147,6 +147,7 @@
     <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the highest-priority skill that's ready, and in AION 2 the <strong>bottom slot has the highest priority</strong>. The cards show each line top to bottom as in the game.</li>
     <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar buttons in order and cancels animation tails. Skills on cooldown are skipped.</li>
   </ul>
+  {{ hotbar([('N2', ['shadowstrike']), ('Side', []), ('3', ['flash-slice']), ('4', []), None, ('5', []), ('N4', []), ('6', []), ('7', ['illusive-clone', 'swift-contract', 'savage-fang', 'triniels-dagger']), None, ('N1', ['whirlwind-slice', 'infiltrate', 'shadow-fall']), ('N5', ['storm-rampage']), ('1', ['quick-slice']), ('E', ['insignia-explosion', 'heart-gore', 'ambush', 'savage-roar'])], macro=['E', '1'], own_keys=true) }}
 
   <h3>1. Hotbar lines</h3>
   <div class="hotlines">

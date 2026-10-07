@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
 
 {# ===== PvE and PvP: each PvP block follows its PvE counterpart, so both modes read in the same order; shared sections are 'pve pvp' ===== #}
 {% call glance('pve') %}
@@ -23,7 +23,7 @@
   <p>Templar is AION 2's main tank, and it still deals real damage. Its whole build rests on a <strong>"holy trinity"</strong> of skills taken to 20 as fast as possible — {{ s('judgment') }}, {{ s('punishment') }} and {{ s('pummel') }} — that you use as often as you can. Survivability is not what limits a Templar; damage is.</p>
   <div class="callout accent">
     <h3>The build in one sentence</h3>
-    <p>Shield skills trigger {{ s('judgment') }}: spam the Judgment line on a side button, hold the macro for Pummel and its procs, charge {{ s('punishment') }} on cooldown, and block the big hits to keep {{ s('fury') }} on the party.</p>
+    <p>Shield skills trigger {{ s('judgment') }}: hold the macro — it opens with {{ s('doom-shield') }}, keeps Judgment going and fills the gaps with Pummel and its procs — charge {{ s('punishment') }} on cooldown, and block the big hits to keep {{ s('fury') }} on the party.</p>
   </div>
   <p class="note">This guide follows SolAshur's global-launch Templar build (solashur.com, September 27) and his video walkthrough of it (September 29), re-checked against the video frames on September 30.</p>
 {% endcall %}
@@ -211,19 +211,22 @@
     <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the highest-priority skill that's ready, and in AION 2 the <strong>bottom slot has the highest priority</strong>. The cards show each line top to bottom as in the game.</li>
     <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar lines in order and cancels animation tails. Skills on cooldown are skipped.</li>
   </ul>
+  <p>Leonis' global setup (video of Oct 5, frame 0:57): two hotbar lines that the in-game macro presses, the rest by hand. Doom Shield now opens the macro; he says the updated setup gives about 20% more damage.</p>
+  {{ hotbar([('1', ['poach']), ('2', ['punishment', 'empyrean-lords-punishment']), ('3', ['debilitating-smash', 'annihilate', 'pummel']), ('Side', []), None, ('X', []), ('R', []), ('Side 2', []), ('', []), None, ('Q', ['shield-rush']), ('E', ['battlefield-banner', 'noble-armor']), ('LMB', ['vicious-strike']), ('—', ['doom-shield', 'judgment', 'shield-smite', 'warding-strike'])], macro=['—', '3'], own_keys=true) }}
 
   <h3>1. Hotbar lines</h3>
   <div class="hotlines">
-    {% call hotline('RMB', 'Pummel line', ['annihilate', 'debilitating-smash', 'pummel']) %}The in-game macro presses this line. Procs fire as soon as they light up; Pummel fills every gap — and with the −1s Punishment pick each Pummel brings Punishment back sooner. {{ s('flash-rampage') }} is out (Leonis): in his test the line does more damage without it.{% endcall %}
-    {% call hotline('Side', 'Judgment line', ['judgment', 'shield-smite', 'warding-strike', 'doom-shield']) %}Spam it: every shield skill triggers Judgment, and Judgment always wins.{% endcall %}
-    {% call hotline('RMB · PvX', 'Pummel line for PvX', ['doom-shield', 'annihilate', 'debilitating-smash', 'pummel']) %}The same button with the PvX preset: {{ s('doom-shield') }} takes the top priority. It sits in the Judgment line too on purpose: here it opens the fight — a rush and a guaranteed knockdown on NPCs that unlocks {{ s('annihilate') }} — and at level 15 it resets on a kill, the key to PvX and pet farming.{% endcall %}
+    {% call hotline('—', 'Doom Shield line', ['doom-shield', 'judgment', 'shield-smite', 'warding-strike']) %}The macro's first step. {{ s('doom-shield') }} opens the fight — a rush and a guaranteed knockdown on NPCs that unlocks {{ s('annihilate') }} — and at level 15 it resets on a kill, the key to PvX and pet farming. Between casts the line spams Judgment and the shield skills that trigger it.{% endcall %}
+    {% call hotline('3', 'Pummel line', ['debilitating-smash', 'annihilate', 'pummel']) %}The macro's second step. Procs fire as soon as they light up; Pummel fills every gap — and with the −1s Punishment pick each Pummel brings Punishment back sooner. {{ s('flash-rampage') }} is out: in Leonis' test the line does more damage without it. SolAshur puts Annihilate first.{% endcall %}
+    {% call hotline('Side', 'Judgment line (SolAshur)', ['judgment', 'shield-smite', 'warding-strike', 'doom-shield']) %}SolAshur's version, outside the macro: Judgment always wins and Doom Shield comes last. He binds it to <span class="key">R</span> and has his mouse repeat R about 10 times a second.{% endcall %}
   </div>
 
-  <h3>2. Keys</h3>
+  <h3>2. In-game macro and keys</h3>
+  {{ macroseq([('Doom Shield line', '10 ms'), ('Pummel line', '3 · 10 ms')]) }}
   <ul class="presslist">
     <li><span class="press-how">LMB</span><span class="press-what">{{ s('vicious-strike') }} (quick slot 1).</span></li>
-    <li><span class="press-how">RMB</span><span class="press-what">The in-game macro (Pummel line), 10 ms.</span></li>
-    <li><span class="press-how">Side button</span><span class="press-what">The Judgment line. SolAshur binds it to <span class="key">R</span> and has his mouse repeat R about 10 times a second.</span></li>
+    <li><span class="press-how">RMB</span><span class="press-what">The in-game macro. Leonis holds both mouse buttons all fight.</span></li>
+    <li><span class="press-how">Option</span><span class="press-what">SolAshur's Judgment line on a side button instead of Doom Shield in the macro (see above).</span></li>
     <li><span class="press-how">By hand</span><span class="press-what">Charged {{ s('punishment') }} on cooldown, {{ s('battlefield-banner') }}, {{ s('empyrean-lords-punishment') }} for stagger, {{ s('taunt') }}.</span></li>
   </ul>
   <p class="note">SolAshur covers his full hotkey setup in an earlier macro video; you will need to change a few in-game key bindings to match.</p>

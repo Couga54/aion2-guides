@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
 
 {# ============================== PvE ============================== #}
 {% call glance('pve') %}
@@ -142,12 +142,13 @@
     <li><strong>Hotbar line</strong> — several skills stacked on <em>one</em> hotbar button. Pressing it casts the highest-priority skill that's ready, and in AION 2 the <strong>bottom slot has the highest priority</strong>. The cards show each line top to bottom as in the game.</li>
     <li><strong>In-game macro</strong> — while you hold its key, it presses your hotbar buttons in order and cancels animation tails. Skills on cooldown are skipped.</li>
   </ul>
+  {{ hotbar([('1', []), ('2', []), ('3', ['undefeated-mantra']), ('4', ['sprint-mantra']), None, ('Q', ['recuperation']), ('E', ['power-of-the-storm']), ('R', []), ('F', ['rushing-smash', 'tremor-crush']), None, ('Side 2', []), ('Side', ['dark-crush', 'spinning-strike', 'marchutans-wrath', 'impactful-crush']), ('LMB', ['onslaught']), ('—', ['incandescent-blow'])], macro=['Side', '—'], own_keys=true) }}
 
   <h3>1. Hotbar lines</h3>
   <p>Grobs' global setup (frame 19:05): all three openers sit on one line with {{ s('dark-crush') }} at the bottom, so after every opener the line goes straight back to Dark Crush; Incandescent Blow has a line of its own.</p>
   <div class="hotlines">
-    {% call hotline('1', 'Dark Crush line', ['dark-crush', 'spinning-strike', 'marchutans-wrath', 'impactful-crush']) %}Dark Crush whenever its window is open; when it closes, Spinning Strike opens it again, then Marchutan's Wrath, then Impactful Crush.{% endcall %}
-    {{ hotline('2', 'Filler', ['incandescent-blow']) }}
+    {% call hotline('Side', 'Dark Crush line', ['dark-crush', 'spinning-strike', 'marchutans-wrath', 'impactful-crush']) %}Dark Crush whenever its window is open; when it closes, Spinning Strike opens it again, then Marchutan's Wrath, then Impactful Crush.{% endcall %}
+    {{ hotline('—', 'Filler', ['incandescent-blow']) }}
   </div>
   <p>Outside the macro — the rest of his bar:</p>
   <div class="hotlines">

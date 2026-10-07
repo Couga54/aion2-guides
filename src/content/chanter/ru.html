@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
 
 {# ============================== PvE ============================== #}
 {% call glance('pve') %}
@@ -142,12 +142,13 @@
     <li><strong>Линия на кнопке</strong> — несколько скиллов на <em>одной</em> кнопке панели. Нажатие применяет готовый скилл с наивысшим приоритетом, а в AION 2 <strong>наивысший приоритет у нижнего слота</strong>. Карточки показывают линии сверху вниз, как в игре.</li>
     <li><strong>Встроенный макрос</strong> — пока ты держишь его клавишу, он по очереди нажимает кнопки панели и отменяет хвосты анимаций. Скиллы на перезарядке пропускаются.</li>
   </ul>
+  {{ hotbar([('1', []), ('2', []), ('3', ['undefeated-mantra']), ('4', ['sprint-mantra']), None, ('Q', ['recuperation']), ('E', ['power-of-the-storm']), ('R', []), ('F', ['rushing-smash', 'tremor-crush']), None, ('Боковая 2', []), ('Боковая', ['dark-crush', 'spinning-strike', 'marchutans-wrath', 'impactful-crush']), ('ЛКМ', ['onslaught']), ('—', ['incandescent-blow'])], macro=['Боковая', '—'], own_keys=true) }}
 
   <h3>1. Линии на панели</h3>
   <p>Глобальная схема Grobs (кадр 19:05): все три открывающих стоят на одной линии с {{ s('dark-crush') }} внизу, поэтому после каждого открывающего линия сразу возвращается к Удару скалы; у Раскалённого удара своя линия.</p>
   <div class="hotlines">
-    {% call hotline('1', 'Линия Удара скалы', ['dark-crush', 'spinning-strike', 'marchutans-wrath', 'impactful-crush']) %}Удар скалы, пока его окно открыто; когда закрывается, его снова открывает Удар с вращением, затем Ярость Маркутана, затем Дробящий удар.{% endcall %}
-    {{ hotline('2', 'Филлер', ['incandescent-blow']) }}
+    {% call hotline('Боковая', 'Линия Удара скалы', ['dark-crush', 'spinning-strike', 'marchutans-wrath', 'impactful-crush']) %}Удар скалы, пока его окно открыто; когда закрывается, его снова открывает Удар с вращением, затем Ярость Маркутана, затем Дробящий удар.{% endcall %}
+    {{ hotline('—', 'Филлер', ['incandescent-blow']) }}
   </div>
   <p>Вне макроса — остальная панель:</p>
   <div class="hotlines">

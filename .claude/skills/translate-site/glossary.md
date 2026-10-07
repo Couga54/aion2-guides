@@ -28,6 +28,7 @@ Easy to mix up: **Заклинатель = Elementalist, Чародей = Chante
 | Elyos / Asmodians | Элийцы / Асмодиане | Elyos / Asmodians | Elyos / Asmodians |
 | server Zikel | Джикел | Zikel | Zikel |
 | Abyss | Бездна | Безодня | Abyss |
+| Mouse keys on the hotbar (`hotbar()` key labels) | ЛКМ / ПКМ | ЛКМ / ПКМ | LMB / RMB |
 
 ## Guide vocabulary
 
