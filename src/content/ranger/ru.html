@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
 
 {# ============================== PvE ============================== #}
 {% call glance('pve') %}
@@ -11,16 +11,16 @@
 {% endcall %}
 
 {% call section('intro', 'Обзор', 'pve') %}
-  <p>Стрелок — стрелок с луком, который сражается примерно с <strong>20 метров</strong>: это дальность почти всех его скиллов. Урон у него один из лучших, но живучесть и полезность для группы низкие, поэтому позиционирование решает всё.</p>
+  <p>Стрелок бьёт из лука примерно с <strong>20 метров</strong> — на такую дальность бьют почти все его скиллы. Урон у него один из лучших, а живучесть и польза для группы низкие, поэтому главное — правильно стоять.</p>
   <div class="callout accent">
     <h3>Билд одной фразой</h3>
     <p>Накинь баффы, держи на цели {{ s('marking-shot') }} (Точность: +300 крит. удара и +35% урона {{ s('deadshot', False) }}) и зажимай три кнопки: {{ s('snipe') }}, макрос и полностью заряженный {{ s('deadshot') }}.</p>
   </div>
-  <p class="note">Гайд следует Whelps — мейну Стрелка с 1 млн CP на корейских серверах, который играл и на глобальном тесте, — и его PvE-билду на эндгейм 1 сезона на questlog.</p>
+  <p class="note">Гайд построен на билде Whelps: он мейнит Стрелка на корейских серверах (1 млн CP), играл на глобальном тесте и выложил PvE-билд на эндгейм 1 сезона на questlog.</p>
 {% endcall %}
 
 {% call section('global', 'Глобальный 1 сезон: что меняется', 'pve pvp') %}
-  <p>Глобальные серверы открываются <strong>5 октября 2026</strong> (ранний доступ для Founder's Pack — с 30 сентября). Что это значит для Стрелка:</p>
+  <p>Глобальные серверы открылись <strong>5 октября 2026</strong> (ранний доступ для Founder's Pack — с 30 сентября). Что это значит для Стрелка:</p>
   <div class="callout">
     <ul>
       <li><strong>Четыре стигмы на 37 уровне.</strong> Глобальный тест заканчивался на 37; пятый слот на 45 вероятен, но не подтверждён — если появится, в него идёт {{ s('explosive-arrow') }}.</li>
@@ -41,7 +41,7 @@
     {% call skill('tempest-shot', 'must', '16', [2, 4]) %}Один из главных источников урона, но 16 хватает — крит всё равно будет в капе. В PvP его качают до 20 ради отбрасывания.{% endcall %}
     {% call skill('snare-shot', 'opt', '12', [1, 2]) %}12 почти бесплатно даёт доска Daevanion.{% endcall %}
     {% call skill('marking-shot', 'opt', '12', [0, 2]) %}+5% шанса идеального удара, +5 сек. длительности.{% endcall %}
-    {% call skill('burst-arrow', 'opt', '12', [2, 3]) %}На 20 бери и последнюю специализацию.{% endcall %}
+    {% call skill('burst-arrow', 'opt', '12', [1, 3], then=[4]) %}+50% мультиудара поверх собственных 50% — каждый удар проходит мультиударом (Moxsy), и +20% урона по одной цели. На 20 добавь шанс сброса перезарядки.{% endcall %}
     {% call skill('explosion-trap', 'opt', '12', [0, 2]) %}Только чтобы стянуть мобов (например, в Transcendence).{% endcall %}
     {% call skill('suppressing-arrow', 'opt', '12', [0, 2]) %}Только ради оглушения — на прокачке пригодится, в эндгейм-PvE не используется.{% endcall %}
     {% call skill('defiance', 'opt', '12', [2, 1]) %}На 16 — третья и пятая специализации.{% endcall %}
@@ -50,7 +50,7 @@
 {% endcall %}
 
 {% call section('passives', 'Пассивки', 'pve') %}
-  <p>По-настоящему важны только {{ s('focused-eye') }} (увеличение урона) и {{ s('hunters-resolve') }} (крит. урон); третья — {{ s('hunters-soul') }}.</p>
+  <p>Важны только {{ s('focused-eye') }} (увеличение урона) и {{ s('hunters-resolve') }} (крит. урон); третья — {{ s('hunters-soul') }}.</p>
   <div class="callout"><ul>
     <li>Дальше атакующие: {{ s('concentrated-fire') }}, {{ s('rooting-eye') }}, {{ s('melee-fire') }}.</li>
     <li>Затем {{ s('vigilant-eye') }} (макс. ОЗ) и {{ s('revitalization-contract') }} (лечение при 10% ОЗ).</li>
@@ -59,11 +59,11 @@
 {% endcall %}
 
 {% call section('gear', 'Экипировка и связывание души', 'pve') %}
-  <p>С экипировкой всё просто: бери предметы с наибольшим уровнем. На эндгейме это крафтовые оружие, гард и бижутерия, браслеты из Ludra и броня из подземелий.</p>
+  <p>Бери предметы с наибольшим уровнем. На эндгейме это крафтовые оружие, наручи и бижутерия, браслеты из Ludra и броня из подземелий.</p>
   <div class="table-wrap"><table>
     <thead><tr><th>Слот</th><th>Обязательные связывания души</th></tr></thead>
     <tbody>
-      <tr><td>Оружие, гард</td><td>Скорость боя, увеличение урона оружия, увеличение урона, Мощь (+ мультиудар у крафтового)</td></tr>
+      <tr><td>Оружие, наручи</td><td>Скорость боя, увеличение урона оружия, увеличение урона, Мощь (+ мультиудар у крафтового)</td></tr>
       <tr><td>Шлем, плащ</td><td>Двойной шанс, увеличение атаки</td></tr>
       <tr><td>Наплечники</td><td>Двойной шанс, увеличение крит. урона</td></tr>
       <tr><td>Нагрудник</td><td>Увеличение урона</td></tr>
@@ -125,13 +125,13 @@
 {% endcall %}
 
 {% call section('stigmas', 'Стигмы', 'pve') %}
-  <p>Сначала качай их ровно — 5 / 5 / 5, потом 10, — чтобы брать каждый порог. Как только хватит очков на <strong>Силу Байзела 20</strong>, сбрось и вложи сначала в неё: с этого момента Стрелок раскрывается. Затем по очереди до 20 Благословенный лук, Поддерживающий огонь и Стрела грифона.</p>
+  <p>Сначала качай их ровно — 5 / 5 / 5, потом 10, — чтобы брать каждый порог. Как только хватит очков на <strong>Силу Байзела 20</strong>, сбрось и вложи сначала в неё — это самый большой прирост урона. Затем по очереди доведи до 20 Благословенный лук, Поддерживающий огонь и Стрелу грифона.</p>
   <ul class="skill-grid">
-    {% call skill('vaizels-authority', 'must', 'Lv 20', upto=20) %}×1,5 к Оку концентрации и Душе охотника; на 20 каждый крит с шансом 50% сокращает перезарядку <em>всех</em> скиллов на 1 сек. — огромный прирост урона.{% endcall %}
-    {% call skill('bow-of-blessing', 'must', 'Lv 10 → 20', upto=20) %}Мультиудар, атака от крита, крит. урон и двойной шанс.{% endcall %}
-    {% call skill('supporting-fire', 'must', 'Lv 10 → 20', upto=20) %}Сфера, которая стреляет вместе с тобой; перезарядка как у Силы Байзела, поэтому их можно повесить на одну кнопку.{% endcall %}
-    {% call skill('griffon-arrow', 'must', 'Lv 10 → 20', upto=20) %}Периодический урон «Багровое пламя»; открывает линию макроса.{% endcall %}
-    {% call skill('explosive-arrow', 'opt', 'альт. · 4-й слот', upto=10) %}Равноценная замена {{ s('griffon-arrow') }}: LordRobson оценивает их урон примерно одинаково, а aLuckyRO в первый день ставит её на 5 (−15 сек. перезарядки) вместо грифона. Если на 45 откроется пятый слот, бери обе.{% endcall %}
+    {% call skill('vaizels-authority', 'must', 'Ур. 20', upto=20) %}×1,5 к Оку концентрации и Душе охотника; на 20 каждый крит с шансом 50% сокращает перезарядку <em>всех</em> скиллов на 1 сек. — огромный прирост урона.{% endcall %}
+    {% call skill('bow-of-blessing', 'must', 'Ур. 10 → 20', upto=20) %}Мультиудар, атака от крита, крит. урон и двойной шанс.{% endcall %}
+    {% call skill('supporting-fire', 'must', 'Ур. 10 → 20', upto=20) %}Сфера, которая стреляет вместе с тобой; перезарядка как у Силы Байзела, поэтому их можно повесить на одну кнопку.{% endcall %}
+    {% call skill('griffon-arrow', 'must', 'Ур. 10 → 20', upto=20) %}Периодический урон «Багровое пламя»; открывает линию макроса.{% endcall %}
+    {% call skill('explosive-arrow', 'opt', 'альт. · 4-й слот', upto=10) %}Равноценная замена {{ s('griffon-arrow') }}: LordRobson оценивает их урон примерно одинаково, а aLuckyRO в первый день ставит её на 5 (−15 сек. перезарядки) вместо грифона. В наборе Moxsy для прокачки она тоже есть. Если на 45 откроется пятый слот, бери обе.{% endcall %}
     {% call skill('arrow-storm', 'opt', 'прокачка', upto=5) %}АоЕ по пачкам на прокачке.{% endcall %}
   </ul>
 {% endcall %}
@@ -151,15 +151,15 @@
   </div>
 
   <h3>2. Встроенный макрос</h3>
-  <p>Окно скиллов → <strong>Макрос</strong>: добавь линию грифона, затем линию шквала, по <strong>10 мс</strong> (кто-то находит оптимум между 10 и 20 мс — проверь сам). Повесь макрос на <span class="key">ПКМ</span> в Настройки → Управление → Общее → Макрос.</p>
+  <p>Окно скиллов → <strong>Макрос</strong>: добавь линию грифона, затем линию шквала, по <strong>10 мс</strong> (кто-то находит оптимум между 10 и 20 мс — проверь сам). Повесь макрос на <span class="key">ПКМ</span>: Настройки → Клавиши → Общее → Связка.</p>
   {{ macroseq([('Линия грифона', '1 · 10 мс'), ('Линия шквала', '2 · 10 мс')]) }}
   <div class="callout"><ul>
     <li>Играй в <strong>режиме управления AION 2</strong> — в режиме AION 1 встроенный макрос ограничен.</li>
     <li>Включи <strong>очередь скиллов</strong> в настройках управления боем.</li>
-    <li>Назначь {{ s('deadshot') }} вторую клавишу в Управление → Быстрые слоты (боковая кнопка мыши).</li>
+    <li>Назначь {{ s('deadshot') }} вторую клавишу в Настройки → Клавиши → Быстрые слоты (боковая кнопка мыши).</li>
   </ul></div>
 
-  <h3>3. Что нажимать на самом деле</h3>
+  <h3>3. Что нажимать</h3>
   <ul class="presslist">
     <li><span class="press-how">Открытие</span><span class="press-what">Баффы вручную — {{ s('bow-of-blessing') }}, {{ s('supporting-fire') }} + {{ s('vaizels-authority') }} (одна кнопка, одинаковая перезарядка), — затем {{ s('marking-shot') }} и полностью заряженный {{ s('deadshot') }}.</span></li>
     <li><span class="press-how">Держать</span><span class="press-what">{{ s('snipe') }} на <span class="key">ЛКМ</span>, макрос на <span class="key">ПКМ</span> и {{ s('deadshot') }} на боковой кнопке — все три сразу.</span></li>
@@ -180,28 +180,57 @@
 
 {# ============================ Leveling ============================ #}
 {% call section('fight-lvl', t.lvl_combat, 'lvl') %}
+  <p>Прокачка и первые дни на 45 — по гайду Moxsy по Стрелку (глобал, 5 октября), сделанному с помощью JohnPal — Стрелка с опытом Кореи и Тайваня.</p>
   <div class="callout"><ul>
-    <li><strong>Пачки:</strong> {{ s('explosion-trap') }} под ноги → {{ s('snare-shot') }} → {{ s('drill-dart') }} + {{ s('tempest-shot') }}. Мобы сами забегают в ловушку.</li>
-    <li><strong>Элитки:</strong> {{ s('marking-shot') }} (Точность) → {{ s('snare-shot') }} → {{ s('burst-arrow') }} → заряженный {{ s('deadshot') }}. Кайти, не танкуй.</li>
-    <li><strong>Мало ОЗ:</strong> Пронзающая и Рассекающая стрелы поглощают ОЗ. Сначала выйди из ближнего боя, потом лечись.</li>
+    <li><strong>Пачки:</strong> большинство скиллов Стрелка бьют только в радиусе 4 м от цели, так что не убивай мобов по одному. Зацепи нескольких {{ s('snipe') }}, чтобы стянуть, затем {{ s('marking-shot') }} и {{ s('explosion-trap') }}, чтобы собрать их вместе, затем макрос.</li>
+    <li><strong>Элитки:</strong> сначала {{ s('marking-shot') }} — Точность держится весь бой, — затем макрос и полностью заряженный {{ s('deadshot') }} в самую толстую цель. Не трать Прицельный выстрел на мелочь, пока рядом элитка.</li>
+    <li><strong>Ошеломление:</strong> {{ s('suppressing-arrow') }}, когда босс почти ошеломлён. {{ s('arrow-scattershot') }} пропускай: зажимать его на ошеломлённом боссе слабее обычной ротации.</li>
+    <li><strong>Мана:</strong> {{ s('snipe') }} восстанавливает ОМ — вплетай его постоянно.</li>
   </ul></div>
 {% endcall %}
 
+{% call section('skills-lvl', 'Что качать первым', 'lvl') %}
+  <ul class="skill-grid">
+    {% call skill('snipe', 'must', '8 → 12', [0, 3]) %}Базовая атака: +20% восстановления ОМ на 8, −1 сек. перезарядки Прицельного выстрела за попадание на 12. Качай вместе со Скоростной стрельбой.{% endcall %}
+    {% call skill('tempest-shot', 'must', '12', [1, 2]) %}Урон на старте: +10% крита умения и +12% по одной цели. Качай вместе с Метким выстрелом.{% endcall %}
+    {% call skill('deadshot', 'must', '12 → 16', [1, 2]) %}Вкладывай в него каждый доступный уровень — мобильность и +30% скорости умения дают огромный прирост урона. Заряжаемый скилл: кастуй вручную, макрос выпускает только первый заряд.{% endcall %}
+    {% call skill('gale-arrow', 'must', '12', [2, 3]) %}Мобильный и специализация на скорость боя — скорость здесь главный стат.{% endcall %}
+    {% call skill('drill-dart', 'must', '12', [3, 2]) %}Бьёт сильно, на крите восстанавливает ОМ, вешает кровотечение и лечит, перезарядка короткая. Гарантированный мультиудар и +20% скорости умения, когда он проходит.{% endcall %}
+    {% call skill('burst-arrow', 'must', '12', [1, 2]) %}Сильный удар: с +50% мультиудара поверх своих 50% всегда проходит мультиударом; мобильный; замедляет и обездвиживает.{% endcall %}
+  </ul>
+  <div class="callout"><ul>
+    <li><strong>Порядок:</strong> Меткий выстрел и Скоростная стрельба поровну, затем Пронзающая стрела, Шквал стрел и Рассекающая стрела по мере открытия; Прицельный выстрел — каждый раз, когда доступен уровень.</li>
+    <li><strong>Пассивки</strong> после скиллов: сначала {{ s('focused-eye') }} и {{ s('hunters-resolve') }}, затем {{ s('hunters-soul') }}, {{ s('rooting-eye') }} и {{ s('concentrated-fire') }} — две последние питаются твоими замедлениями, обездвиживаниями и уроном со временем.</li>
+    <li><strong>Стигмы:</strong> {{ s('vaizels-authority') }}, {{ s('bow-of-blessing') }}, {{ s('supporting-fire') }} и {{ s('explosive-arrow') }} поровну до 5. После 45 сброс бесплатный: всё в Силу Байзела, пока она не дойдёт до 20, — самый большой скачок силы Стрелка.</li>
+    <li><strong>Daevanion:</strong> сначала узлы скиллов главного урона, затем остальные скиллы, затем пассивки; узлы сопротивления криту пропускай.</li>
+  </ul></div>
+  <p>Пошагово: <a href="https://ranger.tgustafsson.se/#board=zikel-59" target="_blank" rel="noopener">планировщик прокачки и досок Daevanion от JohnPal →</a> · <a href="https://docs.google.com/document/d/1evrt_6e6WSHRT1vMem2i3O7ZlfANJbqyZoSn66IFrBo/edit?tab=t.0" target="_blank" rel="noopener">текстовый гайд по Стрелку от Allyria →</a></p>
+{% endcall %}
+
 {% call section('macro-lvl', 'Макрос на прокачке', 'lvl') %}
-  <p>Упрощённая настройка для прокачки и первых дней на капе — из ранних макросов Grobs. В макрос идут только скиллы, которые спамишь; баффы, стигмы на бурст и сближения — на отдельных клавишах.</p>
+  <p>Схема Moxsy (кадр 13:32): баффы и бурсты стоят в двух линиях, которые нажимает макрос, Меткий выстрел и Прицельный выстрел — на мыши.</p>
+  {{ hotbar([('1', ['suppressing-arrow']), ('2', ['explosion-trap']), ('3', ['marking-shot']), ('4', ['drill-dart', 'tempest-shot']), None, ('5', []), ('6', []), ('7', []), ('8', ['burst-arrow', 'vaizels-authority', 'bow-of-blessing', 'supporting-fire']), None, ('Q', ['gale-arrow', 'explosive-arrow', 'snare-shot']), ('E', ['arrow-scattershot']), ('ЛКМ', ['snipe']), ('ПКМ', ['deadshot'])], macro=['Q', '4', '8']) }}
+  <div class="hotlines">
+    {% call hotline('8', 'Линия Рассекающей стрелы', ['burst-arrow', 'vaizels-authority', 'bow-of-blessing', 'supporting-fire']) %}Сначала Рассекающая стрела; пока она на перезарядке, каждый бафф срабатывает, как только готов.{% endcall %}
+    {% call hotline('Q', 'Линия Шквала стрел', ['gale-arrow', 'explosive-arrow', 'snare-shot']) %}Шквал стрел, Взрывная стрела и Опутывающий выстрел — замедление, которое нужно Рассекающей стреле.{% endcall %}
+    {% call hotline('4', 'Линия Пронзающей стрелы', ['drill-dart', 'tempest-shot']) %}Пронзающая стрела по откату, Скоростная стрельба заполняет паузы.{% endcall %}
+  </div>
+  <p>Встроенный макрос, каждый шаг с задержкой <strong>10 мс</strong>:</p>
+  {{ macroseq([('Линия Шквала стрел', 'Q'), ('Линия Пронзающей стрелы', '4'), ('Линия Рассекающей стрелы', '8'), ('Линия Пронзающей стрелы', '4')]) }}
+  <p class="note">Второй шаг с Пронзающей стрелой пока ничего не добавляет — в тесте Moxsy урон был тот же, — но окупится, когда стигмы дойдут до 15. Держи {{ s('snipe') }} на ЛКМ вместе с макросом; {{ s('deadshot') }} заряжай вручную.</p>
+  <h3>Другой вариант: ранние линии Grobs</h3>
   <div class="hotlines">
     {{ hotline('1', 'Линия 1', ['griffon-arrow', 'explosive-arrow'], []) }}
     {{ hotline('2', 'Линия 2', ['drill-dart', 'gale-arrow', 'tempest-shot'], []) }}
   </div>
-  <p>Встроенный макрос: Линия 1 → Линия 2, у каждого задержка 10 мс. Держи базовую атаку {{ s('snipe') }} на ЛКМ <strong>и</strong> клавишу макроса вместе.</p>
-  <p class="note">Когда скиллы дойдут до 12–16 и специализации изменят перезарядки, переходи на полную настройку во вкладке PvE.</p>
+  <p>Встроенный макрос: Линия 1 → Линия 2, по 10 мс. Когда скиллы дойдут до 12–16, переходи на полную схему во вкладке PvE.</p>
 {% endcall %}
 
 {# ============================ Sources ============================ #}
 <section class="sources" aria-labelledby="h-sources">
   <h2 id="h-sources">{{ t.sources }}</h2>
   <ul>
-    <li><a href="https://www.youtube.com/watch?v=wKOm6yKuu_I" target="_blank" rel="noopener">Whelps — гайд на Стрелка AION 2</a> и его <a href="https://questlog.gg/aion-2/en/character-builder/AelonCommandAndTheSharpMerchant?build-id=8655" target="_blank" rel="noopener">PvE-билд на эндгейм 1 сезона на questlog</a> — билд, которому следует гайд (скиллы, стигмы, макрос, экипировка, арканы)</li>
+    <li><a href="https://www.youtube.com/watch?v=wKOm6yKuu_I" target="_blank" rel="noopener">Whelps — гайд на Стрелка AION 2</a> и его <a href="https://questlog.gg/aion-2/en/character-builder/AelonCommandAndTheSharpMerchant?build-id=8655" target="_blank" rel="noopener">PvE-билд на эндгейм 1 сезона на questlog</a> — на нём построен гайд (скиллы, стигмы, макрос, экипировка, арканы)</li>
     <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C3iKFteGvIbgqNDnQq7bmwIaU23DvjbPa0HPSVAdOOiCeBkEq69Cn8jVMJhToJcztCRylYeTYfOk/pubhtml" target="_blank" rel="noopener">TitanTheF — таблица прогрессии AION 2</a> (вкладка «Стрелок») и его <a href="https://aion2t.com/ru/simulator?job=4&amp;b=8QbCF0" target="_blank" rel="noopener">билд 45+ на aion2t</a> — прежний глобальный билд (уровни скиллов, прокачка)</li>
     <li><a href="https://questlog.gg/aion-2/ru/db/skills/ranger" target="_blank" rel="noopener">questlog.gg</a> — данные скиллов и стигм из глобального клиента</li>
     <li><a href="https://7mmo.com/threads/guide-ranger-aion-2-build-pve-complet-sorts-stigmas-stuff.5771/" target="_blank" rel="noopener">7MMO</a> — полный корейский PvE-билд (скиллы, стигмы, макрос)</li>
@@ -211,6 +240,7 @@
     <li>Галерея AION 2 на DCInside — посты корейских игроков о текущей мете и стигмах (анонимные авторы, отдельной ссылки нет)</li>
     <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (таблица TitanTheF) — маршрут прокачки</li>
     <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — как работают линии и встроенный макрос</li>
+    <li><a href="https://www.youtube.com/watch?v=VsvTt5JkEzY" target="_blank" rel="noopener">Moxsy — ULTIMATE RANGER GUIDE! (Leveling, Macros, Rotation &amp; More!)</a> — режим «Прокачка»: сбор мобов, что качать первым, его панель и макрос (вместе с JohnPal)</li>
     <li><a href="https://www.youtube.com/watch?v=UOuiJT9E1xA" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Ranger PVE Build for Global</a> — ранние специализации, {{ s('explosive-arrow', False) }} вместо {{ s('griffon-arrow', False) }}, связка {{ s('marking-shot', False) }} → {{ s('gale-arrow', False) }} → {{ s('deadshot', False) }}</li>
     <li><a href="https://www.youtube.com/watch?v=fGABxC3QKd8" target="_blank" rel="noopener">LordRobson — Aion 2 Ranger - Build, Skills, Stigmas and Macros</a> — подтверждает стигмы (четвёртая — {{ s('griffon-arrow', False) }} или {{ s('explosive-arrow', False) }}), {{ s('deadshot', False) }} до 16 первым, длительность {{ s('marking-shot', False) }}</li>
   </ul>

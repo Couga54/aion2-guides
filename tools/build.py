@@ -11,6 +11,7 @@ Inputs:
   src/assets/                       css, js, icons (copied as-is)
 """
 import json
+import re
 import shutil
 from pathlib import Path
 
@@ -440,9 +441,30 @@ def page_ctx(lang, path, root, cls=None):
     }
 
 
+# Typography for Russian and Ukrainian pages, applied to the built HTML only (sources stay plain so grep/replace keep
+# working): a no-break space after one-letter words and before an em dash, so they never end or start a line.
+_NBSP_WORDS = {"ru": "вксоуиаяВКСОУИАЯ", "uk": "вузійоаяВУЗІЙОАЯ"}
+_SKIP = re.compile(r"(<script\b.*?</script>|<style\b.*?</style>|<[^>]*>)", re.S | re.I)
+
+
+def typograph(html, lang):
+    one = re.compile(r"(?<![\w\-])([" + _NBSP_WORDS[lang] + r"]) (?=\S)")
+    parts = _SKIP.split(html)
+    for i in range(0, len(parts), 2):          # even items are text between tags
+        t = parts[i]
+        if t.strip():
+            t = one.sub("\\1\u00a0", t)
+            t = t.replace(" \u2014", "\u00a0\u2014")
+            parts[i] = t
+    return "".join(parts)
+
+
 def write(rel, html):
     p = OUT / rel
     p.parent.mkdir(parents=True, exist_ok=True)
+    lang = rel.split("/", 1)[0]
+    if rel.endswith(".html") and lang in _NBSP_WORDS:
+        html = typograph(html, lang)
     p.write_text(html, encoding="utf-8")
 
 

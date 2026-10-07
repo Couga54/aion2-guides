@@ -1381,3 +1381,22 @@ details.spec-all[open] > *:not(summary),.wk-group,.bs-group{animation:fade-in .3
 .tab-panel{overflow-anchor:none;}   /* switching tabs must not make the browser jump to keep a hidden element in place */
 .dg-gtitle{font:400 1.5rem var(--font-display);margin:0 0 6px;}
 .tl-board.tab-panel{margin-top:0;}
+
+/* example hotbar (macro hotbar()): icons only, laid out like the in-game skill bar, full content width */
+.hbar{margin:14px 0 20px;padding:14px 14px 10px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--border);}
+.hbar-title{font-weight:700;font-size:.92rem;margin-bottom:10px;}
+.hbar-scroll{overflow-x:auto;padding-bottom:4px;}
+.hbar-grid{display:grid;gap:5px;min-width:430px;}
+.hbar-col{display:grid;grid-template-rows:repeat(4,auto) auto;gap:5px;min-width:0;}
+.hbar-slot{display:block;aspect-ratio:1;max-width:64px;width:100%;justify-self:center;border-radius:7px;background:var(--surface-3);border:1px solid var(--border);overflow:hidden;}
+.hbar-slot img{display:block;width:100%;height:100%;object-fit:cover;}
+.hbar-slot.is-empty{opacity:.5;}
+.hbar-col.is-macro .hbar-slot:not(.is-empty){border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset;}
+.hbar-key{justify-self:center;margin-top:2px;min-width:28px;padding:1px 6px;border-radius:5px;border:1px solid var(--border-2);background:var(--surface-2);font:700 .66rem var(--font-mono);text-align:center;color:var(--text-dim);}
+.hbar-col.is-macro .hbar-key{color:var(--gold);border-color:var(--gold);}
+.hbar-note{margin:8px 0 0;font-size:.76rem;color:var(--text-faint);}
+
+/* "?" next to macro section titles: hover / focus shows how to bind the macro key */
+.sec-tip{position:relative;display:inline-grid;place-items:center;width:22px;height:22px;margin-left:10px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);font:700 .78rem var(--font-mono);cursor:help;outline:none;align-self:center;flex:none;}
+.sec-tip-box{position:absolute;z-index:20;left:50%;top:calc(100% + 8px);width:max-content;max-width:min(320px,80vw);padding:9px 12px;border:1px solid var(--border-2);border-radius:10px;background:var(--surface-2);box-shadow:var(--shadow);font-family:var(--font);font-size:.8rem;font-weight:400;line-height:1.45;color:var(--text);text-align:left;opacity:0;visibility:hidden;transform:translate(-50%,-4px);transition:opacity .18s,transform .18s,visibility .18s;pointer-events:none;}
+.sec-tip:hover .sec-tip-box,.sec-tip:focus .sec-tip-box{opacity:1;visibility:visible;transform:translate(-50%,0);}

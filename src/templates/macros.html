@@ -6,7 +6,7 @@
 {# A guide section, shown only in the listed modes ("pve", "pvp", "lvl", or several). #}
 {% macro section(id, title, modes) -%}
 <section id="{{ id }}" class="g-section" data-only="{{ modes }}" aria-labelledby="h-{{ id }}">
-  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-{{ id }}">{{ title }}</h2></div>
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-{{ id }}">{{ title }}</h2>{% if id.startswith('macro') %}<span class="sec-tip" tabindex="0" aria-label="{{ t.macro_tip }}">?<span class="sec-tip-box" role="tooltip">{{ t.macro_tip }}</span></span>{% endif %}</div>
   {{ caller() }}
   {% if id.startswith('intro') %}<p class="guide-origin"><b>{{ t.guide_patch }} {{ t.patch_s1 if cls.patch == 'S1' else cls.patch }}.</b> {{ t.guide_origin_s1 if cls.patch == 'S1' else (t.guide_origin_kr if 'KR' in (cls.patch or '') else t.guide_origin) }}</p>{% endif %}
 </section>
@@ -119,6 +119,24 @@
   {% set note = caller() if caller is defined else '' %}
   {% if note|trim %}<p class="hotline-note">{{ note }}</p>{% endif %}
 </div>
+{%- endmacro %}
+
+{#- Example hotbar, drawn like the game's: icons only, no names. cols = [(key, [slugs in priority order]), ...];
+    None makes a gap between groups. A line holds up to 4 skills stacked upward (the first slug is the bottom slot,
+    which fires first). Keys in `macro` are the lines the in-game macro presses (gold). Hover an icon for the skill. -#}
+{% macro hotbar(cols, macro=[]) -%}
+{% set tpl = [] %}{% for c in cols %}{% do tpl.append('.35fr' if c is none else 'minmax(30px,1fr)') %}{% endfor %}
+<figure class="hbar">
+  <figcaption class="hbar-title">{{ t.hb_title }}</figcaption>
+  <div class="hbar-scroll"><div class="hbar-grid" style="grid-template-columns:{{ tpl|join(' ') }}">
+    {% for c in cols %}{% if c is none %}<span class="hbar-gap" aria-hidden="true"></span>{% else %}{% set key, slugs = c %}
+    <div class="hbar-col{{ ' is-macro' if key in macro }}">
+      {% for r in range(3, -1, -1) %}{% if slugs|length > r %}<span class="hbar-slot" data-sk="{{ slugs[r] }}"><img src="{{ icon_url(slugs[r]) }}" width="56" height="56" alt="{{ skill_data(slugs[r])[lang].name }}" loading="lazy"></span>{% else %}<span class="hbar-slot is-empty" aria-hidden="true"></span>{% endif %}{% endfor %}
+      <span class="hbar-key">{{ key }}</span>
+    </div>{% endif %}{% endfor %}
+  </div></div>
+  <p class="hbar-note">{{ t.hb_note }}</p>
+</figure>
 {%- endmacro %}
 
 {# In-game macro slots: steps = [(label, detail), ...] in slot order. #}

@@ -2,6 +2,30 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-10-07",
+      "date": "2026-10-07",
+      "items": [
+        {
+          "en": "<strong>Ranger: new Leveling mode</strong> — from Moxsy's guide (made with JohnPal): how to pull packs, what to level first with the early skill picks, his hotbar and four-step macro, links to JohnPal's leveling planner and Allyria's written guide. Burst Arrow in PvE now takes +50% Multi-Hit.",
+          "ru": "<strong>Стрелок: новый режим «Прокачка»</strong> — по гайду Moxsy (вместе с JohnPal): как собирать мобов, что качать первым и ранние специализации, его панель и макрос из четырёх шагов, ссылки на планировщик прокачки JohnPal и текстовый гайд Allyria. Рассекающая стрела в PvE теперь берёт +50% мультиудара.",
+          "uk": "<strong>Ranger: новий режим «Прокачка»</strong> — за гайдом Moxsy (разом з JohnPal): як збирати мобів, що качати першим і ранні спеціалізації, його панель і макрос із чотирьох кроків, посилання на планувальник прокачки JohnPal і текстовий гайд Allyria. Burst Arrow у PvE тепер бере +50% мультиудару.",
+          "tr": "<strong>Ranger: yeni Seviye atlama modu</strong> — Moxsy'nin rehberinden (JohnPal ile): mobları nasıl toplamalı, önce neyi yükseltmeli ve erken seçimler, çubuğu ve dört adımlı makrosu, JohnPal'ın seviye planlayıcısı ve Allyria'nın yazılı rehberine bağlantılar. PvE'de Burst Arrow artık +%50 Multi-Hit alıyor."
+        },
+        {
+          "en": "<strong>Example hotbar layout</strong> — the Cleric and Ranger guides show the author's skill bar as in the game: all keys and slots, the macro lines in gold, a skill tooltip on every icon. A <strong>?</strong> next to every Macro section says where to bind the macro key.",
+          "ru": "<strong>Пример раскладки скиллов на панели</strong> — гайды Целителя и Стрелка показывают панель автора как в игре: все клавиши и слоты, линии макроса золотом, подсказка скилла на каждой иконке. Значок <strong>?</strong> у каждого раздела «Макрос» подсказывает, где назначить клавишу макроса.",
+          "uk": "<strong>Приклад розкладки скілів на панелі</strong> — гайди Cleric і Ranger показують панель автора як у грі: усі клавіші й слоти, лінії макросу золотом, підказка скіла на кожній іконці. Значок <strong>?</strong> біля кожного розділу «Макрос» підказує, де призначити клавішу макросу.",
+          "tr": "<strong>Örnek kısayol çubuğu düzeni</strong> — Cleric ve Ranger rehberleri yazarın yetenek çubuğunu oyundaki gibi gösteriyor: tüm tuşlar ve yuvalar, altın renkli makro satırları, her simgede yetenek ipucu. Her Makro bölümünün yanındaki <strong>?</strong>, makro tuşunun nereden atanacağını söylüyor."
+        },
+        {
+          "en": "<strong>Templar: Asmodian gear</strong> — the Holy Spirit set drops only on Elyos maps; Asmodians farm the same gear as the Spectral set in Altgard and Morheim. Hover the items to compare the stats.",
+          "ru": "<strong>Страж: экипировка Асмодиан</strong> — сет Holy Spirit падает только на картах Элийцев; Асмодиане фармят ту же экипировку как сет Spectral в Altgard и Morheim. Наведи на предметы, чтобы сравнить статы.",
+          "uk": "<strong>Templar: спорядження Asmodian</strong> — сет Holy Spirit падає лише на мапах Elyos; Asmodian фармлять те саме спорядження як сет Spectral в Altgard і Morheim. Наведи на предмети, щоб порівняти стати.",
+          "tr": "<strong>Templar: Asmodian ekipmanı</strong> — Holy Spirit seti yalnızca Elyos haritalarında düşer; Asmodian'lar aynı ekipmanı Spectral seti olarak Altgard ve Morheim'da farmlar. Statları karşılaştırmak için eşyaların üzerine gel."
+        }
+      ]
+    },
+    {
       "id": "2026-10-06-classes",
       "date": "2026-10-06",
       "items": [
@@ -337,7 +361,7 @@
         {
           "href": "progression/",
           "en": "<strong>New page: After level 45</strong> — the item level route from 45 to the 2,800 dragon raid: what changes on global, Shugo, Nightmare, Draupnir, Vakron, Transcendence, a hardcore route and daily contract tips. Every block links to its moment in the video.",
-          "ru": "<strong>Новая страница: После 45 уровня</strong> — маршрут по уровню предметов от 45 до рейда на дракона (2 800): что меняется на глобалке, Шуго, Кошмар, Друпнир, Вакрон, Трансцендентность, хардкорный путь и советы по контрактам. У каждого блока — ссылка на момент в видео.", "uk": "<strong>Нова сторінка: Після 45 рівня</strong> — маршрут за рівнем предметів від 45 до рейду на дракона (2 800): що змінюється на глобалі, Shugo, Nightmare, Draupnir, Vakron, Transcendence, хардкорний шлях і поради щодо контрактів. У кожного блоку — посилання на момент у відео.", "tr": "<strong>Yeni sayfa: 45. seviyeden sonra</strong> — 45'ten 2.800 ejderha raidine item level rotası: global'de ne değişiyor, Shugo, Nightmare, Draupnir, Vakron, Transcendence, bir hardcore rota ve günlük kontrat ipuçları. Her blok videodaki anına bağlantı verir."
+          "ru": "<strong>Новая страница: После 45 уровня</strong> — маршрут по уровню предметов от 45 до рейда на дракона (2800): что меняется на глобалке, Шуго, Кошмар, Друпнир, Вакрон, Трансцендентность, хардкорный путь и советы по контрактам. У каждого блока — ссылка на момент в видео.", "uk": "<strong>Нова сторінка: Після 45 рівня</strong> — маршрут за рівнем предметів від 45 до рейду на дракона (2 800): що змінюється на глобалі, Shugo, Nightmare, Draupnir, Vakron, Transcendence, хардкорний шлях і поради щодо контрактів. У кожного блоку — посилання на момент у відео.", "tr": "<strong>Yeni sayfa: 45. seviyeden sonra</strong> — 45'ten 2.800 ejderha raidine item level rotası: global'de ne değişiyor, Shugo, Nightmare, Draupnir, Vakron, Transcendence, bir hardcore rota ve günlük kontrat ipuçları. Her blok videodaki anına bağlantı verir."
         },
         {
           "href": "progression/",
@@ -353,7 +377,7 @@
         {
           "href": "week-1/#h-w1-route",
           "en": "<strong>After 45: the item level route</strong> — on the first-week page, from 45 to the 2,800 raid step by step (Shugo, Nightmare, Drupnir, Vakron, Transcendence). Based on the global datamine, so it is marked until confirmed.",
-          "ru": "<strong>После 45: маршрут по уровню предметов</strong> — на странице первой недели, от 45 до рейда на 2 800 по шагам (Шуго, Кошмар, Друпнир, Вакрон, Трансцендентность). По датамайну глобалки, поэтому с пометкой до подтверждения.", "uk": "<strong>Після 45: маршрут за рівнем предметів</strong> — на сторінці першого тижня, від 45 до рейду на 2 800 по кроках (Shugo, Nightmare, Draupnir, Vakron, Transcendence). За датамайном глобалу, тому з позначкою до підтвердження.", "tr": "<strong>45 sonrası: item level rotası</strong> — ilk hafta sayfasında, 45'ten 2.800 raidine adım adım (Shugo, Nightmare, Draupnir, Vakron, Transcendence). Global datamine'a dayanıyor, bu yüzden doğrulanana kadar işaretli."
+          "ru": "<strong>После 45: маршрут по уровню предметов</strong> — на странице первой недели, от 45 до рейда на 2800 по шагам (Шуго, Кошмар, Друпнир, Вакрон, Трансцендентность). По датамайну глобалки, поэтому с пометкой до подтверждения.", "uk": "<strong>Після 45: маршрут за рівнем предметів</strong> — на сторінці першого тижня, від 45 до рейду на 2 800 по кроках (Shugo, Nightmare, Draupnir, Vakron, Transcendence). За датамайном глобалу, тому з позначкою до підтвердження.", "tr": "<strong>45 sonrası: item level rotası</strong> — ilk hafta sayfasında, 45'ten 2.800 raidine adım adım (Shugo, Nightmare, Draupnir, Vakron, Transcendence). Global datamine'a dayanıyor, bu yüzden doğrulanana kadar işaretli."
         },
         {
           "href": "week-1/",

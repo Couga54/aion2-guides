@@ -40,7 +40,7 @@
      "type": "opts",
      "label": {
       "en": "Key Settings → General",
-      "ru": "Клавиши → General", "uk": "Key Settings → General", "tr": "Key Settings → General"
+      "ru": "Клавиши → Общее", "uk": "Key Settings → General", "tr": "Key Settings → General"
      },
      "rows": [
       {
@@ -50,7 +50,7 @@
         "It has no key by default, and without one the in-game macro simply does not work."
        ],
        "ru": [
-        "Macro",
+        "Связка <span class='st-en'>Macro</span>",
         "<strong>назначь клавишу</strong> — обычно правая кнопка мыши",
         "По умолчанию клавиши нет, а без неё встроенный макрос просто не работает."
        ], "uk": ["Macro", "<strong>признач клавішу</strong> — зазвичай права кнопка миші", "За замовчуванням клавіші немає, а без неї вбудований макрос просто не працює."], "tr": ["Macro", "<strong>bir tuş ata</strong> — genellikle farenin sağ tuşu", "Varsayılan olarak tuşu yok ve tuş olmadan oyun içi makro hiç çalışmaz."]
@@ -592,7 +592,7 @@
         "By default Defiance (breaks control) is on <kbd>Space</kbd> together with jump and glide. Spam Space under control — and you start gliding, which ruins your next move: a boss mechanic or a PvP fight is lost."
        ],
        "ru": [
-        "General → Separate Defiance Hotkey + Set Defiance Hotkey",
+        "Общее → Separate Defiance Hotkey + Set Defiance Hotkey",
         "<strong>Вкл</strong>, клавиша <kbd>`</kbd> (слева от <kbd>1</kbd>); по умолчанию Выкл",
         "По умолчанию Снятие шока (выход из контроля) — на <kbd>Space</kbd> вместе с прыжком и планированием. Долбишь пробел в контроле — и начинаешь планировать, следующее движение сорвано: механика босса или PvP-драка проиграны."
        ], "uk": ["General → Separate Defiance Hotkey + Set Defiance Hotkey", "<strong>ON</strong>, клавіша <kbd>`</kbd> (ліворуч від <kbd>1</kbd>); за замовчуванням OFF", "За замовчуванням Defiance (вихід із контролю) — на <kbd>Space</kbd> разом зі стрибком і плануванням. Гатиш пробіл у контролі — і починаєш планувати, наступний рух зірвано: механіку боса чи PvP-бійку програно."], "tr": ["General → Separate Defiance Hotkey + Set Defiance Hotkey", "<strong>ON</strong>, tuş <kbd>`</kbd> (<kbd>1</kbd>'in solunda); varsayılan: OFF", "Varsayılan olarak Defiance (kontrolü kırar) zıplama ve süzülmeyle birlikte <kbd>Space</kbd>'tedir. Kontrol altında Space'e bas bas — süzülmeye başlarsın ve bu sonraki hamleni mahveder: boss mekaniği ya da PvP dövüşü kaybedilir."]
@@ -604,7 +604,7 @@
         "Flies straight up or down without tilting the camera — in PvP the camera stays on the target. You need both all the time, and nobody presses Ctrl+R for that: rebind them on the first login and get used to them."
        ],
        "ru": [
-        "General → Fly Up, Fly Down",
+        "Общее → Fly Up, Fly Down",
         "Fly Up на боковой кнопке мыши; по умолчанию <kbd>Ctrl</kbd>+<kbd>R</kbd> и <kbd>Ctrl</kbd>+<kbd>F</kbd>",
         "Взлёт и снижение строго по вертикали без наклона камеры — в PvP камера остаётся на цели. Нужны постоянно, а Ctrl+R для этого никто жать не будет: переназначь при первом входе и привыкай."
        ], "uk": ["General → Fly Up, Fly Down", "Fly Up на бічній кнопці миші; за замовчуванням <kbd>Ctrl</kbd>+<kbd>R</kbd> і <kbd>Ctrl</kbd>+<kbd>F</kbd>", "Зліт і зниження строго по вертикалі без нахилу камери — у PvP камера лишається на цілі. Потрібні постійно, а Ctrl+R для цього ніхто тиснути не буде: перепризнач при першому вході й звикай."], "tr": ["General → Fly Up, Fly Down", "Fly Up için yan fare tuşu; varsayılanlar: <kbd>Ctrl</kbd>+<kbd>R</kbd> ve <kbd>Ctrl</kbd>+<kbd>F</kbd>", "Kamerayı eğmeden dümdüz yukarı veya aşağı uçar — PvP'de kamera hedefte kalır. İkisine de sürekli ihtiyacın var ve bunun için kimse Ctrl+R'ye basmaz: ilk girişte yeniden ata ve alış."]
@@ -616,7 +616,7 @@
         "Without a key the macro does not work at all. It is held down all fight, so it goes on the most comfortable button — for most players the right click."
        ],
        "ru": [
-        "General → Macro",
+        "Общее → Связка <span class='st-en'>Macro</span>",
         "правая кнопка мыши; по умолчанию <strong>клавиши нет</strong>",
         "Без клавиши макрос вообще не работает. Он зажат весь бой, поэтому стоит на самой удобной кнопке — у большинства это правый клик."
        ], "uk": ["General → Macro", "права кнопка миші; за замовчуванням <strong>клавіші немає</strong>", "Без клавіші макрос узагалі не працює. Він затиснутий увесь бій, тому стоїть на найзручнішій кнопці — у більшості це правий клік."], "tr": ["General → Macro", "sağ fare tuşu; varsayılan: <strong>tuş yok</strong>", "Tuş olmadan makro hiç çalışmaz. Tüm dövüş boyunca basılı tutulur, o yüzden en rahat tuşa gider — çoğu oyuncu için sağ tık."]
@@ -628,7 +628,7 @@
         "Targets enemy players only. In the Abyss Tab keeps landing on mobs — this key does not. Grobs does not use it himself: for him Priority Ranking is enough."
        ],
        "ru": [
-        "General → Target Hostile Players",
+        "Общее → Target Hostile Players",
         "<kbd>Caps</kbd> (Whelps); например, средняя кнопка мыши (Grobs)",
         "Берёт в цель только вражеских игроков. В Бездне Tab то и дело попадает на мобов — эта клавиша нет. Сам Grobs ей не пользуется: ему хватает Priority Ranking."
        ], "uk": ["General → Target Hostile Players", "<kbd>Caps</kbd> (Whelps); наприклад, середня кнопка миші (Grobs)", "Бере в ціль лише ворожих гравців. У Безодні Tab раз у раз потрапляє на мобів — ця клавіша ні. Сам Grobs нею не користується: йому вистачає Priority Ranking."], "tr": ["General → Target Hostile Players", "<kbd>Caps</kbd> (Whelps); örn. orta fare tuşu (Grobs)", "Yalnızca düşman oyuncuları hedefler. Abyss'te Tab sürekli moblara düşer — bu tuş düşmez. Grobs kendisi kullanmıyor: ona Priority Ranking yetiyor."]
@@ -640,7 +640,7 @@
         "Switches between the AION 2 and AION 1 modes on the fly."
        ],
        "ru": [
-        "General → Switch Control Mode",
+        "Общее → Switch Control Mode",
         "<kbd>/</kbd>",
         "Переключает режимы AION 2 и AION 1 на лету."
        ], "uk": ["General → Switch Control Mode", "<kbd>/</kbd>", "Перемикає режими AION 2 і AION 1 на льоту."], "tr": ["General → Switch Control Mode", "<kbd>/</kbd>", "AION 2 ve AION 1 modları arasında anında geçiş yapar."]
@@ -652,7 +652,7 @@
         "Opens the built-in damage meter."
        ],
        "ru": [
-        "General → Combat Analysis",
+        "Общее → Combat Analysis",
         "<kbd>Ctrl</kbd>+<kbd>X</kbd>",
         "Открывает встроенный счётчик урона."
        ], "uk": ["General → Combat Analysis", "<kbd>Ctrl</kbd>+<kbd>X</kbd>", "Відкриває вбудований лічильник шкоди."], "tr": ["General → Combat Analysis", "<kbd>Ctrl</kbd>+<kbd>X</kbd>", "Yerleşik hasar ölçeri açar."]

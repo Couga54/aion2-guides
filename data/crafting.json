@@ -655,7 +655,7 @@
        },
        "text": {
         "en": "A crafted item rolls five stats, a dungeon item four; with a Philosopher's Stone — six against five.",
-        "ru": "Крафтовый предмет имеет пять статов, предмет из подземелья — четыре; с философским камнем — шесть против пяти.",
+        "ru": "У крафтового предмета пять статов, у предмета из подземелья — четыре; с философским камнем — шесть против пяти.",
         "uk": "Крафтовий предмет має п'ять характеристик, предмет із підземелля — чотири; з Philosopher's Stone — шість проти п'яти.",
         "tr": "Üretilen eşya beş stat, zindan eşyası dört stat alır; Philosopher's Stone ile beşe karşı altı."
        }
@@ -811,7 +811,7 @@
      "items": [
       {
        "en": "Gems sell well while everyone levels Handicrafting: Aragon saw about 2,000 kinah each in the morning, and evening prices run higher.",
-       "ru": "Самоцветы хорошо продаются, пока все качают ремесло: Aragon видел около 2 000 кинара за штуку утром, а вечером цены выше.",
+       "ru": "Самоцветы хорошо продаются, пока все качают ремесло: Aragon видел около 2000 кины за штуку утром, а вечером цены выше.",
        "uk": "Самоцвіти добре продаються, поки всі качають ремесло: Aragon бачив близько 2 000 кіни за штуку зранку, а ввечері ціни вищі.",
        "tr": "Herkes Handicrafting geliştirirken taşlar iyi satar: Aragon sabah tanesini yaklaşık 2.000 kinah gördü, akşam fiyatları daha yüksek."
       },

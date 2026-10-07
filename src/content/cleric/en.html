@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
 
 {# PvE from Kaeria's video guide; PvP stays off (site.json modes_off) until there is a real source. #}
 
@@ -205,6 +205,7 @@
 
 {% call section('macro', 'Macro', 'pve') %}
   <p>Lucia's global setup: only the in-game macro, two steps, and two hotbar lines read from her hotbar (frame 13:10). In AION 2 the <strong>bottom slot of a line has the highest priority</strong>; the cards show each line top to bottom as in the game.</p>
+  {{ hotbar([('1', ['lightning-strike-scattershot', 'debilitating-mark']), ('2', []), ('3', ['radiant-recovery']), ('4', ['bolt']), None, ('5', ['light-of-protection']), ('6', []), ('7', []), ('8', ['noble-aura']), None, ('Q', ['prayer-of-amplification', 'earth-punishment', 'chain-of-torment', 'condemnation']), ('E', ['light-of-regeneration', 'healing-light']), ('LMB', ['earths-retribution']), ('T', ['divine-aura', 'judgment-thunder'])], macro=['Q', 'T']) }}
 
   <h3>1. Hotbar lines</h3>
   <div class="hotlines">
