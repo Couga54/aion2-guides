@@ -44,14 +44,14 @@
 {% endcall %}
 
 {% call section('skills', 'Скиллы', 'pve') %}
-  <p>До <strong>20</strong> обязательно три скилла: {{ s('combustion') }}, {{ s('summon-fire-spirit') }} и {{ s('elemental-fusion') }}. {{ s('summon-water-spirit') }} нормально на 16 и хорошо на 20; всё остальное останавливается на 16. В первые дни, когда скиллы на 8–12, бери специализации на ману из карточек (aLuckyRO).</p>
+  <p>До <strong>20</strong> обязательно три скилла: {{ s('combustion') }}, {{ s('summon-fire-spirit') }} и {{ s('elemental-fusion') }}. {{ s('summon-water-spirit') }} нормально на 16 и хорошо на 20; всё остальное останавливается на 16. В первые дни, когда скиллы на 8–12, бери особенности на ману из карточек (aLuckyRO).</p>
   <ul class="skill-grid">
     {% call skill('elemental-fusion', 'must', '20', [1, 2, 4]) %}Самый сильный удар без перезарядки — срабатывает каждый раз, когда у тебя четыре стихии. Отложенный урон, +10 ко всем усилениям стихий и 25% шанс сохранить четыре стихии. aLuckyRO в первые дни берёт заряжаемую версию (до +200%).{% endcall %}
     {% call skill('combustion', 'must', '20', [1, 3, 4]) %}+12% по одной цели, +20% скорости умения и цепочка. Первые дни: −20% маны, пока её не хватает (aLuckyRO).{% endcall %}
     {% call skill('summon-fire-spirit', 'must', '20', [1, 2, 4]) %}Самый сильный из базовых духов и тот, что дольше всех на поле, — призывай его последним, чтобы он оставался, пока остальные на перезарядке.{% endcall %}
     {% call skill('cold-shock', 'must', '16', [2, 3]) %}Базовая атака: мультиудар и стаки +2% атаки, которые копирует каждый призыв. 14 нормально, 16 лучше на старте — перезарядки длинные. Первые дни: +20% восстановления маны вместо мультиудара.{% endcall %}
     {% call skill('summon-water-spirit', 'must', '16', [1, 4]) %}Самый сильный удар по одной цели среди базовых духов вместе с Кооперацией: Разложением, и мана на прокачке.{% endcall %}
-    {% call skill('jointstrike-curse', 'must', '16', [0, 2]) %}Урон со временем и дебафф: +2 сек. проклятия и специализация «в движении». Духи — и Древний дух тоже — бьют вместе с тобой.{% endcall %}
+    {% call skill('jointstrike-curse', 'must', '16', [0, 2]) %}Урон со временем и дебафф: +2 сек. проклятия и особенность «в движении». Духи — и Древний дух тоже — бьют вместе с тобой.{% endcall %}
     {% call skill('dimensional-control', 'must', '16', [1, 2]) %}Срабатывает при призыве; отложенный урон и мультиудар. Притягивание и замедление не бери.{% endcall %}
     {% call skill('summon-earth-spirit', 'opt', '16', [1, 2]) %}Провоцирует врага на себя — босс бьёт духа, а не тебя. Полезно соло.{% endcall %}
     {% call skill('rapid-scattershot', 'opt', '16', [3, 4]) %}Только по ошеломлённым боссам. До 16 — «в движении» и мультиудар; на 16 — мультиудар и −1 сек. ко всем перезарядкам.{% endcall %}
@@ -68,7 +68,7 @@
     {% call skill('cold-shock', 'must', '20', [1, 2]) %}Поглощение ОЗ и мультиудар. Стаки атаки в PvP почти не набираются, поэтому их здесь не берут.{% endcall %}
     {% call skill('elemental-fusion', 'must', '20', [1, 2, 4]) %}Твой бурст. В массовом PvP меняй отложенный урон на АоЕ-версию.{% endcall %}
     {% call skill('jointstrike-curse', 'must', '20', [1, 3, 4]) %}Мультиудар, −2 сек. перезарядки, а на 16 — игнорирует блок и уклонение и критует. Накладывай первым — он выманивает у врага зелье лечения.{% endcall %}
-    {% call skill('combustion', 'must', '20', [1, 3, 4]) %}Те же специализации, что в PvE.{% endcall %}
+    {% call skill('combustion', 'must', '20', [1, 3, 4]) %}Те же особенности, что в PvE.{% endcall %}
     {% call skill('dimensional-control', 'must', '16', [1, 4]) %}Много контроля и кайта: отложенный урон и шанс корней; срабатывает при каждом призыве и вытягивает у врага Снятие шока.{% endcall %}
     {% call skill('summon-earth-spirit', 'must', '16', [1, 4]) %}Провокация — один из сильнейших контролей в игре. Стойкость к урону и +20% характеристик духу.{% endcall %}
     {% call skill('souls-cry', 'opt', '12–16', [1, 3]) %}Страх с корнями и −10 сек. перезарядки; ниже 16 нормально.{% endcall %}
@@ -226,7 +226,7 @@
 {% call section('fight-lvl', t.lvl_combat, 'lvl') %}
   <div class="callout"><ul>
     <li><strong>Дух:</strong> {{ s('summon-water-spirit') }} до самого капа — лучший урон по одной цели и подпитка маной. Остальные на прокачке держатся на 1 уровне.</li>
-    <li><strong>Пачки:</strong> {{ s('jointstrike-curse') }} (бьёт до 4 целей) → {{ s('combustion') }} → {{ s('elemental-fusion') }} со специализацией на АоЕ, когда он готов.</li>
+    <li><strong>Пачки:</strong> {{ s('jointstrike-curse') }} (бьёт до 4 целей) → {{ s('combustion') }} → {{ s('elemental-fusion') }} с особенностью на АоЕ, когда он готов.</li>
     <li><strong>Мана:</strong> главная проблема на старте — режим с таргетом, {{ s('cold-shock') }} между скиллами и ротация духов, которая заканчивается на Духе воды.</li>
     <li><strong>Ошеломлённые цели:</strong> {{ s('rapid-scattershot') }}.</li>
     <li>{{ s('souls-cry') }} не качай — это PvP-скилл.</li>
@@ -262,9 +262,9 @@
   <h2 id="h-sources">{{ t.sources }}</h2>
   <ul>
     <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — слайд со стартовыми макросами (линии и макрос Spiritmaster)</li>
-    <li><a href="https://aion2sm.com/global/" target="_blank" rel="noopener">Evripides — Spirit Master guide, Global edition (aion2sm.com)</a> — PvE- и PvP-билды для глобального клиента: уровни и специализации скиллов, стигмы, пассивки, ротация, макрос, арканы, матчапы</li>
+    <li><a href="https://aion2sm.com/global/" target="_blank" rel="noopener">Evripides — Spirit Master guide, Global edition (aion2sm.com)</a> — PvE- и PvP-билды для глобального клиента: уровни и особенности скиллов, стигмы, пассивки, ротация, макрос, арканы, матчапы</li>
     <li><a href="https://www.youtube.com/watch?v=KlmstIyukX8" target="_blank" rel="noopener">DankRNG — How to MASTER the SPIRITS | Elementalist Guide &amp; Build</a> — правило снимка, порядок духов, почему без Духа воздуха</li>
-    <li><a href="https://www.youtube.com/watch?v=v9MYphrcvic" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Spiritmaster PVE Build for Global</a> — специализации на первые дни, порядок стигм, Daevanion на старте</li>
+    <li><a href="https://www.youtube.com/watch?v=v9MYphrcvic" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Spiritmaster PVE Build for Global</a> — особенности на первые дни, порядок стигм, Daevanion на старте</li>
     <li><a href="https://mmo-codex.com/articles/aion-2-spiritmaster-guide/" target="_blank" rel="noopener">MMO Codex — билд Spiritmaster для Aion 2</a> — порядок скиллов по уровням, Дух воды на прокачке, стигмы</li>
     <li><a href="https://questlog.gg/aion-2/en/db/skills/elementalist" target="_blank" rel="noopener">questlog.gg</a> — данные скиллов из глобального клиента</li>
   </ul>

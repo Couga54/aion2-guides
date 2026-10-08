@@ -49,10 +49,10 @@
 {% endcall %}
 
 {% call section('skills', 'Скиллы', 'pve') %}
-  <p>Высоко качать нужно только три скилла: {{ s('overhead-slam') }} → {{ s('rending-blow') }} → {{ s('ruinous-blow') }}. Очки навыков поднимают скилл до <strong>10</strong>, Daevanion — до <strong>14</strong>, два кольца (+1 каждое) — до <strong>16</strong>, арканы — до <strong>20</strong>. Специализации открываются на 8, 12 и 16.</p>
+  <p>Высоко качать нужно только три скилла: {{ s('overhead-slam') }} → {{ s('rending-blow') }} → {{ s('ruinous-blow') }}. Очки навыков поднимают скилл до <strong>10</strong>, Daevanion — до <strong>14</strong>, два кольца (+1 каждое) — до <strong>16</strong>, арканы — до <strong>20</strong>. Особенности открываются на 8, 12 и 16.</p>
   <ul class="skill-grid">
     {% call skill('overhead-slam', 'must', '16 → 20', [2, 4], then=[3]) %}Главный источник урона. С Выплеском гнева и Боевым натиском он практически всегда доступен. На 20 третий слот — гарантированный крит.{% endcall %}
-    {% call skill('rending-blow', 'must', '16 → 20', [3, 4], then=[2]) %}Второй по урону скилл и источник маны. На 20 добавь специализацию «в движении».{% endcall %}
+    {% call skill('rending-blow', 'must', '16 → 20', [3, 4], then=[2]) %}Второй по урону скилл и источник маны. На 20 добавь особенность «в движении».{% endcall %}
     {% call skill('ruinous-blow', 'must', '16', [2, 3]) %}Мощный удар, даёт «Боевую готовность» (+20% урона в PvE на 20 сек.). Grobs на 8 берёт +20% скорости скилла вместо +30% крита.{% endcall %}
     {% call skill('leaping-slam', 'opt', '12', [0, 2]) %}Основной рывок к цели; 3 сек. «Боевой готовности» до того, как Резня её продлит.{% endcall %}
     {% call skill('rush-strike', 'opt', '12', [1, 0]) %}Уклонение и рывок к цели. С откатами от Боевого натиска выносливость полезнее, чем −10 сек. перезарядки.{% endcall %}
@@ -78,7 +78,7 @@
     {% call skill('aerial-snare', 'must', '16', [3, 4]) %}Добивание: подбрасывает сбитую цель. В PvE бесполезен, здесь — основа. На 16: цепочка Forced Fall и вдвое меньшая перезарядка; шанс подбросить — третий слот, на 20.{% endcall %}
     {% call skill('rush-strike', 'opt', '12–16', [1, 3]) %}Уклонение → рывок с шансом сбить с ног. На 16 дальность можно заменить на +25% к шансу сбить с ног.{% endcall %}
     {% call skill('rending-blow', 'opt', '16', [2, 4]) %}Всё ещё заполнитель и источник маны.{% endcall %}
-    {% call skill('ruinous-blow', 'opt', '12–16', [1, 4]) %}Третий рывок; игнорирование блока и уклонения сильно против Стражей. Эта специализация открывается на 16; на 12 бери дальность и доп. урон.{% endcall %}
+    {% call skill('ruinous-blow', 'opt', '12–16', [1, 4]) %}Третий рывок; игнорирование блока и уклонения сильно против Стражей. Эта особенность открывается на 16; на 12 бери дальность и доп. урон.{% endcall %}
     {% call skill('crushing-wave', 'opt', '16', [3, 4]) %}Притягивание вытаскивает хилера или мага из-за спин.{% endcall %}
     {% call skill('ankle-slice', 'opt', '12', [2, 0]) %}Ещё один способ открыть окно сбивания.{% endcall %}
     {% call skill('leaping-slam', 'opt', '12', [1, 3]) %}Прыжок на 20 м, после которого можно пережить приземление в толпу.{% endcall %}
@@ -314,11 +314,11 @@
     <h3>Приоритеты на прокачке (Grobs)</h3>
     <ul>
       <li><strong>Пассивки:</strong> сначала {{ s('experienced-counterstrike') }}, потом {{ s('attack-preparation') }} — сейчас важны только эти две.</li>
-      <li><strong>Daevanion:</strong> очки навыков поднимают скиллы до 10, дальше — доски. Маршрут на 65 очков даёт +2 четырём главным атакующим скиллам, и они быстро доходят до 12 со второй специализацией — смотри доски ниже.</li>
+      <li><strong>Daevanion:</strong> очки навыков поднимают скиллы до 10, дальше — доски. Маршрут на 65 очков даёт +2 четырём главным атакующим скиллам, и они быстро доходят до 12 со второй особенностью — смотри доски ниже.</li>
       <li><strong>На 16:</strong> когда Разящий удар и Ожесточенный удар дойдут до 16, перестань держать ЛКМ — {{ s('keen-strike') }} становится потерей урона. Держи только макрос и возьми у Ожесточенного удара «Восстанавливает 50 MP при крите» ради маны.</li>
     </ul>
   </div>
-  <p class="note">Когда скиллы дойдут до 12–16 и специализации изменят перезарядки, переходи на полную настройку во вкладке PvE.</p>
+  <p class="note">Когда скиллы дойдут до 12–16 и особенности изменят перезарядки, переходи на полную настройку во вкладке PvE.</p>
   <h3>Маршрут прокачки на досках Daevanion (Grobs, 65 очков)</h3>
   <p>+2 к Разящему удару, Ожесточенному удару, Резне и Точному удару — Неджакан на 12, потом Джикел на 20.</p>
   {{ dv_board('lvl') }}
@@ -335,7 +335,7 @@
     <li><a href="https://www.iggm.com/news/aion-2-global-servers-dungeon-gameplay-changes-expeditions-gear-progression-stigma-slots" target="_blank" rel="noopener">IGGM</a> — изменения глобального 1 сезона</li>
     <li><a href="https://nemobek.github.io/aion2-guide/" target="_blank" rel="noopener">nemobek.github.io/aion2-guide</a> (таблица TitanTheF) — маршрут прокачки</li>
     <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — как работают линии и встроенный макрос</li>
-    <li><a href="https://www.youtube.com/watch?v=WlxLOTs62dM" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Gladiator PVE Build for Global</a> — ранние специализации (Точный удар, Воздушные путы на боссах), стигмы, приоритет Daevanion, ротация на боссе спереди</li>
+    <li><a href="https://www.youtube.com/watch?v=WlxLOTs62dM" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Gladiator PVE Build for Global</a> — ранние особенности (Точный удар, Воздушные путы на боссах), стигмы, приоритет Daevanion, ротация на боссе спереди</li>
     <li><a href="https://www.youtube.com/watch?v=t-B-5lR_GIs" target="_blank" rel="noopener">Sen — AION 2 Progression Guide (+ Gladiator guide)</a> — подтверждает скиллы, стигмы и пассивки этого гайда на глобальных серверах</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>

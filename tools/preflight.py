@@ -88,7 +88,28 @@ def main():
     classes = {c["slug"]: c for c in site["classes"]}
     touched = sorted({f.split("/")[2] for f in src if f.startswith("src/content/")}
                      | {Path(f).stem for f in src if f.startswith(("data/leveling/", "data/boards/")) and Path(f).stem in classes})
-    en_changed = {f.split("/")[2] for f in src if f.startswith("src/content/") and f.endswith("/en.html")}         | {Path(f).stem for f in src if f.startswith(("data/leveling/", "data/boards/"))}
+    def en_strings(text):
+        out = []
+        def walk(x):
+            if isinstance(x, dict):
+                for k, v in x.items():
+                    if k not in ("ru", "uk", "tr"):
+                        walk(v)
+            elif isinstance(x, list):
+                for v in x:
+                    walk(v)
+            else:
+                out.append(x)
+        walk(json.loads(text))
+        return out
+
+    def data_en_changed(f):
+        old, rc = git("show", f"{base}:{f}")
+        return rc != 0 or not (ROOT / f).exists() or en_strings(old) != en_strings((ROOT / f).read_text(encoding="utf-8"))
+
+    # A class guide changed = its en.html or the English (or language-neutral) part of its leveling / board data;
+    # a change only in ru / uk / tr is a translation.
+    en_changed = {f.split("/")[2] for f in src if f.startswith("src/content/") and f.endswith("/en.html")}         | {Path(f).stem for f in src if f.startswith(("data/leveling/", "data/boards/")) and data_en_changed(f)}
     for slug in touched:
         c = classes.get(slug)
         if not c:

@@ -24,7 +24,7 @@
     {"id": "templar-specs", "order": 190, "skills": ["vicious-strike", "pummel"],
      "when": {"en": "Lv 19", "ru": "Ур. 19", "uk": "Рів. 19", "tr": "Sv 19"},
      "text": {"en": "First specializations: [[vicious-strike#0]] and [[pummel#0]]. Mana is tight while leveling; swap to the damage picks from the PvE tab at the cap.",
-              "ru": "Первые специализации: [[vicious-strike#0]] и [[pummel#0]]. На прокачке маны мало; на капе переключись на специализации на урон из вкладки PvE.", "uk": "Перші спеціалізації: [[vicious-strike#0]] і [[pummel#0]]. На прокачці мани мало; на капі перемкнися на спеціалізації на шкоду з вкладки PvE.", "tr": "İlk uzmanlıklar: [[vicious-strike#0]] ve [[pummel#0]]. Seviye atlarken mana kısıtlı; sınırda PvE sekmesindeki hasar seçimlerine geç."}},
+              "ru": "Первые особенности: [[vicious-strike#0]] и [[pummel#0]]. На прокачке маны мало; на капе переключись на особенности на урон из вкладки PvE.", "uk": "Перші спеціалізації: [[vicious-strike#0]] і [[pummel#0]]. На прокачці мани мало; на капі перемкнися на спеціалізації на шкоду з вкладки PvE.", "tr": "İlk uzmanlıklar: [[vicious-strike#0]] ve [[pummel#0]]. Seviye atlarken mana kısıtlı; sınırda PvE sekmesindeki hasar seçimlerine geç."}},
     {"id": "templar-fury", "order": 210, "skills": ["fury"],
      "when": {"en": "Lv 21", "ru": "Ур. 21", "uk": "Рів. 21", "tr": "Sv 21"},
      "text": {"en": "[[fury]] can take all ten levels — every block buffs you and the party.",

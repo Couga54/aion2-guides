@@ -97,7 +97,7 @@
         ]}
      ]},
     {"id": "fire-temple", "db": "600021", "at": "8:02", "type": "expedition", "gs": 2100,
-     "tip": {"en": "Bring yellow potions for debuff removal and set Chanter and Cleric skills to the cleanse picks. This is the fastest dungeon and the one you will farm the most.", "ru": "Возьми жёлтые банки на снятие дебаффов и поставь Чародею и Целителю специализации на очищение. Это самое быстрое подземелье, его будут фармить больше всего.", "uk": "Візьми жовті банки на зняття дебафів і постав Chanter і Cleric спеціалізації на очищення. Це найшвидше підземелля, його фармитимуть найбільше.", "tr": "Debuff temizlemek için sarı iksir al ve Chanter ile Cleric yeteneklerini temizleme seçimlerine ayarla. Bu en hızlı zindan ve en çok farmlayacağın yer."},
+     "tip": {"en": "Bring yellow potions for debuff removal and set Chanter and Cleric skills to the cleanse picks. This is the fastest dungeon and the one you will farm the most.", "ru": "Возьми жёлтые банки на снятие дебаффов и поставь Чародею и Целителю особенности на очищение. Это самое быстрое подземелье, его будут фармить больше всего.", "uk": "Візьми жовті банки на зняття дебафів і постав Chanter і Cleric спеціалізації на очищення. Це найшвидше підземелля, його фармитимуть найбільше.", "tr": "Debuff temizlemek için sarı iksir al ve Chanter ile Cleric yeteneklerini temizleme seçimlerine ayarla. Bu en hızlı zindan ve en çok farmlayacağın yer."},
      "bosses": [
        {"db": "2310371", "at": "8:44", "final": true,
         "role": {"en": "Final boss — Kromede", "ru": "Финальный босс — Кромед", "uk": "Фінальний бос — Kromede", "tr": "Son boss — Kromede"},

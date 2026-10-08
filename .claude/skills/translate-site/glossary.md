@@ -36,7 +36,7 @@ Easy to mix up: **Заклинатель = Elementalist, Чародей = Chante
 |---|---|---|---|
 | skill | скилл | скіл | yetenek |
 | skill level | уровень скилла | рівень скіла | yetenek seviyesi |
-| specialization | специализация | спеціалізація | uzmanlık |
+| specialization | особенность (RU client: «Уникальная особенность»; not «специализация») | спеціалізація | uzmanlık |
 | stigma | стигма | стигма | stigma |
 | passive | пассивка | пасивка | pasif |
 | arcana | аркана | аркана | arcana |

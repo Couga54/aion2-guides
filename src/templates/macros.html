@@ -6,7 +6,7 @@
 {# A guide section, shown only in the listed modes ("pve", "pvp", "lvl", or several). #}
 {% macro section(id, title, modes) -%}
 <section id="{{ id }}" class="g-section" data-only="{{ modes }}" aria-labelledby="h-{{ id }}">
-  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-{{ id }}">{{ title }}</h2>{% if id.startswith('macro') %}<span class="sec-tip" tabindex="0" aria-label="{{ t.macro_tip }}">?<span class="sec-tip-box" role="tooltip">{{ t.macro_tip }}</span></span>{% endif %}</div>
+  <div class="sec-head"><span class="sec-num" aria-hidden="true"></span><h2 id="h-{{ id }}">{{ title }}</h2>{% set tip = t.macro_tip if id.startswith('macro') else (t.skills_tip if id.startswith('skills') else '') %}{% if tip %}<span class="sec-tip" tabindex="0" aria-label="{{ tip }}">?<span class="sec-tip-box" role="tooltip">{{ tip }}</span></span>{% endif %}</div>
   {{ caller() }}
   {% if id.startswith('intro') %}<p class="guide-origin"><b>{{ t.guide_patch }} {{ t.patch_s1 if cls.patch == 'S1' else cls.patch }}.</b> {{ t.guide_origin_s1 if cls.patch == 'S1' else (t.guide_origin_kr if 'KR' in (cls.patch or '') else t.guide_origin) }}</p>{% endif %}
 </section>

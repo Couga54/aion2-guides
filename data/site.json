@@ -32,7 +32,7 @@
      "difficulty": 1,
      "pitch": {"en": "Front-loaded damage, a pseudo-tank toolkit and near-permanent cooldowns off one stigma.",
                "ru": "Мощный фронтальный урон, полутанковый набор и почти вечные перезарядки от одной стигмы.", "uk": "Потужна фронтальна шкода, напівтанковий набір і майже вічні перезарядки від однієї стигми.", "tr": "Önden yüklenen hasar, yarı-tank araç seti ve tek bir stigma sayesinde neredeyse sürekli hazır bekleme süreleri."}},
-    {"slug": "ranger", "status": "ready", "src": {"pve": ["Whelps · aLuckyRO · LordRobson", "2026-10-03"], "lvl": ["Moxsy · Grobs", "2026-10-07"]}, "modes_off": ["pvp"], "updated": "2026-10-07", "patch": "S1", "accent": "emerald", "art_pos": "28% 6%", "art_up": "4%",
+    {"slug": "ranger", "status": "ready", "src": {"pve": ["Whelps · aLuckyRO · LordRobson", "2026-10-03"], "lvl": ["Moxsy · Grobs", "2026-10-07"]}, "modes_off": ["pvp"], "updated": "2026-10-08", "patch": "S1", "accent": "emerald", "art_pos": "28% 6%", "art_up": "4%",
      "name": {"en": "Ranger", "ru": "Стрелок", "uk": "Ranger", "tr": "Ranger"},
      "role": {"en": "Ranged DPS · kiter", "ru": "Дальний бой · кайт", "uk": "Дальній бій · кайт", "tr": "Menzilli DPS · kiter"},
      "weapon": {"en": "Bow", "ru": "Лук", "uk": "Лук", "tr": "Bow"},
