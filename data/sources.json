@@ -80,13 +80,10 @@
         {
           "name": "Whelps",
           "what": {
-            "en": "Ranger main (1M CP on KR, played the global test). His Ranger guide video and S1 endgame PvE build on questlog are the basis of the Ranger guide; his settings video — of the Game settings page.",
-            "ru": "Мейн Стрелка (1 млн CP в Корее, играл на глобальном тесте). Его видеогайд и PvE-билд на эндгейм 1 сезона на questlog — основа гайда на Стрелка; его видео о настройках — страницы «Настройки игры».", "uk": "Мейн Ranger (1 млн CP у Кореї, грав на глобальному тесті). Його відеогайд і PvE-білд на ендгейм 1 сезону на questlog — основа гайда на Ranger; його відео про налаштування — сторінки «Налаштування гри».", "tr": "Ranger main (KR'de 1M CP, global testi oynadı). Ranger rehber videosu ve questlog'daki S1 endgame PvE buildi Ranger rehberinin temelidir; ayar videosu ise Oyun ayarları sayfasının."
+            "en": "Ranger main (1M CP on KR, played the global test). His Ranger guide video and S1 endgame PvE build on questlog are the basis of the Ranger guide; his settings video — of the Game settings page. On global he plays a Cleric too: his Cleric starter guide adds a macro option, stigma swaps and the board order to the Cleric guide.",
+            "ru": "Мейн Стрелка (1 млн CP в Корее, играл на глобальном тесте). Его видеогайд и PvE-билд на эндгейм 1 сезона на questlog — основа гайда на Стрелка; его видео о настройках — страницы «Настройки игры». На глобале он играет и за Целителя: его стартовый гайд добавил в гайд на Целителя вариант макроса, замены стигм и порядок на досках.", "uk": "Мейн Ranger (1 млн CP у Кореї, грав на глобальному тесті). Його відеогайд і PvE-білд на ендгейм 1 сезону на questlog — основа гайда на Ranger; його відео про налаштування — сторінки «Налаштування гри». На глобалі він грає й за Cleric: його стартовий гайд додав у гайд на Cleric варіант макросу, заміни стигм і порядок на дошках.", "tr": "Ranger main (KR'de 1M CP, global testi oynadı). Ranger rehber videosu ve questlog'daki S1 endgame PvE buildi Ranger rehberinin temelidir; ayar videosu ise Oyun ayarları sayfasının. Global'de Cleric de oynuyor: Cleric başlangıç rehberi Cleric rehberine bir makro seçeneği, stigma değişimleri ve levha sırası ekledi."
           },
-          "used": [
-            "ranger",
-            "site"
-          ],
+          "used": ["ranger", "cleric", "site"],
           "links": [
             {
               "type": "youtube",
@@ -94,6 +91,16 @@
               "label": {
                 "en": "Ranger guide",
                 "ru": "Гайд на Стрелка", "uk": "Гайд на Ranger", "tr": "Ranger rehberi"
+              }
+            },
+            {
+              "type": "video",
+              "url": "https://www.youtube.com/watch?v=3g1Wc_3_TSM",
+              "label": {
+                "en": "Cleric guide",
+                "ru": "Гайд на Целителя",
+                "uk": "Гайд на Cleric",
+                "tr": "Cleric rehberi"
               }
             },
             {

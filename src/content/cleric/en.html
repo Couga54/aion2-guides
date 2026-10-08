@@ -57,15 +57,15 @@
   <p><strong>Leveling order</strong> (Lucia): first the two skills you weave — {{ s('earths-retribution') }} and {{ s('judgment-thunder') }} — then {{ s('condemnation') }}, then the heals. After the regional quests at 45 every skill should be 12 or higher; from there take the specializations and push the heals.</p>
   <ul class="skill-grid">
     {% call skill('condemnation', 'must', '16 → 20', [1, 3], then=[4]) %}The most important skill on your bar: +12% on a single target and a cooldown reset on crit. At 20 add MP if mana is short, Multi-Hit if not.{% endcall %}
-    {% call skill('divine-aura', 'must', '16 → 20', [2, 4], then=[3]) %}Underrated: it deals damage in parallel with you, so the longer it stays up the better. At 16 take the aura's attack speed and −10s cooldown, at 20 add +3s (Lucia). Option: Kaeria takes +3s instead of the attack speed at 16; for farming aLuckyRO takes the AoE pick (up to four mobs).{% endcall %}
-    {% call skill('bolt', 'must', '16 → 20', [1, 2], then=[4]) %}Your strongest hit. Charge it fully. +300 Skill Accuracy, so it almost always lands, and +30% skill speed; at 20 add the guaranteed crit (Lucia). Option: once your accuracy is high, Kaeria's +20% single-target pick does more than the accuracy.{% endcall %}
+    {% call skill('divine-aura', 'must', '16 → 20', [2, 4], then=[3]) %}Underrated: it deals damage in parallel with you, so the longer it stays up the better. At 16 take the aura's attack speed and −10s cooldown, at 20 add +3s (Lucia). Option: Kaeria takes +3s instead of the attack speed at 16; for farming aLuckyRO takes the AoE pick (up to four mobs). Whelps (global) takes the AoE pick and −10s at 16, the same three as here at 20.{% endcall %}
+    {% call skill('bolt', 'must', '16 → 20', [1, 2], then=[4]) %}Your strongest hit. Charge it fully. +300 Skill Accuracy, so it almost always lands, and +30% skill speed; at 20 add the guaranteed crit (Lucia). Option: once your accuracy is high, Kaeria's +20% single-target pick does more than the accuracy. Whelps (global): +30% skill speed and the crit at 16, the +20% single-target pick at 20.{% endcall %}
     {% call skill('judgment-thunder', 'must', '16', [1, 4]) %}Constant damage and animation cancel; the Divine Punishment pick roughly doubles it. At 20 add −20% MP.{% endcall %}
     {% call skill('lightning-strike-scattershot', 'must', '16', [3, 4]) %}Only during Stagger, but every hit cuts all your cooldowns by 1s.{% endcall %}
     {% call skill('healing-light', 'must', '16', [0, 3]) %}Near-cooldownless quick heal: +2 uses and +2% HP (scales with heal boost). At 20 add −2s.{% endcall %}
     {% call skill('radiant-recovery', 'must', '16 → 20', [2, 4]) %}Your strongest heal outside stigmas; removes a debuff. Lucia: −3s cooldown and +10% Incoming Heal up to 16, then −3s and +5% HP — take it to 20 early. Option: +1 consecutive use instead of −3s, for two big heals in a row.{% endcall %}
     {% call skill('earths-retribution', 'opt', '12 → 16', [1, 3], then=[2]) %}Basic attack used to cancel animations: Discharge chance and −7s Bolt cooldown on Discharge — the more Discharge procs, the sooner Bolt is back. At 20 add Multi-Hit.{% endcall %}
     {% call skill('debilitating-mark', 'opt', '12', [1, 2]) %}−15% Defense on the boss while the damage over time lasts; Lucia adds the 20% stun for crowd control in Transcendence. Option: the pick that lowers the boss's damage instead of the stun — Lucia isn't sure it works as described.{% endcall %}
-    {% call skill('chain-of-torment', 'opt', '14', [2, 3]) %}Exists to enable Condemnation; −10% PvE damage tolerance on the boss. Lucia takes the 20% knockdown for crowd control in Transcendence. Option: +3s damage over time when you don't need the knockdown.{% endcall %}
+    {% call skill('chain-of-torment', 'opt', '14', [2, 3]) %}Exists to enable Condemnation; −10% PvE damage tolerance on the boss. Lucia takes the 20% knockdown for crowd control in Transcendence. Option: +3s damage over time when you don't need the knockdown. At 16 Whelps takes the tolerance reduction and the halved damage-over-time interval.{% endcall %}
     {% call skill('light-of-regeneration', 'opt', '12–16', [2, 4]) %}Recast on cooldown. +5% Incoming Heal; before 16 the second pick is +20% healing below 50% HP, at 16 the 5% tolerance pick.{% endcall %}
     {% call skill('defiance', 'opt', '12', [2, 3]) %}CC break; 10% HP and +2s immunity.{% endcall %}
   </ul>
@@ -149,6 +149,7 @@
     <li>Critical Damage Tolerance and Multi-Hit Resist do nothing in PvE — bosses don't crit or multi-hit.</li>
     <li>Resetting a board is cheap, and you will rebuild it many times.</li>
     <li><strong>Lucia's order:</strong> on Nezekan and Zikel take all four corners and your skills; on Vaizel and Triniel skip the corners and go straight for the active skills you use.</li>
+    <li><strong>Whelps' order:</strong> first the blue nodes that take your active skills to 12 — the second specialization slot is a big power spike; then the orange attack nodes (Combat Speed, Cooldown Reduction, Damage Boost, Critical Damage Boost, Multi-Hit Chance), the Empyrean Lord's Grace and Earth's Grace nodes, Attack and Critical, and only then the defensive ones (Damage Tolerance, Critical Damage Tolerance, HP, Defense). Avoid the MP +50 nodes where you can.</li>
     <li data-only="pvp"><strong>Azphel</strong> (level 45) is all PvP Damage Boost and Tolerance — take it for PvP.</li>
     <li data-only="pve"><strong>No Ariel on global:</strong> there are five boards, and the level-45 one, Azphel, gives only PvP Damage Boost and Tolerance — in PvE finish the first four.</li>
   </ul></div>
@@ -182,6 +183,7 @@
     {% call skill('salvation', 'skip', 'skip') %}3s of invulnerability on a long cooldown — red attacks go through it anyway; dodge instead.{% endcall %}
   </ul>
   <p class="note">With a Chanter in the party: replace Light of Protection with Absolution, another heal or Summon Resurrection. Voice of Doom (−200 Critical Hit Resist on the boss at 15) is an option in sanctuaries with a second healer, mostly early while everyone is short on crit; Power Burst only where the stagger bar has to be broken and nobody else can do it (Nightmare). {{ s('root') }} and {{ s('assault-mark') }} have no use in PvE.</p>
+  <p class="note">Whelps: level Earth Punishment to 20 first, then the others evenly, Light of Protection last. For a support role swap Noble Aura for {{ s('summon-resurrection') }} or {{ s('yustiels-power') }}; with a Chanter swap Light of Protection for one of them. He keeps two skill presets, with and without a Chanter — each preset holds its own skill levels.</p>
 {% endcall %}
 
 {% call section('stigmas-pvp', 'Stigmas', 'pvp') %}
@@ -232,19 +234,19 @@
   </ul>
   <p class="note">Lucia notes that a third-party macro does more, but she sticks to the in-game one.</p>
 
-  <h3>Another option: Kaeria's macro (Taiwan client)</h3>
-  <p>Seven steps and three lines, made for a high ping; the stagger skill is in the macro.</p>
+  <h3>Another option: Whelps' macro (global)</h3>
+  <p>Whelps' setup (video of Oct 5, frames 3:35 and 4:28): once {{ s('condemnation') }} reaches 12 and resets on a crit, the macro spams the Earth Punishment line three times for every press of the debuff line.</p>
+  {{ hotbar([('1', []), ('2', ['healing-light']), ('3', ['radiant-recovery']), ('4', ['bolt']), None, ('Z', []), ('X', []), ('C', ['noble-aura']), ('V', ['light-of-protection']), None, ('Q', ['debilitating-mark', 'divine-aura', 'light-of-regeneration', 'judgment-thunder']), ('E', ['lightning-strike-scattershot']), ('LMB', ['earths-retribution']), ('—', ['earth-punishment', 'prayer-of-amplification', 'condemnation', 'chain-of-torment'])], macro=['—', 'Q']) }}
   <div class="hotlines">
-    {% call hotline('3', 'Condemnation line', ['earth-punishment', 'condemnation', 'chain-of-torment']) %}Earth Punishment goes first so that Condemnation always crits and resets; Chain of Torment keeps the mark that Condemnation needs.{% endcall %}
-    {% call hotline('2', 'Divine Aura line', ['divine-aura', 'debilitating-mark', 'light-of-regeneration', 'judgment-thunder']) %}The aura and the debuff whenever they are ready; Judgment Thunder fills the rest.{% endcall %}
-    {% call hotline('1', 'Stagger', ['lightning-strike-scattershot']) %}Works only on a staggered boss, so most of the time this step is skipped.{% endcall %}
+    {% call hotline('—', 'Earth Punishment line', ['earth-punishment', 'prayer-of-amplification', 'condemnation', 'chain-of-torment']) %}Earth Punishment and Prayer whenever they are ready, so Condemnation always crits and resets; Chain of Torment keeps the mark up. The line has no key — only the macro presses it.{% endcall %}
+    {% call hotline('Q', 'Debuff line', ['debilitating-mark', 'divine-aura', 'light-of-regeneration', 'judgment-thunder']) %}The debuff, the aura and the heal over time on cooldown; Judgment Thunder fills the rest.{% endcall %}
   </div>
-  {{ macroseq([("Earth's Retribution", 'basic attack'), ('Line 2', 'Divine Aura'), ('Line 3', 'Condemnation'), ('Line 1', 'stagger'), ('Line 3', ''), ('Line 1', ''), ('Line 1', '')]) }}
+  {{ macroseq([('Earth Punishment line', '10 ms'), ('Earth Punishment line', '10 ms'), ('Earth Punishment line', '10 ms'), ('Debuff line', 'Q · 10 ms')]) }}
   <ul class="presslist">
-    <li><span class="press-how">Hold</span><span class="press-what">The macro on <span class="key">RMB</span> together with <span class="key">3</span> (the Condemnation line); on a staggered boss release <span class="key">3</span> so {{ s('lightning-strike-scattershot') }} gets through.</span></li>
-    <li><span class="press-how">By hand</span><span class="press-what">{{ s('healing-light') }} (<span class="key">4</span>), {{ s('radiant-recovery') }} (<span class="key">Q</span>), charged {{ s('bolt') }} (<span class="key">E</span>), {{ s('prayer-of-amplification') }} on cooldown.</span></li>
+    <li><span class="press-how">Hold</span><span class="press-what">The macro on <span class="key">RMB</span> and {{ s('earths-retribution') }} on <span class="key">LMB</span>; fully charge {{ s('bolt') }} whenever it is ready.</span></li>
+    <li><span class="press-how">By hand</span><span class="press-what">{{ s('healing-light') }} for small heals, {{ s('radiant-recovery') }} for big ones.</span></li>
+    <li><span class="press-how">Check</span><span class="press-what">In Combat Analysis, Condemnation should hit as often as Judgment Thunder or more. If it hits less, add another Earth Punishment line step — on Whelps' gear that is 26k DPS instead of 22k.</span></li>
   </ul>
-  <p class="note">On global, with lower ping than on Taiwan, animations cancel better and you can weave a bit more Earth's Retribution.</p>
 {% endcall %}
 
 {% call section('recap', 'Recap', 'pve') %}
@@ -280,6 +282,7 @@
     <li><strong>Mana:</strong> target mode, and weave {{ s('earths-retribution') }} — it restores MP on every cast.</li>
     <li><strong>Low HP:</strong> {{ s('healing-light') }}, and {{ s('radiant-benediction') }} keeps ticking as long as you hit.</li>
     <li><strong>Staggered bosses:</strong> {{ s('lightning-strike-scattershot') }} only works while the target is staggered.</li>
+    <li><strong>Skill points:</strong> the attack skills first, heals later; spare points go into {{ s('empyrean-lords-grace') }} and {{ s('earths-grace') }} (Whelps).</li>
   </ul></div>
 {% endcall %}
 
@@ -294,10 +297,11 @@
     <li><span class="press-how">Hold</span><span class="press-what">{{ s('earths-retribution') }} on <span class="key">LMB</span> and the macro key together.</span></li>
     <li><span class="press-how">By hand</span><span class="press-what">{{ s('bolt') }} (charged skill — keep it out of the macro), heals, stigmas.</span></li>
   </ul>
+  <p class="note">Whelps' start from level 4: two lines in the macro on RMB — one with {{ s('condemnation') }} at the bottom, one with {{ s('debilitating-mark') }}. Once Condemnation reaches 12 and resets on a crit, switch to his PvE macro (PvE tab).</p>
 {% endcall %}
 
 {% call section('stigmas-lvl', 'Stigmas while leveling', 'lvl') %}
-  <p>Stigmas unlock at level 22.</p>
+  <p>Stigmas unlock at level 22. Whelps' order for each new slot: 22 {{ s('earth-punishment') }} (at the bottom of the Condemnation line, so Condemnation always crits), 27 {{ s('light-of-protection') }}, 32 {{ s('noble-aura') }}, 37 {{ s('prayer-of-amplification') }}.</p>
   <ul class="skill-grid">
     {% call skill('summon-resurrection', 'must', 'Lv 1', upto=1) %}One point is enough at first; level 5 cuts the cast time later.{% endcall %}
     {% call skill('noble-aura', 'must', 'Lv 5', upto=5) %}An aura that fights next to you for 5 minutes — free damage.{% endcall %}
@@ -317,6 +321,7 @@
     <li><a href="https://questlog.gg/aion-2/en/db/skills/cleric" target="_blank" rel="noopener">questlog.gg</a> — skill data from the global client</li>
     <li><a href="https://www.youtube.com/watch?v=A3pZDSt4ceU" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Cleric PVE Build for Global</a> — early specializations (Divine Aura for farming and bosses, Earth's Retribution for mana), stigma swaps for dungeons, the Chain of Torment → Condemnation combo, early passives</li>
     <li><a href="https://www.youtube.com/watch?v=KptUtnv35vk" target="_blank" rel="noopener">Lucia — Aion 2 Cleric Guide from a Worlds 1st Rank 1</a> — global skill picks, stigma levels, a two-step macro, gear lines, Genus Insight, wings; the PvP mode</li>
+    <li><a href="https://www.youtube.com/watch?v=3g1Wc_3_TSM" target="_blank" rel="noopener">Whelps — Cleric Starter Guide - Skills, Macro, Daevanion Board</a> — a global macro with three Earth Punishment steps and the Combat Analysis check, specializations, stigma order while leveling, stigma swaps, the board order</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>

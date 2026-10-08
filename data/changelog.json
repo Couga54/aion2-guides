@@ -2,6 +2,18 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-10-08",
+      "date": "2026-10-08",
+      "items": [
+        {
+          "en": "<strong>Cleric checked against Whelps' global guide</strong> — a second macro option with his hotbar (three Earth Punishment steps for every debuff step) and a Combat Analysis check, his order on the Daevanion boards, specialization options for Bolt, Divine Aura and Chain of Torment, stigma swaps for support; in Leveling: which stigma goes into each new slot and his starter macro. Kaeria's Taiwan macro is gone.",
+          "ru": "<strong>Целитель сверен с глобальным гайдом Whelps</strong> — второй вариант макроса с его панелью (три шага Возмездия природы на каждый шаг дебаффа) и проверкой по анализу боя, его порядок на досках Даэваниона, варианты специализаций для Раската грома, Священной ауры и Цепи боли, замены стигм для поддержки; в «Прокачке» — какую стигму ставить в каждый новый слот и его стартовый макрос. Тайваньский макрос Kaeria убран.",
+          "uk": "<strong>Cleric звірено з глобальним гайдом Whelps</strong> — другий варіант макросу з його панеллю (три кроки Earth Punishment на кожен крок дебафу) і перевіркою за аналізом бою, його порядок на дошках Daevanion, варіанти спеціалізацій для Bolt, Divine Aura і Chain of Torment, заміни стигм для підтримки; у «Прокачці» — яку стигму ставити в кожен новий слот і його стартовий макрос. Тайванський макрос Kaeria прибрано.",
+          "tr": "<strong>Cleric, Whelps'in global rehberiyle kontrol edildi</strong> — onun kısayol çubuğuyla ikinci makro seçeneği (her debuff adımına üç Earth Punishment adımı) ve Combat Analysis kontrolü, Daevanion levhalarındaki sırası, Bolt, Divine Aura ve Chain of Torment için uzmanlık seçenekleri, destek için stigma değişimleri; Seviye atlama'da her yeni yuvaya hangi stigmanın gireceği ve başlangıç makrosu. Kaeria'nın Tayvan makrosu kaldırıldı."
+        }
+      ]
+    },
+    {
       "id": "2026-10-07-hotbars",
       "date": "2026-10-07",
       "items": [

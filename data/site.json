@@ -23,7 +23,7 @@
     {"id": "rift", "cycle": "rift"},
     {"id": "reset", "cycle": "weekly_reset", "href": "weekly/"}
   ],
-  "updated": "2026-10-07",
+  "updated": "2026-10-08",
   "classes": [
     {"slug": "gladiator", "status": "ready", "src": {"pve": ["Arthars Gaming · aLuckyRO · Sen", "2026-10-03"], "pvp": ["Vortex Gaming (KR)", "2026-09-27"], "lvl": ["Grobs", "2026-09-30"]}, "updated": "2026-10-03", "patch": "S1", "accent": "crimson", "art_pos": "40% 8%",
      "name": {"en": "Gladiator", "ru": "Гладиатор", "uk": "Gladiator", "tr": "Gladiator"},
@@ -67,7 +67,7 @@
      "difficulty": 3,
      "pitch": {"en": "The only summoner: spirits of fire, water, earth and wind fight for you, every spirit skill charges Elemental Fusion, and curses tick on the target.",
                "ru": "Единственный призыватель: духи огня, воды, земли и воздуха сражаются за тебя, каждый их скилл заряжает Синтез элементов, а проклятия тикают на цели.", "uk": "Єдиний призивач: духи вогню, води, землі й повітря б'ються за тебе, кожен їхній скіл заряджає Elemental Fusion, а прокляття тікають на цілі.", "tr": "Tek çağırıcı sınıf: ateş, su, toprak ve rüzgâr ruhları senin için savaşır, her ruh yeteneği Elemental Fusion'ı doldurur ve lanetler hedefte işlemeye devam eder."}},
-    {"slug": "cleric", "status": "ready", "src": {"pve": ["Kaeria (TW client) · aLuckyRO · Lucia", "2026-10-06"], "pvp": ["Lucia", "2026-10-06"], "lvl": ["Grobs · MMO Codex · Kaeria", "2026-09-29"]}, "updated": "2026-10-07", "patch": "S1", "accent": "sunlight", "art_pos": "37% 8%",
+    {"slug": "cleric", "status": "ready", "src": {"pve": ["Kaeria (TW client) · aLuckyRO · Lucia · Whelps", "2026-10-08"], "pvp": ["Lucia", "2026-10-06"], "lvl": ["Grobs · MMO Codex · Kaeria · Whelps", "2026-10-08"]}, "updated": "2026-10-08", "patch": "S1", "accent": "sunlight", "art_pos": "37% 8%",
      "name": {"en": "Cleric", "ru": "Целитель", "uk": "Cleric", "tr": "Cleric"},
      "role": {"en": "Healer · earth and lightning damage", "ru": "Лекарь · урон землёй и молнией", "uk": "Лікар · шкода землею й блискавкою", "tr": "Şifacı · toprak ve şimşek hasarı"},
      "weapon": {"en": "Mace", "ru": "Булава", "uk": "Булава", "tr": "Mace"},
