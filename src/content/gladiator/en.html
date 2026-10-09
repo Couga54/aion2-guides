@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
 
 {# ===== PvE and PvP: each PvP block follows its PvE counterpart, so both modes read in the same order; shared sections are 'pve pvp' ===== #}
 {% call glance('pve') %}
@@ -109,7 +109,7 @@
   </table></div>
 {% endcall %}
 
-{% call section('gear', 'Gear & soulbind', 'pve') %}
+{% call section('gear', 'Gear & stats', 'pve') %}
   <p>With no Heroic gear, attack speed, move speed, Might and Precision take most of the bonus lines, leaving 1–2 for passives. Priority:</p>
   <div class="table-wrap"><table>
     <thead><tr><th>#</th><th>Passive</th><th>Why</th></tr></thead>
@@ -120,9 +120,17 @@
     </tbody>
   </table></div>
   <p>Weapon and front/back damage boosts are the strongest types, and Gladiator always fights from the front. Don't chase perfect manastone rolls in Season 1 — rerolls cost roughly 200–300k each on TW.</p>
+  <h3>Stats (Ulfhednar, global)</h3>
+  <div class="callout"><ul>
+    <li><strong>Gear lines:</strong> anything that says damage — Critical Hit, Damage Boost.</li>
+    <li><strong>Soul binds on weapon and guard:</strong> Weapon Damage Boost, Combat Speed, Damage Boost, Might — in that order.</li>
+    <li><strong>Stats:</strong> Wisdom (Double Chance), Time (Combat Speed), Destruction (damage), plus some Accuracy — bosses parry a Gladiator that is short on it.</li>
+    <li><strong>Genus Insight:</strong> roll the attack lines. They raise Combat Power, the number parties check before inviting you to a dungeon.</li>
+    <li><strong>Mana:</strong> if you run dry, take Max MP and MP regen lines, the +50 MP nodes on the Daevanion boards, and mana potions (Crafting → Alchemy).</li>
+  </ul></div>
 {% endcall %}
 
-{% call section('gear-pvp', 'Gear & arcana', 'pvp') %}
+{% call section('gear-pvp', 'Gear & stats', 'pvp') %}
   <p>With Season 1's limited gear, don't build a separate PvP set yet — keep your PvE gear and change passives, stigmas and Daevanion.</p>
   <div class="callout"><ul>
     <li><strong>Accuracy</strong> — players Block and Evade far more than bosses.</li>
@@ -255,6 +263,21 @@
   </div>
   <p>The macro keeps pace — it doesn't play for you. You still decide when to block, when to close distance and when to self-heal. Season 1's weaker stats mean multi-minute boss fights, so every second of lost uptime counts.</p>
   <p class="note">Keys are Arthars' action-mode layout (RMB / E); on tab-target use any two keys you can spam. The macro slot order follows the same line-by-line scheme Korean builds use.</p>
+
+  <h3>Another option: Ulfhednar's macro (global)</h3>
+  <p>Ulfhednar's bar (video of Oct 6, frames 3:04 and 3:12). Rage Burst and Overhead Slam share a line as above, but Rending Blow shares a line with {{ s('sword-aura-rampage') }}, which sits below it and fires first whenever a boss is staggered, and Ruinous Blow goes on top of the buff line. He runs {{ s('blade-toss') }} (−30% enemy defense for 10s, a party debuff) in place of Focused Block.</p>
+  {{ hotbar([('1', ['leaping-slam']), ('2', ['mocking-blade']), ('3', ['rush-strike', 'aerial-snare']), ('4', ['ankle-slice']), None, ('Caps', []), ('—', ['crushing-wave']), ('F', []), ('9', []), None, ('Q', ['zikels-blessing', 'lunge-stance', 'blade-toss', 'ruinous-blow']), ('E', ['sword-aura-rampage', 'rending-blow']), ('LMB', ['keen-strike']), ('RMB', ['rage-burst', 'overhead-slam'])], macro=['Q', 'RMB', 'E'], own_keys=true) }}
+  <div class="hotlines">
+    {% call hotline('Q', 'Buff line', ['zikels-blessing', 'lunge-stance', 'blade-toss', 'ruinous-blow']) %}The buffs and the debuff on cooldown; Ruinous Blow fires whenever they are all running.{% endcall %}
+    {% call hotline('RMB', 'Main line', ['rage-burst', 'overhead-slam']) %}Rage Burst in the bottom slot, Overhead Slam above it.{% endcall %}
+    {% call hotline('E', 'Stagger line', ['sword-aura-rampage', 'rending-blow']) %}Sword Aura Rampage only hits staggered targets, so the rest of the time the line casts Rending Blow.{% endcall %}
+  </div>
+  {{ macroseq([('Buff line', 'Q · 10 ms'), ('Main line', 'RMB · 10 ms'), ('Stagger line', 'E · 10 ms')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Hold</span><span class="press-what">{{ s('keen-strike') }} on <span class="key">LMB</span> and the macro key — he binds the in-game macro to <span class="key">C</span>. Keen Strike keeps the mana up and cuts Ruinous Blow's cooldown on every hit.</span></li>
+    <li><span class="press-how">By hand</span><span class="press-what">The closers and {{ s('mocking-blade') }} on 1–4, {{ s('crushing-wave') }} on packs.</span></li>
+  </ul>
+  <p class="note">On top of that he runs a mouse-software macro that spams the same keys (10 ms each, 15 ms for LMB) and presses the in-game macro key while it runs, to weave in more attacks. A plain in-game macro is enough to start with.</p>
 {% endcall %}
 
 {% call section('combos-pvp', 'Combos & play', 'pvp') %}
@@ -337,6 +360,7 @@
     <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — how hotbar lines and the in-game macro work</li>
     <li><a href="https://www.youtube.com/watch?v=WlxLOTs62dM" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Gladiator PVE Build for Global</a> — early specializations (Keen Strike, Aerial Snare on bosses), stigmas, Daevanion priority, boss rotation from the front</li>
     <li><a href="https://www.youtube.com/watch?v=t-B-5lR_GIs" target="_blank" rel="noopener">Sen — AION 2 Progression Guide (+ Gladiator guide)</a> — confirms the skills, stigmas and passives of this guide on the global servers</li>
+    <li><a href="https://www.youtube.com/watch?v=zrdG1XDYUtE" target="_blank" rel="noopener">Ulfhednar — AION 2 Gladiator PvE DPS Build</a> — a second macro option with his hotbar (Sword Aura Rampage line, Blade Toss), gear lines, soul binds, stats, Genus Insight, mana</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>

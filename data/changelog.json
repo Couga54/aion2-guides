@@ -2,6 +2,18 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-10-09",
+      "date": "2026-10-09",
+      "items": [
+        {
+          "en": "<strong>Gladiator: stats and a second macro from Ulfhednar's global guide</strong> — Gear &amp; stats now lists the gear lines, the soul binds for weapon and guard, the stats, Genus Insight and where to get mana; Macro &amp; rotation has his hotbar as another option (Rending Blow shares a line with Sword Aura Rampage, Blade Toss instead of Focused Block). The gear sections of Gladiator, Ranger and Elementalist are renamed to match the other classes.",
+          "ru": "<strong>Гладиатор: статы и второй макрос по глобальному гайду Ulfhednar</strong> — в «Экипировке и статах» появились строки экипировки, связывание души на оружии и наручах, статы, Genus Insight и где брать ману; в «Макросе и ротации» — его панель как другой вариант (Ожесточенный удар в одной линии с Неистовым клинком, Летающие лезвия вместо Концентрации на блоке). Разделы экипировки Гладиатора, Стрелка и Заклинателя названы так же, как у остальных классов.",
+          "uk": "<strong>Gladiator: стати й другий макрос за глобальним гайдом Ulfhednar</strong> — у «Спорядженні й статах» з'явилися рядки спорядження, soul binds на зброї та guard, стати, Genus Insight і де брати ману; у «Макросі і ротації» — його панель як інший варіант (Rending Blow в одній лінії з Sword Aura Rampage, Blade Toss замість Focused Block). Розділи спорядження Gladiator, Ranger і Elementalist названо так само, як в інших класів.",
+          "tr": "<strong>Gladiator: Ulfhednar'ın global rehberinden statlar ve ikinci makro</strong> — Ekipman ve statlar bölümüne ekipman satırları, silah ve guard için soul bind, statlar, Genus Insight ve mananın nereden geleceği eklendi; Makro ve rotasyon'da onun kısayol çubuğu diğer seçenek olarak var (Rending Blow, Sword Aura Rampage ile aynı satırda; Focused Block yerine Blade Toss). Gladiator, Ranger ve Elementalist'in ekipman bölümleri diğer sınıflarla aynı adı aldı."
+        }
+      ]
+    },
+    {
       "id": "2026-10-08",
       "date": "2026-10-08",
       "items": [

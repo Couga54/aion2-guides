@@ -54,7 +54,7 @@ Easy to mix up: **Заклинатель = Elementalist, Чародей = Chante
 | procs | срабатывает | спрацьовує | tetiklenir |
 | CC / kiting | контроль / кайт | контроль / кайт | kontrol / kite |
 | gap-closer | сближение | ривок | mesafe kapatıcı |
-| gear | снаряжение / экипировка | спорядження | ekipman |
+| gear | экипировка (not «снаряжение») | спорядження | ekipman |
 | item level | уровень предмета | рівень предмета | item level |
 | accessories | бижутерия | аксесуари | aksesuarlar |
 | crafted | крафтовый | крафтовий | üretilmiş |

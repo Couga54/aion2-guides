@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
 
 {# ===== PvE and PvP: each PvP block follows its PvE counterpart, so both modes read in the same order; shared sections are 'pve pvp' ===== #}
 {% call glance('pve') %}
@@ -39,10 +39,10 @@
     <ul>
       <li><strong>4 слота стигм</strong> вместо 6 (ожидается только в 1 сезоне).</li>
       <li><strong>Стигмы ограничены 20 уровнем</strong> — эффектов 25 уровня в глобальном клиенте нет.</li>
-      <li><strong>Нет героического снаряжения</strong> в 1 сезоне, поэтому на пассивки остаётся меньше строк.</li>
+      <li><strong>Нет героической экипировки</strong> в 1 сезоне, поэтому на пассивки остаётся меньше строк.</li>
       <li><strong>Бонусы Daevanion слабее</strong>, чем на Тайване: бои дольше, и аптайм важнее.</li>
       <li><strong>Группы больше</strong>: экспедиции на 5 игроков, святилища на 10, Элийцы и Асмодиане могут ходить вместе. Групповые баффы ценнее.</li>
-      <li data-only="pvp"><strong>PvP:</strong> у всех одинаково ограниченное снаряжение, мета ещё не сложилась.</li>
+      <li data-only="pvp"><strong>PvP:</strong> у всех одинаково ограниченная экипировка, мета ещё не сложилась.</li>
     </ul>
   </div>
   <p class="note">Активные скиллы и пассивки в глобальных и корейско-тайваньских данных совпадают. Только стигмы теряют 25 уровень.</p>
@@ -89,7 +89,7 @@
   <p>Очков пассивок много — большинство дойдёт до максимума само. Одна ловушка и одна пассивка на потом:</p>
   <div class="callout">
     <ul>
-      <li>{{ s('protection-armor') }} — крошечное лечение при блоке. Перекатывай её со снаряжения и карт.</li>
+      <li>{{ s('protection-armor') }} — крошечное лечение при блоке. Перекатывай её с экипировки и карт.</li>
       <li>{{ s('destructive-impulse') }} — доп. урон только по ошеломлённым целям. Не ловушка: aLuckyRO и Sen качают её ради окна ошеломления, где она складывается с {{ s('sword-aura-rampage') }}. Бери после основных пассивок.</li>
     </ul>
   </div>
@@ -109,8 +109,8 @@
   </table></div>
 {% endcall %}
 
-{% call section('gear', 'Снаряжение и привязка', 'pve') %}
-  <p>Без героического снаряжения большинство доп. строк займут скорость атаки, скорость передвижения, Мощь и Точность — на пассивки останется 1–2. Приоритет:</p>
+{% call section('gear', 'Экипировка и статы', 'pve') %}
+  <p>Без героической экипировки большинство доп. строк займут скорость атаки, скорость передвижения, Мощь и Точность — на пассивки останется 1–2. Приоритет:</p>
   <div class="table-wrap"><table>
     <thead><tr><th>#</th><th>Пассивка</th><th>Почему</th></tr></thead>
     <tbody>
@@ -120,10 +120,18 @@
     </tbody>
   </table></div>
   <p>Сильнее всего усиление урона оружием и спереди/сзади, а Гладиатор всегда бьёт спереди. Не гонись за идеальными манастоунами в 1 сезоне — один переброс стоит порядка 200–300 тыс. на Тайване.</p>
+  <h3>Статы (Ulfhednar, глобал)</h3>
+  <div class="callout"><ul>
+    <li><strong>Строки экипировки:</strong> всё, что про урон, — крит. удар, увеличение урона.</li>
+    <li><strong>Связывание души на оружии и наручах:</strong> увеличение урона оружия, скорость боя, увеличение урона, мощь — в таком порядке.</li>
+    <li><strong>Статы:</strong> Wisdom (двойной шанс), Time (скорость боя), Destruction (урон) и немного точности — без неё боссы парируют Гладиатора.</li>
+    <li><strong>Genus Insight:</strong> перекатывай строки на атаку. Они поднимают боевую мощь — по ней группа решает, звать ли тебя в подземелье.</li>
+    <li><strong>Мана:</strong> если не хватает — строки на макс. MP и восстановление MP, узлы +50 MP на досках Даэваниона и зелья маны (крафт → Алхимия).</li>
+  </ul></div>
 {% endcall %}
 
-{% call section('gear-pvp', 'Снаряжение и арканы', 'pvp') %}
-  <p>Со снаряжением 1 сезона отдельный PvP-комплект пока не нужен — оставь PvE-снаряжение и меняй пассивки, стигмы и Daevanion.</p>
+{% call section('gear-pvp', 'Экипировка и статы', 'pvp') %}
+  <p>С экипировкой 1 сезона отдельный PvP-комплект пока не нужен — оставь PvE-экипировку и меняй пассивки, стигмы и Daevanion.</p>
   <div class="callout"><ul>
     <li><strong>Точность</strong> — игроки блокируют и уклоняются гораздо чаще боссов.</li>
     <li><strong>Крит. удар и скорость боя</strong> — криты запускают сокращение перезарядок от Боевого натиска.</li>
@@ -255,6 +263,21 @@
   </div>
   <p>Макрос держит темп, но не играет за тебя. Ты сам решаешь, когда блокировать, когда сокращать дистанцию и когда лечиться. В 1 сезоне бои с боссами длятся минутами, поэтому каждая секунда простоя на счету.</p>
   <p class="note">Клавиши — раскладка Arthars в режиме action (ПКМ / E); в tab-target подойдут любые две клавиши, которые удобно спамить. Порядок слотов макроса — та же схема «линия за линией», что в корейских билдах.</p>
+
+  <h3>Другой вариант: макрос Ulfhednar (глобал)</h3>
+  <p>Панель Ulfhednar (видео от 6 октября, кадры 3:04 и 3:12). Выплеск гнева и Разящий удар делят линию, как выше, но Ожесточенный удар делит линию с {{ s('sword-aura-rampage') }}: тот стоит ниже и срабатывает первым, когда босс ошеломлён, а Резня встаёт наверх линии баффов. Вместо Концентрации на блоке он берёт {{ s('blade-toss') }} (−30% защиты врага на 10 с, дебафф для всей группы).</p>
+  {{ hotbar([('1', ['leaping-slam']), ('2', ['mocking-blade']), ('3', ['rush-strike', 'aerial-snare']), ('4', ['ankle-slice']), None, ('Caps', []), ('—', ['crushing-wave']), ('F', []), ('9', []), None, ('Q', ['zikels-blessing', 'lunge-stance', 'blade-toss', 'ruinous-blow']), ('E', ['sword-aura-rampage', 'rending-blow']), ('ЛКМ', ['keen-strike']), ('ПКМ', ['rage-burst', 'overhead-slam'])], macro=['Q', 'ПКМ', 'E'], own_keys=true) }}
+  <div class="hotlines">
+    {% call hotline('Q', 'Линия баффов', ['zikels-blessing', 'lunge-stance', 'blade-toss', 'ruinous-blow']) %}Баффы и дебафф по КД; Резня срабатывает, когда все они висят.{% endcall %}
+    {% call hotline('ПКМ', 'Основная линия', ['rage-burst', 'overhead-slam']) %}Выплеск гнева в нижнем слоте, Разящий удар над ним.{% endcall %}
+    {% call hotline('E', 'Линия ошеломления', ['sword-aura-rampage', 'rending-blow']) %}Неистовый клинок бьёт только ошеломлённые цели, поэтому в остальное время линия кастует Ожесточенный удар.{% endcall %}
+  </div>
+  {{ macroseq([('Линия баффов', 'Q · 10 мс'), ('Основная линия', 'ПКМ · 10 мс'), ('Линия ошеломления', 'E · 10 мс')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Держать</span><span class="press-what">{{ s('keen-strike') }} на <span class="key">ЛКМ</span> и клавишу макроса — он ставит встроенный макрос на <span class="key">C</span>. Точный удар держит ману и с каждым ударом сокращает перезарядку Резни.</span></li>
+    <li><span class="press-how">Вручную</span><span class="press-what">Сближения и {{ s('mocking-blade') }} на 1–4, {{ s('crushing-wave') }} на пачках.</span></li>
+  </ul>
+  <p class="note">Поверх этого у него макрос в программе мыши: он спамит те же клавиши (по 10 мс, ЛКМ — 15 мс) и жмёт клавишу встроенного макроса, чтобы вплести больше атак. Для начала хватит обычного встроенного макроса.</p>
 {% endcall %}
 
 {% call section('combos-pvp', 'Комбо и игра', 'pvp') %}
@@ -337,6 +360,7 @@
     <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — как работают линии и встроенный макрос</li>
     <li><a href="https://www.youtube.com/watch?v=WlxLOTs62dM" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Gladiator PVE Build for Global</a> — ранние особенности (Точный удар, Воздушные путы на боссах), стигмы, приоритет Daevanion, ротация на боссе спереди</li>
     <li><a href="https://www.youtube.com/watch?v=t-B-5lR_GIs" target="_blank" rel="noopener">Sen — AION 2 Progression Guide (+ Gladiator guide)</a> — подтверждает скиллы, стигмы и пассивки этого гайда на глобальных серверах</li>
+    <li><a href="https://www.youtube.com/watch?v=zrdG1XDYUtE" target="_blank" rel="noopener">Ulfhednar — AION 2 Gladiator PvE DPS Build</a> — второй вариант макроса с его панелью (линия Неистового клинка, Летающие лезвия), строки экипировки, связывание души, статы, Genus Insight, мана</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>

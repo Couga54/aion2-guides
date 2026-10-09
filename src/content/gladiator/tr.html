@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
 
 {# ===== PvE and PvP: each PvP block follows its PvE counterpart, so both modes read in the same order; shared sections are 'pve pvp' ===== #}
 {% call glance('pve') %}
@@ -109,7 +109,7 @@
   </table></div>
 {% endcall %}
 
-{% call section('gear', 'Ekipman ve soulbind', 'pve') %}
+{% call section('gear', 'Ekipman ve statlar', 'pve') %}
   <p>Heroic ekipman olmadığı için saldırı hızı, hareket hızı, Might ve Precision bonus satırlarının çoğunu alır, pasiflere 1–2 kalır. Öncelik:</p>
   <div class="table-wrap"><table>
     <thead><tr><th>#</th><th>Pasif</th><th>Neden</th></tr></thead>
@@ -120,9 +120,17 @@
     </tbody>
   </table></div>
   <p>Silah ve ön/arka hasar artışları en güçlü türler ve Gladiator her zaman önden savaşır. Season 1'de mükemmel manastone çevirmelerinin peşine düşme — TW'de her çevirme kabaca 200–300k tutuyor.</p>
+  <h3>Statlar (Ulfhednar, global)</h3>
+  <div class="callout"><ul>
+    <li><strong>Ekipman satırları:</strong> hasar yazan her şey — Critical Hit, Damage Boost.</li>
+    <li><strong>Silah ve guard'da soul bind:</strong> Weapon Damage Boost, Combat Speed, Damage Boost, Might — bu sırayla.</li>
+    <li><strong>Statlar:</strong> Wisdom (Double Chance), Time (Combat Speed), Destruction (hasar), artı biraz Accuracy — eksik olursa bosslar Gladiator'ı savuşturur.</li>
+    <li><strong>Genus Insight:</strong> saldırı satırlarını çevir. Savaş gücünü yükseltirler; gruplar seni zindana çağırmadan önce bu sayıya bakar.</li>
+    <li><strong>Mana:</strong> yetmiyorsa Max MP ve MP yenilenme satırları, Daevanion levhalarındaki +50 MP düğümleri ve mana iksirleri (Crafting → Alchemy).</li>
+  </ul></div>
 {% endcall %}
 
-{% call section('gear-pvp', 'Ekipman ve arcana', 'pvp') %}
+{% call section('gear-pvp', 'Ekipman ve statlar', 'pvp') %}
   <p>Season 1'in sınırlı ekipmanıyla henüz ayrı bir PvP seti kurma — PvE ekipmanını tut ve pasifleri, stigmaları ve Daevanion'u değiştir.</p>
   <div class="callout"><ul>
     <li><strong>Accuracy</strong> — oyuncular bosslardan çok daha fazla Block ve Evade yapar.</li>
@@ -255,6 +263,21 @@
   </div>
   <p>Makro tempoyu tutar — senin yerine oynamaz. Ne zaman bloklayacağına, ne zaman mesafe kapatacağına ve ne zaman kendini iyileştireceğine hâlâ sen karar verirsin. Season 1'in zayıf statları birkaç dakikalık boss dövüşleri demek, bu yüzden kaybedilen her saniye önemli.</p>
   <p class="note">Tuşlar Arthars'ın aksiyon modu düzeni (RMB / E); hedef modunda spamlayabileceğin herhangi iki tuşu kullan. Makro slot sırası Kore buildlerinin kullandığı satır satır şemayı izler.</p>
+
+  <h3>Diğer seçenek: Ulfhednar'ın makrosu (global)</h3>
+  <p>Ulfhednar'ın çubuğu (6 Ekim videosu, 3:04 ve 3:12 kareleri). Rage Burst ve Overhead Slam yukarıdaki gibi aynı satırda, ama Rending Blow {{ s('sword-aura-rampage') }} ile aynı satırda; o altta durur ve boss Stagger'dayken önce çalışır, ve Ruinous Blow buff satırının en üstüne çıkıyor. Focused Block yerine {{ s('blade-toss') }} kullanıyor (düşmanın savunması 10 sn −%30, grup için debuff).</p>
+  {{ hotbar([('1', ['leaping-slam']), ('2', ['mocking-blade']), ('3', ['rush-strike', 'aerial-snare']), ('4', ['ankle-slice']), None, ('Caps', []), ('—', ['crushing-wave']), ('F', []), ('9', []), None, ('Q', ['zikels-blessing', 'lunge-stance', 'blade-toss', 'ruinous-blow']), ('E', ['sword-aura-rampage', 'rending-blow']), ('LMB', ['keen-strike']), ('RMB', ['rage-burst', 'overhead-slam'])], macro=['Q', 'RMB', 'E'], own_keys=true) }}
+  <div class="hotlines">
+    {% call hotline('Q', 'Buff satırı', ['zikels-blessing', 'lunge-stance', 'blade-toss', 'ruinous-blow']) %}Bufflar ve debuff bekleme süresi dolunca; hepsi açıkken Ruinous Blow çalışır.{% endcall %}
+    {% call hotline('RMB', 'Ana satır', ['rage-burst', 'overhead-slam']) %}Rage Burst en alttaki slotta, Overhead Slam onun üstünde.{% endcall %}
+    {% call hotline('E', 'Stagger satırı', ['sword-aura-rampage', 'rending-blow']) %}Sword Aura Rampage yalnızca Stagger'daki hedeflere vurur, bu yüzden geri kalan zamanda satır Rending Blow kullanır.{% endcall %}
+  </div>
+  {{ macroseq([('Buff satırı', 'Q · 10 ms'), ('Ana satır', 'RMB · 10 ms'), ('Stagger satırı', 'E · 10 ms')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Basılı tut</span><span class="press-what"><span class="key">LMB</span>'de {{ s('keen-strike') }} ve makro tuşu — oyun içi makroyu <span class="key">C</span>'ye atıyor. Keen Strike manayı tutar ve her vuruşta Ruinous Blow'un bekleme süresini kısaltır.</span></li>
+    <li><span class="press-how">Elle</span><span class="press-what">1–4'te mesafe kapatıcılar ve {{ s('mocking-blade') }}, gruplarda {{ s('crushing-wave') }}.</span></li>
+  </ul>
+  <p class="note">Bunun üstüne bir fare yazılımı makrosu kullanıyor: aynı tuşları spamlıyor (her biri 10 ms, LMB 15 ms) ve çalışırken oyun içi makro tuşuna basıp daha fazla saldırı örüyor. Başlangıç için düz bir oyun içi makro yeterli.</p>
 {% endcall %}
 
 {% call section('combos-pvp', 'Kombolar ve oyun', 'pvp') %}
@@ -337,6 +360,7 @@
     <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — hızlı erişim satırları ve oyun içi makro nasıl çalışır</li>
     <li><a href="https://www.youtube.com/watch?v=WlxLOTs62dM" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Gladiator PVE Build for Global</a> — erken uzmanlıklar (Keen Strike, bosslarda Aerial Snare), stigmalar, Daevanion önceliği, önden boss rotasyonu</li>
     <li><a href="https://www.youtube.com/watch?v=t-B-5lR_GIs" target="_blank" rel="noopener">Sen — AION 2 Progression Guide (+ Gladiator guide)</a> — bu rehberin yeteneklerini, stigmalarını ve pasiflerini global sunucularda doğruluyor</li>
+    <li><a href="https://www.youtube.com/watch?v=zrdG1XDYUtE" target="_blank" rel="noopener">Ulfhednar — AION 2 Gladiator PvE DPS Build</a> — onun kısayol çubuğuyla ikinci makro seçeneği (Sword Aura Rampage satırı, Blade Toss), ekipman satırları, soul bind, statlar, Genus Insight, mana</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>

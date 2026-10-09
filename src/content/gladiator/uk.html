@@ -1,4 +1,4 @@
-{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, dv_board with context %}
+{% from "macros.html" import section, skill, core, loadout, passives, glance, hotline, macroseq, hotbar, dv_board with context %}
 
 {# ===== PvE і PvP: кожен PvP-блок іде після свого PvE-відповідника, тож обидва режими читаються в однаковому порядку; спільні розділи — 'pve pvp' ===== #}
 {% call glance('pve') %}
@@ -109,7 +109,7 @@
   </table></div>
 {% endcall %}
 
-{% call section('gear', 'Спорядження й прив\'язка душі', 'pve') %}
+{% call section('gear', 'Спорядження й статі', 'pve') %}
   <p>Без Heroic-спорядження швидкість атаки, швидкість руху, Might і Precision забирають більшість бонусних рядків, лишаючи 1–2 під пасивки. Пріоритет:</p>
   <div class="table-wrap"><table>
     <thead><tr><th>#</th><th>Пасивка</th><th>Навіщо</th></tr></thead>
@@ -120,9 +120,17 @@
     </tbody>
   </table></div>
   <p>Бонуси до шкоди зброї та шкоди спереду/ззаду — найсильніші типи, а Gladiator завжди б'є спереду. Не женися за ідеальними манастоунами в 1 сезоні — перекидання коштує приблизно 200–300 тис. кожне на TW.</p>
+  <h3>Стати (Ulfhednar, глобал)</h3>
+  <div class="callout"><ul>
+    <li><strong>Рядки спорядження:</strong> усе, що про шкоду, — Critical Hit, Damage Boost.</li>
+    <li><strong>Soul binds на зброї й guard:</strong> Weapon Damage Boost, Combat Speed, Damage Boost, Might — саме в такому порядку.</li>
+    <li><strong>Статі:</strong> Wisdom (шанс подвійного удару), Time (швидкість бою), Destruction (шкода) і трохи Accuracy — без неї боси парирують Gladiator.</li>
+    <li><strong>Genus Insight:</strong> перекидай рядки на атаку. Вони піднімають бойову могутність — саме на неї дивляться, коли кличуть у підземелля.</li>
+    <li><strong>Мана:</strong> якщо бракує — рядки Max MP і відновлення MP, вузли +50 MP на дошках Daevanion і зілля мани (Crafting → Alchemy).</li>
+  </ul></div>
 {% endcall %}
 
-{% call section('gear-pvp', 'Спорядження й аркани', 'pvp') %}
+{% call section('gear-pvp', 'Спорядження й статі', 'pvp') %}
   <p>Зі спорядженням 1 сезону окремий PvP-сет поки не збирай — лишай PvE-спорядження й міняй пасивки, стигми та Daevanion.</p>
   <div class="callout"><ul>
     <li><strong>Точність</strong> — гравці блокують і ухиляються набагато частіше за босів.</li>
@@ -255,6 +263,21 @@
   </div>
   <p>Макрос тримає темп — грати за тебе він не буде. Ти досі вирішуєш, коли блокувати, коли скорочувати дистанцію й коли підлікуватися. Слабші статі 1 сезону означають бої з босами на кілька хвилин, тож кожна втрачена секунда важить.</p>
   <p class="note">Клавіші — розкладка Arthars для action-режиму (ПКМ / E); у таб-таргеті бери будь-які дві клавіші, які зручно спамити. Порядок слотів макросу йде за тією ж схемою «лінія за лінією», що й у корейських білдах.</p>
+
+  <h3>Інший варіант: макрос Ulfhednar (глобал)</h3>
+  <p>Панель Ulfhednar (відео від 6 жовтня, кадри 3:04 і 3:12). Rage Burst і Overhead Slam ділять лінію, як вище, але Rending Blow ділить лінію з {{ s('sword-aura-rampage') }}: той стоїть нижче й спрацьовує першим, щойно бос оглушений, а Ruinous Blow стає нагору лінії бафів. Замість Focused Block він бере {{ s('blade-toss') }} (−30% захисту ворога на 10 с, дебаф для всієї групи).</p>
+  {{ hotbar([('1', ['leaping-slam']), ('2', ['mocking-blade']), ('3', ['rush-strike', 'aerial-snare']), ('4', ['ankle-slice']), None, ('Caps', []), ('—', ['crushing-wave']), ('F', []), ('9', []), None, ('Q', ['zikels-blessing', 'lunge-stance', 'blade-toss', 'ruinous-blow']), ('E', ['sword-aura-rampage', 'rending-blow']), ('ЛКМ', ['keen-strike']), ('ПКМ', ['rage-burst', 'overhead-slam'])], macro=['Q', 'ПКМ', 'E'], own_keys=true) }}
+  <div class="hotlines">
+    {% call hotline('Q', 'Лінія бафів', ['zikels-blessing', 'lunge-stance', 'blade-toss', 'ruinous-blow']) %}Бафи й дебаф по КД; Ruinous Blow спрацьовує, коли всі вони висять.{% endcall %}
+    {% call hotline('ПКМ', 'Головна лінія', ['rage-burst', 'overhead-slam']) %}Rage Burst у нижньому слоті, Overhead Slam над ним.{% endcall %}
+    {% call hotline('E', 'Лінія оглушення', ['sword-aura-rampage', 'rending-blow']) %}Sword Aura Rampage б'є лише оглушені цілі, тож решту часу лінія кастує Rending Blow.{% endcall %}
+  </div>
+  {{ macroseq([('Лінія бафів', 'Q · 10 мс'), ('Головна лінія', 'ПКМ · 10 мс'), ('Лінія оглушення', 'E · 10 мс')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Тримати</span><span class="press-what">{{ s('keen-strike') }} на <span class="key">ЛКМ</span> і клавішу макросу — він ставить вбудований макрос на <span class="key">C</span>. Keen Strike тримає ману й з кожним ударом скорочує перезарядку Ruinous Blow.</span></li>
+    <li><span class="press-how">Вручну</span><span class="press-what">Ривки та {{ s('mocking-blade') }} на 1–4, {{ s('crushing-wave') }} на пачках.</span></li>
+  </ul>
+  <p class="note">Поверх цього в нього макрос у програмі миші: він спамить ті самі клавіші (по 10 мс, ЛКМ — 15 мс) і тисне клавішу вбудованого макросу, щоб вплести більше атак. Для початку вистачить звичайного вбудованого макросу.</p>
 {% endcall %}
 
 {% call section('combos-pvp', 'Комбо й гра', 'pvp') %}
@@ -337,6 +360,7 @@
     <li><a href="https://www.youtube.com/watch?v=HMod6Z4GrE0" target="_blank" rel="noopener">Grobs — AION 2 Macro Guide</a> — як працюють лінії на кнопках і вбудований макрос</li>
     <li><a href="https://www.youtube.com/watch?v=WlxLOTs62dM" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Gladiator PVE Build for Global</a> — ранні спеціалізації (Keen Strike, Aerial Snare на босах), стигми, пріоритет Daevanion, ротація на босі спереду</li>
     <li><a href="https://www.youtube.com/watch?v=t-B-5lR_GIs" target="_blank" rel="noopener">Sen — AION 2 Progression Guide (+ Gladiator guide)</a> — підтверджує скіли, стигми й пасивки цього гайда на глобальних серверах</li>
+    <li><a href="https://www.youtube.com/watch?v=zrdG1XDYUtE" target="_blank" rel="noopener">Ulfhednar — AION 2 Gladiator PvE DPS Build</a> — другий варіант макросу з його панеллю (лінія Sword Aura Rampage, Blade Toss), рядки спорядження, soul binds, стати, Genus Insight, мана</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>
