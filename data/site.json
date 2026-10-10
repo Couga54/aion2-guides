@@ -23,7 +23,7 @@
     {"id": "rift", "cycle": "rift"},
     {"id": "reset", "cycle": "weekly_reset", "href": "weekly/"}
   ],
-  "updated": "2026-10-09",
+  "updated": "2026-10-10",
   "classes": [
     {"slug": "gladiator", "status": "ready", "src": {"pve": ["Arthars Gaming · aLuckyRO · Sen · Ulfhednar", "2026-10-09"], "pvp": ["Vortex Gaming (KR)", "2026-09-27"], "lvl": ["Grobs", "2026-09-30"]}, "updated": "2026-10-09", "patch": "S1", "accent": "crimson", "art_pos": "40% 8%",
      "name": {"en": "Gladiator", "ru": "Гладиатор", "uk": "Gladiator", "tr": "Gladiator"},
@@ -32,7 +32,7 @@
      "difficulty": 1,
      "pitch": {"en": "Front-loaded damage, a pseudo-tank toolkit and near-permanent cooldowns off one stigma.",
                "ru": "Мощный фронтальный урон, полутанковый набор и почти вечные перезарядки от одной стигмы.", "uk": "Потужна фронтальна шкода, напівтанковий набір і майже вічні перезарядки від однієї стигми.", "tr": "Önden yüklenen hasar, yarı-tank araç seti ve tek bir stigma sayesinde neredeyse sürekli hazır bekleme süreleri."}},
-    {"slug": "ranger", "status": "ready", "src": {"pve": ["Whelps · aLuckyRO · LordRobson", "2026-10-03"], "lvl": ["Moxsy · Grobs", "2026-10-07"]}, "modes_off": ["pvp"], "updated": "2026-10-09", "patch": "S1", "accent": "emerald", "art_pos": "28% 6%", "art_up": "4%",
+    {"slug": "ranger", "status": "ready", "src": {"pve": ["Whelps · aLuckyRO · LordRobson · Fubgun", "2026-10-10"], "lvl": ["Moxsy · Grobs", "2026-10-07"]}, "modes_off": ["pvp"], "updated": "2026-10-10", "patch": "S1", "accent": "emerald", "art_pos": "28% 6%", "art_up": "4%",
      "name": {"en": "Ranger", "ru": "Стрелок", "uk": "Ranger", "tr": "Ranger"},
      "role": {"en": "Ranged DPS · kiter", "ru": "Дальний бой · кайт", "uk": "Дальній бій · кайт", "tr": "Menzilli DPS · kiter"},
      "weapon": {"en": "Bow", "ru": "Лук", "uk": "Лук", "tr": "Bow"},

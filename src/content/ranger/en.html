@@ -34,8 +34,8 @@
 {% call section('skills', 'Skills', 'pve') %}
   <p>Specialization slots open at <strong>8</strong>, <strong>12</strong> and <strong>20</strong> (16 adds a new option but no slot) — every one of those levels is a power spike. Level actives first, passives after.</p>
   <ul class="skill-grid">
-    {% call skill('deadshot', 'must', '20', [1, 2, 4]) %}Charged nuke — always fully charged, always under Precision. Before 20 take the first two; swap the mobile pick for the +50% damage one if you don't need to move while charging.{% endcall %}
-    {% call skill('gale-arrow', 'must', '20', [2, 3, 4]) %}Combat Speed and damage buff. Before 20 take the mobile pick and −10s cooldown (or damage instead of mobility).{% endcall %}
+    {% call skill('deadshot', 'must', '20', [1, 2, 4]) %}Charged nuke — always fully charged, always under Precision. Before 20 take the first two; swap the mobile pick for the +50% damage one if you don't need to move while charging. Fubgun (global) goes for the biggest crits instead: Skill Speed and Ignore Block and Evasion at 16, the damage pick at 20 — mobile only where a fight needs it.{% endcall %}
+    {% call skill('gale-arrow', 'must', '20', [2, 3, 4]) %}Combat Speed and damage buff. Before 20 take the Combat Speed pick and −10s cooldown (before 16: +5s duration) — Fubgun skips mobility until the third slot, because without it the buff stays up all the time.{% endcall %}
     {% call skill('drill-dart', 'must', '16', [4, 2]) %}At least 16. For a boss that needs sustain, take the HP absorb instead of Skill Speed.{% endcall %}
     {% call skill('snipe', 'must', '16', [3, 4]) %}Basic attack: shortens Deadshot and adds the Tempest Arrow chain. At 20 add Multi-Hit.{% endcall %}
     {% call skill('tempest-shot', 'must', '16', [2, 4]) %}Top damage contributor, but 16 is enough — you'll be crit-capped anyway. PvP players push it to 20 for the knockback.{% endcall %}
@@ -78,6 +78,7 @@
     <li>Remaining slots: Attack, Critical Hit or Focused Eye — keep whichever you rolled first. Critical Hit is easier to cap for a Ranger (+300 from Marking Shot).</li>
     <li><strong>Manastones:</strong> one yellow Attack line is enough for Season 1; don't chase front/back attack sets.</li>
     <li>Only roll soul binds on armor that already has one of the must-haves.</li>
+    <li><strong>Bow and guard at +10</strong> at all times, and basic manastones in every piece (N → Manastones) — cheap raw stats (Fubgun).</li>
   </ul></div>
 {% endcall %}
 
@@ -126,12 +127,13 @@
 
 {% call section('stigmas', 'Stigmas', 'pve') %}
   <p>Level them evenly first — 5 / 5 / 5, then 10 — to hit each breakpoint. Once you have the points for <strong>Vaizel's Authority 20</strong>, reset and put it there first: that's when the Ranger clicks. Then Bow of Blessing, Supporting Fire and Griffon Arrow to 20 in turn.</p>
+  <p class="note">Fubgun (global): start with 15 / 10 / 10 / 5 (Vaizel's Authority, Bow of Blessing, Supporting Fire, Explosive Arrow); after Vaizel's Authority 20 his next points go to Bow of Blessing 15. Vaizel's Authority 20 only pays off with enough Critical Hit — test it on a training dummy before you commit.</p>
   <ul class="skill-grid">
     {% call skill('vaizels-authority', 'must', 'Lv 20', upto=20) %}×1.5 Focused Eye and Hunter's Soul; at 20 every crit has a 50% chance to cut <em>all</em> cooldowns by 1s — a huge DPS jump.{% endcall %}
     {% call skill('bow-of-blessing', 'must', 'Lv 10 → 20', upto=20) %}Multi-Hit, Attack from crit, Critical Damage and Double Chance.{% endcall %}
     {% call skill('supporting-fire', 'must', 'Lv 10 → 20', upto=20) %}An orb that shoots alongside you; same cooldown as Vaizel's, so they can share a button.{% endcall %}
     {% call skill('griffon-arrow', 'must', 'Lv 10 → 20', upto=20) %}Crimson Flames DoT; opens the macro line.{% endcall %}
-    {% call skill('explosive-arrow', 'opt', 'alt. · 4th slot', upto=10) %}An equal alternative to Griffon Arrow: LordRobson rates their damage about the same, and aLuckyRO runs Explosive Arrow at 5 (−15s cooldown) instead of Griffon on day one. Moxsy's leveling set uses it too. If a fifth slot opens at 45, take both.{% endcall %}
+    {% call skill('explosive-arrow', 'opt', 'alt. · 4th slot', upto=10) %}An equal alternative to Griffon Arrow: LordRobson rates their damage about the same, and aLuckyRO runs Explosive Arrow at 5 (−15s cooldown) instead of Griffon on day one. Moxsy's leveling set uses it too. Fubgun: Explosive Arrow is stronger until Griffon Arrow reaches 15, which takes a long time on global. If a fifth slot opens at 45, take both.{% endcall %}
     {% call skill('arrow-storm', 'opt', 'leveling', upto=5) %}AoE for packs while leveling.{% endcall %}
   </ul>
 {% endcall %}
@@ -163,9 +165,23 @@
   <ul class="presslist">
     <li><span class="press-how">Opener</span><span class="press-what">Buffs by hand — {{ s('bow-of-blessing') }}, {{ s('supporting-fire') }} + {{ s('vaizels-authority') }} (one button, same cooldown) — then {{ s('marking-shot') }} and a fully charged {{ s('deadshot') }}.</span></li>
     <li><span class="press-how">Hold</span><span class="press-what">{{ s('snipe') }} on <span class="key">LMB</span>, the macro on <span class="key">RMB</span> and {{ s('deadshot') }} on the side button — all three at once.</span></li>
-    <li><span class="press-how">Keep up</span><span class="press-what">{{ s('marking-shot') }} — recast when Precision drops below ~3s (watch the buff bar). Precision: +5% Perfect Chance, +300 Critical Hit, +35% Deadshot damage.</span></li>
+    <li><span class="press-how">Keep up</span><span class="press-what">{{ s('marking-shot') }} — recast when Precision drops below ~3s (watch the buff bar). Precision: +5% Perfect Chance, +300 Critical Hit, +35% Deadshot damage. It lasts 15s — recasting it more often is a DPS loss.</span></li>
     <li><span class="press-how">On cooldown</span><span class="press-what">The buffs again.</span></li>
   </ul>
+
+  <h3>Another option: Fubgun's macro (global)</h3>
+  <p>Fubgun's bar (video of Oct 9, frames 2:10 and 3:00): Burst Arrow moves into the Drill line, {{ s('explosive-arrow') }} replaces Griffon Arrow, and the buffs sit on one key you press yourself.</p>
+  {{ hotbar([('1', ['vaizels-authority', 'bow-of-blessing', 'supporting-fire']), ('2', ['marking-shot']), ('3', ['deadshot']), ('4', ['explosion-trap']), None, ('5', ['suppressing-arrow']), ('6', []), ('7', []), ('8', []), None, ('Q', ['gale-arrow', 'snare-shot', 'explosive-arrow']), ('E', []), ('LMB', ['snipe']), ('T', ['drill-dart', 'burst-arrow', 'tempest-shot'])], macro=['Q', 'T']) }}
+  <div class="hotlines">
+    {% call hotline('Q', 'Gale line', ['gale-arrow', 'snare-shot', 'explosive-arrow']) %}Gale Arrow on cooldown, Snare Shot for the slow, Explosive Arrow on top.{% endcall %}
+    {% call hotline('T', 'Drill line', ['drill-dart', 'burst-arrow', 'tempest-shot']) %}Drill Dart first, then Burst Arrow; Tempest Shot fills the gaps.{% endcall %}
+  </div>
+  {{ macroseq([('Gale line', 'Q · 10 ms'), ('Drill line', 'T · 10 ms')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Hold</span><span class="press-what">{{ s('snipe') }} on <span class="key">LMB</span> and the macro on <span class="key">RMB</span> together, the whole fight. The T key itself is never pressed — only the macro uses it.</span></li>
+    <li><span class="press-how">By hand</span><span class="press-what">The buff line on <span class="key">1</span> at the right moment, {{ s('marking-shot') }} every 15s, {{ s('deadshot') }} on cooldown.</span></li>
+  </ul>
+  <p class="note">Lazy version for the open world and easy dungeons: put Burst Arrow at the bottom of the buff line on 1 and add that line to the macro — the buffs then fire on their own. Pressing them yourself is more damage, and in raids it matters.</p>
 {% endcall %}
 
 {% call section('recap', 'Recap', 'pve') %}
@@ -243,6 +259,7 @@
     <li><a href="https://www.youtube.com/watch?v=VsvTt5JkEzY" target="_blank" rel="noopener">Moxsy — ULTIMATE RANGER GUIDE! (Leveling, Macros, Rotation &amp; More!)</a> — the Leveling mode: pulling packs, what to level first, his hotbar and macro (made with JohnPal)</li>
     <li><a href="https://www.youtube.com/watch?v=UOuiJT9E1xA" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Ranger PVE Build for Global</a> — early specializations, Explosive Arrow instead of Griffon, the Marking Shot → Gale Arrow → Deadshot combo</li>
     <li><a href="https://www.youtube.com/watch?v=fGABxC3QKd8" target="_blank" rel="noopener">LordRobson — Aion 2 Ranger - Build, Skills, Stigmas and Macros</a> — confirms the stigmas (Griffon Arrow or Explosive Arrow as the fourth), Deadshot to 16 first, Marking Shot duration</li>
+    <li><a href="https://www.youtube.com/watch?v=GdAakaOGPLo" target="_blank" rel="noopener">Fubgun — Endgame Ranger Guide. Macro/Stigma skills/daevanion board</a> — a second macro option with his hotbar, Explosive Arrow over Griffon Arrow, Deadshot and Gale Arrow picks, the starter stigma levels, +10 bow and guard</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>

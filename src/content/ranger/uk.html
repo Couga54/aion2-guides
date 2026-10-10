@@ -34,8 +34,8 @@
 {% call section('skills', 'Скіли', 'pve') %}
   <p>Слоти спеціалізацій відкриваються на <strong>8</strong>, <strong>12</strong> і <strong>20</strong> (16 додає новий варіант, але не слот) — кожен із цих рівнів дає приріст сили. Спершу качай активні скіли, пасивки потім.</p>
   <ul class="skill-grid">
-    {% call skill('deadshot', 'must', '20', [1, 2, 4]) %}Заряджений нюк — завжди повністю заряджений і завжди під Precision. До 20 бери перші дві; міняй спеціалізацію на рух на +50% шкоди, якщо під час заряду не треба рухатися.{% endcall %}
-    {% call skill('gale-arrow', 'must', '20', [2, 3, 4]) %}Баф швидкості бою й шкоди. До 20 бери спеціалізацію на рух і −10 с перезарядки (або шкоду замість руху).{% endcall %}
+    {% call skill('deadshot', 'must', '20', [1, 2, 4]) %}Заряджений нюк — завжди повністю заряджений і завжди під Precision. До 20 бери перші дві; міняй спеціалізацію на рух на +50% шкоди, якщо під час заряду не треба рухатися. Fubgun (глобал) натомість іде по найбільші крити: на 16 — Skill Speed та ігнор блоку й ухилення, на 20 — шкода; рух — лише там, де цього вимагає бій.{% endcall %}
+    {% call skill('gale-arrow', 'must', '20', [2, 3, 4]) %}Баф швидкості бою й шкоди. До 20 бери Combat Speed і −10 с перезарядки (до 16 — +5 с тривалості): Fubgun не бере рух до третього слота, бо без нього баф висить постійно.{% endcall %}
     {% call skill('drill-dart', 'must', '16', [4, 2]) %}Щонайменше 16. Для боса, де потрібна живучість, бери поглинання HP замість швидкості скілів.{% endcall %}
     {% call skill('snipe', 'must', '16', [3, 4]) %}Базова атака: скорочує Deadshot і додає ланцюжок Tempest Arrow. На 20 додай мультиудар.{% endcall %}
     {% call skill('tempest-shot', 'must', '16', [2, 4]) %}Один із головних джерел шкоди, але 16 вистачить — ти й так упрешся в кап криту. PvP-гравці доводять до 20 заради відкидання.{% endcall %}
@@ -78,6 +78,7 @@
     <li>Решта слотів: атака, крит чи Focused Eye — лишай те, що випало першим. Крит Ranger легше закапити (+300 від Marking Shot).</li>
     <li><strong>Манастоуни:</strong> однієї жовтої лінії атаки вистачить на 1 сезон; за сетами на атаку спереду/ззаду не ганяйся.</li>
     <li>Роли прив'язки душі лише на броні, де вже є одна з обов'язкових.</li>
+    <li><strong>Лук і guard на +10</strong> завжди, і базові манастоуни в усі речі (N → Manastones) — дешеві чисті стати (Fubgun).</li>
   </ul></div>
 {% endcall %}
 
@@ -126,12 +127,13 @@
 
 {% call section('stigmas', 'Стигми', 'pve') %}
   <p>Спершу качай рівно — 5 / 5 / 5, потім 10, — щоб брати кожен поріг. Щойно матимеш очки на <strong>Vaizel's Authority 20</strong>, скинь і вклади туди першою: тоді Ranger і розкривається. Далі по черзі Bow of Blessing, Supporting Fire і Griffon Arrow до 20.</p>
+  <p class="note">Fubgun (глобал): почни з 15 / 10 / 10 / 5 (Vaizel's Authority, Bow of Blessing, Supporting Fire, Explosive Arrow); після Vaizel's Authority 20 наступні очки він вкладає в Bow of Blessing до 15. Vaizel's Authority 20 окупається лише з достатнім Critical Hit — перевір на манекені, перш ніж вкладатися.</p>
   <ul class="skill-grid">
     {% call skill('vaizels-authority', 'must', 'Рів. 20', upto=20) %}×1,5 Focused Eye і Hunter's Soul; на 20 кожен крит із шансом 50% скорочує <em>всі</em> перезарядки на 1 с — величезний стрибок DPS.{% endcall %}
     {% call skill('bow-of-blessing', 'must', 'Рів. 10 → 20', upto=20) %}Мультиудар, атака від криту, крит. шкода й шанс подвійного удару.{% endcall %}
     {% call skill('supporting-fire', 'must', 'Рів. 10 → 20', upto=20) %}Сфера, що стріляє поруч із тобою; та сама перезарядка, що й у Vaizel's, тож можуть ділити одну кнопку.{% endcall %}
     {% call skill('griffon-arrow', 'must', 'Рів. 10 → 20', upto=20) %}Шкода з часом Crimson Flames; відкриває лінію макросу.{% endcall %}
-    {% call skill('explosive-arrow', 'opt', 'альт. · 4-й слот', upto=10) %}Рівноцінна заміна Griffon Arrow: LordRobson оцінює їхню шкоду приблизно однаково, а aLuckyRO в перший день ставить Explosive Arrow на 5 (−15 с перезарядки) замість Griffon. У наборі Moxsy для прокачки вона теж є. Якщо на 45 відкриється п'ятий слот, бери обидві.{% endcall %}
+    {% call skill('explosive-arrow', 'opt', 'альт. · 4-й слот', upto=10) %}Рівноцінна заміна Griffon Arrow: LordRobson оцінює їхню шкоду приблизно однаково, а aLuckyRO в перший день ставить Explosive Arrow на 5 (−15 с перезарядки) замість Griffon. У наборі Moxsy для прокачки вона теж є. Fubgun: Explosive Arrow сильніша, поки Griffon Arrow не дійде до 15, а на глобалі це довго. Якщо на 45 відкриється п'ятий слот, бери обидві.{% endcall %}
     {% call skill('arrow-storm', 'opt', 'прокачка', upto=5) %}АоЕ по пачках на прокачці.{% endcall %}
   </ul>
 {% endcall %}
@@ -163,9 +165,23 @@
   <ul class="presslist">
     <li><span class="press-how">Початок</span><span class="press-what">Бафи вручну — {{ s('bow-of-blessing') }}, {{ s('supporting-fire') }} + {{ s('vaizels-authority') }} (одна кнопка, однакова перезарядка) — потім {{ s('marking-shot') }} і повністю заряджений {{ s('deadshot') }}.</span></li>
     <li><span class="press-how">Тримати</span><span class="press-what">{{ s('snipe') }} на <span class="key">ЛКМ</span>, макрос на <span class="key">ПКМ</span> і {{ s('deadshot') }} на бічній кнопці — усі три одночасно.</span></li>
-    <li><span class="press-how">Підтримувати</span><span class="press-what">{{ s('marking-shot') }} — перекастовуй, коли Precision лишається менше ~3 с (дивись на панель бафів). Precision: +5% шансу ідеального удару, +300 криту, +35% шкоди Deadshot.</span></li>
+    <li><span class="press-how">Підтримувати</span><span class="press-what">{{ s('marking-shot') }} — перекастовуй, коли Precision лишається менше ~3 с (дивись на панель бафів). Precision: +5% шансу ідеального удару, +300 криту, +35% шкоди Deadshot. Діє 15 с — оновлювати частіше означає втрачати шкоду.</span></li>
     <li><span class="press-how">За відкатом</span><span class="press-what">Знову бафи.</span></li>
   </ul>
+
+  <h3>Інший варіант: макрос Fubgun (глобал)</h3>
+  <p>Панель Fubgun (відео від 9 жовтня, кадри 2:10 і 3:00): Burst Arrow переїжджає в лінію Drill, {{ s('explosive-arrow') }} замінює Griffon Arrow, а бафи стоять на одній клавіші, яку тиснеш сам.</p>
+  {{ hotbar([('1', ['vaizels-authority', 'bow-of-blessing', 'supporting-fire']), ('2', ['marking-shot']), ('3', ['deadshot']), ('4', ['explosion-trap']), None, ('5', ['suppressing-arrow']), ('6', []), ('7', []), ('8', []), None, ('Q', ['gale-arrow', 'snare-shot', 'explosive-arrow']), ('E', []), ('ЛКМ', ['snipe']), ('T', ['drill-dart', 'burst-arrow', 'tempest-shot'])], macro=['Q', 'T']) }}
+  <div class="hotlines">
+    {% call hotline('Q', 'Лінія Gale', ['gale-arrow', 'snare-shot', 'explosive-arrow']) %}Gale Arrow по КД, Snare Shot для сповільнення, Explosive Arrow згори.{% endcall %}
+    {% call hotline('T', 'Лінія Drill', ['drill-dart', 'burst-arrow', 'tempest-shot']) %}Спершу Drill Dart, потім Burst Arrow; Tempest Shot заповнює паузи.{% endcall %}
+  </div>
+  {{ macroseq([('Лінія Gale', 'Q · 10 мс'), ('Лінія Drill', 'T · 10 мс')]) }}
+  <ul class="presslist">
+    <li><span class="press-how">Тримати</span><span class="press-what">{{ s('snipe') }} на <span class="key">ЛКМ</span> і макрос на <span class="key">ПКМ</span> разом, увесь бій. Саму клавішу T не тиснеш — її натискає лише макрос.</span></li>
+    <li><span class="press-how">Вручну</span><span class="press-what">Лінію бафів на <span class="key">1</span> у потрібний момент, {{ s('marking-shot') }} раз на 15 с, {{ s('deadshot') }} за відкатом.</span></li>
+  </ul>
+  <p class="note">Лінивий варіант для відкритого світу й легких підземель: постав Burst Arrow у нижній слот лінії бафів на 1 і додай цю лінію в макрос — бафи спрацьовуватимуть самі. Тиснути їх самому — більше шкоди, і в рейдах це важливо.</p>
 {% endcall %}
 
 {% call section('recap', 'Підсумок', 'pve') %}
@@ -243,6 +259,7 @@
     <li><a href="https://www.youtube.com/watch?v=VsvTt5JkEzY" target="_blank" rel="noopener">Moxsy — ULTIMATE RANGER GUIDE! (Leveling, Macros, Rotation &amp; More!)</a> — режим «Прокачка»: збір мобів, що качати першим, його панель і макрос (разом з JohnPal)</li>
     <li><a href="https://www.youtube.com/watch?v=UOuiJT9E1xA" target="_blank" rel="noopener">aLuckyRO — AION 2 Latest Ranger PVE Build for Global</a> — ранні спеціалізації, Explosive Arrow замість Griffon Arrow, зв'язка Marking Shot → Gale Arrow → Deadshot</li>
     <li><a href="https://www.youtube.com/watch?v=fGABxC3QKd8" target="_blank" rel="noopener">LordRobson — Aion 2 Ranger - Build, Skills, Stigmas and Macros</a> — підтверджує стигми (четверта — Griffon Arrow або Explosive Arrow), Deadshot до 16 першим, тривалість Marking Shot</li>
+    <li><a href="https://www.youtube.com/watch?v=GdAakaOGPLo" target="_blank" rel="noopener">Fubgun — Endgame Ranger Guide. Macro/Stigma skills/daevanion board</a> — другий варіант макросу з його панеллю, Explosive Arrow замість Griffon Arrow, вибір для Deadshot і Gale Arrow, стартові рівні стигм, лук і guard на +10</li>
   </ul>
   <p class="sources-all"><a href="{{ root }}{{ lang }}/sources/">{{ t.src_all }} →</a></p>
 </section>

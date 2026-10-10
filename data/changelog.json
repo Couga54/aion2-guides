@@ -2,6 +2,18 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-10-10",
+      "date": "2026-10-10",
+      "items": [
+        {
+          "en": "<strong>Ranger: Fubgun's hotbar as in the game</strong> — Rotation &amp; macro now shows a full skill bar from his global endgame guide (Gale line and Drill line in the macro, buffs on one key by hand) next to Whelps' lines; Explosive Arrow over Griffon Arrow until Griffon reaches 15, Deadshot and Gale Arrow picks for more damage, starter stigma levels 15 / 10 / 10 / 5, bow and guard at +10.",
+          "ru": "<strong>Стрелок: панель Fubgun как в игре</strong> — в «Ротации и макросе» теперь есть полная панель скиллов по его глобальному эндгейм-гайду (линии Шквала и Пронзающей в макросе, баффы на одной клавише вручную) рядом с линиями Whelps; Взрывная стрела вместо Стрелы грифона, пока та не дойдёт до 15, выбор для Прицельного выстрела и Шквала стрел на больший урон, стартовые уровни стигм 15 / 10 / 10 / 5, лук и наручи на +10.",
+          "uk": "<strong>Ranger: панель Fubgun як у грі</strong> — у «Ротації й макросі» тепер є повна панель скілів за його глобальним ендгейм-гайдом (лінії Gale і Drill у макросі, бафи на одній клавіші вручну) поруч із лініями Whelps; Explosive Arrow замість Griffon Arrow, поки та не дійде до 15, вибір для Deadshot і Gale Arrow на більшу шкоду, стартові рівні стигм 15 / 10 / 10 / 5, лук і guard на +10.",
+          "tr": "<strong>Ranger: Fubgun'ın oyundaki gibi çubuğu</strong> — Rotasyon ve makro bölümünde artık Whelps'in satırlarının yanında onun global endgame rehberinden tam bir yetenek çubuğu var (makroda Gale ve Drill satırları, bufflar tek tuşta elle); Griffon Arrow 15'e ulaşana kadar onun yerine Explosive Arrow, daha fazla hasar için Deadshot ve Gale Arrow seçimleri, başlangıç stigma seviyeleri 15 / 10 / 10 / 5, +10 yay ve guard."
+        }
+      ]
+    },
+    {
       "id": "2026-10-09",
       "date": "2026-10-09",
       "items": [
