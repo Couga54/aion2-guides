@@ -13,13 +13,14 @@
     </div>
   </section>
   <div class="wrap cl-page">
-    {% for e in changelog %}
-    <section class="wn-entry cl-entry" aria-label="{{ fmt_day(e.date, lang) }}">
-      <time class="wn-date" datetime="{{ e.date }}">{{ fmt_day(e.date, lang) }}</time>
+    {# one block per day: several pushes on the same day are merged, newest items first #}
+    {% for day in changelog|groupby('date')|reverse %}
+    <section class="wn-entry cl-entry" aria-label="{{ fmt_day(day.grouper, lang) }}">
+      <time class="wn-date" datetime="{{ day.grouper }}">{{ fmt_day(day.grouper, lang) }}</time>
       <ul>
-        {% for it in e['items'] %}
+        {% for e in day.list %}{% for it in e['items'] %}
         <li>{% if it.get('href') %}<a href="{{ root }}{{ lang }}/{{ it.href }}">{{ it[lang]|safe }}</a>{% else %}<span>{{ it[lang]|safe }}</span>{% endif %}</li>
-        {% endfor %}
+        {% endfor %}{% endfor %}
       </ul>
     </section>
     {% endfor %}
