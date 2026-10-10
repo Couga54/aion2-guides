@@ -237,6 +237,26 @@
       "set": null
     }
   },
+  "abysspts": {
+    "id": "930100003",
+    "grade": 11,
+    "cat": "currency",
+    "icon": "abysspts.webp",
+    "en": "Abyss Points",
+    "tip_en": {
+      "desc": "A mark of honor won on the fields of a war without end.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Очки Бездны",
+    "tip_ru": {
+      "desc": "Символ славы, завоеванной в нескончаемых ожесточенных сражениях.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
   "bakarma": {
     "id": "210130034",
     "grade": 41,

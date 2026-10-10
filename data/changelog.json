@@ -2,6 +2,18 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-10-10-st",
+      "date": "2026-10-10",
+      "items": [
+        {
+          "en": "<strong>Where to get Stigma Shards</strong> — under Stigmas in every class guide: the Abyss, Nightmare and Shugo shops with their limits and full prices (about 270 per character), plus a few from levels and the story.",
+          "ru": "<strong>Где брать Обломки стигмы</strong> — под разделом «Стигмы» в гайде каждого класса: магазины Бездны, Кошмара и Шуго с лимитами и полной ценой (около 270 на персонажа), плюс несколько за уровни и сюжет.",
+          "uk": "<strong>Де брати Stigma Shards</strong> — під розділом «Стигми» в гайді кожного класу: магазини Abyss, Nightmare і Shugo з лімітами й повною ціною (близько 270 на персонажа), плюс кілька за рівні й сюжет.",
+          "tr": "<strong>Stigma Shard nereden alınır</strong> — her sınıf rehberinde Stigmalar bölümünün altında: Abyss, Nightmare ve Shugo mağazaları limitleri ve tam fiyatlarıyla (karakter başına yaklaşık 270), artı seviyeler ve hikâyeden birkaç tane."
+        }
+      ]
+    },
+    {
       "id": "2026-10-10-dv",
       "date": "2026-10-10",
       "items": [
