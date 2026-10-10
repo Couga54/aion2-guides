@@ -504,6 +504,8 @@
       [].forEach.call(panel.querySelectorAll('.dvb-n:not(.start), .dvb-svg line'), function (el) {
         el.classList.toggle('on', +el.getAttribute('data-c') <= v);
       });
+      var reset = panel.querySelector('[data-dvb-reset]');
+      if (reset) reset.disabled = v === +reset.getAttribute('data-dvb-reset');
       var tab = document.getElementById(panel.getAttribute('aria-labelledby'));
       var t = tab && tab.querySelector('[data-dvb-t]');
       if (t) t.textContent = v;
@@ -512,6 +514,13 @@
       var range = panel.querySelector('[data-dvb-range]');
       if (!range) return;
       range.addEventListener('input', function () { setBoard(panel, range.value); });
+      var reset = panel.querySelector('[data-dvb-reset]');
+      // back to the guide's route (the value the page opened with)
+      if (reset) reset.addEventListener('click', function (ev) {
+        ev.preventDefault();
+        setBoard(panel, reset.getAttribute('data-dvb-reset'));
+        range.focus();
+      });
       range.style.setProperty('--p', (+range.value / +range.max * 100) + '%');
     });
     tabs.forEach(function (tab, i) {

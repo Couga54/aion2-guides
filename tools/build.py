@@ -187,25 +187,27 @@ def watch_for(cls, lang, limit=3):
     return (authors + streamers + fill)[:limit]
 
 
-# Order of the nodes left after the route, for the board slider: offensive stats, then the other skill nodes,
-# then the defensive stats; MP nodes last (creators skip them).
-BOARD_FILL = {"pve": [{"fixingdamage", "critical"}, None, {"hpmax", "defense", "criticalresist"}],
-              "pvp": [{"pvpadddamage", "pvpcritical", "pvpaccuracy", "fixingdamage", "critical"}, None,
-                      {"pvpdamagedefense", "pvpcriticalresist", "pvpevasion", "hpmax", "defense", "criticalresist"}]}
+# The board slider past the guide's route: paths to what the build uses come first - the glance core skills and key
+# passives, then the other skills on the guide's cards, then the damage / speed orange nodes, then any other skill or
+# passive; plain stats only on the way, then Attack / Critical Hit, defense (and the tolerance / resist orange nodes
+# in PvE), MP last.
+ATTACK_STATS = {"pve": {"fixingdamage", "critical"}, "pvp": {"pvpadddamage", "pvpcritical", "pvpaccuracy", "fixingdamage", "critical"}}
+DEFENSE_STATS = {"hpmax", "defense", "criticalresist", "pvpdamagedefense", "pvpcriticalresist", "pvpevasion"}
+ORANGE_GUARD = {"decreasedamage", "decreasecriticaldamage", "additionalhitresistrate"}
 
 
-def board_order(board, targets, mode, prefer=()):
+def board_order(board, targets, mode, prefer=(), used=()):
     """board_order_once with and without the preference for useful nodes on the way: the cheaper route wins, on a
     tie the one with more useful nodes (the route is built nearest target first, so a different tie can change its
     total by a crystal or two)."""
     cost = {n["id"]: n["cost"] or 0 for n in board["nodes"]}
-    tries = [board_order_once(board, targets, mode, pr) for pr in (prefer, None)]
+    tries = [board_order_once(board, targets, mode, prefer, used, g) for g in (True, False)]
     return min(tries, key=lambda t: (sum(cost[x] for x in t[0][:t[1]]), -t[2]))[:2]
 
 
-def board_order_once(board, targets, mode, prefer):
+def board_order_once(board, targets, mode, prefer, used, use_gain):
     """Every node of the board in the order to take it: first the route to the guide's targets (the cheapest
-    connected path from Start, nearest target first), then the remaining orange nodes, then BOARD_FILL tiers (None = skill nodes), then the rest.
+    connected path from Start, nearest target first), then the tiers above (what the build uses first, plain stats last).
     Between paths of the same cost it takes the one that passes more useful nodes on the way (`prefer` = the
     guide's skills and key passives, then other skills and passives, then Attack / Critical Hit), so the result
     is the same on every build."""
@@ -215,7 +217,7 @@ def board_order_once(board, targets, mode, prefer):
     start = next(n for n in board["nodes"] if n["auto"])
     taken, order = {start["id"]}, []
     stats = lambda n: {e.get("statName") for e in n["raw"] or [] if e["type"] == "stat"}
-    gain = {n["id"]: 0 if prefer is None else 3 if n["skill"] in prefer else 1 if n["skill"] else
+    gain = {n["id"]: 0 if not use_gain else 3 if n["skill"] in prefer else 1 if n["skill"] else
             0.5 if stats(n) & {"fixingdamage", "critical"} else 0 for n in board["nodes"]}
 
     def near(n):
@@ -251,10 +253,12 @@ def board_order_once(board, targets, mode, prefer):
     route(targets)
     k = len(order)                    # the guide's route ends here
     useful = sum(gain[x] for x in order)
-    route([n["id"] for n in board["nodes"] if n["grade"] == 41])
-    for tier in BOARD_FILL.get(mode, BOARD_FILL["pve"]):
-        route([n["id"] for n in board["nodes"] if (n["skill"] if tier is None else stats(n) & tier)])
-    route([n["id"] for n in board["nodes"]])
+    guard = lambda n: n["grade"] == 41 and mode != "pvp" and stats(n) & ORANGE_GUARD
+    for tier in (lambda n: n["skill"] in prefer, lambda n: n["skill"] in used,
+                 lambda n: n["grade"] == 41 and not guard(n), lambda n: n["skill"],
+                 lambda n: stats(n) & ATTACK_STATS["pvp" if mode == "pvp" else "pve"],
+                 lambda n: stats(n) & DEFENSE_STATS or guard(n), lambda n: True):
+        route([n["id"] for n in board["nodes"] if tier(n)])
     return order, k, useful
 
 
@@ -289,16 +293,20 @@ def board_tips(cls_slug, lang):
     return out
 
 
-def glance_skills(cls_slug, mode):
-    """Core skills and key passives listed in the class guide's 'Build at a glance' for one mode."""
+def guide_skills(cls_slug, mode):
+    """(core skills and key passives of the guide's 'Build at a glance', skills on its cards that are not 'skip')
+    for one mode."""
     import ast
     import re
     text = (SRC / "content" / cls_slug / "en.html").read_text(encoding="utf-8")
     g = re.search(r"\{%\s*call glance\('" + mode + r"'\)\s*%\}(.*?)\{%\s*endcall", text, re.S)
-    out = set()
+    glance, cards = set(), set()
     for m in re.finditer(r"(core|passives)\((\[.*?\])\)", g.group(1) if g else "", re.S):
-        out.update(x[0] if isinstance(x, tuple) else x for x in ast.literal_eval(m.group(2)))
-    return out
+        glance.update(x[0] if isinstance(x, tuple) else x for x in ast.literal_eval(m.group(2)))
+    for sec in re.finditer(r"\{%\s*call section\('[^']*',\s*[^,]+,\s*'([^']*)'\)\s*%\}(.*?)(?=\{%\s*call section\(|\Z)", text, re.S):
+        if mode in sec.group(1).split():
+            cards.update(m.group(1) for m in re.finditer(r"call skill\('([\w-]+)',\s*'(?!skip')", sec.group(2)))
+    return glance, cards
 
 
 @pass_context
@@ -308,7 +316,8 @@ def board_view(ctx, cls_slug, mode):
     skills = SKILLS[cls_slug]
     preset = BOARD_PRESETS[cls_slug][mode]
     out, total, levels, focus = [], 0, {}, set()
-    prefer = glance_skills(cls_slug, mode) | {sk for r in preset.values() if isinstance(r, dict) for sk in r.get("skills", [])}
+    glance, cards = guide_skills(cls_slug, mode)
+    prefer = glance | {sk for r in preset.values() if isinstance(r, dict) for sk in r.get("skills", [])}
     for i, b in enumerate(BOARDS[cls_slug]["boards"]):
         rule = preset[str(i)] if str(i) in preset else preset.get("*")
         targets = []
@@ -319,7 +328,7 @@ def board_view(ctx, cls_slug, mode):
                 sp and n["grade"] == 41 and (sp is True or any(e.get("statName") in sp for e in n["raw"] or [])))]
         if not rule and preset.get("_hide_empty"):
             continue
-        order, k = board_order(b, targets, "pvp" if mode == "pvp" else "pve", prefer)
+        order, k = board_order(b, targets, "pvp" if mode == "pvp" else "pve", prefer, cards)
         taken = {n["id"] for n in b["nodes"] if n["auto"]} | set(order[:k])   # the guide's route = the first k nodes
         cum, run = {}, 0                  # running crystal total in the order -> the slider lights nodes up to it
         for i in order:

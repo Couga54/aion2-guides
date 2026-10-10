@@ -1309,6 +1309,10 @@ details.spec-all[open] > *:not(summary),.wk-group,.bs-group{animation:fade-in .3
 .dvb-range{display:flex;align-items:center;gap:12px;margin:0 0 10px;font-size:.8rem;color:var(--text-dim);}
 .dvb-range span{white-space:nowrap;}
 .dvb-range b{color:var(--gold);}
+.dvb-reset{flex:none;padding:3px 10px;border:1px solid var(--border-2);border-radius:6px;background:none;color:var(--text-dim);font:inherit;font-size:.74rem;cursor:pointer;}
+.dvb-reset:not(:disabled):hover{color:var(--text);border-color:var(--gold);}
+.dvb-reset:not(:disabled){color:var(--gold);border-color:color-mix(in srgb,var(--gold) 50%,var(--border-2));}
+.dvb-reset:disabled{opacity:.45;cursor:default;}
 .dvb-range input{flex:1;min-width:0;height:6px;-webkit-appearance:none;appearance:none;border-radius:3px;cursor:pointer;
   background:linear-gradient(90deg,var(--gold) var(--p,0%),var(--border-2) var(--p,0%));}
 .dvb-range input::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--gold);border:2px solid #1b1f29;box-shadow:0 0 6px rgba(217,179,108,.6);}
