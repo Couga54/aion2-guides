@@ -1335,11 +1335,13 @@ details.spec-all[open] > *:not(summary),.wk-group,.bs-group{animation:fade-in .3
 .dvb-sum summary{list-style:none;cursor:pointer;padding:10px 14px;display:flex;align-items:baseline;gap:6px;}
 .dvb-sum summary::-webkit-details-marker{display:none;}
 .dvb-sum summary b{color:var(--gold);}
-.dvb-sum summary span{margin-left:auto;font-size:.74rem;color:var(--text-faint);}
-.dvb-sum summary span::after{content:" ▾";}
-.dvb-sum[open] summary span::after{content:" ▴";}
-.dvb-sum summary:hover span{color:var(--text);}
+.dvb-sum summary>span:last-child{margin-left:auto;font-size:.74rem;color:var(--text-faint);}
+.dvb-sum summary>span:last-child::after{content:" ▾";}
+.dvb-sum[open] summary>span:last-child::after{content:" ▴";}
+.dvb-sum summary:hover>span:last-child{color:var(--text);}
 .dvb-sum p{margin:0;padding:0 14px 8px;}
+.dvb-sum ul{margin:0;padding:0 14px 10px 30px;}
+.dvb-sum li{margin:3px 0;}
 .dvb-sum b{color:var(--gold);}
 .dvb-lvs{display:flex;flex-wrap:wrap;gap:4px 12px;}
 .dvb-lv{font-size:.84rem;color:var(--text);cursor:help;}

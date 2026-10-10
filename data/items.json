@@ -197,6 +197,46 @@
       "set": null
     }
   },
+  "shugocoin": {
+    "id": "930100011",
+    "grade": 11,
+    "cat": "currency",
+    "icon": "shugocoin.webp",
+    "en": "Centuryroot Token",
+    "tip_en": {
+      "desc": "Made by drying high quality centuryroot, this token is popular among Shugo as a collectable item. Can be used to purchase various items in the Shugo Festival Shop.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Жетон столетнего женьшеня",
+    "tip_ru": {
+      "desc": "Предмет коллекционирования шиго, изготовленный из хорошо высушенного столетнего женьшеня высокого качества. В магазине Фестиваля шиго за них можно приобрести различные товары.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
+  "nmcoin": {
+    "id": "930100017",
+    "grade": 11,
+    "cat": "currency",
+    "icon": "nmcoin.webp",
+    "en": "Phantasmal Fragment",
+    "tip_en": {
+      "desc": "A fragment of a dream corrupted by nightmarish horrors. Can be used to purchase various items in the Nightmare Shop.",
+      "il": null,
+      "stats": [],
+      "set": null
+    },
+    "ru": "Осколок видения",
+    "tip_ru": {
+      "desc": "Осколок сна, пропитанный кошмаром. В магазине Кошмаров за них можно приобрести различные товары.",
+      "il": null,
+      "stats": [],
+      "set": null
+    }
+  },
   "bakarma": {
     "id": "210130034",
     "grade": 41,

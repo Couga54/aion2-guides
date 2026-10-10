@@ -171,6 +171,10 @@
     {% if V.key %}<p class="dvb-lvs">{% for s, n, lv in V.key %}<span class="dvb-lv" data-sk="{{ s }}">{{ n }} <b>+{{ lv }}</b></span>{% endfor %}</p>{% endif %}
     {% if V.other %}<p class="dvb-lvs dvb-other"><span>{{ t.dv_on_way }}:</span>{% for s, n, lv in V.other %}<span class="dvb-lv" data-sk="{{ s }}">{{ n }} +{{ lv }}</span>{% endfor %}</p>{% endif %}
   </details>
+  {% if mode != 'pvp' %}<details class="dvb-sum dvb-src">
+    <summary><b>416 ×</b> {{ it(t.dv_src_sum) }} <span>{{ t.dv_src_show }}</span></summary>
+    <ul>{{ it(t.dv_src_list) }}</ul>
+  </details>{% endif %}
   <p class="dvb-legend"><span class="dvb-key g11"></span>{{ t.dv_k_stat }} · 1 <span class="dvb-key g21"></span>{{ t.dv_k_passive }} · 2 <span class="dvb-key g31"></span>{{ t.dv_k_skill }} · 3 <span class="dvb-key g41"></span>{{ t.dv_k_special }} · 4 {% if V.big_stats %}<span class="dvb-key st g21"></span><span class="dvb-key st g31"></span>{{ t.dv_k_stat }} · 2–3 {% endif %}<span class="dvb-key on"></span>{{ t.dv_k_route }}</p>
 </div>
 {% endif %}

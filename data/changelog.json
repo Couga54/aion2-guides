@@ -2,6 +2,18 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-10-10-dv",
+      "date": "2026-10-10",
+      "items": [
+        {
+          "en": "<strong>How many Daevanion crystals you can get</strong> — under the route board of every class: levels, sealed dungeons, regional quests and the Shugo and Nightmare shops (with the full price in their currencies) give about 416 for the four PvE boards, which cost 570 — so the route takes the nodes that count first.",
+          "ru": "<strong>Сколько кристаллов Даэваниона можно получить</strong> — под доской с маршрутом у каждого класса: уровни, запечатанные подземелья, региональные квесты и магазины Шуго и Кошмара (с полной ценой в их валютах) дают около 416 на четыре PvE-доски, а стоят они 570 — поэтому маршрут сначала берёт важные узлы.",
+          "uk": "<strong>Скільки кристалів Daevanion можна отримати</strong> — під дошкою з маршрутом у кожного класу: рівні, запечатані підземелля, регіональні квести й магазини Shugo і Nightmare (з повною ціною в їхніх валютах) дають близько 416 на чотири PvE-дошки, а коштують вони 570 — тому маршрут спершу бере важливі вузли.",
+          "tr": "<strong>Kaç Daevanion kristali alabilirsin</strong> — her sınıfın rota levhasının altında: seviyeler, mühürlü zindanlar, bölge görevleri ve Shugo ile Nightmare mağazaları (kendi para birimleriyle tam fiyatı) dört PvE levhası için yaklaşık 416 verir, levhalar ise 570 tutar — bu yüzden rota önce önemli düğümleri alır."
+        }
+      ]
+    },
+    {
       "id": "2026-10-10",
       "date": "2026-10-10",
       "items": [
