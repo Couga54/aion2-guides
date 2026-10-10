@@ -187,36 +187,75 @@ def watch_for(cls, lang, limit=3):
     return (authors + streamers + fill)[:limit]
 
 
-def board_route(board, targets):
-    """Cheapest connected set of nodes from Start that includes every target (targets taken nearest-first,
-    so shared path segments are reused). Node weight = its Daevanion point cost."""
+# Order of the nodes left after the route, for the board slider: offensive stats, then the other skill nodes,
+# then the defensive stats; MP nodes last (creators skip them).
+BOARD_FILL = {"pve": [{"fixingdamage", "critical"}, None, {"hpmax", "defense", "criticalresist"}],
+              "pvp": [{"pvpadddamage", "pvpcritical", "pvpaccuracy", "fixingdamage", "critical"}, None,
+                      {"pvpdamagedefense", "pvpcriticalresist", "pvpevasion", "hpmax", "defense", "criticalresist"}]}
+
+
+def board_order(board, targets, mode, prefer=()):
+    """board_order_once with and without the preference for useful nodes on the way: the cheaper route wins, on a
+    tie the one with more useful nodes (the route is built nearest target first, so a different tie can change its
+    total by a crystal or two)."""
+    cost = {n["id"]: n["cost"] or 0 for n in board["nodes"]}
+    tries = [board_order_once(board, targets, mode, pr) for pr in (prefer, None)]
+    return min(tries, key=lambda t: (sum(cost[x] for x in t[0][:t[1]]), -t[2]))[:2]
+
+
+def board_order_once(board, targets, mode, prefer):
+    """Every node of the board in the order to take it: first the route to the guide's targets (the cheapest
+    connected path from Start, nearest target first), then the remaining orange nodes, then BOARD_FILL tiers (None = skill nodes), then the rest.
+    Between paths of the same cost it takes the one that passes more useful nodes on the way (`prefer` = the
+    guide's skills and key passives, then other skills and passives, then Attack / Critical Hit), so the result
+    is the same on every build."""
     import heapq
     pos = {(n["row"], n["col"]): n for n in board["nodes"]}
     by_id = {n["id"]: n for n in board["nodes"]}
     start = next(n for n in board["nodes"] if n["auto"])
-    taken, left = {start["id"]}, set(targets)
+    taken, order = {start["id"]}, []
+    stats = lambda n: {e.get("statName") for e in n["raw"] or [] if e["type"] == "stat"}
+    gain = {n["id"]: 0 if prefer is None else 3 if n["skill"] in prefer else 1 if n["skill"] else
+            0.5 if stats(n) & {"fixingdamage", "critical"} else 0 for n in board["nodes"]}
 
     def near(n):
         return [pos[k] for k in ((n["row"] + 1, n["col"]), (n["row"] - 1, n["col"]), (n["row"], n["col"] + 1), (n["row"], n["col"] - 1)) if k in pos]
-    while left:
-        dist, prev, pq = {i: 0 for i in taken}, {}, [(0, i) for i in taken]
-        while pq:
-            c, i = heapq.heappop(pq)
-            if c > dist[i]:
-                continue
-            for m in near(by_id[i]):
-                if c + (m["cost"] or 0) < dist.get(m["id"], 1e9):
-                    dist[m["id"]], prev[m["id"]] = c + (m["cost"] or 0), i
-                    heapq.heappush(pq, (dist[m["id"]], m["id"]))
-        reach = [t for t in left if t in dist]
-        if not reach:
-            break
-        t = min(reach, key=lambda x: dist[x])
-        while t not in taken:
-            taken.add(t)
-            t = prev[t]
-        left -= taken                 # the target and any others picked up on its path
-    return taken
+
+    def route(tier):
+        left = set(tier) - taken
+        while left:
+            # distance = (crystals, -useful nodes on the way): the cheapest path, and of those the most useful one
+            dist, prev, pq = {i: (0, 0) for i in taken}, {}, [((0, 0), i) for i in taken]
+            while pq:
+                c, i = heapq.heappop(pq)
+                if c > dist[i]:
+                    continue
+                for m in near(by_id[i]):
+                    d = (c[0] + (m["cost"] or 0), c[1] - gain[m["id"]])
+                    if d < dist.get(m["id"], (1e9, 0)):
+                        dist[m["id"]], prev[m["id"]] = d, i
+                        heapq.heappush(pq, (d, m["id"]))
+            reach = [t for t in left if t in dist]
+            if not reach:
+                break
+            t = min(reach, key=lambda x: (dist[x], x))
+            path = []
+            while t not in taken:
+                path.append(t)
+                t = prev[t]
+            for i in reversed(path):
+                taken.add(i)
+                order.append(i)
+            left -= taken
+
+    route(targets)
+    k = len(order)                    # the guide's route ends here
+    useful = sum(gain[x] for x in order)
+    route([n["id"] for n in board["nodes"] if n["grade"] == 41])
+    for tier in BOARD_FILL.get(mode, BOARD_FILL["pve"]):
+        route([n["id"] for n in board["nodes"] if (n["skill"] if tier is None else stats(n) & tier)])
+    route([n["id"] for n in board["nodes"]])
+    return order, k, useful
 
 
 # Board stats stored in 1/100 of a percent (150 -> 1.5%); the rest are flat values.
@@ -250,6 +289,18 @@ def board_tips(cls_slug, lang):
     return out
 
 
+def glance_skills(cls_slug, mode):
+    """Core skills and key passives listed in the class guide's 'Build at a glance' for one mode."""
+    import ast
+    import re
+    text = (SRC / "content" / cls_slug / "en.html").read_text(encoding="utf-8")
+    g = re.search(r"\{%\s*call glance\('" + mode + r"'\)\s*%\}(.*?)\{%\s*endcall", text, re.S)
+    out = set()
+    for m in re.finditer(r"(core|passives)\((\[.*?\])\)", g.group(1) if g else "", re.S):
+        out.update(x[0] if isinstance(x, tuple) else x for x in ast.literal_eval(m.group(2)))
+    return out
+
+
 @pass_context
 def board_view(ctx, cls_slug, mode):
     """One Daevanion route (data/boards/presets.json -> mode) on every board of the class, for the static board macro."""
@@ -257,6 +308,7 @@ def board_view(ctx, cls_slug, mode):
     skills = SKILLS[cls_slug]
     preset = BOARD_PRESETS[cls_slug][mode]
     out, total, levels, focus = [], 0, {}, set()
+    prefer = glance_skills(cls_slug, mode) | {sk for r in preset.values() if isinstance(r, dict) for sk in r.get("skills", [])}
     for i, b in enumerate(BOARDS[cls_slug]["boards"]):
         rule = preset[str(i)] if str(i) in preset else preset.get("*")
         targets = []
@@ -267,7 +319,12 @@ def board_view(ctx, cls_slug, mode):
                 sp and n["grade"] == 41 and (sp is True or any(e.get("statName") in sp for e in n["raw"] or [])))]
         if not rule and preset.get("_hide_empty"):
             continue
-        taken = board_route(b, targets)
+        order, k = board_order(b, targets, "pvp" if mode == "pvp" else "pve", prefer)
+        taken = {n["id"] for n in b["nodes"] if n["auto"]} | set(order[:k])   # the guide's route = the first k nodes
+        cum, run = {}, 0                  # running crystal total in the order -> the slider lights nodes up to it
+        for i in order:
+            run += next(n["cost"] or 0 for n in b["nodes"] if n["id"] == i)
+            cum[i] = run
         r0, c0 = min(n["row"] for n in b["nodes"]), min(n["col"] for n in b["nodes"])      # crop empty rows / columns
         rows, cols = max(n["row"] for n in b["nodes"]) - r0 + 1, max(n["col"] for n in b["nodes"]) - c0 + 1
         pos = {(n["row"], n["col"]): n for n in b["nodes"]}
@@ -280,12 +337,12 @@ def board_view(ctx, cls_slug, mode):
                 levels[sk] = levels.get(sk, 0) + 1
             nodes.append({"x": (n["col"] - c0 + 0.5) / cols * 100, "y": (n["row"] - r0 + 0.5) / rows * 100, "g": n["grade"], "on": on,
                           "start": n["auto"], "skill": sk, "tip": sk or board_tip_key(n), "icon": f'assets/icons/{cls_slug}/{skills[sk]["icon"]}' if sk else None,
-                          "name": skills[sk][lang]["name"] if sk else n["name"][lang], "cost": n["cost"] or 0})
+                          "name": skills[sk][lang]["name"] if sk else n["name"][lang], "cost": n["cost"] or 0, "cum": cum.get(n["id"], 0)})
             for d in ((0, 1), (1, 0)):
                 m = pos.get((n["row"] + d[0], n["col"] + d[1]))
                 if m:
                     lines.append({"x1": n["col"] - c0 + 0.5, "y1": n["row"] - r0 + 0.5, "x2": m["col"] - c0 + 0.5, "y2": m["row"] - r0 + 0.5,
-                                  "on": on and m["id"] in taken})
+                                  "on": on and m["id"] in taken, "a": cum.get(n["id"], 0), "b": cum.get(m["id"], 0)})
         total += cost
         out.append({"id": b["id"], "name": b["name"][lang], "lv": b["needLevel"], "rows": rows, "cols": cols, "cost": cost,
                     "max": sum(n["cost"] or 0 for n in b["nodes"]), "nodes": nodes, "lines": lines})

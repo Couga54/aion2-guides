@@ -2,6 +2,18 @@
   "_note": "What's new modal. Newest entry first. A visitor sees the modal once per new top entry: its id is saved in localStorage ('whatsnew-seen') when they close it. Add a new entry (new id) to show it again to everyone; edit an existing one without changing its id to avoid re-showing.",
   "entries": [
     {
+      "id": "2026-10-10-slider",
+      "date": "2026-10-10",
+      "items": [
+        {
+          "en": "<strong>Daevanion boards: a slider for the leveling path</strong> — drag the slider under a board tab to see the order to take the nodes in: first the guide's route, then the rest of the board (suggested by a site visitor).",
+          "ru": "<strong>Доски Даэваниона: ползунок пути прокачки</strong> — двигай ползунок под вкладкой доски, чтобы увидеть, в каком порядке брать узлы: сначала маршрут гайда, потом остальная доска (идея посетителя сайта).",
+          "uk": "<strong>Дошки Daevanion: повзунок шляху прокачки</strong> — посунь повзунок під вкладкою дошки, щоб побачити, у якому порядку брати вузли: спершу маршрут гайда, далі решта дошки (ідея відвідувача сайту).",
+          "tr": "<strong>Daevanion levhaları: gelişim yolu kaydırıcısı</strong> — düğümleri hangi sırayla alacağını görmek için levha sekmesinin altındaki kaydırıcıyı sürükle: önce rehberin rotası, sonra levhanın geri kalanı (bir site ziyaretçisinin önerisi)."
+        }
+      ]
+    },
+    {
       "id": "2026-10-10-st",
       "date": "2026-10-10",
       "items": [

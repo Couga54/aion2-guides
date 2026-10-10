@@ -493,6 +493,27 @@
         document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
       });
     }
+    // slider: light up the nodes (and links) whose running crystal total fits
+    var panels = [].slice.call(box.querySelectorAll('.dvb-panel'));
+    function setBoard(panel, v) {
+      var range = panel.querySelector('[data-dvb-range]');
+      range.value = v;
+      v = +range.value;
+      panel.querySelector('[data-dvb-v]').textContent = v;
+      range.style.setProperty('--p', (v / +range.max * 100) + '%');
+      [].forEach.call(panel.querySelectorAll('.dvb-n:not(.start), .dvb-svg line'), function (el) {
+        el.classList.toggle('on', +el.getAttribute('data-c') <= v);
+      });
+      var tab = document.getElementById(panel.getAttribute('aria-labelledby'));
+      var t = tab && tab.querySelector('[data-dvb-t]');
+      if (t) t.textContent = v;
+    }
+    panels.forEach(function (panel) {
+      var range = panel.querySelector('[data-dvb-range]');
+      if (!range) return;
+      range.addEventListener('input', function () { setBoard(panel, range.value); });
+      range.style.setProperty('--p', (+range.value / +range.max * 100) + '%');
+    });
     tabs.forEach(function (tab, i) {
       tab.addEventListener('click', function () { pick(tab); });
       tab.addEventListener('keydown', function (ev) {
