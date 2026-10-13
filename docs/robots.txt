@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://couga54.github.io/aion2-guides/sitemap.xml
+Sitemap: https://aion2-guides.info/sitemap.xml
